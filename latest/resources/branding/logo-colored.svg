@@ -14,7 +14,7 @@
    id="svg3033"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="New document 2">
+   sodipodi:docname="logo-colored.svg">
   <defs
      id="defs3035" />
   <sodipodi:namedview
@@ -56,9 +56,9 @@
        id="flowRoot2985"
        style="font-size:144px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#458fbd;fill-opacity:1;stroke:none;font-family:Segoe Script;-inkscape-font-specification:Segoe Script Oblique"
        transform="matrix(1.8926132,0,0,3.2872221,4.065289,-769.99286)"
-       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\logo-large.png"
-       inkscape:export-xdpi="71.171654"
-       inkscape:export-ydpi="71.171654"><flowRegion
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999"><flowRegion
          id="flowRegion2987"><rect
            id="rect2989"
            width="160"
@@ -72,17 +72,17 @@
        id="path2993-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cssscccccc"
-       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\logo-large.png"
-       inkscape:export-xdpi="71.171654"
-       inkscape:export-ydpi="71.171654" />
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999" />
     <path
        style="fill:#d86d6d;fill-opacity:1;stroke:none"
        d="m 410.4596,362.70226 c 10.57715,7.02276 13.71041,13.9347 22.82387,19.58326 9.47632,-15.01596 29.39961,-33.05977 48.88735,-49.78552 -18.80159,4.49217 -51.16739,19.7037 -71.71122,30.20226 z"
        id="path3783"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
-       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\logo-large.png"
-       inkscape:export-xdpi="71.171654"
-       inkscape:export-ydpi="71.171654" />
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999" />
   </g>
 </svg>
