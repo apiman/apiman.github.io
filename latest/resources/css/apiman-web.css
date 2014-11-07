@@ -1,0 +1,107 @@
+body {
+}
+body.overview {
+  background-image: url(../images/overview-texture.jpg);
+  background-position: 0px 5px;
+  background-repeat: repeat-x;
+}
+
+#top-nav {
+  background-color: black;
+  border-top: 1px solid rgb(255,136,136);
+}
+
+#top-nav .navbar-brand {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  text-indent: -9999px;
+  background-image: url(../images/header-logo.png);
+  background-repeat: no-repeat;
+  background-position: 0px 5px;
+  width: 175px;
+}
+
+#top-nav #navbar ul li {
+  font-size: 13px;
+}
+
+#top-nav #navbar ul li.top-menu-item > a {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: black;
+  color: #ccc;
+}
+#top-nav #navbar ul li.top-menu-item > a:hover {
+  background-color: #322;
+  color: white;
+}
+#top-nav #navbar ul li.active > a {
+  color: white;
+}
+
+#content {
+  margin-top: 71px;
+}
+
+#overview .banner {
+  color: #dfdddd;
+}
+
+#overview .banner .left {
+  float: left;
+  width: 60%;
+}
+
+#overview .banner .right {
+  float: right;
+  width: 38%;
+}
+
+#overview .banner .right {
+  margin-top: 8px;
+}
+
+#overview .banner h1 {
+  padding-top: 30px;
+  font-size: 26px;
+}
+
+#overview .banner .description {
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#overview .banner ul {
+  list-style: none outside none;
+  margin: 0px;
+  padding: 8px 0px 40px;
+}
+
+#overview .banner ul li {
+  padding-top: 5px;
+}
+
+#overview .features .fitem h3 {
+  font-size: 17px;
+  color: rgb(170, 68, 68);
+  padding-bottom: 3px;
+}
+#overview .features .fitem p {
+  margin-top: -10px;
+}
+
+#overview .use-cases .ucitem h3 {
+  font-size: 17px;
+  padding-bottom: 3px;
+  color: rgb(170, 68, 68);
+}
+#overview .use-cases .ucitem p {
+  margin-top: -10px;
+}
+
+h1.section-header {
+  border-bottom: 1px dashed #999;
+  padding-bottom: 5px;
+}
