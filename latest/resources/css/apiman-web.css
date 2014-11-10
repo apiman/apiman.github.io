@@ -44,6 +44,22 @@ body.overview {
   margin-top: 71px;
 }
 
+
+#content img.icon16 {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: inline;
+  margin-top: -3px;
+}
+
+#content span.icon16-label {
+  margin-left: 5px;
+  line-height: 16px;
+  margin-top: 3px;
+}
+
+
 #overview .banner {
   color: #dfdddd;
 }
@@ -80,7 +96,7 @@ body.overview {
 }
 
 #overview .banner ul li {
-  padding-top: 5px;
+  margin-top: 5px;
 }
 
 #overview .features .fitem h3 {
