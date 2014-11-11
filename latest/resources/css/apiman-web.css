@@ -121,3 +121,7 @@ h1.section-header {
   border-bottom: 1px dashed #999;
   padding-bottom: 5px;
 }
+
+#download #content {
+  margin-top: 91px;
+}
