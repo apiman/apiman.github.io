@@ -11,6 +11,7 @@
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="resources/css/apiman-web.css?v=1.0.0-SNAPSHOT" rel="stylesheet">
     <link href="resources/css/apiman-web.responsive.css?v=1.0.0-SNAPSHOT" rel="stylesheet">
+    <link href="resources/css/apiman-guide.css?v=1.0.0-SNAPSHOT" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,6 +21,11 @@
     
     <script src="resources/jquery-1.11.1/js/jquery.min.js"></script>
     <script src="resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $( "#guide" ).load("developer-guide/index.html");
+        });
+    </script>
   </head>
   <body class="developer-guide guide">
     <script>dataLayer = [{'channel' : 'API Management'}];</script>
@@ -32,7 +38,7 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NJWS5L');</script>
     <!-- End Google Tag Manager -->
-    <nav id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -71,6 +77,9 @@
                         <a href="tutorials.html">Tutorials &amp; Walkthroughs</a>
                     </li>
                     <li class="menu-item">
+                        <a href="installation-guide.html">Installation Guide</a>
+                    </li>
+                    <li class="menu-item">
                         <a href="user-guide.html">User Guide</a>
                     </li>
                     <li class="menu-item">
@@ -94,11 +103,10 @@
       </div>
     </nav>
     
-    <div class="container" id="download">
+    <div class="container">
         <div id="content" class="row tbd">
-            <div class="col-lg-8">
-                <h1 class="section-header">Under Construction</h1>
-                <p>Sorry for the inconvenience!  We're doing our best to get the first Beta version of apiman out the door.  Once we've done that we'll be able to spend some time on the rest of this website.  Please stay tuned!</p>
+            <div class="col-lg-12" id="guide">
+                <p>Loading the developer guide, please wait...</p>
             </div>
         </div>
     
