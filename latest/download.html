@@ -107,8 +107,8 @@
             <div class="col-lg-7">
                 <h3>Download</h3>
                 <ul>
-                  <li><a href="http://wildfly.org/">WildFly</a> <a href="http://download.jboss.org/wildfly/8.1.0.Final/wildfly-8.1.0.Final.zip">8.1.0.Final</a></li>
-                  <li>apiman <a href="http://downloads.jboss.org/overlord/apiman/1.0.0.Alpha4/apiman-distro-wildfly8-1.0.0.Alpha4-overlay.zip">1.0.0.Alpha4</a> overlay for WildFly 8.1</li>
+                  <li><a href="http://wildfly.org/">WildFly</a> <a onclick="ga('send', 'event', 'button', 'click', 'download-wf8', 1)" href="http://download.jboss.org/wildfly/8.1.0.Final/wildfly-8.1.0.Final.zip">8.1.0.Final</a></li>
+                  <li>apiman <a onclick="ga('send', 'event', 'button', 'click', 'download-apiman-wf8-overlay', 1)" href="http://downloads.jboss.org/overlord/apiman/1.0.0.Alpha4/apiman-distro-wildfly8-1.0.0.Alpha4-overlay.zip">1.0.0.Alpha4</a> overlay for WildFly 8.1</li>
                 </ul>
                 
                 <h3>Install</h3>
@@ -212,6 +212,17 @@ docker run -it -p 8080:8080 apiman/on-wildfly8
             </div>
         </footer>
     </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56678850-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
   </body>
 </html>
