@@ -96,11 +96,11 @@
     
     <div class="container" id="download">
         <div id="content" class="row tbd">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <h1 class="section-header">Getting Started</h1>
                 <p>One easy way to get started with <b>apiman</b> is to simply download WildFly 8 and the apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently recommend at least version 7.</p>
             </div>
-                
+
             <div class="col-lg-7">
                 <h3>Download</h3>
                 <ul>
@@ -149,12 +149,42 @@ cd wildfly-8.1.0.Final
               </pre>
             </div>
 
-<!-- 
-            <div class="col-lg-8" style="margin-top: 30px;">
+            <div class="col-lg-10" style="margin-top: 40px;">
                 <h1 class="section-header">Getting Started (Docker)</h1>
                 <p>If you prefer to get started by using the apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
             </div>
- -->
+
+            <div class="col-lg-7">
+                <h3>Download</h3>
+                <ul>
+                  <li>Use docker to pull the "apiman on WildFly 8" docker image:  <strong>apiman/on-wildfly8</strong></li>
+                </ul>
+                <h3>Run</h3>
+                <ul>
+                  <li>User docker to run the "apiman on WildFly 8" docker image</li>
+                </ul>
+                <h3>Configure</h3>
+                <ol>
+                  <li>Navigate to the <a href="http://localhost:8080/apiman-dt-ui/#admin-roles">Role Management</a> section of the apiman UI</li>
+                  <li>Add whatever roles you need, but at a minimum we recommend adding a <b>Organization Owner</b> role with *all* permissions</li>
+                  <li>Download the <a href="http://bit.ly/1v3oTfP">apiman policy definition data</a></li>
+                  <li>Navigate to the <a href="http://localhost:8080/apiman-dt-ui/#admin-policyDefs">Policy Definitions</a> section of the apiman UI</li>
+                  <li>Import apiman policy definition data that comes with the apiman overlay distribution</li>
+                </ol>
+            </div>
+
+            <div class="col-lg-5" style="">
+              <h3>Or simply try this...</h3>
+              <pre class="code-block">
+echo "Grab the policy definition data for later use."
+curl -L http://bit.ly/1v3oTfP -o all-policyDefs.json
+
+echo "Download and run apiman on WildFly 8."
+docker pull apiman/on-wildfly8
+docker run -it -p 8080:8080 apiman/on-wildfly8
+              </pre>
+            </div>
+
         </div>
     
         <footer role="contentinfo">

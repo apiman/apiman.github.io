@@ -8,7 +8,7 @@
 
   <name>apiman Project Web Site</name>
   <description>This is the (currently github gh-pages based) website for the apiman project.</description>
-  <url>http://apiman.github.io/</url>
+  <url>http://apiman.io/</url>
   <inceptionYear>2014</inceptionYear>
 
   <organization>
@@ -32,7 +32,7 @@
   <scm>
     <connection>scm:git:git@github.com:apiman/apiman.github.io.git</connection>
     <developerConnection>scm:git:git@github.com:apiman/apiman.github.io.git</developerConnection>
-    <url>scm:git:git@github.com:apiman/apiman.github.io.git.git</url>
+    <url>scm:git:git@github.com:apiman/apiman.github.io.git</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -53,25 +53,7 @@
     <!-- Instruct the build to use only UTF-8 encoding for source code -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-
-    <!-- Distribution URLs -->
-    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
-    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
-    
   </properties>
-
-  <distributionManagement>
-    <repository>
-      <id>jboss-releases-repository</id>
-      <name>JBoss Releases Repository</name>
-      <url>${jboss.releases.repo.url}</url>
-    </repository>
-    <snapshotRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshots Repository</name>
-      <url>${jboss.snapshots.repo.url}</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>
 
