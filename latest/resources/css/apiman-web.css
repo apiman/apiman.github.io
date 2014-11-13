@@ -125,3 +125,29 @@ h1.section-header {
 #download #content {
   margin-top: 91px;
 }
+
+#tutorials .video {
+  text-align: justify;
+}
+
+#tutorials .video img {
+  padding: 2px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px #999;
+}
+#tutorials .video img:hover {
+  border: 1px solid #390;
+  box-shadow: 2px 2px 4px #333;
+  background-color: #699;
+}
+
+#tutorials .video h3 {
+  font-size: 17px;
+  color: rgb(170, 68, 68);
+}
+
+#tutorials .video p {
+  max-width: 300px;
+  padding: 5px;
+  line-height: 16px;
+}
