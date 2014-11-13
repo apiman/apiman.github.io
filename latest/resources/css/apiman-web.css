@@ -122,7 +122,7 @@ h1.section-header {
   padding-bottom: 5px;
 }
 
-#download #content {
+#download #content, #tutorials #content {
   margin-top: 91px;
 }
 
