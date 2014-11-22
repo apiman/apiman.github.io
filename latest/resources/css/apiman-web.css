@@ -122,7 +122,7 @@ h1.section-header {
   padding-bottom: 5px;
 }
 
-#download #content, #tutorials #content {
+#download #content, #tutorials #content, #chat #content, #roadmap #content {
   margin-top: 91px;
 }
 
@@ -150,4 +150,10 @@ h1.section-header {
   max-width: 300px;
   padding: 5px;
   line-height: 16px;
+}
+
+#roadmap h2 {
+  color: rgb(170, 68, 68);
+  padding-bottom: 3px;
+  margin-top: 40px;
 }

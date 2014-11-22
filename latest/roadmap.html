@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="resources/images/favicon.png">
-    <title>apiman</title>
+    <title>apiman :: roadmap</title>
 
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
         });
     </script>
   </head>
-  <body class="overview">
+  <body class="roadmap">
     <script>dataLayer = [{'channel' : 'API Management'}];</script>
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJWS5L"
@@ -43,7 +43,6 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NJWS5L');</script>
     <!-- End Google Tag Manager -->
-    
     <nav id="top-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -57,10 +56,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="top-menu-item menu-item active"><a href="index.html">Overview</a></li>
+            <li class="top-menu-item menu-item"><a href="index.html">Overview</a></li>
             <li class="top-menu-item menu-item"><a href="download.html">Download</a></li>
             <li class="top-menu-item menu-item"><a href="roadmap.html">Roadmap</a></li>
-            <li class="top-menu-item menu-item dropdown">
+            <li class="top-menu-item menu-item dropdown active">
                 <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li class="menu-item">
@@ -111,79 +110,126 @@
       </div>
     </nav>
     
-    <div class="container" id="overview">
-        <div id="content" class="clearfix row">
-            <div id="main" class="col-md-12 clearfix" role="main">
-                <div class="banner">
-                    <div class="left">
-                        <h1>Open Source API Management</h1>
-                        <p class="description">
-                          The apiman project brings an open source development methodology to API Management, 
-                          coupling a rich API design &amp; configuration layer with a blazingly fast runtime.
-                        </p>
-                        <ul>
-                            <li><a class="btn btn-lg btn-primary" href="download.html">Get Started Now</a> <span style="padding-left: 10px;">(Version <a href="https://github.com/apiman/apiman/tree/apiman-1.0.0.Beta1">1.0.0.Beta1</a>)</span></li>
-                            <li><img class="icon16" src="resources/images/github-logo.png"></img><span class="icon16-label">Clone or Fork <a href="http://github.com/apiman/apiman">apiman on GitHub</a></span></li>
-                        </ul>
-                    </div>
-                    <div class="right">
-                    </div>
-                </div>
-                <div class="row">
-                </div>
-            </div>
-        </div>
-        <!-- Features Row -->
-        <div class="row features">
-            <div class="col-md-12">
-              <h1 class="section-header">Features</h1>
-            </div>
-            <div class="col-lg-3 fitem">
-              <h3>Govern Your APIs</h3>
-              <p>Flexible, policy-based runtime governance for your APIs.  Offer the same API through multiple plans, allowing different levels of service to different API consumers.</p>
-            </div>
-            <div class="col-lg-3 fitem">
-              <h3>Rich Management Layer</h3>
-              <p>Use the rich management layer (REST API and separate UI) to manage/configure not only APIs but also the applications that consume them.</p>
-            </div>
-            <div class="col-lg-3 fitem">
-              <h3>Easily Embeddable</h3>
-              <p>Embed the API Management Policy Engine in any application - it has a small footprint and can be completely independent from the management layer.</p>
-            </div>
-            <div class="col-lg-3 fitem">
-              <h3>Fully Asynchronous</h3>
-              <p>The runtime engine's API is fully asynchronous and is designed to run equally well in both a standard J2EE environment and newer async runtimes like <a href="http://vertx.io/">Vert.x</a>.</p>
-            </div>
-        </div>
+    <div class="container" id="roadmap">
+        <div id="content" class="row tbd">
+            <div class="col-lg-10">
+                <h1 class="section-header">Roadmap</h1>
+                <p>
+                  Here you will find a very high level roadmap for the apiman project.  The details are 
+                  subject to change, but this page can provide a basic sense of the project's priorities
+                  and version numbers.  Additional information can typically be found in 
+                  <a href="https://issues.jboss.org/browse/APIMAN">JIRA</a>.
+                </p>
+                <p>
+                  Typically there will be multiple iterative released within a major+minor version, with
+                  the features planned for it being released within the scope of micro versions.  In
+                  other words, the work planned for version 1.2 will be released as a series of micro
+                  releases such as 1.2.1, 1.2.2, 1.2.3, etc...
+                </p>
+                
+                <!-- Version 1.0 -->
+                <h2>1.0 (Minimal But Functional)</h2>
+                <ul>
+                  <li>
+                    <u>API Manager</u>
+                    <ul>
+                      <li>REST API to manage Organizations, Services, Plans, Applications</li>
+                      <li>Organization membership with roles</li>
+                      <li>User Interface with Dashboard, Provider interface, Consumer interface</li>
+                      <li>Import services from WADL</li>
+                      <li>Auditing of all entity (e.g. Org, Service, App) changes</li>
+                      <li>Gateway management (support multiple gateways)</li>
+                      <li>Retire a Service/Unregister an App</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <u>API Gateway</u>
+                    <ul>
+                      <li>Embeddable policy engine with async API</li>
+                      <li>Vert.x based implementation</li>
+                      <li>Standard WAR implementation</li>
+                      <li>Support for HTTP based services</li>
+                      <li>Asynchronous components available to policies: HttpClient</li>
+                      <li>Policy application to Request, Response, and data (body) streams</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <u>Policies</u>
+                    <ul>
+                      <li>BASIC Authentication</li>
+                      <li>Rate Limiting</li>
+                      <li>IP Filtering</li>
+                    </ul>
+                  </li>
+                  <li>WildFly runtime support</li>
+                  <li>Plugin framework - contribute policies and policy configuration UI</li>
+                </ul>
 
-        <!-- Use Cases Row -->
-        <div class="row use-cases">
-            <div class="col-md-7">
-                <h1 class="section-header">Use Cases</h1>
-                <div class="ucitem">
-                  <h3>Rate Limiting</h3>
-                  <p>Limit the number of requests consumers of your APIs can make within a given time period (per service contract or per end-user).</p>
-                </div>
-                <div class="ucitem">
-                  <h3>Centralized Security</h3>
-                  <p>Add authentication and IP filtering capabilities in a central location, freeing your back-end services to focus on functionality.</p>
-                </div>
-                <div class="ucitem">
-                  <h3>Billing and Metrics</h3>
-                  <p>Easily get metrics for all your APIs so you can see what's popular or charge your consumers for their usage.</p>
-                </div>
-            </div>
-            <div class="col-md-5">
-              <h1 class="section-header">Project News</h1>
-              <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/apiman_io" data-widget-id="509405794580697089" data-chrome="noheader nofooter noborders noscrollbar transparent">Tweets by @apiman_io</a>
-              <script>!function(d,s,id){
-                    var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-                    if(!d.getElementById(id)){
-                        js=d.createElement(s);
-                        js.id=id;
-                        js.src=p+"://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js,fjs);
-                    }}(document,"script","twitter-wjs");</script>
+                <!-- Version 1.1 -->
+                <h2>1.1 (Fabric8+)</h2>
+                <ul>
+                  <li>
+                    <u>Integration with fabric8</u>
+                    <ul>
+                      <li>Convert the UI to angularjs</li>
+                      <li>Create a git + elasticsearch API Manager backend</li>
+                      <li>Import fabric8 discovered API endpoints into API Manager</li>
+                      <li>Integration with the fabric8 gateway (policy engine)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <u>API Gateway</u>
+                    <ul>
+                      <li>Shared State async component</li>
+                      <li>LDAP Client async component</li>
+                      <li>JDBC Client async component)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <u>Policies</u>
+                    <ul>
+                      <li>OAuth</li>
+                      <li>SAML</li>
+                      <li>URL Rewriting</li>
+                      <li>Caching</li>
+                    </ul>
+                  </li>
+                  <li>Metrics - collect in API Gateway and report in API Manager</li>
+                  <li>Clone a version (App, Service, Plan)</li>
+                  <li>SOAP over HTTP</li>
+                  <li>Simple billing metrics (collect+report - no integration with billing systems)</li>
+                </ul>
+
+                <!-- Version 1.2 -->
+                <h2>1.2 (Social and Transports)</h2>
+                <ul>
+                  <li>
+                    <u>API Manager</u>
+                    <ul>
+                      <li>Documentation support - swagger, wadl, etc</li>
+                      <li>Service testing tools</li>
+                      <li>Watch a Service for changes</li>
+                      <li>Watch an Organization for new Services</li>
+                      <li>Comments/Forum for Services</li>
+                      <li>Service ratings</li>
+                      <li>Policy overhead ratings (measure of how impactful of performance a particular Policy will be)</li>
+                      <li>Joint Service ownership (joint ownership by multiple Organizations)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <u>API Gateway</u>
+                    <ul>
+                      <li>JMS Support</li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                    <!-- Future -->
+                <h2>Future (??)</h2>
+                <ul>
+                  <li>Workflow for authorizing Service Contracts</li>
+                  <li>Workflow for retiring services</li>
+                </ul>
             </div>
         </div>
     
@@ -195,7 +241,7 @@
                         <div class="textwidget">
                             <p>
                                 Copyright © 2014 Red Hat, Inc. All rights reserved.<br>
-                                apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                                apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br>
                                 <a href="disclosure.html">Open Source Disclosure</a>
                             </p>
                         </div>
