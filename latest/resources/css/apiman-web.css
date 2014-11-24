@@ -157,3 +157,17 @@ h1.section-header {
   padding-bottom: 3px;
   margin-top: 40px;
 }
+
+#roadmap .completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+#roadmap .in-version {
+  color: #343;
+  float: right;
+}
+
+#roadmap .release {
+  width: 80%;
+}
