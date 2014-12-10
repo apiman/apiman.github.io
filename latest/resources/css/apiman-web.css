@@ -159,7 +159,6 @@ h1.section-header {
 }
 
 #roadmap .completed {
-  text-decoration: line-through;
   color: #999;
 }
 
@@ -170,4 +169,13 @@ h1.section-header {
 
 #roadmap .release {
   width: 80%;
+}
+
+#roadmap .release .headers {
+  margin-bottom: 8px;
+}
+
+#roadmap .release .header {
+  text-decoration: underline;
+  font-size: 18px;
 }

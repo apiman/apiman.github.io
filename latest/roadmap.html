@@ -130,54 +130,61 @@
                 <!-- Version 1.0 -->
                 <h2>1.0 (Minimal But Functional)</h2>
                 <ul class="release">
+                  <div class="headers">
+                    <span class="header">Feature</span>
+                    <span class="header pull-right">Released In</span>
+                  </div>
                   <li>
-                    <u>API Manager</u>
+                    <span>API Manager</span>
                     <ul>
-                      <li><span class="completed">REST API to manage Organizations, Services, Plans, Applications</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Organization membership with roles</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">User Interface with Dashboard, Provider interface, Consumer interface</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Import services from WADL</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Auditing of all entity (e.g. Org, Service, App) changes</span> <span class="in-version">1.0.0.Beta</span></li>
+                      <li><span class="completed">REST API to manage Organizations, Services, Plans, Applications</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Organization membership with roles</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">User Interface with Dashboard, Provider interface, Consumer interface</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Import services from WADL</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Auditing of all entity (e.g. Org, Service, App) changes</span> <span class="in-version">1.0.0.Beta1</span></li>
                       <li>Gateway management (support multiple gateways)</li>
                       <li>Retire a Service/Unregister an App</li>
+                      <li>Lock Plans before they can be used</li>
                     </ul>
                   </li>
                   <li>
-                    <u>API Gateway</u>
+                    <span>API Gateway</span>
                     <ul>
-                      <li><span class="completed">Embeddable policy engine with async API</span> <span class="in-version">1.0.0.Beta</span></li>
+                      <li><span class="completed">Embeddable policy engine with async API</span> <span class="in-version">1.0.0.Beta1</span></li>
                       <li>Vert.x based implementation</li>
-                      <li><span class="completed">Standard WAR implementation</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Support for HTTP based services</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Asynchronous components available to policies: HttpClient</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Policy application to Request, Response, and data (body) streams</span> <span class="in-version">1.0.0.Beta</span></li>
+                      <li><span class="completed">Standard WAR implementation</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Support for HTTP based services</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Asynchronous components available to policies: HttpClient</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Policy application to Request, Response, and data (body) streams</span> <span class="in-version">1.0.0.Beta1</span></li>
                     </ul>
                   </li>
                   <li>
-                    <u>Policies</u>
+                    <span>Policies</span>
                     <ul>
-                      <li><span class="completed">BASIC Authentication</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">Rate Limiting</span> <span class="in-version">1.0.0.Beta</span></li>
-                      <li><span class="completed">IP Filtering</span> <span class="in-version">1.0.0.Beta</span></li>
+                      <li><span class="completed">BASIC Authentication</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Rate Limiting</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">IP Filtering</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li>URL Rewriting</li>
+                      <li>Caching</li>
+                      <li>Ignored Resources</li>
                     </ul>
                   </li>
-                  <li><span class="completed">WildFly runtime support</span> <span class="in-version">1.0.0.Beta</span></li>
-                </ul>
-
-                <!-- Version 1.1 -->
-                <h2>1.1 (Fabric8+)</h2>
-                <ul class="release">
                   <li>
-                    <u>Integration with fabric8</u>
+                    <span>Fabric8 Integration</span>
                     <ul>
-                      <li>Convert the UI to angularjs</li>
-                      <li>Create a git + elasticsearch API Manager backend</li>
-                      <li>Import fabric8 discovered API endpoints into API Manager</li>
+                      <li>Manually import fabric8 discovered API endpoints into API Manager</li>
                       <li>Integration with the fabric8 gateway (policy engine)</li>
                     </ul>
                   </li>
+                  <li><span class="completed">WildFly runtime support</span> <span class="in-version">1.0.0.Beta1</span></li>
+                  <li>Clone a version (App, Service, Plan)</li>
+                </ul>
+
+                <!-- Version 1.1 -->
+                <h2>1.1 (Fabric Integration Part 1)</h2>
+                <ul class="release">
                   <li>
-                    <u>API Gateway</u>
+                    <span>API Gateway</span>
                     <ul>
                       <li>Shared State async component</li>
                       <li>LDAP Client async component</li>
@@ -185,26 +192,43 @@
                     </ul>
                   </li>
                   <li>
-                    <u>Policies</u>
+                    <span>Policies</span>
                     <ul>
                       <li>OAuth</li>
                       <li>SAML</li>
-                      <li>URL Rewriting</li>
-                      <li>Caching</li>
                     </ul>
                   </li>
-                  <li>Plugin framework - contribute policies and policy configuration UI</li>
+                  <li>
+                    <span>Fabric8 Integration</span>
+                    <ul>
+                      <li>Create a git + elasticsearch API Manager backend</li>
+                    </ul>
+                  </li>
                   <li>Metrics - collect in API Gateway and report in API Manager</li>
-                  <li>Clone a version (App, Service, Plan)</li>
                   <li>SOAP over HTTP</li>
-                  <li>Simple billing metrics (collect+report - no integration with billing systems)</li>
+                  <li>Policy Events - fire events from policies where appropriate</li>
+                  <li>Plugin framework - contribute policies but <b>not</b> configuration UI</li>
                 </ul>
 
                 <!-- Version 1.2 -->
-                <h2>1.2 (Social and Transports)</h2>
+                <h2>1.2 (Fabric8 Integration Part 2)</h2>
                 <ul class="release">
                   <li>
-                    <u>API Manager</u>
+                    <span>Fabric8 Integration</span>
+                    <ul>
+                      <li>Convert the UI to angularjs</li>
+                      <li>Automatic discovery of fabric8 API endpoints</li>
+                    </ul>
+                  </li>
+                  <li>Plugin framework - contribute policies <b>and</b> configuration UI</li>
+                  <li>Simple billing metrics (collect+report - no integration with billing systems)</li>
+                </ul>
+
+                <!-- Version 1.3 -->
+                <h2>1.3 (Social and Transports)</h2>
+                <ul class="release">
+                  <li>
+                    <span>API Manager</span>
                     <ul>
                       <li>Documentation support - swagger, wadl, etc</li>
                       <li>Service testing tools</li>
@@ -217,14 +241,14 @@
                     </ul>
                   </li>
                   <li>
-                    <u>API Gateway</u>
+                    <span>API Gateway</span>
                     <ul>
                       <li>JMS Support</li>
                     </ul>
                   </li>
                 </ul>
                 
-                    <!-- Future -->
+                <!-- Future -->
                 <h2>Future (??)</h2>
                 <ul class="release">
                   <li>Workflow for authorizing Service Contracts</li>
