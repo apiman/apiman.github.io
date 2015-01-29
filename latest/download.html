@@ -176,11 +176,11 @@ cd wildfly-8.2.0.Final
             <div class="col-lg-7">
                 <h3>Download</h3>
                 <ul>
-                  <li>Use docker to pull the "apiman on WildFly 8" docker image:  <strong>apiman/on-wildfly8</strong></li>
+                  <li>Use docker to pull the "<a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/">apiman WildFly 8</a>" docker image:  <strong>jboss/apiman-wildfly</strong></li>
                 </ul>
                 <h3>Run</h3>
                 <ul>
-                  <li>Use docker to run the "apiman on WildFly 8" docker image</li>
+                  <li>Use docker to run the "apiman WildFly 8" docker image</li>
                   <li>
                     Point your browser at the <a href="http://localhost:8080/apiman-manager/">apiman UI</a> and login with admin/admin123!
                     <div class="alert alert-info" style="margin-top: 5px;">
@@ -195,13 +195,18 @@ cd wildfly-8.2.0.Final
                   Please see the User Guide for information about how to change apiman configuration options
                   if you require more customization.
                 </p>
+                <h3>More Info</h3>
+                <p>
+                  For more information on apiman docker support, including how to extend the image for your own
+                  uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/">click here</a>!
+                </p>
             </div>
 
             <div class="col-lg-5" style="">
               <h3>Or simply try this...</h3>
               <pre class="code-block">
-docker pull apiman/on-wildfly8
-docker run -it -p 8080:8080 apiman/on-wildfly8
+docker pull jboss/apiman-wildfly
+docker run -it -p 8080:8080 jboss/apiman-wildfly
               </pre>
             </div>
 
