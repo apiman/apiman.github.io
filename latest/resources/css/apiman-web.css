@@ -167,8 +167,13 @@ h1.section-header {
   float: right;
 }
 
+#roadmap .release-notes {
+  font-size: 15px;
+  padding-left: 20px;
+}
+
 #roadmap .release {
-  width: 80%;
+  width: 95%;
 }
 
 #roadmap .release .headers {
