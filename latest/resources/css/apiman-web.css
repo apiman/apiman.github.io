@@ -6,6 +6,13 @@ body.overview {
   background-repeat: repeat-x;
 }
 
+.label-faded {
+  color: #789;
+}
+.label-small {
+  font-size: 11px;
+}
+
 #top-nav {
   background-color: black;
   border-top: 1px solid rgb(255,136,136);
