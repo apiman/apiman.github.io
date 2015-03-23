@@ -13,9 +13,13 @@ body.overview {
   font-size: 11px;
 }
 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #243446;
+}
+
 #top-nav {
-  background-color: black;
-  border-top: 1px solid rgb(255,136,136);
+  background-color: #243446;
+  border-top: 2px solid #cc0000;
 }
 
 #top-nav .navbar-brand {
@@ -23,9 +27,9 @@ body.overview {
   font-size: 18px;
   margin-top: 10px;
   text-indent: -9999px;
-  background-image: url(../images/header-logo.png);
+  background-image: url(../images/header-logo-2.png);
   background-repeat: no-repeat;
-  background-position: 0px 5px;
+  background-position: 0px 15px;
   width: 175px;
 }
 
@@ -36,11 +40,11 @@ body.overview {
 #top-nav #navbar ul li.top-menu-item > a {
   padding-top: 25px;
   padding-bottom: 25px;
-  background-color: black;
+  background-color: #243446;
   color: #ccc;
 }
 #top-nav #navbar ul li.top-menu-item > a:hover {
-  background-color: #322;
+  background-color: #253c57;
   color: white;
 }
 #top-nav #navbar ul li.active > a {
@@ -68,17 +72,20 @@ body.overview {
 
 
 #overview .banner {
-  color: #dfdddd;
 }
 
-#overview .banner .left {
+#overview .banner .overview-logo {
+  width: 200px;
+  height: 245px;
+  float: left;
+  background-image: url(../images/overview-logo.png);
+  background-position: 0px 25px;
+  background-repeat: no-repeat;
+}
+
+#overview .banner .pitch {
   float: left;
   width: 60%;
-}
-
-#overview .banner .right {
-  float: right;
-  width: 38%;
 }
 
 #overview .banner .right {
