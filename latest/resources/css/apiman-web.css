@@ -29,7 +29,7 @@ body.overview {
   text-indent: -9999px;
   background-image: url(../images/header-logo-2.png);
   background-repeat: no-repeat;
-  background-position: 0px 15px;
+  background-position: 15px 10px;
   width: 175px;
 }
 
@@ -84,6 +84,7 @@ body.overview {
 }
 
 #overview .banner .pitch {
+  min-height: 250px;
   float: left;
   width: 60%;
 }
