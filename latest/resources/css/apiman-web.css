@@ -1,7 +1,7 @@
 body {
 }
 body.overview {
-  background-image: url(../images/overview-texture.jpg);
+  background-image: url(../images/overview-texture.jpg?v=2);
   background-position: 0px 5px;
   background-repeat: repeat-x;
 }
