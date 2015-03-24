@@ -1,8 +1,8 @@
 body {
 }
 body.overview {
-  background-image: url(../images/overview-texture.jpg?v=2);
-  background-position: 0px 5px;
+  background-image: url(../images/overview-texture.jpg?v=3);
+  background-position: 0px 50px;
   background-repeat: repeat-x;
 }
 
@@ -19,7 +19,8 @@ body.overview {
 
 #top-nav {
   background-color: #243446;
-  border-top: 2px solid #cc0000;
+  border-top: 1px solid #cc0000;
+  margin-bottom: 0px;
 }
 
 #top-nav .navbar-brand {
@@ -52,7 +53,6 @@ body.overview {
 }
 
 #content {
-  margin-top: 71px;
 }
 
 
@@ -138,7 +138,7 @@ h1.section-header {
 }
 
 #download #content, #tutorials #content, #chat #content, #roadmap #content {
-  margin-top: 91px;
+  margin-top: 11px;
 }
 
 #tutorials .video {
