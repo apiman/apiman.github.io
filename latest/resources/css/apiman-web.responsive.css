@@ -30,9 +30,6 @@
 
 /* Mobile */
 @media ( max-width : 767px) {
-  #overview .banner .overview-logo {
-    display:none;
-  }
   #overview .banner .pitch .description {
     display:none;
   }
@@ -40,6 +37,15 @@
 
 /* Smart Phones */
 @media ( max-width : 480px) {
+
+  #overview .banner .pitch {
+    margin-top: 40px;
+    width: 100%;
+  }
+  
+  #overview .banner .overview-logo {
+    display:none;
+  }
   
   #overview .banner h1 {
     padding-top: 5px;
