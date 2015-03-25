@@ -1,7 +1,7 @@
 body {
 }
 body.overview {
-  background-image: url(../images/overview-texture.jpg?v=3);
+  background-image: url(../images/overview-bg.png);
   background-position: 0px 50px;
   background-repeat: repeat-x;
 }
@@ -28,7 +28,7 @@ body.overview {
   font-size: 18px;
   margin-top: 10px;
   text-indent: -9999px;
-  background-image: url(../images/header-logo-2.png);
+  background-image: url(../images/logo-header.png);
   background-repeat: no-repeat;
   background-position: 15px 10px;
   width: 175px;
