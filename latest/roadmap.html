@@ -110,7 +110,7 @@
 <!--                         <a href="/latest">Latest</a> -->
 <!--                     </li> -->
 <!--                     <li class="menu-item disabled"> -->
-<!--                         <a href="/1.0.3.Final">1.0.3.Final</a> -->
+<!--                         <a href="/1.1.0.Final">1.1.0.Final</a> -->
 <!--                     </li> -->
 <!--                 </ul> -->
 <!--             </li> -->
@@ -121,7 +121,7 @@
     
     <div class="container" id="roadmap">
         <div id="content" class="row tbd">
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="margin-bottom: 35px">
                 <h1 class="section-header">Roadmap</h1>
                 <p>
                   Here you will find a very high level roadmap for the apiman project.  The details are 
@@ -136,156 +136,182 @@
                   releases such as 1.2.1, 1.2.2, 1.2.3, etc...
                 </p>
              </div>
-             <div class="col-lg-9">
+             
+             <div class="col-lg-12 released">
                 <!-- Version 1.0 -->
-                <h2>1.0 (Minimal But Functional)</h2>
-                <ul class="release">
-                  <div class="headers">
-                    <span class="header">Feature</span>
-                    <span class="header pull-right">Released In</span>
+                <h2><a class="" data-toggle="collapse" href="#features1_0" aria-expanded="false" >1.0 (Minimal But Functional)</a></h2>
+                <div id="features1_0" class="collapse">
+                  <div class="col-lg-9">
+                    <ul class="release">
+                      <div class="headers">
+                        <span class="header">Feature</span>
+                        <span class="header pull-right">Released In</span>
+                      </div>
+                      <li>
+                        <span>API Manager</span>
+                        <ul>
+                          <li><span class="completed">REST API to manage Organizations, Services, Plans, Applications</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Organization membership with roles</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">User Interface with Dashboard, Provider interface, Consumer interface</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Import services from WADL</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Auditing of all entity (e.g. Org, Service, App) changes</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Gateway management (support multiple gateways)</span> <span class="in-version">1.0.1.Final</span></li>
+                          <li><span class="completed">Retire a Service/Unregister an App</span> <span class="in-version">1.0.1.Final</span></li>
+                          <li><span class="completed">Lock Plans before they can be used</span> <span class="in-version">1.0.1.Final</span></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>API Gateway</span>
+                        <ul>
+                          <li><span class="completed">Embeddable policy engine with async API</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Vert.x based implementation</span> <span class="in-version">1.0.1.Final</span></li>
+                          <li><span class="completed">Standard WAR implementation</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Support for HTTP based services</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Asynchronous components available to policies: HttpClient</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Policy application to Request, Response, and data (body) streams</span> <span class="in-version">1.0.0.Beta1</span></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Policies</span>
+                        <ul>
+                          <li><span class="completed">BASIC Authentication</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Rate Limiting</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">IP Filtering</span> <span class="in-version">1.0.0.Beta1</span></li>
+                          <li><span class="completed">Ignored Resources</span> <span class="in-version">1.0.1.Final</span></li>
+                          <li><span class="completed">CORS</span> <span class="in-version">1.0.3.Final</span></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Fabric8 Integration</span>
+                        <ul>
+                          <li><span class="completed">Integration with the fabric8 gateway (policy engine)</span> <span class="in-version">1.0.1.Final</span></li>
+                        </ul>
+                      </li>
+                      <li><span class="completed">WildFly runtime support</span> <span class="in-version">1.0.0.Beta1</span></li>
+                      <li><span class="completed">Clone a version (App, Service, Plan)</span> <span class="in-version">1.0.1.Final</span></li>
+                      <li><span class="completed">Support "public" services (can be invoked without a Contract)</span> <span class="in-version">1.0.1.Final</span></li>
+                      <li><span class="completed">Plugin framework - contribute policies</span> <span class="in-version">1.0.3.Final</span></li>
+                      <li><span class="completed">Plugin framework - contribute policy configuration forms based on <a href="http://json-schema.org/">JSON Schema</a></span> <span class="in-version">1.0.3.Final</span></li>
+                    </ul>
                   </div>
-                  <li>
-                    <span>API Manager</span>
-                    <ul>
-                      <li><span class="completed">REST API to manage Organizations, Services, Plans, Applications</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Organization membership with roles</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">User Interface with Dashboard, Provider interface, Consumer interface</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Import services from WADL</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Auditing of all entity (e.g. Org, Service, App) changes</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Gateway management (support multiple gateways)</span> <span class="in-version">1.0.1.Final</span></li>
-                      <li><span class="completed">Retire a Service/Unregister an App</span> <span class="in-version">1.0.1.Final</span></li>
-                      <li><span class="completed">Lock Plans before they can be used</span> <span class="in-version">1.0.1.Final</span></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>API Gateway</span>
-                    <ul>
-                      <li><span class="completed">Embeddable policy engine with async API</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Vert.x based implementation</span> <span class="in-version">1.0.1.Final</span></li>
-                      <li><span class="completed">Standard WAR implementation</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Support for HTTP based services</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Asynchronous components available to policies: HttpClient</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Policy application to Request, Response, and data (body) streams</span> <span class="in-version">1.0.0.Beta1</span></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Policies</span>
-                    <ul>
-                      <li><span class="completed">BASIC Authentication</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Rate Limiting</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">IP Filtering</span> <span class="in-version">1.0.0.Beta1</span></li>
-                      <li><span class="completed">Ignored Resources</span> <span class="in-version">1.0.1.Final</span></li>
-                      <li><span class="completed">CORS</span> <span class="in-version">1.0.3.Final</span></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Fabric8 Integration</span>
-                    <ul>
-                      <li><span class="completed">Integration with the fabric8 gateway (policy engine)</span> <span class="in-version">1.0.1.Final</span></li>
-                    </ul>
-                  </li>
-                  <li><span class="completed">WildFly runtime support</span> <span class="in-version">1.0.0.Beta1</span></li>
-                  <li><span class="completed">Clone a version (App, Service, Plan)</span> <span class="in-version">1.0.1.Final</span></li>
-                  <li><span class="completed">Support "public" services (can be invoked without a Contract)</span> <span class="in-version">1.0.1.Final</span></li>
-                  <li><span class="completed">Plugin framework - contribute policies</span> <span class="in-version">1.0.3.Final</span></li>
-                  <li><span class="completed">Plugin framework - contribute policy configuration forms based on <a href="http://json-schema.org/">JSON Schema</a></span> <span class="in-version">1.0.3.Final</span></li>
-                </ul>
-             </div>
-             <div class="col-lg-3">
-                <!-- Version 1.0 -->
-                <h2>1.0 Release Notes</h2>
-                <div class="release-notes">
-                  <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12325096">1.0.0.Beta1</a> <span class="label-small">(2014 Nov 21)</span></div>
-                  <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326282">1.0.0.Final</a> <span class="label-small">(2014 Dec 18)</span></div>
-                  <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326467">1.0.1.Final</a> <span class="label-small">(2015 Jan 06)</span></div>
-                  <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326491">1.0.2.Final</a> <span class="label-small">(2015 Jan 29)</span></div>
-                  <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326633">1.0.3.Final</a> <span class="label-small">(2015 Feb 17)</span></div>
+                  <div class="col-lg-3 relnotes">
+                    <!-- Version 1.0 -->
+                    <h2>1.0 Release Notes</h2>
+                    <div class="release-notes">
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12325096">1.0.0.Beta1</a> <span class="label-small">(2014 Nov 21)</span></div>
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326282">1.0.0.Final</a> <span class="label-small">(2014 Dec 18)</span></div>
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326467">1.0.1.Final</a> <span class="label-small">(2015 Jan 06)</span></div>
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326491">1.0.2.Final</a> <span class="label-small">(2015 Jan 29)</span></div>
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326633">1.0.3.Final</a> <span class="label-small">(2015 Feb 17)</span></div>
+                    </div>
+                  </div>
                 </div>
              </div>
              
-             <div class="col-lg-9">
+             <div class="col-lg-12">
                 <!-- Version 1.1 -->
-                <h2>1.1 (Fabric8 Integration Part 1)</h2>
-                <ul class="release">
-                  <li>
-                    <span>API Gateway</span>
-                    <ul>
-                      <li>Shared State async component</li>
-                      <li>LDAP Client async component</li>
-                      <li>JDBC Client async component</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Policies</span>
-                    <ul>
-                      <li>OAuth2</li>
-                      <li>SAML</li>
-                      <li>HTTP Security Headers (HSTS, CSP, X-Frame-Options, etc)</li>
-                      <li>Simple Header Manipulation (add, remove, pattern-match, etc)</li>
-                      <li>Authorization (Role/Group based access control)</li>
-                      <li>URL Rewriting</li>
-                      <li>Caching</li>
-                      <li>JSONP</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>Fabric8 Integration</span>
-                    <ul>
-                      <li>Convert the UI to an angularjs/hawtio plugin</li>
-                      <li>Manually import fabric8 discovered API endpoints into API Manager</li>
-                      <li>Create an elasticsearch API Manager backend</li>
-                    </ul>
-                  </li>
-                  <li>Metrics - collect in API Gateway and report in API Manager</li>
-                  <li>SOAP over HTTP</li>
-                  <li>Policy Events - fire events from policies where appropriate</li>
-                </ul>
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_1" aria-expanded="true" >1.1 (Fabric8 Integration Part 1)</a></h2>
+                <div id="features1_1" class="collapse in">
+                   <div class="col-lg-9">
+                      <ul class="release">
+                        <div class="headers">
+                          <span class="header">Feature</span>
+                          <span class="header pull-right">Released In</span>
+                        </div>
+                        <li>
+                          <span>Policies</span>
+                          <ul>
+                            <li><span class="completed">OAuth2</span> <span class="in-version">1.1.0.Final</span></li>
+                            <li>SAML</li>
+                            <li>HTTP Security Headers (HSTS, CSP, X-Frame-Options, etc)</li>
+                            <li><span class="completed">Simple Header Manipulation (add, remove, pattern-match, etc)</span> <span class="in-version">1.1.0.Final</span></li>
+                            <li>Authorization (Role/Group based access control)</li>
+                            <li>URL Rewriting</li>
+                            <li>Caching</li>
+                            <li>JSONP</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span>API Gateway</span>
+                          <ul>
+                            <li><span class="completed">Shared State async component</span> <span class="in-version">1.1.0.Final</span></li>
+                            <li>LDAP Client async component</li>
+                            <li>JDBC Client async component</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span>Fabric8 Integration</span>
+                          <ul>
+                            <li><span class="completed">Convert the UI to an angularjs/hawtio plugin</span> <span class="in-version">1.1.0.Final</span></li>
+                            <li>Manually import fabric8 discovered API endpoints into API Manager</li>
+                            <li><span class="completed">Create an elasticsearch API Manager backend</span> <span class="in-version">1.1.0.Final</span></li>
+                            <li><span class="completed">Create elasticsearch implementations of the API Gateway components</span> <span class="in-version">1.1.0.Final</span></li>
+                          </ul>
+                        </li>
+                        <li>Metrics - collect in API Gateway and report in API Manager</li>
+                        <li>Policy Events - fire events from policies where appropriate</li>
+                      </ul>
+                   </div>
+                  <div class="col-lg-3 relnotes">
+                    <h2>1.1 Release Notes</h2>
+                    <div class="release-notes">
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12326497">1.1.0.Final</a> <span class="label-small">(2015 April 11)</span></div>
+                    </div>
+                  </div>
+                </div>
+             </div>
 
+             <div class="col-lg-12">
                 <!-- Version 1.2 -->
-                <h2>1.2 (Fabric8 Integration Part 2)</h2>
-                <ul class="release">
-                  <li>
-                    <span>Fabric8 Integration</span>
-                    <ul>
-                      <li>Automatic discovery of fabric8 API endpoints</li>
-                    </ul>
-                  </li>
-                  <li>Plugin framework - contribute policy configuration forms using custom HTML/javascript</li>
-                  <li>Simple billing metrics (collect+report - no integration with billing systems)</li>
-                  <li>Notification/Task Inbox</li>
-                </ul>
-
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_2" aria-expanded="true" >1.2 (Fabric8 Integration Part 2)</a></h2>
+                <div id="features1_2" class="collapse">
+                   <div class="col-lg-9">
+                      <!-- Version 1.2 -->
+                      <ul class="release">
+                        <li>
+                          <span>Fabric8 Integration</span>
+                          <ul>
+                            <li>Automatic discovery of fabric8 API endpoints</li>
+                          </ul>
+                        </li>
+                        <li>Plugin framework - contribute policy configuration forms using custom HTML/javascript</li>
+                        <li>Simple billing metrics (collect+report - no integration with billing systems)</li>
+                        <li>Notification/Task Inbox</li>
+                      </ul>
+                   </div>
+                </div>
+             </div>
+     
+             <div class="col-lg-12">
                 <!-- Version 1.3 -->
-                <h2>1.3 (Social and Transports)</h2>
-                <ul class="release">
-                  <li>
-                    <span>API Manager</span>
-                    <ul>
-                      <li>Documentation support - swagger, wadl, etc</li>
-                      <li>Service testing tools</li>
-                      <li>Watch a Service for changes</li>
-                      <li>Watch an Organization for new Services</li>
-                      <li>Comments/Forum for Services</li>
-                      <li>Service ratings</li>
-                      <li>Policy overhead ratings (measure of how impactful of performance a particular Policy will be)</li>
-                      <li>Joint Service ownership (joint ownership by multiple Organizations)</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span>API Gateway</span>
-                    <ul>
-                      <li>JMS Support</li>
-                    </ul>
-                  </li>
-                </ul>
-                
-                <!-- Future -->
-                <h2>Future (??)</h2>
-                <ul class="release">
-                  <li>Workflow for authorizing Service Contracts</li>
-                  <li>Workflow for retiring services</li>
-                </ul>
-            </div>
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_3" aria-expanded="true" >1.3 (Social and Transports)</a></h2>
+                <div id="features1_3" class="collapse">
+                   <div class="col-lg-9">
+                      <!-- Version 1.3 -->
+                      <ul class="release">
+                        <li>
+                          <span>API Manager</span>
+                          <ul>
+                            <li>Documentation support - swagger, wadl, etc</li>
+                            <li>Service testing tools</li>
+                            <li>Watch a Service for changes</li>
+                            <li>Watch an Organization for new Services</li>
+                            <li>Comments/Forum for Services</li>
+                            <li>Service ratings</li>
+                            <li>Policy overhead ratings (measure of how impactful of performance a particular Policy will be)</li>
+                            <li>Joint Service ownership (joint ownership by multiple Organizations)</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span>API Gateway</span>
+                          <ul>
+                            <li>JMS Support</li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+             </div>
         </div>
     
         <footer role="contentinfo">

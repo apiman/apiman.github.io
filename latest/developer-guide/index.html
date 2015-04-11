@@ -16,9 +16,9 @@ apiman running in WildFly.  The location of this WildFly install will be here:</
 location using a command something like this:</p><pre class="literallayout">./bin/standalone.sh -b 0.0.0.0</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="_setting_up_a_development_environment"/>2.5. Setting up a Development Environment</h2></div></div></div><p>Because apiman is a fairly standard maven project, it should be relatively easy
 to import the project into Eclipse or IntelliJ IDEA.  For now we’ll leave this
 as an exercise for the reader.</p></div></div><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="_architecture"/>Chapter 3. Architecture</h2></div></div></div><p>The basic architecture of apiman is fairly straightforward.  There are several WARs that
-make up the default apiman installation.  These include:</p><div class="itemizedlist"><ul><li>API Manager back-end (JAX-RS WAR)</li><li>API Manager UI (GWT/Errai WAR)</li><li>API Gateway Config (JAX-RS WAR)</li><li>API Gateway (Servlet WAR)</li></ul></div><p>The API Manager back-end WAR is responsible for exposing a set of REST endpoints that
+make up the default apiman installation.  These include:</p><div class="itemizedlist"><ul><li>API Manager back-end (JAX-RS WAR)</li><li>API Manager UI (AngularJS/Hawtio WAR)</li><li>API Gateway Config (JAX-RS WAR)</li><li>API Gateway (Servlet WAR)</li></ul></div><p>The API Manager back-end WAR is responsible for exposing a set of REST endpoints that
 make up the API Manager REST interface.  The API Manager UI uses this REST API
-directly when the user manages the various entities in the data model.</p><p>The API Manager UI is a client-only GWT/Errai application.  Aside from authentication
+directly when the user manages the various entities in the data model.</p><p>The API Manager UI is a client-only AngularJS application.  Aside from authentication
 related activities, this WAR only contains HTML, JavaScript, and CSS.  The UI uses
 the browser to make direct, authenticated calls to the REST endpoints exposed by the
 API Manager back-end WAR.</p><p>The API Gateway Config exposes the standard apiman Gateway REST API so that the API

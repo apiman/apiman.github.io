@@ -6,6 +6,10 @@ body.overview {
   background-repeat: repeat-x;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 .label-faded {
   color: #789;
 }
@@ -170,7 +174,22 @@ h1.section-header {
 #roadmap h2 {
   color: rgb(170, 68, 68);
   padding-bottom: 3px;
-  margin-top: 40px;
+  margin-top: 0px;
+}
+#roadmap h2 a {
+  color: rgb(170, 68, 68);
+  border-bottom: 1px dotted rgb(170, 68, 68);
+}
+#roadmap .released h2 a {
+  color: rgb(153, 153, 153);
+  border-bottom: 1px dotted rgb(153, 153, 153);
+}
+#roadmap .released .relnotes {
+  margin-bottom: 35px;
+}
+#roadmap .released .relnotes h2 {
+  color: rgb(153, 153, 153);
+  border-bottom: 1px dotted rgb(153, 153, 153);
 }
 
 #roadmap .completed {
@@ -189,13 +208,15 @@ h1.section-header {
 
 #roadmap .release {
   width: 95%;
+  margin-bottom: 35px;
 }
 
-#roadmap .release .headers {
+#roadmap ul .headers {
   margin-bottom: 8px;
 }
 
-#roadmap .release .header {
+#roadmap ul .header {
   text-decoration: underline;
   font-size: 18px;
 }
+
