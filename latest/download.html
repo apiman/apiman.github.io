@@ -119,13 +119,13 @@
                 <h3>Download</h3>
                 <ul>
                   <li><a href="http://wildfly.org/">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf8', 1)" href="http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip">8.2.0.Final</a></li>
-                  <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf8-overlay', 1)" href="http://downloads.jboss.org/overlord/apiman/1.1.0.Final-fixed/apiman-distro-wildfly8-1.1.0.Final-overlay.zip">1.1.0.Final</a> overlay for WildFly 8.2</li>
+                  <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf8-overlay', 1)" href="http://downloads.jboss.org/overlord/apiman/1.1.1.Final-fixed/apiman-distro-wildfly8-1.1.1.Final-overlay.zip">1.1.1.Final</a> overlay for WildFly 8.2</li>
                 </ul>
                 
                 <h3>Install</h3>
                 <ol>
                   <li>Unpack the WildFly 8.2 zip</li>
-                  <li>Unpack the apiman 1.1.0.Final WildFly 8 overlay zip <b>inside the wildfly directory</b></li>
+                  <li>Unpack the apiman 1.1.1.Final WildFly 8 overlay zip <b>inside the wildfly directory</b></li>
                 </ol>
                 
                 <h3>Run</h3>
@@ -151,12 +151,12 @@
             <div class="col-lg-5" style="">
               <h3>Or simply try this...</h3>
               <pre class="code-block">
-mkdir ~/apiman-1.1.0.Final
-cd ~/apiman-1.1.0.Final
+mkdir ~/apiman-1.1.1.Final
+cd ~/apiman-1.1.1.Final
 wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip
-wget http://downloads.jboss.org/overlord/apiman/1.1.0.Final-fixed/apiman-distro-wildfly8-1.1.0.Final-overlay.zip
+wget http://downloads.jboss.org/overlord/apiman/1.1.1.Final-fixed/apiman-distro-wildfly8-1.1.1.Final-overlay.zip
 unzip wildfly-8.2.0.Final.zip
-unzip -o apiman-distro-wildfly8-1.1.0.Final-overlay.zip -d wildfly-8.2.0.Final
+unzip -o apiman-distro-wildfly8-1.1.1.Final-overlay.zip -d wildfly-8.2.0.Final
 cd wildfly-8.2.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml
               </pre>
