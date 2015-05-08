@@ -67,6 +67,10 @@ body.overview {
   max-width: 100%;
 }
 
+#blog .post-content h2 {
+  margin-top: 40px;
+}
+
 #content {
 }
 
