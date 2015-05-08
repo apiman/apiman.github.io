@@ -49,7 +49,7 @@ Once you've added that policy, you can add the Authorization Policy - make sure 
 
 Once all is said and done, you should have two (at least) policies configured for your service.  It might look something like this in the UI:
 
-![Example policy list](/blog/images/2015-05-08/auth-policies.png.png)
+![Example policy list](/blog/images/2015-05-08/auth-policies.png)
 
 If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that's easy too:
 
