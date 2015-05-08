@@ -15,3 +15,4 @@ github_username: apiman
 markdown: kramdown
 
 destination: ../blog
+excerpt_separator: <!--more-->
