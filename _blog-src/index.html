@@ -10,10 +10,10 @@ layout: default
               <div class="row">
                 <div class="col-md-12">
                   <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-                  <span style="font-size: 13px"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
-                  <span style="margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> {{ post.author }}</span>
-                  <span style="margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> {{ post.categories | array_to_sentence_string }}</span>
-                  <div class="excerpt">
+                  <span style="color: #A44; font-size: 13px"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
+                  <span style="color: #A44; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> {{ post.author }}</span>
+                  <span style="color: #A44; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> {{ post.categories | array_to_sentence_string }}</span>
+                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     {{ post.excerpt }}
                   </div>
                   <div style="margin-bottom: 20px">
