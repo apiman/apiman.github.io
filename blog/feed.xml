@@ -6,8 +6,8 @@
 </description>
     <link>http://apiman.io/blog/</link>
     <atom:link href="http://apiman.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 May 2015 14:07:05 -0400</pubDate>
-    <lastBuildDate>Fri, 08 May 2015 14:07:05 -0400</lastBuildDate>
+    <pubDate>Fri, 08 May 2015 14:09:47 -0400</pubDate>
+    <lastBuildDate>Fri, 08 May 2015 14:09:47 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -60,7 +60,7 @@ extracting the user’s roles and passing them along to the Authorization policy
 
 &lt;p&gt;Once all is said and done, you should have two (at least) policies configured for your service.  It might look something like this in the UI:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/images/2015-05-08/auth-policies.png.png&quot; alt=&quot;Example policy list&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-05-08/auth-policies.png&quot; alt=&quot;Example policy list&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:&lt;/p&gt;
 
