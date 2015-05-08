@@ -5,9 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>apiman blog</title>
-  <meta name="description" content="The apiman project brings an open source development methodology to  API Management, coupling a rich API design & configuration layer with a blazingly fast runtime.  This is the official apiman blog, where we discuss....whatever we're thinking about!
-">
+  <title>Authorization, good god, what is it good for?</title>
+  <meta name="description" content="I want to talk about how Authorization currently works in apiman, because it’sa little bit more loosely coupled than you might expect.  Note that at some poi...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -35,7 +34,7 @@
       });
   </script>
 
-  <link rel="canonical" href="http://apiman.io/blog/">
+  <link rel="canonical" href="http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization.html">
   <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
 </head>
 
@@ -108,58 +107,80 @@
 
     <div class="container" id="blog">
       <div class="blog-content">
-        <div id="content" class="row">
-    <div class="col-lg-12" style="margin-bottom: 35px">
-        <h1 class="section-header">Blog Posts</h1>
-        <ul class="post-list">
-         
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/authorization/authentication/policy/2015/05/08/authorization.html">Authorization, good god, what is it good for?</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>I want to talk about how Authorization currently works in apiman, because it’s
+        <div class="post">
+
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization, good god, what is it good for?</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
+  </header>
+
+  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p>I want to talk about how Authorization currently works in apiman, because it’s
 a little bit more loosely coupled than you might expect.  Note that at some 
 point in the future we’re going to be renovating how policies are defined and
 configured in the API Manager UI.  But until then, you can refer to this blog
 post for an overview of how to configure Authorization!</p>
 
+<!--more-->
 
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/authorization/authentication/policy/2015/05/08/authorization.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/overview/welcome/2015/05/08/welcome-apiman-blog.html">Welcome to the apiman blog!</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> overview and welcome</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>Welcome everyone to the new apiman blog!  I know, it’s pretty crazy that we haven’t created
-a blog until now.  But we’ve been pretty busy writing the software.  But now is the time!
-Mostly because I finally thought of some things I wanted to write about.</p>
+<p>I won’t bury the lead - the key to getting Authorization to work is understanding
+that it <em>only</em> works together with Authentication.  First you must add and 
+configure a compatible <em>Authentication</em> policy, which will be responsible for 
+extracting the user’s roles and passing them along to the Authorization policy.</p>
 
+<h2 id="define-your-terms-sir">Define your terms, sir!</h2>
+<p>Let’s make sure we’re on the same page with respect to terminology, shall we?</p>
 
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/overview/welcome/2015/05/08/welcome-apiman-blog.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-        </ul>
-<!--         <p class="rss-subscribe">subscribe <a href="/blog/feed.xml">via RSS</a></p> -->
-    </div>
+<ul>
+  <li><strong>Authentication</strong>: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.</li>
+  <li><strong>Authorization</strong>: the act of ensuring that the authenticated user has <em>permission</em> to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.</li>
+</ul>
+
+<h2 id="how-does-this-work-in-apiman">How does this work in apiman?</h2>
+
+<p>I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.</p>
+
+<p>Basically you need to do the following two things:</p>
+
+<ol>
+  <li>Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy</li>
+  <li>Add and configure an Authorization Policy.</li>
+</ol>
+
+<p>That’s it in a nutshell!</p>
+
+<h2 id="give-me-more-details">Give me more details!</h2>
+
+<p>OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and Services and whatnot.  If not, I would recommend you check out the <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a> or the <a href="http://www.apiman.io/latest/tutorials.html">Tutorials</a>.</p>
+
+<p>Once you have a service that you want to configure, go ahead and add a new policy.  Choose, for example, the <em>BASIC Authentication Policy</em> and configure it as seen in the following screenshot:</p>
+
+<p><img src="/blog/images/2015-05-08/basic-auth-config.png" alt="Example BASIC Authentication configuration" /></p>
+
+<p>Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:</p>
+
+<p><img src="/blog/images/2015-05-08/authorization-config.png" alt="Example Authorization configuration" /></p>
+
+<p>Once all is said and done, you should have two (at least) policies configured for your service.  It might look something like this in the UI:</p>
+
+<p><img src="/blog/images/2015-05-08/auth-policies.png.png" alt="Example policy list" /></p>
+
+<p>If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:</p>
+
+<ul>
+  <li><strong>Resource Path</strong>: /.*</li>
+  <li><strong>Verb/action</strong>: *</li>
+  <li><strong>Required Role</strong>: <your-role></your-role></li>
+</ul>
+
+<p>Good luck and come find us on the mailing list or IRC if you have any trouble!</p>
+
+<p>/post</p>
+
+  </article>
+
 </div>
 
       </div>
