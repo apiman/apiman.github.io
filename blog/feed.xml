@@ -4,10 +4,10 @@
     <title>apiman blog</title>
     <description>The apiman project brings an open source development methodology to  API Management, coupling a rich API design &amp; configuration layer with a blazingly fast runtime.  This is the official apiman blog, where we discuss....whatever we&#39;re thinking about!
 </description>
-    <link>http://apiman.io/blog//</link>
-    <atom:link href="http://apiman.io/blog//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 May 2015 07:29:56 -0400</pubDate>
-    <lastBuildDate>Fri, 08 May 2015 07:29:56 -0400</lastBuildDate>
+    <link>http://apiman.io/blog/</link>
+    <atom:link href="http://apiman.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 08 May 2015 08:00:55 -0400</pubDate>
+    <lastBuildDate>Fri, 08 May 2015 08:00:55 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Thu, 07 May 2015 13:07:15 -0400</pubDate>
-        <link>http://apiman.io/blog//jekyll/update/2015/05/07/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://apiman.io/blog//jekyll/update/2015/05/07/welcome-to-jekyll.html</guid>
+        <link>http://apiman.io/blog/jekyll/update/2015/05/07/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://apiman.io/blog/jekyll/update/2015/05/07/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
