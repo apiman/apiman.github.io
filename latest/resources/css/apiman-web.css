@@ -56,6 +56,16 @@ body.overview {
   color: white;
 }
 
+
+#blog .blog-content img {
+  padding: 15px;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 3px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 #content {
 }
 
