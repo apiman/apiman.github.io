@@ -6,9 +6,86 @@
 </description>
     <link>http://apiman.io/blog/</link>
     <atom:link href="http://apiman.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 May 2015 10:34:13 -0400</pubDate>
-    <lastBuildDate>Fri, 08 May 2015 10:34:13 -0400</lastBuildDate>
+    <pubDate>Fri, 08 May 2015 14:07:05 -0400</pubDate>
+    <lastBuildDate>Fri, 08 May 2015 14:07:05 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Authorization, good god, what is it good for?</title>
+        <description>&lt;p&gt;I want to talk about how Authorization currently works in apiman, because it’s
+a little bit more loosely coupled than you might expect.  Note that at some 
+point in the future we’re going to be renovating how policies are defined and
+configured in the API Manager UI.  But until then, you can refer to this blog
+post for an overview of how to configure Authorization!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;I won’t bury the lead - the key to getting Authorization to work is understanding
+that it &lt;em&gt;only&lt;/em&gt; works together with Authentication.  First you must add and 
+configure a compatible &lt;em&gt;Authentication&lt;/em&gt; policy, which will be responsible for 
+extracting the user’s roles and passing them along to the Authorization policy.&lt;/p&gt;
+
+&lt;h2 id=&quot;define-your-terms-sir&quot;&gt;Define your terms, sir!&lt;/h2&gt;
+&lt;p&gt;Let’s make sure we’re on the same page with respect to terminology, shall we?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Authorization&lt;/strong&gt;: the act of ensuring that the authenticated user has &lt;em&gt;permission&lt;/em&gt; to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-does-this-work-in-apiman&quot;&gt;How does this work in apiman?&lt;/h2&gt;
+
+&lt;p&gt;I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.&lt;/p&gt;
+
+&lt;p&gt;Basically you need to do the following two things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy&lt;/li&gt;
+  &lt;li&gt;Add and configure an Authorization Policy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it in a nutshell!&lt;/p&gt;
+
+&lt;h2 id=&quot;give-me-more-details&quot;&gt;Give me more details!&lt;/h2&gt;
+
+&lt;p&gt;OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and Services and whatnot.  If not, I would recommend you check out the &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;User Guide&lt;/a&gt; or the &lt;a href=&quot;http://www.apiman.io/latest/tutorials.html&quot;&gt;Tutorials&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once you have a service that you want to configure, go ahead and add a new policy.  Choose, for example, the &lt;em&gt;BASIC Authentication Policy&lt;/em&gt; and configure it as seen in the following screenshot:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-05-08/basic-auth-config.png&quot; alt=&quot;Example BASIC Authentication configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-05-08/authorization-config.png&quot; alt=&quot;Example Authorization configuration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all is said and done, you should have two (at least) policies configured for your service.  It might look something like this in the UI:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-05-08/auth-policies.png.png&quot; alt=&quot;Example policy list&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Resource Path&lt;/strong&gt;: /.*&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Verb/action&lt;/strong&gt;: *&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Required Role&lt;/strong&gt;: &lt;your-role&gt;&lt;/your-role&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Good luck and come find us on the mailing list or IRC if you have any trouble!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 May 2015 09:15:15 -0400</pubDate>
+        <link>http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization.html</link>
+        <guid isPermaLink="true">http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization.html</guid>
+        
+        
+        <category>authorization</category>
+        
+        <category>authentication</category>
+        
+        <category>policy</category>
+        
+      </item>
     
       <item>
         <title>Welcome to the apiman blog!</title>
