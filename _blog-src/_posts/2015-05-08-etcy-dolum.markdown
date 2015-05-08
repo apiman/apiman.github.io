@@ -9,15 +9,13 @@ In hac habitasse platea dictumst. Integer efficitur, risus sit amet placerat pel
 
 <!--more-->
 
-----
-<div id="content" class="row tbd">
-    <div class="col-lg-12" style="margin-bottom: 35px">
-        <h1 class="section-header">Blog</h1>
-        <article class="post-content">
-          {{ content }}
-        </article>
+    <div id="content" class="row tbd">
+        <div class="col-lg-12" style="margin-bottom: 35px">
+            <h1 class="section-header">Blog</h1>
+            <article class="post-content">
+              {{ content }}
+            </article>
+        </div>
     </div>
-</div>
-----
 
 Generated 5 paragraphs, 455 words, 3111 bytes of Lorem Ipsum
