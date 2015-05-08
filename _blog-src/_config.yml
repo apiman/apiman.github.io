@@ -1,0 +1,17 @@
+# Site settings
+title: apiman blog
+email: apiman-user@lists.jboss.org
+description: > # this means to ignore newlines until "baseurl:"
+  The apiman project brings an open source development methodology to 
+  API Management, coupling a rich API design & configuration layer with
+  a blazingly fast runtime.  This is the official apiman blog, where
+  we discuss....whatever we're thinking about!
+baseurl: "/blog/"
+url: "http://apiman.io" # the base hostname & protocol for your site
+twitter_username: apiman_io
+github_username: apiman
+
+# Build settings
+markdown: kramdown
+
+destination: ../blog
