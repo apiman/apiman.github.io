@@ -5,14 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Authorization, good god, what is it good for?</title>
-  <meta name="description" content="I want to talk about how Authorization currently works in apiman, because it’sa little bit more loosely coupled than you might expect.  Note that at some poi...">
+  <title>Authorization: good god, what is it good for?</title>
+  <meta name="description" content="Quite a bit, actually.  :)I want to talk about how Authorization currently works in apiman, because it’sa little bit more loosely coupled than you might expe...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
   <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.1.2.Final" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.1.2.Final" rel="stylesheet">
+  <link href="/blog/css/highlight.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -110,14 +111,16 @@
         <div class="post">
 
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization, good god, what is it good for?</h1>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization: good god, what is it good for?</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
   </header>
 
   <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>I want to talk about how Authorization currently works in apiman, because it’s
+    <p>Quite a bit, actually.  :)</p>
+
+<p>I want to talk about how Authorization currently works in apiman, because it’s
 a little bit more loosely coupled than you might expect.  Note that at some 
 point in the future we’re going to be renovating how policies are defined and
 configured in the API Manager UI.  But until then, you can refer to this blog

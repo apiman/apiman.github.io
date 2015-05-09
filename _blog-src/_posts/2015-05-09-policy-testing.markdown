@@ -49,9 +49,6 @@ public class MySimplePolicy implements IPolicy {
         }
     }
 
-    /**
-     * @see io.apiman.gateway.engine.policy.IPolicy#apply(io.apiman.gateway.engine.beans.ServiceResponse, io.apiman.gateway.engine.policy.IPolicyContext, java.lang.Object, io.apiman.gateway.engine.policy.IPolicyChain)
-     */
     @Override
     public void apply(ServiceResponse response, IPolicyContext context, Object config,
             IPolicyChain<ServiceResponse> chain) {
