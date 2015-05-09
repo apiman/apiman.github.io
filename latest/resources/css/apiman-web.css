@@ -71,6 +71,10 @@ body.overview {
   margin-top: 40px;
 }
 
+#blog .blog-content p {
+  margin: 0px 0px 20px;
+}
+
 #content {
 }
 

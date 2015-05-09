@@ -151,6 +151,29 @@ test to respond in a certain way.  To accomplish this all you need to do is use 
 `IPolicyTestBackEndService` interface.  You do that, and we'll use your simulated
 back end service for the test instead of the echo service!  :)
 
+What would that look like?  Something like this:
+
+{% highlight java %}
+@TestingPolicy(MySimplePolicy.class)
+public class MyTestPolicyTest1 extends ApimanPolicyTest {
+
+    @Test
+    @Configuration("{}")
+    @BackEndService(MyCustomBackEndServiceImpl.class)
+    public void testGet() throws Throwable {
+        // Send a test HTTP request to the service (resulting in executing the policy).
+        PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
+                .header("X-Test-Name", "testGet"));
+
+        // Now do some assertions on the result!
+        MyCustomBackEndServiceResponseBean entity = response.entity(MyCustomBackEndServiceResponseBean.class);
+        
+        // Do some more assertions here using the entity from above!
+    }
+
+}
+{% endhighlight %}
+
 Alright - if you made it this far thanks for reading!!
 
 /post
