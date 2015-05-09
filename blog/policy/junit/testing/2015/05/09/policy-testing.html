@@ -258,6 +258,27 @@ test to respond in a certain way.  To accomplish this all you need to do is use 
 <code>IPolicyTestBackEndService</code> interface.  You do that, and we’ll use your simulated
 back end service for the test instead of the echo service!  :)</p>
 
+<p>What would that look like?  Something like this:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@TestingPolicy</span><span class="o">(</span><span class="n">MySimplePolicy</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyTestPolicyTest1</span> <span class="kd">extends</span> <span class="n">ApimanPolicyTest</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@Configuration</span><span class="o">(</span><span class="s">&quot;{}&quot;</span><span class="o">)</span>
+    <span class="nd">@BackEndService</span><span class="o">(</span><span class="n">MyCustomBackEndServiceImpl</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+        <span class="c1">// Send a test HTTP request to the service (resulting in executing the policy).</span>
+        <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">&quot;/some/resource&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&quot;X-Test-Name&quot;</span><span class="o">,</span> <span class="s">&quot;testGet&quot;</span><span class="o">));</span>
+
+        <span class="c1">// Now do some assertions on the result!</span>
+        <span class="n">MyCustomBackEndServiceResponseBean</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">entity</span><span class="o">(</span><span class="n">MyCustomBackEndServiceResponseBean</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        
+        <span class="c1">// Do some more assertions here using the entity from above!</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre></div>
+
 <p>Alright - if you made it this far thanks for reading!!</p>
 
 <p>/post</p>
