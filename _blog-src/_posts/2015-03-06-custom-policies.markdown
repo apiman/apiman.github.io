@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "An Impatient New User's Introduction to API Management with JBoss apiman 1.0"
+title:  "Customizing JBoss apiman Through Policy Plugins"
 date:   2015-03-06 10:22:00
 author: Len DiMaggio
 categories: plugins policies maven 
