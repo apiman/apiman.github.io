@@ -8,6 +8,8 @@ categories: rest api automation
 
  In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman. 
 
+<!--more-->
+
 ## Introduction
 
  It's inevitable that, after you work with a product's UI for a while that you encounter tasks that are better suited to a scripting or batch interface. For example, if you have to perform a similar task for a large of related data items, the time that it can require to perform these tasks through an interactive UI can be prohibitive. Also, it's easy for repetitive tasks to become error prone as you can lose focus, even if you are working in a well designed and easy to use interface such as apiman.
@@ -22,14 +24,16 @@ Like a lot of things with JBoss open source software, installing the REST API is
 
 We covered installing apiman in the first article in this series (see: http://java.dzone.com/articles/impatient-new-users), so we won't repeat that information here. A minimal set of install instructions are always available on the apiman site (http://www.apiman.io/latest/). The current set of instructions as of this writing are:
 
-     mkdir ~/apiman-1.1.2.Final  
-     cd ~/apiman-1.1.2.Final  
-     wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
-     wget http://downloads.jboss.org/overlord/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
-     unzip wildfly-8.2.0.Final.zip  
-     unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
-     cd wildfly-8.2.0.Final  
-     ./bin/standalone.sh -c standalone-apiman.xml  
+{% highlight bash %}
+mkdir ~/apiman-1.1.2.Final  
+cd ~/apiman-1.1.2.Final  
+wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
+wget http://downloads.jboss.org/overlord/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
+unzip wildfly-8.2.0.Final.zip  
+unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
+cd wildfly-8.2.0.Final  
+./bin/standalone.sh -c standalone-apiman.xml  
+{% endhighlight %}
 
 Now that our apiman server is up and running, we can start to access the API Manager REST services API. However, before we start placing calls to services through the REST API, let’s take a look at how the API is organized. 
 
@@ -96,10 +100,12 @@ And the result is:
 
 As we mentioned earlier in this article, the responses returned by calls to the REST API are in in the form of JSON. In the case of our call to the http://localhost:8080/apiman/system/status endpoint, the expected format of the response is:
 
-    {
-        version:string
-        up:boolean
-    }
+{% highlight json %}
+{
+    version : string
+    up : boolean
+}
+{% endhighlight %}
 
 Let’s carry on by looking at a more extensive example, where we use the REST API to automate a task that would be tedious if performed in the apiman Management UI.
 
@@ -111,59 +117,61 @@ The coding for this example is simple. All you have to do is account for the enc
 
 Here’s an example program with an ice hockey flavor - the highlights are noted below:
 
-    1:  package apimanExample; 
-    2:  import java.io.IOException;  
-    3:  import java.io.OutputStreamWriter;  
-    4:  import java.net.HttpURLConnection;  
-    5:  import java.net.URL;  
-    6:  import java.nio.charset.StandardCharsets;  
-    7:  import java.util.Base64;  
+{% highlight java linenos %}
+package apimanExample; 
+import java.io.IOException;  
+import java.io.OutputStreamWriter;  
+import java.net.HttpURLConnection;  
+import java.net.URL;  
+import java.nio.charset.StandardCharsets;  
+import java.util.Base64;  
     
-    8:  public class SimplePutOrg {  
+public class SimplePutOrg {  
     
-    9:    public static void main(String[] args) throws Exception {  
+    public static void main(String[] args) throws Exception {  
     
-    10:     String [ ] [ ] originalSix = {  
-    11:         { "Boston", "Chicago", "Detroit", "Montreal", "New York", "Toronto"},  
-    12:         { "Bruins", "BlackHawks", "Red Wings", "Canadiens", "Rangers", "Maple Leafs"}  
-    13:     };  
-    14:     for (int i = 0; i < 6; i++) {  
-    15:       System.out.println ("Creating new apiman org for: " + originalSix [0][i] + ":" + originalSix [1][i]);  
-    16:       System.out.println ("Return code = " + createNewOrg (originalSix [0][i], originalSix [1][i]));  
-    17:     }  
-    18:    }  
+        String [ ] [ ] originalSix = {  
+            { "Boston", "Chicago", "Detroit", "Montreal", "New York", "Toronto"},  
+            { "Bruins", "BlackHawks", "Red Wings", "Canadiens", "Rangers", "Maple Leafs"}  
+        };
+        for (int i = 0; i < 6; i++) {  
+            System.out.println ("Creating new apiman org for: " + originalSix [0][i] + ":" + originalSix [1][i]);  
+            System.out.println ("Return code = " + createNewOrg (originalSix [0][i], originalSix [1][i]));  
+        }
+    }  
    
-    19:    private static int createNewOrg (String newOrgName, String newOrgDescription) throws IOException {  
-    20:      URL url = new URL("http://localhost:8080/apiman/organizations");  
-    21:      HttpURLConnection connection = (HttpURLConnection) url.openConnection();  
-   
-    22:      Base64.Encoder encoder = Base64.getEncoder();  
-    23:      String normalString = "admin:admin123!";  
-    24:      String encodedString = encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));  
+    private static int createNewOrg (String newOrgName, String newOrgDescription) throws IOException {  
+        URL url = new URL("http://localhost:8080/apiman/organizations");  
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();  
+
+        Base64.Encoder encoder = Base64.getEncoder();  
+        String normalString = "admin:admin123!";  
+        String encodedString = encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));  
+
+        connection.setRequestProperty("Authorization", "Basic "  + encodedString);  
+        connection.setRequestMethod("POST");  
+        connection.setDoOutput(true);  
+        connection.setRequestProperty("Content-Type", "application/json");  
+        connection.setRequestProperty("Accept", "application/json");  
     
-    25:      connection.setRequestProperty("Authorization", "Basic "  + encodedString);  
-    26:      connection.setRequestMethod("POST");  
-    27:      connection.setDoOutput(true);  
-    28:      connection.setRequestProperty("Content-Type", "application/json");  
-    29:      connection.setRequestProperty("Accept", "application/json");  
+        OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());  
+        osw.write(String.format("{\"name\":\"" + newOrgName + " a new org\",\"description\":\"" + newOrgDescription + "\"}"));  
+        osw.flush();  
+        osw.close();  
     
-    30:      OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());  
-    31:      osw.write(String.format("{\"name\":\"" + newOrgName + " a new org\",\"description\":\"" + newOrgDescription + "\"}"));  
-    32:      osw.flush();  
-    33:      osw.close();  
-    
-    34:      return connection.getResponseCode();     
-    35:    }  
-    36:  }  
+        return connection.getResponseCode();     
+    }  
+}
+{% endhighlight %}
 
 Code highlights:
 
-* Lines 10-13: Here's where we define the test data. For this example, we'll use the National Hockey League's "original 6" teams. 
-* Line 20: Here's the URL for the service to which we'll connect to create the new organizations.
-* Lines 22-24 - Here's where we set up the encoding for the BASIC authorization.
-* Lines 25-29 - And here's where we create the HttpURLConnection that we will use to connect to the service.
-* Line 26: Note that we will be performing a POST operation. 
-* Lines 30-33 - And finally, here's where we connect to the service and send our POST requests to create the new organizations.
+* Lines 13-16: Here's where we define the test data. For this example, we'll use the National Hockey League's "original 6" teams. 
+* Line 24: Here's the URL for the service to which we'll connect to create the new organizations.
+* Lines 27-29 - Here's where we set up the encoding for the BASIC authorization.
+* Lines 31-35 - And here's where we create the HttpURLConnection that we will use to connect to the service.
+* Line 32: Note that we will be performing a POST operation. 
+* Lines 37-40 - And finally, here's where we connect to the service and send our POST requests to create the new organizations.
 
 When we run this example, the following output indicates that the calls to the service through the REST API were successful, based on the return code of 200:
 
@@ -198,17 +206,4 @@ And finally, here are the organizations as displayed in the apiman Management UI
 ##In Conclusion
 
 The architecture of the apiman Management UI is that the UI is built on top of a REST API. This architecture makes it possible for you to directly access the services exposed by the API, and enables you to automate the tasks that you perform in the UI.
-
-##Author Acknowledgements
-
-As always, the author thanks the members of the apiman team (especially Eric Wittman) for their input and for their efforts in creating apiman!
-
-
-
-
-==================
-
-![Example BASIC Authentication configuration](/blog/images/2015-05-08/basic-auth-config.png)
-
-![Example Authorization configuration](/blog/images/2015-05-08/authorization-config.png)
 
