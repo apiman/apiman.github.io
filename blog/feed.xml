@@ -6,9 +6,79 @@
 </description>
     <link>http://apiman.io/blog/</link>
     <atom:link href="http://apiman.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 May 2015 14:11:15 -0400</pubDate>
-    <lastBuildDate>Tue, 19 May 2015 14:11:15 -0400</lastBuildDate>
+    <pubDate>Tue, 02 Jun 2015 23:24:51 -0400</pubDate>
+    <lastBuildDate>Tue, 02 Jun 2015 23:24:51 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>We got the moves like swagger!</title>
+        <description>&lt;p&gt;One of the weaknesses we’ve had in apiman until now is that service providers didn’t have
+any way to document how to consume their services.  Well that has all changed with version
+1.1.3.Final.  Now you can upload a Swagger spec document for your service.  If you do, 
+consumers will be able to browse your service documentation directly in the apiman UI.&lt;/p&gt;
+
+&lt;p&gt;I think we can all agree that this is a welcome change and really improves the usability
+of the system, particularly from the perspective of the application developer (aka the
+service consumer).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;adding-a-service-definition&quot;&gt;Adding a Service Definition&lt;/h2&gt;
+&lt;p&gt;As a service provider, the only thing you need to do is add a service definition to your
+service.  This is simple - just navigate to the new “Definition” tab in your service.
+There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
+definition type to Swagger (JSON), and don’t forget to click Save!&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-swagger-spec&quot;&gt;What is a Swagger spec?&lt;/h2&gt;
+&lt;p&gt;So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
+RESTful web service.  A Swagger spec is a JSON document that describes everything
+about your RESTful API, including (but not limited to):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;API meta-data such as Name and Description&lt;/li&gt;
+  &lt;li&gt;Resource Paths and the Operations/Methods they support&lt;/li&gt;
+  &lt;li&gt;Input/Output types&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information I recommend navigating to the &lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger Project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-this-help-my-consumers&quot;&gt;How does this help my consumers?&lt;/h2&gt;
+&lt;p&gt;Once you’ve got a Swagger spec created and added to your service, your service 
+consumers will be able to browse live documentation right from the apiman UI.  This
+information will be available via a new “View Service Definition” link available on
+the consumer’s “Service Details” page (the same page that consumers are shown when 
+they have searched for a service).  Here’s an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-02/service-details.png&quot; alt=&quot;Service Details&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A service consumer can see that there is a service definition they can click on, which
+will give them a ton of information about how to use the service.  In the future, we
+plan to allow consumers to do all sorts of interesting things with the Swagger spec.
+For example, we can help consumers generate a client SDK in a variety of languages.
+We can also allow them to simulate API calls right from the apiman UI - so they can
+see what to expect.  But for right now, we simply show live documentation about the
+service as described by the Swagger spec definition:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-02/service-def.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As always, thanks for making it to the end of my ramblings!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Jun 2015 05:04:45 -0400</pubDate>
+        <link>http://apiman.io/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html</link>
+        <guid isPermaLink="true">http://apiman.io/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html</guid>
+        
+        
+        <category>api-manager</category>
+        
+        <category>swagger</category>
+        
+        <category>service</category>
+        
+        <category>ui</category>
+        
+      </item>
     
       <item>
         <title>The JBoss apiman API Manager REST services API</title>
@@ -30,12 +100,12 @@
 
 &lt;p&gt;We covered installing apiman in the first article in this series (see: http://java.dzone.com/articles/impatient-new-users), so we won’t repeat that information here. A minimal set of install instructions are always available on the apiman site (http://www.apiman.io/latest/). The current set of instructions as of this writing are:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/apiman-1.1.3.Final  
-&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/apiman-1.1.3.Final  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/apiman-1.1.2.Final  
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/apiman-1.1.2.Final  
 wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
-wget http://downloads.jboss.org/overlord/apiman/1.1.3.Final/apiman-distro-wildfly8-1.1.3.Final-overlay.zip  
+wget http://downloads.jboss.org/overlord/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
 unzip wildfly-8.2.0.Final.zip  
-unzip -o apiman-distro-wildfly8-1.1.3.Final-overlay.zip -d wildfly-8.2.0.Final  
+unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;wildfly-8.2.0.Final  
 ./bin/standalone.sh -c standalone-apiman.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
