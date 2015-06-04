@@ -6,8 +6,8 @@
 </description>
     <link>http://apiman.io/blog/</link>
     <atom:link href="http://apiman.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jun 2015 23:27:14 -0400</pubDate>
-    <lastBuildDate>Tue, 02 Jun 2015 23:27:14 -0400</lastBuildDate>
+    <pubDate>Thu, 04 Jun 2015 11:48:32 -0400</pubDate>
+    <lastBuildDate>Thu, 04 Jun 2015 11:48:32 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -59,7 +59,7 @@ We can also allow them to simulate API calls right from the apiman UI - so they 
 see what to expect.  But for right now, we simply show live documentation about the
 service as described by the Swagger spec definition:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-02/service-def.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-02/service-definition.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As always, thanks for making it to the end of my ramblings!&lt;/p&gt;
 
