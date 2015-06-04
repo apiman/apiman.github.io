@@ -77,7 +77,7 @@ This should return some JSON similar to the following:
 }
 ```
 
-Notice that the OAuth2 token we're interested in is contained within the `access_token` field, with useful ancillary information about token validity and refreshing. If we base64 decode the token, we can see a lot interesting information, including the `echomiester` role defined on `rincewind`:
+Notice that the OAuth2 token we're interested in is contained within the `access_token` field, with useful ancillary information about token validity and refreshing. If we base64 decode the token, we can see a lot interesting information, including the `echomiester` realm role defined on `rincewind`:
 
 ```json
 {
@@ -110,11 +110,11 @@ Notice that the OAuth2 token we're interested in is contained within the `access
 }
 ```
 
-This demonstrates one of the most useful attributes of OAuth2: all of the information required to validate a request is contained within the token itself.
+This demonstrates one OAuth2's most useful attributes: all the information required to validate a request is contained within the token itself.
 
 ### Apiman OAuth2 Policy
 
-First, log into apiman, and **Create a New Organization**; let's call it _Newcastle_. Select the **Services** tab, and add a **New Service**; we'll name this one **EchoService** and then **Create Service**.
+First, log into apiman, and **Create a New Organization**; let's call it ***Newcastle***. Select the **Services** tab, and add a **New Service**; we'll name this one ***EchoService*** and then **Create Service**.
 
 Select the **Implementation** tab, and set the endpoint to our echo service, `http://localhost:8080/services/echo`. Save and move onto the **Plans** tab, where you should opt to **Make this service public**. After saving, we can move onto the **Policies** tab, where the interesting stuff starts.
 
@@ -135,9 +135,15 @@ https://localhost:8443/apiman-gateway/Newcastle/EchoService/1.0
 
 Let's test our setup with cURL to see whether our request is _denied_ if we don't use a token:
 
-```
+```ShellSession
 [msavy@mmbp tmp]$ curl -k  https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoService/1.0
-{"type":"Authentication","failureCode":11005,"responseCode":401,"message":"OAuth2 'Authorization' header or 'access_token' query parameter must be provided.","headers":{}}
+{
+    "type": "Authentication",
+    "failureCode": 11005,
+    "responseCode": 401,
+    "message": "OAuth2 'Authorization' header or 'access_token' query parameter must be provided.",
+    "headers": {}
+}
 ```
 
 Excellent, it all seems to be working! Notice that we're using self-signed certificates for this demo, so the `-k` flag will skip certificate validation.
@@ -184,7 +190,7 @@ We're going to develop our example a little bit further. At present, we simply h
 
 The more observant readers will note that we have already added two of the required elements when we imported the realm into Keycloak; namely, a user `rincewind` and a realm role `echomeister`.
 
-If we navigate back to the **EchoService** service in the apiman UI, we can create a **New Version**. We'll call it __2.0__ and clone the previous configuration. Moving over to the **Policies** tab again, we **Add Policy** and select **Authorization Policy** from the drop-down.
+If we navigate back to the ***EchoService*** service in the apiman UI, we can create a **New Version**. We'll call it ***2.0*** and clone the previous configuration. Moving over to the **Policies** tab again, we **Add Policy** and select **Authorization Policy** from the drop-down.
 
 We're going to add two rules:
 
