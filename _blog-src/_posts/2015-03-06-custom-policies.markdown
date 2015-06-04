@@ -3,12 +3,12 @@ layout: post
 title:  "Customizing JBoss apiman Through Policy Plugins"
 date:   2015-03-06 10:22:00
 author: Len DiMaggio
-categories: plugins policies maven 
+categories: plugins policies development maven
 ---
 
 This is the second in a series of articles exploring API management with JBoss apiman. The first article
-was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman, 
-created users and organizations, and services, policies, contracts, and applications. In this article, 
+was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
+created users and organizations, and services, policies, contracts, and applications. In this article,
 we'll take the first step toward customizing apiman by creating new plugins to implement service policies.
 
 <!--more-->
@@ -91,7 +91,7 @@ In our example, the config-policyDef.json looks like this:
 }
 {% endhighlight %}
 
-We mentioned that since our example uses the JSON schema [http://json-schema.org/documentation.html](http://json-schema.org/documentation.html), we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy's JSON schema defines two properties: requestHeader and responseHeader. 
+We mentioned that since our example uses the JSON schema [http://json-schema.org/documentation.html](http://json-schema.org/documentation.html), we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy's JSON schema defines two properties: requestHeader and responseHeader.
 
 {% highlight json %}
 {  
