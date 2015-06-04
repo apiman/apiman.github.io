@@ -51,7 +51,7 @@ see what to expect.  But for right now, we simply show live documentation about 
 service as described by the Swagger spec definition:
 
 
-![Service Definition](/blog/images/2015-06-02/service-def.png)
+![Service Definition](/blog/images/2015-06-02/service-definition.png)
 
 
 As always, thanks for making it to the end of my ramblings!
