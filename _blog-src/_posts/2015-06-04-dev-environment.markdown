@@ -48,16 +48,16 @@ If you want to follow best practice, you should "fork" the apiman repository
 on github, then clone your forked copy.  Once you have used the github UI
 to fork the repository, you would do something like this:
 
-```shell
+{% highlight text %}
 git clone git@github.com:<YOUR-GITHUB-ID>/apiman.git
-```
+{% endhighlight %}
 
 I also recommend adding the upstream github repository as another remote
 so that you can easily pull in upstream changes:
 
-```shell
+{% highlight text %}
 git remote add upstream git@github.com:apiman/apiman.git
-```
+{% endhighlight %}
 
 ## Downloading and running Eclipse
 Alright - you've got the apiman code cloned on your local hard drive
@@ -81,9 +81,9 @@ to it specific to apiman development.  Go ahead and import the apiman code
 formatter specification.  You can find this file in the apiman code
 repository here:
 
-```
+{% highlight text %}
 apiman/tools/src/eclipse/apiman-eclipse-formatter.xml
-```
+{% endhighlight %}
 
 Import that file in the Eclipse Preferences dialog here:
 
@@ -122,18 +122,18 @@ Everything should now be loaded into Eclipse.  Now all you need is a quick
 way to run everything.  Of course you can *always* do a full rebuild via
 maven and use the "install-all-wildfly8" profile:
 
-```shell
+{% highlight text %}
 cd ~/git/apiman
 mvn clean install -Pinstall-all-wildfly8
-```
+{% endhighlight %}
 
 That will result in a full apiman environment installed in WildFly 8.  If you
 use this approach you can run apiman here:
 
-```shell
+{% highlight text %}
 cd ~/git/apiman/tools/server-all/target/wildfly-8.2.0.Final
 ./bin/standalone.sh --debug
-```
+{% endhighlight %}
 
 Then you can connect a remote debugger to WildFly and debug apiman from Eclipse.
 
@@ -169,7 +169,7 @@ UI code you'll need to use gulp.  We have documented how to do this here:
 Give that a quick read!  When it asks you to configure your new copy of the
 config.js file, it should look like this:
 
-```json
+{% highlight json %}
 var APIMAN_CONFIG_DATA = {
     "apiman" : {
         "version" : "1.1.0-SNAPSHOT",
@@ -193,7 +193,7 @@ var APIMAN_CONFIG_DATA = {
         }
     }
 };
-```
+{% endhighlight %}
 
 If you get it all set up properly you should be able to point your browser here:
 
