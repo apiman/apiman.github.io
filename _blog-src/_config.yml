@@ -19,3 +19,19 @@ kramdown:
 
 destination: ../blog
 excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-asciidoc
+  - asciidoctor-diagram
+
+asciidoc: asciidoctor
+asciidoc_ext: asciidoc,adoc,ad
+asciidoctor:
+  attributes:
+    - data-uri
+    - icons=font
+    - source-highlighter=highlight.js
+    #- source-highlighter=pygments
+    #- pygments-css=style
+
+
