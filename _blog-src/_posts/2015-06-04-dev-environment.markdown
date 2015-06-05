@@ -183,7 +183,7 @@ var APIMAN_CONFIG_DATA = {
         "header" : true
     },
     "api" : {
-        "endpoint" : "http://localhost:7071/apiman",
+        "endpoint" : "http://localhost:7070/apiman",
         "auth" : {
             "type" : "basic",
             "basic" : {
