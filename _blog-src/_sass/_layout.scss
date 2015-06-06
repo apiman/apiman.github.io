@@ -1,236 +1,132 @@
+$section-divider-colour: #efefed;
+
 /**
- * Site header
+ * Thanks, asciidoctor!
  */
-.site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
+// Asciidoctor's admonition stuff
+.admonitionblock > table {
+    border-collapse: separate;
+    border: 0;
+    background: none;
+    width: 100%;
+    margin-top: 1.8em;
+    margin-bottom: 1.8em;
 }
-
-.site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
+.admonitionblock > table td.icon {
+    text-align: center;
+    width: 80px;
+}
+.admonitionblock > table td.icon img {
+    max-width: none;
+}
+.admonitionblock > table td.icon .title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.admonitionblock > table td.content {
+    padding-left: 1.125em;
+    padding-right: 1.5em;
+    border-left: 1px solid $section-divider-colour;
+}
+.admonitionblock > table td.content >:last-child >:last-child {
     margin-bottom: 0;
-    float: left;
+}
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+td.content {
+    padding-left: 1.125em;
+    padding-right: 1.5em;
+
+    & > :last-child > :last-child {
+      margin-bottom: 0;
     }
 }
 
-.site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
+// Asciidoctor font-awesome stuff
+span.icon > .fa {
+  cursor: default;
 }
 
+.admonitionblock td.icon {
+  [class^="fa icon-"] {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    cursor: default;
+  }
 
+  .icon-note:before {
+    content: "\f05a";
+    //color: scale-color($primary-color, $lightness: $rainbow-lightness);
+    color: green;
+  }
 
-/**
- * Site footer
- */
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+  .icon-tip:before {
+    content: "\f0eb";
+    text-shadow: 1px 1px 2px rgba(155, 155, 0, .8);
+    color: #111;
+  }
+
+  .icon-warning:before {
+    content: "\f071";
+    //color: scale-color(darkorange, $lightness: $rainbow-lightness);
+    color: #BB5F18;
+  }
+
+  .icon-caution:before {
+    content: "\f06d";
+    //color: scale-color(orangered, $lightness: $rainbow-lightness);
+    color: #bf0000;
+  }
+
+  .icon-important:before {
+    content: "\f06a";
+    //color: scale-color(red, $lightness: $rainbow-lightness);
+    color: #243446;
+  }
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
+.conum[data-value] {
+  display: inline-block;
+  color: #fff !important;
+  //background-color: $body-font-color;
+  //@include radius(100px);
+  text-align: center;
+  font-size: 0.75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-style: normal;
+  font-weight: bold;
+
+  & * {
+    color: #fff !important;
+  }
+
+  & + b {
+    display: none;
+  }
+
+  &:after {
+    content: attr(data-value);
+  }
+
+  pre & {
+    position: relative;
+    top: -0.125em;
+  }
 }
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
+// hack to disallow syntax highlighting from changing the color
+b.conum * {
+  color: inherit !important;
 }
 
-.footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+// hack for when highlight.js adds a bogus element into DOM
+// QUESTION should we solve this w/ javascript instead?
+.conum:not([data-value]):empty {
+  display: none;
 }
 
-.footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-
-
-/**
- * Page content
- */
-.page-content {
-    padding: $spacing-unit 0;
-}
-
-.page-heading {
-    font-size: 20px;
-}
-
-.post-list {
-    margin-left: 0;
-    list-style: none;
-
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
-
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
-.post-link {
-    display: block;
-    font-size: 24px;
-}
-
-
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
-.post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
-}
-
-.post-content {
-    margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
+// Dividers between sections
+.sect1+.sect1 {
+    border-top: 1px solid $section-divider-colour;
 }

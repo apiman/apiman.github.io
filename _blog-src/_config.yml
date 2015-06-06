@@ -30,8 +30,11 @@ asciidoctor:
   attributes:
     - data-uri
     - icons=font
-    - source-highlighter=highlight.js
+    - source-highlighter=coderay
     #- source-highlighter=pygments
     #- pygments-css=style
 
+highlighter: coderay
 
+sass:
+  sass_dir: _sass

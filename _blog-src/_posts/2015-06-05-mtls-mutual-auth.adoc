@@ -48,7 +48,7 @@ digraph G {
     ServiceB[label="Service B", height=1];
     ServiceC[label="Service C", height=1];
 
-    Application -> Gateway [label="Unidirectional Auth", dir="both"];
+    Application -> Gateway [label="Gateway Auth Only", dir="both"];
     Application -> ServiceC [label="Not Authenticated Failure", style="dashed", color="red"]
 
     Gateway -> ServiceA [label="Mutual Auth", dir="both"];
@@ -173,13 +173,15 @@ Restart everything, and you should be ready to test it!
 
 When creating a service that is protected by mutual TLS you should set the *API Security* dropdown in the *Implementation* tab to `MTLS/Two-Way-SSL`:
 
-image::../images/2015-06-05/enable-mtls.png[]
+image::/images/2015-06-05/enable-mtls.png[]
 
-If things don't seem to be working quite how you expected, you'll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what's going on then you can pass the flag `-Djavax.net.debug=all`, which will print helpful debug info from Java's SSL subsystems onto the console.
+If things don't seem to be working quite how you expected, you'll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what's going on then you can pass the flag `-Djavax.net.debug=all`, which will print helpful debug info from https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html[Java's SSL subsystems] onto the console.
 
 For example:
 
-`./bin/standalone.sh -Djavax.net.debug=all -c standalone-apiman.xml`
+```ShellSession
+./bin/standalone.sh -Djavax.net.debug=all -c standalone-apiman.xml
+```
 
 == In Conclusion
 
