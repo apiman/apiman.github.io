@@ -34,7 +34,7 @@ asciidoctor:
     #- source-highlighter=pygments
     #- pygments-css=style
 
-highlighter: coderay
+#highlighter: coderay
 
 sass:
   sass_dir: _sass
