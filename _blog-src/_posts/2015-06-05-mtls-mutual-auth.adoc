@@ -29,7 +29,7 @@ Let's assume 'node' refers generically to a participant in our system, either a 
 
 There are two main elements we need to work with: *keystores*, which contain a node's private key material, and *truststores*, which contain public certificates instructing the node who it should trust.
 
-Ideally, each node should have its own keystore, whose key material should be signed by a *trusted certificate authority*; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA's certificate to our node's keystores, then _any_ certificate issued by it will be trusted by virtue of the issuer's authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.
+Ideally, each node should have its own keystore, whose key material is signed by a *trusted certificate authority*; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA's certificate to our node's keystores, then _any_ certificate issued by it will be trusted by virtue of the issuer's authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.
 
 It bears mentioning that any applicationsfootnote:[Applications are the users of our services, like browsers, mobile apps, etc] legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.
 
@@ -54,7 +54,6 @@ digraph G {
     Gateway -> ServiceA [label="Mutual Auth", dir="both"];
     Gateway -> ServiceB [label="Mutual Auth", dir="both"];
     Gateway -> ServiceC [label="Mutual Auth", dir="both"];
-
 }
 ----
 
@@ -69,8 +68,7 @@ CAUTION: Remember, this is just a quick blog demonstration; you need to take ext
 Let's create a simple shared truststore that we'll use on all of our nodes. We're going to imagine that we have an internal root CA called `apimanCA`, and that whomever controls it has taken http://vignette3.wikia.nocookie.net/en.futurama/images/3/33/No9man.png/revision/latest?cb=20100317031031[appropriate security precautions] to ensure no baddies get their certificates signed.
 
 ```ShellSession
-keytool -import -keystore shared_trust_store.jks -file apimanCA.cer
--alias apimanCA
+keytool -import -keystore shared_trust_store.jks -file apimanCA.cer -alias apimanCA
 ```
 
 That's the easy bit done, now onto key wrangling.
@@ -80,29 +78,27 @@ That's the easy bit done, now onto key wrangling.
 Each of our nodes needs its own keystore, which we can create using `keytool`, followed by generating a _certificate signing request_ (CSR), which we can then send to our CA to be signed:
 
 ```ShellSession
-keytool –keystore gateway_ks.jks –genkey –alias gateway -keyalg rsa
-keytool –keystore gateway_ks.jks –certreq –alias gateway –keyalg rsa
-–file gateway.csr
+keytool -keystore gateway_ks.jks -genkey -alias gateway -keyalg rsa
+keytool -keystore gateway_ks.jks -certreq -alias gateway -keyalg rsa -file gateway.csr
 
-keytool –keystore service_a_ks.jks –genkey –alias service_a -keyalg rsa
-keytool –keystore service_a_ks.jks –certreq –alias service_a –keyalg rsa
-–file service_a.csr
+keytool -keystore service_a_ks.jks -genkey -alias service_a -keyalg rsa
+keytool -keystore service_a_ks.jks -certreq -alias service_a -keyalg rsa -file service_a.csr
 ```
 
 Do the same for _each of your services_, and send off the `csr` files to be signed by CA (internal or otherwise). They should come back as certificate replies in one of several formats, import them back into their _corresponding keystores_:
 
 ```
-keytool –import –keystore gateway_ks.jks –file gateway.cer –alias gateway
-keytool –import –keystore service_a_ks.jks –file service_a.cer –alias service_a
+keytool -import -keystore gateway_ks.jks -file gateway.cer -alias gateway
+keytool -import -keystore service_a_ks.jks -file service_a.cer -alias service_a
 ```
 
 == Hooking it up
 
 Your services may not use Java, so you'll need to find the appropriate solution for enabling mutual TLS in your language's ecosystem. It doesn't really matter, as long as you have the appropriate certificates hooked in and have set **client authentication to required**.
 
-=== Gateway
+=== Gateway to Heaven
 
-It's easy peasy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let's edit `apiman.properties` on our gateway(s) with a few simple settings to test things out:
+It's easy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let's edit `apiman.properties` on our gateway(s) with a few simple settings to test things out:
 
 ```properties
 # ---------------------------------------------------------------------
@@ -124,11 +120,11 @@ apiman-gateway.connector-factory.tls.allowAnyHost=true
 
 The last option is to make our testing easier by removing hostname checks on the certificates, but you should disable that in production. Have a look at http://www.apiman.io/latest/installation-guide.html#_make_changes_to_apiman_properties_3[our setup guide] for a full list of options.
 
-=== Service is everything
+=== Service is Everything
 
-IMPORTANT: You must explicitly enable client authentication for any services you want protected by mutual TLS
+IMPORTANT: You must explicitly enable client authentication for any services you want protected by mutual TLS.
 
-Here's a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our _keystore_, _truststore_ with respective hard-to-guess passwords, and set `setNeedClientAuth(true)`:
+Here's a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our _keystore_ and _truststore_ with respective hard-to-guess passwords, and set `setNeedClientAuth(true)`:
 
 ```java
 public static void main(String... args) throws Exception {
@@ -137,13 +133,13 @@ public static void main(String... args) throws Exception {
 
       HttpConfiguration http_config = new HttpConfiguration();
       http_config.setSecureScheme("https");
-      http_config.setSecurePort(8443);
+      http_config.setSecurePort(8009);
 
       SslContextFactory sslContextFactory = new SslContextFactory();
-      sslContextFactory.setKeyStorePath("/Users/msavy/tmp/keys/service_ks.jks");
+      sslContextFactory.setKeyStorePath("/tmp/keys/service_a_ks.jks");
       sslContextFactory.setKeyStorePassword("password");
       sslContextFactory.setKeyManagerPassword("password");
-      sslContextFactory.setTrustStorePath("/Users/msavy/tmp/keys/shared_trust_store.jks");
+      sslContextFactory.setTrustStorePath("/tmp/keys/shared_trust_store.jks");
       sslContextFactory.setTrustStorePassword("password");
       // Important: Require client auth
       sslContextFactory.setNeedClientAuth(true);
@@ -153,7 +149,7 @@ public static void main(String... args) throws Exception {
 
       ServerConnector sslConnector = new ServerConnector(server, new SslConnectionFactory(
               sslContextFactory, "http/1.1"), new HttpConnectionFactory(https_config));
-      sslConnector.setPort(8443);
+      sslConnector.setPort(8009);
       server.addConnector(sslConnector);
       server.setHandler(new AbstractHandler() {
 
@@ -170,8 +166,21 @@ public static void main(String... args) throws Exception {
       server.start();
   }
 ```
-Pretty easy, isn't it!
 
 == Fire it up
 
-Restart everything, and you should be set to test it out.
+Restart everything, and you should be ready to test it!
+
+When creating a service that is protected by mutual TLS you should set the *API Security* dropdown in the *Implementation* tab to `MTLS/Two-Way-SSL`:
+
+image::../images/2015-06-05/enable-mtls.png[]
+
+If things don't seem to be working quite how you expected, you'll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what's going on then you can pass the flag `-Djavax.net.debug=all`, which will print helpful debug info from Java's SSL subsystems onto the console.
+
+For example:
+
+`./bin/standalone.sh -Djavax.net.debug=all -c standalone-apiman.xml`
+
+== In Conclusion
+
+Mutually authenticated TLS is a good way to ensure both client and server are who they claim to be before connecting to one another. If you need to prevent unauthorized direct access to your services, this is an option worth considering.
