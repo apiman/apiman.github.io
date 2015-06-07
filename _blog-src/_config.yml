@@ -10,6 +10,7 @@ baseurl: "/blog"
 url: "http://apiman.io" # the base hostname & protocol for your site
 twitter_username: apiman_io
 github_username: apiman
+timezone: America/New_York
 
 # Build settings
 markdown: kramdown
