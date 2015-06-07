@@ -2,7 +2,7 @@
 title: apiman blog
 email: apiman-user@lists.jboss.org
 description: > # this means to ignore newlines until "baseurl:"
-  The apiman project brings an open source development methodology to 
+  The apiman project brings an open source development methodology to
   API Management, coupling a rich API design & configuration layer with
   a blazingly fast runtime.  This is the official apiman blog, where
   we discuss....whatever we're thinking about!
@@ -14,5 +14,27 @@ github_username: apiman
 # Build settings
 markdown: kramdown
 
+# kramdown:
+#   input: GFM
+
 destination: ../blog
 excerpt_separator: <!--more-->
+
+gems:
+  - jekyll-asciidoc
+  - asciidoctor-diagram
+
+asciidoc: asciidoctor
+asciidoc_ext: asciidoc,adoc,ad
+asciidoctor:
+  attributes:
+    - imagesdir=/blog/images/generated
+    - imagesoutdir=/images/generated
+    - icons=font
+    - source-highlighter=coderay
+    - idprefix=
+    - idseparator=-
+    - linkattrs
+
+sass:
+  sass_dir: _sass
