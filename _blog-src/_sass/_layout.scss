@@ -1,5 +1,12 @@
 $section-divider-colour: #efefed;
 
+$admonition-content-color: #777;
+$admonition-note-color: green;
+$admonition-warning-color: #bb5f18;
+$admonition-caution-color: #bf0000;
+$admonition-important-color: #243446;
+
+
 /**
  * Thanks, asciidoctor!
  */
@@ -27,6 +34,7 @@ $section-divider-colour: #efefed;
     padding-left: 1.125em;
     padding-right: 1.5em;
     border-left: 1px solid $section-divider-colour;
+    color: $admonition-content-color;
 }
 .admonitionblock > table td.content >:last-child >:last-child {
     margin-bottom: 0;
@@ -56,7 +64,7 @@ span.icon > .fa {
   .icon-note:before {
     content: "\f05a";
     //color: scale-color($primary-color, $lightness: $rainbow-lightness);
-    color: green;
+    color: $admonition-note-color;
   }
 
   .icon-tip:before {
@@ -68,19 +76,19 @@ span.icon > .fa {
   .icon-warning:before {
     content: "\f071";
     //color: scale-color(darkorange, $lightness: $rainbow-lightness);
-    color: #BB5F18;
+    color: $admonition-warning-color;
   }
 
   .icon-caution:before {
     content: "\f06d";
     //color: scale-color(orangered, $lightness: $rainbow-lightness);
-    color: #bf0000;
+    color: $admonition-caution-color;
   }
 
   .icon-important:before {
     content: "\f06a";
     //color: scale-color(red, $lightness: $rainbow-lightness);
-    color: #243446;
+    color: $admonition-important-color;
   }
 }
 

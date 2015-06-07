@@ -28,11 +28,17 @@ asciidoc: asciidoctor
 asciidoc_ext: asciidoc,adoc,ad
 asciidoctor:
   attributes:
-    - data-uri
+    #- data-uri
+    - imagesdir=/blog/images/generated
+    - imagesoutdir=/images/generated
     - icons=font
     - source-highlighter=coderay
     #- source-highlighter=pygments
     #- pygments-css=style
+    - idprefix=
+    - idseparator=-
+    - linkattrs
+    #- imagesdir=..//images
 
 #highlighter: coderay
 
