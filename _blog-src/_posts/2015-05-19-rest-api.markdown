@@ -2,11 +2,11 @@
 layout: post
 title:  "The JBoss apiman API Manager REST services API"
 date:   2015-05-19 11:00:00
-author: Len DiMaggio
+author: len_dimaggio
 categories: rest api automation
 ---
 
- In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman. 
+ In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
 
 <!--more-->
 
@@ -16,7 +16,7 @@ categories: rest api automation
 
 One solution to this problem is to augment the UI with a command line or scripting interface. This can lead to a whole separate set of issues if the new interface is built on a different set of underlying routines than the UI. A better approach to allow access to the same routines in which the UI is constructed. This approach removes any duplication, and also enables you to replicate manual UI based tasks with automated or scripted tools.  
 
-JBoss apiman follows this second approach with its REST interface.  All the services provided by apiman in its Management UI are directly supported in the API Manager REST services API. You can also directly access these same services through the REST API. 
+JBoss apiman follows this second approach with its REST interface.  All the services provided by apiman in its Management UI are directly supported in the API Manager REST services API. You can also directly access these same services through the REST API.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ cd wildfly-8.2.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml  
 {% endhighlight %}
 
-Now that our apiman server is up and running, we can start to access the API Manager REST services API. However, before we start placing calls to services through the REST API, let’s take a look at how the API is organized. 
+Now that our apiman server is up and running, we can start to access the API Manager REST services API. However, before we start placing calls to services through the REST API, let’s take a look at how the API is organized.
 
 ##The Organization of the API
 
@@ -118,18 +118,18 @@ The coding for this example is simple. All you have to do is account for the enc
 Here’s an example program with an ice hockey flavor - the highlights are noted below:
 
 {% highlight java linenos %}
-package apimanExample; 
+package apimanExample;
 import java.io.IOException;  
 import java.io.OutputStreamWriter;  
 import java.net.HttpURLConnection;  
 import java.net.URL;  
 import java.nio.charset.StandardCharsets;  
 import java.util.Base64;  
-    
+
 public class SimplePutOrg {  
-    
+
     public static void main(String[] args) throws Exception {  
-    
+
         String [ ] [ ] originalSix = {  
             { "Boston", "Chicago", "Detroit", "Montreal", "New York", "Toronto"},  
             { "Bruins", "BlackHawks", "Red Wings", "Canadiens", "Rangers", "Maple Leafs"}  
@@ -139,7 +139,7 @@ public class SimplePutOrg {
             System.out.println ("Return code = " + createNewOrg (originalSix [0][i], originalSix [1][i]));  
         }
     }  
-   
+
     private static int createNewOrg (String newOrgName, String newOrgDescription) throws IOException {  
         URL url = new URL("http://localhost:8080/apiman/organizations");  
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();  
@@ -153,24 +153,24 @@ public class SimplePutOrg {
         connection.setDoOutput(true);  
         connection.setRequestProperty("Content-Type", "application/json");  
         connection.setRequestProperty("Accept", "application/json");  
-    
+
         OutputStreamWriter osw = new OutputStreamWriter(connection.getOutputStream());  
         osw.write(String.format("{\"name\":\"" + newOrgName + " a new org\",\"description\":\"" + newOrgDescription + "\"}"));  
         osw.flush();  
         osw.close();  
-    
-        return connection.getResponseCode();     
+
+        return connection.getResponseCode();
     }  
 }
 {% endhighlight %}
 
 Code highlights:
 
-* Lines 13-16: Here's where we define the test data. For this example, we'll use the National Hockey League's "original 6" teams. 
+* Lines 13-16: Here's where we define the test data. For this example, we'll use the National Hockey League's "original 6" teams.
 * Line 24: Here's the URL for the service to which we'll connect to create the new organizations.
 * Lines 27-29 - Here's where we set up the encoding for the BASIC authorization.
 * Lines 31-35 - And here's where we create the HttpURLConnection that we will use to connect to the service.
-* Line 32: Note that we will be performing a POST operation. 
+* Line 32: Note that we will be performing a POST operation.
 * Lines 37-40 - And finally, here's where we connect to the service and send our POST requests to create the new organizations.
 
 When we run this example, the following output indicates that the calls to the service through the REST API were successful, based on the return code of 200:
@@ -206,4 +206,3 @@ And finally, here are the organizations as displayed in the apiman Management UI
 ##In Conclusion
 
 The architecture of the apiman Management UI is that the UI is built on top of a REST API. This architecture makes it possible for you to directly access the services exposed by the API, and enables you to automate the tasks that you perform in the UI.
-

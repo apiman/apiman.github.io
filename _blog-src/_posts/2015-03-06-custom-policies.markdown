@@ -2,7 +2,7 @@
 layout: post
 title:  "Customizing JBoss apiman Through Policy Plugins"
 date:   2015-03-06 10:22:00
-author: Len DiMaggio
+author: len_dimaggio
 categories: plugins policies development maven
 ---
 

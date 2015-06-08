@@ -2,13 +2,13 @@
 layout: post
 title:  "Authorization: good god, what is it good for?"
 date:   2015-05-08 13:15:15
-author: Eric Wittmann
+author: eric_wittmann
 categories: authorization authentication policy
 ---
 Quite a bit, actually.  :)
 
 I want to talk about how Authorization currently works in apiman, because it's
-a little bit more loosely coupled than you might expect.  Note that at some 
+a little bit more loosely coupled than you might expect.  Note that at some
 point in the future we're going to be renovating how policies are defined and
 configured in the API Manager UI.  But until then, you can refer to this blog
 post for an overview of how to configure Authorization!
@@ -16,8 +16,8 @@ post for an overview of how to configure Authorization!
 <!--more-->
 
 I won't bury the lead - the key to getting Authorization to work is understanding
-that it *only* works together with Authentication.  First you must add and 
-configure a compatible *Authentication* policy, which will be responsible for 
+that it *only* works together with Authentication.  First you must add and
+configure a compatible *Authentication* policy, which will be responsible for
 extracting the user's roles and passing them along to the Authorization policy.
 
 ## Define your terms, sir!
