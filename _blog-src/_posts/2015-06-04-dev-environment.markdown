@@ -2,7 +2,7 @@
 layout: post
 title:  "Setting up your apiman development environment"
 date:   2015-06-04 09:04:45
-author: Eric Wittmann
+author: eric_wittmann
 categories: eclipse development maven
 ---
 For those of you who might be interested in hacking away at some core apiman code,

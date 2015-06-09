@@ -2,14 +2,14 @@
 layout: post
 title:  "A great way to test your custom apiman policy!"
 date:   2015-05-09 09:07:45
-author: Eric Wittmann
+author: eric_wittmann
 categories: policy junit testing
 ---
-If you have tried creating your own custom apiman policy, you may have had a little bit of 
+If you have tried creating your own custom apiman policy, you may have had a little bit of
 difficulty creating useful junit tests for it.  Many policies require various apiman
 runtime components to be available.  It can be super annoying trying to use something like
-mockito to create mock versions of everything your policy needs.  Even for simple policies 
-you really just want a quick and effective way to test the implementation within a 
+mockito to create mock versions of everything your policy needs.  Even for simple policies
+you really just want a quick and effective way to test the implementation within a
 reasonably "real world" harness.
 
 Well you've probably guessed by now that I'm about to show you how it's done!  (OK fine,
@@ -22,7 +22,7 @@ policy, using the new Policy Tester junit framework we've created.
 
 ## First you need a custom policy!
 
-If you haven't created a custom apiman policy yet, have a look at the 
+If you haven't created a custom apiman policy yet, have a look at the
 [Developer Guide](http://www.apiman.io/latest/developer-guide.html#_plugins) to
 learn how.
 
@@ -62,7 +62,7 @@ public class MySimplePolicy implements IPolicy {
 
 Now that you've got your policy, you need a quick and effective way to test it.  I also
 think it's important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using [Arquillian](http://arquillian.org/) 
+breakpoints to debug the code.  We explored using [Arquillian](http://arquillian.org/)
 to configure and publish a service with the custom policy to a running WildFly server.
 It actually works remarkably well, but the overhead of firing up a WildFly server just
 to test a single policy seemed excessive.  That work will likely lead into a separate
@@ -100,7 +100,7 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
         // Send a test HTTP request to the service (resulting in executing the policy).
         PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
                 .header("X-Test-Name", "testGet"));
-                
+
         // Now do some assertions on the result!
         Assert.assertEquals(200, response.code());
         EchoResponse entity = response.entity(EchoResponse.class);
@@ -121,7 +121,7 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
 Let me tell you!  For each test method in your junit test, we'll actually spin up a fully
 functional apiman API Gateway.  We'll also publish a test service that's configured with
 your custom policy (and using the policy configuration you specified in the `@Configuration`
-annotation).  After that, it's a simple matter of sending one or more simulated HTTP 
+annotation).  After that, it's a simple matter of sending one or more simulated HTTP
 requests to the gateway.  You do that by sending a `PolicyTestRequest` to the `send` method.
 Easy peasy!
 
@@ -136,15 +136,15 @@ we're using for the test needs to "invoke" a back-end service and return the res
 simulate this rather than actually going out and making a REST request.  By default, we
 create a simple Echo back-end service which bundles up all the information in the REST
 request (including anything your policy may have added to the request) and builds a JSON
-response that includes all that information.  This is handy because it allows you to 
-verify that, for example, any HTTP headers your policy added to the request actually 
+response that includes all that information.  This is handy because it allows you to
+verify that, for example, any HTTP headers your policy added to the request actually
 made it through to the back-end service.
 
 Now are you ready for an advanced topic?  If not I understand, you can just hit the Back
 button on your browser!
 
 Still here?  Great!  Another thing you can do is actually provide your own simulated
-back-end service.  This is necessary sometimes when your policy does something 
+back-end service.  This is necessary sometimes when your policy does something
 specific with, for example, the service response payload.  You may actually need your
 test to respond in a certain way.  To accomplish this all you need to do is use the
 `@BackEndService` annotation, providing a *Class* that implements the
@@ -167,7 +167,7 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
 
         // Now do some assertions on the result!
         MyCustomBackEndServiceResponseBean entity = response.entity(MyCustomBackEndServiceResponseBean.class);
-        
+
         // Do some more assertions here using the entity from above!
     }
 

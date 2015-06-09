@@ -2,15 +2,15 @@
 layout: post
 title:  "An Impatient New User's Introduction to API Management with JBoss apiman 1.0"
 date:   2015-01-09 09:15:00
-author: Len DiMaggio
+author: len_dimaggio
 categories: introduction overview
 ---
 
-Software application development models are evolutionary things. New technologies are always being created 
-and require new approaches. It's frequently the case today, that a service oriented architecture (SOA) model 
-is used and that the end product is a software service that can be used by applications. The explosion in 
-growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform 
-onto which applications are deployed. These applications are often built from services provided from multiple 
+Software application development models are evolutionary things. New technologies are always being created
+and require new approaches. It's frequently the case today, that a service oriented architecture (SOA) model
+is used and that the end product is a software service that can be used by applications. The explosion in
+growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform
+onto which applications are deployed. These applications are often built from services provided from multiple
 sources. The applications often consume these services through their APIs.
 
 OK, that's all interesting, but why does this matter?
@@ -19,30 +19,30 @@ OK, that's all interesting, but why does this matter?
 
 Here's why:
 
-If you are providing a service, you'd probably like to receive payment when it's used by an application. For 
-example, let's say that you've spent months creating a new service that provides incredibly accurate and 
-timely driving directions. You can imagine every mobile phone GPS app making use of your service someday. 
-That is, however, assuming that you can find a way to enforce a contract on consumers of the API and provide 
-them with a service level agreement (SLA). Also, you have to find a way to actually track consumers' use of 
-the API so that you can actually enforce that SLA. Finally, you have to have the means to update a service 
+If you are providing a service, you'd probably like to receive payment when it's used by an application. For
+example, let's say that you've spent months creating a new service that provides incredibly accurate and
+timely driving directions. You can imagine every mobile phone GPS app making use of your service someday.
+That is, however, assuming that you can find a way to enforce a contract on consumers of the API and provide
+them with a service level agreement (SLA). Also, you have to find a way to actually track consumers' use of
+the API so that you can actually enforce that SLA. Finally, you have to have the means to update a service
 and publish new versions of services.
 
-Likewise, if you are consuming a service, for example, if you want to build the killer app that will use that 
-cool new mapping service, you have to have the means to find the API, identify the API's endpoint, and 
+Likewise, if you are consuming a service, for example, if you want to build the killer app that will use that
+cool new mapping service, you have to have the means to find the API, identify the API's endpoint, and
 register your usage of the API with its provider.
 
 The approach that is followed to fulfill both service providers' and consumers' needs is...API Management.
 
 ## JBoss apiman 1.0
 
-apiman is JBoss' open source API Management system. apiman fulfills service API providers' and consumers' 
+apiman is JBoss' open source API Management system. apiman fulfills service API providers' and consumers'
 needs by implementing:
 
 * *API Manager* - The API Manager provides an easy way for API/service providers to use a web UI to define service contracts for their APIs, apply these contracts across multiple APIs, and control role-based user access and API versioning. These contracts can govern access to services and limits on the rate at which consumers can access services. The same UI enables API consumers to easily locate and access APIs.
 
 * *API Gateway* - The gateway applies the service contract policies of API Management by enforcing at runtime the rules defined in the contracts and tracking the service API consumers' use of the APIs for every request made to the services. The way that the API Gateway works is that the consumer of the service accesses the service through a URL that designates the API Gateway as a proxy for the service. If the policies defined to govern access to the service (see a later section in this post for a discussion of apiman polices), the API Gateway then proxies requests to the service's backend API implementation.
 
-The best way to understand API Management with apiman is to see it in action. In this post, we'll install 
+The best way to understand API Management with apiman is to see it in action. In this post, we'll install
 apiman 1.0, configure an API with contracts through the API Manager, and watch the API Gateway control access
 to the API and track its use.
 
@@ -199,7 +199,7 @@ As the service is being built into a .war file, you'll see output that looks lik
 [INFO] Scanning for projects...
 [INFO]
 [INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
-[INFO]   
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building apiman-quickstarts-echo-service 1.0.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
@@ -262,7 +262,7 @@ This output indicates that the URL of the deployed example service is:
 [a href="http://localhost:8080/apiman-echo" style="text-decoration: none;"]http://localhost:8080/apiman-echo
 {% endhighlight %}
 
-Remember, however, that this is the URL of the deployed example service if we access it directly. We'll refer to this as the "unmanaged service" as we are able to connect to the service directly, without going through the API Gateway.  The URL to access the service through the API Gateway ("the managed service") at runtime will be different. 
+Remember, however, that this is the URL of the deployed example service if we access it directly. We'll refer to this as the "unmanaged service" as we are able to connect to the service directly, without going through the API Gateway.  The URL to access the service through the API Gateway ("the managed service") at runtime will be different.
 
 Now that our example service is installed, it's time to install and configure our client to access the server.
 

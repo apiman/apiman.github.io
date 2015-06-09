@@ -112,12 +112,13 @@
 
     <div class="container" id="blog">
       <div class="blog-content">
-        <div class="post">
+        
 
+<div class="post">
   <header class="post-header" style="margin-top: 25px">
     <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization: good god, what is it good for?</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
   </header>
 
@@ -125,7 +126,7 @@
     <p>Quite a bit, actually.  :)</p>
 
 <p>I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some 
+a little bit more loosely coupled than you might expect.  Note that at some
 point in the future we’re going to be renovating how policies are defined and
 configured in the API Manager UI.  But until then, you can refer to this blog
 post for an overview of how to configure Authorization!</p>
@@ -133,8 +134,8 @@ post for an overview of how to configure Authorization!</p>
 <!--more-->
 
 <p>I won’t bury the lead - the key to getting Authorization to work is understanding
-that it <em>only</em> works together with Authentication.  First you must add and 
-configure a compatible <em>Authentication</em> policy, which will be responsible for 
+that it <em>only</em> works together with Authentication.  First you must add and
+configure a compatible <em>Authentication</em> policy, which will be responsible for
 extracting the user’s roles and passing them along to the Authorization policy.</p>
 
 <h2 id="define-your-terms-sir">Define your terms, sir!</h2>

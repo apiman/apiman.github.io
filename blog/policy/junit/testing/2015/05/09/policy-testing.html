@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
   <title>A great way to test your custom apiman policy!</title>
-  <meta name="description" content="If you have tried creating your own custom apiman policy, you may have had a little bit of difficulty creating useful junit tests for it.  Many policies requ...">
+  <meta name="description" content="If you have tried creating your own custom apiman policy, you may have had a little bit ofdifficulty creating useful junit tests for it.  Many policies requi...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -112,21 +112,22 @@
 
     <div class="container" id="blog">
       <div class="blog-content">
-        <div class="post">
+        
 
+<div class="post">
   <header class="post-header" style="margin-top: 25px">
     <h1 style="color: #666; font-weight: bold" class="post-title section-header">A great way to test your custom apiman policy!</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 9, 2015</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> policy, junit, and testing</span>
   </header>
 
   <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>If you have tried creating your own custom apiman policy, you may have had a little bit of 
+    <p>If you have tried creating your own custom apiman policy, you may have had a little bit of
 difficulty creating useful junit tests for it.  Many policies require various apiman
 runtime components to be available.  It can be super annoying trying to use something like
-mockito to create mock versions of everything your policy needs.  Even for simple policies 
-you really just want a quick and effective way to test the implementation within a 
+mockito to create mock versions of everything your policy needs.  Even for simple policies
+you really just want a quick and effective way to test the implementation within a
 reasonably “real world” harness.</p>
 
 <p>Well you’ve probably guessed by now that I’m about to show you how it’s done!  (OK fine,
@@ -139,7 +140,7 @@ policy, using the new Policy Tester junit framework we’ve created.</p>
 
 <h2 id="first-you-need-a-custom-policy">First you need a custom policy!</h2>
 
-<p>If you haven’t created a custom apiman policy yet, have a look at the 
+<p>If you haven’t created a custom apiman policy yet, have a look at the
 <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">Developer Guide</a> to
 learn how.</p>
 
@@ -177,7 +178,7 @@ looks like this:</p>
 
 <p>Now that you’ve got your policy, you need a quick and effective way to test it.  I also
 think it’s important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using <a href="http://arquillian.org/">Arquillian</a> 
+breakpoints to debug the code.  We explored using <a href="http://arquillian.org/">Arquillian</a>
 to configure and publish a service with the custom policy to a running WildFly server.
 It actually works remarkably well, but the overhead of firing up a WildFly server just
 to test a single policy seemed excessive.  That work will likely lead into a separate
@@ -212,7 +213,7 @@ that should be used for the test.</p>
         <span class="c1">// Send a test HTTP request to the service (resulting in executing the policy).</span>
         <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">&quot;/some/resource&quot;</span><span class="o">)</span>
                 <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&quot;X-Test-Name&quot;</span><span class="o">,</span> <span class="s">&quot;testGet&quot;</span><span class="o">));</span>
-                
+
         <span class="c1">// Now do some assertions on the result!</span>
         <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">code</span><span class="o">());</span>
         <span class="n">EchoResponse</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">entity</span><span class="o">(</span><span class="n">EchoResponse</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -232,7 +233,7 @@ that should be used for the test.</p>
 <p>Let me tell you!  For each test method in your junit test, we’ll actually spin up a fully
 functional apiman API Gateway.  We’ll also publish a test service that’s configured with
 your custom policy (and using the policy configuration you specified in the <code>@Configuration</code>
-annotation).  After that, it’s a simple matter of sending one or more simulated HTTP 
+annotation).  After that, it’s a simple matter of sending one or more simulated HTTP
 requests to the gateway.  You do that by sending a <code>PolicyTestRequest</code> to the <code>send</code> method.
 Easy peasy!</p>
 
@@ -247,15 +248,15 @@ we’re using for the test needs to “invoke” a back-end service and return t
 simulate this rather than actually going out and making a REST request.  By default, we
 create a simple Echo back-end service which bundles up all the information in the REST
 request (including anything your policy may have added to the request) and builds a JSON
-response that includes all that information.  This is handy because it allows you to 
-verify that, for example, any HTTP headers your policy added to the request actually 
+response that includes all that information.  This is handy because it allows you to
+verify that, for example, any HTTP headers your policy added to the request actually
 made it through to the back-end service.</p>
 
 <p>Now are you ready for an advanced topic?  If not I understand, you can just hit the Back
 button on your browser!</p>
 
 <p>Still here?  Great!  Another thing you can do is actually provide your own simulated
-back-end service.  This is necessary sometimes when your policy does something 
+back-end service.  This is necessary sometimes when your policy does something
 specific with, for example, the service response payload.  You may actually need your
 test to respond in a certain way.  To accomplish this all you need to do is use the
 <code>@BackEndService</code> annotation, providing a <em>Class</em> that implements the
@@ -277,7 +278,7 @@ back end service for the test instead of the echo service!  :)</p>
 
         <span class="c1">// Now do some assertions on the result!</span>
         <span class="n">MyCustomBackEndServiceResponseBean</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">entity</span><span class="o">(</span><span class="n">MyCustomBackEndServiceResponseBean</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        
+
         <span class="c1">// Do some more assertions here using the entity from above!</span>
     <span class="o">}</span>
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
   <title>An Impatient New User's Introduction to API Management with JBoss apiman 1.0</title>
-  <meta name="description" content="Software application development models are evolutionary things. New technologies are always being created and require new approaches. It’s frequently the ca...">
+  <meta name="description" content="Software application development models are evolutionary things. New technologies are always being createdand require new approaches. It’s frequently the cas...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -112,21 +112,22 @@
 
     <div class="container" id="blog">
       <div class="blog-content">
-        <div class="post">
+        
 
+<div class="post">
   <header class="post-header" style="margin-top: 25px">
     <h1 style="color: #666; font-weight: bold" class="post-title section-header">An Impatient New User's Introduction to API Management with JBoss apiman 1.0</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jan 9, 2015</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Len DiMaggio</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/ldimaggi">Len DiMaggio</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> introduction and overview</span>
   </header>
 
   <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>Software application development models are evolutionary things. New technologies are always being created 
-and require new approaches. It’s frequently the case today, that a service oriented architecture (SOA) model 
-is used and that the end product is a software service that can be used by applications. The explosion in 
-growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform 
-onto which applications are deployed. These applications are often built from services provided from multiple 
+    <p>Software application development models are evolutionary things. New technologies are always being created
+and require new approaches. It’s frequently the case today, that a service oriented architecture (SOA) model
+is used and that the end product is a software service that can be used by applications. The explosion in
+growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform
+onto which applications are deployed. These applications are often built from services provided from multiple
 sources. The applications often consume these services through their APIs.</p>
 
 <p>OK, that’s all interesting, but why does this matter?</p>
@@ -135,23 +136,23 @@ sources. The applications often consume these services through their APIs.</p>
 
 <p>Here’s why:</p>
 
-<p>If you are providing a service, you’d probably like to receive payment when it’s used by an application. For 
-example, let’s say that you’ve spent months creating a new service that provides incredibly accurate and 
-timely driving directions. You can imagine every mobile phone GPS app making use of your service someday. 
-That is, however, assuming that you can find a way to enforce a contract on consumers of the API and provide 
-them with a service level agreement (SLA). Also, you have to find a way to actually track consumers’ use of 
-the API so that you can actually enforce that SLA. Finally, you have to have the means to update a service 
+<p>If you are providing a service, you’d probably like to receive payment when it’s used by an application. For
+example, let’s say that you’ve spent months creating a new service that provides incredibly accurate and
+timely driving directions. You can imagine every mobile phone GPS app making use of your service someday.
+That is, however, assuming that you can find a way to enforce a contract on consumers of the API and provide
+them with a service level agreement (SLA). Also, you have to find a way to actually track consumers’ use of
+the API so that you can actually enforce that SLA. Finally, you have to have the means to update a service
 and publish new versions of services.</p>
 
-<p>Likewise, if you are consuming a service, for example, if you want to build the killer app that will use that 
-cool new mapping service, you have to have the means to find the API, identify the API’s endpoint, and 
+<p>Likewise, if you are consuming a service, for example, if you want to build the killer app that will use that
+cool new mapping service, you have to have the means to find the API, identify the API’s endpoint, and
 register your usage of the API with its provider.</p>
 
 <p>The approach that is followed to fulfill both service providers’ and consumers’ needs is…API Management.</p>
 
 <h2 id="jboss-apiman-10">JBoss apiman 1.0</h2>
 
-<p>apiman is JBoss’ open source API Management system. apiman fulfills service API providers’ and consumers’ 
+<p>apiman is JBoss’ open source API Management system. apiman fulfills service API providers’ and consumers’
 needs by implementing:</p>
 
 <ul>
@@ -163,7 +164,7 @@ needs by implementing:</p>
   </li>
 </ul>
 
-<p>The best way to understand API Management with apiman is to see it in action. In this post, we’ll install 
+<p>The best way to understand API Management with apiman is to see it in action. In this post, we’ll install
 apiman 1.0, configure an API with contracts through the API Manager, and watch the API Gateway control access
 to the API and track its use.</p>
 
@@ -316,7 +317,7 @@ Resolving deltas: 100% (40/40), done.
 <div class="highlight"><pre><code class="language-text" data-lang="text">[INFO] Scanning for projects...
 [INFO]
 [INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
-[INFO]   
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building apiman-quickstarts-echo-service 1.0.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------

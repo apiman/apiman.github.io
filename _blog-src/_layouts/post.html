@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
-<div class="post">
+{% assign author = site.data.authors[page.author] %}
 
+<div class="post">
   <header class="post-header" style="margin-top: 25px">
     <h1 style="color: #666; font-weight: bold" class="post-title section-header">{{ page.title }}</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> {{ page.author }}</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="{{author.github}}">{{ author.name }}</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> {{ page.categories | array_to_sentence_string }}</span>
   </header>
 
