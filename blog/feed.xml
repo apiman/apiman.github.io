@@ -9,6 +9,20 @@
 		
 		
 			<item>
+				<title>Keycloak and dagger: Securing your services with OAuth2</title>
+				        
+				
+					<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&amp;#8217;ll outline in this blogpost.&lt;/p&gt;
+&lt;/div&gt;</description>
+				
+				<pubDate>Tue, 09 Jun 2015 08:25:28 -0400</pubDate>
+				<link>http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Setting up your apiman development environment</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
