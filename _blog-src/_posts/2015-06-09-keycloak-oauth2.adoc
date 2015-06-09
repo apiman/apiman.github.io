@@ -2,7 +2,7 @@
 layout: post
 title:  "Keycloak and dagger: Securing your services with OAuth2"
 date:   2015-06-09 13:25:28 +0100
-author: Marc Savy
+author: marc_savy
 categories: gateway security oauth2 keycloak authentication authorization
 ---
 
