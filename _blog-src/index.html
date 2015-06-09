@@ -5,13 +5,14 @@ layout: default
     <div class="col-lg-12" style="margin-bottom: 35px">
         <h1 class="section-header">Blog Posts <a style="font-size: 13px; color: #666" class="pull-right" href="/blog/feed.xml"><i class="fa fa-rss"></i> subscribe</a></h1>
         <div class="post-list">
-         {% for post in site.posts %}
+          {% for post in site.posts %}
+	      {% assign author = site.data.authors[post.author] %}
             <div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
                   <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
                   <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> {{ post.author }}</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> {{ author.name }}</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> {{ post.categories | array_to_sentence_string }}</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     {{ post.excerpt }}

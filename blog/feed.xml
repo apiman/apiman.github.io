@@ -10,6 +10,9 @@
 		
 			<item>
 				<title>Keycloak and dagger: Securing your services with OAuth2</title>
+				
+				        <dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author>
 				        
 				
 					<description>&lt;div class=&quot;paragraph&quot;&gt;
