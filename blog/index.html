@@ -122,6 +122,28 @@
             <div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
+                  <h1><a href="/blog/authentication/policy/2015/06/11/basic-auth.html">Adding a BASIC Authentication Policy to a Managed Service in JBoss apiman</a></h1>
+                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 11, 2015</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Len DiMaggio</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authentication and policy</span>
+                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
+                    <p><img src="/blog/images/2015-06-11/1-apiman-logo.png" alt="apiman logo" /></p>
+
+<p>In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.</p>
+
+
+                  </div>
+                  <div style="margin-bottom: 20px">
+                    <a href="/blog/authentication/policy/2015/06/11/basic-auth.html" style="font-size: 15px">(read more)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+	      
+            <div class="container blog-post-item">
+              <div class="row">
+                <div class="col-md-12">
                   <h1><a href="/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html">Keycloak and dagger: Securing your services with OAuth2</a></h1>
                   <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 9, 2015</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
@@ -206,165 +228,6 @@ service consumer).</p>
                   </div>
                   <div style="margin-bottom: 20px">
                     <a href="/blog/rest/api/automation/2015/05/19/rest-api.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/rest/api/automation/2015/05/19/basic-auth.html">The JBoss apiman API Manager REST services API</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 19, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> </span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> rest, api, and automation</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p><img src="/blog/images/2015-06-11/1-apiman-logo.png" alt="apiman logo" /></p>
-
-<p>In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.</p>
-
-<h2 id="securing-client-access-to-your-managed-services">Securing Client Access to your Managed Services</h2>
-
-<p>As we’ve seen in the previous articles in this series, apiman enables you to govern the usage of the services that it manages by defining policies in the Managament UI that are then applied at runtime by the API Gateway. The apiman API Gateway applies the policy rules that you define to requests that it proxies to the managed service:</p>
-
-<p><img src="/blog/images/2015-06-11/apiman-2.png" alt="apiman logo" /></p>
-
-<p>The OOTB policies that are packaged with apiman enable you to apply a variety of types of controls, including rate limiting (where access to a service is assigned a usage threshold) and black/whitelisting by IP address (where the client’s IP address governs their access to the service).</p>
-
-<p>However, managing a service with apiman does not automatically make that service secure. Happily, however, apiman provides a policy that enables you to easily set up authentication to control access to your managed service. (Note that this policy governs the clients’ authenticated access to the managed service, and not establishing a secure connection where apiman authenticates the back-end services. In other words, in this article, we’re interested in adding authentication between the blue and pink boxes in the above diagram.)</p>
-
-<h2 id="adding-a-basic-authentication-policy-to-a-managed-service">Adding a BASIC Authentication Policy to a Managed Service</h2>
-
-<p>apiman is packaged with multiple pre-configured policies:</p>
-
-<ul>
-  <li>Authorization - Access to services’ resources is controlled by user roles.</li>
-  <li>BASIC Authentication - A username/password is required to access a service.</li>
-  <li>Ignored Resources - Paths to services’ resources that will not be accessible. Requests to these service resource paths return a 404 (not found) error.</li>
-  <li>IP Blacklist - Clients with specific IP address will be blocked from accessing a service.</li>
-  <li>IP Whitelist - And, clients with specific IP address will not  be blocked from accessing a service.</li>
-  <li>Rate Limiting - Access to a service is limited by the number of requests in a defined time period. We demonstrated an example of a rate limiting policy in the first article in this series.</li>
-</ul>
-
-<p>We’re interested in the BASIC Authentication Policy. Let’s take a closer look. The dialog to add a BASIC authentication policy to a service looks like this:</p>
-
-<p><img src="/blog/images/2015-06-11/apiman-3.png" alt="apiman logo" /></p>
-
-<p>In creating the BASIC policy, we define an Authentication Realm (think of this as an area to be protected, within which usernames and passwords exist) and an optional HTTP header. The optional HTTP header is used to optionally pass the user’s principal to the back-end service through an HTTP header. This is useful if the back-end system needs to know the username of the user calling it (e.g. to do user-specific operation). The “Transport security required” checkbox, if enabled, will cause the policy to fail if a client tries to connect to the service over http. The Policy will only accept credentials over https.</p>
-
-<p>We’ll keep the Identity Source simple and select “Static Identities” and then define a user. Note that while this static approach is fine for testing purposes, you will want use one of the other Identity Source options (JBDS or LDAP) for a production environment as they can better handle a large number of users.</p>
-
-<p><img src="/blog/images/2015-06-11/apiman-4.png" alt="apiman logo" /></p>
-
-<p>It’s important to remember that, in BASIC authentication, one of the factors that makes this, well, basic in nature, is that the username/password that you define are encoded (this is unencrypted base64 encoded text) when they are sent to the server. Since the text is not encrypted, it’s at risk of being copied and then used in an attack. For this reason, it’s safer to select the transport security option to configure SSL encryption.</p>
-
-<p>To illustrate, here’s Java code that can encode and then decode the username:password string:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Base64.Encoder <span class="nv">encoder</span> <span class="o">=</span> Base64.getEncoder<span class="o">()</span><span class="p">;</span>  
- String <span class="nv">normalString</span> <span class="o">=</span> <span class="s2">&quot;user1&quot;</span> + <span class="s2">&quot;:&quot;</span> + <span class="s2">&quot;password1&quot;</span><span class="p">;</span>  
- String <span class="nv">encodedString</span> <span class="o">=</span> encoder.encodeToString<span class="o">(</span>normalString.getBytes<span class="o">(</span>StandardCharsets.UTF_8<span class="o">))</span><span class="p">;</span>  
- System.out.println <span class="o">(</span><span class="s2">&quot;The encoded string is: &quot;</span> + encodedString<span class="o">)</span><span class="p">;</span>  
-             
- Decoder <span class="nv">decoder</span> <span class="o">=</span> Base64.getDecoder<span class="o">()</span><span class="p">;</span>  
- byte<span class="o">[]</span> <span class="nv">unencodedStringArray</span> <span class="o">=</span> decoder.decode<span class="o">(</span>encodedString<span class="o">)</span><span class="p">;</span>  
- String <span class="nv">unencodedString</span> <span class="o">=</span> new String <span class="o">(</span>unencodedStringArray<span class="o">)</span><span class="p">;</span>  
- System.out.println <span class="o">(</span><span class="s2">&quot;The unencoded string is: &quot;</span> + unencodedString<span class="o">)</span><span class="p">;</span>  
-   
- The encoded string is: dXNlcjE6cGFzc3dvcmQx  
- The unencoded string is: user1:password1</code></pre></div>
-
-<p>So - unlike encrypted strings, your encoded username and password strings are not secure!</p>
-
-<p>## When a Request is made to the Service</p>
-
-<p>It’s interesting to see step-by-step what happens when a request is made to the service and the BASIC authentication policy is applied. Let’s take a look at the request and the responses. I used the “HttpFox” http analyzer (https://addons.mozilla.org/en-us/firefox/addon/httpfox/) to “listen in” on the requests sent to the server and the responses sent back.</p>
-
-<p>Here’s the first request made to the service, notice that a username/password is not included.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Request-Line<span class="o">)</span> GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
- Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmccn</span><span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmcmd</span><span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive</code></pre></div>
-
-<p>The response, as we expected, shows that the request has triggered an authentication failure. This is due to the authentication requirement that we defined and is being applied by the API Gateway. Note the 401 error code and the reference to BASIC authentication:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 <span class="m">401</span> Unauthorized  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- X-Policy-Failure-Type     Authentication  
- Date     Wed, <span class="m">03</span> Jun <span class="m">2015</span> 13:43:26 GMT  
- Connection     keep-alive  
- WWW-Authenticate     BASIC <span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;myRealm&quot;</span>  
- X-Policy-Failure-Code     <span class="m">10004</span>  
- Content-Type     application/json  
- Content-Length     <span class="m">165</span>  
- X-Policy-Failure-Message     BASIC authentication failed.</code></pre></div>
-
-<p>The browser then automatically pops up a dialog for us to enter the username and password:</p>
-
-<p><img src="/blog/images/2015-06-11/apiman-5.png" alt="apiman logo" /></p>
-
-<p>A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Request-Line<span class="o">)</span>     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
- Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmccn</span><span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmcmd</span><span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive  
- Authorization     Basic dXNlcjE6cGFzc3dvcmQx</code></pre></div>
-
-<p>And, then we get the successful return code of 200 in a response:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 <span class="m">200</span> OK  
- Connection     keep-alive  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- Content-Length     <span class="m">755</span>  
- Content-Type     application/json  
- Date     Wed, <span class="m">03</span> Jun <span class="m">2015</span> 13:43:34 GMT</code></pre></div>
-
-<h2 id="in-conclusion">In Conclusion</h2>
-
-<p>Just because a service is managed doesn’t automatically make it secure. JBoss apiman provides you with multiple options to add an authentication requirement when clients access your managed service.</p>
-
-<h2 id="authors-acknowledgements">Author’s Acknowledgements</h2>
-
-<p>As always, the author would like to acknowledge Eric Wittmann and the apiman team for their  review comments and suggestions on writing this post, and for adding new features to apiman!</p>
-
-<h2 id="links">Links</h2>
-
-<p>apiman</p>
-
-<ul>
-  <li>http://www.apiman.io</li>
-</ul>
-
-<p>Previous articles in this series:</p>
-
-<ul>
-  <li>http://java.dzone.com/articles/impatient-new-users</li>
-  <li>http://java.dzone.com/articles/customizing-jboss-apiman</li>
-  <li>http://java.dzone.com/articles/jboss-apiman-api-manager-rest</li>
-</ul>
-
-<p>HTTP Authentication: Basic and Digest Access Authentication</p>
-
-<ul>
-  <li>http://tools.ietf.org/html/rfc2617</li>
-</ul>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/rest/api/automation/2015/05/19/basic-auth.html" style="font-size: 15px">(read more)</a>
                   </div>
                 </div>
               </div>
