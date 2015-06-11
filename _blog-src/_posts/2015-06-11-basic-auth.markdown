@@ -6,7 +6,7 @@ author: len_dimaggio
 categories: authentication policy
 ---
 
-![apiman logo](/blog/images/2015-06-11/1-apiman-logo.png)
+![apiman logo](/blog/images/2015-06-11/1-apiman_logo.png)
 
 In this, the fourth article in the series on apiman, JBoss' new API Management framework, we'll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.
 
