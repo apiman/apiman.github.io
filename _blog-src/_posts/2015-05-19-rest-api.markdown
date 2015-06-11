@@ -6,7 +6,7 @@ author: len_dimaggio
 categories: rest api automation
 ---
 
- In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
+In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
 
 <!--more-->
 
