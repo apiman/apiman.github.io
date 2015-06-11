@@ -5,9 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>apiman blog</title>
-  <meta name="description" content="The apiman project brings an open source development methodology to API Management, coupling a rich API design & configuration layer with a blazingly fast runtime.  This is the official apiman blog, where we discuss....whatever we're thinking about!
-">
+  <title>The JBoss apiman API Manager REST services API</title>
+  <meta name="description" content="In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, b...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -40,7 +39,7 @@
       });
   </script>
 
-  <link rel="canonical" href="http://apiman.io/blog/">
+  <link rel="canonical" href="http://apiman.io/blog/rest/api/automation/2015/05/19/basic-auth.html">
   <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
 </head>
 
@@ -113,114 +112,18 @@
 
     <div class="container" id="blog">
       <div class="blog-content">
-        <div id="content" class="row">
-    <div class="col-lg-12" style="margin-bottom: 35px">
-        <h1 class="section-header">Blog Posts <a style="font-size: 13px; color: #666" class="pull-right" href="/blog/feed.xml"><i class="fa fa-rss"></i> subscribe</a></h1>
-        <div class="post-list">
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html">Keycloak and dagger: Securing your services with OAuth2</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 9, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> gateway, security, oauth2, keycloak, authentication, and authorization</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <div class="paragraph">
-<p>One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&#8217;ll outline in this blogpost.</p>
-</div>
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/eclipse/development/maven/2015/06/04/dev-environment.html">Setting up your apiman development environment</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 4, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> eclipse, development, and maven</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>For those of you who might be interested in hacking away at some core apiman code,
-I thought it might be nice to create a reasonably comprehensive step-by-step
-guide.  For the most part everything is straightforward, but there are a copule
-of tricks you can use to get up and running fast and to be able to easily
-iterate on any changes you make.</p>
+        
 
-<p>Read on if this sounds like something you want to do!</p>
+<div class="post">
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">The JBoss apiman API Manager REST services API</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 19, 2015</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href=""></a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> rest, api, and automation</span>
+  </header>
 
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/eclipse/development/maven/2015/06/04/dev-environment.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html">We got the moves like swagger!</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 2, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, swagger, service, and ui</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>One of the weaknesses we’ve had in apiman until now is that service providers didn’t have
-any way to document how to consume their services.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your service.  If you do,
-consumers will be able to browse your service documentation directly in the apiman UI.</p>
-
-<p>I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the application developer (aka the
-service consumer).</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/rest/api/automation/2015/05/19/rest-api.html">The JBoss apiman API Manager REST services API</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 19, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Len DiMaggio</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> rest, api, and automation</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>In this, the third article in our series on apiman, JBoss’ new open source API Management framework, we’ll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/rest/api/automation/2015/05/19/rest-api.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/rest/api/automation/2015/05/19/basic-auth.html">The JBoss apiman API Manager REST services API</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 19, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> </span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> rest, api, and automation</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p><img src="/blog/images/2015-06-11/1-apiman-logo.png" alt="apiman logo" /></p>
+  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p><img src="/blog/images/2015-06-11/1-apiman-logo.png" alt="apiman logo" /></p>
 
 <p>In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.</p>
 
@@ -362,121 +265,8 @@ service consumer).</p>
 </ul>
 
 
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/rest/api/automation/2015/05/19/basic-auth.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/policy/junit/testing/2015/05/09/policy-testing.html">A great way to test your custom apiman policy!</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 9, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> policy, junit, and testing</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>If you have tried creating your own custom apiman policy, you may have had a little bit of
-difficulty creating useful junit tests for it.  Many policies require various apiman
-runtime components to be available.  It can be super annoying trying to use something like
-mockito to create mock versions of everything your policy needs.  Even for simple policies
-you really just want a quick and effective way to test the implementation within a
-reasonably “real world” harness.</p>
+  </article>
 
-<p>Well you’ve probably guessed by now that I’m about to show you how it’s done!  (OK fine,
-how it <em>will</em> be done in the next release of apiman - 1.1.3.Final)</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/policy/junit/testing/2015/05/09/policy-testing.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/authorization/authentication/policy/2015/05/08/authorization.html">Authorization: good god, what is it good for?</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>Quite a bit, actually.  :)</p>
-
-<p>I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some
-point in the future we’re going to be renovating how policies are defined and
-configured in the API Manager UI.  But until then, you can refer to this blog
-post for an overview of how to configure Authorization!</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/authorization/authentication/policy/2015/05/08/authorization.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html">Customizing JBoss apiman Through Policy Plugins</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 6, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Len DiMaggio</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> plugins, policies, development, and maven</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>This is the second in a series of articles exploring API management with JBoss apiman. The first article
-was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
-created users and organizations, and services, policies, contracts, and applications. In this article,
-we’ll take the first step toward customizing apiman by creating new plugins to implement service policies.</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-	      
-            <div class="container blog-post-item">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1><a href="/blog/introduction/overview/2015/01/09/impatient-new-user.html">An Impatient New User's Introduction to API Management with JBoss apiman 1.0</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jan 9, 2015</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Len DiMaggio</span>
-                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> introduction and overview</span>
-                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>Software application development models are evolutionary things. New technologies are always being created
-and require new approaches. It’s frequently the case today, that a service oriented architecture (SOA) model
-is used and that the end product is a software service that can be used by applications. The explosion in
-growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform
-onto which applications are deployed. These applications are often built from services provided from multiple
-sources. The applications often consume these services through their APIs.</p>
-
-<p>OK, that’s all interesting, but why does this matter?</p>
-
-
-                  </div>
-                  <div style="margin-bottom: 20px">
-                    <a href="/blog/introduction/overview/2015/01/09/impatient-new-user.html" style="font-size: 15px">(read more)</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-        </div>
-<!--         <p class="rss-subscribe">subscribe <a href="/blog/feed.xml">via RSS</a></p> -->
-    </div>
 </div>
 
       </div>
