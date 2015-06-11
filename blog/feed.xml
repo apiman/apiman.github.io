@@ -15,7 +15,7 @@
 				        <author>ldimaggi@redhat.com</author>
 				        
 				
-					<description>&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-11/1-apiman-logo.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
+					<description>&lt;p&gt;&lt;img src=&quot;/blog/images/2015-06-11/1-apiman_logo.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.&lt;/p&gt;
 
