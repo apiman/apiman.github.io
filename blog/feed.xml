@@ -9,6 +9,29 @@
 		
 		
 			<item>
+				<title>CORS? Of course!</title>
+				
+				        <dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author>
+				        
+				
+					<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you&amp;#8217;re looking to define &lt;a href=&quot;http://www.w3.org/TR/2014/REC-cors-20140116/&quot;&gt;CORS policies&lt;/a&gt; in your API Management layer, then we have an &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;official plugin&lt;/a&gt; policy that should be perfect for the job.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For those &lt;a href=&quot;http://enable-cors.org/&quot;&gt;unfamiliar with CORS&lt;/a&gt;, it&amp;#8217;s a way of precisely defining who and how a remote origin may invoke a service&amp;#8217;s resources. Generally, due to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Same-origin_policy&quot;&gt;same-origin policy&lt;/a&gt;, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, if we &lt;em&gt;want&lt;/em&gt; our resource to be callable by some other, or all, origins, then we need to define a CORS policy.&lt;/p&gt;
+&lt;/div&gt;</description>
+				
+				<pubDate>Wed, 01 Jul 2015 10:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/security/plugin/policy/cors/2015/07/01/cors.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/2015/07/01/cors.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Adding a BASIC Authentication Policy to a Managed Service in JBoss apiman</title>
 				
 				        <dc:creator>Len DiMaggio</dc:creator>
