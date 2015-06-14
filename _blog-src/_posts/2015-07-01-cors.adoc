@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CORS? Of course!"
+title:  "CORS? Of Course!"
 date:   2015-07-01 15:00:00 +0100
 author: marc_savy
 categories: security plugin policy cors
@@ -227,4 +227,4 @@ Notice that the preflight requests never go through to the service itself, they 
 
 == In conclusion...
 
-We build up a CORS configuration and tested out its functionality. Thankfully, it's pretty easy!
+We build up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!
