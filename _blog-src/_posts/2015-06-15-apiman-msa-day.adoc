@@ -6,11 +6,11 @@ author: marc_savy
 categories: microservices conference talk
 ---
 
-I had the pleasure of presenting on apiman at the recent [Microservices Architecture Developer Day], with our Fabric8 friend Kurt delivering a short demo of apiman in Fabric8. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.
+I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our Fabric8 friend Kurt delivering a short demo of apiman in Fabric8. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.
 
 Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.
 
-So, if you're interested in understanding the value the API management can have in a microservices architectures; please, read on!
+So, if you're interested in understanding the value API management can have in a microservices architecture; please, read on!
 
 ////
 Use this pattern to avoid asciidoctor rendering the HTML comment.
@@ -23,15 +23,15 @@ A microservices architecture encourages the decomposition of problems into small
 
 == Avoiding reimplementation of cross-cutting functionality
 
-A problem that can quickly become apparent is that there are often key pieces of important functionality that is difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing.
+A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing.
 
-It's quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we want to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on _each_ of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.
+It's quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on _each_ of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.
 
 Instead, we can drastically improve the situation by using apiman to relieve individual services of that burden; simply configure and manage those tasks in a single, well-known location. We register our APIs with apiman, apply appropriate policies, and route public traffic through the gateway. We leave apiman to deal with these common problems, and let the microservice's developers focus on their core task, rather than burning time on ancillary concerns.
 
 == Fickle business requirements
 
-Access to APIs often has business requirements which are independent of the core functionality service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Aside the microservices _faux pas_ of implementing external business logic, we would want to avoid this because business requirements tend to change rapidly in response to events which are unrelated to the service itself.
+Access to APIs often has business requirements which are independent of the core functionality the service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Quite aside from the microservices _faux pas_ of contaminating a service with external business logic, we generally want to avoid this situation, as business requirements tend to change rapidly in response to events which are unrelated to the service's purpose.
 
 For instance, marketing decide that the service is so popular that they're going to offer two levels of access a _gold plan_ and a _silver plan_; one of which allows 1000 requests per minute, the other 500. The developers trudge off and implement this in their service. Six months later, they decide they want to change this to bandwidth limits, and the _silver plan_ should be able to do only _GET_ requests. The developers of a variety of services are taken off their existing tasks to implement these changes.
 
@@ -51,7 +51,7 @@ Metrics collection, analysis and visualisation is an area we're actively working
 
 == Papers, please
 
-You may have lots of services to offer, but unless people can find them, they won't be useful. Hence, it's important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we are also make it easy to integrate with other registries.
+You may have lots of services to offer, but unless people can find them, they won't know about how useful they are. Hence, it's important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we also make it easy to integrate into any other registry, such as Fabric8's.
 
 == In conclusion
 
