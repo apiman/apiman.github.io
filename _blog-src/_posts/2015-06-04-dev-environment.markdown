@@ -140,6 +140,7 @@ Then you can connect a remote debugger to WildFly and debug apiman from Eclipse.
 But a quicker way to run the various apiman components exists.
 
 As you may or may not know, apiman consists of two components:
+
 * The API Manager (RESTful services + UI)
 * The API Gateway
 
@@ -148,6 +149,7 @@ the API Manager.
 
 ### Launching a Dev version of the API Manager REST services
 This is actually really easy:
+
 1. Open up the java class *ManagerApiDevServer*
 2. Debug As->Java Application
 
