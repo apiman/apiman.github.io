@@ -9,6 +9,29 @@
 		
 		
 			<item>
+				<title>Microservices Architecture Day Appearance</title>
+				
+				        <dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author>
+				        
+				
+					<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within &lt;a href=&quot;http://www.fabric8.io&quot;&gt;Fabric8&lt;/a&gt;. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So, if you&amp;#8217;re interested in understanding the value API management can have in a microservices architecture; please, read on!&lt;/p&gt;
+&lt;/div&gt;</description>
+				
+				<pubDate>Mon, 15 Jun 2015 16:30:00 -0400</pubDate>
+				<link>http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Adding a BASIC Authentication Policy to a Managed Service in JBoss apiman</title>
 				
 				        <dc:creator>Len DiMaggio</dc:creator>
