@@ -251,17 +251,23 @@ use this approach you can run apiman here:</p>
 
 <p>But a quicker way to run the various apiman components exists.</p>
 
-<p>As you may or may not know, apiman consists of two components:
-* The API Manager (RESTful services + UI)
-* The API Gateway</p>
+<p>As you may or may not know, apiman consists of two components:</p>
+
+<ul>
+  <li>The API Manager (RESTful services + UI)</li>
+  <li>The API Gateway</li>
+</ul>
 
 <p>You can run/test these pieces together or separately.  Let’s first explore
 the API Manager.</p>
 
 <h3 id="launching-a-dev-version-of-the-api-manager-rest-services">Launching a Dev version of the API Manager REST services</h3>
-<p>This is actually really easy:
-1. Open up the java class <em>ManagerApiDevServer</em>
-2. Debug As-&gt;Java Application</p>
+<p>This is actually really easy:</p>
+
+<ol>
+  <li>Open up the java class <em>ManagerApiDevServer</em></li>
+  <li>Debug As-&gt;Java Application</li>
+</ol>
 
 <p>Easy as that!  It should fire up an instance of Jetty with the apiman API
 Manager backend (RESTful web services) deployed.  You can test this by going
