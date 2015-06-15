@@ -6,7 +6,7 @@ author: marc_savy
 categories: microservices conference talk
 ---
 
-I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our Fabric8 friend Kurt delivering a short demo of apiman in Fabric8. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.
+I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our http://www.fabric8.io[Fabric8] friend Kurt delivering a short demo of our software running within Fabric8. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.
 
 Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.
 
@@ -45,7 +45,7 @@ Of all the microservices constituting an entire system, it is likely that only a
 
 == Watching the world go by
 
-If we want to determine the value of a service to our organisation, then we need some objective metrics to determine _how_ it is being used and whether it is performing as well as we hoped. Ideally, metrics should be collected in a manner that is consistent amongst all services to ensure it that comparisons can be done fairly. The apiman gateway is in a unique position to collect lots of interesting metrics data, as it sits at the transit point between the outside world and the services being offered. Amongst other things, timing information, round-trip latencies, detailed error information (error codes, error output), application, service and organisation IDs. These can be analysed to produce a rich set of information which you can use to characterise the behaviour (or misbehaviour) of your services, including how external applications are interacting with them.
+If we want to determine the value of a service to our organisation, then we need some objective metrics to determine _how_ it is being used and whether it is performing as well as we hoped. Ideally, metrics should be collected in a manner that is consistent amongst all services to ensure that comparisons can be made fairly. The apiman gateway is in a unique position to collect lots of interesting data; siting at the transit point between the outside world and the services being offered. We collect, amongst other things, timing information; round-trip latencies; detailed error information (error codes, error output); application, service and organisation IDs. These can be analysed to produce a rich set of information which you can use to characterise the behaviour (or misbehaviour) of your services, including how external applications are interacting with them.
 
 Metrics collection, analysis and visualisation is an area we're actively working hard on: in the community we're looking to provide interesting opportunities to tie in with popular open source data-sinks and visualisers, whilst in integrated environments, we look to play well with native metrics collection infrastructure.
 
