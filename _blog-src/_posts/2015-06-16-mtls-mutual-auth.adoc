@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cover yourself up! Protecting your services with mutual auth"
-date:   2015-06-16 13:00:00 +1
+date:   2015-06-16 17:00:00 +1
 author: marc_savy
 categories: gateway security mutual-auth ssl mtls
 ---
@@ -19,7 +19,7 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 
 Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination as to whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.
 
-However, in a typical apiman setup where the gateway is acting the client and the servicesfootnote:[We refer to the set of APIs managed by apiman as services] act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each parties must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
+However, in a typical apiman setup the gateway is acting as the client and the servicesfootnote:[We refer to the set of APIs managed by apiman as services] act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
 
 Luckily, apiman makes this http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security[extremely easy to set this up], so let's dive in and explore what's possible.
 
@@ -27,7 +27,7 @@ Luckily, apiman makes this http://www.apiman.io/latest/installation-guide.html#_
 
 Let's assume 'node' refers generically to a participant in our system, either a gateway or a service.
 
-There are two main elements we need to work with: *keystores*, which contain a node's private key material, and *truststores*, which contain public certificates instructing the node who it should trust.
+There are two main elements we need to work with: *keystores*, which contain a node's private key material, and *truststores*, which contain public certificates instructing the node whom it should trust.
 
 Ideally, each node should have its own keystore, whose key material is signed by a *trusted certificate authority*; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA's certificate to our node's keystores, then _any_ certificate issued by it will be trusted by virtue of the issuer's authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.
 
@@ -65,7 +65,7 @@ CAUTION: Remember, this is just a quick blog demonstration; you need to take ext
 
 === Truststore
 
-Let's create a simple shared truststore that we'll use on all of our nodes. We're going to imagine that we have an internal root CA called `apimanCA`, and that whomever controls it has taken http://vignette3.wikia.nocookie.net/en.futurama/images/3/33/No9man.png/revision/latest?cb=20100317031031[appropriate security precautions] to ensure no baddies get their certificates signed.
+Let's create a simple shared truststore that we'll use on all of our nodes. We're going to imagine that we have an internal root CA called `apimanCA`, and that whomever controls it has taken https://i.imgur.com/sYeorwQ.png[appropriate security precautions] to ensure no baddies get their certificates signed.
 
 ```ShellSession
 keytool -import -keystore shared_trust_store.jks -file apimanCA.cer -alias apimanCA
