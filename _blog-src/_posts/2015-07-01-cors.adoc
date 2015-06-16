@@ -19,7 +19,7 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 
 == Installation
 
-Apiman plugins are referenced via their Maven coordinates, and can be installed most easily http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman[via the apiman Admin UI] (or REST interfaces if you're looking to automate things).
+Apiman plugins are referenced via their Maven coordinates, and can be installed most easily http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman[via the apiman Admin UI] (or http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html[REST interfaces] if you're looking to automate things).
 
 For the https://github.com/apiman/apiman-plugins/tree/master/cors-policy[CORS plugin] footnote:[One of our official plugins, the rest of which can be viewed at https://github.com/apiman/apiman-plugins/. You can build and deploy your plugins publicly or privately in a similar manner], the coordinates are as follows:
 
@@ -92,7 +92,7 @@ Assuming you've saved everything, hit *Publish* and we'll be ready to test.
 
 === Access Control to Major Tom
 
-Generally, it's the job of the user agent to set the Origin` header, such as a browser or mobile client. However, we'll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.
+Generally, it's the job of the user agent to set the `Origin` header, such as a browser or mobile client. However, we'll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.
 
 ==== Unwelcome guests
 
@@ -154,7 +154,7 @@ TIP: When `Host` and `Origin` are equal, a request will automatically be allowed
 Let's set up a request that finally is playing by the parameters we configured earlier:
 
 ```ShellSession
-[msavy@mmbp wildfly-8.2.0.Final](master)$ curl -X GET -k -v -H 'Origin: http://newcastle.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+curl -X GET -k -v -H 'Origin: http://newcastle.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
 > GET /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
 > User-Agent: curl/7.37.1
 > Host: 127.0.0.1:8443
@@ -201,7 +201,7 @@ Let's do something a bit more complex that requires a *preflight request*, which
 To simulate it using cURL, let's do:
 
 ```ShellSession
-[msavy@mmbp wildfly-8.2.0.Final](master)$ curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Method: PATCH' -H 'Access-Control-Request-Headers: X-APIMAN-EXCELLENT' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Method: PATCH' -H 'Access-Control-Request-Headers: X-APIMAN-EXCELLENT' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
 > OPTIONS /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
 > User-Agent: curl/7.37.1
 > Host: 127.0.0.1:8443
