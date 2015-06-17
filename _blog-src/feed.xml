@@ -4,7 +4,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>{{ site.name | xml_escape }}</title>
-		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
+		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
 		<link>{{ prepend: site.baseurl | prepend: site.url }}</link>
 		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts limit:30 %}
@@ -14,12 +14,16 @@
 				{% if author.name %}
 				        <dc:creator>{{ author.name | xml_escape }}</dc:creator>
 				        <author>{{ author.email | xml_escape }}</author>
-				{% endif %}        
-				{% if post.excerpt %}
-					<description>{{ post.excerpt | xml_escape }}</description>
-				{% else %}
-					<description>{{ post.content | xml_escape }}</description>
 				{% endif %}
+				<description>
+					{{ post.excerpt | xml_escape | relative_urls_to_absolute }}
+
+					{% capture linkthrough %}
+					<p><strong><em><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">Continue to the full blogpost</a> on apiman.io</em></strong></p>
+					{% endcapture %}
+
+					{{ linkthrough | xml_escape }}
+				</description>
 				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
 				<link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
 				<guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
