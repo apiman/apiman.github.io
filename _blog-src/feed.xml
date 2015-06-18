@@ -21,5 +21,6 @@
 				<guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
 			</item>
 		{% endfor %}
+		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>	
 	</channel>
 </rss>
