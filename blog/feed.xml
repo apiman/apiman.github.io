@@ -9,6 +9,361 @@
 		
 		
 			<item>
+				<title>CORS? Of Course!</title>
+				
+				        <dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author>
+				        
+				<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you&amp;#8217;re looking to define &lt;a href=&quot;http://www.w3.org/TR/2014/REC-cors-20140116/&quot;&gt;CORS policies&lt;/a&gt; in your API Management layer, then we have an &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;official plugin&lt;/a&gt; policy that should be perfect for the job.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For those &lt;a href=&quot;http://enable-cors.org/&quot;&gt;unfamiliar with CORS&lt;/a&gt;, it&amp;#8217;s a way of precisely defining who and how a remote origin may invoke a service&amp;#8217;s resources. Generally, due to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Same-origin_policy&quot;&gt;same-origin policy&lt;/a&gt;, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, if we &lt;em&gt;want&lt;/em&gt; our resource to be callable by some other, or all, origins, then we need to define a CORS policy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Apiman plugins are referenced via their Maven coordinates, and can be installed most easily &lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman&quot;&gt;via the apiman Admin UI&lt;/a&gt; (or &lt;a href=&quot;http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html&quot;&gt;REST interfaces&lt;/a&gt; if you&amp;#8217;re looking to automate things).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For the &lt;a href=&quot;https://github.com/apiman/apiman-plugins/tree/master/cors-policy&quot;&gt;CORS plugin&lt;/a&gt; &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnote_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/span&gt;, the coordinates are as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all spread&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;GAV&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;Group&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;io.apiman.plugins&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;Artifact&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;apiman-plugins-cors-policy&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;Version&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;1.1.3.Final&lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnote_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;let-s-give-it-a-go&quot;&gt;Let&amp;#8217;s give it a go&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For the purposes of this blogpost we&amp;#8217;ll contrive a scenario that allows us to demonstrate a variety of the plugin&amp;#8217;s functionality. However, if your precise use-case isn&amp;#8217;t covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;preparation&quot;&gt;Preparation&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you have the &lt;a href=&quot;http://www.apiman.io/latest/download.html&quot;&gt;apiman quickstart&lt;/a&gt; running, create an &lt;strong&gt;Organization&lt;/strong&gt; called &lt;strong&gt;&lt;em&gt;Foo&lt;/em&gt;&lt;/strong&gt;, then create a &lt;strong&gt;Service&lt;/strong&gt; called &lt;strong&gt;&lt;em&gt;Bar&lt;/em&gt;&lt;/strong&gt;. Set your Service&amp;#8217;s implementation URL to be &lt;code&gt;&lt;a href=&quot;http://127.0.0.1:8080/services/echo&quot; class=&quot;bare&quot;&gt;http://127.0.0.1:8080/services/echo&lt;/a&gt;&lt;/code&gt;, and select &lt;strong&gt;&lt;em&gt;Rest&lt;/em&gt;&lt;/strong&gt; as the type. Move to the &lt;strong&gt;Plans&lt;/strong&gt; tab and tick &lt;strong&gt;Make this service public&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Next, move to the &lt;strong&gt;Policies&lt;/strong&gt; tab, click &lt;strong&gt;&lt;em&gt;Add Policy&lt;/em&gt;&lt;/strong&gt; and select &lt;strong&gt;CORS Policy&lt;/strong&gt; from the dropdown list.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;plugin-settings&quot;&gt;Plugin settings&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s configure the settings as follows:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all spread&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 25%;&quot;&gt;
+&lt;col style=&quot;width: 20%;&quot;&gt;
+&lt;col style=&quot;width: 55%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Option&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Value(s)&lt;/th&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;Terminate on CORS error&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;ll not hit the backend if there&amp;#8217;s a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the service whose results would be ignored by the user agent.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin&quot;&gt;Access-Control-Allow-Origin&lt;/a&gt;&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;&lt;a href=&quot;http://newcastle.local&quot; class=&quot;bare&quot;&gt;http://newcastle.local&lt;/a&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;re going to use cURL to simulate a CORS request from this allowed origin.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers&quot;&gt;Access-Control-Expose-Headers&lt;/a&gt;&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;Response-Counter&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;By default CORS will only allow a set of &lt;a href=&quot;http://www.w3.org/TR/cors/#simple-header&quot;&gt;simple headers&lt;/a&gt; to be exposed in a &lt;em&gt;response&lt;/em&gt; to the user agent, so we&amp;#8217;ll set this additional one we want to see.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers&quot;&gt;Access-Control-Allow-Headers&lt;/a&gt;&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;X-APIMAN-EXCELLENT&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;By default CORS only allows &lt;em&gt;requests&lt;/em&gt; to include a set of basic headers, and we want our service to be able to see the value of our &lt;em&gt;X-APIMAN-EXCELLENT&lt;/em&gt; header, so we specify it as allowed here.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods&quot;&gt;Access-Control-Allow-Methods&lt;/a&gt;&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;TRACE&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;By default, only &lt;code&gt;GET&lt;/code&gt;, &lt;code&gt;HEAD&lt;/code&gt;, &lt;code&gt;POST&lt;/code&gt; are allowed verbs. We want to use &lt;code&gt;TRACE&lt;/code&gt;, so we add it to the list.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Max-Age&quot;&gt;Access-Control-Max-Age&lt;/a&gt;&lt;/p&gt;&lt;/th&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;9001&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;How long the browser should cache your CORS policy for (to avoid repeated preflight requests).&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After saving you&amp;#8217;ll see it&amp;#8217;s description says something along the lines of:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;quoteblock&quot;&gt;
+&lt;blockquote&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;Cross-origin requests from  1  origin(s) will be permitted upon satisfying method, header and credential constraints.  Denied requests will be terminated.  Preflight requests will be cached for 9001 delta seconds.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Assuming you&amp;#8217;ve saved everything, hit &lt;strong&gt;Publish&lt;/strong&gt; and we&amp;#8217;ll be ready to test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;access-control-to-major-tom&quot;&gt;Access Control to Major Tom&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Generally, it&amp;#8217;s the job of the user agent to set the &lt;code&gt;Origin&lt;/code&gt; header, such as a browser or mobile client. However, we&amp;#8217;ll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;unwelcome-guests&quot;&gt;Unwelcome guests&lt;/h4&gt;
+&lt;div class=&quot;sect4&quot;&gt;
+&lt;h5 id=&quot;no-ticket-to-fly&quot;&gt;No ticket to fly&lt;/h5&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In our first example, we&amp;#8217;ll set an &lt;code&gt;Origin&lt;/code&gt; that we didn&amp;#8217;t permit:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;curl -k -v -H &#39;Origin: http://panacalty.local&#39; https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here&amp;#8217;s what comes back:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;CORS: Origin not permitted.&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Access-Control-Allow-Origin&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+      &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Access-Control-Expose-Headers&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Response-Counter&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+   },
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;responseCode&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;integer&quot;&gt;400&lt;/span&gt;,
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Authorization&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+   &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;failureCode&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;integer&quot;&gt;400&lt;/span&gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Notice that we were given the thumbs down without the service ever being hit; for most use cases this is a good thing, as it avoids unnecessary load on a service where the user agent is going to throw away the response anyway.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect4&quot;&gt;
+&lt;h5 id=&quot;not-got-the-head-er-for-it&quot;&gt;Not got the head(er) for it&lt;/h5&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we&amp;#8217;ll try to make a request with a header that we&amp;#8217;ve not allowed: &lt;code&gt;X-SECRET&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;curl -X OPTIONS -k -v -H &#39;Origin: http://newcastle.local&#39; -H &#39;Access-Control-Request-Headers: X-SECRET&#39; &#39;Access-Control-Request-Method: TRACE&#39; https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Correctly, CORS turned the prerequest down:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Authorization&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;failureCode&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;integer&quot;&gt;400&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;responseCode&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;integer&quot;&gt;400&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;CORS: Requested header not allowed&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {
+        &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Access-Control-Max-Age&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;9001&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The same goes for Request-Method (verb), and of course, whether the CORS request itself is valid.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;playing-by-the-rules&quot;&gt;Playing by the rules&lt;/h4&gt;
+&lt;div class=&quot;admonitionblock tip&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal, a request will automatically be allowed, as it is a &lt;em&gt;non-CORS&lt;/em&gt; request. Some browsers still make the superfluous CORS requests anyway.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect4&quot;&gt;
+&lt;h5 id=&quot;keep-it-simple&quot;&gt;Keep it simple&lt;/h5&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s set up a request that finally is playing by the parameters we configured earlier:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;curl -X GET -k -v -H &#39;Origin: http://newcastle.local&#39; https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+&amp;gt; GET /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
+&amp;gt; User-Agent: curl/7.37.1
+&amp;gt; Host: 127.0.0.1:8443
+&amp;gt; Accept: */*
+&amp;gt; Origin: http://newcastle.local
+&amp;gt;
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; X-Powered-By: Undertow/1
+&amp;lt; Server: WildFly/8
+&amp;lt; Access-Control-Expose-Headers: Response-Counter
+&amp;lt; Response-Counter: 1
+&amp;lt; Date: Sat, 13 Jun 2015 16:06:32 GMT
+&amp;lt; Connection: keep-alive
+&amp;lt; Access-Control-Allow-Origin: http://newcastle.local
+&amp;lt; Content-Type: application/json
+&amp;lt; Content-Length: 345
+&amp;lt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It works: excellent! Here&amp;#8217;s our response body:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/services/echo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/services/echo&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Host&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;127.0.0.1:8080&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;User-Agent&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;curl/7.37.1&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Accept&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;*/*&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Connection&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;keep-alive&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Cache-Control&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;no-cache&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Pragma&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;no-cache&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You can see that the &lt;code&gt;Response-Counter&lt;/code&gt; header is in our list of headers that can be exposed. If we were building a Javascript XHR then the browser would allow you to see the &lt;code&gt;Response-Counter&lt;/code&gt; but not other non-standard fields such as &lt;code&gt;X-Powered-By&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect4&quot;&gt;
+&lt;h5 id=&quot;preflight-checks&quot;&gt;Preflight checks&lt;/h5&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s do something a bit more complex that requires a &lt;strong&gt;preflight request&lt;/strong&gt;, which is essentially a pre-check to see whether our request is acceptable before attempting it for real. We&amp;#8217;ll set the headers &lt;code&gt;Access-Control-Request-Method&lt;/code&gt; to &lt;code&gt;PATCH&lt;/code&gt; and &lt;code&gt;Access-Control-Request-Headers&lt;/code&gt; to &lt;code&gt;X-APIMAN-EXCELLENT&lt;/code&gt;. Again, we&amp;#8217;re using a permitted origin.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To simulate it using cURL, let&amp;#8217;s do:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;curl -X OPTIONS -k -v -H &#39;Origin: http://newcastle.local&#39; -H &#39;Access-Control-Request-Method: PATCH&#39; -H &#39;Access-Control-Request-Headers: X-APIMAN-EXCELLENT&#39; https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+&amp;gt; OPTIONS /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
+&amp;gt; User-Agent: curl/7.37.1
+&amp;gt; Host: 127.0.0.1:8443
+&amp;gt; Accept: */*
+&amp;gt; Origin: http://newcastle.local
+&amp;gt; Access-Control-Request-Method: PATCH
+&amp;gt; Access-Control-Request-Headers: X-APIMAN-EXCELLENT
+&amp;gt;
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Access-Control-Allow-Headers: X-APIMAN-EXCELLENT
+&amp;lt; Access-Control-Expose-Headers: Response-Counter
+&amp;lt; Access-Control-Allow-Origin: http://newcastle.local
+&amp;lt; Access-Control-Max-Age: 9001
+&amp;lt; Access-Control-Allow-Methods: PATCH
+&amp;lt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect4&quot;&gt;
+&lt;h5 id=&quot;liftoff&quot;&gt;Liftoff&lt;/h5&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As you can see, the plugin gave us permission to continue on and make our real request with that origin, header and verb. In the real world, the browser would go ahead and do exactly that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Notice that the preflight requests never go through to the service itself, they are CORS specific and the response is generated on the gateway by the CORS policy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;in-conclusion&quot;&gt;In conclusion&amp;#8230;&amp;#8203;&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We build up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnote_1&quot;&gt;
+&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt; One of our official plugins, the rest of which can be viewed at &lt;a href=&quot;https://github.com/apiman/apiman-plugins/&quot; class=&quot;bare&quot;&gt;https://github.com/apiman/apiman-plugins/&lt;/a&gt;. You can build and deploy your plugins publicly or privately in a similar manner
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnote_2&quot;&gt;
+&lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt; Use the version corresponding to your selected release of apiman
+&lt;/div&gt;
+&lt;/div&gt;</description>
+				<pubDate>Thu, 02 Jul 2015 10:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Cover yourself up! Protecting your services with mutual auth</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -2385,6 +2740,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Thu, 18 Jun 2015 05:31:13 -0400</lastBuildDate>	
+		<lastBuildDate>Thu, 02 Jul 2015 05:22:28 -0400</lastBuildDate>	
 	</channel>
 </rss>
