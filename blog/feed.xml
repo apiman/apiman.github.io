@@ -344,7 +344,7 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 &lt;h2 id=&quot;in-conclusion&quot;&gt;In conclusion&amp;#8230;&amp;#8203;&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We build up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!&lt;/p&gt;
+&lt;p&gt;We built up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2740,6 +2740,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Thu, 02 Jul 2015 05:22:28 -0400</lastBuildDate>	
+		<lastBuildDate>Thu, 02 Jul 2015 05:29:15 -0400</lastBuildDate>	
 	</channel>
 </rss>
