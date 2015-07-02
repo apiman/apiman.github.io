@@ -227,4 +227,4 @@ Notice that the preflight requests never go through to the service itself, they 
 
 == In conclusion...
 
-We build up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!
+We built up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!
