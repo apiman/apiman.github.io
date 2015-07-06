@@ -9,6 +9,150 @@
 		
 		
 			<item>
+				<title>At long last, Metrics R Us!</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;A core feature of any good API Management solution is the recording of and reporting on
+interesting metrics related to API requests.  Because apiman acts as a central Gateway
+for all managed API traffic, it is the perfect location to record information about each
+and every request.  This allows it to report on interesting data it has recorded, related
+to response times, successful vs. failed requests, total number of requests broken down
+by time, consumer id, or plan used.  As you can imagine, this is extremely valuable
+information and it is a bit embarrassing that we haven’t offered this functionality until
+now!&lt;/p&gt;
+
+&lt;p&gt;But that gap is finally filled with version 1.1.4.Final.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;First let me give you just a high level overview of what this is all about.  Every time
+the API Gateway gets a request from an API client, it will add a record in the metrics
+system with a bunch of interesting fields.  These include but are not limited to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Request start and end times&lt;/li&gt;
+  &lt;li&gt;Service start and end times (i.e. just the part of the request taken up by the back end service)&lt;/li&gt;
+  &lt;li&gt;Resource path&lt;/li&gt;
+  &lt;li&gt;Response type (success, failure, error)&lt;/li&gt;
+  &lt;li&gt;Service info (org id, id, version)&lt;/li&gt;
+  &lt;li&gt;Application info (org id, id, version)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All of this information is recorded in the metrics storage system so that later on it
+can be analyzed/mined for interesting trends.&lt;/p&gt;
+
+&lt;p&gt;In the API Manager, we extract interesting reports from the recorded metrics data and
+display it as graphs in the UI (as well as provide the data via a set of metrics
+related REST endpoints in the API Manager’s own API).&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-we-store-metrics&quot;&gt;How do we store metrics?&lt;/h2&gt;
+&lt;p&gt;Out of the box, apiman stores the metrics information into an elasticsearch index.  This
+elasticsearch instance is provided as part of the apiman distribution and is enabled and
+running by default.  If you wish to use a different elasticsearch instance that’s of
+course no problem - all it requires is some tweaking of settings in the apiman.properties
+file.  I recommend having a look at the &lt;a href=&quot;http://www.apiman.io/latest/installation-guide.html&quot;&gt;Installation Guide&lt;/a&gt;
+for more details.&lt;/p&gt;
+
+&lt;p&gt;The intention is to support various metrics storage systems, not just elasticsearch.
+For example, we have InfluxDB and Hawkular implementations in progres.  You can even
+implement your own!  Custom metrics systems is likely a separate blog post, but note
+that &lt;em&gt;storing&lt;/em&gt; metrics data into an alternate system is easy - simply implement the
+&lt;em&gt;IMetrics&lt;/em&gt; interface:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apiman&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gateway&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;engine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IMetrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  * Records the metrics for a single request.  Most implementations will likely&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  * asynchronously process this information.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;record&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestMetric&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metric&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  * Provides the component registry (before any call to {@link #record(RequestMetric)})&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  * is made. Metrics can then access HTTP client components, etc.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;  */&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setComponentRegistry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IComponentRegistry&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A little bit of configuration foo in the apiman.properties is all it takes to switch
+from elasticsearch to your custom provider.&lt;/p&gt;
+
+&lt;h2 id=&quot;metrics-data-from-the-api-managers-rest-api&quot;&gt;Metrics data from the API Manager’s REST API&lt;/h2&gt;
+&lt;p&gt;There is no way to extract arbitrary metrics information from the metrics source unless
+you hit the metrics storage directly.  For example, you could use Kibana to directly
+view the apiman metrics information stored in elasticsearch.  In the future we will
+be exploring ways to integrate the data visualization tools that come with each of the
+providers we support (elasticsearch, hawkular, influxcb, etc).  However, we do provide
+a set of REST endpoints you can use to extract common metrics.  These REST endpoints are
+available as a part of the standard API Manager’s REST API.&lt;/p&gt;
+
+&lt;p&gt;Please refer to the &lt;a href=&quot;http://www.apiman.io/latest/api-manager-restdocs.html&quot;&gt;API documentation&lt;/a&gt;
+for the latest information, but at the time of this blog post the available metrics
+endpoints are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/usage&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/appUsage&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/planUsage&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/responseStats&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/summaryResponseStats&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/planResponseStats&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+  &lt;li&gt;/organizations/&lt;org_id&gt;/services/&lt;svc_id&gt;/versions/&lt;version&gt;/metrics/appResponseStats&lt;/version&gt;&lt;/svc_id&gt;&lt;/org_id&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The ‘usage’ endpoints return information about the number of requests made.  The
+‘responseStats’ endpoints are similar, but are broken down by response type (successful
+vs. failed vs. error responses).  All endpoints require a time range (from and to).  The
+&lt;em&gt;/usage&lt;/em&gt; and &lt;em&gt;/responseStats&lt;/em&gt; endpoints also require a time interval, because they both
+return a histogram/time series dataset.&lt;/p&gt;
+
+&lt;p&gt;Sensible limits are enforced on all these endpoints to discourage abuse.  For example,
+don’t ask for a per-minute granularity time series dataset over a ten year data range.
+The system won’t like that one bit.&lt;/p&gt;
+
+&lt;h2 id=&quot;viewing-metrics-info-in-the-ui&quot;&gt;Viewing metrics info in the UI&lt;/h2&gt;
+&lt;p&gt;The metrics information provided by the API is also available directly in the API Manager
+UI.  For any published service, simply navigate to the &lt;em&gt;Metrics&lt;/em&gt; tab for that Service
+(in the provider section of the UI).  The UI should be pretty easy to use - simply pick
+a type of metric you want to see and a pre-configured time period!  Here is what the
+usage metrics might look like for a typical service:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-06/usage-metrics.png&quot; alt=&quot;Usage Metrics&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here is what you might expect to find for typical response type metrics:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-06/response-type-metrics.png&quot; alt=&quot;Response Type Metrics&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;As you can see, this is highly valuable information to have.  We only have a couple of
+different categories of metrics exposed via the API and UI right now - so this is
+your opportunity to come tell us what you’d like to see!  Join the apiman metrics
+conversation on our &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/apiman-user&quot;&gt;mailing list&lt;/a&gt;
+or &lt;a href=&quot;http://www.apiman.io/latest/chat.html&quot;&gt;IRC channel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="api-manager" />
+				
+					<category term="service" />
+				
+					<category term="ui" />
+				
+					<category term="metrics" />
+				
+				<pubDate>Mon, 06 Jul 2015 11:10:22 -0400</pubDate>
+				<link>http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>CORS? Of Course!</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -2836,6 +2980,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Mon, 06 Jul 2015 12:48:43 -0400</lastBuildDate>
+		<lastBuildDate>Mon, 06 Jul 2015 15:22:07 -0400</lastBuildDate>
 	</channel>
 </rss>
