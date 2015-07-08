@@ -9,6 +9,176 @@
 		
 		
 			<item>
+				<title>Manage Fuse APIs with apiman</title>
+				
+				<description>&lt;p&gt;This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on &lt;a href=&quot;http://camel.apache.org&quot;&gt;Apache Camel&lt;/a&gt;, an implementation of many of the most commonly used enterprise integration patterns (EIP).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;creating-api-provider-in-jboss-fuse&quot;&gt;Creating API provider in JBoss Fuse&lt;/h1&gt;
+
+&lt;p&gt;The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the &lt;a href=&quot;http://www.jboss.org/products/fuse/developer-materials/#!project=fuse&quot;&gt;developer materials&lt;/a&gt; and other &lt;a href=&quot;http://www.jboss.org/products/fuse/resources/&quot;&gt;resources&lt;/a&gt; at jboss.org.&lt;/p&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+&lt;p&gt;To obtain a distribution of JBoss Fuse please visit the JBoss Fuse &lt;a href=&quot;http://www.jboss.org/products/fuse/download/&quot;&gt;download page&lt;/a&gt;.
+Installation of JBoss Fuse is very simple, as the only thing you need to do is to unzip the distribution, e.g.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;unzip jboss-fuse-full-6.2.0.redhat-133.zip&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You might also want to enable the default admin user by uncommenting the last line in &lt;code&gt;&amp;lt;fuse_dir&amp;gt;/etc/users.properties&lt;/code&gt;. Without a user configured you won’t be able to log into Fuse management console.&lt;/p&gt;
+
+&lt;h3 id=&quot;server-startup&quot;&gt;Server startup&lt;/h3&gt;
+
+&lt;p&gt;To start Fuse simply execute the following command from &lt;code&gt;&amp;lt;fuse_dir&amp;gt;/bin&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;./fuse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once JBoss Fuse is loaded proceed by creating a new Fuse Fabric instance. To do that execute &lt;code&gt;fabric:create&lt;/code&gt; command from Fuse CLI:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;JBossFuse:karaf@root&amp;gt; fabric:create&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at &lt;a href=&quot;http://localhost:8181&quot;&gt;http://localhost:8181&lt;/a&gt;. 
+In Fabric perspective, under Containers tabs click on the &lt;em&gt;Create&lt;/em&gt; button to open the &lt;em&gt;Create New Container form&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/fabric.png&quot; alt=&quot;List of Fabric containers&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On the &lt;em&gt;Create New Container&lt;/em&gt; page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select the ‘rest’ profile for it. This will ensure that Fabric pickups the REST Quickstart and deploys it to this container. Finish the operation by hitting the &lt;em&gt;Create and start container&lt;/em&gt; button.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/container.png&quot; alt=&quot;Create Fabric Container&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
+You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on &lt;em&gt;APIs&lt;/em&gt; section under the &lt;em&gt;Services&lt;/em&gt; tab. 
+Note the &lt;em&gt;Location&lt;/em&gt; field - that’s the &lt;strong&gt;base url&lt;/strong&gt; the for endpoint implementation. We will use it later in the apiman manager.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/apis.png&quot; alt=&quot;APIs deployed to Fuse Fabric&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a default user preconfigured so you can verify if the application was successfully deployed. It’s available at &lt;code&gt;&amp;lt;location&amp;gt;/customerservice/customers/123&lt;/code&gt; (e.g. &lt;a href=&quot;http://localhost:8182/cxf/crm/customerservice/customers/123&quot;&gt;http://localhost:8182/cxf/crm/customerservice/customers/123&lt;/a&gt;)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;[sbunciak@sbunciak ~]$ http http://localhost:8182/cxf/crm/customerservice/customers/123
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Date: Tue, 07 Jul 2015 22:17:13 GMT
+Server: Jetty(8.1.17.v20150415)
+Transfer-Encoding: chunked
+
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:Customer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ns0=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://rest.fabric.quickstarts.fabric8.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:id&amp;gt;&lt;/span&gt;123&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:id&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:name&amp;gt;&lt;/span&gt;John&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:Customer&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;configure-apiman-to-manage-fuse-endpoint&quot;&gt;Configure apiman to manage Fuse endpoint&lt;/h1&gt;
+
+&lt;p&gt;To install the latest version of apiman follow this &lt;a href=&quot;http://www.apiman.io/latest/download.html&quot;&gt;guide&lt;/a&gt;. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of &lt;a href=&quot;http://www.wildfly.org/&quot;&gt;Wildly 8&lt;/a&gt; server.&lt;/p&gt;
+
+&lt;p&gt;After completing the installation, start apiman by executing the following command from &lt;code&gt;&amp;lt;wildfly&amp;gt;/bin&lt;/code&gt; folder:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;./standalone.sh -c standalone-apiman.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;quick-public-service-setup&quot;&gt;Quick public service setup&lt;/h3&gt;
+
+&lt;p&gt;For demonstration purposes I’ll be creating a Public Service, however in real life you might want to configure different plans, various contracts, etc. 
+Please consult the apiman &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;user guide&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;p&gt;In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
+You can do that easily in apiman manager, typically available at: &lt;a href=&quot;http://localhost:8080/apimanui&quot;&gt;http://localhost:8080/apimanui&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once logged into the apiman manager, locate the Organizations sections on the initial page, select &lt;em&gt;Create a New Organization&lt;/em&gt; link, provide a name and hit &lt;em&gt;Create Organization&lt;/em&gt; button. This will take you to organization details page where you can create a new Service by clicking on &lt;em&gt;New Service&lt;/em&gt; button under &lt;em&gt;Services&lt;/em&gt; tab:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/service.png&quot; alt=&quot;Image: Create Service&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You will be asked to provide a name and a version for this Service. Once the service is successfully created there are few things remaining before you can publish and start using it. 
+First, you need to provide an implementation base url on the &lt;em&gt;Implementation&lt;/em&gt; tab. Use the base URL of the REST Quickstart and save your changes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/implementation.png&quot; alt=&quot;Image: Provide Endpoint Implementation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
+I used the Rate Limiting policy to limit usage of this service to 5 per minute:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/policy.png&quot; alt=&quot;Image: Assign policy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you are all set to make the service public by checking &lt;em&gt;Make this service public&lt;/em&gt; under &lt;em&gt;Plans&lt;/em&gt; tab, saving the changes and clicking the &lt;em&gt;Publish&lt;/em&gt; button (which should be now enabled).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/publish.png&quot; alt=&quot;Image: Publish Service&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After you have published the service, have a look at the &lt;em&gt;Endpoint&lt;/em&gt; tab to look up the URL to be used to invoke this public service:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/endpoint.png&quot; alt=&quot;Image: Managed Service Endpoint&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;testing-your-setup&quot;&gt;Testing your setup&lt;/h1&gt;
+
+&lt;p&gt;Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First request should succeed:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify=no
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/xml
+Date: Tue, 07 Jul 2015 21:01:02 GMT
+Server: Jetty(8.1.17.v20150415)
+Transfer-Encoding: chunked
+X-Powered-By: Undertow/1
+X-RateLimit-Limit: 5
+X-RateLimit-Remaining: 4
+X-RateLimit-Reset: 57
+
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:Customer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ns0=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://rest.fabric.quickstarts.fabric8.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:id&amp;gt;&lt;/span&gt;123&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:id&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:name&amp;gt;&lt;/span&gt;John&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:name&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:Customer&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Executing 5 consecutive requests should fail with &lt;code&gt;HTTP 429 Too Many Requests&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sbunciak@sbunciak ~&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no
+HTTP/1.1 &lt;span class=&quot;m&quot;&gt;429&lt;/span&gt; Too Many Requests
+Connection: keep-alive
+Content-Length: 176
+Content-Type: application/json
+Date: Tue, &lt;span class=&quot;m&quot;&gt;07&lt;/span&gt; Jul &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 21:00:51 GMT
+Server: WildFly/8
+X-Policy-Failure-Code: 10005
+X-Policy-Failure-Message: Rate limit exceeded.
+X-Policy-Failure-Type: Other
+X-Powered-By: Undertow/1
+X-RateLimit-Limit: 5
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 8
+
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;failureCode&amp;quot;&lt;/span&gt;: 10005, 
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;headers&amp;quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Limit&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;5&amp;quot;&lt;/span&gt;, 
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Remaining&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;, 
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Reset&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;8&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, 
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Rate limit exceeded.&amp;quot;&lt;/span&gt;, 
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;responseCode&amp;quot;&lt;/span&gt;: 429, 
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Other&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+				
+					<category term="api" />
+				
+					<category term="management" />
+				
+					<category term="jboss" />
+				
+					<category term="fuse" />
+				
+				<pubDate>Tue, 07 Jul 2015 11:15:15 -0400</pubDate>
+				<link>http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>At long last, Metrics R Us!</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -2980,6 +3150,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Mon, 06 Jul 2015 15:22:07 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 08 Jul 2015 06:49:09 -0400</lastBuildDate>
 	</channel>
 </rss>
