@@ -129,7 +129,7 @@
 
 <h1 id="creating-api-provider-in-jboss-fuse">Creating API provider in JBoss Fuse</h1>
 
-<p>The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect <a href="http://www.jboss.org/products/fuse/developer-materials/#!project=fuse">developer materials</a> and other <a href="http://www.jboss.org/products/fuse/resources/">resources</a> at jboss.org.</p>
+<p>The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the <a href="http://www.jboss.org/products/fuse/developer-materials/#!project=fuse">developer materials</a> and other <a href="http://www.jboss.org/products/fuse/resources/">resources</a> at jboss.org.</p>
 
 <h3 id="installation">Installation</h3>
 <p>To obtain a distribution of JBoss Fuse please visit the JBoss Fuse <a href="http://www.jboss.org/products/fuse/download/">download page</a>.
@@ -137,7 +137,7 @@ Installation of JBoss Fuse is very simple, as the only thing you need to do is t
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">unzip jboss-fuse-full-6.2.0.redhat-133.zip</code></pre></div>
 
-<p>You might want to also enable the default admin user by uncommenting the last line in <code>&lt;fuse_dir&gt;/etc/users.properties</code>. Without a user configured you won’t be able to log into Fuse management console.</p>
+<p>You might also want to enable the default admin user by uncommenting the last line in <code>&lt;fuse_dir&gt;/etc/users.properties</code>. Without a user configured you won’t be able to log into Fuse management console.</p>
 
 <h3 id="server-startup">Server startup</h3>
 
@@ -154,13 +154,13 @@ In Fabric perspective, under Containers tabs click on the <em>Create</em> button
 
 <p><img src="/blog/images/2015-07-07/fabric.png" alt="List of Fabric containers" /></p>
 
-<p>On the <em>Create New Container</em> page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select ‘rest’ profile for it. This will ensure that Fabric will pickup the REST Quickstart and deploy it to this container. Finish the operation by hitting the <em>Create and start container</em> button.</p>
+<p>On the <em>Create New Container</em> page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select the ‘rest’ profile for it. This will ensure that Fabric pickups the REST Quickstart and deploys it to this container. Finish the operation by hitting the <em>Create and start container</em> button.</p>
 
 <p><img src="/blog/images/2015-07-07/container.png" alt="Create Fabric Container" /></p>
 
-<p>Container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
+<p>The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
 You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on <em>APIs</em> section under the <em>Services</em> tab. 
-Note the <em>Location</em> field - that’s the <strong>base url</strong> for endpoint implementation. We will use it later in apiman manager.</p>
+Note the <em>Location</em> field - that’s the <strong>base url</strong> the for endpoint implementation. We will use it later in the apiman manager.</p>
 
 <p><img src="/blog/images/2015-07-07/apis.png" alt="APIs deployed to Fuse Fabric" /></p>
 
@@ -181,9 +181,9 @@ Transfer-Encoding: chunked
 
 <h1 id="configure-apiman-to-manage-fuse-endpoint">Configure apiman to manage Fuse endpoint</h1>
 
-<p>To install the latest version of apiman follow this <a href="http://www.apiman.io/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract apiman overlay zip on top of <a href="http://www.wildfly.org/">Wildly 8</a> server.</p>
+<p>To install the latest version of apiman follow this <a href="http://www.apiman.io/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of <a href="http://www.wildfly.org/">Wildly 8</a> server.</p>
 
-<p>After completing the installation, start apiman by executing the follogin command from <code>&lt;wildfly&gt;/bin</code> folder:</p>
+<p>After completing the installation, start apiman by executing the following command from <code>&lt;wildfly&gt;/bin</code> folder:</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">./standalone.sh -c standalone-apiman.xml</code></pre></div>
 
@@ -195,7 +195,7 @@ Please consult the apiman <a href="http://www.apiman.io/latest/user-guide.html">
 <p>In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
 You can do that easily in apiman manager, typically available at: <a href="http://localhost:8080/apimanui">http://localhost:8080/apimanui</a>.</p>
 
-<p>Once logged in apiman manager, locate the Organizations sections on the initial page, select <em>Create a New Organization</em> link, provide a name and hit <em>Create Organization</em> button. This will take you to organization details page where you can create a new Service by clicking on <em>New Service</em> button under <em>Services</em> tab:</p>
+<p>Once logged into the apiman manager, locate the Organizations sections on the initial page, select <em>Create a New Organization</em> link, provide a name and hit <em>Create Organization</em> button. This will take you to organization details page where you can create a new Service by clicking on <em>New Service</em> button under <em>Services</em> tab:</p>
 
 <p><img src="/blog/images/2015-07-07/service.png" alt="Image: Create Service" /></p>
 
@@ -204,7 +204,7 @@ First, you need to provide an implementation base url on the <em>Implementation<
 
 <p><img src="/blog/images/2015-07-07/implementation.png" alt="Image: Provide Endpoint Implementation" /></p>
 
-<p>Second, you may want to apply some policies to this Publis Service. To do that, go to Policies tab and configure a policy of your choice. 
+<p>Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
 I used the Rate Limiting policy to limit usage of this service to 5 per minute:</p>
 
 <p><img src="/blog/images/2015-07-07/policy.png" alt="Image: Assign policy" /></p>
@@ -219,7 +219,7 @@ I used the Rate Limiting policy to limit usage of this service to 5 per minute:<
 
 <h1 id="testing-your-setup">Testing your setup</h1>
 
-<p>Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed request you will get a similar output:</p>
+<p>Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:</p>
 
 <ul>
   <li>First request should succeed:</li>

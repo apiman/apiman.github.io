@@ -13,7 +13,7 @@ This article aims to provide a short guide on how to get API Management capabili
 Creating API provider in JBoss Fuse
 ====================================
 
-The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I'm using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect [developer materials](http://www.jboss.org/products/fuse/developer-materials/#!project=fuse) and other [resources](http://www.jboss.org/products/fuse/resources/) at jboss.org.
+The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I'm using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the [developer materials](http://www.jboss.org/products/fuse/developer-materials/#!project=fuse) and other [resources](http://www.jboss.org/products/fuse/resources/) at jboss.org.
 
 ### Installation 
 To obtain a distribution of JBoss Fuse please visit the JBoss Fuse [download page](http://www.jboss.org/products/fuse/download/).
@@ -23,7 +23,7 @@ Installation of JBoss Fuse is very simple, as the only thing you need to do is t
 unzip jboss-fuse-full-6.2.0.redhat-133.zip
 {% endhighlight %}
 
-You might want to also enable the default admin user by uncommenting the last line in `<fuse_dir>/etc/users.properties`. Without a user configured you won't be able to log into Fuse management console.
+You might also want to enable the default admin user by uncommenting the last line in `<fuse_dir>/etc/users.properties`. Without a user configured you won't be able to log into Fuse management console.
 
 ### Server startup
 
@@ -44,13 +44,13 @@ In Fabric perspective, under Containers tabs click on the _Create_ button to ope
 
 ![List of Fabric containers](/blog/images/2015-07-07/fabric.png)
 
-On the _Create New Container_ page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select 'rest' profile for it. This will ensure that Fabric will pickup the REST Quickstart and deploy it to this container. Finish the operation by hitting the _Create and start container_ button.
+On the _Create New Container_ page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select the 'rest' profile for it. This will ensure that Fabric pickups the REST Quickstart and deploys it to this container. Finish the operation by hitting the _Create and start container_ button.
 
 ![Create Fabric Container](/blog/images/2015-07-07/container.png)
 
-Container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
+The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
 You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on _APIs_ section under the _Services_ tab. 
-Note the _Location_ field - that's the **base url** for endpoint implementation. We will use it later in apiman manager.
+Note the _Location_ field - that's the **base url** the for endpoint implementation. We will use it later in the apiman manager.
 
 ![APIs deployed to Fuse Fabric](/blog/images/2015-07-07/apis.png)
 
@@ -74,9 +74,9 @@ Transfer-Encoding: chunked
 Configure apiman to manage Fuse endpoint
 ========================================
 
-To install the latest version of apiman follow this [guide](http://www.apiman.io/latest/download.html). The installation process is again very simple, all you need to do is to extract apiman overlay zip on top of [Wildly 8](http://www.wildfly.org/) server. 
+To install the latest version of apiman follow this [guide](http://www.apiman.io/latest/download.html). The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of [Wildly 8](http://www.wildfly.org/) server.
 
-After completing the installation, start apiman by executing the follogin command from `<wildfly>/bin` folder:
+After completing the installation, start apiman by executing the following command from `<wildfly>/bin` folder:
 
 {% highlight sh %}
 ./standalone.sh -c standalone-apiman.xml
@@ -90,7 +90,7 @@ Please consult the apiman [user guide](http://www.apiman.io/latest/user-guide.ht
 In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
 You can do that easily in apiman manager, typically available at: [http://localhost:8080/apimanui](http://localhost:8080/apimanui).
 
-Once logged in apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new Service by clicking on _New Service_ button under _Services_ tab:
+Once logged into the apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new Service by clicking on _New Service_ button under _Services_ tab:
 
 ![Image: Create Service](/blog/images/2015-07-07/service.png)
 
@@ -99,7 +99,7 @@ First, you need to provide an implementation base url on the _Implementation_ ta
 
 ![Image: Provide Endpoint Implementation](/blog/images/2015-07-07/implementation.png)
 
-Second, you may want to apply some policies to this Publis Service. To do that, go to Policies tab and configure a policy of your choice. 
+Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
 I used the Rate Limiting policy to limit usage of this service to 5 per minute:
 
 ![Image: Assign policy](/blog/images/2015-07-07/policy.png)
@@ -115,7 +115,7 @@ After you have published the service, have a look at the _Endpoint_ tab to look 
 Testing your setup
 ==================
 
-Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed request you will get a similar output:
+Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:
 
 * First request should succeed:
 
