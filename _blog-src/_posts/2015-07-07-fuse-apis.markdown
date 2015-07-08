@@ -2,7 +2,7 @@
 layout: post
 title:  "Manage Fuse APIs with apiman"
 date:   2015-07-07 15:15:15
-author: Stefan Bunciak
+author: sbunciak
 categories: api management jboss fuse
 ---
 
