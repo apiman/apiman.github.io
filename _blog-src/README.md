@@ -7,6 +7,16 @@ The apiman blog is just a static set of HTML pages produced by jekyll:
 
 http://jekyllrb.com/
 
+## Setup
+
+Bundler can handle installing all of the prerequisites for building the
+blog:
+
+   bundle install
+
+If you don't have bundler already installed, use your package manager or
+`(sudo) gem install bundler`.
+
 ## Creating a Post
 
 All you need to do is create your blog post as a single file in the _posts
@@ -41,7 +51,7 @@ As your write your post, you probably want to see how it looks in the blog.
 To do that, you must have jekyll installed.  You can run this from the 
 _blog-src directory:
 
-    jekyll serve
+    bundle exec jekyll serve
 
 This will start up jekyll and serve the blog content on port 4000.  Once
 that's running, you can test it by pointing your browser here:
@@ -53,6 +63,6 @@ http://localhost:4000/blog/
 Once everything is good, you can regenerate the blog by running jekyll
 like this:
 
-    jekyll build
+    bundle exec jekyll build
 
 
