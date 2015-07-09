@@ -206,6 +206,8 @@ Second, we'll take the token and attach it to our request to the service
 
 Great, it worked! We can see EchoService has now been reached, meaning our OAuth2 token was validated successfully, and it sent us back a response which includes the bearer token we used (you can strip this out in the options).
 
+If you're feeling lazy, here's https://gist.github.com/msavy/9390bfcd497f3c683a1c[an all-in-one script] to do it for you.
+
 == Adding Authorization
 
 We're going to develop our example a little bit further. At present, we simply have a binary approach where we either allow or disallow based upon which realm the token was issued from. If we want a more granular approach where we can discriminate upon roles, then we need to add another element: *Authorization*.
