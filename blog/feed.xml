@@ -1538,6 +1538,9 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Great, it worked! We can see EchoService has now been reached, meaning our OAuth2 token was validated successfully, and it sent us back a response which includes the bearer token we used (you can strip this out in the options).&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you&amp;#8217;re feeling lazy, here&amp;#8217;s &lt;a href=&quot;https://gist.github.com/msavy/9390bfcd497f3c683a1c&quot;&gt;an all-in-one script&lt;/a&gt; to do it for you.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
@@ -3170,6 +3173,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Thu, 09 Jul 2015 03:22:46 -0400</lastBuildDate>
+		<lastBuildDate>Thu, 09 Jul 2015 05:19:44 -0400</lastBuildDate>
 	</channel>
 </rss>
