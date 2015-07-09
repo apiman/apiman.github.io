@@ -15,17 +15,14 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 
 == Preparation
 
-For this example, let's assume we're using apiman's http://www.apiman.io/latest/download.html[quickstart] setup:
+For this example, let's assume we're using apiman's http://www.apiman.io/latest/download.html[quickstart] setup and have it running. I suggest using the _'Or simply try this...'_ box.
+
+After you have your apiman quickstart running (replace *apiman-1.1.3.Final* in the path below with whatever version you downloaded), we can live deploy a handy *echo service* into our environment so we have something to test against:
 
 ```ShellSession
-mkdir ~/apiman-1.1.3.Final
-cd ~/apiman-1.1.3.Final
-wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip
-wget http://downloads.jboss.org/overlord/apiman/1.1.3.Final/apiman-distro-wildfly8-1.1.3.Final-overlay.zip
-unzip wildfly-8.2.0.Final.zip
-unzip -o apiman-distro-wildfly8-1.1.3.Final-overlay.zip -d wildfly-8.2.0.Final
-cd wildfly-8.2.0.Final
-./bin/standalone.sh -c standalone-apiman.xml
+cd ~/apiman-1.1.3.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+mvn clean install
+mvn wildfly:deploy
 ```
 
 == Installing the Plugin
@@ -57,7 +54,7 @@ Select *add plugin*, fill in the details as above, and *add plugin*. That's it!
 
 There are two essential components to our system. First, is the http://keycloak.jboss.org[Keycloak server], an all-in-one https://en.wikipedia.org/wiki/Single_sign-on[SSO] and https://en.wikipedia.org/wiki/Identity_management[IdM]; we'll configure it to be our identity source and handle the issuance of OAuth2 bearer tokens. Second, is the apiman OAuth2 policy; we'll set it up to validate the tokens precisely to our requirements.
 
-Let's assume we're going to protect a very simple *echo service*, which echoes back to the requestor the details of any request made to it. It is located at `http://localhost:8080/services/echo`.
+Let's assume we're going to protect a very simple *echo service*, which echoes back to the requestor the details of any request made to it. It is located at `http://localhost:8080/apiman-echo`.
 
 === Keycloak Server
 
@@ -127,7 +124,7 @@ This demonstrates one OAuth2's most useful attributes: all the information requi
 
 First, log into apiman, and *Create a New Organization*; let's call it *_Newcastle_*. Select the *Services* tab, and add a *New Service*; we'll name this one *_EchoService_* and then *Create Service*.
 
-Select the *Implementation* tab, and set the endpoint to our echo service, `http://localhost:8080/services/echo`. Save and move onto the *Plans* tab, where you should opt to *Make this service public*. After saving, we can move onto the *Policies* tab, where the interesting stuff starts.
+Select the *Implementation* tab, and set the endpoint to our echo service, `http://localhost:8080/apiman-echo`. Save and move onto the *Plans* tab, where you should opt to *Make this service public*. After saving, we can move onto the *Policies* tab, where the interesting stuff starts.
 
 Navigate to *Add Policy*, and select *Keycloak OAuth Policy* from the drop-down list. A substantial set of options are available for your perusal, but for the purposes of this blog demo we'll set the following:
 
@@ -178,10 +175,10 @@ Next, let's do a request with a token. There are two ways to attach your bearer 
 - `Authorization` header, as `Authorization: Bearer <token>`
 - `access_token` query parameter, as `http://example.org/the/path/?access_token=<token>`
 
-First, let's retrieve a fresh token, and extract the `access_token` field
+First, let's retrieve a fresh token from Keycloak, and extract the `access_token` field from the json using `jq` footnote:[We're going to use `jq` to select the `access_token` field in our JSON, so if you don't have `jq` installed you can use your package manager to get it: OS X Brew `brew install jq`; On Fedora `sudo yum install jq`; On Debian `sudo apt-get install jq`].
 
 ```
-curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H "Content-Type: application/x-www-form-urlencoded" -d "username=rincewind" -d 'password=apiman' -d 'grant_type=password' -d 'client_id=apiman' | jsawk 'return this.access_token'
+curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H "Content-Type: application/x-www-form-urlencoded" -d 'username=rincewind' -d 'password=apiman' -d 'grant_type=password' -d 'client_id=apiman' | jq -r '.access_token'
 ```
 
 Second, we'll take the token and attach it to our request to the service
@@ -190,8 +187,8 @@ Second, we'll take the token and attach it to our request to the service
 [msavy@mmbp tmp]$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YW..." https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoService/1.0
 {
   "method" : "GET",
-  "resource" : "/services/echo",
-  "uri" : "/services/echo",
+  "resource" : "/apiman-echo",
+  "uri" : "/apiman-echo",
   "headers" : {
     "Authorization" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YWMzNi1hMTczLTRjOWMtYWJjZS00MzE2MJ...",
     "Host" : "127.0.0.1:8080",
@@ -235,7 +232,6 @@ We're going to add two rules:
 
 |===
 
-
 Our example user has the first role, but not the second. *Add* the policy and *Publish* the service again. Our endpoint will now reflect the changed version.
 
 You will probably need to issue a new bearer token, which you can achieve by repeating the previous shell command.
@@ -245,8 +241,8 @@ You will probably need to issue a new bearer token, which you can achieve by rep
  https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoService/2.0/rincewind/wizard
 {
   "method" : "GET",
-  "resource" : "/services/echo/rincewind/wizard",
-  "uri" : "/services/echo/rincewind/wizard",
+  "resource" : "/apiman-echo/rincewind/wizard",
+  "uri" : "/apiman-echo/rincewind/wizard",
   "headers" : {
     "Authorization" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmODAyZjFmMy1kN2JmLTQ0YjQtODA2N...",
     "Host" : "127.0.0.1:8080",

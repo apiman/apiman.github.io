@@ -1241,18 +1241,16 @@ You must explicitly enable client authentication for any services you want prote
 &lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;For this example, let&amp;#8217;s assume we&amp;#8217;re using apiman&amp;#8217;s &lt;a href=&quot;http://www.apiman.io/latest/download.html&quot;&gt;quickstart&lt;/a&gt; setup:&lt;/p&gt;
+&lt;p&gt;For this example, let&amp;#8217;s assume we&amp;#8217;re using apiman&amp;#8217;s &lt;a href=&quot;http://www.apiman.io/latest/download.html&quot;&gt;quickstart&lt;/a&gt; setup and have it running. I suggest using the &lt;em&gt;&#39;Or simply try this&amp;#8230;&amp;#8203;&#39;&lt;/em&gt; box.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After you have your apiman quickstart running (replace &lt;strong&gt;apiman-1.1.3.Final&lt;/strong&gt; in the path below with whatever version you downloaded), we can live deploy a handy &lt;strong&gt;echo service&lt;/strong&gt; into our environment so we have something to test against:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;mkdir ~/apiman-1.1.3.Final
-cd ~/apiman-1.1.3.Final
-wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip
-wget http://downloads.jboss.org/overlord/apiman/1.1.3.Final/apiman-distro-wildfly8-1.1.3.Final-overlay.zip
-unzip wildfly-8.2.0.Final.zip
-unzip -o apiman-distro-wildfly8-1.1.3.Final-overlay.zip -d wildfly-8.2.0.Final
-cd wildfly-8.2.0.Final
-./bin/standalone.sh -c standalone-apiman.xml&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;cd ~/apiman-1.1.3.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+mvn clean install
+mvn wildfly:deploy&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1309,7 +1307,7 @@ cd wildfly-8.2.0.Final
 &lt;p&gt;There are two essential components to our system. First, is the &lt;a href=&quot;http://keycloak.jboss.org&quot;&gt;Keycloak server&lt;/a&gt;, an all-in-one &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Identity_management&quot;&gt;IdM&lt;/a&gt;; we&amp;#8217;ll configure it to be our identity source and handle the issuance of OAuth2 bearer tokens. Second, is the apiman OAuth2 policy; we&amp;#8217;ll set it up to validate the tokens precisely to our requirements.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Let&amp;#8217;s assume we&amp;#8217;re going to protect a very simple &lt;strong&gt;echo service&lt;/strong&gt;, which echoes back to the requestor the details of any request made to it. It is located at &lt;code&gt;&lt;a href=&quot;http://localhost:8080/services/echo&quot; class=&quot;bare&quot;&gt;http://localhost:8080/services/echo&lt;/a&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s assume we&amp;#8217;re going to protect a very simple &lt;strong&gt;echo service&lt;/strong&gt;, which echoes back to the requestor the details of any request made to it. It is located at &lt;code&gt;&lt;a href=&quot;http://localhost:8080/apiman-echo&quot; class=&quot;bare&quot;&gt;http://localhost:8080/apiman-echo&lt;/a&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;keycloak-server&quot;&gt;Keycloak Server&lt;/h3&gt;
@@ -1409,7 +1407,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;p&gt;First, log into apiman, and &lt;strong&gt;Create a New Organization&lt;/strong&gt;; let&amp;#8217;s call it &lt;strong&gt;&lt;em&gt;Newcastle&lt;/em&gt;&lt;/strong&gt;. Select the &lt;strong&gt;Services&lt;/strong&gt; tab, and add a &lt;strong&gt;New Service&lt;/strong&gt;; we&amp;#8217;ll name this one &lt;strong&gt;&lt;em&gt;EchoService&lt;/em&gt;&lt;/strong&gt; and then &lt;strong&gt;Create Service&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Select the &lt;strong&gt;Implementation&lt;/strong&gt; tab, and set the endpoint to our echo service, &lt;code&gt;&lt;a href=&quot;http://localhost:8080/services/echo&quot; class=&quot;bare&quot;&gt;http://localhost:8080/services/echo&lt;/a&gt;&lt;/code&gt;. Save and move onto the &lt;strong&gt;Plans&lt;/strong&gt; tab, where you should opt to &lt;strong&gt;Make this service public&lt;/strong&gt;. After saving, we can move onto the &lt;strong&gt;Policies&lt;/strong&gt; tab, where the interesting stuff starts.&lt;/p&gt;
+&lt;p&gt;Select the &lt;strong&gt;Implementation&lt;/strong&gt; tab, and set the endpoint to our echo service, &lt;code&gt;&lt;a href=&quot;http://localhost:8080/apiman-echo&quot; class=&quot;bare&quot;&gt;http://localhost:8080/apiman-echo&lt;/a&gt;&lt;/code&gt;. Save and move onto the &lt;strong&gt;Plans&lt;/strong&gt; tab, where you should opt to &lt;strong&gt;Make this service public&lt;/strong&gt;. After saving, we can move onto the &lt;strong&gt;Policies&lt;/strong&gt; tab, where the interesting stuff starts.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Navigate to &lt;strong&gt;Add Policy&lt;/strong&gt;, and select &lt;strong&gt;Keycloak OAuth Policy&lt;/strong&gt; from the drop-down list. A substantial set of options are available for your perusal, but for the purposes of this blog demo we&amp;#8217;ll set the following:&lt;/p&gt;
@@ -1489,11 +1487,11 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;First, let&amp;#8217;s retrieve a fresh token, and extract the &lt;code&gt;access_token&lt;/code&gt; field&lt;/p&gt;
+&lt;p&gt;First, let&amp;#8217;s retrieve a fresh token from Keycloak, and extract the &lt;code&gt;access_token&lt;/code&gt; field from the json using &lt;code&gt;jq&lt;/code&gt; &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnote_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -d &quot;username=rincewind&quot; -d &#39;password=apiman&#39; -d &#39;grant_type=password&#39; -d &#39;client_id=apiman&#39; | jsawk &#39;return this.access_token&#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -d &#39;username=rincewind&#39; -d &#39;password=apiman&#39; -d &#39;grant_type=password&#39; -d &#39;client_id=apiman&#39; | jq -r &#39;.access_token&#39;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -1504,8 +1502,8 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;[msavy@mmbp tmp]$ curl -k -H &quot;Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YW...&quot; https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoService/1.0
 {
   &quot;method&quot; : &quot;GET&quot;,
-  &quot;resource&quot; : &quot;/services/echo&quot;,
-  &quot;uri&quot; : &quot;/services/echo&quot;,
+  &quot;resource&quot; : &quot;/apiman-echo&quot;,
+  &quot;uri&quot; : &quot;/apiman-echo&quot;,
   &quot;headers&quot; : {
     &quot;Authorization&quot; : &quot;Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YWMzNi1hMTczLTRjOWMtYWJjZS00MzE2MJ...&quot;,
     &quot;Host&quot; : &quot;127.0.0.1:8080&quot;,
@@ -1591,8 +1589,8 @@ There are a huge number of configuration permutations with Keycloak, and the mos
  https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoService/2.0/rincewind/wizard
 {
   &amp;quot;method&amp;quot; : &amp;quot;GET&amp;quot;,
-  &amp;quot;resource&amp;quot; : &amp;quot;/services/echo/rincewind/wizard&amp;quot;,
-  &amp;quot;uri&amp;quot; : &amp;quot;/services/echo/rincewind/wizard&amp;quot;,
+  &amp;quot;resource&amp;quot; : &amp;quot;/apiman-echo/rincewind/wizard&amp;quot;,
+  &amp;quot;uri&amp;quot; : &amp;quot;/apiman-echo/rincewind/wizard&amp;quot;,
   &amp;quot;headers&amp;quot; : {
     &amp;quot;Authorization&amp;quot; : &amp;quot;Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmODAyZjFmMy1kN2JmLTQ0YjQtODA2N...&amp;quot;,
     &amp;quot;Host&amp;quot; : &amp;quot;127.0.0.1:8080&amp;quot;,
@@ -1645,6 +1643,9 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;/div&gt;
 &lt;div class=&quot;footnote&quot; id=&quot;_footnote_2&quot;&gt;
 &lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt; Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the &lt;code&gt;iss&lt;/code&gt; field
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnote_3&quot;&gt;
+&lt;a href=&quot;#_footnoteref_3&quot;&gt;3&lt;/a&gt; We&amp;#8217;re going to use &lt;code&gt;jq&lt;/code&gt; to select the &lt;code&gt;access_token&lt;/code&gt; field in our JSON, so if you don&amp;#8217;t have &lt;code&gt;jq&lt;/code&gt; installed you can use your package manager to get it: OS X Brew &lt;code&gt;brew install jq&lt;/code&gt;; On Fedora &lt;code&gt;sudo yum install jq&lt;/code&gt;; On Debian &lt;code&gt;sudo apt-get install jq&lt;/code&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
 				
@@ -3153,6 +3154,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 08 Jul 2015 09:16:57 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 08 Jul 2015 12:57:38 -0400</lastBuildDate>
 	</channel>
 </rss>
