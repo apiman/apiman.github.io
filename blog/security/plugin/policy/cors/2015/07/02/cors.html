@@ -178,7 +178,17 @@
 <div class="sect2">
 <h3 id="preparation">Preparation</h3>
 <div class="paragraph">
-<p>If you have the <a href="http://www.apiman.io/latest/download.html">apiman quickstart</a> running, create an <strong>Organization</strong> called <strong><em>Foo</em></strong>, then create a <strong>Service</strong> called <strong><em>Bar</em></strong>. Set your Service&#8217;s implementation URL to be <code><a href="http://127.0.0.1:8080/services/echo" class="bare">http://127.0.0.1:8080/services/echo</a></code>, and select <strong><em>Rest</em></strong> as the type. Move to the <strong>Plans</strong> tab and tick <strong>Make this service public</strong>.</p>
+<p>If you have the <a href="http://www.apiman.io/latest/download.html">apiman quickstart</a> running <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span>, you next need to deploy the <strong><em>echo-service</em></strong> to act as the backend service for our demo. <strong>Substitute the path below</strong> for the appropriate one corresponding to the version you downloaded.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="ShellSession">cd ~/apiman-1.1.3.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+mvn clean install
+mvn wildfly:deploy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Return to the <a href="http://127.0.0.1:8080/apimanui">apiman UI</a> and log in <span class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</span>. Create an <strong>Organization</strong> called <strong><em>Foo</em></strong>, then create a <strong>Service</strong> called <strong><em>Bar</em></strong>. Set your Service&#8217;s implementation URL to be <code><a href="http://127.0.0.1:8080/services/apiman-echo" class="bare">http://127.0.0.1:8080/services/apiman-echo</a></code>, and select <strong><em>Rest</em></strong> as the type. Move to the <strong>Plans</strong> tab and tick <strong>Make this service public</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Next, move to the <strong>Policies</strong> tab, click <strong><em>Add Policy</em></strong> and select <strong>CORS Policy</strong> from the dropdown list.</p>
@@ -390,8 +400,8 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
   <span class="key"><span class="delimiter">&quot;</span><span class="content">method</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">GET</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">resource</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/services/echo</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">uri</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/services/echo</span><span class="delimiter">&quot;</span></span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">resource</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/apiman-echo</span><span class="delimiter">&quot;</span></span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">uri</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/apiman-echo</span><span class="delimiter">&quot;</span></span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">headers</span><span class="delimiter">&quot;</span></span> : {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">Host</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">127.0.0.1:8080</span><span class="delimiter">&quot;</span></span>,
     <span class="key"><span class="delimiter">&quot;</span><span class="content">User-Agent</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">curl/7.37.1</span><span class="delimiter">&quot;</span></span>,
@@ -464,6 +474,12 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 </div>
 <div class="footnote" id="_footnote_2">
 <a href="#_footnoteref_2">2</a> Use the version corresponding to your selected release of apiman
+</div>
+<div class="footnote" id="_footnote_3">
+<a href="#_footnoteref_3">3</a> For simplicity&#8217;s sake, I suggest using the instructions in the <em>'Or simply try this&#8230;&#8203;'</em> box
+</div>
+<div class="footnote" id="_footnote_4">
+<a href="#_footnoteref_4">4</a> If you used the quickstart, the defaults are U: admin P: admin123!
 </div>
 </div>
   </article>
