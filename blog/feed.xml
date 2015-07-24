@@ -9,6 +9,259 @@
 		
 		
 			<item>
+				<title>Plugins - Not Just For Policies Anymore</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;As you may know, apiman has long supported custom policies provided by users.  If you
+aren’t familiar with apiman plugins, you can find more about them by &lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;clicking here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As of version 1.1.5.Final, plugins are now even more useful.  You can provide custom
+implementations of various core apiman system components via plugins.  This allows users
+to customize apiman easily, without any changes to the classpath and without rebuilding
+the core apiman application.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I’ll explain how it works.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;review-what-is-a-plugin&quot;&gt;Review: What is a plugin?&lt;/h2&gt;
+&lt;p&gt;First, here are some good resources you can use to learn more about apiman plugins:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;Customizing JBoss apiman Through Policy Plugins&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;apiman Developer Guide: Plugins&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;No patience to read those links?  That’s OK - I’ll give you a quick breakdown.&lt;/p&gt;
+
+&lt;p&gt;An apiman plugin is basically a WAR file with one additional required file.  The additional
+file is &lt;code&gt;META-INF/apiman/plugin.json&lt;/code&gt; and it contains some meta-data about the plugin.  An
+example of a plugin.json file (from the JSONP policy plugin):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;frameworkVersion&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;JSONP Policy Plugin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;This plugin turns an endpoint into a JSONP compatible endpoint.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1.1.5.Final&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We chose WAR as the plugin format because it allows all of the file types we need, it
+is a well-known structure, and it’s easy to create (e.g. via maven).&lt;/p&gt;
+
+&lt;p&gt;When contributing a custom apiman component via a plugin, all you need is the &lt;code&gt;plugin.json&lt;/code&gt;
+file and the java class file(s) that implement the appropriate component interface.  Of
+course, because a plugin is a WAR, you can also include any library dependencies your 
+component might need.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-these-components-are-you-talking-about&quot;&gt;What are these components are you talking about?&lt;/h2&gt;
+&lt;p&gt;apiman is made up of a number of components that work together to accomplish the goal of
+API Management.  There are two primary pieces of the apiman story:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;API Manager&lt;/li&gt;
+  &lt;li&gt;API Gateway&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each of these consists of its own components.  For example, the API Manager is made up of
+the following (not necessarily an exhaustive list):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Storage Component&lt;/li&gt;
+  &lt;li&gt;Query Component&lt;/li&gt;
+  &lt;li&gt;IDM Component&lt;/li&gt;
+  &lt;li&gt;Metrics Accessor Component (consumes metrics data)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the other hand, the API Gateway consists of a separate set of components, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Configuration Registry&lt;/li&gt;
+  &lt;li&gt;Rate Limiting Component&lt;/li&gt;
+  &lt;li&gt;Shared State Component&lt;/li&gt;
+  &lt;li&gt;Metrics Component (produces metrics data)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By default, the apiman quickstart uses default values for all of these, resulting in
+a stable, working system with the following characteristics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stores API Manager data in a JDBC database&lt;/li&gt;
+  &lt;li&gt;Records and queries metrics data via Elasticsearch&lt;/li&gt;
+  &lt;li&gt;Stores Gateway configuration information in Infinispan&lt;/li&gt;
+  &lt;li&gt;Uses infinispan to share rate limiting state across gateway nodes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are alternative configurations of apiman that you can use without needing to
+resort to plugins.  For example, we provide Elasticsearch implementations of many of
+the components mentioned above.  So you could easily switch from Infinispan to ES in
+the Gateway, if you wanted.  However, if you wish to provide a custom implementation
+of something, plugins are now the way to go!&lt;/p&gt;
+
+&lt;h2 id=&quot;example-scenario&quot;&gt;Example Scenario&lt;/h2&gt;
+&lt;p&gt;There is a lot you can do now taht we support plugin components.  But it’s probably
+easiest to explain and understand if we take a simple example scenario.&lt;/p&gt;
+
+&lt;h3 id=&quot;use-mongodb-to-store-gateway-configuration-information&quot;&gt;Use mongodb to store Gateway configuration information&lt;/h3&gt;
+&lt;p&gt;If you download the apiman quickstart, the default configuration is to use the built
+in WildFly 8 infinispan subsystem to store the API Gateway configuration info.  This
+includes all services published to the Gateway, and all applications registered with
+it as well.  Perhaps you would rather that data be stored in mongodb?  Since we don’t
+have a mongodb implementation of the Gateway Registry, you’ll need to implement it
+yourself and bundle it up into a plugin!&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-apiman-gateway-mongodb-plugin&quot;&gt;Create a apiman-gateway-mongodb plugin&lt;/h3&gt;
+&lt;p&gt;I won’t go through the entire process of creating an apiman plugin here, since it is
+already well documented (and linked above).  You’ll need a WAR maven project with a
+&lt;code&gt;plugin.json&lt;/code&gt; file in the right place, which might look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;frameworkVersion&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mongodb plugin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;This plugin provides a mongodb implementation of the Gateway registry.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1.0&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You will also need an implementation of the Gateway’s &lt;code&gt;io.apiman.gateway.engine.IRegistry&lt;/code&gt;
+interface.  Let’s call it &lt;code&gt;MongoDbRegistry.java&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apiman&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gateway&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.async.IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.Application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.Service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ServiceContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ServiceRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; * An implementation of the {@link IRegistry} interface using mongodb.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MongoDbRegistry&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IRegistry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * Constructor.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @param config&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MongoDbRegistry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#getContract(io.apiman.gateway.engine.beans.ServiceRequest, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#publishService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;publishService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#retireService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;retireService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#registerApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;registerApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#unregisterApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unregisterApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * @see io.apiman.gateway.engine.IRegistry#getService(java.lang.String, java.lang.String, java.lang.String, io.apiman.gateway.engine.async.IAsyncResultHandler)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;organizationId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceVersion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Obviously you will want to include any mongodb client libraries you need, and then
+implement the actual functionality of the class.  I leave that as an exercise for the
+reader.  Note that most of the Gateway components have asynchronous APIs.  If possible
+you should attempt to use asynchronous techniques when providing implementations.&lt;/p&gt;
+
+&lt;h3 id=&quot;switching-to-your-custom-implementation-in-apimanproperties&quot;&gt;Switching to your custom implementation in apiman.properties&lt;/h3&gt;
+&lt;p&gt;Now you’ve got a component you want to use, and it’s all nicely wrapped up in a shiny
+new plugin.  Your next step is to actually use it!  Using a custom component is as
+simple as referencing it in the &lt;code&gt;apiman.properties&lt;/code&gt; file.  You’ll need to remove
+this line first:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.ispn.InfinispanRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and then add something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The format of the value of &lt;code&gt;apiman-gateway.registry&lt;/code&gt; is very important - when 
+using a plugin you must specify the maven information of your plugin so that 
+apiman can locate and download it.  See the apiman documentation for additional
+details about how plugins are loaded.&lt;/p&gt;
+
+&lt;p&gt;Note that you can also provide configuration parameters to your component.  That
+will obviously be helpful since it will probably need connection details.  So 
+really your configuration might look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
+apiman-gateway.registry.mongo.host=localhost
+apiman-gateway.registry.mongo.port=27017
+apiman-gateway.registry.mongo.username=sa
+apiman-gateway.registry.mongo.password=sa123!
+apiman-gateway.registry.mongo.database=apiman&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;These configuration options will be passed to your component in its constructor if
+your class has a &lt;code&gt;Map&amp;lt;String,String&amp;gt;&lt;/code&gt; constructor.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This is a powerful new feature for extending and customizing apiman to better suit
+your needs.  Of course we will want to continue offering the most popular component
+implementations as a core part of apiman.  However there will always be many more
+options than we can easily implement and support.  For this reason we wanted to 
+provide an easy way for users (and the apiman community at large) to contribute.&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="api-manager" />
+				
+					<category term="api-gateway" />
+				
+					<category term="plugins" />
+				
+					<category term="development" />
+				
+					<category term="maven" />
+				
+				<pubDate>Fri, 24 Jul 2015 10:10:10 -0400</pubDate>
+				<link>http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Manage Fuse APIs with apiman</title>
 				
 				        <dc:creator>Stefan Bunciak</dc:creator>
@@ -3173,6 +3426,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 22 Jul 2015 11:42:54 -0400</lastBuildDate>
+		<lastBuildDate>Fri, 24 Jul 2015 14:56:59 -0400</lastBuildDate>
 	</channel>
 </rss>
