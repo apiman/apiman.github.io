@@ -2266,7 +2266,7 @@ service as described by the Swagger spec definition:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/apiman-1.1.2.Final  
 &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/apiman-1.1.2.Final  
 wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
-wget http://downloads.jboss.org/overlord/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
+wget http://downloads.jboss.org/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
 unzip wildfly-8.2.0.Final.zip  
 unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;wildfly-8.2.0.Final  
@@ -3010,7 +3010,7 @@ to the API and track its use.&lt;/p&gt;
 
 &lt;p&gt;To install WildFly, simply download &lt;a href=&quot;http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip&quot;&gt;http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip&lt;/a&gt; and unzip the file into the directory in which you want to run the sever.&lt;/p&gt;
 
-&lt;p&gt;Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: &lt;a href=&quot;http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&quot;&gt;http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: &lt;a href=&quot;http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&quot;&gt;http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The commands that you will execute will look something like this:&lt;/p&gt;
 
@@ -3401,7 +3401,7 @@ Resolving deltas: 100% (40/40), done.
 &lt;ul&gt;
   &lt;li&gt;REST Client &lt;a href=&quot;http://restclient.net/&quot;&gt;http://restclient.net/&lt;/a&gt; FireFox Add-On - &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3&quot;&gt;https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Echo service source code - &lt;a href=&quot;https://github.com/apiman/apiman-quickstarts&quot;&gt;https://github.com/apiman/apiman-quickstarts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;apiman 1.0 - &lt;a href=&quot;http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&quot;&gt;http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;apiman 1.0 - &lt;a href=&quot;http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&quot;&gt;http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;WildFly 8.2.0 - &lt;a href=&quot;http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip&quot;&gt;http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Git - &lt;a href=&quot;http://git-scm.com&quot;&gt;http://git-scm.com&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Maven - &lt;a href=&quot;http://maven.apache.org&quot;&gt;http://maven.apache.org&lt;/a&gt;&lt;/li&gt;

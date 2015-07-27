@@ -58,7 +58,7 @@ Like all JBoss software, installation of apiman is simple. First, you will need 
 
 To install WildFly, simply download [http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip) and unzip the file into the directory in which you want to run the sever.
 
-Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: [http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
+Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: [http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
 
 The commands that you will execute will look something like this:
 
@@ -456,7 +456,7 @@ And, better still, get involved! Contribute bug reports or feature requests. Wri
 
 * REST Client [http://restclient.net/](http://restclient.net/) FireFox Add-On - [https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3](https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3)
 * Echo service source code - [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
-* apiman 1.0 - [http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/overlord/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
+* apiman 1.0 - [http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
 * WildFly 8.2.0 - [http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip)
 * Git - [http://git-scm.com](http://git-scm.com)
 * Maven - [http://maven.apache.org](http://maven.apache.org)
