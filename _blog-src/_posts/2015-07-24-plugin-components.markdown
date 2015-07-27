@@ -199,15 +199,15 @@ new plugin.  Your next step is to actually use it!  Using a custom component is 
 simple as referencing it in the `apiman.properties` file.  You'll need to remove
 this line first:
 
-```
+{% highlight text %}
 apiman-gateway.registry=io.apiman.gateway.engine.ispn.InfinispanRegistry
-```
+{% endhighlight %}
 
 and then add something like this:
 
-```
+{% highlight text %}
 apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
-```
+{% endhighlight %}
 
 The format of the value of `apiman-gateway.registry` is very important - when 
 using a plugin you must specify the maven information of your plugin so that 
@@ -218,14 +218,14 @@ Note that you can also provide configuration parameters to your component.  That
 will obviously be helpful since it will probably need connection details.  So 
 really your configuration might look something like this:
 
-```
+{% highlight text %}
 apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
 apiman-gateway.registry.mongo.host=localhost
 apiman-gateway.registry.mongo.port=27017
 apiman-gateway.registry.mongo.username=sa
 apiman-gateway.registry.mongo.password=sa123!
 apiman-gateway.registry.mongo.database=apiman
-```
+{% endhighlight %}
 
 These configuration options will be passed to your component in its constructor if
 your class has a `Map<String,String>` constructor.
