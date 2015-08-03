@@ -261,3 +261,15 @@ h1.section-header {
   border-bottom: 1px solid #ccc;
   vertical-align: top;
 }
+
+#blog .blog-content h3 {
+  text-decoration: underline;
+}
+#blog .blog-content h4 {
+  font-weight: bold;
+  font-style: italic;
+}
+#blog .blog-content h5 {
+  font-size: 15px;
+  font-style: italic;
+}
