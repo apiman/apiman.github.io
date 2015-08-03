@@ -243,6 +243,8 @@ h1.section-header {
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
   width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 #blog .blog-content table th {
