@@ -242,16 +242,20 @@ h1.section-header {
 #blog .blog-content table {
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
+  width: 100%;
 }
 
 #blog .blog-content table th {
   padding: 5px;
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+  background-color: #F7F8F7;
+  vertical-align: top;
 }
 
 #blog .blog-content table td {
   padding: 3px;
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+  vertical-align: top;
 }
