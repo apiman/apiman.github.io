@@ -38,7 +38,7 @@ We also want to secure the right side of the diagram, where the API Gateway play
 
 In contrast to policy level security, with endpoint security we are securing the right side of the diagram. 
 
- A recent post by Marc Savy to the apiman blog (http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html) described how to configure Mutually Authenticated TLS (Transport Layer Security) between the API Gateway and the managed services. With Mutual TLS, bi-direction authentication is configured so that the identities of both the client and server are verified before a connection can be made.
+ A recent post by Marc Savy to the apiman blog (http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html)[http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html] described how to configure Mutually Authenticated TLS (Transport Layer Security) between the API Gateway and the managed services. With Mutual TLS, bi-direction authentication is configured so that the identities of both the client and server are verified before a connection can be made.
 
 In setting up Mutual TLS, keystores, containing a node’s private key, and truststores, containing public certificates to govern the other nodes that the node should trust, were created. The API Gateway was configured in its apiman.properties file to reference the keystores and truststores.  The service was configured with mutual authentication by setting the API Security dropdown in the Implementation tab to MTLS/Two-Way-SSL. Finally, the service was programmed with mutual authentication enabled. With Mutual TLS configured, the communication channel on the right side of the diagram, from the API Gateway to the services, was made secure. 
 
@@ -63,7 +63,7 @@ To summarize, the differences between policy level security and endpoint level s
  As always, the author would like to acknowledge Marc Savy, Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!
 
 ## References
-* http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html (written by Marc Savy)
+* (http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html)[http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html] (written by Marc Savy)
 * https://dzone.com/articles/adding-basic-authentication
 
 
