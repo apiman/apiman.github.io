@@ -239,3 +239,19 @@ h1.section-header {
   font-size: 18px;
 }
 
+#blog .blog-content table {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+#blog .blog-content table th {
+  padding: 5px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#blog .blog-content table td {
+  padding: 3px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
