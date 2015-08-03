@@ -9,6 +9,103 @@
 		
 		
 			<item>
+				<title>apiman Policy and Endpoint Security</title>
+				
+				        <dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author>
+				
+				<description>&lt;p&gt;In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed services at the policy level, and and at the endpoint level for its managed and unmanaged endpoints.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;unintentionally-insecure&quot;&gt;Unintentionally Insecure?&lt;/h2&gt;
+
+&lt;p&gt;If you read the first article in this series closely (https://dzone.com/articles/impatient-new-users) you might have noticed that in the course of creating a service whose endpoint was managed by the apiman API Gateway, we also inadvertently left that service in a very insecure state as unauthorized client applications could bypass the gateway and access the service directly.  We discussed how to configure authentication in a policy for the managed service endpoint in the most recent post in this series (https://dzone.com/articles/adding-basic-authentication). This authentication policy provides username/password security for clients as they access the managed service through the API Gateway, but it does not protect the service from unauthorized access attempts that bypass the Gateway completely. To make the service secure from unauthorized client applications, endpoint level security should also be configured.&lt;/p&gt;
+
+&lt;p&gt;In this article, we’ll examine both apiman policy level and endpoint level security, how they compare, and how they differ.&lt;/p&gt;
+
+&lt;h2 id=&quot;complementary-types-of-security-provided-by-apiman&quot;&gt;Complementary Types of Security Provided by apiman&lt;/h2&gt;
+
+&lt;p&gt;The best way to start our discussion of the different, but complementary types of security that we’ll examine in this article is with a diagram. The nodes involved are the client applications that will access our services, the apiman API Gateway, and the servers that host our services:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-08-03/apiman_security.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s work our way through the diagram from left to right and start by taking a look at Policy Level Security.&lt;/p&gt;
+
+&lt;h2 id=&quot;policy-level-security&quot;&gt;Policy Level Security&lt;/h2&gt;
+
+&lt;p&gt;apiman includes several pre-defined policies OOTB. The policies provide support for controlling access to services based on the rate at which the services are invoked, the IP address of the client applications that access the services, authorization, and authentication. In the most recent article in this series, we showed how to configure an authentication policy. To keep things simple, we chose BASIC authentication. This BASIC Authentication policy provides security for the communication channel between the client applications and the apiman API Gateway. An incoming request to the API Gateway from a client initiates the policy chain, the policy is applied and the client is requested to supply a username and password.  The level of security provided by this policy can be enhanced if the policy is configured with SSL encryption.&lt;/p&gt;
+
+&lt;p&gt;But, this policy level security only secures the left side of the diagram, that is the communication channel between the applications and the API Gateway. In this communication channel, the applications play the role of the client, and the API Gateway plays the role of the server.&lt;/p&gt;
+
+&lt;p&gt;We also want to secure the right side of the diagram, where the API Gateway plays the role of a client, and the services play the role of the servers.&lt;/p&gt;
+
+&lt;p&gt;(It’s also worth noting that while policy security protects the managed service, it does nothing to protect the unmanaged service as this service can be reached directly, without going through the API Gateway. This is illustrated by the red line in the diagram. So, while access to the managed service through the apiman API Gateway is secure, policy security does not secure the unmanaged service endpoint.)&lt;/p&gt;
+
+&lt;h2 id=&quot;endpoint-level-security&quot;&gt;Endpoint Level Security&lt;/h2&gt;
+
+&lt;p&gt;In contrast to policy level security, with endpoint security we are securing the right side of the diagram.&lt;/p&gt;
+
+&lt;p&gt;A recent post by Marc Savy to the apiman blog (http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html) described how to configure Mutually Authenticated TLS (Transport Layer Security) between the API Gateway and the managed services. With Mutual TLS, bi-direction authentication is configured so that the identities of both the client and server are verified before a connection can be made.&lt;/p&gt;
+
+&lt;p&gt;In setting up Mutual TLS, keystores, containing a node’s private key, and truststores, containing public certificates to govern the other nodes that the node should trust, were created. The API Gateway was configured in its apiman.properties file to reference the keystores and truststores.  The service was configured with mutual authentication by setting the API Security dropdown in the Implementation tab to MTLS/Two-Way-SSL. Finally, the service was programmed with mutual authentication enabled. With Mutual TLS configured, the communication channel on the right side of the diagram, from the API Gateway to the services, was made secure.&lt;/p&gt;
+
+&lt;p&gt;We should also note that, unlike policy security, endpoint security also secures the services from attempts to bypass the API Gateway. With Mutual TLS, a two-way trust pattern is created. The API Gateway trusts the services and the services trust the API Gateway. The services, however, do not trust the client applications. As is shown by the large “X” character that indicates that an application cannot bypass the API Gateway and access the services directly.&lt;/p&gt;
+
+&lt;p&gt;One last point that is important to remember is that the endpoint level of security applies to all requests made to the services, regardless of whatever policies are configured.&lt;/p&gt;
+
+&lt;h2 id=&quot;compare-and-contrast&quot;&gt;Compare and Contrast&lt;/h2&gt;
+
+&lt;p&gt;To summarize, the differences between policy level security and endpoint level security are:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Policy Level Security&lt;/th&gt;
+      &lt;th&gt;End Point Level Security&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Secures communications between the applications (clients) and API Gateway (server)&lt;/td&gt;
+      &lt;td&gt;Secures communications between the API Gateway (client) and services (servers)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Configured in an API Gateway policy&lt;/td&gt;
+      &lt;td&gt;Configured for the API Gateway as a whole in apiman.properties and with key/certificates infrastructure&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Applied by the policy at runtime&lt;/td&gt;
+      &lt;td&gt;Applied for all service requests, regardless of the policies configured for a service&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Does not secure the unmanaged service from access by unauthorized clients&lt;/td&gt;
+      &lt;td&gt;Secures the unmanaged service endpoints from access by unauthorized clients&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;As always, the author would like to acknowledge Marc Savy, Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html (written by Marc Savy)&lt;/li&gt;
+  &lt;li&gt;https://dzone.com/articles/adding-basic-authentication&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				
+					<category term="security" />
+				
+				<pubDate>Mon, 03 Aug 2015 07:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/security/2015/08/03/policy-endpoint-security.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/security/2015/08/03/policy-endpoint-security.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Plugins - Not Just For Policies Anymore</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -3426,6 +3523,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Mon, 27 Jul 2015 12:42:29 -0400</lastBuildDate>
+		<lastBuildDate>Mon, 03 Aug 2015 10:56:25 -0400</lastBuildDate>
 	</channel>
 </rss>
