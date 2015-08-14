@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.1.5.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.1.5.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.1.6.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.1.6.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -210,12 +210,12 @@
                             <li><span class="completed">Authorization (Role/Group based access control)</span> <span class="in-version">1.1.2.Final</span></li>
                             <li><span class="completed">Enhanced BASIC and OAuth2 authorization support</span> <span class="in-version">1.1.2.Final</span></li>
                             <li><span class="completed">OAuth2 Kerberos token delegation</span> <span class="in-version">1.1.3.Final</span></li>
-                            <li>URL Rewriting</li>
-                            <li>Caching</li>
+                            <li><span class="completed">URL Rewriting</span> <span class="in-version">1.1.6.Final</span></li>
+                            <li><span class="completed">Caching</span> <span class="in-version">1.1.6.Final</span></li>
                             <li><span class="completed">JSONP</span> <span class="in-version">1.1.1.Final</span></li>
                             <li><span class="completed">JSON/XML Transformation (convert between those formats, in and out)</span> <span class="in-version">1.1.4.Final</span></li>
-                            <li>Quotas (# requests)</li>
-                            <li>Quotas (# bytes)</li>
+                            <li><span class="completed">Quotas (# requests)</span> <span class="in-version">1.1.6.Final</span></li>
+                            <li><span class="completed">Quotas (# bytes)</span> <span class="in-version">1.1.6.Final</span></li>
                           </ul>
                         </li>
                         <li>
@@ -224,10 +224,8 @@
                             <li><span class="completed">Shared State async component</span> <span class="in-version">1.1.0.Final</span></li>
                             <li><span class="completed">Mutual authentication between gateway and back-end services (i.e. certificate-based two-way SSL/TLS)</span><span class="in-version">1.1.3.Final</span></li>
                             <li><span class="completed">BASIC authentication over SSL between gateway and back-end services</span><span class="in-version">1.1.3.Final</span></li>
-                            <li>LDAP Client async component</li>
-                            <li>JDBC Client async component</li>
                             <li><span class="completed">Custom/Plugin implementations of core Gateway components</span><span class="in-version">1.1.5.Final</span></li>
-                            <li>Vert.x 3 based implementation</li>
+                            <li><span class="completed">Vert.x 3 based implementation</span> <span class="in-version"><i>Tech Preview in</i> 1.1.6.Final</span></li>
                           </ul>
                         </li>
                         <li>
@@ -242,7 +240,6 @@
                           <span>Fabric8 Integration</span>
                           <ul>
                             <li><span class="completed">Convert the UI to an angularjs/hawtio plugin</span> <span class="in-version">1.1.0.Final</span></li>
-                            <li>Manually import fabric8 discovered API endpoints into API Manager</li>
                             <li><span class="completed">Create an elasticsearch API Manager backend</span> <span class="in-version">1.1.0.Final</span></li>
                             <li><span class="completed">Create elasticsearch implementations of the API Gateway components</span> <span class="in-version">1.1.0.Final</span></li>
                           </ul>
@@ -250,8 +247,8 @@
                         <li><span class="completed">Service Metrics - collect in API Gateway and report in API Manager</span> <span class="in-version">1.1.4.Final</span></li>
                         <li><span class="completed">Unit testing framework for plugin Policies</span> <span class="in-version">1.1.3.Final</span></li>
                         <li><span class="completed">Re-usable/extensible micro-services for the API Manager and API Gateway</span> <span class="in-version">1.1.5.Final</span></li>
-                        <li>EAP 6.4 runtime support</li>
-                        <li>Application Metrics - collect in API Gateway and report in API Manager</li>
+                        <li><span class="completed">EAP 6.4 runtime support</span> <span class="in-version">1.1.6.Final</span></li>
+                        <li><span class="completed">Application Metrics - collect in API Gateway and report in API Manager</span> <span class="in-version">1.1.6.Final</span></li>
                       </ul>
                    </div>
                   <div class="col-lg-3 relnotes">
@@ -263,6 +260,7 @@
                       <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12327298">1.1.3.Final</a> <span class="label-small">(2015 June 2)</span></div>
                       <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12327477">1.1.4.Final</a> <span class="label-small">(2015 July 6)</span></div>
                       <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12327612">1.1.5.Final</a> <span class="label-small">(2015 July 22)</span></div>
+                      <div><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12327699">1.1.6.Final</a> <span class="label-small">(2015 Aug 14)</span></div>
                     </div>
                   </div>
                 </div>
@@ -293,9 +291,10 @@
                           </ul>
                         </li>
                         <li>
-                          <span>Fabric8 Integration</span>
+                          <span>Policies &amp; Components</span>
                           <ul>
-                            <li>Automatic discovery of fabric8 API endpoints</li>
+                            <li>LDAP Client async component</li>
+                            <li>JDBC Client async component</li>
                           </ul>
                         </li>
                         <li>
