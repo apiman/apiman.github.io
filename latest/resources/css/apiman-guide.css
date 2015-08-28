@@ -78,6 +78,10 @@
     margin:0em;
 }
 
+#guide .inlinemediaobject img {
+  width: 100%;
+}
+
 #guide .programlisting a img, #guide pre a img, #guide td a img, #guide td img {
     display:inline;
     margin:0 0;
