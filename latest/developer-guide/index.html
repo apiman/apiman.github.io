@@ -216,9 +216,18 @@ data format that will be passed to the policy implementation at runtime.</p><h5 
   "policyImpl" : "plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy",
   "icon" : "pie-chart",
   "formType" : "JsonSchema",
+  "templates" : [
+    {
+      "language": null,
+      "template": "Set policy with @{property1} and @{property2}!"
+    }
+  ],
   "form" : "schemas/config-policyDef.schema"
 }</pre><p class="formalpara">
-</p><h5 xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="formalpara">META-INF/apiman/policyDefs/schemas/my-policy.schema</h5><p class="formalpara">
+</p><div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>The templates <span class="emphasis"><em>language</em></span> field will support other languages in future, but
+for now is null (i.e. single-language only). The template field itself is
+<a class="ulink" href="https://github.com/mvel/mvel">MVEL</a> (Orb tag syntax), and displays in the UI
+after a plugin has been selected by a user.</p></div><h5 xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="formalpara">META-INF/apiman/policyDefs/schemas/my-policy.schema</h5><p class="formalpara">
 </p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JSON">{
   "title" : "Configure My Policy",
   "description" : "Configure all of the necessary properties used by my policy.",
