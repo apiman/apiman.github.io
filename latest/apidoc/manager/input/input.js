@@ -6,8 +6,8 @@ var com = {
 };
 com.qmino.miredot.restApiSource = {
 	"projectName":"apiman-manager-api-rest",
-	"projectVersion":"1.1.8.Final",
-	"projectTitle":"API Manager REST Services (1.1.8.Final)",
+	"projectVersion":"1.1.9.Final",
+	"projectTitle":"API Manager REST Services (1.1.9.Final)",
 	"buildSystem":"maven 3",
 	"miredotVersion":"1.6.2",
 	"miredotRevision":"f89b750ce8b9",
