@@ -6,8 +6,6 @@ author: eric_wittmann
 categories: micro-services development
 ---
 
-![The More You Know](http://www.actuarialoutpost.com/actuarial_discussion_forum/images/smilies/MoreYouKnow.png)
-
 Let's spend a little bit of time learning more about one of the newer ways you
 can run apiman:  as a set of micro-services.
 
@@ -29,7 +27,7 @@ Some of these include:
 
 ## What are they?
 What do we mean by "apiman micro-services"?  Well, by default if you download 
-apiman from the [http://apiman.io/](project site), you'll get everything delivered
+apiman from the [project site](http://apiman.io/), you'll get everything delivered
 to you in one convenient package.  This package extracts into an existing WildFly
 installation, and thus everything runs as a web application within the application
 server.  This is very convenient to evaluate the software, but it's not ideal for
@@ -39,8 +37,8 @@ In addition to our support for WildFly and EAP, we also now support simply runni
 the various components of apiman as standalone Java applications.  You can find 
 the specific source modules that provide this functionality here:
 
-* https://github.com/apiman/apiman/tree/master/manager/api/micro
-* https://github.com/apiman/apiman/tree/master/gateway/platforms/war/micro
+* [API Manager Micro-Service (source)](https://github.com/apiman/apiman/tree/master/manager/api/micro)
+* [API Gateway Micro-Service (source)](https://github.com/apiman/apiman/tree/master/gateway/platforms/war/micro)
 
 These two modules provide Java classes which use an embedded version of Jetty to 
 start up the API Manager and API Gateway as simple standalone Java processes.  Each
@@ -63,8 +61,8 @@ based on what apiman provides.  So for example, if you want to run an Elasticsea
 version of the API Gateway along with a Postgres version of the API Manager, you 
 could follow these two sets of directions:
 
-* [https://github.com/apiman/apiman-servers/blob/master/gateway-es/README.md](API Gateway micro-service with Elasticsearch)
-* [https://github.com/apiman/apiman-servers/blob/master/manager-postgres/README.md](API Manager micro-service with Postgres)
+* [API Gateway micro-service with Elastic](https://github.com/apiman/apiman-servers/blob/master/gateway-es/README.md)
+* [API Manager micro-service with Postgres](https://github.com/apiman/apiman-servers/blob/master/manager-postgres/README.md)
 
 If you run both of these at the same time, you will end up with two entirely separate
 Java processes running embedded Jetty and listening on different ports.
@@ -81,7 +79,7 @@ If you're looking to use the micro-services to make it easier to do development
 work on apiman, then you might find yourself needing to modify the User Interface.
 You can do this by running "gulp" in the UI module of the apiman source tree:
 
-```
+{% highlight bash %}
 $ cd ~/git/apiman/manager/ui/hawtio/
 ewittman@falcon ~/git/apiman/apiman/manager/ui/hawtio
 $ gulp
@@ -115,7 +113,8 @@ $ gulp
 [14:56:45] Finished 'concat' after 72 ms
 [14:56:45] Starting 'clean'...
 [14:56:45] Finished 'clean' after 8.82 ms
-```
+{% endhighlight %}
+
 
 Once you have the API Manager micro-service *and* gulp running, you should be
 able to access the UI by going here:
@@ -135,8 +134,8 @@ include the static set of users you wish to allow access.  In the future, we wil
 be improving the micro-services to support other authentication mechanisms.  Note
 that you can do this yourself by overriding this:
 
-* [https://github.com/apiman/apiman/blob/master/gateway/platforms/war/micro/src/main/java/io/apiman/gateway/platforms/war/micro/GatewayMicroService.java#L319-L332](Gateway Micro-Service Authentication Handler+Filter)
-* [https://github.com/apiman/apiman/blob/master/manager/api/micro/src/main/java/io/apiman/manager/api/micro/ManagerApiMicroService.java#L192-L211](Manager Micro-Service Authentication Handler+Filter)
+* [Gateway Micro-Service Authentication Handler+Filter](https://github.com/apiman/apiman/blob/master/gateway/platforms/war/micro/src/main/java/io/apiman/gateway/platforms/war/micro/GatewayMicroService.java#L319-L332)
+* [Manager Micro-Service Authentication Handler+Filter](https://github.com/apiman/apiman/blob/master/manager/api/micro/src/main/java/io/apiman/manager/api/micro/ManagerApiMicroService.java#L192-L211)
 
 
 Good luck and come find us on the mailing list or IRC if you have any trouble!
