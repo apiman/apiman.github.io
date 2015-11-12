@@ -54,7 +54,7 @@ module as a dependency and then....
 OK I probably lost you already.  It's actually not very hard, so here's a whole
 github repository full of examples:
 
-https://github.com/apiman/apiman-servers
+[https://github.com/apiman/apiman-servers](https://github.com/apiman/apiman-servers)
 
 Each of the modules in there is a very simple pre-baked and configured micro-service
 based on what apiman provides.  So for example, if you want to run an Elasticsearch
@@ -72,7 +72,7 @@ There are two ways you can access the API Manager User Interface.  The first is 
 it's built into the API Manager micro-service!  Once you have the Manager micro-service
 running, you should be able to go here:
 
-* http://localhost:8080/apimanui/
+* [http://localhost:8080/apimanui/](http://localhost:8080/apimanui/)
 
 ### Using gulp (development only)
 If you're looking to use the micro-services to make it easier to do development
@@ -119,15 +119,15 @@ $ gulp
 Once you have the API Manager micro-service *and* gulp running, you should be
 able to access the UI by going here:
 
-* http://localhost:2772/api-manager
+* [http://localhost:2772/api-manager](http://localhost:2772/api-manager)
 
 ## Warning: Authentication
 At the moment, the biggest problem with the micro-services is the issue of user
 authentication.  Currently, only very simple BASIC authentication is supported.
 
-TIP: It's always tricky talking about authentication with apiman - but in this context
-I'm referring to authenticating into the apiman UI and REST services.  All of the
-authentication related *Policies* will work.
+> It's always tricky talking about authentication with apiman - but in this context
+> I'm referring to authenticating into the apiman UI and REST services.  All of the
+> authentication related *Policies* will work.
 
 The micro-services allow you to specify your own users.list file, which should
 include the static set of users you wish to allow access.  In the future, we will
