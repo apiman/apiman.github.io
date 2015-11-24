@@ -174,6 +174,30 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
 }
 {% endhighlight %}
 
+And then perhaps your custom back end implementation class might look like this:
+
+{% highlight java %}
+
+public class MyCustomBackEndServiceImpl implements IPolicyTestBackEndService {
+    @Override
+    public PolicyTestBackEndServiceResponse invoke(ServiceRequest request, byte[] requestBody) {
+        // Create a valid service response for this request, and then configure it.
+        ServiceResponse serviceResponse = new ServiceResponse();
+        serviceResponse.setCode(200);
+        serviceResponse.setMessage("OK");
+        serviceResponse.getHeaders().put("Date", new Date().toString());
+        serviceResponse.getHeaders().put("Server", "apiman.policy-test");
+        serviceResponse.getHeaders().put("Content-Type", "text/plain");
+        // Let's respond with a classic "Hello World" for the response body
+        String body = "Hello World";
+        PolicyTestBackEndServiceResponse response = new PolicyTestBackEndServiceResponse(serviceResponse, body);
+        return response;
+    }
+}
+
+{% endhighlight %}
+
+
 Alright - if you made it this far thanks for reading!!
 
 /post
