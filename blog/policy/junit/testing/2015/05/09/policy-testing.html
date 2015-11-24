@@ -291,6 +291,25 @@ back end service for the test instead of the echo service!  :)</p>
 
 <span class="o">}</span></code></pre></div>
 
+<p>And then perhaps your custom back end implementation class might look like this:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyCustomBackEndServiceImpl</span> <span class="kd">implements</span> <span class="n">IPolicyTestBackEndService</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">PolicyTestBackEndServiceResponse</span> <span class="nf">invoke</span><span class="o">(</span><span class="n">ServiceRequest</span> <span class="n">request</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">requestBody</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Create a valid service response for this request, and then configure it.</span>
+        <span class="n">ServiceResponse</span> <span class="n">serviceResponse</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ServiceResponse</span><span class="o">();</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&quot;OK&quot;</span><span class="o">);</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Date&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Server&quot;</span><span class="o">,</span> <span class="s">&quot;apiman.policy-test&quot;</span><span class="o">);</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Content-Type&quot;</span><span class="o">,</span> <span class="s">&quot;text/plain&quot;</span><span class="o">);</span>
+        <span class="c1">// Let&#39;s respond with a classic &quot;Hello World&quot; for the response body</span>
+        <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
+        <span class="n">PolicyTestBackEndServiceResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">PolicyTestBackEndServiceResponse</span><span class="o">(</span><span class="n">serviceResponse</span><span class="o">,</span> <span class="n">body</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
 <p>Alright - if you made it this far thanks for reading!!</p>
 
 <p>/post</p>
