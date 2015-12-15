@@ -64,7 +64,7 @@ First, log into the http://localhost:8080/auth/admin[Keycloak server]. If you're
 
 - A realm: `stottie`
 - A single user: `rincewind`, with password: `apiman` and a realm role: `echomeister`
-- And, a client: `apiman`, which is allowed direct grants via Keycloak's https://keycloak.github.io/docs/userguide/html/direct-access-grants.html[RESTful Direct Access Grants API].
+- And, a client: `apiman`, which is allowed direct grants via Keycloak's https://keycloak.github.io/docs/userguide/keycloak-server/html/direct-access-grants.html[RESTful Direct Access Grants API].
 
 Let's quickly test requesting ourselves an OpenID Connect OAuth2 token:
 
