@@ -1924,7 +1924,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;p&gt;A single user: &lt;code&gt;rincewind&lt;/code&gt;, with password: &lt;code&gt;apiman&lt;/code&gt; and a realm role: &lt;code&gt;echomeister&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;And, a client: &lt;code&gt;apiman&lt;/code&gt;, which is allowed direct grants via Keycloak&amp;#8217;s &lt;a href=&quot;https://keycloak.github.io/docs/userguide/html/direct-access-grants.html&quot;&gt;RESTful Direct Access Grants API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And, a client: &lt;code&gt;apiman&lt;/code&gt;, which is allowed direct grants via Keycloak&amp;#8217;s &lt;a href=&quot;https://keycloak.github.io/docs/userguide/keycloak-server/html/direct-access-grants.html&quot;&gt;RESTful Direct Access Grants API&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -3765,6 +3765,6 @@ Resolving deltas: 100% (40/40), done.
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html</guid>
 			</item>
 		
-		<lastBuildDate>Tue, 24 Nov 2015 08:34:22 -0500</lastBuildDate>
+		<lastBuildDate>Tue, 15 Dec 2015 07:29:26 -0500</lastBuildDate>
 	</channel>
 </rss>
