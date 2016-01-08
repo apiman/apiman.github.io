@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Keycloak and dagger: Securing your services with OAuth2"
+title:  "Keycloak and dagger: Securing your APIs with OAuth2"
 date:   2016-01-10 15:25:28 +0100
 author: marc_savy
 categories: gateway security oauth2 keycloak authentication authorization 1.2.x
@@ -144,7 +144,7 @@ Navigate to *Add Policy*, and select *Keycloak OAuth Policy* from the drop-down 
 
 |===
 
-Select *Add Policy*, and then *Publish* the service. You can see its endpoint information in the *Endpoint* tab, it should be similar to:
+Select *Add Policy*, and then *Publish* the API. You can see its endpoint information in the *Endpoint* tab, it should be similar to:
 
 https://localhost:8443/apiman-gateway/Newcastle/EchoAPI/1.0
 
@@ -176,7 +176,7 @@ First, let's retrieve a fresh token from Keycloak, and extract the `access_token
 curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H "Content-Type: application/x-www-form-urlencoded" -d 'username=rincewind' -d 'password=apiman' -d 'grant_type=password' -d 'client_id=apiman' | jq -r '.access_token'
 ```
 
-Second, we'll take the token and attach it to our request to the service
+Second, we'll take the token and attach it to our request to the API
 
 ```
 [msavy@mmbp tmp]$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YW..." https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoAPI/1.0
@@ -212,7 +212,7 @@ We're going to develop our example a little bit further. At present, we simply h
 
 The more observant readers will note that we have already added two of the required elements when we imported the realm into Keycloak; namely, a user `rincewind` and a realm role `echomeister`.
 
-If we navigate back to the *EchoAPI* service in the apiman UI, we can create a *New Version*. We'll call it *_2.0_* and clone the previous configuration. Moving over to the *Policies* tab again, we *Add Policy* and select *Authorization Policy* from the drop-down.
+If we navigate back to the *EchoAPI* API in the apiman UI, we can create a *New Version*. We'll call it *_2.0_* and clone the previous configuration. Moving over to the *Policies* tab again, we *Add Policy* and select *Authorization Policy* from the drop-down.
 
 We're going to add two rules:
 
@@ -232,7 +232,7 @@ We're going to add two rules:
 
 |===
 
-Our example user has the first role, but not the second. *Add* the policy and *Publish* the service again. Our endpoint will now reflect the changed version.
+Our example user has the first role, but not the second. *Add* the policy and *Publish* the API again. Our endpoint will now reflect the changed version.
 
 You will probably need to issue a new bearer token, which you can achieve by repeating the previous shell command.
 
