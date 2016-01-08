@@ -2,574 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55aff9ca-5cf7-406c-98b6-539534ea2b6b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-27.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-28.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-29.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-30.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-31.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-33.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-34.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-35.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-37.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-38.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-39.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-41.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/Screenshot-7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/apiman_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/apiman_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/apiman_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/apiman_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-01-09/apiman_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman-9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-03-06/apiman99.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-05-08/auth-policies.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-05-08/authorization-config.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-05-08/basic-auth-config.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-05-19/new-organizations.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-02/service-definition.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-02/service-details.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-03/sysadmin-manage-plugins.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-04/eclipse-formatter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-04/eclipse-fresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-04/import-apiman-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-04/import-apiman.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-04/project-properties.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-11/1-apiman_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-11/apiman-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-11/apiman-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-11/apiman-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-11/apiman-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-06-16/enable-mtls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-06/response-type-metrics.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-06/usage-metrics.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/apis.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/container.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/endpoint.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/fabric.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/implementation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/policy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/publish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-07-07/service.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-08-03/apiman_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-08-03/apiman_security.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-08-17/apiman_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-08-17/rate_limit1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/2015-08-17/rate_limit2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Droid_Sans/DroidSans-Bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Droid_Sans/DroidSans.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Droid_Sans_Mono/DroidSansMono.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-Bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-BoldItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-ExtraBold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-ExtraboldItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-Italic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-LightItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-SemiBold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans-SemiboldItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/OpenSans.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/img/ajax-loader-mini.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/img/miredot_mini.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/img/miredot_mini_title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/font/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/font/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/font/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/font/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/bkg_gradient.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/community_doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/caution.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/important.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/note.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/dot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/dot2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/jbossorglogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/shine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/title_hdr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-alpha1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-alpha2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-beta1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-beta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-pre-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/watermark-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/images/images/apiman-architecture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/images/images/plugin-policy-config-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/bkg_gradient.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/community_doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/caution.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/important.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/note.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/dot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/dot2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/jbossorglogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/shine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/title_hdr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-alpha1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-alpha2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-beta1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-beta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-pre-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/watermark-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/bkg_gradient.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/community_doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/caution.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/important.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/note.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/dot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/dot2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/jbossorglogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/shine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/title_hdr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-alpha1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-alpha2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-beta1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-beta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-pre-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/watermark-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/branding/logo-image-large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/branding/logo-large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/docbook/caution.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/docbook/important.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/docbook/note.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/docbook/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/docbook/warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/dot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/community/dot2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/github-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/logo-header-v2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/logo-header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/overview-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/images/overview-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Bold-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Bold-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Bold-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-BoldItalic-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-BoldItalic-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-BoldItalic-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBold-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBold-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBold-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBoldItalic-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBoldItalic-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBoldItalic-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Italic-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Italic-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Italic-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Light-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Light-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Light-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-LightItalic-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-LightItalic-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-LightItalic-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Regular-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Regular-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Regular-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Semibold-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Semibold-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Semibold-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-SemiboldItalic-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-SemiboldItalic-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-SemiboldItalic-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/PatternFlyIcons-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/PatternFlyIcons-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/PatternFlyIcons-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/bg-login.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/brand-lg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/brand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/spinner-lg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/spinner-sm.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/spinner-xs.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/bkg_gradient.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/community_doc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/caution.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/important.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/note.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/dot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/dot2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/jbossorglogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/shine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/title_hdr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-alpha1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-alpha2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-beta1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-beta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-pre-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/watermark-release-candidate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/apiman-gh.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components-redux.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security-redux.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services-redux.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/CNAME" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/Gemfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/Gemfile.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/about/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/authentication/policy/2015/06/11/basic-auth.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/authorization/authentication/policy/2015/05/08/authorization.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/css/coderay-asciidoctor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/css/highlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/eclipse/development/maven/2015/06/04/dev-environment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/feed.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/generated/gateway-mtls.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/images/generated/gateway-mtls.svg.cache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/introduction/overview/2015/01/09/impatient-new-user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/micro-services/development/2015/11/12/micro-services.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/policies/2015/08/17/limiting-policies.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/policy/junit/testing/2015/05/09/policy-testing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/resources/2015-06-04/stottie.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/rest/api/automation/2015/05/19/rest-api.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/security/2015/08/03/policy-endpoint-security.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/blog/security/plugin/policy/cors/2015/07/02/cors.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/gen-blog.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/api-manager-restdocs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/css/bootstrap-combined.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/css/fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/css/introstyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/css/normalize.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Droid_Sans/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Droid_Sans_Mono/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/font/Open_Sans/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/input/input.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/directives.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/filters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/ngStorage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/output.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/js/watch-fighters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-bootstrap/js/ui-bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-sanitize/js/angular-sanitize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui-ieshiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui-ieshiv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/angular-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/bootstrap/buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/css/angular-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/js/angular-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular-ui/version.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/angular-sanitize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/angular-sanitize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/js/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/angular/version.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/css/font-awesome-ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/css/font-awesome-ie7.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/font/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/font-awesome/version.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/jquery/jquery-1.9.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/jquery/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/jquery/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/lunr/js/lunr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/underscore.v1.4.4/underscore-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/apidoc/manager/lib/underscore/js/underscore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/chat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/contributors.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/codehighlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/docnav.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/documentation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/extensions.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/jbossorg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/css/reports.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/10.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/11.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/12.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/13.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/14.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/15.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/4.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/6.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/7.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/8.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/callouts/9.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/caution.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/important.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/note.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/tip.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/images/community/docbook/warning.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/developer-guide/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/disclosure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/download.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/codehighlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/docnav.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/documentation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/extensions.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/jbossorg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/css/reports.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/10.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/11.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/12.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/13.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/14.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/15.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/4.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/6.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/7.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/8.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/callouts/9.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/caution.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/important.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/note.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/tip.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/images/community/docbook/warning.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/installation-guide/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/codehighlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/docnav.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/documentation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/extensions.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/jbossorg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/css/reports.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/10.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/11.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/12.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/13.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/14.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/15.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/4.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/6.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/7.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/8.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/callouts/9.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/caution.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/important.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/note.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/tip.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/images/community/docbook/warning.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/production-guide/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/bootstrap-3.3.0/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/branding/logo-colored.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/branding/logo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/css/apiman-guide.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/css/apiman-web.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/css/apiman-web.responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/css/codehighlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/jquery-1.11.1/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/css/patternfly.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Bold-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-BoldItalic-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBold-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-ExtraBoldItalic-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Italic-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Light-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-LightItalic-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Regular-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-Semibold-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/OpenSans-SemiboldItalic-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/fonts/PatternFlyIcons-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/brand.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/img/logo.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/js/patternfly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/resources/patternfly-1.0.5/js/patternfly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/roadmap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/tutorials.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/codehighlight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/docnav.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/documentation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/extensions.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/jbossorg.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/css/reports.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/10.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/11.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/12.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/13.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/14.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/15.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/4.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/6.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/7.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/8.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/callouts/9.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/caution.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/important.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/note.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/tip.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/images/community/docbook/warning.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/latest/user-guide/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/release.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security.markdown" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/Gemfile" afterPath="$PROJECT_DIR$/_blog-src/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_layouts/post.html" afterPath="$PROJECT_DIR$/_blog-src/_layouts/post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
     </list>
     <ignored path="apiman-gh.iws" />
@@ -597,8 +31,18 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6206896">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state vertical-scroll-proportion="-15.5172415">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_blog-src/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -614,14 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-08-17-limiting-policies.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-08-17-limiting-policies.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13533835">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state vertical-scroll-proportion="-4.137931">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="164" />
               <folding />
             </state>
           </provider>
@@ -633,8 +87,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6551723">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.586207">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -646,8 +100,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4634147">
-              <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
+            <state vertical-scroll-proportion="-5.172414">
+              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -692,19 +146,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015-07-24-plugin-components.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.137931">
-              <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2015-07-24-plugin-components-redux.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components-redux.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
@@ -728,12 +169,14 @@
       <list>
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown" />
-        <option value="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services-redux.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security-redux.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components-redux.markdown" />
+        <option value="$PROJECT_DIR$/_blog-src/_layouts/post.html" />
+        <option value="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
+        <option value="$PROJECT_DIR$/_blog-src/Gemfile" />
       </list>
     </option>
   </component>
@@ -836,6 +279,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="_layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apiman-gh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apiman-gh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_blog-src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="_includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -909,16 +370,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/README.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -926,17 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6206896">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,14 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-01-09-impatient-new-user.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -987,36 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4634147">
-          <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6551723">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1032,17 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security-redux.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.551724">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -1050,17 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4634147">
           <caret line="8" column="98" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.137931">
-          <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
           <folding />
         </state>
       </provider>
@@ -1076,13 +456,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13533835">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.586207">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/micro-services/development/2015/11/12/micro-services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1567163">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20300752">
+          <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security-redux.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.551724">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.172414">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.5172415">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding />
         </state>
       </provider>

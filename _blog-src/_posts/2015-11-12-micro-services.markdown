@@ -4,9 +4,8 @@ title:  "The More You Know: apiman micro-services?"
 date:   2015-11-12 13:30:00
 author: eric_wittmann
 categories: micro-services development
+newUrl: 2015-11-12-micro-services-redux
 ---
-
-NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
 
 Let's spend a little bit of time learning more about one of the newer ways you
 can run apiman:  as a set of micro-services.
