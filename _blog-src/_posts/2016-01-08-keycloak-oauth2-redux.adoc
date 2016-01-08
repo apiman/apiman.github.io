@@ -204,7 +204,7 @@ Great, it worked! We can see EchoAPI has now been reached, meaning our OAuth2 to
 
 Furthermore, you can see our `X-AZP` header has been set to the expected value of `apiman`, which was pulled from the token.
 
-If you're feeling lazy, here's https://gist.github.com/msavy/9390bfcd497f3c683a1c[an all-in-one script] to do it for you.
+If you're feeling lazy, here's https://gist.github.com/msavy/eaa1841e0c7a50e6ea8c[an all-in-one script] to do it for you.
 
 == Adding Authorization
 
