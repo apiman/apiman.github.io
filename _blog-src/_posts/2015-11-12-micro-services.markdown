@@ -6,6 +6,8 @@ author: eric_wittmann
 categories: micro-services development
 ---
 
+NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
+
 Let's spend a little bit of time learning more about one of the newer ways you
 can run apiman:  as a set of micro-services.
 

@@ -5,6 +5,9 @@ date:   2015-07-24 14:10:10
 author: eric_wittmann
 categories: api-manager api-gateway plugins development maven
 ---
+
+NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
+
 As you may know, apiman has long supported custom policies provided by users.  If you
 aren't familiar with apiman plugins, you can find more about them by [clicking here](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html).
 

@@ -6,6 +6,8 @@ author: len_dimaggio
 categories: policies
 ---
 
+NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
+
 In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed services through the use of rate limiting policies.
 
 The runtime core of apiman is the API Gateway and the policies that it applies to incoming requests to services. apiman is configured out of the box with a variety of policies that can be used to govern access to services managed by the API Gateway based on IP address, user authentication, and usage levels. From its first release, apiman has supported rate limiting policies, where the upper limit for use of a service could be governed by a policy. In its new 1.1.6 release, apiman has expanded this support to include quota based limiting policies. 

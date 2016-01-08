@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
+  <title>The More You Know: apiman micro-services?</title>
+  <meta name="description" content="Let’s spend a little bit of time learning more about one of the newer ways youcan run apiman:  as a set of micro-services.Running apiman in this way has seve...">
+
+  <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+  <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.1.9.Final" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.1.9.Final" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/blog/css/highlight.css" rel="stylesheet">
+  <link href="/blog/css/main.css" rel="stylesheet">
+  <link href="/blog/css/coderay-asciidoctor.css" rel="stylesheet">
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
+  <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-56678850-1', 'auto');
+              ga('send', 'pageview');
+      });
+  </script>
+
+  <link rel="canonical" href="http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.html">
+  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+</head>
+
+  <body class="blog">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
+      <a class="rhlogo" href="http://www.redhat.com/"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.apiman.io/latest/index.html">apiman</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/index.html">Overview</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/download.html">Download</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
+        <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/contributors.html">Contributors List</a>
+                </li>
+            </ul>
+        </li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
+                </li>
+            </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+    <div class="container" id="blog">
+      <div class="blog-content">
+        
+
+<div class="post">
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">The More You Know: apiman micro-services?</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Nov 12, 2015</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> micro-services and development</span>
+  </header>
+
+  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p>Let’s spend a little bit of time learning more about one of the newer ways you
+can run apiman:  as a set of micro-services.</p>
+
+<p>Running apiman in this way has several advantages, including (but not limited to):</p>
+
+<ul>
+  <li>Fast startup time</li>
+  <li>Fully decoupled</li>
+  <li>Easily debuggable from an IDE</li>
+  <li>Quick to test different configurations</li>
+  <li>Independently scale (esp. via fabric8/openshift/kubernetes)</li>
+</ul>
+
+<!--more-->
+
+<p>On the other hand, breaking everything apart has some disadvantages as well.
+Some of these include:</p>
+
+<ul>
+  <li>Need to fire up multiple, separate Java processes</li>
+  <li>No authentication integration with Keycloak out of the box</li>
+</ul>
+
+<h2 id="what-are-they">What are they?</h2>
+<p>What do we mean by “apiman micro-services”?  Well, by default if you download 
+apiman from the <a href="http://apiman.io/">project site</a>, you’ll get everything delivered
+to you in one convenient package.  This package extracts into an existing WildFly
+installation, and thus everything runs as a web application within the application
+server.  This is very convenient to evaluate the software, but it’s not ideal for
+development or for dockerizing.</p>
+
+<p>In addition to our support for WildFly and EAP, we also now support simply running
+the various components of apiman as standalone Java applications.  You can find 
+the specific source modules that provide this functionality here:</p>
+
+<ul>
+  <li><a href="https://github.com/apiman/apiman/tree/master/manager/api/micro">API Manager Micro-Service (source)</a></li>
+  <li><a href="https://github.com/apiman/apiman/tree/master/gateway/platforms/war/micro">API Gateway Micro-Service (source)</a></li>
+</ul>
+
+<p>These two modules provide Java classes which use an embedded version of Jetty to 
+start up the API Manager and API Gateway as simple standalone Java processes.  Each
+micro-service includes a Starter class with a Java main method.  Both micro-services
+are designed to be easily extensible/customizable to fit whatever purpose or 
+configuration is desired.</p>
+
+<h2 id="how-do-i-use-them">How do I use them?</h2>
+<p>As I mentioned, the micro-services are intended to be extended and customized.  So
+you could create a new maven project and add the specific apiman micro service
+module as a dependency and then….</p>
+
+<p>OK I probably lost you already.  It’s actually not very hard, so here’s a whole
+github repository full of examples:</p>
+
+<p><a href="https://github.com/apiman/apiman-servers">https://github.com/apiman/apiman-servers</a></p>
+
+<p>Each of the modules in there is a very simple pre-baked and configured micro-service
+based on what apiman provides.  So for example, if you want to run an Elasticsearch
+version of the API Gateway along with a Postgres version of the API Manager, you 
+could follow these two sets of directions:</p>
+
+<ul>
+  <li><a href="https://github.com/apiman/apiman-servers/blob/master/gateway-es/README.md">API Gateway micro-service with Elastic</a></li>
+  <li><a href="https://github.com/apiman/apiman-servers/blob/master/manager-postgres/README.md">API Manager micro-service with Postgres</a></li>
+</ul>
+
+<p>If you run both of these at the same time, you will end up with two entirely separate
+Java processes running embedded Jetty and listening on different ports.</p>
+
+<h2 id="what-about-the-api-manager-ui">What about the API Manager UI?</h2>
+<p>There are two ways you can access the API Manager User Interface.  The first is that
+it’s built into the API Manager micro-service!  Once you have the Manager micro-service
+running, you should be able to go here:</p>
+
+<ul>
+  <li><a href="http://localhost:8080/apimanui/">http://localhost:8080/apimanui/</a></li>
+</ul>
+
+<h3 id="using-gulp-development-only">Using gulp (development only)</h3>
+<p>If you’re looking to use the micro-services to make it easier to do development
+work on apiman, then you might find yourself needing to modify the User Interface.
+You can do this by running “gulp” in the UI module of the apiman source tree:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ~/git/apiman/manager/ui/hawtio/
+ewittman@falcon ~/git/apiman/apiman/manager/ui/hawtio
+<span class="nv">$ </span>gulp
+<span class="o">[</span>14:56:29<span class="o">]</span> Using gulpfile ~/git/apiman/apiman/manager/ui/hawtio/gulpfile.js
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;default&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;build&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;browserify&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;css&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;fonts&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;images&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Finished <span class="s1">&#39;build&#39;</span> after <span class="m">58</span> ms
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;watch&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Finished <span class="s1">&#39;watch&#39;</span> after <span class="m">10</span> ms
+<span class="o">[</span>14:56:29<span class="o">]</span> Starting <span class="s1">&#39;connect&#39;</span>...
+<span class="o">[</span>14:56:29<span class="o">]</span> Finished <span class="s1">&#39;connect&#39;</span> after <span class="m">49</span> ms
+<span class="o">[</span>14:56:29<span class="o">]</span> Finished <span class="s1">&#39;default&#39;</span> after <span class="m">126</span> ms
+<span class="o">[</span>14:56:29<span class="o">]</span> Server started http://localhost:2772
+<span class="o">[</span>14:56:30<span class="o">]</span> Finished <span class="s1">&#39;css&#39;</span> after <span class="m">589</span> ms
+<span class="o">[</span>14:56:37<span class="o">]</span> Finished <span class="s1">&#39;images&#39;</span> after 7.49 s
+<span class="o">[</span>14:56:41<span class="o">]</span> Finished <span class="s1">&#39;fonts&#39;</span> after <span class="m">12</span> s
+<span class="o">[</span>14:56:41<span class="o">]</span> Finished <span class="s1">&#39;browserify&#39;</span> after <span class="m">12</span> s
+<span class="o">[</span>14:56:41<span class="o">]</span> Starting <span class="s1">&#39;path-adjust&#39;</span>...
+<span class="o">[</span>14:56:41<span class="o">]</span> Finished <span class="s1">&#39;path-adjust&#39;</span> after <span class="m">38</span> ms
+<span class="o">[</span>14:56:41<span class="o">]</span> Starting <span class="s1">&#39;clean-defs&#39;</span>...
+<span class="o">[</span>14:56:41<span class="o">]</span> Finished <span class="s1">&#39;clean-defs&#39;</span> after 7.87 ms
+<span class="o">[</span>14:56:41<span class="o">]</span> Starting <span class="s1">&#39;tsc&#39;</span>...
+<span class="o">[</span>14:56:45<span class="o">]</span> Finished <span class="s1">&#39;tsc&#39;</span> after 4.19 s
+<span class="o">[</span>14:56:45<span class="o">]</span> Starting <span class="s1">&#39;template&#39;</span>...
+<span class="o">[</span>14:56:45<span class="o">]</span> Finished <span class="s1">&#39;template&#39;</span> after <span class="m">132</span> ms
+<span class="o">[</span>14:56:45<span class="o">]</span> Starting <span class="s1">&#39;concat&#39;</span>...
+<span class="o">[</span>14:56:45<span class="o">]</span> Finished <span class="s1">&#39;concat&#39;</span> after <span class="m">72</span> ms
+<span class="o">[</span>14:56:45<span class="o">]</span> Starting <span class="s1">&#39;clean&#39;</span>...
+<span class="o">[</span>14:56:45<span class="o">]</span> Finished <span class="s1">&#39;clean&#39;</span> after 8.82 ms</code></pre></div>
+
+<p>Once you have the API Manager micro-service <em>and</em> gulp running, you should be
+able to access the UI by going here:</p>
+
+<ul>
+  <li><a href="http://localhost:2772/api-manager">http://localhost:2772/api-manager</a></li>
+</ul>
+
+<h2 id="warning-authentication">Warning: Authentication</h2>
+<p>At the moment, the biggest problem with the micro-services is the issue of user
+authentication.  Currently, only very simple BASIC authentication is supported.</p>
+
+<blockquote>
+  <p>It’s always tricky talking about authentication with apiman - but in this context
+I’m referring to authenticating into the apiman UI and REST services.  All of the
+authentication related <em>Policies</em> will work.</p>
+</blockquote>
+
+<p>The micro-services allow you to specify your own users.list file, which should
+include the static set of users you wish to allow access.  In the future, we will
+be improving the micro-services to support other authentication mechanisms.  Note
+that you can do this yourself by overriding this:</p>
+
+<ul>
+  <li><a href="https://github.com/apiman/apiman/blob/master/gateway/platforms/war/micro/src/main/java/io/apiman/gateway/platforms/war/micro/GatewayMicroService.java#L319-L332">Gateway Micro-Service Authentication Handler+Filter</a></li>
+  <li><a href="https://github.com/apiman/apiman/blob/master/manager/api/micro/src/main/java/io/apiman/manager/api/micro/ManagerApiMicroService.java#L192-L211">Manager Micro-Service Authentication Handler+Filter</a></li>
+</ul>
+
+<p>Good luck and come find us on the mailing list or IRC if you have any trouble!</p>
+
+<p>/post</p>
+
+  </article>
+
+</div>
+
+      </div>
+      <div class="blog-footer">
+        <footer role="contentinfo">
+    <div id="inner-footer" class="clearfix row">
+        <div id="widget-footer" class="clearfix">
+            <hr>
+            <div class="widget col-sm-6 col-md-6 widget_text">
+                <div class="textwidget">
+                    <p>
+                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                        <a href="disclosure.html">Open Source Disclosure</a>
+                    </p>
+                </div>
+            </div>
+            <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+            </div>
+        </div>
+        <nav class="clearfix"></nav>
+    </div>
+</footer>
+
+      </div>
+    </div>
+  </body>
+</html>

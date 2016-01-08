@@ -6,6 +6,8 @@ author: len_dimaggio
 categories: security
 ---
 
+NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
+
 In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed services at the policy level, and and at the endpoint level for its managed and unmanaged endpoints. 
 
 <!--more-->
