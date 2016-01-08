@@ -11,20 +11,16 @@ layout: default
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> {{ page.categories | array_to_sentence_string }}</span>
   </header>
 
-  {% if post.newUrl || post.oldUrl %}
-  <div class="name-change-alert">
-    <p>First step is working</p>
-    {% if post.newUrl %}
-    <p>It's an old post.</p>
+  {% if page.newUrl || page.oldUrl %}
+  <div class="name-change-alert" style="margin-top:15px;">
+    {% if page.newUrl %}
       <!-- Old Post -->
-    [apiman 1.2.x is available]({% post_url post.newUrl %})
-      <p>NOTE: A newer revision of this blogpost correct for http://link.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.</p>
+      <p>NOTE: A newer revision of this blogpost correct for <a href="http://{{ page.newUrl }}">apiman 1.2.x is available</a>. This version written for apiman 1.1.x, for which it remains valid.</p>
     {% endif %}
 
-    {% if post.oldUrl %}
-    <p>It's a new post.</p>
+    {% if page.oldUrl %}
       <!-- New Post -->
-      <p>NOTE: This is a redux of our popular Keycloak OAuth2 for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://blah.local[older revision].</p>
+      <p>NOTE: This is a redux of our popular Keycloak OAuth2 for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the <a href="http://{{ page.oldUrl }}">older revision</a>.</p>
     {% endif %}
   </div>
   {% endif %}

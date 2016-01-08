@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55aff9ca-5cf7-406c-98b6-539534ea2b6b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/Gemfile" afterPath="$PROJECT_DIR$/_blog-src/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/Gemfile.lock" afterPath="$PROJECT_DIR$/_blog-src/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_layouts/post.html" afterPath="$PROJECT_DIR$/_blog-src/_layouts/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" afterPath="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/Gemfile" afterPath="$PROJECT_DIR$/blog/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/Gemfile.lock" afterPath="$PROJECT_DIR$/blog/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html" afterPath="$PROJECT_DIR$/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html" afterPath="$PROJECT_DIR$/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html" afterPath="$PROJECT_DIR$/blog/api-manager/swagger/service/ui/2015/06/02/swagger.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html" afterPath="$PROJECT_DIR$/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/authentication/policy/2015/06/11/basic-auth.html" afterPath="$PROJECT_DIR$/blog/authentication/policy/2015/06/11/basic-auth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/authorization/authentication/policy/2015/05/08/authorization.html" afterPath="$PROJECT_DIR$/blog/authorization/authentication/policy/2015/05/08/authorization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/eclipse/development/maven/2015/06/04/dev-environment.html" afterPath="$PROJECT_DIR$/blog/eclipse/development/maven/2015/06/04/dev-environment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/feed.xml" afterPath="$PROJECT_DIR$/blog/feed.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html" afterPath="$PROJECT_DIR$/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html" afterPath="$PROJECT_DIR$/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/index.html" afterPath="$PROJECT_DIR$/blog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/introduction/overview/2015/01/09/impatient-new-user.html" afterPath="$PROJECT_DIR$/blog/introduction/overview/2015/01/09/impatient-new-user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/micro-services/development/2015/11/12/micro-services.html" afterPath="$PROJECT_DIR$/blog/micro-services/development/2015/11/12/micro-services.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html" afterPath="$PROJECT_DIR$/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html" afterPath="$PROJECT_DIR$/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/policies/2015/08/17/limiting-policies.html" afterPath="$PROJECT_DIR$/blog/policies/2015/08/17/limiting-policies.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/policy/junit/testing/2015/05/09/policy-testing.html" afterPath="$PROJECT_DIR$/blog/policy/junit/testing/2015/05/09/policy-testing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/rest/api/automation/2015/05/19/rest-api.html" afterPath="$PROJECT_DIR$/blog/rest/api/automation/2015/05/19/rest-api.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/security/2015/08/03/policy-endpoint-security.html" afterPath="$PROJECT_DIR$/blog/security/2015/08/03/policy-endpoint-security.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/security/plugin/policy/cors/2015/07/02/cors.html" afterPath="$PROJECT_DIR$/blog/security/plugin/policy/cors/2015/07/02/cors.html" />
     </list>
     <ignored path="apiman-gh.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +53,14 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.5172415">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="9" />
+            <state vertical-scroll-proportion="-14.137931">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_blog-src/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -58,12 +80,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.4376013">
+              <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#header#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#header#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +104,7 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.137931">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="164" />
+              <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
               <folding />
             </state>
           </provider>
@@ -174,9 +203,9 @@
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-08-03-policy-endpoint-security-redux.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/_posts/2015-07-24-plugin-components-redux.markdown" />
-        <option value="$PROJECT_DIR$/_blog-src/_layouts/post.html" />
-        <option value="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
         <option value="$PROJECT_DIR$/_blog-src/Gemfile" />
+        <option value="$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown" />
+        <option value="$PROJECT_DIR$/_blog-src/_layouts/post.html" />
       </list>
     </option>
   </component>
@@ -340,18 +369,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -456,36 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.137931">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="164" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.586207">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/micro-services/development/2015/11/12/micro-services.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.1567163">
@@ -527,6 +526,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies-redux.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.586207">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.137931">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-11-12-micro-services.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -538,30 +575,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/README.md">
+    <entry file="file://$PROJECT_DIR$/_blog-src/_posts/2015-08-17-limiting-policies.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.5172415">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="9" />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="8" column="164" selection-start-line="8" selection-start-column="164" selection-end-line="8" selection-end-column="164" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_blog-src/Gemfile">
+    <entry file="file://$PROJECT_DIR$/_blog-src/css/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_blog-src/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4376013">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
