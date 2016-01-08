@@ -6,7 +6,7 @@ author: marc_savy
 categories: gateway security oauth2 keycloak authentication authorization 1.2.x
 ---
 
-NOTE: This is a redux of our popular Keycloak OAuth2 for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://blah.local[older revision].
+NOTE: This is a redux of our popular Keycloak OAuth2 blog for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://blah.local[older revision].
 
 One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I'll outline in this blogpost.
 
