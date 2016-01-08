@@ -4,7 +4,7 @@ title:  "Authorization: good god, what is it good for?"
 date:   2015-05-08 13:15:15
 author: eric_wittmann
 categories: authorization authentication policy
-newUrl: 2015-05-08-authorization-redux
+oldUrl: 2015-05-08-authorization
 ---
 
 Quite a bit, actually.  :)
@@ -41,9 +41,9 @@ That's it in a nutshell!
 
 ## Give me more details!
 
-OK, OK.  If you're reading this you probably know the apiman basics - how to create Organizations and Services and whatnot.  If not, I would recommend you check out the [User Guide](http://www.apiman.io/latest/user-guide.html) or the [Tutorials](http://www.apiman.io/latest/tutorials.html).
+OK, OK.  If you're reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the [User Guide](http://www.apiman.io/latest/user-guide.html) or the [Tutorials](http://www.apiman.io/latest/tutorials.html).
 
-Once you have a service that you want to configure, go ahead and add a new policy.  Choose, for example, the *BASIC Authentication Policy* and configure it as seen in the following screenshot:
+Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the *BASIC Authentication Policy* and configure it as seen in the following screenshot:
 
 ![Example BASIC Authentication configuration](/blog/images/2015-05-08/basic-auth-config.png)
 
@@ -51,7 +51,7 @@ Once you've added that policy, you can add the Authorization Policy - make sure 
 
 ![Example Authorization configuration](/blog/images/2015-05-08/authorization-config.png)
 
-Once all is said and done, you should have two (at least) policies configured for your service.  It might look something like this in the UI:
+Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:
 
 ![Example policy list](/blog/images/2015-05-08/auth-policies.png)
 

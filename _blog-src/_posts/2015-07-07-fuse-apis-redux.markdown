@@ -4,7 +4,7 @@ title:  "Manage Fuse APIs with apiman"
 date:   2015-07-07 15:15:15
 author: sbunciak
 categories: api management jboss fuse
-newUrl: 2015-07-07-fuse-apis-redux
+oldUrl: 2015-07-07-fuse-apis
 ---
 
 This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on [Apache Camel](http://camel.apache.org), an implementation of many of the most commonly used enterprise integration patterns (EIP).
@@ -50,7 +50,7 @@ On the _Create New Container_ page fill in the name you wish to use for your con
 ![Create Fabric Container](/blog/images/2015-07-07/container.png)
 
 The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
-You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on _APIs_ section under the _Services_ tab. 
+You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on _APIs_ section under the _APIs_ tab. 
 Note the _Location_ field - that's the **base url** the for endpoint implementation. We will use it later in the apiman manager.
 
 ![APIs deployed to Fuse Fabric](/blog/images/2015-07-07/apis.png)
@@ -83,45 +83,45 @@ After completing the installation, start apiman by executing the following comma
 ./standalone.sh -c standalone-apiman.xml
 {% endhighlight %}
 
-### Quick public service setup
+### Quick public API setup
 
-For demonstration purposes I'll be creating a Public Service, however in real life you might want to configure different plans, various contracts, etc. 
+For demonstration purposes I'll be creating a Public API, however in real life you might want to configure different plans, various contracts, etc. 
 Please consult the apiman [user guide](http://www.apiman.io/latest/user-guide.html) for more details.
 
 In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
 You can do that easily in apiman manager, typically available at: [http://localhost:8080/apimanui](http://localhost:8080/apimanui).
 
-Once logged into the apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new Service by clicking on _New Service_ button under _Services_ tab:
+Once logged into the apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new API by clicking on _New API_ button under _APIs_ tab:
 
-![Image: Create Service](/blog/images/2015-07-07/service.png)
+![Image: Create API](/blog/images/2015-07-07/API.png)
 
-You will be asked to provide a name and a version for this Service. Once the service is successfully created there are few things remaining before you can publish and start using it. 
+You will be asked to provide a name and a version for this API. Once the API is successfully created there are few things remaining before you can publish and start using it. 
 First, you need to provide an implementation base url on the _Implementation_ tab. Use the base URL of the REST Quickstart and save your changes:
 
 ![Image: Provide Endpoint Implementation](/blog/images/2015-07-07/implementation.png)
 
-Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
-I used the Rate Limiting policy to limit usage of this service to 5 per minute:
+Second, you may want to apply some policies to this Public API. To do that, go to the Policies tab and configure a policy of your choice. 
+I used the Rate Limiting policy to limit usage of this API to 5 per minute:
 
 ![Image: Assign policy](/blog/images/2015-07-07/policy.png)
 
-Now you are all set to make the service public by checking _Make this service public_ under _Plans_ tab, saving the changes and clicking the _Publish_ button (which should be now enabled).
+Now you are all set to make the API public by checking _Make this API public_ under _Plans_ tab, saving the changes and clicking the _Publish_ button (which should be now enabled).
 
-![Image: Publish Service](/blog/images/2015-07-07/publish.png)
+![Image: Publish API](/blog/images/2015-07-07/publish.png)
 
-After you have published the service, have a look at the _Endpoint_ tab to look up the URL to be used to invoke this public service:
+After you have published the API, have a look at the _Endpoint_ tab to look up the URL to be used to invoke this public API:
 
-![Image: Managed Service Endpoint](/blog/images/2015-07-07/endpoint.png)
+![Image: Managed API Endpoint](/blog/images/2015-07-07/endpoint.png)
 
 Testing your setup
 ==================
 
-Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:
+Depending on which policy you assinged to the Public API you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:
 
 * First request should succeed:
 
 {% highlight xml %}
-[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify=no
+[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestApi/1.0/customerservice/customers/123 --verify=no
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/xml
@@ -143,7 +143,7 @@ X-RateLimit-Reset: 57
 * Executing 5 consecutive requests should fail with `HTTP 429 Too Many Requests`:
 
 {% highlight sh %}
-[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify=no
+[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestApi/1.0/customerservice/customers/123 --verify=no
 HTTP/1.1 429 Too Many Requests
 Connection: keep-alive
 Content-Length: 176
