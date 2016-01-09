@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Cover yourself up! Protecting your services with mutual auth"
-date:   2015-06-16 17:00:00 +1
+title:  "Cover yourself up! Protecting your APIs with mutual auth"
+date:   2016-01-18 17:00:00 +1
 author: marc_savy
-categories: gateway security mutual-auth ssl mtls
+categories: gateway security mutual-auth ssl mtls 1.2.x
 ---
 
-NOTE: A newer revision of this blogpost correct for http://fixme.local[apiman 1.2.x is available]. This version written for apiman 1.1.x, for which it remains valid.
+NOTE: This is a redux of our popular mutual TLS blog for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://fixme.local[older revision].
 
-The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your services directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst services are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).
+The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).
 
 The class of solutions to this problem generally falls under the banner of **mutual authentication**. One such mutual auth offering apiman supports is Mutually Authenticated TLSfootnote:[Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!].
 
@@ -21,45 +21,45 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 
 Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination as to whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.
 
-However, in a typical apiman setup the gateway is acting as the client and the servicesfootnote:[We refer to the set of APIs managed by apiman as services] act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
+However, in a typical apiman setup the gateway is acting as the client and the APIs act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our APIs then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
 
 Luckily, apiman makes this http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security[extremely easy to set this up], so let's dive in and explore what's possible.
 
 == Architecture
 
-Let's assume 'node' refers generically to a participant in our system, either a gateway or a service.
+Let's assume 'node' refers generically to a participant in our system, either a gateway or an API.
 
 There are two main elements we need to work with: *keystores*, which contain a node's private key material, and *truststores*, which contain public certificates instructing the node whom it should trust.
 
 Ideally, each node should have its own keystore, whose key material is signed by a *trusted certificate authority*; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA's certificate to our node's keystores, then _any_ certificate issued by it will be trusted by virtue of the issuer's authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.
 
-It bears mentioning that any applicationsfootnote:[Applications are the users of our services, like browsers, mobile apps, etc] legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.
+It bears mentioning that any client appsfootnote:[Client Apps are the users of our APIs, like browsers, mobile apps, etc] legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.
 
 .Simple mutual auth setup
-["graphviz", "gateway-mtls", "svg", align="center"]
+["graphviz", "gateway-mtls-redux", "svg", align="center"]
 ----
 digraph G {
     graph [fontname = "arial", rankdir = LR, splines=true, overlap=false];
     node[shape=record, fontname = "arial"];
     edge [fontname = "arial"];
 
-    Application[label="Application", height=1];
+    ClientApp[label="Client App", height=1];
     Gateway[label="Gateway", height=4];
 
-    ServiceA[label="Service A", height=1];
-    ServiceB[label="Service B", height=1];
-    ServiceC[label="Service C", height=1];
+    APIA[label="API A", height=1];
+    APIB[label="API B", height=1];
+    APIC[label="API C", height=1];
 
-    Application -> Gateway [label="Gateway Auth Only", dir="both"];
-    Application -> ServiceC [label="Not Authenticated Failure", style="dashed", color="red"]
+    ClientApp -> Gateway [label="Gateway Auth Only", dir="both"];
+    ClientApp -> APIC [label="Not Authenticated Failure", style="dashed", color="red"]
 
-    Gateway -> ServiceA [label="Mutual Auth", dir="both"];
-    Gateway -> ServiceB [label="Mutual Auth", dir="both"];
-    Gateway -> ServiceC [label="Mutual Auth", dir="both"];
+    Gateway -> APIA [label="Mutual Auth", dir="both"];
+    Gateway -> APIB [label="Mutual Auth", dir="both"];
+    Gateway -> APIC [label="Mutual Auth", dir="both"];
 }
 ----
 
-Notice that the services trust the gateway (and vice versa), but the services _do not_ trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn't hold a trusted certificate, so it fails.
+Notice that the APIs trust the gateway (and vice versa), but the APIs _do not_ trust the client app. The client app tries its luck and attempts to bypass the gateway, but it doesn't hold a trusted certificate, so it fails.
 
 == The keys to success
 
@@ -83,20 +83,20 @@ Each of our nodes needs its own keystore, which we can create using `keytool`, f
 keytool -keystore gateway_ks.jks -genkey -alias gateway -keyalg rsa
 keytool -keystore gateway_ks.jks -certreq -alias gateway -keyalg rsa -file gateway.csr
 
-keytool -keystore service_a_ks.jks -genkey -alias service_a -keyalg rsa
-keytool -keystore service_a_ks.jks -certreq -alias service_a -keyalg rsa -file service_a.csr
+keytool -keystore API_a_ks.jks -genkey -alias API_a -keyalg rsa
+keytool -keystore API_a_ks.jks -certreq -alias API_a -keyalg rsa -file API_a.csr
 ```
 
-Do the same for _each of your services_, and send off the `csr` files to be signed by CA (internal or otherwise). They should come back as certificate replies in one of several formats, import them back into their _corresponding keystores_:
+Do the same for _each of your APIs_, and send off the `csr` files to be signed by CA (internal or otherwise). They should come back as certificate replies in one of several formats, import them back into their _corresponding keystores_:
 
 ```
 keytool -import -keystore gateway_ks.jks -file gateway.cer -alias gateway
-keytool -import -keystore service_a_ks.jks -file service_a.cer -alias service_a
+keytool -import -keystore API_a_ks.jks -file API_a.cer -alias API_a
 ```
 
 == Hooking it up
 
-Your services may not use Java, so you'll need to find the appropriate solution for enabling mutual TLS in your language's ecosystem. It doesn't really matter, as long as you have the appropriate certificates hooked in and have set **client authentication to required**.
+Your APIs may not use Java, so you'll need to find the appropriate solution for enabling mutual TLS in your language's ecosystem. It doesn't really matter, as long as you have the appropriate certificates hooked in and have set **client authentication to required**.
 
 === Gateway to Heaven
 
@@ -124,9 +124,9 @@ The last option is to make our testing easier by removing hostname checks on the
 
 === Service is Everything
 
-IMPORTANT: You must explicitly enable client authentication for any services you want protected by mutual TLS.
+IMPORTANT: You must explicitly enable client authentication for any APIs you want protected by mutual TLS.
 
-Here's a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our _keystore_ and _truststore_ with respective hard-to-guess passwords, and set `setNeedClientAuth(true)`:
+Here's a small Java example using Jetty to create a tiny API with mutual authentication enabled. We hook up our _keystore_ and _truststore_ with respective hard-to-guess passwords, and set `setNeedClientAuth(true)`:
 
 ```java
 public static void main(String... args) throws Exception {
@@ -138,7 +138,7 @@ public static void main(String... args) throws Exception {
       http_config.setSecurePort(8009);
 
       SslContextFactory sslContextFactory = new SslContextFactory();
-      sslContextFactory.setKeyStorePath("/tmp/keys/service_a_ks.jks");
+      sslContextFactory.setKeyStorePath("/tmp/keys/API_a_ks.jks");
       sslContextFactory.setKeyStorePassword("password");
       sslContextFactory.setKeyManagerPassword("password");
       sslContextFactory.setTrustStorePath("/tmp/keys/shared_trust_store.jks");
@@ -173,7 +173,7 @@ public static void main(String... args) throws Exception {
 
 Restart everything, and you should be ready to test it!
 
-When creating a service that is protected by mutual TLS you should set the *API Security* dropdown in the *Implementation* tab to `MTLS/Two-Way-SSL`:
+When creating an API that is protected by mutual TLS you should set the *API Security* dropdown in the *Implementation* tab to `MTLS/Two-Way-SSL`:
 
 image::/blog/images/2015-06-16/enable-mtls.png[]
 
@@ -187,4 +187,4 @@ For example:
 
 == In Conclusion
 
-Mutually authenticated TLS is a good way to ensure both client and server are who they claim to be before connecting to one another. If you need to prevent unauthorized direct access to your services, this is an option worth considering.
+Mutually authenticated TLS is a good way to ensure both client and server are who they claim to be before connecting to one another. If you need to prevent unauthorized direct access to your APIs, this is an option worth considering.
