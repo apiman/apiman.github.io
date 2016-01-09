@@ -76,7 +76,7 @@ This should return some JSON similar to the following:
 
 Notice that the OAuth2 token we're interested in is contained within the `access_token` field, with useful ancillary information about token validity and refreshing.
 
-In this instance, the access token is a signed OpenID Connect JSON Web Token (JWT). Using the handy decoder available at https://www.jwt.io[jwt.io], we can see a lot interesting information, including the `echomiester` realm role defined on `rincewind`:
+In this instance, the access token is a signed OpenID Connect JSON Web Token (JWT). Using the handy decoder available at https://jwt.io[jwt.io], we can see a lot interesting information, including the `echomiester` realm role defined on `rincewind`:
 
 ```json
 {
