@@ -6,7 +6,7 @@ author: marc_savy
 categories: gateway security mutual-auth ssl mtls 1.2.x
 ---
 
-NOTE: This is a redux of our popular mutual TLS blog for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://blah.local[older revision].
+NOTE: This is a redux of our popular mutual TLS blog for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the http://fixme.local[older revision].
 
 The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).
 

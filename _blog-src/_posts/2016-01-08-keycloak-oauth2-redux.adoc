@@ -35,9 +35,9 @@ When logged into http://localhost:8080/apimanui/[the apiman manager UI] as an ad
 
 image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="http://www.apiman.io/latest/user-guide.html#_plugins"]
 
-image::/blog/images/2016-01-08/available-plugins.png[alt="Select Keycloak OAuth2 plugin from the available plugins list"]
+image::/blog/images/2016-01-08/available-plugins.png[alt="Select Keycloak OAuth Policy Plugin from the available plugins list"]
 
-Tab to *Available Plugins*, select *install*, confirm the plugin coordinates, and click *add plugin*. That's it!
+Tab to *Available Plugins*, select *Install* for _Keycloak OAuth Policy Plugin_, confirm the plugin coordinates, and click *Add Plugin*. That's it!
 
 == Setting Up
 
