@@ -4,7 +4,6 @@ title:  "The More You Know: apiman micro-services?"
 date:   2015-11-12 13:30:00
 author: eric_wittmann
 categories: micro-services development
-newUrl: 2015-11-12-micro-services-redux
 ---
 
 Let's spend a little bit of time learning more about one of the newer ways you
