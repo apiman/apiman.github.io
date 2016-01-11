@@ -24,7 +24,10 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
 ```ShellSession
-cd ~/apiman-1.2.0.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.2.0.Final
 mvn clean install
 mvn wildfly:deploy
 ```
@@ -41,7 +44,7 @@ Tab to *Available Plugins*, select *Install* for _CORS Policy Plugin_, confirm t
 
 For the purposes of this blogpost we'll contrive a scenario that allows us to demonstrate a variety of the plugin's functionality. However, if your precise use-case isn't covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.
 
-Create an *Organization* called *_Foo_*, then create an *API* called *_Bar_*. Set your API's *Implementation* URL to be `http://127.0.0.1:8080/services/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *_Make this API public_*.
+Create an *Organization* called *_Foo_*, then create an *API* called *_Bar_*. Set your API's *Implementation* URL to be `http://127.0.0.1:8080/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *_Make this API public_*.
 
 Next, move to the *Policies* tab, click *_Add Policy_* and select *_CORS Policy_* from the dropdown list.
 
