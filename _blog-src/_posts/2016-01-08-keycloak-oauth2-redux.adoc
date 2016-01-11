@@ -22,7 +22,10 @@ For this example, let's assume we're using apiman's http://www.apiman.io/latest/
 After you have your apiman quickstart running (replace *apiman-1.2.0.Final* in the path below with whatever version you downloaded), we can live deploy a handy *echo service* into our environment so we have an API to test against:
 
 ```ShellSession
-cd ~/apiman-1.2.0.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.2.0.Final
 mvn clean install
 mvn wildfly:deploy
 ```
