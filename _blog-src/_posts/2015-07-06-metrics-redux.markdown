@@ -89,13 +89,13 @@ Please refer to the [API documentation](http://www.apiman.io/latest/api-manager-
 for the latest information, but at the time of this blog post the available metrics
 endpoints are:
 
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/usage
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/appUsage
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/planUsage
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/responseStats
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/summaryResponseStats
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/planResponseStats
-* /organizations/<ORG_ID>/apis/<SVC_ID>/versions/<VERSION>/metrics/appResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/usage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appUsage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planUsage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/responseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/summaryResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appResponseStats
 
 The 'usage' endpoints return information about the number of requests made.  The
 'responseStats' endpoints are similar, but are broken down by response type (successful
