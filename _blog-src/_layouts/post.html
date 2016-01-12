@@ -13,20 +13,23 @@ layout: default
 
 
   {% if page.newUrl %}
-  <div class="name-change-alert" style="margin-top:15px;">
     <!-- Old Post -->
-    <p>NOTE: A newer revision of this blogpost correct for <a href="{{ site.url }}{{ site.baseurl }}/{{ page.newUrl }}">apiman 1.2.x is available</a>. This version written for apiman 1.1.x, for which it remains valid.</p>
-  </div>
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> <a href="{{ site.url }}{{ site.baseurl }}/{{ page.newUrl }}">can be found here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
   {% endif %}
 
   {% if page.oldUrl %}
-  <div class="name-change-alert" style="margin-top:15px;">
     <!-- New Post -->
-    <p>NOTE: This is a redux of our popular Keycloak OAuth2 for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the <a href="{{ site.url }}{{ site.baseurl }}/{{ page.oldUrl }}">older revision</a>.</p>
-  </div>
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="{{ site.url }}{{ site.baseurl }}/{{ page.oldUrl }}">older revision</a>.
+    </p>
   {% endif %}
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     {{ content }}
   </article>
 
