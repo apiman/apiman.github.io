@@ -53,7 +53,7 @@ The container should start automatically right after it has been created and the
 You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on _APIs_ section under the _APIs_ tab. 
 Note the _Location_ field - that's the **base url** the for endpoint implementation. We will use it later in the apiman manager.
 
-![APIs deployed to Fuse Fabric](/blog/images/2015-07-07/apis.png)
+![APIs deployed to Fuse Fabric](/blog/images/2015-07-07/services.png)
 
 There is a default user preconfigured so you can verify if the application was successfully deployed. It's available at `<location>/customerservice/customers/123` (e.g. [http://localhost:8182/cxf/crm/customerservice/customers/123](http://localhost:8182/cxf/crm/customerservice/customers/123))
 
