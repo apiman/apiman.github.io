@@ -12,17 +12,17 @@ layout: default
   </header>
 
 
-  {% if page.newUrl || page.oldUrl %}
+  {% if page.newUrl %}
   <div class="name-change-alert" style="margin-top:15px;">
-    {% if page.newUrl %}
     <!-- Old Post -->
     <p>NOTE: A newer revision of this blogpost correct for <a href="{{ site.url }}{{ site.baseurl }}/{{ page.newUrl }}">apiman 1.2.x is available</a>. This version written for apiman 1.1.x, for which it remains valid.</p>
-    {% endif %}
+  </div>
+  {% endif %}
 
-    {% if page.oldUrl %}
+  {% if page.oldUrl %}
+  <div class="name-change-alert" style="margin-top:15px;">
     <!-- New Post -->
     <p>NOTE: This is a redux of our popular Keycloak OAuth2 for *apiman 1.2.x*. If you're still using apiman 1.1.x, you can refer to the <a href="{{ site.url }}{{ site.baseurl }}/{{ page.oldUrl }}">older revision</a>.</p>
-    {% endif %}
   </div>
   {% endif %}
 
