@@ -21,7 +21,7 @@ In this article, we’ll examine both apiman policy level and endpoint level sec
 
 The best way to start our discussion of the different, but complementary types of security that we’ll examine in this article is with a diagram. The nodes involved are the client apps that will access our APIs, the apiman API Gateway, and the servers that host our APIs:
 
-![apiman logo](/blog/images/2015-08-03/apiman_security.png)
+![apiman logo](/blog/images/2015-08-03/apiman_security-redux.png)
  
  Let’s work our way through the diagram from left to right and start by taking a look at Policy Level Security.
 
