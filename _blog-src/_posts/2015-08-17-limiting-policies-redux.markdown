@@ -31,11 +31,11 @@ To illustrate, there are about 2.5 million seconds in a month. If we want to set
 
 Here’s a visual view of a rate limiting policy based on a time period of one week. If we define a weekly quota, there is no guarantee that users will not consume that quota before the week is over. This will result in an API requests being denied at the end of the week:
 
-![rate limit coarse grain](/blog/images/2015-08-17/rate_limit1.png)
+![rate limit coarse grain](/blog/images/2015-08-17/rate_limit1-redux.png)
  
 In contrast, if we augment the weekly quota with a more fine grained policy, we can maintain the API’s ability to respond to requests throughout the week:
 
-![rate limit fine grain](/blog/images/2015-08-17/rate_limit2.png)
+![rate limit fine grain](/blog/images/2015-08-17/rate_limit2-redux.png)
  
 The ability to throttle API requests based on API request counts and bytes transferred provides even greater flexibility in implementing policies. APIs that transfer larger amounts of data, but rely on fewer API requests can have that data transfer throttled on a per byte basis. For example, an API that is data intensive, will return a large amount of data in response to each API request. The API may only receive a request a few hundreds of times a day, but each request may result in several megabytes of data being transferred. Let's say that we want to limit the amount of data transferred to 6GB per hour. For this type of API, we could set a rate limiting policy to allow for one request per minute, and then augment that policy with a transfer quota policy of 100Mb per hour.
 
