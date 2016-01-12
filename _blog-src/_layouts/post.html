@@ -16,7 +16,14 @@ layout: default
     <!-- Old Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="{{ site.url }}{{ site.baseurl }}/{{ page.newUrl }}">here</a>. This version was written for <b>apiman 1.1.x</b>.
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        {% for post in site.posts %}
+              {% assign postName = post.path | find_post_by_name %}
+              {% if postName == page.newUrl %}
+                {{ site.url }}{{ site.baseurl }}{{ post.url }}
+              {% endif %}
+        {% endfor %}
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
     </p>
   {% endif %}
 
@@ -24,7 +31,14 @@ layout: default
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="{{ site.url }}{{ site.baseurl }}/{{ page.oldUrl }}">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
+        {% for post in site.posts %}
+              {% assign postName = post.path | find_post_by_name %}
+              {% if postName == page.oldUrl %}
+                {{ site.url }}{{ site.baseurl }}{{ post.url }}
+              {% endif %}
+        {% endfor %}
+        ">older revision</a>.
     </p>
   {% endif %}
 
