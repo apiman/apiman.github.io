@@ -4,19 +4,19 @@ title:  "Customizing JBoss apiman Through Policy Plugins"
 date:   2015-03-06 10:22:00
 author: len_dimaggio
 categories: plugins policies development maven
-newUrl: 2015-03-06-custom-policies-redux
+oldUrl: 2015-03-06-custom-policies
 ---
 
 This is the second in a series of articles exploring API management with JBoss apiman. The first article
 was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
-created users and organizations, and services, policies, contracts, and applications. In this article,
-we'll take the first step toward customizing apiman by creating new plugins to implement service policies.
+created users and organizations, and APIs, policies, contracts, and client apps. In this article,
+we'll take the first step toward customizing apiman by creating new plugins to implement API policies.
 
 <!--more-->
 
 The major new feature added to release 1.0.2 of apiman [http://www.apiman.io/](http://www.apiman.io/) is the ability to extend its features through a custom plugin framework. Since policies perform the most important apiman runtime operations, plugins that enable you to create new policies are the first type of plugins to be supported.
 
-In this article, we'll examine all the steps that you must perform to create a new policy plugin, and then import it into apiman and configure a service to put it into use.
+In this article, we'll examine all the steps that you must perform to create a new policy plugin, and then import it into apiman and configure an API to put it into use.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ To download a copy of the example plugins, execute this git command:
 
     git clone https://github.com/apiman/apiman-plugins
 
-When the git clone operation completes, you'll have the source code for multiple example plugins. The exact set of plugins that you have downloaded may change, depending on when you download them, as more examples are always being added. For the purposes of this article, we'll focus on the "config-policy" example plugin. This plugin demonstrates how a plugin can be used to set the value of properties in a message being processed by a service. Specifically, this plugin defines properties in the request and response headers and enables you to set their values to "true."
+When the git clone operation completes, you'll have the source code for multiple example plugins. The exact set of plugins that you have downloaded may change, depending on when you download them, as more examples are always being added. For the purposes of this article, we'll focus on the "config-policy" example plugin. This plugin demonstrates how a plugin can be used to set the value of properties in a message being processed by an API. Specifically, this plugin defines properties in the request and response headers and enables you to set their values to "true."
 
 ## Requirements for a Plugin Implementation
 
@@ -97,7 +97,7 @@ We mentioned that since our example uses the JSON schema [http://json-schema.org
 {% highlight json %}
 {  
   "title" : "Configure HTTP Headers",
-  "description" : "Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end service.",  
+  "description" : "Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end API.",  
   "type" : "object",  
   "properties": {
    "requestHeader": {
@@ -152,15 +152,15 @@ After you enter this information for the plugin and click on "Add Plugin," you'l
 
 ![Plugins](/blog/images/2015-03-06/apiman-4.png)
 
-Congratulations! The plugin is installed and is ready to be used! Let's add it to a service and see it in action.
+Congratulations! The plugin is installed and is ready to be used! Let's add it to an API and see it in action.
 
 ## Using the Installed Plugin
 
-First, we have to log out of the admin account in the Admin UI and then log back in as the "serprov" service provider. Then, select our "echo" service, and create a new version of the service, based on the original version of the service:
+First, we have to log out of the admin account in the Admin UI and then log back in as the "serprov" API provider. Then, select our "echo" API, and create a new version of the API, based on the original version of the API:
 
-![New Service Version](/blog/images/2015-03-06/apiman-6.png)
+![New API Version](/blog/images/2015-03-06/apiman-6.png)
 
-And, when you add a new policy to the service, you'll see the example config service that we just installed:
+And, when you add a new policy to the API, you'll see the example config API that we just installed:
 
 ![Add Policy](/blog/images/2015-03-06/apiman-5.png)
 
@@ -172,13 +172,13 @@ Let's fill in some easy to remember values:
 
 ![Add Policy](/blog/images/2015-03-06/apiman-8.png)
 
-After adding the policy, you'll see it displayed in the policies defined for the service:
+After adding the policy, you'll see it displayed in the policies defined for the API:
 
 ![Add Policy](/blog/images/2015-03-06/apiman-9.png)
 
-Then publish the service. In order to consume the service, login to the API Manager UI as the application developer "appdev", and create a new application that uses the new service. (We covered the creation of new applications in detail in the first article in this series)
+Then publish the API. In order to consume the API, login to the API Manager UI as the client app developer "appdev", and create a new client app that uses the new API. (We covered the creation of new client apps in detail in the first article in this series)
 
-And when the service is invoked, you'll see something like this:
+And when the API is invoked, you'll see something like this:
 
 ![REST Client](/blog/images/2015-03-06/apiman99.png)
 

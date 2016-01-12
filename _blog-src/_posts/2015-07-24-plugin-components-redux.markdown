@@ -4,7 +4,7 @@ title:  "Plugins - Not Just For Policies Anymore"
 date:   2015-07-24 14:10:10
 author: eric_wittmann
 categories: api-manager api-gateway plugins development maven
-newUrl: 2015-07-24-plugin-components-redux
+oldUrl: 2015-07-24-plugin-components
 ---
 
 As you may know, apiman has long supported custom policies provided by users.  If you
@@ -93,7 +93,7 @@ easiest to explain and understand if we take a simple example scenario.
 ### Use mongodb to store Gateway configuration information
 If you download the apiman quickstart, the default configuration is to use the built
 in WildFly 8 infinispan subsystem to store the API Gateway configuration info.  This
-includes all services published to the Gateway, and all applications registered with
+includes all APIs published to the Gateway, and all client apps registered with
 it as well.  Perhaps you would rather that data be stored in mongodb?  Since we don't
 have a mongodb implementation of the Gateway Registry, you'll need to implement it
 yourself and bundle it up into a plugin!
@@ -119,10 +119,10 @@ interface.  Let's call it `MongoDbRegistry.java`:
 package org.example.apiman.gateway;
 
 import io.apiman.gateway.engine.async.IAsyncResultHandler;
-import io.apiman.gateway.engine.beans.Application;
-import io.apiman.gateway.engine.beans.Service;
-import io.apiman.gateway.engine.beans.ServiceContract;
-import io.apiman.gateway.engine.beans.ServiceRequest;
+import io.apiman.gateway.engine.beans.ClientApp;
+import io.apiman.gateway.engine.beans.Api;
+import io.apiman.gateway.engine.beans.ApiContract;
+import io.apiman.gateway.engine.beans.ApiRequest;
 
 import java.util.Map;
 
@@ -140,51 +140,51 @@ public class MongoDbRegistry implements IRegistry {
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#getContract(io.apiman.gateway.engine.beans.ServiceRequest, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#getContract(io.apiman.gateway.engine.beans.ApiRequest, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void getContract(ServiceRequest request, IAsyncResultHandler<ServiceContract> handler) {
+    public void getContract(ApiRequest request, IAsyncResultHandler<ApiContract> handler) {
         // TODO Auto-generated method stub
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#publishService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#publishApi(io.apiman.gateway.engine.beans.Api, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void publishService(Service service, IAsyncResultHandler<Void> handler) {
+    public void publishApi(Api service, IAsyncResultHandler<Void> handler) {
         // TODO Auto-generated method stub
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#retireService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#retireApi(io.apiman.gateway.engine.beans.Api, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void retireService(Service service, IAsyncResultHandler<Void> handler) {
+    public void retireApi(Api service, IAsyncResultHandler<Void> handler) {
         // TODO Auto-generated method stub
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#registerApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#registerClientApp(io.apiman.gateway.engine.beans.ClientApp, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void registerApplication(Application application, IAsyncResultHandler<Void> handler) {
+    public void registerClientApp(ClientApp application, IAsyncResultHandler<Void> handler) {
         // TODO Auto-generated method stub
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#unregisterApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#unregisterClientApp(io.apiman.gateway.engine.beans.ClientApp, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void unregisterApplication(Application application, IAsyncResultHandler<Void> handler) {
+    public void unregisterClientApp(ClientApp application, IAsyncResultHandler<Void> handler) {
         // TODO Auto-generated method stub
     }
 
     /**
-     * @see io.apiman.gateway.engine.IRegistry#getService(java.lang.String, java.lang.String, java.lang.String, io.apiman.gateway.engine.async.IAsyncResultHandler)
+     * @see io.apiman.gateway.engine.IRegistry#getApi(java.lang.String, java.lang.String, java.lang.String, io.apiman.gateway.engine.async.IAsyncResultHandler)
      */
     @Override
-    public void getService(String organizationId, String serviceId, String serviceVersion,
-            IAsyncResultHandler<Service> handler) {
+    public void getApi(String organizationId, String apiId, String apiVersion,
+            IAsyncResultHandler<Api> handler) {
         // TODO Auto-generated method stub
     }
 }

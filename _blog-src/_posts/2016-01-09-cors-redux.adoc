@@ -1,64 +1,51 @@
 ---
 layout: post
 title:  "CORS? Of Course!"
-date:   2015-07-02 15:00:00 +0100
+date:   2016-01-09 15:00:00 +0100
 author: marc_savy
-categories: security plugin policy cors
-newUrl: 2016-01-09-cors-redux
+categories: security plugin policy cors 1.2.x
+oldUrl: 2015-07-02-cors
 ---
 
-If you're looking to define http://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] policy that should be perfect for the job.
+If you're looking to define http://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] that should be perfect for the job.
 
-For those http://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke a service's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.
+For those http://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke an API's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.
 
-However, if we _want_ our resource to be callable by some other, or all, origins, then we need to define a CORS policy.
+However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let's user agent know what's allowed.
 
 ////
 Use this pattern to avoid asciidoctor rendering the HTML comment.
 <!--more-->
 ////
 
-== Installation
+== Preparation
 
-Apiman plugins are referenced via their Maven coordinates, and can be installed most easily http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman[via the apiman Admin UI] (or http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html[REST interfaces] if you're looking to automate things).
-
-For the https://github.com/apiman/apiman-plugins/tree/master/cors-policy[CORS plugin] footnote:[One of our official plugins, the rest of which can be viewed at https://github.com/apiman/apiman-plugins/. You can build and deploy your plugins publicly or privately in a similar manner], the coordinates are as follows:
-
-[cols="2*", options="header"]
-|===
-|GAV
-|Value
-
-|Group
-|io.apiman.plugins
-
-|Artifact
-|apiman-plugins-cors-policy
-
-|Version
-|1.1.3.Finalfootnote:[Use the version corresponding to your selected release of apiman]
-|===
-
-== Let's give it a go
-
-For the purposes of this blogpost we'll contrive a scenario that allows us to demonstrate a variety of the plugin's functionality. However, if your precise use-case isn't covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.
-
-=== Preparation
-
-If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend service for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
+If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
 ```ShellSession
 cd /tmp
 git clone https://github.com/apiman/apiman-quickstarts.git
 cd apiman-quickstarts/echo-service
-git checkout 1.1.3.Final
+git checkout 1.2.0.Final
 mvn clean install
 mvn wildfly:deploy
 ```
 
-Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!]. Create an *Organization* called *_Foo_*, then create a *Service* called *_Bar_*. Set your Service's implementation URL to be `http://127.0.0.1:8080/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *Make this service public*.
+Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!], navigate to the *manage plugins* page:
 
-Next, move to the *Policies* tab, click *_Add Policy_* and select *CORS Policy* from the dropdown list.
+image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="http://www.apiman.io/latest/user-guide.html#_plugins"]
+
+image::/blog/images/2016-01-09/available-plugins.png[alt="Select CORS plugin from the available plugins list"]
+
+Tab to *Available Plugins*, select *Install* for _CORS Policy Plugin_, confirm the plugin coordinates, and click *Add Plugin*.
+
+== Let's give it a go
+
+For the purposes of this blogpost we'll contrive a scenario that allows us to demonstrate a variety of the plugin's functionality. However, if your precise use-case isn't covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.
+
+Create an *Organization* called *_Foo_*, then create an *API* called *_Bar_*. Set your API's *Implementation* URL to be `http://127.0.0.1:8080/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *_Make this API public_*.
+
+Next, move to the *Policies* tab, click *_Add Policy_* and select *_CORS Policy_* from the dropdown list.
 
 === Plugin settings
 
@@ -72,7 +59,7 @@ Let's configure the settings as follows:
 
 |Terminate on CORS error
 |`true`
-|We'll not hit the backend if there's a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the service whose results would be ignored by the user agent.
+|We'll not hit the backend if there's a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the API whose results would be ignored by the user agent.
 
 |https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin[Access-Control-Allow-Origin]
 |`http://newcastle.local`
@@ -84,7 +71,7 @@ Let's configure the settings as follows:
 
 |https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers[Access-Control-Allow-Headers]
 |`X-APIMAN-EXCELLENT`
-|By default CORS only allows _requests_ to include a set of basic headers, and we want our service to be able to see the value of our _X-APIMAN-EXCELLENT_ header, so we specify it as allowed here.
+|By default CORS only allows _requests_ to include a set of basic headers, and we want our API to be able to see the value of our _X-APIMAN-EXCELLENT_ header, so we specify it as allowed here.
 
 |https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods[Access-Control-Allow-Methods]
 |`TRACE`
@@ -131,7 +118,7 @@ Here's what comes back:
 }
 ```
 
-Notice that we were given the thumbs down without the service ever being hit; for most use cases this is a good thing, as it avoids unnecessary load on a service where the user agent is going to throw away the response anyway.
+Notice that we were given the thumbs down without the API ever being hit; for most use cases this is a good thing, as it avoids unnecessary load on a API where the user agent is going to throw away the response anyway.
 
 ===== Not got the head(er) for it
 
@@ -141,7 +128,7 @@ Even if our origin is correct, we need to pass other checks, such as headers. In
 curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Headers: X-SECRET' 'Access-Control-Request-Method: TRACE' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
 ```
 
-Correctly, CORS turned the prerequest down:
+Correctly, CORS turned the preflight request down:
 
 ```json
 {
@@ -235,7 +222,7 @@ curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Req
 
 As you can see, the plugin gave us permission to continue on and make our real request with that origin, header and verb. In the real world, the browser would go ahead and do exactly that.
 
-Notice that the preflight requests never go through to the service itself, they are CORS specific and the response is generated on the gateway by the CORS policy.
+Notice that the preflight requests never go through to the API itself, they are CORS specific and the response is generated on the gateway by the CORS policy.
 
 == In conclusion...
 

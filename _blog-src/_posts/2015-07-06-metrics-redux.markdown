@@ -3,8 +3,8 @@ layout: post
 title:  "At long last, Metrics R Us!"
 date:   2015-07-06 15:10:22
 author: eric_wittmann
-categories: api-manager service ui metrics
-newUrl: 2015-07-06-metrics-redux
+categories: api-manager api ui metrics
+oldUrl: 2015-07-06-metrics
 ---
 
 A core feature of any good API Management solution is the recording of and reporting on
@@ -26,11 +26,11 @@ the API Gateway gets a request from an API client, it will add a record in the m
 system with a bunch of interesting fields.  These include but are not limited to:
 
 * Request start and end times
-* Service start and end times (i.e. just the part of the request taken up by the back end service)
+* API start and end times (i.e. just the part of the request taken up by the back end service)
 * Resource path
 * Response type (success, failure, error)
-* Service info (org id, id, version)
-* Application info (org id, id, version)
+* API info (org id, id, version)
+* Client app info (org id, id, version)
 
 All of this information is recorded in the metrics storage system so that later on it
 can be analyzed/mined for interesting trends.
@@ -89,13 +89,13 @@ Please refer to the [API documentation](http://www.apiman.io/latest/api-manager-
 for the latest information, but at the time of this blog post the available metrics
 endpoints are:
 
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/usage
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/appUsage
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/planUsage
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/responseStats
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/summaryResponseStats
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/planResponseStats
-* /organizations/<ORG_ID>/services/<SVC_ID>/versions/<VERSION>/metrics/appResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/usage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appUsage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planUsage
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/responseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/summaryResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planResponseStats
+* /organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appResponseStats
 
 The 'usage' endpoints return information about the number of requests made.  The
 'responseStats' endpoints are similar, but are broken down by response type (successful
@@ -110,10 +110,10 @@ The system won't like that one bit.
 
 ## Viewing metrics info in the UI
 The metrics information provided by the API is also available directly in the API Manager
-UI.  For any published service, simply navigate to the *Metrics* tab for that Service
+UI.  For any published API, simply navigate to the *Metrics* tab for that API
 (in the provider section of the UI).  The UI should be pretty easy to use - simply pick
 a type of metric you want to see and a pre-configured time period!  Here is what the
-usage metrics might look like for a typical service:
+usage metrics might look like for a typical API:
 
 ![Usage Metrics](/blog/images/2015-07-06/usage-metrics.png)
 

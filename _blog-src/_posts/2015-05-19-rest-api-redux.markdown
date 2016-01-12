@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "The JBoss apiman API Manager REST services API"
+title:  "The JBoss apiman API Manager REST API"
 date:   2015-05-19 11:00:00
 author: len_dimaggio
 categories: rest api automation
-newUrl: 2015-05-19-rest-api-redux
+oldUrl: 2015-05-19-rest-api
 ---
 
-In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
+In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
 
 <!--more-->
 
@@ -17,7 +17,7 @@ In this, the third article in our series on apiman, JBoss' new open source API M
 
 One solution to this problem is to augment the UI with a command line or scripting interface. This can lead to a whole separate set of issues if the new interface is built on a different set of underlying routines than the UI. A better approach to allow access to the same routines in which the UI is constructed. This approach removes any duplication, and also enables you to replicate manual UI based tasks with automated or scripted tools.  
 
-JBoss apiman follows this second approach with its REST interface.  All the services provided by apiman in its Management UI are directly supported in the API Manager REST services API. You can also directly access these same services through the REST API.
+JBoss apiman follows this second approach with its REST interface.  All the services provided by apiman in its Management UI are directly supported in the API Manager REST API. You can also directly access these same services through the REST API.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ cd wildfly-8.2.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml  
 {% endhighlight %}
 
-Now that our apiman server is up and running, we can start to access the API Manager REST services API. However, before we start placing calls to services through the REST API, let’s take a look at how the API is organized.
+Now that our apiman server is up and running, we can start to access the API Manager REST API. However, before we start placing calls to APIs through the REST API, let’s take a look at how the API is organized.
 
 ##The Organization of the API
 
@@ -44,11 +44,11 @@ The documentation for the apiman REST API is available (for free, of course), he
 
 The services and their endpoints represented in the API are divided into these groups:
 
-* actions - The actions endpoint (http://localhost:8080/apiman/actions/) enables you to execute actions for apiman entities (such as plans, services, applications, etc.)
+* actions - The actions endpoint (http://localhost:8080/apiman/actions/) enables you to execute actions for apiman entities (such as plans, APIs, applications, etc.)
 
 * system/status - The system/status endpoint (http://localhost:8080/apiman/system/status) enables you to query the current state of the apiman system.
 
-* currentuser - The currentuser endpoint (http://localhost:8080/apiman/currentuser/info) enables you to obtain or update information about the current user. This information is related to the user’s applications, services, organizations, etc.
+* currentuser - The currentuser endpoint (http://localhost:8080/apiman/currentuser/info) enables you to obtain or update information about the current user. This information is related to the user’s applications, APIs, organizations, etc.
 
 * gateways - The gateways endpoint (http://localhost:8080/apiman/gateways/) enables you to obtain information about an API Gateway, and to delete or create new gateways.
 
@@ -62,15 +62,15 @@ The services and their endpoints represented in the API are divided into these g
 
 * roles - The roles endpoint (http://localhost:8080/apiman/roles/) enables you to obtain information about existing roles, update roles, and delete roles.
 
-* search - The search endpoint (http://localhost:8080/apiman/search/) enables you to search for applications, organizations, or services.
+* search - The search endpoint (http://localhost:8080/apiman/search/) enables you to search for applications, organizations, or APIs.
 
-* users - The users endpoint (http://localhost:8080/apiman/users/) enables you to search for information about users, including their applications and services.
+* users - The users endpoint (http://localhost:8080/apiman/users/) enables you to search for information about users, including their applications and APIs.
 
 Within each group, GET operations are defined to return information, and GET and POST operations are defined to make changes to apiman elements. Data passed to and returned from services through the API is in the form of JSON along with a return code.
 
-##Accessing Services in the API Manager REST services API
+##Accessing APIs in the API Manager REST API
 
- The best way to learn about the API Manager REST services API is to see it in action. Since these are REST services, it’s easy to access them. For example, we should be able to access the system status service with a simple GET operation at this endpoint:
+ The best way to learn about the API Manager REST API is to see it in action. Since these are REST APIs, it’s easy to access them. For example, we should be able to access the system status service with a simple GET operation at this endpoint:
 
 http://localhost:8080/apiman/system/status
 
@@ -80,7 +80,7 @@ Let’s try this with curl. If we execute the following command, we should see t
 
 Well, that error is not exactly what we expected. There was no output.
 
-What went wrong? What’s missing? The answer is that our call to the service was missing authorization. In the same way that a user must login and be authorized to use the apiman Management UI, calls to the REST API must be authorized.
+What went wrong? What’s missing? The answer is that our call to the API was missing authorization. In the same way that a user must login and be authorized to use the apiman Management UI, calls to the REST API must be authorized.
 
 For our example, we’ll keep things simple and stick to using basic authorization. (We’ll take a more extensive look at apiman and security in a later article in this series.)
 
@@ -114,7 +114,7 @@ Let’s carry on by looking at a more extensive example, where we use the REST A
 
 Let’s say that you want to create multiple new organizations. You could of course manually enter these into the apiman Management UI. But, if you have a large number of organizations, for example, one for each of the countries in the EU, or each of the states in the USA, this would be a tedious and error prone task. This is an ideal candidate task for automation with the REST API.
 
-The coding for this example is simple. All you have to do is account for the encoding of the authorization to access the API Manager REST services API, and pass the information related to each organization that you create to this endpoint: http://localhost:8080/apiman/organizations
+The coding for this example is simple. All you have to do is account for the encoding of the authorization to access the API Manager REST API, and pass the information related to each organization that you create to this endpoint: http://localhost:8080/apiman/organizations
 
 Here’s an example program with an ice hockey flavor - the highlights are noted below:
 

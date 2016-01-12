@@ -4,7 +4,7 @@ title:  "Setting up your apiman development environment"
 date:   2015-06-04 09:04:45
 author: eric_wittmann
 categories: eclipse development maven
-newUrl: 2015-06-04-dev-environment-redux
+oldUrl: 2015-06-04-dev-environment
 ---
 
 For those of you who might be interested in hacking away at some core apiman code,
@@ -143,20 +143,20 @@ But a quicker way to run the various apiman components exists.
 
 As you may or may not know, apiman consists of two components:
 
-* The API Manager (RESTful services + UI)
+* The API Manager (RESTful APIs + UI)
 * The API Gateway
 
 You can run/test these pieces together or separately.  Let's first explore
 the API Manager.
 
-### Launching a Dev version of the API Manager REST services
+### Launching a Dev version of the API Manager REST APIs
 This is actually really easy:
 
 1. Open up the java class *ManagerApiDevServer*
 2. Debug As->Java Application
 
 Easy as that!  It should fire up an instance of Jetty with the apiman API
-Manager backend (RESTful web services) deployed.  You can test this by going
+Manager backend (RESTful APIs) deployed.  You can test this by going
 here:
 
 [http://localhost:7070/apiman/system/status](http://localhost:7070/apiman/system/status)
