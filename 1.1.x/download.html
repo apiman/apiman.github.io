@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="resources/images/favicon.ico">
+    <title>apiman :: download</title>
+
+    <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+    <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.1.9.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.1.9.Final" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="resources/jquery-1.11.1/js/jquery.min.js"></script>
+    <script src="resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-56678850-1', 'auto');
+                ga('send', 'pageview');
+        });
+    </script>
+  </head>
+  <body class="download">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
+      <a class="rhlogo" href="http://www.redhat.com/"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">apiman</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="top-menu-item menu-item"><a href="index.html">Overview</a></li>
+            <li class="top-menu-item menu-item active"><a href="download.html">Download</a></li>
+            <li class="top-menu-item menu-item"><a href="roadmap.html">Roadmap</a></li>
+            <li class="top-menu-item menu-item"><a href="/blog">Blog</a></li>
+            <li class="top-menu-item menu-item dropdown">
+                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item">
+                        <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="chat.html">Chat on IRC</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="contributors.html">Contributors List</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="top-menu-item menu-item dropdown">
+                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item">
+                        <a href="tutorials.html">Tutorials &amp; Walkthroughs</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="installation-guide.html">Installation Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="user-guide.html">User Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="developer-guide.html">Developer Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="production-guide.html">Production Guide</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="api-manager-restdocs.html">API Manager REST Endpoints</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="top-menu-item menu-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-angle-double-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item">
+                        <a href="../latest">Latest Version</a>
+                    </li>
+                    <li class="menu-item disabled">
+                        <a href="../1.1.x">Version 1.1.x</a>
+                    </li>
+                </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container" id="download">
+        <div id="content" class="row tbd">
+	        <div class="alert alert-warning" style="padding: 10px">
+	          <i class="fa fa-fw fa-warning" style="color: #EB7720; font-size: 18px"></i>
+	          <strong>Note:</strong> You are viewing the (deprecated) project site for version 1.1.x of apiman.  This is an older version.  Did you want to see the <a href="../latest" class="alert-link">latest version of apiman</a> instead?
+	        </div>
+            <div class="col-lg-10">
+                <h1 class="section-header">Getting Started</h1>
+                <p>One easy way to get started with <b>apiman</b> is to simply download WildFly 8 and the apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently recommend at least version 7.</p>
+            </div>
+
+            <div class="col-lg-7">
+                <h3>Download</h3>
+                <ul>
+                  <li><a href="http://wildfly.org/">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf8', 1)" href="http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip">8.2.0.Final</a></li>
+                  <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.1.9.Final/apiman-distro-wildfly8-1.1.9.Final-overlay.zip">1.1.9.Final</a> overlay for WildFly 8.2</li>
+                </ul>
+                
+                <h3>Install</h3>
+                <ol>
+                  <li>Unpack the WildFly 8.2 zip</li>
+                  <li>Unpack the apiman 1.1.9.Final WildFly 8 overlay zip <b>inside the wildfly directory</b></li>
+                </ol>
+                
+                <h3>Run</h3>
+                <ol>
+                  <li>Start WildFly 8 using the "standalone-apiman.xml" configuration</li>
+                  <li>
+                    Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
+                    <div class="alert alert-info" style="margin-top: 5px;">
+                       <span class="pficon pficon-info"></span>
+                       We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                    </div>
+                  </li>
+                </ol>
+                
+                <h3>Configure</h3>
+                <p>
+                  The apiman distribution comes pre-configured with everything you should need to get started.
+                  Please see the User Guide for information about how to change apiman configuration options
+                  if you require more customization.
+                </p>
+            </div>
+            
+            <div class="col-lg-5" style="">
+              <h3>Or simply try this...</h3>
+              <pre class="code-block">
+mkdir ~/apiman-1.1.9.Final
+cd ~/apiman-1.1.9.Final
+curl http://downloads.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip -o wildfly-8.2.0.Final.zip
+curl http://downloads.jboss.org/apiman/1.1.9.Final/apiman-distro-wildfly8-1.1.9.Final-overlay.zip -o apiman-distro-wildfly8-1.1.9.Final-overlay.zip
+unzip wildfly-8.2.0.Final.zip
+unzip -o apiman-distro-wildfly8-1.1.9.Final-overlay.zip -d wildfly-8.2.0.Final
+cd wildfly-8.2.0.Final
+./bin/standalone.sh -c standalone-apiman.xml
+              </pre>
+            </div>
+
+            <div class="col-lg-10" style="margin-top: 40px;">
+                <h1 class="section-header">Getting Started (Docker)</h1>
+                <p>If you prefer to get started by using the apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
+            </div>
+
+            <div class="col-lg-7">
+                <h3>Download</h3>
+                <ul>
+                  <li>Use docker to pull the "<a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/">apiman WildFly 8</a>" docker image:  <strong>jboss/apiman-wildfly</strong></li>
+                </ul>
+                <h3>Run</h3>
+                <ul>
+                  <li>Use docker to run the "apiman WildFly 8" docker image</li>
+                  <li>
+                    Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
+                    <div class="alert alert-info" style="margin-top: 5px;">
+                       <span class="pficon pficon-info"></span>
+                       We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                    </div>
+                  </li>
+                </ul>
+                <h3>Configure</h3>
+                <p>
+                  The apiman distribution comes pre-configured with everything you should need to get started.
+                  Please see the User Guide for information about how to change apiman configuration options
+                  if you require more customization.
+                </p>
+                <h3>More Info</h3>
+                <p>
+                  For more information on apiman docker support, including how to extend the image for your own
+                  uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/">click here</a>!
+                </p>
+            </div>
+
+            <div class="col-lg-5" style="">
+              <h3>Or simply try this...</h3>
+              <pre class="code-block">
+docker pull jboss/apiman-wildfly
+docker run -it -p 8080:8080 -p 8443:8443 jboss/apiman-wildfly:1.1.9.Final
+              </pre>
+            </div>
+
+        </div>
+    
+        <footer role="contentinfo">
+            <div id="inner-footer" class="clearfix row">
+                <div id="widget-footer" class="clearfix">
+                    <hr>
+                    <div class="widget col-sm-6 col-md-6 widget_text">
+                        <div class="textwidget">
+                            <p>
+                                Copyright © 2015 Red Hat, Inc. All rights reserved.<br>
+                                apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                                <a href="disclosure.html">Open Source Disclosure</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                        
+                        <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                    </div>
+                </div>
+                <nav class="clearfix"></nav>
+            </div>
+        </footer>
+    </div>
+
+  </body>
+</html>

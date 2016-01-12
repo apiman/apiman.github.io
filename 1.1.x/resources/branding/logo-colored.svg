@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3033"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="logo-colored.svg">
+  <defs
+     id="defs3035" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="409.02281"
+     inkscape:cy="602.29416"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="1042"
+     inkscape:window-y="405"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3038">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2985"
+       style="font-size:144px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#458fbd;fill-opacity:1;stroke:none;font-family:Segoe Script;-inkscape-font-specification:Segoe Script Oblique"
+       transform="matrix(1.8926132,0,0,3.2872221,4.065289,-769.99286)"
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999"><flowRegion
+         id="flowRegion2987"><rect
+           id="rect2989"
+           width="160"
+           height="185.71429"
+           x="194.28572"
+           y="280.93362"
+           style="font-size:144px;font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#458fbd;fill-opacity:1;font-family:Segoe Script;-inkscape-font-specification:Segoe Script Oblique" /></flowRegion><flowPara
+         id="flowPara2991">a</flowPara></flowRoot>    <path
+       style="fill:#d86d6d;fill-opacity:1;stroke:none"
+       d="m 158.86677,559.39221 c 107.24506,-116.13355 161.48098,-149.4688 219.91328,-179.10689 6.15278,-3.12082 10.0772,1.65795 12.61452,3.81984 4.75291,4.04967 8.72828,7.70417 13.06219,10.81695 11.88071,8.53315 11.75576,8.98224 11.75576,8.98224 -49.32742,67.82685 -54.61782,100.39752 -64.32676,248.32001 -22.55204,-50.48766 -39.13443,-82.40889 -73.6258,-59.60801 12.60261,-68.72837 73.95745,-160.90908 89.5449,-165.14354 -49.87928,23.15784 -103.505,67.71457 -134.31734,130.94221 -32.16984,-25.40669 -39.46609,-2.93153 -74.62075,0.97719 z"
+       id="path2993-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssscccccc"
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999" />
+    <path
+       style="fill:#d86d6d;fill-opacity:1;stroke:none"
+       d="m 410.4596,362.70226 c 10.57715,7.02276 13.71041,13.9347 22.82387,19.58326 9.47632,-15.01596 29.39961,-33.05977 48.88735,-49.78552 -18.80159,4.49217 -51.16739,19.7037 -71.71122,30.20226 z"
+       id="path3783"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\ewittman\git\apiman.github.io\latest\resources\branding\favicon.png"
+       inkscape:export-xdpi="3.0999999"
+       inkscape:export-ydpi="3.0999999" />
+  </g>
+</svg>
