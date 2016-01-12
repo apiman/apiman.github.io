@@ -4,7 +4,7 @@ title:  "A great way to test your custom apiman policy!"
 date:   2015-05-09 09:07:45
 author: eric_wittmann
 categories: policy junit testing
-newUrl: 2015-05-09-policy-testing-redux
+newUrl: 2015-05-09-policy-testing
 ---
 
 If you have tried creating your own custom apiman policy, you may have had a little bit of
@@ -40,8 +40,8 @@ public class MySimplePolicy implements IPolicy {
     }
 
     @Override
-    public void apply(ServiceRequest request, IPolicyContext context, Object config,
-            IPolicyChain<ServiceRequest> chain) {
+    public void apply(ApiRequest request, IPolicyContext context, Object config,
+            IPolicyChain<ApiRequest> chain) {
         request.getHeaders().put("X-MTP-Header", "Hello World");
         if (request.getHeaders().get("X-Fail-Test") != null) {
             IPolicyFailureFactoryComponent failureFactory = context.getComponent(IPolicyFailureFactoryComponent.class);
@@ -52,8 +52,8 @@ public class MySimplePolicy implements IPolicy {
     }
 
     @Override
-    public void apply(ServiceResponse response, IPolicyContext context, Object config,
-            IPolicyChain<ServiceResponse> chain) {
+    public void apply(ApiResponse response, IPolicyContext context, Object config,
+            IPolicyChain<ApiResponse> chain) {
         response.getHeaders().put("X-MTP-Response-Header", "Goodbye World");
         chain.doApply(response);
     }
@@ -65,7 +65,7 @@ public class MySimplePolicy implements IPolicy {
 Now that you've got your policy, you need a quick and effective way to test it.  I also
 think it's important for your test to run quickly and for you to be able to easily set
 breakpoints to debug the code.  We explored using [Arquillian](http://arquillian.org/)
-to configure and publish a service with the custom policy to a running WildFly server.
+to configure and publish an API with the custom policy to a running WildFly server.
 It actually works remarkably well, but the overhead of firing up a WildFly server just
 to test a single policy seemed excessive.  That work will likely lead into a separate
 testing effort focused on testing larger integration scenarios.
@@ -99,7 +99,7 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
     @Test
     @Configuration("{}")
     public void testGet() throws Throwable {
-        // Send a test HTTP request to the service (resulting in executing the policy).
+        // Send a test HTTP request to the API (resulting in executing the policy).
         PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
                 .header("X-Test-Name", "testGet"));
 
@@ -121,7 +121,7 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
 ## So what's going on here?
 
 Let me tell you!  For each test method in your junit test, we'll actually spin up a fully
-functional apiman API Gateway.  We'll also publish a test service that's configured with
+functional apiman API Gateway.  We'll also publish a test API that's configured with
 your custom policy (and using the policy configuration you specified in the `@Configuration`
 annotation).  After that, it's a simple matter of sending one or more simulated HTTP
 requests to the gateway.  You do that by sending a `PolicyTestRequest` to the `send` method.
@@ -131,27 +131,27 @@ Note that it's pretty easy to create a `PolicyTestRequest` - there's a nice litt
 builder you can use to create it.  The builder allows you to set the HTTP verb, the resource
 path, and any HTTP headers.
 
-## What about the back-end API/service?
+## What about the back-end API?
 
 Yeah that's a good point.  Assuming your policy doesn't produce a failure, the API Gateway
-we're using for the test needs to "invoke" a back-end service and return the result.  We
+we're using for the test needs to "invoke" a back-end API and return the result.  We
 simulate this rather than actually going out and making a REST request.  By default, we
-create a simple Echo back-end service which bundles up all the information in the REST
+create a simple Echo back-end API which bundles up all the information in the REST
 request (including anything your policy may have added to the request) and builds a JSON
 response that includes all that information.  This is handy because it allows you to
 verify that, for example, any HTTP headers your policy added to the request actually
-made it through to the back-end service.
+made it through to the back-end API.
 
 Now are you ready for an advanced topic?  If not I understand, you can just hit the Back
 button on your browser!
 
 Still here?  Great!  Another thing you can do is actually provide your own simulated
-back-end service.  This is necessary sometimes when your policy does something
-specific with, for example, the service response payload.  You may actually need your
+back-end API.  This is necessary sometimes when your policy does something
+specific with, for example, the API response payload.  You may actually need your
 test to respond in a certain way.  To accomplish this all you need to do is use the
-`@BackEndService` annotation, providing a *Class* that implements the
-`IPolicyTestBackEndService` interface.  You do that, and we'll use your simulated
-back end service for the test instead of the echo service!  :)
+`@BackEndApi` annotation, providing a *Class* that implements the
+`IPolicyTestBackEndApi` interface.  You do that, and we'll use your simulated
+back end API for the test instead of the echo API!  :)
 
 What would that look like?  Something like this:
 
@@ -161,14 +161,14 @@ public class MyTestPolicyTest1 extends ApimanPolicyTest {
 
     @Test
     @Configuration("{}")
-    @BackEndService(MyCustomBackEndServiceImpl.class)
+    @BackEndApi(MyCustomBackEndApiImpl.class)
     public void testGet() throws Throwable {
-        // Send a test HTTP request to the service (resulting in executing the policy).
+        // Send a test HTTP request to the API (resulting in executing the policy).
         PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
                 .header("X-Test-Name", "testGet"));
 
         // Now do some assertions on the result!
-        MyCustomBackEndServiceResponseBean entity = response.entity(MyCustomBackEndServiceResponseBean.class);
+        MyCustomBackEndApiResponseBean entity = response.entity(MyCustomBackEndApiResponseBean.class);
 
         // Do some more assertions here using the entity from above!
     }
@@ -180,19 +180,19 @@ And then perhaps your custom back end implementation class might look like this:
 
 {% highlight java %}
 
-public class MyCustomBackEndServiceImpl implements IPolicyTestBackEndService {
+public class MyCustomBackEndApiImpl implements IPolicyTestBackEndApi {
     @Override
-    public PolicyTestBackEndServiceResponse invoke(ServiceRequest request, byte[] requestBody) {
-        // Create a valid service response for this request, and then configure it.
-        ServiceResponse serviceResponse = new ServiceResponse();
-        serviceResponse.setCode(200);
-        serviceResponse.setMessage("OK");
-        serviceResponse.getHeaders().put("Date", new Date().toString());
-        serviceResponse.getHeaders().put("Server", "apiman.policy-test");
-        serviceResponse.getHeaders().put("Content-Type", "text/plain");
+    public PolicyTestBackEndApiResponse invoke(ApiRequest request, byte[] requestBody) {
+        // Create a valid API response for this request, and then configure it.
+        ApiResponse apiResponse = new ApiResponse();
+        apiResponse.setCode(200);
+        apiResponse.setMessage("OK");
+        apiResponse.getHeaders().put("Date", new Date().toString());
+        apiResponse.getHeaders().put("Server", "apiman.policy-test");
+        apiResponse.getHeaders().put("Content-Type", "text/plain");
         // Let's respond with a classic "Hello World" for the response body
         String body = "Hello World";
-        PolicyTestBackEndServiceResponse response = new PolicyTestBackEndServiceResponse(serviceResponse, body);
+        PolicyTestBackEndApiResponse response = new PolicyTestBackEndApiResponse(apiResponse, body);
         return response;
     }
 }
