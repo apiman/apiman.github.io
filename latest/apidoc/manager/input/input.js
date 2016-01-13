@@ -6,8 +6,8 @@ var com = {
 };
 com.qmino.miredot.restApiSource = {
 	"projectName":"apiman-manager-api-rest",
-	"projectVersion":"1.1.9.Final",
-	"projectTitle":"API Manager REST Services (1.1.9.Final)",
+	"projectVersion":"1.2.0.Final",
+	"projectTitle":"API Manager REST Services (1.2.0.Final)",
 	"buildSystem":"maven 3",
 	"miredotVersion":"1.6.2",
 	"miredotRevision":"f89b750ce8b9",
@@ -16,7 +16,7 @@ com.qmino.miredot.restApiSource = {
 	"singlePage":false,
 	"hideLogoOnTop":false,
 	"initialCollapseLevel":1,
-	"dateOfGeneration":"2015-10-23 14:02:22",
+	"dateOfGeneration":"2016-01-13 13:11:50",
 	"validLicense":true,
 	"licenseErrorMessage":null,
 	"licenseType":"PRO",
@@ -51,30 +51,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_UpdateServiceVersionBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_UpdateServiceVersionBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_search_SearchCriteriaBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_SearchCriteriaBean_in",
@@ -84,54 +60,6 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_search_SearchCriteriaBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_SearchCriteriaBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_UpdateApplicationBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_UpdateApplicationBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_UpdateApplicationBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_UpdateApplicationBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceGatewayBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceGatewayBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceGatewayBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceGatewayBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_NewServiceVersionBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_NewServiceVersionBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_NewServiceVersionBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_NewServiceVersionBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_members_MemberRoleBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_members_MemberRoleBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_members_MemberRoleBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_members_MemberRoleBean_out",
 		"content":[
 		],
 	},
@@ -159,6 +87,30 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_members_MemberRoleBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_members_MemberRoleBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_members_MemberRoleBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_members_MemberRoleBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_idm_NewRoleBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_NewRoleBean_in",
@@ -171,15 +123,39 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_in":{
+	"io_apiman_manager_api_beans_apis_ApiVersionStatusBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_in",
+		"name":"io_apiman_manager_api_beans_apis_ApiVersionStatusBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out":{
+	"io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out",
+		"name":"io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_clients_NewClientVersionBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_clients_NewClientVersionBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_clients_NewClientVersionBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_clients_NewClientVersionBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out",
 		"content":[
 		],
 	},
@@ -219,6 +195,18 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_idm_RoleBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_RoleBean_in",
@@ -228,6 +216,30 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_idm_RoleBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_RoleBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out",
 		"content":[
 		],
 	},
@@ -243,15 +255,27 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_in":{
+	"io_apiman_manager_api_beans_clients_NewClientBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_in",
+		"name":"io_apiman_manager_api_beans_clients_NewClientBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out":{
+	"io_apiman_manager_api_beans_clients_NewClientBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out",
+		"name":"io_apiman_manager_api_beans_clients_NewClientBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out",
 		"content":[
 		],
 	},
@@ -279,18 +303,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_contracts_NewContractBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_contracts_NewContractBean_in",
@@ -315,18 +327,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ApiEntryBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApiEntryBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ApiEntryBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApiEntryBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_idm_PermissionBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_PermissionBean_in",
@@ -339,15 +339,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_in":{
+	"io_apiman_manager_api_beans_clients_ClientBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_in",
+		"name":"io_apiman_manager_api_beans_clients_ClientBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out":{
+	"io_apiman_manager_api_beans_clients_ClientBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out",
+		"name":"io_apiman_manager_api_beans_clients_ClientBean_out",
 		"content":[
 		],
 	},
@@ -363,39 +363,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__in":{
+	"io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__in",
+		"name":"io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out":{
+	"io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_NewServiceBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_NewServiceBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_NewServiceBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_NewServiceBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_ApplicationVersionBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_ApplicationVersionBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_ApplicationVersionBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_ApplicationVersionBean_out",
+		"name":"io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out",
 		"content":[
 		],
 	},
@@ -408,18 +384,6 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceBean_out",
 		"content":[
 		],
 	},
@@ -447,15 +411,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ApiRegistryBean_in":{
+	"io_apiman_manager_api_beans_apis_NewApiVersionBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApiRegistryBean_in",
+		"name":"io_apiman_manager_api_beans_apis_NewApiVersionBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ApiRegistryBean_out":{
+	"io_apiman_manager_api_beans_apis_NewApiVersionBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApiRegistryBean_out",
+		"name":"io_apiman_manager_api_beans_apis_NewApiVersionBean_out",
 		"content":[
 		],
 	},
@@ -468,6 +432,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_search_OrderByBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_OrderByBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_UsagePerClientBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_UsagePerClientBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_UsagePerClientBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_UsagePerClientBean_out",
 		"content":[
 		],
 	},
@@ -531,18 +507,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ServiceSummaryBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceSummaryBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ServiceSummaryBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceSummaryBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_orgs_OrganizationBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_orgs_OrganizationBean_in",
@@ -555,15 +519,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_in":{
+	"io_apiman_manager_api_beans_apis_StatusItemBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_in",
+		"name":"io_apiman_manager_api_beans_apis_StatusItemBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out":{
+	"io_apiman_manager_api_beans_apis_StatusItemBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out",
+		"name":"io_apiman_manager_api_beans_apis_StatusItemBean_out",
 		"content":[
 		],
 	},
@@ -603,6 +567,30 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_apis_ApiVersionBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiVersionBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_ApiVersionBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiVersionBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_clients_ClientVersionBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_clients_ClientVersionBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_clients_ClientVersionBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_clients_ClientVersionBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in",
@@ -615,39 +603,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_services_UpdateServiceBean_in":{
+	"io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_UpdateServiceBean_in",
+		"name":"io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_services_UpdateServiceBean_out":{
+	"io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_UpdateServiceBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_ApplicationBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_ApplicationBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_ApplicationBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_ApplicationBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out",
+		"name":"io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out",
 		"content":[
 		],
 	},
@@ -663,15 +627,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in":{
+	"io_apiman_manager_api_beans_clients_UpdateClientBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in",
+		"name":"io_apiman_manager_api_beans_clients_UpdateClientBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_apps_NewApplicationVersionBean_out":{
+	"io_apiman_manager_api_beans_clients_UpdateClientBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_NewApplicationVersionBean_out",
+		"name":"io_apiman_manager_api_beans_clients_UpdateClientBean_out",
 		"content":[
 		],
 	},
@@ -747,6 +711,18 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_apis_ApiBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_ApiBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_plugins_NewPluginBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_plugins_NewPluginBean_in",
@@ -783,15 +759,15 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_services_ServicePlanBean_in":{
+	"io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServicePlanBean_in",
+		"name":"io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in",
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_services_ServicePlanBean_out":{
+	"io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out":{
 		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServicePlanBean_out",
+		"name":"io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out",
 		"content":[
 		],
 	},
@@ -816,6 +792,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_AvailableApiBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_AvailableApiBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_AvailableApiBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_AvailableApiBean_out",
 		"content":[
 		],
 	},
@@ -855,6 +843,54 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_ApiGatewayBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiGatewayBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_ApiGatewayBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiGatewayBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_summary_GatewayTestResultBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_summary_GatewayTestResultBean_in",
@@ -864,6 +900,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_summary_GatewayTestResultBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_summary_GatewayTestResultBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_NewApiBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_NewApiBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_NewApiBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_NewApiBean_out",
 		"content":[
 		],
 	},
@@ -903,6 +951,30 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_apis_ApiPlanBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiPlanBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_ApiPlanBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_ApiPlanBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ApiSummaryBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiSummaryBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ApiSummaryBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ApiSummaryBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_in",
@@ -927,18 +999,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_plugins_PluginBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_plugins_PluginBean_in",
@@ -948,18 +1008,6 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_plugins_PluginBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_plugins_PluginBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceVersionBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceVersionBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceVersionBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_services_ServiceVersionBean_out",
 		"content":[
 		],
 	},
@@ -975,6 +1023,18 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_apis_UpdateApiBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_UpdateApiBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_apis_UpdateApiBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_apis_UpdateApiBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_idm_UpdateRoleBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_UpdateRoleBean_in",
@@ -984,6 +1044,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_idm_UpdateRoleBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_idm_UpdateRoleBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ClientSummaryBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ClientSummaryBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_ClientSummaryBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_ClientSummaryBean_out",
 		"content":[
 		],
 	},
@@ -1011,42 +1083,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_apps_NewApplicationBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_NewApplicationBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_apps_NewApplicationBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_apps_NewApplicationBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_metrics_UsagePerAppBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_UsagePerAppBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_metrics_UsagePerAppBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_metrics_UsagePerAppBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_members_MemberBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_members_MemberBean_in",
@@ -1061,6 +1097,28 @@ com.qmino.miredot.restApiSource.tos = {
 	},
 };
 com.qmino.miredot.restApiSource.enums = {
+	"io_apiman_manager_api_beans_apis_ApiStatus":{
+		"type":"enum",
+		"name":"io.apiman.manager.api.beans.apis.ApiStatus",
+		"values":[
+			{
+				"name":"Created",
+				"comment":null,
+			},
+			{
+				"name":"Ready",
+				"comment":null,
+			},
+			{
+				"name":"Published",
+				"comment":null,
+			},
+			{
+				"name":"Retired",
+				"comment":null,
+			},
+		],
+	},
 	"io_apiman_manager_api_beans_metrics_HistogramIntervalType":{
 		"type":"enum",
 		"name":"io.apiman.manager.api.beans.metrics.HistogramIntervalType",
@@ -1106,7 +1164,7 @@ com.qmino.miredot.restApiSource.enums = {
 		"name":"io.apiman.manager.api.beans.policies.PolicyType",
 		"values":[
 			{
-				"name":"Application",
+				"name":"Client",
 				"comment":null,
 			},
 			{
@@ -1114,7 +1172,7 @@ com.qmino.miredot.restApiSource.enums = {
 				"comment":null,
 			},
 			{
-				"name":"Service",
+				"name":"Api",
 				"comment":null,
 			},
 		],
@@ -1124,37 +1182,23 @@ com.qmino.miredot.restApiSource.enums = {
 		"name":"io.apiman.manager.api.beans.actions.ActionType",
 		"values":[
 			{
-				"name":"publishService",
+				"name":"publishAPI",
 				"comment":null,
 			},
 			{
-				"name":"retireService",
+				"name":"retireAPI",
 				"comment":null,
 			},
 			{
-				"name":"registerApplication",
+				"name":"registerClient",
 				"comment":null,
 			},
 			{
-				"name":"unregisterApplication",
+				"name":"unregisterClient",
 				"comment":null,
 			},
 			{
 				"name":"lockPlan",
-				"comment":null,
-			},
-		],
-	},
-	"io_apiman_manager_api_beans_services_EndpointType":{
-		"type":"enum",
-		"name":"io.apiman.manager.api.beans.services.EndpointType",
-		"values":[
-			{
-				"name":"rest",
-				"comment":null,
-			},
-			{
-				"name":"soap",
 				"comment":null,
 			},
 		],
@@ -1279,56 +1323,40 @@ com.qmino.miredot.restApiSource.enums = {
 			},
 		],
 	},
+	"io_apiman_manager_api_beans_apis_EndpointType":{
+		"type":"enum",
+		"name":"io.apiman.manager.api.beans.apis.EndpointType",
+		"values":[
+			{
+				"name":"rest",
+				"comment":null,
+			},
+			{
+				"name":"soap",
+				"comment":null,
+			},
+		],
+	},
+	"io_apiman_manager_api_beans_apis_EndpointContentType":{
+		"type":"enum",
+		"name":"io.apiman.manager.api.beans.apis.EndpointContentType",
+		"values":[
+			{
+				"name":"json",
+				"comment":null,
+			},
+			{
+				"name":"xml",
+				"comment":null,
+			},
+		],
+	},
 	"io_apiman_manager_api_beans_gateways_GatewayType":{
 		"type":"enum",
 		"name":"io.apiman.manager.api.beans.gateways.GatewayType",
 		"values":[
 			{
 				"name":"REST",
-				"comment":null,
-			},
-		],
-	},
-	"io_apiman_manager_api_beans_services_ServiceStatus":{
-		"type":"enum",
-		"name":"io.apiman.manager.api.beans.services.ServiceStatus",
-		"values":[
-			{
-				"name":"Created",
-				"comment":null,
-			},
-			{
-				"name":"Ready",
-				"comment":null,
-			},
-			{
-				"name":"Published",
-				"comment":null,
-			},
-			{
-				"name":"Retired",
-				"comment":null,
-			},
-		],
-	},
-	"io_apiman_manager_api_beans_apps_ApplicationStatus":{
-		"type":"enum",
-		"name":"io.apiman.manager.api.beans.apps.ApplicationStatus",
-		"values":[
-			{
-				"name":"Created",
-				"comment":null,
-			},
-			{
-				"name":"Ready",
-				"comment":null,
-			},
-			{
-				"name":"Registered",
-				"comment":null,
-			},
-			{
-				"name":"Retired",
 				"comment":null,
 			},
 		],
@@ -1350,27 +1378,27 @@ com.qmino.miredot.restApiSource.enums = {
 				"comment":null,
 			},
 			{
-				"name":"svcView",
+				"name":"apiView",
 				"comment":null,
 			},
 			{
-				"name":"svcEdit",
+				"name":"apiEdit",
 				"comment":null,
 			},
 			{
-				"name":"svcAdmin",
+				"name":"apiAdmin",
 				"comment":null,
 			},
 			{
-				"name":"appView",
+				"name":"clientView",
 				"comment":null,
 			},
 			{
-				"name":"appEdit",
+				"name":"clientEdit",
 				"comment":null,
 			},
 			{
-				"name":"appAdmin",
+				"name":"clientAdmin",
 				"comment":null,
 			},
 			{
@@ -1405,9 +1433,9 @@ com.qmino.miredot.restApiSource.enums = {
 			},
 		],
 	},
-	"io_apiman_manager_api_beans_services_ServiceDefinitionType":{
+	"io_apiman_manager_api_beans_apis_ApiDefinitionType":{
 		"type":"enum",
-		"name":"io.apiman.manager.api.beans.services.ServiceDefinitionType",
+		"name":"io.apiman.manager.api.beans.apis.ApiDefinitionType",
 		"values":[
 			{
 				"name":"None",
@@ -1425,6 +1453,40 @@ com.qmino.miredot.restApiSource.enums = {
 				"name":"WSDL",
 				"comment":null,
 			},
+			{
+				"name":"WADL",
+				"comment":null,
+			},
+			{
+				"name":"RAML",
+				"comment":null,
+			},
+			{
+				"name":"External",
+				"comment":null,
+			},
+		],
+	},
+	"io_apiman_manager_api_beans_clients_ClientStatus":{
+		"type":"enum",
+		"name":"io.apiman.manager.api.beans.clients.ClientStatus",
+		"values":[
+			{
+				"name":"Created",
+				"comment":null,
+			},
+			{
+				"name":"Ready",
+				"comment":null,
+			},
+			{
+				"name":"Registered",
+				"comment":null,
+			},
+			{
+				"name":"Retired",
+				"comment":null,
+			},
 		],
 	},
 	"io_apiman_manager_api_beans_audit_AuditEntityType":{
@@ -1436,7 +1498,7 @@ com.qmino.miredot.restApiSource.enums = {
 				"comment":null,
 			},
 			{
-				"name":"Application",
+				"name":"Client",
 				"comment":null,
 			},
 			{
@@ -1444,7 +1506,7 @@ com.qmino.miredot.restApiSource.enums = {
 				"comment":null,
 			},
 			{
-				"name":"Service",
+				"name":"Api",
 				"comment":null,
 			},
 		],
@@ -1548,344 +1610,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Update
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in"].content = [
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gateways",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_out"].content = [
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gateways",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"].content = [
-	{
-		"name":"filters",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
 	{
 		"name":"orderBy",
 		"comment":null,
@@ -1903,6 +1628,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"required":false,
 	},
 	{
+		"name":"pageSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"page",
 		"comment":null,
 		"fullComment":null,
@@ -1914,12 +1650,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"required":false,
 	},
 	{
-		"name":"pageSize",
+		"name":"filters",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -1929,13 +1665,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].content = [
 	{
-		"name":"filters",
+		"name":"paging",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out"],
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -1948,205 +1681,33 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"required":false,
 	},
 	{
-		"name":"paging",
+		"name":"filters",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBean_out"],
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out"],
+		},
 		"deprecated":false,
 		"required":false,
 	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_in"].content = [
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_out"].content = [
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_in"].content = [
-	{
-		"name":"gatewayId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_out"].content = [
-	{
-		"name":"gatewayId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_in"].content = [
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_out"].content = [
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].content = [
-	{
-		"name":"roleId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"roleName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].content = [
-	{
-		"name":"roleId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"roleName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_in"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2179,34 +1740,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"id",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"classifier",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2234,6 +1773,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
@@ -2245,12 +1795,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"classifier",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2348,23 +1898,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2440,6 +1990,110 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Update
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_UpdateGatewayBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_UpdateGatewayBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in"].content = [
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"].content = [
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].content = [
+	{
+		"name":"roleId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"roleName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].content = [
+	{
+		"name":"roleId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"roleName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean_in"].content = [
 	{
 		"name":"name",
@@ -2464,23 +2118,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean
 		"required":false,
 	},
 	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"autoGrant",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -2536,7 +2190,53 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_in"].content = [
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"items",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"].content = [
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"items",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"].content = [
 	{
 		"name":"version",
 		"comment":null,
@@ -2549,29 +2249,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Service
 		"required":false,
 	},
 	{
-		"name":"planId",
+		"name":"clone",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"planName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planDescription",
+		"name":"cloneVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2582,9 +2271,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Service
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_out"].content = [
 	{
 		"name":"version",
 		"comment":null,
@@ -2597,29 +2286,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Service
 		"required":false,
 	},
 	{
-		"name":"planId",
+		"name":"clone",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"planName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planDescription",
+		"name":"cloneVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2630,8 +2308,52 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Service
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_in"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"number",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"number",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_in"].content = [
 	{
 		"name":"name",
@@ -2678,34 +2400,34 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"pluginId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"templates",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"policyImpl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"deleted",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"pluginId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2726,6 +2448,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"templates",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_in"],
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -2767,21 +2500,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"icon",
+		"name":"templates",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_out"],
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"formType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -2797,18 +2522,26 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"templates",
+		"name":"formType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"deleted",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_out"],
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"policyImpl",
+		"name":"form",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2819,7 +2552,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"form",
+		"name":"icon",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"policyImpl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2965,7 +2709,81 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definition",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"orderIndex",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"configuration",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2988,80 +2806,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 	},
 	{
 		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"orderIndex",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definition",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3136,45 +2880,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"orderIndex",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3202,12 +2924,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"orderIndex",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"number",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3223,9 +2945,209 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"entityVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in"].content = [
 	{
 		"name":"name",
@@ -3261,23 +3183,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in
 		"required":false,
 	},
 	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"autoGrant",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3294,12 +3205,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"autoGrant",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -3353,12 +3275,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_ou
 		"required":false,
 	},
 	{
-		"name":"autoGrant",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3375,12 +3297,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_ou
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"autoGrant",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3388,6 +3310,222 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_ou
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].content = [
+	{
+		"name":"gateways",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out"].content = [
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"gateways",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in"].content = [
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"].content = [
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageDataPoint_in"].content = [
 	{
 		"name":"label",
@@ -3440,7 +3578,81 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageDa
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageDataPoint_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageDataPoint_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"initialVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"initialVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].content = [
 	{
 		"name":"data",
 		"comment":null,
@@ -3460,9 +3672,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsag
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].content = [
 	{
 		"name":"data",
 		"comment":null,
@@ -3482,8 +3694,8 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsag
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageHistogramBean_in"].content = [
 	{
 		"name":"data",
@@ -3549,17 +3761,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
-		"name":"numApps",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"numMembers",
 		"comment":null,
 		"fullComment":null,
@@ -3571,7 +3772,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
-		"name":"numServices",
+		"name":"numApis",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numClients",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3619,7 +3831,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
-		"name":"numApps",
+		"name":"numClients",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numApis",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3640,67 +3863,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"deprecated":false,
 		"required":false,
 	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"].content = [
 	{
-		"name":"numServices",
+		"name":"apiVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"number",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].content = [
 	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"number",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].content = [
-	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"number",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"].content = [
-	{
-		"name":"serviceId",
+		"name":"apiOrgId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3722,18 +3901,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 		"required":false,
 	},
 	{
-		"name":"serviceOrgId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceVersion",
+		"name":"apiId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3748,17 +3916,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_out"].content = [
 	{
-		"name":"serviceId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"planId",
 		"comment":null,
 		"fullComment":null,
@@ -3770,7 +3927,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 		"required":false,
 	},
 	{
-		"name":"serviceOrgId",
+		"name":"apiOrgId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3781,7 +3938,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 		"required":false,
 	},
 	{
-		"name":"serviceVersion",
+		"name":"apiId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3807,23 +3975,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVe
 		"required":false,
 	},
 	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"clone",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"cloneVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3844,17 +4012,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVe
 		"required":false,
 	},
 	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"clone",
 		"comment":null,
 		"fullComment":null,
@@ -3865,259 +4022,20 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVe
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"cloneVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVersionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVersionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_in"].content = [
-	{
-		"name":"serviceId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiKey",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gatewayId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrgId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"httpEndpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrgName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_out"].content = [
-	{
-		"name":"serviceId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiKey",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gatewayId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrgId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrgName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"httpEndpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_in"].content = [
 	{
 		"name":"name",
@@ -4164,7 +4082,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"].content = [
 	{
 		"name":"name",
 		"comment":null,
@@ -4188,17 +4106,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Applica
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"id",
 		"comment":null,
 		"fullComment":null,
@@ -4210,15 +4117,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Applica
 		"required":false,
 	},
 	{
-		"name":"status",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apps_ApplicationStatus"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4229,20 +4139,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Applica
 		"required":false,
 	},
 	{
-		"name":"organizationName",
+		"name":"organization",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"].content = [
 	{
 		"name":"name",
 		"comment":null,
@@ -4277,7 +4184,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Applica
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4288,38 +4206,16 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Applica
 		"required":false,
 	},
 	{
-		"name":"status",
+		"name":"organization",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apps_ApplicationStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_in"].content = [
 	{
 		"name":"description",
@@ -4350,61 +4246,20 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePla
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__in"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_in"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4426,7 +4281,37 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewSer
 		"required":false,
 	},
 	{
-		"name":"initialVersion",
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_clients_ClientStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4437,11 +4322,22 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewSer
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4463,140 +4359,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewSer
 		"required":false,
 	},
 	{
-		"name":"initialVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_in"].content = [
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apps_ApplicationStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publishedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"application",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"retiredOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"].content = [
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"version",
 		"comment":null,
 		"fullComment":null,
@@ -4611,31 +4373,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_Applicatio
 		"name":"status",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apps_ApplicationStatus"],
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_clients_ClientStatus"],
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"publishedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"application",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4646,52 +4389,19 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_Applicatio
 		"required":false,
 	},
 	{
-		"name":"modifiedBy",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"retiredOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in"].content = [
 	{
 		"name":"name",
@@ -4766,140 +4476,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Update
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organization",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organization",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -4935,23 +4511,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"pluginId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"policyImpl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"pluginId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5013,12 +4589,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"icon",
+		"name":"pluginId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5032,12 +4608,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"pluginId",
+		"name":"icon",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"number",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5086,36 +4662,216 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"].content = [
 	{
-		"name":"apis",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_in"],
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_out"].content = [
 	{
-		"name":"apis",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiEntryBean_out"],
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clone",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"cloneVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_out"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clone",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"cloneVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByBean_in"].content = [
 	{
 		"name":"name",
@@ -5168,9 +4924,64 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_in"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"number",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"number",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_in"].content = [
 	{
-		"name":"serviceId",
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apikey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5181,7 +4992,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"apikey",
+		"name":"apiVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5203,7 +5014,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appId",
+		"name":"apiId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5214,7 +5025,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appVersion",
+		"name":"apiOrganizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5225,7 +5036,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"planName",
+		"name":"clientOrganizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5236,40 +5047,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"contractId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"appOrganizationName",
+		"name":"clientOrganizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5291,7 +5069,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"serviceDescription",
+		"name":"apiDescription",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5302,7 +5080,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appOrganizationId",
+		"name":"clientVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5313,7 +5091,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"serviceOrganizationId",
+		"name":"apiOrganizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5324,7 +5102,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"serviceName",
+		"name":"planName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5335,7 +5113,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"serviceOrganizationName",
+		"name":"contractId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5346,12 +5135,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"clientName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5361,18 +5161,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"].content = [
 	{
-		"name":"apikey",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"serviceId",
+		"name":"apikey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5394,7 +5194,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appId",
+		"name":"apiId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5405,7 +5205,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"planName",
+		"name":"clientOrganizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5416,7 +5216,73 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"appName",
+		"name":"apiOrganizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiOrganizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientOrganizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiDescription",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5438,6 +5304,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
+		"name":"clientName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"planVersion",
 		"comment":null,
 		"fullComment":null,
@@ -5449,95 +5337,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"serviceVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"appOrganizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrganizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"appOrganizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceDescription",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceOrganizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"serviceName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"appVersion",
+		"name":"clientVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5582,17 +5382,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsHistogramBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsSummaryBean_in"].content = [
 	{
-		"name":"total",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"failures",
 		"comment":null,
 		"fullComment":null,
@@ -5605,6 +5394,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 	},
 	{
 		"name":"errors",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"total",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5656,39 +5456,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].content = [
 	{
-		"name":"username",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"joinedOn",
 		"comment":null,
 		"fullComment":null,
@@ -5706,6 +5473,39 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUser
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5737,28 +5537,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUser
 		"required":false,
 	},
 	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"admin",
 		"comment":null,
 		"fullComment":null,
@@ -5776,6 +5554,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUser
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5807,17 +5607,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 		"required":false,
 	},
 	{
-		"name":"total",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"failures",
 		"comment":null,
 		"fullComment":null,
@@ -5830,6 +5619,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 	},
 	{
 		"name":"errors",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"total",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5890,146 +5690,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"].content = [
 	{
 		"name":"name",
@@ -6065,17 +5725,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
@@ -6087,7 +5736,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"createdBy",
+		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6104,6 +5753,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -6146,17 +5806,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
@@ -6189,12 +5838,126 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_in"].content = [
 	{
-		"name":"managedEndpoint",
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"optional",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"remediation",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"done",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"done",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"optional",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"remediation",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6205,23 +5968,8 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Service
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out"].content = [
-	{
-		"name":"managedEndpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_StatusItemBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -6257,6 +6005,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"icon",
 		"comment":null,
 		"fullComment":null,
@@ -6274,28 +6044,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -6338,6 +6086,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"icon",
 		"comment":null,
 		"fullComment":null,
@@ -6355,28 +6125,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -6449,7 +6197,29 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6468,6 +6238,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
+		"name":"entityType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"who",
 		"comment":null,
 		"fullComment":null,
@@ -6475,14 +6253,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 			"type":"simple",
 			"typeValue":"string",
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -6499,28 +6269,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 	},
 	{
 		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6557,10 +6305,24 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"entityType",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"entityId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -6584,7 +6346,15 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"entityVersion",
+		"name":"entityType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6595,7 +6365,55 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"entityVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6617,7 +6435,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"entityId",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6627,21 +6445,544 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in"].content = [
 	{
-		"name":"beans",
+		"name":"gateways",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"],
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"retiredOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publishedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"].content = [
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"retiredOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"gateways",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publishedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_in"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"retiredOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_clients_ClientStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publishedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].content = [
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"retiredOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_clients_ClientStatus"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publishedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in"].content = [
 	{
 		"name":"totalSize",
 		"comment":null,
@@ -6649,6 +6990,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -6682,9 +7034,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_in"].content = [
 	{
-		"name":"description",
+		"name":"managedEndpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6695,11 +7047,11 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_Update
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"].content = [
 	{
-		"name":"description",
+		"name":"managedEndpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6710,282 +7062,8 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_Update
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organization",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organization",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"numContracts",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"numContracts",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVersionSummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -6999,7 +7077,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"description",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7010,7 +7088,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7040,7 +7118,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7051,7 +7129,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"organizationName",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7118,7 +7196,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7129,7 +7207,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"organizationName",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7142,80 +7220,36 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVersionSummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVersionSummaryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"].content = [
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_out"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_out"].content = [
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"cloneVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_in"].content = [
 	{
 		"name":"name",
@@ -7259,12 +7293,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"configuration",
+		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7281,7 +7315,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7303,12 +7337,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"configuration",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7370,17 +7404,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
@@ -7409,6 +7432,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7440,25 +7474,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_plans_PlanStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
@@ -7470,15 +7485,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"plan",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
+		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7500,6 +7507,25 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plan",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"lockedOn",
 		"comment":null,
 		"fullComment":null,
@@ -7507,6 +7533,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 			"type":"simple",
 			"typeValue":"date string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_plans_PlanStatus"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7537,42 +7571,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_plans_PlanStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"lockedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7596,6 +7600,36 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 			"type":"simple",
 			"typeValue":"date string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"lockedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"status",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_plans_PlanStatus"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7796,9 +7830,176 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrga
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrganizationBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrganizationBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organization",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numPublished",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organization",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numPublished",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_in"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7831,28 +8032,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"classifier",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"groupId",
 		"comment":null,
 		"fullComment":null,
@@ -7865,6 +8044,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 	},
 	{
 		"name":"artifactId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"upgrade",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"classifier",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7955,21 +8156,21 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__in"].content = [
 	{
-		"name":"beans",
+		"name":"upgrade",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_in"],
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
 	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__in"].content = [
 	{
 		"name":"totalSize",
 		"comment":null,
@@ -7977,6 +8178,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -8045,7 +8257,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSum
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8056,7 +8268,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSum
 		"required":false,
 	},
 	{
-		"name":"organizationName",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8104,7 +8316,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSum
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8115,7 +8327,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSum
 		"required":false,
 	},
 	{
-		"name":"organizationName",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8128,9 +8340,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSum
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSummaryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"].content = [
 	{
-		"name":"version",
+		"name":"definitionUrl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8141,48 +8353,42 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_Servic
 		"required":false,
 	},
 	{
-		"name":"planId",
+		"name":"definitionType",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_out"].content = [
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
 ];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out"].content = [
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBean_in"].content = [
 	{
-		"name":"page",
+		"name":"pageSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8193,7 +8399,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBe
 		"required":false,
 	},
 	{
-		"name":"pageSize",
+		"name":"page",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8234,23 +8440,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__in"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -8284,6 +8490,178 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"icon",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"icon",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanBean_in"].content = [
 	{
 		"name":"name",
@@ -8360,39 +8738,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanBe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"].content = [
 	{
-		"name":"username",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"joinedOn",
 		"comment":null,
 		"fullComment":null,
@@ -8410,6 +8755,39 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8430,28 +8808,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_ou
 		"required":false,
 	},
 	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"admin",
 		"comment":null,
 		"fullComment":null,
@@ -8473,6 +8829,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_ou
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"].comment = null;
@@ -8482,6 +8860,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_actions_ActionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"entityId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -8498,17 +8887,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 	},
 	{
 		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8531,7 +8909,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"required":false,
 	},
 	{
-		"name":"entityVersion",
+		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8553,7 +8931,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"required":false,
 	},
 	{
-		"name":"entityId",
+		"name":"entityVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8566,18 +8944,223 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in"].content = [
 	{
-		"name":"success",
+		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"].content = [
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_in"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"].content = [
+	{
+		"name":"data",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_in"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planDescription",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planDescription",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_in"].content = [
+	{
+		"name":"gatewayId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"].content = [
+	{
+		"name":"gatewayId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_in"].content = [
 	{
 		"name":"detail",
 		"comment":null,
@@ -8585,6 +9168,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"success",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8618,9 +9212,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"].content = [
 	{
-		"name":"userId",
+		"name":"name",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8631,6 +9225,189 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesB
 		"required":false,
 	},
 	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"initialVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"initialVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_in"].content = [
+	{
 		"name":"roleIds",
 		"comment":null,
 		"fullComment":null,
@@ -8640,6 +9417,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesB
 				"type":"simple",
 				"typeValue":"string",
 			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"userId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8649,17 +9437,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesB
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_out"].content = [
 	{
-		"name":"userId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"roleIds",
 		"comment":null,
 		"fullComment":null,
@@ -8669,6 +9446,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesB
 				"type":"simple",
 				"typeValue":"string",
 			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"userId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8711,10 +9499,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 		"required":false,
 	},
 	{
-		"name":"organization",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -8730,13 +9521,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"organization",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -8778,10 +9566,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 		"required":false,
 	},
 	{
-		"name":"organization",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -8797,13 +9588,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"organization",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -8813,17 +9601,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_in"].content = [
 	{
 		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8845,6 +9622,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"id",
 		"comment":null,
 		"fullComment":null,
@@ -8856,7 +9644,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"moreInfo",
+		"name":"builtOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8867,7 +9655,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"builtOn",
+		"name":"moreInfo",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8972,6 +9760,198 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"].content = [
+	{
+		"name":"version",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_in"].content = [
 	{
 		"name":"data",
@@ -9012,23 +9992,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__in"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -9062,61 +10042,20 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__in"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_in"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9149,34 +10088,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"id",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"classifier",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9204,6 +10121,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
@@ -9215,12 +10143,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"deleted",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"classifier",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9318,6 +10257,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
@@ -9329,12 +10279,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"deleted",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9342,381 +10292,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_in"].content = [
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publishedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gateways",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"service",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"retiredOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"].content = [
-	{
-		"name":"id",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"status",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceStatus"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"service",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publishedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicService",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_services_ServiceDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"retiredOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServicePlanBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gateways",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceGatewayBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_in"].content = [
 	{
-		"name":"email",
+		"name":"fullName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9727,7 +10305,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserB
 		"required":false,
 	},
 	{
-		"name":"fullName",
+		"name":"email",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9766,6 +10344,36 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"].content = [
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_out"].content = [
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleBean_in"].content = [
 	{
 		"name":"name",
@@ -9790,23 +10398,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleB
 		"required":false,
 	},
 	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"autoGrant",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_idm_PermissionType"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -9862,9 +10470,42 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_in"].content = [
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_in"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
 	{
 		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numContracts",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9875,7 +10516,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"apikey",
+		"name":"organizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9886,28 +10527,97 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"application",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plan",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"].content = [
+	{
+		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"numContracts",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_in"].content = [
+	{
+		"name":"id",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9924,10 +10634,48 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"service",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_in"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plan",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apikey",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -9947,29 +10695,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"service",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apikey",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"date string",
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"application",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -9985,13 +10717,21 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"apikey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10000,6 +10740,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10096,162 +10844,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewaySummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewaySummaryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_in"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"initialVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_out"].content = [
-	{
-		"name":"name",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"initialVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_in"].content = [
-	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out"].content = [
-	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsDataPoint_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_in"].content = [
-	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"number",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_out"].content = [
-	{
-		"name":"data",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"number",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_in"].content = [
 	{
 		"name":"userName",
@@ -10260,6 +10852,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"joinedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -10297,6 +10900,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 		"deprecated":false,
 		"required":false,
 	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].content = [
 	{
 		"name":"joinedOn",
 		"comment":null,
@@ -10308,10 +10915,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].content = [
 	{
 		"name":"userName",
 		"comment":null,
@@ -10356,26 +10959,15 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 		"deprecated":false,
 		"required":false,
 	},
-	{
-		"name":"joinedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].comment = null;
 com.qmino.miredot.restApiSource.interfaces = [
 	{
-		"beschrijving":"Use this endpoint to remove a Policy from the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/policies/{policyId}",
-		"http":"DELETE",
-		"title":"Remove Service Policy",
+		"beschrijving":"Use this endpoint to search for available APIs within any configured API catalogs. If no API catalogs are configured, this will always return zero results.",
+		"url":"/search/apiCatalogs",
+		"http":"POST",
+		"title":"Search for APIs in API Catalogs",
 		"tags":[
 			
 		],
@@ -10385,30 +10977,26 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
+			"application/json",
 		],
 		"produces":[
+			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"],
+			"comment":"The search results (a page of available APIs).",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
+				"httpCode":200,
+				"comment":"If the search is successful.",
 			},
 		],
-		"hash":"-511489446",
+		"hash":"-11115455",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -10417,46 +11005,15 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -10519,180 +11076,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The new role.",
 					"jaxrs":"BODY",
 				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to delete a Service's definition document. When this is done, the \"definitionType\" field on the Service will be set to None.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/definition",
-		"http":"DELETE",
-		"title":"Remove Service Definition",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Service definition was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-		],
-		"hash":"-55507329",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Contracts for an Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/contracts",
-		"http":"GET",
-		"title":"List All Contracts for an Application",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
-			},
-			"comment":"A list of Contracts.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Contracts is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application is not found.",
-			},
-		],
-		"hash":"-373496865",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
 			],
 			"HEADER":[
 			],
@@ -10857,10 +11240,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to add a new Policy to the Service version.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/policies",
-		"http":"POST",
-		"title":"Add Service Policy",
+		"beschrijving":"Use this endpoint to delete an API's definition document. When this is done, the \"definitionType\" field on the API will be set to None.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"DELETE",
+		"title":"Remove API Definition",
 		"tags":[
 			
 		],
@@ -10870,30 +11253,26 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
-			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full details about the newly added Policy.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully added.",
+				"httpCode":204,
+				"comment":"If the API definition was successfully deleted.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"-1825158763",
+		"hash":"2113320356",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -10912,12 +11291,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -10926,18 +11305,113 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as XML data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/xml",
+		"http":"GET",
+		"title":"Get API Registry (XML)",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/xml",
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"API Registry information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API Registry information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-1027279171",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
-					"comment":"Information about the new Policy.",
-					"jaxrs":"BODY",
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
 				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"download",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"Query parameter set to true in order to generate a download link.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
 			],
 			"HEADER":[
 			],
@@ -11093,10 +11567,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to create a new version of the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions",
-		"http":"POST",
-		"title":"Create Service Version",
+		"beschrijving":"Use this endpoint to remove a Policy from the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"http":"DELETE",
+		"title":"Remove Client Policy",
 		"tags":[
 			
 		],
@@ -11106,34 +11580,30 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
-			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"],
-			"comment":"Full details about the newly created Service version.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the Service version is created successfully.",
+				"httpCode":204,
+				"comment":"If the Policy was successfully deleted.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the Client does not exist.",
 			},
 			{
-				"httpCode":409,
-				"comment":"If the Service version already exists.",
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
 			},
 		],
-		"hash":"2037358525",
+		"hash":"778081312",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11152,23 +11622,36 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceVersionBean_in"],
-					"comment":"Initial information about the new Service version.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -11181,10 +11664,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update information about a Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}",
-		"http":"PUT",
-		"title":"Update Service",
+		"beschrijving":"Use this endpoint to list all of the Policies configured for the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
+		"http":"GET",
+		"title":"List All API Policies",
 		"tags":[
 			
 		],
@@ -11194,7 +11677,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -11204,18 +11686,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+			},
+			"comment":"A List of Policies.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Service is updated successfully.",
+				"httpCode":200,
+				"comment":"If the list of Policies is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"-657686413",
+		"hash":"-1432121842",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11234,23 +11721,27 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceBean_in"],
-					"comment":"Updated Service information.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -11403,10 +11894,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update information about a single version of a Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}",
-		"http":"PUT",
-		"title":"Update Service Version",
+		"beschrijving":"Use this endpoint to get information about the Managed API's gateway endpoint. In other words, this returns the actual live endpoint on the API Gateway - the endpoint that a client should use when invoking the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/endpoint",
+		"http":"GET",
+		"title":"Get API Endpoint",
 		"tags":[
 			
 		],
@@ -11416,7 +11907,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -11426,20 +11916,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"],
-			"comment":"The updated Service Version.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"],
+			"comment":"The live API endpoint information.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Service version information was successfully updated.",
+				"httpCode":200,
+				"comment":"If the endpoint information is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"253720388",
+		"hash":"-2056208999",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11458,12 +11948,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -11472,18 +11962,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_UpdateServiceVersionBean_in"],
-					"comment":"Updated information about the Service version.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -11496,10 +11981,115 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to create a new Service. Note that it is important to also create an initial version of the Service (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Service Version\". If the former is done, then a first Service version will be created automatically by this endpoint.",
-		"url":"/organizations/{organizationId}/services",
+		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/activity",
+		"http":"GET",
+		"title":"Get Client Version Activity",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit activity entries are successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client version does not exist.",
+			},
+		],
+		"hash":"1488100066",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity data to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a new Policy to the API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
 		"http":"POST",
-		"title":"Create Service",
+		"title":"Add API Policy",
 		"tags":[
 			
 		],
@@ -11519,20 +12109,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"],
-			"comment":"Full details about the newly created Service.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full details about the newly added Policy.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Service is successfully created.",
+				"comment":"If the Policy is successfully added.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Organization does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"711804598",
+		"hash":"-299858800",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11550,13 +12140,31 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Organization ID.",
 					"jaxrs":"PATH",
 				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_NewServiceBean_in"],
-					"comment":"Information about the new Service.",
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
+					"comment":"Information about the new Policy.",
 					"jaxrs":"BODY",
 				},
 			],
@@ -11571,10 +12179,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return request count data broken down by plan. It basically answers the question \"which service plans are most used?\".",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/planUsage",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by plan. It basically answers the question \"which API plans are most used?\".",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planUsage",
 		"http":"GET",
-		"title":"Get Service Usage Metrics (per Plan)",
+		"title":"Get API Usage Metrics (per Plan)",
 		"tags":[
 			
 		],
@@ -11621,12 +12229,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -11635,7 +12243,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -11672,10 +12280,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"This endpoint returns audit activity information about the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/activity",
+		"beschrijving":"Use this endpoint to retrieve information about a single Client by ID. Note that this only returns information about the Client, not about any particular *version* of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}",
 		"http":"GET",
-		"title":"Get Service Activity",
+		"title":"Get Client By ID",
 		"tags":[
 			
 		],
@@ -11694,13 +12302,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit activity entries.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+			"comment":"An Client.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
+				"comment":"If the Client is successfully returned.",
 			},
 			{
 				"httpCode":404,
@@ -11708,10 +12316,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the Client does not exist.",
 			},
 		],
-		"hash":"1628759461",
+		"hash":"1881573534",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11730,102 +12338,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity should be returned.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Services in the Organization.",
-		"url":"/organizations/{organizationId}/services",
-		"http":"GET",
-		"title":"List Services",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"],
-			},
-			"comment":"A list of Services.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Services is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-369889394",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -11926,100 +12444,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to change the order of Policies for an Application. When a Policy is added to the Application, it is added as the last Policy in the list of Application Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Application, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/reorderPolicies",
-		"http":"POST",
-		"title":"Re-Order Application Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the re-ordering of Policies was successful.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"-2110254466",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
-					"comment":"The Policies in the desired order.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit services. For example, when creating a new Service, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
-		"url":"/currentuser/svcorgs",
+		"beschrijving":"This endpoint returns all APIs that the user has permission to edit.",
+		"url":"/users/{userId}/apis",
 		"http":"GET",
-		"title":"Get Organizations (svc-edit)",
+		"title":"List User APIs",
 		"tags":[
 			
 		],
@@ -12040,17 +12468,17 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"output":{
 			"typeValue":{
 				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
 			},
-			"comment":"A list of organizations.",
+			"comment":"List of APIs.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the organizations are successfully returned.",
+				"comment":"If the API list is successfully returned.",
 			},
 		],
-		"hash":"-368594885",
+		"hash":"-243102033",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12059,6 +12487,15 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
@@ -12134,178 +12571,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to retrieve information about a single Service by ID. Note that this only returns information about the Service, not about any particular *version* of the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}",
-		"http":"GET",
-		"title":"Get Service By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceBean_out"],
-			"comment":"A Service.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Service is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-		],
-		"hash":"593492118",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list the Plans configured for the given Service version.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/plans",
-		"http":"GET",
-		"title":"List Service Plans",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServicePlanSummaryBean_out"],
-			},
-			"comment":"A list of Service plans.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Service plans are successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service cannot be found.",
-			},
-		],
-		"hash":"2124295565",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
 		"beschrijving":"This endpoint returns all of the permissions assigned to the currently authenticated user.",
 		"url":"/permissions/",
 		"http":"GET",
@@ -12346,103 +12611,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to break a Contract with a Service.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/contracts/{contractId}",
-		"http":"DELETE",
-		"title":"Break Contract",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Contract is successfully broken.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Contract does not exist.",
-			},
-		],
-		"hash":"265482217",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"contractId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Contract ID.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
@@ -12541,6 +12709,187 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to break a Contract with an API.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
+		"http":"DELETE",
+		"title":"Break Contract",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Contract is successfully broken.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Contract does not exist.",
+			},
+		],
+		"hash":"265482217",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"contractId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Contract ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the API's definition document. An API definition will vary depending on the type of API, and the type of definition used. For example, it might be a Swagger document or a WSDL file. To use this endpoint, simply PUT the updated API Definition document in its entirety, making sure to set the Content-Type appropriately for the type of definition document. The content will be stored and the API's \"Definition Type\" field will be updated. <br /> Whenever an API's definition is updated, the \"definitionType\" property of that API is automatically set based on the request Content-Type. There is no other way to set the API's definition type property. The following is a map of Content-Type to API definition type. <table> <thead> <tr><th>Content Type</th><th>API Definition Type</th></tr> </thead> <tbody> <tr><td>application/json</td><td>SwaggerJSON</td></tr> <tr><td>application/x-yaml</td><td>SwaggerYAML</td></tr> <tr><td>application/wsdl+xml</td><td>WSDL</td></tr> </tbody> </table>",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"PUT",
+		"title":"Update API Definition",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API definition was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1046148934",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"This endpoint returns a list of all the Gateways that have been configured.",
 		"url":"/gateways/",
 		"http":"GET",
@@ -12588,6 +12937,96 @@ com.qmino.miredot.restApiSource.interfaces = [
 			"QUERY":[
 			],
 			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to change the order of Policies for an API. When a Policy is added to the API, it is added as the last Policy in the list of API Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the API, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/reorderPolicies",
+		"http":"POST",
+		"title":"Re-Order API Policies",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the re-ordering of Policies was successful.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-201972620",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
+					"comment":"The Policies in the desired order.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -12665,10 +13104,107 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific application. This will return request count data broken down by service. It basically answers the question \"which services is my app really using?\".",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/metrics/serviceUsage",
+		"beschrijving":"Use this endpoint to remove a Policy from the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
+		"http":"DELETE",
+		"title":"Remove API Policy",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Policy was successfully deleted.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
+			},
+		],
+		"hash":"1657338239",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get audit activity information for a single version of the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/activity",
 		"http":"GET",
-		"title":"Get App Usage Metrics (per Service)",
+		"title":"Get API Version Activity",
 		"tags":[
 			
 		],
@@ -12687,16 +13223,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_AppUsagePerServiceBean_out"],
-			"comment":"Usage metrics information.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit entries.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
+				"comment":"If the audit activity entries are successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API version does not exist.",
 			},
 		],
-		"hash":"-551412358",
+		"hash":"1556586021",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12711,16 +13251,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The organization ID.",
+					"comment":"The Organization ID.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The application ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -12729,27 +13269,27 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The application version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 				{
-					"name":"from",
+					"name":"page",
 					"typeValue":{
 						"type":"simple",
-						"typeValue":"string",
+						"typeValue":"number",
 					},
-					"comment":"The start of a valid date range.",
+					"comment":"Which page of activity data to return.",
 					"jaxrs":"QUERY",
 				},
 				{
-					"name":"to",
+					"name":"count",
 					"typeValue":{
 						"type":"simple",
-						"typeValue":"string",
+						"typeValue":"number",
 					},
-					"comment":"The end of a valid date range.",
+					"comment":"The number of entries per page to return.",
 					"jaxrs":"QUERY",
 				},
 			],
@@ -12766,10 +13306,103 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to list all of the Services the current user has permission to edit. This includes all Services from all Organizations the user has service edit privileges for.",
-		"url":"/currentuser/services",
+		"beschrijving":"Use this endpoint to update information about a single version of an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
+		"http":"PUT",
+		"title":"Update API Version",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"The updated API Version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API version information was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-140545606",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"],
+					"comment":"Updated information about the API version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the versions of an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
 		"http":"GET",
-		"title":"Get Current User's Services",
+		"title":"List API Versions",
 		"tags":[
 			
 		],
@@ -12790,17 +13423,17 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"output":{
 			"typeValue":{
 				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"],
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"],
 			},
-			"comment":"A list of Services.",
+			"comment":"A list of APIs.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the services are successfully returned.",
+				"comment":"If the list of API versions is successfully returned.",
 			},
 		],
-		"hash":"1682950062",
+		"hash":"-1882625292",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12809,6 +13442,24 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
@@ -12870,6 +13521,74 @@ com.qmino.miredot.restApiSource.interfaces = [
 			"PATH":[
 			],
 			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to export data from the API Manager to a file. All data in the API Manager, including global/admin information, will be exported. The resulting file should be suitable for importing into some other instance of the apiman API Manager. This is useful for upgrades, migrations between environments, and backups.",
+		"url":"/system/export",
+		"http":"GET",
+		"title":"Export Data",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"A full export of all API Manager data",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"On successful export",
+			},
+		],
+		"hash":"-30001108",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+				{
+					"name":"download",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":null,
+					"jaxrs":"QUERY",
+				},
 			],
 			"BODY":[
 			],
@@ -12953,156 +13672,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The number of results per page to return.",
 					"jaxrs":"QUERY",
 				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new Application. Note that it is important to also create an initial version of the Application (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Application Version\". If the former is done, then a first Application version will be created automatically by this endpoint.",
-		"url":"/organizations/{organizationId}/applications",
-		"http":"POST",
-		"title":"Create Application",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"],
-			"comment":"Full details about the newly created Application.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Application is successfully created.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-1408103619",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationBean_in"],
-					"comment":"Information about the new Application.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Revoke all of a user's role memberships from the org.",
-		"url":"/organizations/{organizationId}/members/{userId}",
-		"http":"DELETE",
-		"title":"Revoke All Memberships",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the user's memberships were successfully revoked.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the user does not exist.",
-			},
-		],
-		"hash":"52438808",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
 			],
 			"BODY":[
 			],
@@ -13213,10 +13782,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to retrieve the Service's definition document. A service definition document can be several different types, depending on the Service type and technology used to define the service. For example, this endpoint might return a WSDL document, or a Swagger JSON document.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/definition",
-		"http":"GET",
-		"title":"Get Service Definition",
+		"beschrijving":"Revoke all of a user's role memberships from the org.",
+		"url":"/organizations/{organizationId}/members/{userId}",
+		"http":"DELETE",
+		"title":"Revoke All Memberships",
 		"tags":[
 			
 		],
@@ -13228,32 +13797,24 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"consumes":[
 		],
 		"produces":[
-			"application/json",
-			"application/wsdl+xml",
-			"application/x-yaml",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":"The Service Definition document (e.g. a Swagger JSON file).",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the Service definition is successfully returned.",
+				"httpCode":204,
+				"comment":"If the user's memberships were successfully revoked.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service version does not exist.",
+				"comment":"If the user does not exist.",
 			},
 		],
-		"hash":"-1444301970",
+		"hash":"52438808",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -13268,97 +13829,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Organization ID.",
+					"comment":"The organization ID.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"userId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Applications in the Organization.",
-		"url":"/organizations/{organizationId}/applications",
-		"http":"GET",
-		"title":"List Applications",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"],
-			},
-			"comment":"A list of Applications.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Applications is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"1791893282",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
+					"comment":"The user ID.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -13613,10 +14093,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to list all of the Policies configured for the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/policies",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by client. It basically answers the question \"who is calling my API?\".",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientUsage",
 		"http":"GET",
-		"title":"List All Service Policies",
+		"title":"Get API Usage Metrics (per Client)",
 		"tags":[
 			
 		],
@@ -13629,6 +14109,108 @@ com.qmino.miredot.restApiSource.interfaces = [
 		],
 		"produces":[
 			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"-1926708311",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint is used to download a file that was previously generated by some other REST API call. For example, when exporting data via the /system/export endpoint, a temporary download link may be created. This represents that temporary download link. In this example, the download will result in the exported data.",
+		"url":"/downloads/{downloadId}",
+		"http":"GET",
+		"title":"Download File",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+			"text/xml",
 		],
 		"roles":[
 		],
@@ -13636,22 +14218,18 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"permitAll":false,
 		"output":{
 			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
 			},
-			"comment":"A List of Policies.",
+			"comment":"A binary file.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the list of Policies is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"On success.",
 			},
 		],
-		"hash":"927046441",
+		"hash":"-1545632561",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -13661,30 +14239,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"inputs":{
 			"PATH":[
 				{
-					"name":"organizationId",
+					"name":"downloadId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
+					"comment":null,
 					"jaxrs":"PATH",
 				},
 			],
@@ -13703,107 +14263,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to remove a Policy from the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/policies/{policyId}",
-		"http":"DELETE",
-		"title":"Remove Application Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"-675179834",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about the currently authenticated user.",
-		"url":"/currentuser/info",
+		"beschrijving":"Use this endpoint to retrieve information about a single API by ID. Note that this only returns information about the API, not about any particular *version* of the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}",
 		"http":"GET",
-		"title":"Get Current User Information",
+		"title":"Get API By ID",
 		"tags":[
 			
 		],
@@ -13822,16 +14285,24 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"],
-			"comment":"Information about the authenticated user.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+			"comment":"A API.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the information is correctly returned.",
+				"comment":"If the API is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"1953252350",
+		"hash":"-150865029",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -13840,6 +14311,111 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed information about a single version of an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}",
+		"http":"GET",
+		"title":"Get Client Version",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
+			"comment":"An Client version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client version is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client version does not exist.",
+			},
+		],
+		"hash":"-163056237",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
@@ -13928,10 +14504,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return request count data broken down by application. It basically answers the question \"who is calling my service?\".",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/appUsage",
+		"beschrijving":"Use this endpoint to get information about the currently authenticated user.",
+		"url":"/currentuser/info",
 		"http":"GET",
-		"title":"Get Service Usage Metrics (per App)",
+		"title":"Get Current User Information",
 		"tags":[
 			
 		],
@@ -13950,16 +14526,79 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerAppBean_out"],
-			"comment":"Usage metrics information.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"],
+			"comment":"Information about the authenticated user.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
+				"comment":"If the information is correctly returned.",
 			},
 		],
-		"hash":"-996828075",
+		"hash":"1953252350",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all Contracts created with this API. This will return Contracts created by between any Client and through any Plan.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/contracts",
+		"http":"GET",
+		"title":"List API Contracts",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
+			},
+			"comment":"A list of Contracts.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Contracts is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1986179721",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -13974,16 +14613,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The organization ID.",
+					"comment":"The Organization ID.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -13992,29 +14631,116 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 				{
-					"name":"from",
+					"name":"page",
 					"typeValue":{
 						"type":"simple",
-						"typeValue":"string",
+						"typeValue":"number",
 					},
-					"comment":"The start of a valid date range.",
+					"comment":"Which page of Contracts to return.",
 					"jaxrs":"QUERY",
 				},
 				{
-					"name":"to",
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of Contracts per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed information about a single version of an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
+		"http":"GET",
+		"title":"Get API Version",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"A API version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API version is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API version does not exist.",
+			},
+		],
+		"hash":"671390230",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
 				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
 			],
 			"BODY":[
 			],
@@ -14119,10 +14845,69 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Service Policy.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/policies/{policyId}",
-		"http":"PUT",
-		"title":"Update Service Policy",
+		"beschrijving":"Use this endpoint to list all of the APIs the current user has permission to edit. This includes all APIs from all Organizations the user has API edit privileges for.",
+		"url":"/currentuser/apis",
+		"http":"GET",
+		"title":"Get Current User's APIs",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
+			},
+			"comment":"A list of APIs.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the APIs are successfully returned.",
+			},
+		],
+		"hash":"1953016041",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new Client. Note that it is important to also create an initial version of the Client (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Client Version\". If the former is done, then a first Client version will be created automatically by this endpoint.",
+		"url":"/organizations/{organizationId}/clients",
+		"http":"POST",
+		"title":"Create Client",
 		"tags":[
 			
 		],
@@ -14142,22 +14927,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+			"comment":"Full details about the newly created Client.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully updated.",
+				"httpCode":200,
+				"comment":"If the Client is successfully created.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
+				"comment":"If the Organization does not exist.",
 			},
 		],
-		"hash":"1193306311",
+		"hash":"219250178",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -14175,40 +14958,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Organization ID.",
 					"jaxrs":"PATH",
 				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
-					"comment":"New meta-data and/or configuration for the Policy.",
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"],
+					"comment":"Information about the new Client.",
 					"jaxrs":"BODY",
 				},
 			],
@@ -14223,10 +14979,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return a full histogram of response statistics data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute The data returned includes total request counts, failure counts, and error counts for each data point in the histogram.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/responseStats",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of response statistics data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute The data returned includes total request counts, failure counts, and error counts for each data point in the histogram.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/responseStats",
 		"http":"GET",
-		"title":"Get Service Response Statistics (Histogram)",
+		"title":"Get API Response Statistics (Histogram)",
 		"tags":[
 			
 		],
@@ -14273,12 +15029,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -14287,7 +15043,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -14316,102 +15072,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The end of a valid date range.",
 					"jaxrs":"QUERY",
 				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about a single Policy in the Application version.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/policies/{policyId}",
-		"http":"GET",
-		"title":"Get Application Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full information about the Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"-1736700107",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
 			],
 			"BODY":[
 			],
@@ -14488,85 +15148,8 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to list all of the versions of a Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions",
-		"http":"GET",
-		"title":"List Service Versions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionSummaryBean_out"],
-			},
-			"comment":"A list of Services.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Service versions is successfully returned.",
-			},
-		],
-		"hash":"1143148047",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to break all contracts between this application and its services.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/contracts",
+		"beschrijving":"Use this endpoint to break all contracts between this client and its APIs.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
 		"http":"DELETE",
 		"title":"Break All Contracts",
 		"tags":[
@@ -14594,7 +15177,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application does not exist.",
+				"comment":"If the Client does not exist.",
 			},
 		],
 		"hash":"-2017982009",
@@ -14616,12 +15199,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -14630,7 +15213,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -14773,6 +15356,164 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to get information about a single Policy in the Client version.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"http":"GET",
+		"title":"Get Client Policy",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full information about the Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"871828817",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for APIs. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/apis",
+		"http":"POST",
+		"title":"Search for APIs",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"],
+			"comment":"The search results (a page of APIs).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"192245690",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to get information about a specific user by the User ID.",
 		"url":"/users/{userId}",
 		"http":"GET",
@@ -14822,6 +15563,69 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The user ID.",
 					"jaxrs":"PATH",
 				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve a list of all plugins available to be installed. This list is generated by querying all of the plugin registries configured in apiman and returning the list of plugins found in each (sorted by name). Note that this endpoint includes all plugins, even those already installed.",
+		"url":"/plugins/availablePlugins",
+		"http":"GET",
+		"title":"List Available Plugins",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"],
+			},
+			"comment":"A list of available plugins.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the plugins are returned successfully.",
+			},
+			{
+				"httpCode":403,
+				"comment":"If the user is not an admin.",
+			},
+		],
+		"hash":"121469024",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
 			],
 			"QUERY":[
 			],
@@ -14906,10 +15710,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to create a new version of the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions",
-		"http":"POST",
-		"title":"Create Application Version",
+		"beschrijving":"Use this endpoint to get a list of all Clients in the Organization.",
+		"url":"/organizations/{organizationId}/clients",
+		"http":"GET",
+		"title":"List Clients",
 		"tags":[
 			
 		],
@@ -14919,7 +15723,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -14929,24 +15732,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"],
-			"comment":"Full details about the newly created Application version.",
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+			},
+			"comment":"A list of Clients.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Application version is created successfully.",
+				"comment":"If the list of Clients is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the Application version already exists.",
+				"comment":"If the Organization does not exist.",
 			},
 		],
-		"hash":"1740739630",
+		"hash":"-738311614",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -14964,24 +15766,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Organization ID.",
 					"jaxrs":"PATH",
 				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_NewApplicationVersionBean_in"],
-					"comment":"Initial information about the new Application version.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -14994,10 +15782,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get information about a single Policy in the Service version.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/policies/{policyId}",
+		"beschrijving":"Use this endpoint to get a Policy Chain for the specific API version. A Policy Chain is a useful summary to better understand which Policies would be executed for a request to this API through a particular Plan offered by the API. Often this information is interesting prior to create a Contract with the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/plans/{planId}/policyChain",
 		"http":"GET",
-		"title":"Get Service Policy",
+		"title":"Get API Policy Chain",
 		"tags":[
 			
 		],
@@ -15016,20 +15804,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full information about the Policy.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_out"],
+			"comment":"A Policy Chain.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Policy is successfully returned.",
+				"comment":"If the Policy Chain is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"-1900284087",
+		"hash":"702259410",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -15048,12 +15836,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -15062,18 +15850,132 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"policyId",
+					"name":"planId",
 					"typeValue":{
 						"type":"simple",
-						"typeValue":"number",
+						"typeValue":"string",
 					},
-					"comment":"The Policy ID.",
+					"comment":"The Plan ID.",
 					"jaxrs":"PATH",
 				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"",
+		"url":"/system/import",
+		"http":"POST",
+		"title":null,
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"text/plain",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":null,
+		},
+		"statusCodes":[
+		],
+		"hash":"1642032952",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit APIs. For example, when creating a new API, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
+		"url":"/currentuser/apiorgs",
+		"http":"GET",
+		"title":"Get Organizations (api-edit)",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+			},
+			"comment":"A list of organizations.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the organizations are successfully returned.",
+			},
+		],
+		"hash":"-1224109834",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
 			],
 			"QUERY":[
 			],
@@ -15242,6 +16144,107 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific client. This will return request count data broken down by API. It basically answers the question \"which APIs is my client really using?\".",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/metrics/apiUsage",
+		"http":"GET",
+		"title":"Get Client Usage Metrics (per API)",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"-96650685",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to retrieve the form associated with a particular policy definition. Plugins may contribute policy definitions to apiman. Part of that contribution *may* include a form for the UI to display when configuring an instance of the policy. This endpoint returns this form.",
 		"url":"/plugins/{pluginId}/policyDefs/{policyDefId}/form",
 		"http":"GET",
@@ -15393,6 +16396,164 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to search for clients. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/clients",
+		"http":"POST",
+		"title":"Search for Clients",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"],
+			"comment":"The search results (a page of clients).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"-21815147",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about a single Policy in the API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
+		"http":"GET",
+		"title":"Get API Policy",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full information about the Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"595817966",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Grant membership in a role to a user.",
 		"url":"/organizations/{organizationId}/roles",
 		"http":"POST",
@@ -15461,111 +16622,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return response type statistics broken down by application.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/appResponseStats",
+		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit clients. For example, when creating a new Client, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
+		"url":"/currentuser/clientorgs",
 		"http":"GET",
-		"title":"Get Service Response Statistics (per App)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerAppBean_out"],
-			"comment":"Usage metrics information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"1755493586",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all applications that the user has permission to edit.",
-		"url":"/users/{userId}/applications",
-		"http":"GET",
-		"title":"List User Applications",
+		"title":"Get Organizations (app-edit)",
 		"tags":[
 			
 		],
@@ -15586,17 +16646,17 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"output":{
 			"typeValue":{
 				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"],
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
 			},
-			"comment":"List of applications.",
+			"comment":"A list of organizations.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the application list is successfully returned.",
+				"comment":"If the organizations are successfully returned.",
 			},
 		],
-		"hash":"-602024647",
+		"hash":"264719941",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -15605,105 +16665,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the Policies configured for the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/policies",
-		"http":"GET",
-		"title":"List All Application Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
-			},
-			"comment":"A List of Policies.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Policies is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"-1313878763",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
@@ -15775,90 +16736,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"New meta-data for the policy definition.",
 					"jaxrs":"BODY",
 				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update the Service's definition document. A service definition will vary depending on the type of service, and the type of definition used. For example, it might be a Swagger document or a WSDL file. To use this endpoint, simply PUT the updated Service Definition document in its entirety, making sure to set the Content-Type appropriately for the type of definition document. The content will be stored and the Service's \"Definition Type\" field will be updated. <br /> Whenever a service's definition is updated, the \"definitionType\" property of that service is automatically set based on the request Content-Type. There is no other way to set the service's definition type property. The following is a map of Content-Type to service definition type. <table> <thead> <tr><th>Content Type</th><th>Service Definition Type</th></tr> </thead> <tbody> <tr><td>application/json</td><td>SwaggerJSON</td></tr> <tr><td>application/x-yaml</td><td>SwaggerYAML</td></tr> <tr><td>application/wsdl+xml</td><td>WSDL</td></tr> </tbody> </table>",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/definition",
-		"http":"PUT",
-		"title":"Update Service Definition",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Service definition was successfully updated.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-		],
-		"hash":"-2013812959",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
 			],
 			"HEADER":[
 			],
@@ -16183,103 +17060,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to add a new Policy to the Application version.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/policies",
-		"http":"POST",
-		"title":"Add Application Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full details about the newly added Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully added.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"891448105",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
-					"comment":"Information about the new Policy.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return response type statistics broken down by plan.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/planResponseStats",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by plan.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planResponseStats",
 		"http":"GET",
-		"title":"Get Service Response Statistics (per Plan)",
+		"title":"Get API Response Statistics (per Plan)",
 		"tags":[
 			
 		],
@@ -16326,12 +17110,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -16340,7 +17124,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -16439,102 +17223,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get a Policy Chain for the specific Service version. A Policy Chain is a useful summary to better understand which Policies would be executed for a request to this Service through a particular Plan offered by the Service. Often this information is interesting prior to create a Contract with the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/plans/{planId}/policyChain",
-		"http":"GET",
-		"title":"Get Service Policy Chain",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_out"],
-			"comment":"A Policy Chain.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy Chain is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-		],
-		"hash":"-126836521",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
 		"beschrijving":"This endpoint is called to create a new Gateway.",
 		"url":"/gateways/",
 		"http":"POST",
@@ -16597,10 +17285,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/activity",
+		"beschrijving":"Use this endpoint to list all of the versions of an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
 		"http":"GET",
-		"title":"Get Application Version Activity",
+		"title":"List Client Versions",
 		"tags":[
 			
 		],
@@ -16619,20 +17307,19 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit entries.",
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"],
+			},
+			"comment":"A list of Clients.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the audit activity entries are successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application version does not exist.",
+				"comment":"If the list of Client versions is successfully returned.",
 			},
 		],
-		"hash":"-353746306",
+		"hash":"1605693659",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -16651,43 +17338,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity data to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
 			],
 			"BODY":[
 			],
@@ -16864,6 +17524,68 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to add a plugin to apiman. A plugin consists of the maven coordinates of an artifact deployed to a remote maven repository (e.g. maven central).",
+		"url":"/plugins/",
+		"http":"POST",
+		"title":"Add a Plugin",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
+			"comment":"Full details about the plugin that was added.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the plugin was added successfully.",
+			},
+		],
+		"hash":"-1845183494",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_in"],
+					"comment":"The plugin to add.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Updates meta-information about a single Organization.",
 		"url":"/organizations/{organizationId}",
 		"http":"PUT",
@@ -16936,10 +17658,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Application Policy.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/policies/{policyId}",
+		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single API Policy.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
 		"http":"PUT",
-		"title":"Update Application Policy",
+		"title":"Update API Policy",
 		"tags":[
 			
 		],
@@ -16967,14 +17689,14 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application does not exist.",
+				"comment":"If the API does not exist.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Policy does not exist.",
 			},
 		],
-		"hash":"-13370829",
+		"hash":"-1787769108",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -16993,12 +17715,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -17007,7 +17729,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -17040,12 +17762,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to add a plugin to apiman. A plugin consists of the maven coordinates of an artifact deployed to a remote maven repository (e.g. maven central).",
-		"url":"/plugins/",
-		"http":"POST",
-		"title":"Add a Plugin",
+		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Client Policy.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"http":"PUT",
+		"title":"Update Client Policy",
 		"tags":[
-			"admin",
+			
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -17063,16 +17785,22 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
-			"comment":"Full details about the plugin that was added.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the plugin was added successfully.",
+				"httpCode":204,
+				"comment":"If the Policy was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
 			},
 		],
-		"hash":"-1845183494",
+		"hash":"1092358409",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -17081,13 +17809,49 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_in"],
-					"comment":"The plugin to add.",
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
+					"comment":"New meta-data and/or configuration for the Policy.",
 					"jaxrs":"BODY",
 				},
 			],
@@ -17165,152 +17929,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"Information about the new Plan.",
 					"jaxrs":"BODY",
 				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit applications. For example, when creating a new Application, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
-		"url":"/currentuser/apporgs",
-		"http":"GET",
-		"title":"Get Organizations (app-edit)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-			},
-			"comment":"A list of organizations.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the organizations are successfully returned.",
-			},
-		],
-		"hash":"-468052913",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about the Managed Service's gateway endpoint. In other words, this returns the actual live endpoint on the API Gateway - the endpoint that a client should use when invoking the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/endpoint",
-		"http":"GET",
-		"title":"Get Service Endpoint",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceVersionEndpointSummaryBean_out"],
-			"comment":"The live Service endpoint information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the endpoint information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Service does not exist.",
-			},
-		],
-		"hash":"290755230",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
 			],
 			"HEADER":[
 			],
@@ -17479,6 +18097,106 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"This endpoint returns audit activity information about the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/activity",
+		"http":"GET",
+		"title":"Get API Activity",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit activity entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1230074826",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity should be returned.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to search for users. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
 		"url":"/users/search",
 		"http":"POST",
@@ -17541,10 +18259,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to search for services. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/search/services",
-		"http":"POST",
-		"title":"Search for Services",
+		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as JSON data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/json",
+		"http":"GET",
+		"title":"Get API Registry (JSON)",
 		"tags":[
 			
 		],
@@ -17554,7 +18272,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -17564,16 +18281,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ServiceSummaryBean__out"],
-			"comment":"The search results (a page of services).",
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"API Registry information or temporary download information.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the search is successful.",
+				"comment":"If the API Registry information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
 			},
 		],
-		"hash":"644020799",
+		"hash":"1248930698",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -17582,15 +18306,108 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"download",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"Query parameter set to true in order to generate a download link.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Call this endpoint to delete a plugin.",
+		"url":"/plugins/{pluginId}",
+		"http":"DELETE",
+		"title":"Delete a Plugin by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the plugin was deleted successfully.",
+			},
+		],
+		"hash":"-925476280",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"pluginId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"the plugin id The plugin's ID.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -17708,140 +18525,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Call this endpoint to delete a plugin.",
-		"url":"/plugins/{pluginId}",
-		"http":"DELETE",
-		"title":"Delete a Plugin by ID",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the plugin was deleted successfully.",
-			},
-		],
-		"hash":"-925476280",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"pluginId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"the plugin id The plugin's ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all services that the user has permission to edit.",
-		"url":"/users/{userId}/services",
+		"beschrijving":"Use this endpoint to retrieve detailed information about a single API Contract for an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
 		"http":"GET",
-		"title":"List User Services",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ServiceSummaryBean_out"],
-			},
-			"comment":"List of services.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the service list is successfully returned.",
-			},
-		],
-		"hash":"-935073036",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve detailed information about a single Service Contract for an Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/contracts/{contractId}",
-		"http":"GET",
-		"title":"Get Service Contract",
+		"title":"Get API Contract",
 		"tags":[
 			
 		],
@@ -17870,7 +18557,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application version does not exist.",
+				"comment":"If the Client version does not exist.",
 			},
 			{
 				"httpCode":404,
@@ -17896,12 +18583,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -17910,7 +18597,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -17938,10 +18625,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to search for applications. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/search/applications",
-		"http":"POST",
-		"title":"Search for Applications",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of request count data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/usage",
+		"http":"GET",
+		"title":"Get API Usage Metrics",
 		"tags":[
 			
 		],
@@ -17951,7 +18638,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -17961,16 +18647,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApplicationSummaryBean__out"],
-			"comment":"The search results (a page of applications).",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageHistogramBean_out"],
+			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the search is successful.",
+				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"1625443411",
+		"hash":"1369248390",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -17979,15 +18665,61 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"inputs":{
 			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
 			],
 			"QUERY":[
+				{
+					"name":"interval",
+					"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_metrics_HistogramIntervalType"],
+					"comment":"A valid interval (month, week, day, hour, minute)",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -18000,7 +18732,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Call this endpoint in order to execute actions for apiman entities such as Plans, Services, or Applications. The type of the action must be included in the request payload.",
+		"beschrijving":"Call this endpoint in order to execute actions for apiman entities such as Plans, APIs, or Clients. The type of the action must be included in the request payload.",
 		"url":"/actions/",
 		"http":"POST",
 		"title":"Execute an Entity Action",
@@ -18059,10 +18791,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return a full histogram of request count data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/usage",
-		"http":"GET",
-		"title":"Get Service Usage Metrics",
+		"beschrijving":"Use this endpoint to create a new version of the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
+		"http":"POST",
+		"title":"Create API Version",
 		"tags":[
 			
 		],
@@ -18072,6 +18804,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
+			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -18081,130 +18814,24 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageHistogramBean_out"],
-			"comment":"Usage metrics information.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"Full details about the newly created API version.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"1369248390",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The service version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"interval",
-					"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_metrics_HistogramIntervalType"],
-					"comment":"A valid interval (month, week, day, hour, minute)",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Contracts created with this Service. This will return Contracts created by between any Application and through any Plan.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/contracts",
-		"http":"GET",
-		"title":"List Service Contracts",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
-			},
-			"comment":"A list of Contracts.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Contracts is successfully returned.",
+				"comment":"If the API version is created successfully.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the API version already exists.",
 			},
 		],
-		"hash":"-1670053020",
+		"hash":"483472413",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18223,45 +18850,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of Contracts to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of Contracts per page to return.",
-					"jaxrs":"QUERY",
-				},
 			],
 			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"],
+					"comment":"Initial information about the new API version.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -18274,10 +18879,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to create a Contract between the Application and a Service. In order to create a Contract, the caller must specify the Organization, ID, and Version of the Service. Additionally the caller must specify the ID of the Plan it wished to use for the Contract with the Service.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/contracts",
+		"beschrijving":"Use this endpoint to create a Contract between the Client and an API. In order to create a Contract, the caller must specify the Organization, ID, and Version of the API. Additionally the caller must specify the ID of the Plan it wished to use for the Contract with the API.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
 		"http":"POST",
-		"title":"Create a Service Contract",
+		"title":"Create an API Contract",
 		"tags":[
 			
 		],
@@ -18307,7 +18912,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application version does not exist.",
+				"comment":"If the Client version does not exist.",
 			},
 		],
 		"hash":"-1561085416",
@@ -18329,12 +18934,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -18343,7 +18948,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -18367,10 +18972,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to retrieve information about a single Application by ID. Note that this only returns information about the Application, not about any particular *version* of the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}",
-		"http":"GET",
-		"title":"Get Application By ID",
+		"beschrijving":"Use this endpoint to update information about an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}",
+		"http":"PUT",
+		"title":"Update API",
 		"tags":[
 			
 		],
@@ -18380,6 +18985,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
+			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -18389,24 +18995,18 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationBean_out"],
-			"comment":"An Application.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the Application is successfully returned.",
+				"httpCode":204,
+				"comment":"If the API is updated successfully.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
+				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"1743265666",
+		"hash":"1267972115",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18425,18 +19025,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"],
+					"comment":"Updated API information.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -18449,110 +19054,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"This endpoint returns audit activity information about the Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/activity",
+		"beschrijving":"Use this endpoint to list all of the Clients the current user has permission to edit. This includes all Clients from all Organizations the user has client edit privileges for.",
+		"url":"/currentuser/clients",
 		"http":"GET",
-		"title":"Get Application Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit activity entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"2141749137",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity should be returned.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the versions of an Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions",
-		"http":"GET",
-		"title":"List Application Versions",
+		"title":"Get Current User's Clients",
 		"tags":[
 			
 		],
@@ -18573,17 +19078,143 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"output":{
 			"typeValue":{
 				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationVersionSummaryBean_out"],
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
 			},
-			"comment":"A list of Applications.",
+			"comment":"A list of Clients.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the list of Application versions is successfully returned.",
+				"comment":"If the clients are successfully returned.",
 			},
 		],
-		"hash":"1747621883",
+		"hash":"39101624",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns all clients that the user has permission to edit.",
+		"url":"/users/{userId}/clients",
+		"http":"GET",
+		"title":"List User Clients",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+			},
+			"comment":"List of clients.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the client list is successfully returned.",
+			},
+		],
+		"hash":"-340901348",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the API's definition document by providing a URL (reference) to the definition. This is an alternative to providing the full API definition document via a PUT to the same endpoint. This endpoint can be used to either add a definition if one does not already exist, as well as update/replace an existing definition. Note that apiman will not store the definition reference, but instead will download the API definition document and store it. Additionally, the the API's \"Definition Type\" field will be updated.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"POST",
+		"title":"Update API Definition from URL",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API definition was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-1700177734",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18602,18 +19233,303 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"],
+					"comment":"The API definition reference information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to change the order of Policies for an Client. When a Policy is added to the Client, it is added as the last Policy in the list of Client Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Client, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/reorderPolicies",
+		"http":"POST",
+		"title":"Re-Order Client Policies",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the re-ordering of Policies was successful.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-1407081465",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
+					"comment":"The Policies in the desired order.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new version of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
+		"http":"POST",
+		"title":"Create Client Version",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
+			"comment":"Full details about the newly created Client version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client version is created successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the Client version already exists.",
+			},
+		],
+		"hash":"-1430400949",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"],
+					"comment":"Initial information about the new Client version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a new Policy to the Client version.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
+		"http":"POST",
+		"title":"Add Client Policy",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full details about the newly added Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully added.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-1273899955",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
+					"comment":"Information about the new Policy.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -18688,10 +19604,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get detailed information about a single version of an Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}",
+		"beschrijving":"Use this endpoint to list the Plans configured for the given API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/plans",
 		"http":"GET",
-		"title":"Get Application Version",
+		"title":"List API Plans",
 		"tags":[
 			
 		],
@@ -18710,20 +19626,23 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_ApplicationVersionBean_out"],
-			"comment":"An Application version.",
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"],
+			},
+			"comment":"A list of API plans.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Application version is successfully returned.",
+				"comment":"If the API plans are successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application version does not exist.",
+				"comment":"If the API cannot be found.",
 			},
 		],
-		"hash":"813751855",
+		"hash":"-8349966",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18742,12 +19661,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -18756,13 +19675,88 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new API. Note that it is important to also create an initial version of the API (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create API Version\". If the former is done, then a first API version will be created automatically by this endpoint.",
+		"url":"/organizations/{organizationId}/apis",
+		"http":"POST",
+		"title":"Create API",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+			"comment":"Full details about the newly created API.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API is successfully created.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"159318720",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"],
+					"comment":"Information about the new API.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -18901,10 +19895,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get registry style information about all Services that this Application consumes. This is a useful endpoint to invoke in order to retrieve a summary of every Service consumed by the application. The information returned by this endpoint could potentially be included directly in a client application as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as JSON data.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/apiregistry/json",
+		"beschrijving":"Use this endpoint to get detailed status information for a single version of an API. This is useful to figure out why an API is not yet in the 'Ready' state (which is required before it can be published to a Gateway).",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/status",
 		"http":"GET",
-		"title":"Get API Registry (JSON)",
+		"title":"Get API Version Status",
 		"tags":[
 			
 		],
@@ -18923,20 +19917,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_out"],
-			"comment":"API Registry information.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"],
+			"comment":"Status information about an API version.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the API Registry information is successfully returned.",
+				"comment":"If the status information is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Application does not exist.",
+				"comment":"If the API version does not exist.",
 			},
 		],
-		"hash":"1212407589",
+		"hash":"-1547394840",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18955,12 +19949,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -18969,13 +19963,95 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update information about an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}",
+		"http":"PUT",
+		"title":"Update Client",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Client is updated successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-2019476817",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"],
+					"comment":"Updated Client information.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -19075,10 +20151,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to list all of the Applications the current user has permission to edit. This includes all Applications from all Organizations the user has application edit privileges for.",
-		"url":"/currentuser/applications",
+		"beschrijving":"Use this endpoint to get a list of all APIs in the Organization.",
+		"url":"/organizations/{organizationId}/apis",
 		"http":"GET",
-		"title":"Get Current User's Applications",
+		"title":"List APIs",
 		"tags":[
 			
 		],
@@ -19099,77 +20175,21 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"output":{
 			"typeValue":{
 				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApplicationSummaryBean_out"],
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
 			},
-			"comment":"A list of Applications.",
+			"comment":"A list of APIs.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the applications are successfully returned.",
-			},
-		],
-		"hash":"-1003801485",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get detailed information about a single version of a Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}",
-		"http":"GET",
-		"title":"Get Service Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_services_ServiceVersionBean_out"],
-			"comment":"A Service version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Service version is successfully returned.",
+				"comment":"If the list of APIs is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service version does not exist.",
+				"comment":"If the Organization does not exist.",
 			},
 		],
-		"hash":"-2124149093",
+		"hash":"-1363933996",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -19185,24 +20205,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"typeValue":"string",
 					},
 					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"serviceId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -19289,10 +20291,190 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific service. This will return total response type statistics over the given date range. Basically this will return three numbers: total request, # failed responses, # error responses.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/metrics/summaryResponseStats",
+		"beschrijving":"Use this endpoint to get a list of all Contracts for an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
 		"http":"GET",
-		"title":"Get Service Response Statistics (Summary)",
+		"title":"List All Contracts for an Client",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
+			},
+			"comment":"A list of Contracts.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Contracts is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client is not found.",
+			},
+		],
+		"hash":"-2108234580",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the Policies configured for the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
+		"http":"GET",
+		"title":"List All Client Policies",
+		"tags":[
+			
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+			},
+			"comment":"A List of Policies.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Policies is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"1311532533",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return total response type statistics over the given date range. Basically this will return three numbers: total request, # failed responses, # error responses.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/summaryResponseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (Summary)",
 		"tags":[
 			
 		],
@@ -19339,12 +20521,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -19353,7 +20535,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -19390,10 +20572,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Service.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/activity",
+		"beschrijving":"Use this endpoint to retrieve the API's definition document. An API definition document can be several different types, depending on the API type and technology used to define the API. For example, this endpoint might return a WSDL document, or a Swagger JSON document.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
 		"http":"GET",
-		"title":"Get Service Version Activity",
+		"title":"Get API Definition",
 		"tags":[
 			
 		],
@@ -19406,26 +20588,31 @@ com.qmino.miredot.restApiSource.interfaces = [
 		],
 		"produces":[
 			"application/json",
+			"application/wsdl+xml",
+			"application/x-yaml",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit entries.",
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"The API Definition document (e.g. a Swagger JSON file).",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the audit activity entries are successfully returned.",
+				"comment":"If the API definition is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service version does not exist.",
+				"comment":"If the API version does not exist.",
 			},
 		],
-		"hash":"2131379690",
+		"hash":"1051800083",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -19444,12 +20631,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -19458,29 +20645,11 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity data to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
 			],
 			"BODY":[
 			],
@@ -19560,10 +20729,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to change the order of Policies for a Service. When a Policy is added to the Service, it is added as the last Policy in the list of Service Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Service, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
-		"url":"/organizations/{organizationId}/services/{serviceId}/versions/{version}/reorderPolicies",
-		"http":"POST",
-		"title":"Re-Order Service Policies",
+		"beschrijving":"This endpoint returns audit activity information about the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/activity",
+		"http":"GET",
+		"title":"Get Client Activity",
 		"tags":[
 			
 		],
@@ -19573,27 +20742,33 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
+			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit activity entries.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the re-ordering of Policies was successful.",
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Service does not exist.",
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
 			},
 		],
-		"hash":"-1829604231",
+		"hash":"368756653",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -19612,32 +20787,36 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"serviceId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Service ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Service version.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity should be returned.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
-					"comment":"The Policies in the desired order.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -19694,93 +20873,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"typeValue":"string",
 					},
 					"comment":"The policy definition ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get registry style information about all Services that this Application consumes. This is a useful endpoint to invoke in order to retrieve a summary of every Service consumed by the application. The information returned by this endpoint could potentially be included directly in a client application as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as XML data.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}/versions/{version}/apiregistry/xml",
-		"http":"GET",
-		"title":"Get API Registry (XML)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/xml",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiRegistryBean_out"],
-			"comment":"API Registry information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API Registry information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
-			},
-		],
-		"hash":"-1274908584",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"applicationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Application version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -19867,10 +20959,10 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update information about an Application.",
-		"url":"/organizations/{organizationId}/applications/{applicationId}",
-		"http":"PUT",
-		"title":"Update Application",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by client.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientResponseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (per Client)",
 		"tags":[
 			
 		],
@@ -19880,7 +20972,6 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
 			"application/json",
@@ -19890,18 +20981,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"],
+			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Application is updated successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Application does not exist.",
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"-173738590",
+		"hash":"1562213900",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -19916,27 +21005,49 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Organization ID.",
+					"comment":"The organization ID.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"applicationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Application ID.",
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
 			],
 			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apps_UpdateApplicationBean_in"],
-					"comment":"Updated Application information.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -19954,36 +21065,18 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-511489446",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"-11115455",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"implementationMethod":"searchApiCatalogs",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-511489446",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-511489446",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-511489446",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServicePolicy",
+		"interface":"601832090",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
+		"implementationMethod":"create",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -19994,60 +21087,6 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
 		"implementationMethod":"create",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"601832090",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-55507329",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-55507329",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-55507329",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-373496865",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApplicationVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-373496865",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApplicationVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20065,15 +21104,6 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"1055255023",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1055255023",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
 	},
 	{
@@ -20083,33 +21113,60 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"1055255023",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1825158763",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServicePolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1825158763",
+		"interface":"1055255023",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"createPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1825158763",
+		"interface":"2113320356",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServicePolicy",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2113320356",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2113320356",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1027279171",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiRegistryXML",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1027279171",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiRegistryXML",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -20131,66 +21188,66 @@ com.qmino.miredot.projectWarnings = [
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
-		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
-		"description":"Exception thrown by method has no comment",
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2037358525",
+		"interface":"778081312",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionAlreadyExistsException",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2037358525",
+		"interface":"778081312",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2037358525",
+		"interface":"778081312",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2037358525",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2037358525",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createServiceVersion",
+		"implementationMethod":"deleteClientPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-657686413",
+		"interface":"778081312",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-657686413",
+		"interface":"-1432121842",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateService",
+		"implementationMethod":"listApiPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1432121842",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listApiPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1432121842",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listApiPolicies",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -20206,63 +21263,72 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"253720388",
+		"interface":"-2056208999",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"253720388",
+		"interface":"-2056208999",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidServiceStatusException",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"253720388",
+		"interface":"-2056208999",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceVersion",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1488100066",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientVersionActivity",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"711804598",
+		"interface":"1488100066",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceAlreadyExistsException",
+		"implementationMethod":"getClientVersionActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"711804598",
+		"interface":"-299858800",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createService",
+		"implementationMethod":"createApiPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"711804598",
+		"interface":"-299858800",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+		"implementationMethod":"createApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"711804598",
+		"interface":"-299858800",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createService",
+		"implementationMethod":"createApiPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -20296,36 +21362,18 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1628759461",
+		"interface":"1881573534",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
+		"implementationMethod":"getClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1628759461",
+		"interface":"1881573534",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-369889394",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServices",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-369889394",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServices",
+		"implementationMethod":"getClient",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -20350,73 +21398,28 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-2110254466",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApplicationPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2110254466",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApplicationPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2110254466",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApplicationPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"593492118",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"593492118",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2124295565",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2124295565",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
 		"interface":"-133467057",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
 		"implementationMethod":"getPermissionsForCurrentUser",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-246606276",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getPlan",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-246606276",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getPlan",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
@@ -20425,7 +21428,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"265482217",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApplicationStatusException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidClientStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20443,7 +21446,16 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"265482217",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"265482217",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"deleteContract",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidClientStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20458,27 +21470,27 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"265482217",
+		"interface":"1046148934",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApplicationStatusException",
+		"implementationMethod":"updateApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-246606276",
+		"interface":"1046148934",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+		"implementationMethod":"updateApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-246606276",
+		"interface":"1046148934",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlan",
+		"implementationMethod":"updateApiDefinition",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -20494,6 +21506,42 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"-201972620",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-201972620",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-201972620",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-58217493",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"-58217493",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
 		"implementationMethod":"get",
@@ -20503,127 +21551,109 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-58217493",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
-		"description":"Exception thrown by method has no comment",
-		"failedBuild":"false",
-		"interface":"-551412358",
+		"interface":"1657338239",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppUsagePerService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-551412358",
+		"interface":"1657338239",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppUsagePerService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-551412358",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppUsagePerService",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1408103619",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApp",
+		"implementationMethod":"deleteApiPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1408103619",
+		"interface":"1657338239",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1408103619",
+		"interface":"1657338239",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1408103619",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApp",
+		"implementationMethod":"deleteApiPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
+		"interface":"1556586021",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
+		"implementationMethod":"getApiVersionActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
+		"interface":"1556586021",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
+		"implementationMethod":"getApiVersionActivity",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-136334993",
+		"interface":"-140545606",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-136334993",
+		"interface":"-140545606",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-140545606",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1882625292",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listApiVersions",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1882625292",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listApiVersions",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"-30001108",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"implementationMethod":"exportData",
+		"entity":"download",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20641,43 +21671,61 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-136334993",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1444301970",
+		"interface":"-136334993",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1444301970",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1791893282",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApps",
+		"implementationMethod":"getPlanPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1791893282",
+		"interface":"-136334993",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApps",
+		"implementationMethod":"getPlanPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"52438808",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"52438808",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"52438808",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"52438808",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20686,7 +21734,16 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"1374696322",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1374696322",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"revoke",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20704,16 +21761,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"1374696322",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1374696322",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20722,7 +21770,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1588944898",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20740,7 +21788,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1588944898",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20761,121 +21809,148 @@ com.qmino.miredot.projectWarnings = [
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"927046441",
+		"interface":"-1926708311",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServicePolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"implementationMethod":"getUsagePerClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"927046441",
+		"interface":"-1926708311",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServicePolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"getUsagePerClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"927046441",
+		"interface":"-1926708311",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServicePolicies",
+		"implementationMethod":"getUsagePerClient",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
 		"failedBuild":"false",
-		"interface":"-675179834",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-675179834",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-675179834",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-675179834",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"211026916",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"211026916",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-1545632561",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"downloadId",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
 		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"-996828075",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
+		"interface":"-1545632561",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.DownloadNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-996828075",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
+		"interface":"-1545632561",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.DownloadNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-996828075",
+		"interface":"-150865029",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerApp",
+		"implementationMethod":"getApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-150865029",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApi",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-75369965",
+		"interface":"-163056237",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanPolicies",
+		"implementationMethod":"getClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-163056237",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"211026916",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listPlans",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"211026916",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listPlans",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1986179721",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionContracts",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1986179721",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionContracts",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"671390230",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"671390230",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -20893,43 +21968,52 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-75369965",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"listPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1193306311",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServicePolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1193306311",
+		"interface":"-75369965",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1193306311",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1193306311",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServicePolicy",
+		"implementationMethod":"listPlanPolicies",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"219250178",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"219250178",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"219250178",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"219250178",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
@@ -20962,42 +22046,6 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1736700107",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1736700107",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1736700107",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1736700107",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
 		"interface":"-1330388304",
 		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
 		"implementationMethod":"searchOrgs",
@@ -21007,28 +22055,10 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1143148047",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServiceVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1143148047",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listServiceVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
 		"interface":"-2017982009",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"deleteAllContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21070,6 +22100,60 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"871828817",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"871828817",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"871828817",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"871828817",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"192245690",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"implementationMethod":"searchApis",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"192245690",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"implementationMethod":"searchApis",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"1466094454",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
 		"implementationMethod":"get",
@@ -21079,6 +22163,33 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"121469024",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
+		"implementationMethod":"getAvailablePlugins",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"PARTIAL_RESOURCE_OVERLAP",
+		"description":"This rest interface (partially) hides another rest interface",
+		"failedBuild":"false",
+		"interface":"121469024",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
+		"implementationMethod":"getAvailablePlugins",
+		"entity":"Overlaps with: /plugins/{pluginId}",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1105661559",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"1105661559",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
 		"implementationMethod":"update",
@@ -21088,91 +22199,64 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1105661559",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
-		"description":"Exception thrown by method has no comment",
-		"failedBuild":"false",
-		"interface":"1740739630",
+		"interface":"-738311614",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1740739630",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1740739630",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1740739630",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1740739630",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1900284087",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicy",
+		"implementationMethod":"listClients",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1900284087",
+		"interface":"-738311614",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1900284087",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1900284087",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicy",
+		"implementationMethod":"listClients",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"702259410",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicyChain",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"702259410",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicyChain",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"JAVADOC_MISSING_SUMMARY",
+		"description":"Missing summary tag",
+		"failedBuild":"false",
+		"interface":"1642032952",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"implementationMethod":"importData",
+		"entity":null,
+	},
+	{
+		"category":"JAVADOC_MISSING_INTERFACEDOCUMENTATION",
+		"description":"Missing interface documentation",
+		"failedBuild":"false",
+		"interface":"1642032952",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"implementationMethod":"importData",
+		"entity":null,
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing return type documentation",
+		"failedBuild":"false",
+		"interface":"1642032952",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"implementationMethod":"importData",
+		"entity":null,
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21190,15 +22274,6 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1349655703",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"reorderPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1349655703",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderPlanPolicies",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
 	},
 	{
@@ -21208,6 +22283,42 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1349655703",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"reorderPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1349655703",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"reorderPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
+		"failedBuild":"false",
+		"interface":"-96650685",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientUsagePerApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-96650685",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientUsagePerApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-96650685",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientUsagePerApi",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21226,7 +22337,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-393357420",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
 		"implementationMethod":"getPolicyForm",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginResourceNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21235,16 +22346,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-393357420",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
 		"implementationMethod":"getPolicyForm",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginResourceNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1415376726",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21259,10 +22361,82 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"1415376726",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-21815147",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"implementationMethod":"searchClients",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-21815147",
+		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"implementationMethod":"searchClients",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"595817966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"595817966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"595817966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"595817966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"1016258949",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1016258949",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"grant",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21280,70 +22454,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"1016258949",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1016258949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
-		"description":"Exception thrown by method has no comment",
-		"failedBuild":"false",
-		"interface":"1755493586",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1755493586",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1755493586",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1313878763",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listAppPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1313878763",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listAppPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1313878763",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listAppPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
 	},
 	{
 		"category":"JAXRS_MISSING_CONSUMES",
@@ -21361,7 +22472,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-566011861",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21370,52 +22481,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-566011861",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2013812959",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2013812959",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidServiceStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2013812959",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateServiceDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21433,6 +22499,24 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"969003111",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"969003111",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"969003111",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21452,15 +22536,6 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"get",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-675432518",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21484,6 +22559,15 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"-675432518",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"-181241607",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"listPlanVersions",
@@ -21496,33 +22580,6 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-181241607",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"listPlanVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"891448105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"891448105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"891448105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createAppPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21574,33 +22631,6 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-126836521",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicyChain",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-126836521",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServicePolicyChain",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1101902538",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
 		"interface":"-1101902538",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
 		"implementationMethod":"create",
@@ -21610,18 +22640,36 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-353746306",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
+		"interface":"-1101902538",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-353746306",
+		"interface":"1605693659",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppVersionActivity",
+		"implementationMethod":"listClientVersions",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1605693659",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listClientVersions",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1860241840",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"implementationMethod":"create",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21632,15 +22680,6 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
 		"implementationMethod":"create",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1860241840",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21658,60 +22697,6 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-342742837",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"getPlanActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-38162105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-38162105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-13370829",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-13370829",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-13370829",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateAppPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-13370829",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateAppPolicy",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21745,19 +22730,91 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"355787714",
+		"interface":"-38162105",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
+		"implementationMethod":"update",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"355787714",
+		"interface":"-38162105",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1787769108",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1787769108",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1787769108",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1787769108",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1092358409",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1092358409",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1092358409",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1092358409",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21775,34 +22832,34 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"355787714",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"355787714",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createPlan",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"290755230",
+		"interface":"355787714",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"290755230",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"290755230",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidServiceStatusException",
+		"interface":"-155724339",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21814,15 +22871,6 @@ com.qmino.miredot.projectWarnings = [
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-155724339",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
 		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
@@ -21830,6 +22878,15 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createPlanVersion",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1189204529",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createPlanVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21856,15 +22913,24 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1189204529",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1189204529",
+		"interface":"1230074826",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanVersion",
+		"implementationMethod":"getApiActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1230074826",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiActivity",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21880,36 +22946,18 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"644020799",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchServices",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"644020799",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchServices",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1217189892",
+		"interface":"1248930698",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+		"implementationMethod":"getApiRegistryJSON",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1217189892",
+		"interface":"1248930698",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersionActivity",
+		"implementationMethod":"getApiRegistryJSON",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -21934,6 +22982,24 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
+		"interface":"1217189892",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getPlanVersionActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1217189892",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getPlanVersionActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
 		"interface":"-17039270",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"getContract",
@@ -21946,7 +23012,7 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-17039270",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"getContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -21956,33 +23022,6 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"getContract",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1625443411",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchApps",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1625443411",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchApps",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1326787891",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IActionResource",
-		"implementationMethod":"performAction",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ActionException",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
@@ -22015,37 +23054,55 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1670053020",
+		"interface":"-1326787891",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IActionResource",
+		"implementationMethod":"performAction",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ActionException",
+	},
+	{
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
+		"failedBuild":"false",
+		"interface":"483472413",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1670053020",
+		"interface":"483472413",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionContracts",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"483472413",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"483472413",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1561085416",
+		"interface":"483472413",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceNotFoundException",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
@@ -22063,78 +23120,195 @@ com.qmino.miredot.projectWarnings = [
 		"interface":"-1561085416",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1561085416",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1561085416",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1561085416",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1561085416",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createContract",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.ContractAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1561085416",
+		"interface":"1267972115",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"updateApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1561085416",
+		"interface":"1267972115",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
+		"implementationMethod":"updateApi",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1743265666",
+		"interface":"-1700177734",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"updateApiDefinitionFromURL",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1743265666",
+		"interface":"-1700177734",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApp",
+		"implementationMethod":"updateApiDefinitionFromURL",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1700177734",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"updateApiDefinitionFromURL",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2141749137",
+		"interface":"-1407081465",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"reorderClientPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2141749137",
+		"interface":"-1407081465",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppActivity",
+		"implementationMethod":"reorderClientPolicies",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1747621883",
+		"interface":"-1407081465",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listAppVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"reorderClientPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
+		"failedBuild":"false",
+		"interface":"-1430400949",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1747621883",
+		"interface":"-1430400949",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listAppVersions",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1430400949",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1430400949",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1430400949",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1273899955",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1273899955",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1273899955",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"259605984",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
+		"implementationMethod":"delete",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22150,27 +23324,63 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"259605984",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"delete",
+		"interface":"-8349966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionPlans",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-8349966",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionPlans",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"813751855",
+		"interface":"159318720",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationVersionNotFoundException",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"813751855",
+		"interface":"159318720",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getAppVersion",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"159318720",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"159318720",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"7562805",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
+		"implementationMethod":"get",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22186,9 +23396,9 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"7562805",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"get",
+		"interface":"1737627941",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
+		"implementationMethod":"getPermissionsForUser",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22204,27 +23414,36 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1737627941",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
-		"implementationMethod":"getPermissionsForUser",
+		"interface":"-1547394840",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionStatus",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1547394840",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getApiVersionStatus",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1212407589",
+		"interface":"-2019476817",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryJSON",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"updateClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1212407589",
+		"interface":"-2019476817",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryJSON",
+		"implementationMethod":"updateClient",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22249,18 +23468,18 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-2124149093",
+		"interface":"-1363933996",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"listApi",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-2124149093",
+		"interface":"-1363933996",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersion",
+		"implementationMethod":"listApi",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22280,6 +23499,51 @@ com.qmino.miredot.projectWarnings = [
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
 		"implementationMethod":"listMembers",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2108234580",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getclientVersionContracts",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2108234580",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getclientVersionContracts",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1311532533",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1311532533",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1311532533",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
@@ -22312,18 +23576,27 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2131379690",
+		"interface":"1051800083",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
+		"implementationMethod":"getApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"2131379690",
+		"interface":"1051800083",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getServiceVersionActivity",
+		"implementationMethod":"getApiDefinition",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"874780892",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"implementationMethod":"get",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22339,36 +23612,27 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"874780892",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"get",
+		"interface":"368756653",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientActivity",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"368756653",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getClientActivity",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1829604231",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderServicePolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1829604231",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderServicePolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ServiceVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1829604231",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderServicePolicies",
+		"interface":"-1813846193",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"implementationMethod":"delete",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22384,27 +23648,9 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1813846193",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1274908584",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryXML",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1274908584",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryXML",
+		"interface":"1350378359",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
+		"implementationMethod":"update",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 	{
@@ -22417,30 +23663,30 @@ com.qmino.miredot.projectWarnings = [
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"1350378359",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1562213900",
+		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"implementationMethod":"getResponseStatsPerClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-173738590",
+		"interface":"1562213900",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApp",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApplicationNotFoundException",
+		"implementationMethod":"getResponseStatsPerClient",
+		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-173738590",
+		"interface":"1562213900",
 		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApp",
+		"implementationMethod":"getResponseStatsPerClient",
 		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
 	},
 ];

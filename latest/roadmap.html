@@ -205,10 +205,10 @@
                 </div>
              </div>
 
-             <div class="col-lg-12">
+             <div class="col-lg-12 released">
                 <!-- Version 1.1 -->
-                <h2 class=""><a class="" data-toggle="collapse" href="#features1_1" aria-expanded="true" >1.1 (Core Functionality)</a></h2>
-                <div id="features1_1" class="collapse in">
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_1" aria-expanded="false" >1.1 (Core Functionality)</a></h2>
+                <div id="features1_1" class="collapse">
                    <div class="col-lg-9">
                       <ul class="release">
                         <div class="headers">
@@ -285,11 +285,15 @@
 
              <div class="col-lg-12">
                 <!-- Version 1.2 -->
-                <h2 class=""><a class="" data-toggle="collapse" href="#features1_2" aria-expanded="true" >1.2 (Notifications, Events &amp; Billing)</a></h2>
-                <div id="features1_2" class="collapse">
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_2" aria-expanded="true" >1.2 (Plugins, Import/Export, Notifications &amp; Events)</a></h2>
+                <div id="features1_2" class="collapse in">
                    <div class="col-lg-9">
                       <!-- Version 1.2 -->
                       <ul class="release">
+                        <div class="headers">
+                          <span class="header">Feature</span>
+                          <span class="header pull-right">Released In</span>
+                        </div>
                         <li>
                           <span>Policy Eventing</span>
                           <ul>
@@ -310,16 +314,16 @@
                         <li>
                           <span>Policies &amp; Components</span>
                           <ul>
-                            <li>LDAP Client async component</li>
-                            <li>JDBC Client async component</li>
+                            <li><span class="completed">LDAP Client async component</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">JDBC Client async component</span> <span class="in-version">1.2.0.Final</span></li>
                           </ul>
                         </li>
                         <li>
                           <span>Plugins</span>
                           <ul>
-                            <li>Plugin registry with easy-to-use UI</li>
-                            <li>Better support for loading/unloading plugins</li>
-                            <li>Better support for upgrading existing plugins</li>
+                            <li><span class="completed">Plugin registry with easy-to-use UI</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Better support for loading/unloading plugins</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Better support for upgrading existing plugins</span> <span class="in-version">1.2.0.Final</span></li>
                             <li>Contribute policy configuration forms using custom HTML/javascript</li>
                           </ul>
                         </li>
@@ -337,12 +341,28 @@
                             Note: this functionality should support 1) migrating data between environments 2) upgrading apiman to a new version 3) switching between apiman configurations (e.g. going from an RDBMS to Elastic storage).
                           </p>
                           <ul>
-                            <li>Export all data from apiman</li>
-                            <li>Import previously exported apiman data</li>
+                            <li><span class="completed">Export all data from apiman</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Import previously exported apiman data</span> <span class="in-version">1.2.0.Final</span></li>
                             <li>Transformation tools for exported apiman data</li>
+                            <li><span class="completed">Import APIs from an API Catalog</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li>Import APIs from a WADL URL</li>
+                            <li>Import APIs from a Swagger URL</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span>Customization Points</span>
+                          <ul>
+                            <li><span class="completed">API Key Generation</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Data Encryption (when encrypting configuration data for storage)</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Policy Failure/Error Response Formatting</span> <span class="in-version">1.2.0.Final</span></li>
                           </ul>
                         </li>
                       </ul>
+                   </div>
+                   <div class="col-lg-3 relnotes">
+                     <h2>1.2 Release Notes</h2>
+                     <div class="release-notes">
+                       <div><a href="">1.2.0.Final</a> <span class="label-small">(2016 January 11)</span></div>
                    </div>
                 </div>
              </div>
@@ -358,19 +378,19 @@
                           <span>API Manager</span>
                           <ul>
                             <li>Additional documentation support - WSDL, RAML, etc</li>
-                            <li>Service testing tools</li>
-                            <li>Watch a Service for changes</li>
-                            <li>Watch an Organization for new Services</li>
-                            <li>Comments/Forum for Services</li>
-                            <li>Service ratings</li>
+                            <li>API testing tools</li>
+                            <li>Watch a API for changes</li>
+                            <li>Watch an Organization for new APIs</li>
+                            <li>Comments/Forum for APIs</li>
+                            <li>API ratings</li>
                             <li>Policy overhead ratings (measure of how impactful of performance a particular Policy will be)</li>
-                            <li>Joint Service ownership (joint ownership by multiple Organizations)</li>
+                            <li>Joint API ownership (joint ownership by multiple Organizations)</li>
                           </ul>
                         </li>
                         <li>
                           <span>Notifications/Tasks</span>
                           <ul>
-                            <li>Notifications from watched Organizations/Services (see above)</li>
+                            <li>Notifications from watched Organizations/APIs (see above)</li>
                           </ul>
                         </li>
                         <li>
