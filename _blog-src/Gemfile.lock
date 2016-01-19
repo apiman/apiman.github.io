@@ -42,6 +42,7 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.3.0)
       sass (~> 3.2)
+    jekyll-sitemap (0.9.0)
     jekyll-watch (1.2.1)
       listen (~> 2.7)
     kramdown (1.7.0)
@@ -78,3 +79,7 @@ DEPENDENCIES
   coderay
   jekyll (= 2.5.3)
   jekyll-asciidoc (= 1.0.0)
+  jekyll-sitemap (= 0.9.0)
+
+BUNDLED WITH
+   1.11.2

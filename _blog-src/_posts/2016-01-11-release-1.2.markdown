@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Finall!  Apiman 1.2.0.Final is released!"
+title:  "Final!  Apiman 1.2.0.Final is released!"
 date:   2016-01-11 09:30:00
 author: eric_wittmann
 categories: apiman
