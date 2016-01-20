@@ -44,7 +44,7 @@ layout: default
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    {{ content }}
+    {{ content | modify_external_links: "^.*?[.]?(apiman[.]io|localhost).*?" }}
   </article>
 
 </div>
