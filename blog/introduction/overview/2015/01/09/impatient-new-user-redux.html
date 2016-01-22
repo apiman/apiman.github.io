@@ -364,13 +364,13 @@ unzip -o apiman-distro-wildfly8-1.0.0.Final-overlay.zip -d wildfly-8.2.0.Final</
 
 <p>What happens is that when an API request is received by the API Gateway at runtime, the policy chain is applied in the order of client app, plan, and API. If no failures, such as a rate counter being exceeded, occur, the API Gateway sends the request to the API. As we mentioned earlier in this post, the API Gateway acts as a proxy for the API:</p>
 
-<p><img src="/blog/images/2015-01-09/apiman_3-redux.jpg" alt="Diagram_2" /></p>
+<p><img src="/blog/images/2015-01-09/apiman_3-redux.png" alt="Diagram_2" /></p>
 
 <p>Next, when the API Gateway receives a response from the API’s backend implementation, the policy chain is applied again, but this time in the reverse order. The API policies are applied first, then the plan policies, and finally the client app policies. If no failures occur, then the API response is sent back to the consumer of the API.</p>
 
 <p>By applying the policy chain twice, both for the originating incoming request and the resulting response, apiman allows policy implementations two opportunities to provide management functionality during the lifecycle. The following diagram illustrates this two-way approach to applying policies:</p>
 
-<p><img src="/blog/images/2015-01-09/apiman_4-redux.jpg" alt="Diagram_3" /></p>
+<p><img src="/blog/images/2015-01-09/apiman_4-redux.png" alt="Diagram_3" /></p>
 
 <h2 id="plans">Plans</h2>
 
