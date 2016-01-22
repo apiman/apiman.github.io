@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CORS? Of Course!"
-date:   2016-01-22 15:00:00 +0100
+date:   2016-01-22 12:00:00
 author: marc_savy
 categories: security plugin policy cors 1.2.x
 oldUrl: 2015-07-02-cors

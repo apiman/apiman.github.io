@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cover yourself up! Protecting your APIs with mutual auth"
-date:   2016-01-22 17:00:00 +1
+date:   2016-01-22 12:00:00
 author: marc_savy
 categories: gateway security mutual-auth ssl mtls 1.2.x
 oldUrl: 2015-06-16-mtls-mutual-auth

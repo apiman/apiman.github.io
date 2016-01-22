@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Keycloak and dagger: Securing your APIs with OAuth2"
-date:   2016-01-22 15:25:28 +0100
+date:   2016-01-22 12:00:00
 author: marc_savy
 categories: gateway security oauth2 keycloak authentication authorization 1.2.x
 oldUrl: 2015-06-09-keycloak-oauth2
