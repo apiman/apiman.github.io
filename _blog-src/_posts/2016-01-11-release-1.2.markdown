@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Final!  Apiman 1.2.0.Final is released!"
-date:   2016-01-11 09:30:00
+title:  "Final!  Apiman 1.2.1.Final is released!"
+date:   2016-01-22 10:30:00
 author: eric_wittmann
 categories: apiman
 ---
@@ -10,7 +10,7 @@ It's been ages since apiman had a new release!  Well the reason for that is we'v
 pushing to get the first version of *1.2.x* out the door.  I'm here to tell you - that
 day has finally arrived.
 
-We're happy to announce apiman *1.2.0.Final*.  Our goal is now to go back to our previous,
+We're happy to announce apiman *1.2.1.Final*.  Our goal is now to go back to our previous,
 more frequent, release schedule.
 
 <!--more-->
@@ -22,6 +22,7 @@ of the additions and changes in the new version.  For more information about thi
 release of apiman, here are some useful links:
 
 * [1.2.0.Final Release Notes](http://red.ht/1OK3LG7)
+* [1.2.1.Final Release Notes](http://red.ht/1OC1Tf7)
 * [The apiman project site](http://www.apiman.io/)
 * [Latest User Guide](http://www.apiman.io/latest/user-guide.html)
 
@@ -79,6 +80,10 @@ designed to satisfy the following use-cases:
 * Upgrading to a newer version of apiman
 
 We'll follow up this blog post with one that goes into this feature in more depth.
+
+## What happened to 1.2.0.Final?
+
+You know what, don't even worry about it.
 
 
 /post
