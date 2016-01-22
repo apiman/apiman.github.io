@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Customizing JBoss apiman Through Policy Plugins</title>
+  <title>Customizing JBoss apiman Through Policy Plugins | apiman Open Source API Management</title>
   <meta name="description" content="This is the second in a series of articles exploring API management with JBoss apiman. The first articlewas a general introduction to apiman for impatient us...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,7 +130,128 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> plugins, policies, development, and maven</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p>This is the second in a series of articles exploring API management with JBoss apiman. The first article
 was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
 created users and organizations, and services, policies, contracts, and applications. In this article,
@@ -198,7 +320,7 @@ Configuration files for the plugin are contained in the apiman directory. The pr
   <li><em>name</em> - A user friendly (in other words, a human readable) name for the policy. This policy name is displayed in the API Manager UI</li>
   <li><em>description</em> - A description of the policy</li>
   <li><em>policyImpl</em> - This is the fully qualified classname name of the Java class that actually implements the policy. This value must be properly formatted to include information about the plugin, including placeholders for maven properties, for example, project version.</li>
-  <li><em>icon</em> - This is the name of a Font Awesome icon <a href="http://fontawesome.github.io/Font-Awesome/">http://fortawesome.github.io/Font-Awesome/</a> that is displayed for the Policy in the API Manager UI.</li>
+  <li><em>icon</em> - This is the name of a Font Awesome icon <a href="http://fontawesome.github.io/Font-Awesome/" target="_blank" rel="nofollow">http://fortawesome.github.io/Font-Awesome/</a> that is displayed for the Policy in the API Manager UI.</li>
   <li><em>formType</em> - The type of policy configuration UI form. Our example uses JsonSchema.</li>
   <li><em>form</em> - This is a relative path to the policy configuration UI form contained in the plugin. Our examples uses the JSON Schema that defines the configuration data format. (More on this file in a minute.</li>
 </ul>
@@ -206,33 +328,33 @@ Configuration files for the plugin are contained in the apiman directory. The pr
 <p>In our example, the config-policyDef.json looks like this:</p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;config-policy&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Config Policy&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;A policy used to showcase policy configuration.&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;policyImpl&quot;</span> <span class="s2">&quot;plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;icon&quot;</span> <span class="p">:</span> <span class="s2">&quot;sliders&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;formType&quot;</span> <span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;form&quot;</span> <span class="p">:</span> <span class="s2">&quot;schemas/config-policyDef.schema&quot;</span>
+  <span class="nt">"id"</span> <span class="p">:</span> <span class="s2">"config-policy"</span><span class="p">,</span>
+  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Config Policy"</span><span class="p">,</span>
+  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"A policy used to showcase policy configuration."</span><span class="p">,</span>
+  <span class="nt">"policyImpl"</span> <span class="s2">"plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy"</span><span class="p">,</span>
+  <span class="nt">"icon"</span> <span class="p">:</span> <span class="s2">"sliders"</span><span class="p">,</span>
+  <span class="nt">"formType"</span> <span class="p">:</span> <span class="s2">"JsonSchema"</span><span class="p">,</span>
+  <span class="nt">"form"</span> <span class="p">:</span> <span class="s2">"schemas/config-policyDef.schema"</span>
 <span class="p">}</span></code></pre></div>
 
-<p>We mentioned that since our example uses the JSON schema <a href="http://json-schema.org/documentation.html">http://json-schema.org/documentation.html</a>, we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy’s JSON schema defines two properties: requestHeader and responseHeader.</p>
+<p>We mentioned that since our example uses the JSON schema <a href="http://json-schema.org/documentation.html" target="_blank" rel="nofollow">http://json-schema.org/documentation.html</a>, we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy’s JSON schema defines two properties: requestHeader and responseHeader.</p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>  
-  <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Configure HTTP Headers&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Set the HTTP request header to populate with the value &#39;true&#39; when the request is made. Also set the HTTP response header to populate with the value &#39;true&#39; after the response is received from the back-end service.&quot;</span><span class="p">,</span>  
-  <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>  
-  <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;requestHeader&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Request Header&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;minLength&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;maxLength&quot;</span> <span class="p">:</span> <span class="mi">64</span>
+  <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Configure HTTP Headers"</span><span class="p">,</span>
+  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end service."</span><span class="p">,</span>  
+  <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>  
+  <span class="nt">"properties"</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">"requestHeader"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Request Header"</span><span class="p">,</span>
+    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
    <span class="p">},</span>
-   <span class="nt">&quot;responseHeader&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Response Header&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;minLength&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;maxLength&quot;</span> <span class="p">:</span> <span class="mi">64</span>
+   <span class="nt">"responseHeader"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Response Header"</span><span class="p">,</span>
+    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
@@ -327,14 +449,14 @@ Configuration files for the plugin are contained in the apiman directory. The pr
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                         <a href="disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

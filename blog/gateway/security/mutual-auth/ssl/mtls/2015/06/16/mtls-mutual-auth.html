@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Cover yourself up! Protecting your services with mutual auth</title>
+  <title>Cover yourself up! Protecting your services with mutual auth | apiman Open Source API Management</title>
   <meta name="description" content="The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your services directl...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,12 +130,133 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> gateway, security, mutual-auth, ssl, and mtls</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+                http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <div class="paragraph">
 <p>The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your services directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst services are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).</p>
 </div>
 <div class="paragraph">
-<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
+<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote." target="_blank" rel="nofollow">1</a>]</span>.</p>
 </div>
 <div class="sect1">
 <h2 id="what-is-mutual-transport-layer-security-mutual-tls">What is mutual transport layer security (Mutual TLS)?</h2>
@@ -143,10 +265,10 @@
 <p>Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination as to whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.</p>
 </div>
 <div class="paragraph">
-<p>However, in a typical apiman setup the gateway is acting as the client and the services<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span> act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of <em>both</em> client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.</p>
+<p>However, in a typical apiman setup the gateway is acting as the client and the services<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote." target="_blank" rel="nofollow">2</a>]</span> act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of <em>both</em> client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.</p>
 </div>
 <div class="paragraph">
-<p>Luckily, apiman makes this <a href="http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security">extremely easy to set this up</a>, so let&#8217;s dive in and explore what&#8217;s possible.</p>
+<p>Luckily, apiman makes this <a href="http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security">extremely easy to set this up</a>, so let’s dive in and explore what’s possible.</p>
 </div>
 </div>
 </div>
@@ -154,25 +276,25 @@
 <h2 id="architecture">Architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let&#8217;s assume 'node' refers generically to a participant in our system, either a gateway or a service.</p>
+<p>Let’s assume 'node' refers generically to a participant in our system, either a gateway or a service.</p>
 </div>
 <div class="paragraph">
-<p>There are two main elements we need to work with: <strong>keystores</strong>, which contain a node&#8217;s private key material, and <strong>truststores</strong>, which contain public certificates instructing the node whom it should trust.</p>
+<p>There are two main elements we need to work with: <strong>keystores</strong>, which contain a node’s private key material, and <strong>truststores</strong>, which contain public certificates instructing the node whom it should trust.</p>
 </div>
 <div class="paragraph">
-<p>Ideally, each node should have its own keystore, whose key material is signed by a <strong>trusted certificate authority</strong>; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA&#8217;s certificate to our node&#8217;s keystores, then <em>any</em> certificate issued by it will be trusted by virtue of the issuer&#8217;s authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.</p>
+<p>Ideally, each node should have its own keystore, whose key material is signed by a <strong>trusted certificate authority</strong>; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA’s certificate to our node’s keystores, then <em>any</em> certificate issued by it will be trusted by virtue of the issuer’s authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.</p>
 </div>
 <div class="paragraph">
-<p>It bears mentioning that any applications<span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.</p>
+<p>It bears mentioning that any applications<span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote." target="_blank" rel="nofollow">3</a>]</span> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="/blog/images/generated/gateway-mtls.svg" alt="Simple mutual auth setup" width="787" height="437">
+<img src="/blog/images/generated/gateway-mtls.svg" alt="Simple mutual auth setup" width="787" height="437" />
 </div>
 <div class="title">Figure 1. Simple mutual auth setup</div>
 </div>
 <div class="paragraph">
-<p>Notice that the services trust the gateway (and vice versa), but the services <em>do not</em> trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn&#8217;t hold a trusted certificate, so it fails.</p>
+<p>Notice that the services trust the gateway (and vice versa), but the services <em>do not</em> trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn’t hold a trusted certificate, so it fails.</p>
 </div>
 </div>
 </div>
@@ -186,7 +308,7 @@
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Remember, this is just a quick blog demonstration; you need to take extreme care with how you look after your key infrastructure to avoid a catastrophic security incident. If you&#8217;re unsure, consult someone who knows what they&#8217;re doing!
+Remember, this is just a quick blog demonstration; you need to take extreme care with how you look after your key infrastructure to avoid a catastrophic security incident. If you’re unsure, consult someone who knows what they’re doing!
 </td>
 </tr>
 </table>
@@ -194,7 +316,7 @@ Remember, this is just a quick blog demonstration; you need to take extreme care
 <div class="sect2">
 <h3 id="truststore">Truststore</h3>
 <div class="paragraph">
-<p>Let&#8217;s create a simple shared truststore that we&#8217;ll use on all of our nodes. We&#8217;re going to imagine that we have an internal root CA called <code>apimanCA</code>, and that whomever controls it has taken <a href="https://i.imgur.com/sYeorwQ.png">appropriate security precautions</a> to ensure no baddies get their certificates signed.</p>
+<p>Let’s create a simple shared truststore that we’ll use on all of our nodes. We’re going to imagine that we have an internal root CA called <code>apimanCA</code>, and that whomever controls it has taken <a href="https://i.imgur.com/sYeorwQ.png" target="_blank" rel="nofollow">appropriate security precautions</a> to ensure no baddies get their certificates signed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -202,7 +324,7 @@ Remember, this is just a quick blog demonstration; you need to take extreme care
 </div>
 </div>
 <div class="paragraph">
-<p>That&#8217;s the easy bit done, now onto key wrangling.</p>
+<p>That’s the easy bit done, now onto key wrangling.</p>
 </div>
 </div>
 <div class="sect2">
@@ -235,12 +357,12 @@ keytool -import -keystore service_a_ks.jks -file service_a.cer -alias service_a<
 <h2 id="hooking-it-up">Hooking it up</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Your services may not use Java, so you&#8217;ll need to find the appropriate solution for enabling mutual TLS in your language&#8217;s ecosystem. It doesn&#8217;t really matter, as long as you have the appropriate certificates hooked in and have set <strong>client authentication to required</strong>.</p>
+<p>Your services may not use Java, so you’ll need to find the appropriate solution for enabling mutual TLS in your language’s ecosystem. It doesn’t really matter, as long as you have the appropriate certificates hooked in and have set <strong>client authentication to required</strong>.</p>
 </div>
 <div class="sect2">
 <h3 id="gateway-to-heaven">Gateway to Heaven</h3>
 <div class="paragraph">
-<p>It&#8217;s easy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let&#8217;s edit <code>apiman.properties</code> on our gateway(s) with a few simple settings to test things out:</p>
+<p>It’s easy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let’s edit <code>apiman.properties</code> on our gateway(s) with a few simple settings to test things out:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -280,7 +402,7 @@ You must explicitly enable client authentication for any services you want prote
 </table>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our <em>keystore</em> and <em>truststore</em> with respective hard-to-guess passwords, and set <code>setNeedClientAuth(true)</code>:</p>
+<p>Here’s a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our <em>keystore</em> and <em>truststore</em> with respective hard-to-guess passwords, and set <code>setNeedClientAuth(true)</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -289,15 +411,15 @@ You must explicitly enable client authentication for any services you want prote
       server.setStopAtShutdown(<span class="predefined-constant">true</span>);
 
       HttpConfiguration http_config = <span class="keyword">new</span> HttpConfiguration();
-      http_config.setSecureScheme(<span class="string"><span class="delimiter">&quot;</span><span class="content">https</span><span class="delimiter">&quot;</span></span>);
+      http_config.setSecureScheme(<span class="string"><span class="delimiter">"</span><span class="content">https</span><span class="delimiter">"</span></span>);
       http_config.setSecurePort(<span class="integer">8009</span>);
 
       SslContextFactory sslContextFactory = <span class="keyword">new</span> SslContextFactory();
-      sslContextFactory.setKeyStorePath(<span class="string"><span class="delimiter">&quot;</span><span class="content">/tmp/keys/service_a_ks.jks</span><span class="delimiter">&quot;</span></span>);
-      sslContextFactory.setKeyStorePassword(<span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>);
-      sslContextFactory.setKeyManagerPassword(<span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>);
-      sslContextFactory.setTrustStorePath(<span class="string"><span class="delimiter">&quot;</span><span class="content">/tmp/keys/shared_trust_store.jks</span><span class="delimiter">&quot;</span></span>);
-      sslContextFactory.setTrustStorePassword(<span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>);
+      sslContextFactory.setKeyStorePath(<span class="string"><span class="delimiter">"</span><span class="content">/tmp/keys/service_a_ks.jks</span><span class="delimiter">"</span></span>);
+      sslContextFactory.setKeyStorePassword(<span class="string"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>);
+      sslContextFactory.setKeyManagerPassword(<span class="string"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>);
+      sslContextFactory.setTrustStorePath(<span class="string"><span class="delimiter">"</span><span class="content">/tmp/keys/shared_trust_store.jks</span><span class="delimiter">"</span></span>);
+      sslContextFactory.setTrustStorePassword(<span class="string"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>);
       <span class="comment">// Important: Require client auth</span>
       sslContextFactory.setNeedClientAuth(<span class="predefined-constant">true</span>);
 
@@ -305,7 +427,7 @@ You must explicitly enable client authentication for any services you want prote
       https_config.addCustomizer(<span class="keyword">new</span> SecureRequestCustomizer());
 
       ServerConnector sslConnector = <span class="keyword">new</span> ServerConnector(server, <span class="keyword">new</span> SslConnectionFactory(
-              sslContextFactory, <span class="string"><span class="delimiter">&quot;</span><span class="content">http/1.1</span><span class="delimiter">&quot;</span></span>), <span class="keyword">new</span> HttpConnectionFactory(https_config));
+              sslContextFactory, <span class="string"><span class="delimiter">"</span><span class="content">http/1.1</span><span class="delimiter">"</span></span>), <span class="keyword">new</span> HttpConnectionFactory(https_config));
       sslConnector.setPort(<span class="integer">8009</span>);
       server.addConnector(sslConnector);
       server.setHandler(<span class="keyword">new</span> AbstractHandler() {
@@ -314,10 +436,10 @@ You must explicitly enable client authentication for any services you want prote
           <span class="directive">public</span> <span class="type">void</span> handle(<span class="predefined-type">String</span> target, Request baseRequest,
                   HttpServletRequest request, HttpServletResponse response) <span class="directive">throws</span> <span class="exception">IOException</span>,
                   ServletException {
-              response.setContentType(<span class="string"><span class="delimiter">&quot;</span><span class="content">text/html;charset=utf-8</span><span class="delimiter">&quot;</span></span>);
+              response.setContentType(<span class="string"><span class="delimiter">"</span><span class="content">text/html;charset=utf-8</span><span class="delimiter">"</span></span>);
               response.setStatus(HttpServletResponse.SC_OK);
               baseRequest.setHandled(<span class="predefined-constant">true</span>);
-              response.getWriter().println(<span class="string"><span class="delimiter">&quot;</span><span class="content">apiman saves the day, again!</span><span class="delimiter">&quot;</span></span>);
+              response.getWriter().println(<span class="string"><span class="delimiter">"</span><span class="content">apiman saves the day, again!</span><span class="delimiter">"</span></span>);
           }
       });
       server.start();
@@ -338,11 +460,11 @@ You must explicitly enable client authentication for any services you want prote
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/blog/images/2015-06-16/enable-mtls.png" alt="enable mtls">
+<img src="/blog/images/2015-06-16/enable-mtls.png" alt="enable mtls" />
 </div>
 </div>
 <div class="paragraph">
-<p>If things don&#8217;t seem to be working quite how you expected, you&#8217;ll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what&#8217;s going on then you can pass the flag <code>-Djavax.net.debug=all</code>, which will print helpful debug info from <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html">Java&#8217;s SSL subsystems</a> onto the console.</p>
+<p>If things don’t seem to be working quite how you expected, you’ll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what’s going on then you can pass the flag <code>-Djavax.net.debug=all</code>, which will print helpful debug info from <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html" target="_blank" rel="nofollow">Java’s SSL subsystems</a> onto the console.</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -363,15 +485,15 @@ You must explicitly enable client authentication for any services you want prote
 </div>
 </div>
 <div id="footnotes">
-<hr>
+<hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
+<a href="#_footnoteref_1" target="_blank" rel="nofollow">1</a> Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a> We refer to the set of APIs managed by apiman as services
+<a href="#_footnoteref_2" target="_blank" rel="nofollow">2</a> We refer to the set of APIs managed by apiman as services
 </div>
 <div class="footnote" id="_footnote_3">
-<a href="#_footnoteref_3">3</a> Applications are the users of our services, like browsers, mobile apps, etc
+<a href="#_footnoteref_3" target="_blank" rel="nofollow">3</a> Applications are the users of our services, like browsers, mobile apps, etc
 </div>
 </div>
   </article>
@@ -387,14 +509,14 @@ You must explicitly enable client authentication for any services you want prote
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                         <a href="disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

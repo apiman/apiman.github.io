@@ -177,7 +177,7 @@ Excellent, it all seems to be working! Notice that we're using self-signed certi
 Next, let's do a request with a token. There are two ways to attach your bearer token to a request. Either:
 
 - `Authorization` header, as `Authorization: Bearer <token>`
-- `access_token` query parameter, as `http://example.org/the/path/?access_token=<token>`
+- `access_token` query parameter, as `http://example.org/the/path/?access_token=[token]`
 
 First, let's retrieve a fresh token from Keycloak, and extract the `access_token` field from the json using `jq` footnote:[We're going to use `jq` to select the `access_token` field in our JSON, so if you don't have `jq` installed you can use your package manager to get it: OS X Brew `brew install jq`; On Fedora `sudo yum install jq`; On Debian `sudo apt-get install jq`].
 

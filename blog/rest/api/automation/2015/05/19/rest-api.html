@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>The JBoss apiman API Manager REST services API</title>
+  <title>The JBoss apiman API Manager REST services API | apiman Open Source API Management</title>
   <meta name="description" content="In this, the third article in our series on apiman, JBoss’ new open source API Management framework, we’ll examine apiman’s API Manager REST services API. ap...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,7 +130,128 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> rest, api, and automation</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p>In this, the third article in our series on apiman, JBoss’ new open source API Management framework, we’ll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.</p>
 
 <!--more-->
@@ -268,31 +390,31 @@ http://localhost:8080/apiman/system/status
 <span class="lineno">11</span>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>  
 <span class="lineno">12</span> 
 <span class="lineno">13</span>         <span class="n">String</span> <span class="o">[</span> <span class="o">]</span> <span class="o">[</span> <span class="o">]</span> <span class="n">originalSix</span> <span class="o">=</span> <span class="o">{</span>  
-<span class="lineno">14</span>             <span class="o">{</span> <span class="s">&quot;Boston&quot;</span><span class="o">,</span> <span class="s">&quot;Chicago&quot;</span><span class="o">,</span> <span class="s">&quot;Detroit&quot;</span><span class="o">,</span> <span class="s">&quot;Montreal&quot;</span><span class="o">,</span> <span class="s">&quot;New York&quot;</span><span class="o">,</span> <span class="s">&quot;Toronto&quot;</span><span class="o">},</span>  
-<span class="lineno">15</span>             <span class="o">{</span> <span class="s">&quot;Bruins&quot;</span><span class="o">,</span> <span class="s">&quot;BlackHawks&quot;</span><span class="o">,</span> <span class="s">&quot;Red Wings&quot;</span><span class="o">,</span> <span class="s">&quot;Canadiens&quot;</span><span class="o">,</span> <span class="s">&quot;Rangers&quot;</span><span class="o">,</span> <span class="s">&quot;Maple Leafs&quot;</span><span class="o">}</span>  
+<span class="lineno">14</span>             <span class="o">{</span> <span class="s">"Boston"</span><span class="o">,</span> <span class="s">"Chicago"</span><span class="o">,</span> <span class="s">"Detroit"</span><span class="o">,</span> <span class="s">"Montreal"</span><span class="o">,</span> <span class="s">"New York"</span><span class="o">,</span> <span class="s">"Toronto"</span><span class="o">},</span>  
+<span class="lineno">15</span>             <span class="o">{</span> <span class="s">"Bruins"</span><span class="o">,</span> <span class="s">"BlackHawks"</span><span class="o">,</span> <span class="s">"Red Wings"</span><span class="o">,</span> <span class="s">"Canadiens"</span><span class="o">,</span> <span class="s">"Rangers"</span><span class="o">,</span> <span class="s">"Maple Leafs"</span><span class="o">}</span>  
 <span class="lineno">16</span>         <span class="o">};</span>
 <span class="lineno">17</span>         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
-<span class="lineno">18</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">&quot;Creating new apiman org for: &quot;</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;:&quot;</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]);</span>  
-<span class="lineno">19</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">&quot;Return code = &quot;</span> <span class="o">+</span> <span class="n">createNewOrg</span> <span class="o">(</span><span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">],</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]));</span>  
+<span class="lineno">18</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Creating new apiman org for: "</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]);</span>  
+<span class="lineno">19</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Return code = "</span> <span class="o">+</span> <span class="n">createNewOrg</span> <span class="o">(</span><span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">],</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]));</span>  
 <span class="lineno">20</span>         <span class="o">}</span>
 <span class="lineno">21</span>     <span class="o">}</span>  
 <span class="lineno">22</span> 
 <span class="lineno">23</span>     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">createNewOrg</span> <span class="o">(</span><span class="n">String</span> <span class="n">newOrgName</span><span class="o">,</span> <span class="n">String</span> <span class="n">newOrgDescription</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>  
-<span class="lineno">24</span>         <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">URL</span><span class="o">(</span><span class="s">&quot;http://localhost:8080/apiman/organizations&quot;</span><span class="o">);</span>  
+<span class="lineno">24</span>         <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">URL</span><span class="o">(</span><span class="s">"http://localhost:8080/apiman/organizations"</span><span class="o">);</span>  
 <span class="lineno">25</span>         <span class="n">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>  
 <span class="lineno">26</span> 
 <span class="lineno">27</span>         <span class="n">Base64</span><span class="o">.</span><span class="na">Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">getEncoder</span><span class="o">();</span>  
-<span class="lineno">28</span>         <span class="n">String</span> <span class="n">normalString</span> <span class="o">=</span> <span class="s">&quot;admin:admin123!&quot;</span><span class="o">;</span>  
+<span class="lineno">28</span>         <span class="n">String</span> <span class="n">normalString</span> <span class="o">=</span> <span class="s">"admin:admin123!"</span><span class="o">;</span>  
 <span class="lineno">29</span>         <span class="n">String</span> <span class="n">encodedString</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeToString</span><span class="o">(</span><span class="n">normalString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>  
 <span class="lineno">30</span> 
-<span class="lineno">31</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">&quot;Authorization&quot;</span><span class="o">,</span> <span class="s">&quot;Basic &quot;</span>  <span class="o">+</span> <span class="n">encodedString</span><span class="o">);</span>  
-<span class="lineno">32</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">&quot;POST&quot;</span><span class="o">);</span>  
+<span class="lineno">31</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Basic "</span>  <span class="o">+</span> <span class="n">encodedString</span><span class="o">);</span>  
+<span class="lineno">32</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>  
 <span class="lineno">33</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setDoOutput</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>  
-<span class="lineno">34</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">&quot;Content-Type&quot;</span><span class="o">,</span> <span class="s">&quot;application/json&quot;</span><span class="o">);</span>  
-<span class="lineno">35</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">&quot;Accept&quot;</span><span class="o">,</span> <span class="s">&quot;application/json&quot;</span><span class="o">);</span>  
+<span class="lineno">34</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
+<span class="lineno">35</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
 <span class="lineno">36</span> 
 <span class="lineno">37</span>         <span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">OutputStreamWriter</span><span class="o">(</span><span class="n">connection</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>  
-<span class="lineno">38</span>         <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;{\&quot;name\&quot;:\&quot;&quot;</span> <span class="o">+</span> <span class="n">newOrgName</span> <span class="o">+</span> <span class="s">&quot; a new org\&quot;,\&quot;description\&quot;:\&quot;&quot;</span> <span class="o">+</span> <span class="n">newOrgDescription</span> <span class="o">+</span> <span class="s">&quot;\&quot;}&quot;</span><span class="o">));</span>  
+<span class="lineno">38</span>         <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"{\"name\":\""</span> <span class="o">+</span> <span class="n">newOrgName</span> <span class="o">+</span> <span class="s">" a new org\",\"description\":\""</span> <span class="o">+</span> <span class="n">newOrgDescription</span> <span class="o">+</span> <span class="s">"\"}"</span><span class="o">));</span>  
 <span class="lineno">39</span>         <span class="n">osw</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>  
 <span class="lineno">40</span>         <span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>  
 <span class="lineno">41</span> 
@@ -360,14 +482,14 @@ Return code = 200
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                         <a href="disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>
