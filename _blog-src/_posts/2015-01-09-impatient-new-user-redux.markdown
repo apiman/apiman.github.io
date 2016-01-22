@@ -118,13 +118,13 @@ The sequence in which incoming API requests have policies applied is:
 
 What happens is that when an API request is received by the API Gateway at runtime, the policy chain is applied in the order of client app, plan, and API. If no failures, such as a rate counter being exceeded, occur, the API Gateway sends the request to the API. As we mentioned earlier in this post, the API Gateway acts as a proxy for the API:
 
-![Diagram_2](/blog/images/2015-01-09/apiman_3-redux.jpg)
+![Diagram_2](/blog/images/2015-01-09/apiman_3-redux.png)
 
 Next, when the API Gateway receives a response from the API's backend implementation, the policy chain is applied again, but this time in the reverse order. The API policies are applied first, then the plan policies, and finally the client app policies. If no failures occur, then the API response is sent back to the consumer of the API.
 
 By applying the policy chain twice, both for the originating incoming request and the resulting response, apiman allows policy implementations two opportunities to provide management functionality during the lifecycle. The following diagram illustrates this two-way approach to applying policies:
 
-![Diagram_3](/blog/images/2015-01-09/apiman_4-redux.jpg)
+![Diagram_3](/blog/images/2015-01-09/apiman_4-redux.png)
 
 ## Plans
 
