@@ -26,6 +26,9 @@
     <script>
         $(document).ready(function() {
             $( "#guide" ).load("production-guide/index.html", function() {
+                
+                $( 'h1.title' ).append('<a href="production-guide/apiman-production-guide.pdf" style="font-size: 16px" class="pull-right"><i class="fa fa-file-pdf-o fa-fw"></i>Download as PDF</a>');
+                
                 if (window.location.hash) {
                     var hash = location.hash.replace('#', '');
                     var elem = $("body").find("#" + hash);
