@@ -2,19 +2,19 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</loc>
-    <lastmod>2016-01-22T11:00:00-05:00</lastmod>
+    <lastmod>2016-01-22T07:00:00-05:00</lastmod>
   </url>
   <url>
     <loc>http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html</loc>
-    <lastmod>2016-01-22T09:25:28-05:00</lastmod>
+    <lastmod>2016-01-22T07:00:00-05:00</lastmod>
   </url>
   <url>
     <loc>http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html</loc>
-    <lastmod>2016-01-22T09:00:00-05:00</lastmod>
+    <lastmod>2016-01-22T07:00:00-05:00</lastmod>
   </url>
   <url>
     <loc>http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</loc>
-    <lastmod>2016-01-22T05:30:00-05:00</lastmod>
+    <lastmod>2016-01-22T06:30:00-05:00</lastmod>
   </url>
   <url>
     <loc>http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.html</loc>

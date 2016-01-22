@@ -268,7 +268,7 @@ You must explicitly enable client authentication for any APIs you want protected
 				
 					<category term="1.2.x" />
 				
-				<pubDate>Fri, 22 Jan 2016 11:00:00 -0500</pubDate>
+				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</guid>
 			</item>
@@ -704,7 +704,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 				
 					<category term="1.2.x" />
 				
-				<pubDate>Fri, 22 Jan 2016 09:25:28 -0500</pubDate>
+				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html</guid>
 			</item>
@@ -1064,14 +1064,14 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 				
 					<category term="1.2.x" />
 				
-				<pubDate>Fri, 22 Jan 2016 09:00:00 -0500</pubDate>
+				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html</guid>
 			</item>
 		
 		
 			<item>
-				<title>Final!  Apiman 1.2.1.Final is released!</title>
+				<title>Finally!  Apiman 1.2.1.Final is released!</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
 				        <author>eric.wittmann@redhat.com</author>
@@ -1168,7 +1168,7 @@ designed to satisfy the following use-cases:&lt;/p&gt;
 				
 					<category term="apiman" />
 				
-				<pubDate>Fri, 22 Jan 2016 05:30:00 -0500</pubDate>
+				<pubDate>Fri, 22 Jan 2016 06:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</guid>
 			</item>
@@ -5877,6 +5877,6 @@ extracting the user’s roles and passing them along to the Authorization policy
 				<guid isPermaLink="true">http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</guid>
 			</item>
 		
-		<lastBuildDate>Fri, 22 Jan 2016 10:50:59 -0500</lastBuildDate>
+		<lastBuildDate>Fri, 22 Jan 2016 10:51:42 -0500</lastBuildDate>
 	</channel>
 </rss>
