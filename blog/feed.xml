@@ -1071,7 +1071,7 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 		
 		
 			<item>
-				<title>Final!  Apiman 1.2.0.Final is released!</title>
+				<title>Final!  Apiman 1.2.1.Final is released!</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
 				        <author>eric.wittmann@redhat.com</author>
@@ -1080,7 +1080,7 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 pushing to get the first version of &lt;em&gt;1.2.x&lt;/em&gt; out the door.  I’m here to tell you - that
 day has finally arrived.&lt;/p&gt;
 
-&lt;p&gt;We’re happy to announce apiman &lt;em&gt;1.2.0.Final&lt;/em&gt;.  Our goal is now to go back to our previous,
+&lt;p&gt;We’re happy to announce apiman &lt;em&gt;1.2.1.Final&lt;/em&gt;.  Our goal is now to go back to our previous,
 more frequent, release schedule.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -1093,6 +1093,7 @@ release of apiman, here are some useful links:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://red.ht/1OK3LG7&quot;&gt;1.2.0.Final Release Notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://red.ht/1OC1Tf7&quot;&gt;1.2.1.Final Release Notes&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/&quot;&gt;The apiman project site&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;Latest User Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1158,14 +1159,18 @@ designed to satisfy the following use-cases:&lt;/p&gt;
 
 &lt;p&gt;We’ll follow up this blog post with one that goes into this feature in more depth.&lt;/p&gt;
 
+&lt;h2 id=&quot;what-happened-to-120final&quot;&gt;What happened to 1.2.0.Final?&lt;/h2&gt;
+
+&lt;p&gt;You know what, don’t even worry about it.&lt;/p&gt;
+
 &lt;p&gt;/post&lt;/p&gt;
 </description>
 				
 					<category term="apiman" />
 				
-				<pubDate>Mon, 11 Jan 2016 04:30:00 -0500</pubDate>
-				<link>http://apiman.io/blog/apiman/2016/01/11/release-1.2.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/apiman/2016/01/11/release-1.2.html</guid>
+				<pubDate>Fri, 22 Jan 2016 05:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</guid>
 			</item>
 		
 		
@@ -2230,7 +2235,7 @@ You can do that easily in apiman manager, typically available at: &lt;a href=&qu
 
 &lt;p&gt;Once logged into the apiman manager, locate the Organizations sections on the initial page, select &lt;em&gt;Create a New Organization&lt;/em&gt; link, provide a name and hit &lt;em&gt;Create Organization&lt;/em&gt; button. This will take you to organization details page where you can create a new API by clicking on &lt;em&gt;New API&lt;/em&gt; button under &lt;em&gt;APIs&lt;/em&gt; tab:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/API.png&quot; alt=&quot;Image: Create API&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/api.png&quot; alt=&quot;Image: Create API&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You will be asked to provide a name and a version for this API. Once the API is successfully created there are few things remaining before you can publish and start using it. 
 First, you need to provide an implementation base url on the &lt;em&gt;Implementation&lt;/em&gt; tab. Use the base URL of the REST Quickstart and save your changes:&lt;/p&gt;
@@ -5872,6 +5877,6 @@ extracting the user’s roles and passing them along to the Authorization policy
 				<guid isPermaLink="true">http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</guid>
 			</item>
 		
-		<lastBuildDate>Fri, 22 Jan 2016 08:55:43 -0500</lastBuildDate>
+		<lastBuildDate>Fri, 22 Jan 2016 09:52:03 -0500</lastBuildDate>
 	</channel>
 </rss>
