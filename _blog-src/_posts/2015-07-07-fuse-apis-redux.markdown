@@ -93,7 +93,7 @@ You can do that easily in apiman manager, typically available at: [http://localh
 
 Once logged into the apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new API by clicking on _New API_ button under _APIs_ tab:
 
-![Image: Create API](/blog/images/2015-07-07/API.png)
+![Image: Create API](/blog/images/2015-07-07/api.png)
 
 You will be asked to provide a name and a version for this API. Once the API is successfully created there are few things remaining before you can publish and start using it. 
 First, you need to provide an implementation base url on the _Implementation_ tab. Use the base URL of the REST Quickstart and save your changes:
