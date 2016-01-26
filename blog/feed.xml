@@ -9,6 +9,177 @@
 		
 		
 			<item>
+				<title>Export Import</title>
+				
+				<description>
+&lt;hr /&gt;
+&lt;p&gt;layout: post
+title:  “Apiman 1.2.1 Export and Import”
+date:   2016-01-26 20:30:00
+author: len_dimaggio
+categories: apiman
+—&lt;/p&gt;
+
+&lt;h3 id=&quot;the-question-you-dread&quot;&gt;The Question you Dread&lt;/h3&gt;
+
+&lt;p&gt;If you use a computer at home or at work, you’ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Did you make a backup?”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups.  In this post,  we’ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.&lt;/p&gt;
+
+&lt;p&gt;For test data, we’ll use the same types of data (organizations, users, plans, policies, APIs and client apps), that we created in the initial post in this series. (  &lt;a href=&quot;http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html&quot;&gt;The Impatient New User Guide to apiman&lt;/a&gt; )&lt;/p&gt;
+
+&lt;p&gt;Note that since that post was written in January 2015, some of the names of the data elements have changed. You can either create the test data referred to in this post yourself, or you can import the data file attached to the post.&lt;/p&gt;
+
+&lt;h3 id=&quot;exportimport-in-apiman-121&quot;&gt;Export/Import in apiman 1.2.1&lt;/h3&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2.1 enables you to export your apiman configuration data to a file, which can later be imported into an apiman system. Note that this feature follows an all-or-nothing approach in that is does not support incremental backup and restore of selected apiman data.&lt;/p&gt;
+
+&lt;p&gt;The three main use cases that the export/import feature supports are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Backing up all your apiman data&lt;/li&gt;
+  &lt;li&gt;Upgrading to a newer version of apiman&lt;/li&gt;
+  &lt;li&gt;Migrating apiman data from a Test environment to a Production environment&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The export/import operations are only available to Administrative users. The export/import feature is accessed through the admin operations menu:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_1.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you select the &lt;strong&gt;Export/Import&lt;/strong&gt; Data feature, this menu is displayed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_2.png&quot; alt=&quot;Image: Export/Import Menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing to keep in mind is that while you are importing or exporting data, no changes to data should be made or else the export/import may encounter an error, or may result in incomplete results. To be safe, you should disable user access to the API Manager, both the Management UI and its REST interface, for the duration of the import or export operation.&lt;/p&gt;
+
+&lt;p&gt;We’ll look at exporting data first.&lt;/p&gt;
+
+&lt;h3 id=&quot;backing-up-apiman-data&quot;&gt;Backing up apiman Data&lt;/h3&gt;
+
+&lt;p&gt;To make a backup of all your apiman data, simply select the “Export All” button. The apiman data will be written to a file and downloaded by your browser. Your browser’s settings will determine where the file is saved.&lt;/p&gt;
+
+&lt;p&gt;The apiman data is written to a file named: api-manager-export.json&lt;/p&gt;
+
+&lt;p&gt;As its name indicates, the apiman data is written in JSON form. This format provides us with  several advantages. First of all, it’s the format in which apiman is able to import data. (We’ll perform an import later in this post.) Secondly, it’s a text file where the contents of the file are human readable. The content of the file is ALL the apiman data, both the data elements that you have created and the data elements with which apiman is preconfigured.&lt;/p&gt;
+
+&lt;p&gt;Reading this file can greatly increase your understanding of the elements that are defined in apiman. Let’s take a look at the elements in the file:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Users&lt;/strong&gt; - The preconfigured “admin” user is defined here, as are the new users we create.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gateways&lt;/strong&gt; - The preconfigured apiman Gateway is defined here.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Roles&lt;/strong&gt; - The preconfigured, permission-based roles, and new roles that we create, are defined here. For example, the “OrganizationOwner” role is shown to have these permissions: [ “apiAdmin”, “orgAdmin”, “apiView”, “orgEdit”, “clientEdit”, “clientAdmin”, “planView”, “orgView”, “planAdmin”, “clientView”, “planEdit”, “apiEdit” ]&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Policy Definitions&lt;/strong&gt; -  Next, the preconfigured policies, and new policies t2015-11-12-micro-services.markdownhat we create, are defined here. For example: the “RateLimitingPolicy” is described as “Enforces rate configurable request rate limits on an API.  This ensures that consumers can’t overload an API with too many requests.”&lt;/li&gt;
+  &lt;li&gt;The remainder of the file includes the elements that we create: &lt;strong&gt;Organizations, Plans, APIs, and Client Apps&lt;/strong&gt;. For example, here is the definition of the “echo” API that we created:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;javascript
+  &quot;Apis&quot; : [ {
+   &quot;ApiBean&quot; : {
+   &quot;id&quot; : &quot;echo&quot;,
+   &quot;name&quot; : &quot;echo&quot;,
+   &quot;description&quot; : &quot;The echo API&quot;,
+   &quot;createdBy&quot; : &quot;serprov&quot;,
+   &quot;createdOn&quot; : 1453773184836,
+   &quot;numPublished&quot; : 1
+  },
+  &quot;Versions&quot; : [ {
+   &quot;ApiVersionBean&quot; : {
+     &quot;id&quot; : 10,
+     &quot;status&quot; : &quot;Published&quot;,
+     &quot;endpoint&quot; : &quot;http://localhost:8080/apiman-echo&quot;,
+     &quot;endpointType&quot; : &quot;rest&quot;,
+     &quot;endpointContentType&quot; : &quot;json&quot;,
+     &quot;endpointProperties&quot; : { },
+     &quot;gateways&quot; : [ {
+       &quot;gatewayId&quot; : &quot;TheGateway&quot;
+     } ],
+     &quot;publicAPI&quot; : false,
+     &quot;plans&quot; : [ {
+       &quot;planId&quot; : &quot;gold&quot;,
+       &quot;version&quot; : &quot;1.0&quot;
+     } ],
+     &quot;version&quot; : &quot;1.0&quot;,
+     &quot;createdBy&quot; : &quot;serprov&quot;,
+     &quot;createdOn&quot; : 1453773184845,
+     &quot;modifiedBy&quot; : &quot;serprov&quot;,
+     &quot;modifiedOn&quot; : 1453773312563,
+     &quot;publishedOn&quot; : 1453773327835
+   },
+   &quot;Policies&quot; : [ {
+     &quot;id&quot; : 14,
+     &quot;type&quot; : &quot;Api&quot;,
+     &quot;organizationId&quot; : &quot;ACMEServices&quot;,
+     &quot;entityId&quot; : &quot;echo&quot;,
+     &quot;entityVersion&quot; : &quot;1.0&quot;,
+     &quot;name&quot; : &quot;BASIC Authentication Policy&quot;,
+     &quot;configuration&quot; : &quot;{\&quot;realm\&quot;:\&quot;Echo\&quot;,\&quot;requireBasicAuth\&quot;:false,\&quot;staticIdentity\&quot;:{\&quot;identities\&quot;:[{\&quot;username\&quot;:\&quot;user1\&quot;,\&quot;password\&quot;:\&quot;admin123!\&quot;}]}}&quot;,
+     &quot;createdBy&quot; : &quot;serprov&quot;,
+     &quot;createdOn&quot; : 1453773312553,
+     &quot;modifiedBy&quot; : &quot;serprov&quot;,
+     &quot;modifiedOn&quot; : 1453773312553,
+     &quot;definition&quot; : {
+       &quot;id&quot; : &quot;BASICAuthenticationPolicy&quot;,
+       &quot;templates&quot; : [ ],
+       &quot;deleted&quot; : false
+     },
+     &quot;orderIndex&quot; : 1
+   } ]
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing to remember is that the exported data file represents ALL apiman data. It’s not yet possible to perform incremental data backups in apiman. If you attempt to import the data from this file into the same apiman installation from which it was generated, you will see unique primary key violations as the import operation will attempt to create duplicate data elements.&lt;/p&gt;
+
+&lt;p&gt;OK, now that we have this exported data file, what can we do with it?&lt;/p&gt;
+
+&lt;p&gt;Well, obviously, if something goes wrong with your installation of apiman, you can start over with a clean installation, and instead of manually recreating your data, you can import the data. (Personal note from the author: I work in software test/QE. Part of our testing is always destructive in nature. As a result, we are always “messing up” test data. The export/import feature enables us to quickly reinstall apiman and recover a clean test environment.) To perform the import after a new installation of apiman, you simply select and upload  the exported data file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_3.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Management UI displays the status of the import as the data is processed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_4.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How else can we use the exported data file?&lt;/p&gt;
+
+&lt;h3 id=&quot;upgrading-to-a-newer-version-of-apiman&quot;&gt;Upgrading to a Newer Version of apiman&lt;/h3&gt;
+
+&lt;p&gt;One of the best aspects of open source projects is the rapid rate at which new features are implemented and new versions are released. It’s exciting to watch projects quickly mature as features are added and bugs are fixed, and since the projects are open source, you can even make your own contributions. This has been the case with apiman over the past several months. New features have been added such as metrics and support for creating custom policies.&lt;/p&gt;
+
+&lt;p&gt;One downside to all the rapid change is that as new versions of apiman have been released, we’ve had to recreate all our apiman data as there was no way to migrate apiman data from one release to the next. The export/import feature now gives us a way to export apiman data from one apiman release and import it into a new apiman release.&lt;/p&gt;
+
+&lt;p&gt;NOTE: In cases where the apiman data model changes between versions, apiman will introduce tools to transform the JSON export file from an older format to the latest.  It has not yet been decided whether those tools will be built into the Import process, or released as a standalone utility.&lt;/p&gt;
+
+&lt;h3 id=&quot;migrating-apiman-data-from-a-test-environment-to-a-production-environment&quot;&gt;Migrating apiman Data from a &lt;em&gt;Test&lt;/em&gt; Environment to a &lt;em&gt;Production&lt;/em&gt; Environment&lt;/h3&gt;
+
+&lt;p&gt;It’s a common practice for organizations to maintain two separate installations of software releases:&lt;/p&gt;
+
+&lt;p&gt;A test environment, where the goal is to experiment with new features. This is typically an internal environment that gives up some measure of stability in exchange for the ability to “try out” new features as they become available. The rate of change for this environment is high as any disruption in service in this environment do not affect customers.
+A production environment, where the goal is stability. This is the environment that supports your customers. Changes happen slowly in this environment and new features are only installed after they are carefully tested as disruptions in service in this environment do affect customers.&lt;/p&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2 makes it possible for you to experiment with changes in your test environment, and, after the changes have been found to be stable, to easily migrate your test data from the test environment into your production environment. (You will, of course, create a backup of your production environment data before making any changes.  ;-)&lt;/p&gt;
+
+&lt;h3 id=&quot;migrating-apiman-from-one-storage-solution-to-another&quot;&gt;Migrating apiman from one storage solution to another&lt;/h3&gt;
+
+&lt;p&gt;Finally, when apiman is first installed, you must make various decisions about its configuration.  One of these decisions is where to store configuration and data.  When you first install apiman, you might decide that MySQL is the right choice.  However, somewhere along the line you might change your mind - perhaps you want to switch to postgresql, or even more drastically you might switch to Elasticsearch!  The Export/Import process described here solves the problem of how to migrate all your data from one storage location to another.&lt;/p&gt;
+
+&lt;p&gt;The process is basically the same as upgrading to a newer version of apiman.  But instead you will be upgrading to the same version of apiman, but with a different configuration.  Because the exported data is in a neutral (JSON) format, we can easily import into the new configuration.  This will result in all your data being migrated from MySQL to Elasticsearch (for example).&lt;/p&gt;
+
+&lt;h3 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2 provides an easy way to safeguard your apiman data and to make it possible to migrate your data between apiman releases and installations. In addition, since the exported data is human readable, it is a great resource for better understanding apiman data structures. And, it’s easy to use too!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 26 Jan 2016 00:00:00 -0500</pubDate>
+				<link>http://apiman.io/blog/2016/01/26/export-import.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/2016/01/26/export-import.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Cover yourself up! Protecting your APIs with mutual auth</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -5794,89 +5965,6 @@ back end service for the test instead of the echo service!  :)&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Authorization: good god, what is it good for?</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Quite a bit, actually.  :)&lt;/p&gt;
-
-&lt;p&gt;I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some
-point in the future we’re going to be renovating how policies are defined and
-configured in the API Manager UI.  But until then, you can refer to this blog
-post for an overview of how to configure Authorization!&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I won’t bury the lead - the key to getting Authorization to work is understanding
-that it &lt;em&gt;only&lt;/em&gt; works together with Authentication.  First you must add and
-configure a compatible &lt;em&gt;Authentication&lt;/em&gt; policy, which will be responsible for
-extracting the user’s roles and passing them along to the Authorization policy.&lt;/p&gt;
-
-&lt;h2 id=&quot;define-your-terms-sir&quot;&gt;Define your terms, sir!&lt;/h2&gt;
-&lt;p&gt;Let’s make sure we’re on the same page with respect to terminology, shall we?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Authorization&lt;/strong&gt;: the act of ensuring that the authenticated user has &lt;em&gt;permission&lt;/em&gt; to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-does-this-work-in-apiman&quot;&gt;How does this work in apiman?&lt;/h2&gt;
-
-&lt;p&gt;I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.&lt;/p&gt;
-
-&lt;p&gt;Basically you need to do the following two things:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy&lt;/li&gt;
-  &lt;li&gt;Add and configure an Authorization Policy.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s it in a nutshell!&lt;/p&gt;
-
-&lt;h2 id=&quot;give-me-more-details&quot;&gt;Give me more details!&lt;/h2&gt;
-
-&lt;p&gt;OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;User Guide&lt;/a&gt; or the &lt;a href=&quot;http://www.apiman.io/latest/tutorials.html&quot;&gt;Tutorials&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the &lt;em&gt;BASIC Authentication Policy&lt;/em&gt; and configure it as seen in the following screenshot:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/basic-auth-config.png&quot; alt=&quot;Example BASIC Authentication configuration&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/authorization-config.png&quot; alt=&quot;Example Authorization configuration&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/auth-policies.png&quot; alt=&quot;Example policy list&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Resource Path&lt;/strong&gt;: /.*&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Verb/action&lt;/strong&gt;: *&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Required Role&lt;/strong&gt;: &lt;your-role&gt;&lt;/your-role&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Good luck and come find us on the mailing list or IRC if you have any trouble!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="authorization" />
-				
-					<category term="authentication" />
-				
-					<category term="policy" />
-				
-				<pubDate>Fri, 08 May 2015 09:15:15 -0400</pubDate>
-				<link>http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Fri, 22 Jan 2016 10:51:42 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 27 Jan 2016 08:04:40 -0500</lastBuildDate>
 	</channel>
 </rss>
