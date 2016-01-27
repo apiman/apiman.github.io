@@ -189,6 +189,9 @@
         
               
               
+        
+              
+              
                 http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html
               
         
@@ -256,7 +259,7 @@
 <p>The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).</p>
 </div>
 <div class="paragraph">
-<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote." target="_blank" rel="nofollow">1</a>]</span>.</p>
+<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
 </div>
 <div class="sect1">
 <h2 id="what-is-mutual-transport-layer-security-mutual-tls">What is mutual transport layer security (Mutual TLS)?</h2>
@@ -285,7 +288,7 @@
 <p>Ideally, each node should have its own keystore, whose key material is signed by a <strong>trusted certificate authority</strong>; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA’s certificate to our node’s keystores, then <em>any</em> certificate issued by it will be trusted by virtue of the issuer’s authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.</p>
 </div>
 <div class="paragraph">
-<p>It bears mentioning that any client apps<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote." target="_blank" rel="nofollow">2</a>]</span> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.</p>
+<p>It bears mentioning that any client apps<span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -487,10 +490,10 @@ You must explicitly enable client authentication for any APIs you want protected
 <div id="footnotes">
 <hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1" target="_blank" rel="nofollow">1</a> Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
+<a href="#_footnoteref_1">1</a> Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2" target="_blank" rel="nofollow">2</a> Client Apps are the users of our APIs, like browsers, mobile apps, etc
+<a href="#_footnoteref_2">2</a> Client Apps are the users of our APIs, like browsers, mobile apps, etc
 </div>
 </div>
   </article>

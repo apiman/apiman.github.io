@@ -9,6 +9,88 @@
 		
 		
 			<item>
+				<title>Apiman Names Have Been Changed to Protect the Guilty</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;Recently we released version 1.2 of apiman and part of that release includes an effort
+to rename some concepts to make them more clear (or to better align them with industry standard
+terminology).  Read on below the fold to find out what changed!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;oh-god-why&quot;&gt;Oh God, Why?&lt;/h2&gt;
+&lt;p&gt;We’ve had some feedback that the names of some of the apiman entities are, in some cases,
+not as clear as they could be.  There was a fair bit of confusion, and so with the 1.2
+release we decided it was an opportunity to fix the problem.  To that end, here is a
+quick summary of the changes:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Old Name&lt;/th&gt;
+      &lt;th&gt;New Name&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Organization&lt;/td&gt;
+      &lt;td&gt;Organization&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Plan&lt;/td&gt;
+      &lt;td&gt;Plan&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Service&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;API&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Application&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Client App&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Policy&lt;/td&gt;
+      &lt;td&gt;Policy&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As you can see, most of the old entity names are unchanged.  But it turns out that
+&lt;strong&gt;Service&lt;/strong&gt; and &lt;strong&gt;Application&lt;/strong&gt; just weren’t great names.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-was-wrong-with-service&quot;&gt;What Was Wrong With Service?&lt;/h2&gt;
+&lt;p&gt;It turns out that there is no more ambiguous term in software these days that “Service”.
+The term can mean many different things to many different people.  Because apiman is an
+API Management system, it just made sense that we rename Service to API.  Now you can
+actually manage an API!&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-but-what-about-application&quot;&gt;OK, But What About Application?&lt;/h2&gt;
+&lt;p&gt;In this case, the term &lt;strong&gt;Application&lt;/strong&gt; was confusing to some folks, because it wasn’t
+clear that the Application was really just the specific Client that was allowed to
+connect to an API.  Instead, many people assumed that “Application” was either an
+way to mashup multiple APIs, or some other sort of server-side thing.  Hopefully
+by using the term “Client” makes it more clear what it’s used for.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Obviously one of our goals is to make using apiman easier and more intuitive to all
+users.  We certainly hope that these name changes help with that goal.&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="1.2.x" />
+				
+				<pubDate>Wed, 27 Jan 2016 03:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Cover yourself up! Protecting your APIs with mutual auth</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -1386,7 +1468,6 @@ that you can do this yourself by overriding this:&lt;/p&gt;
 &lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
 
 &lt;p&gt;As always, the author would like to acknowledge Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
-
 </description>
 				
 					<category term="policies" />
@@ -1444,7 +1525,6 @@ that you can do this yourself by overriding this:&lt;/p&gt;
 &lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
 
 &lt;p&gt;As always, the author would like to acknowledge Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
-
 </description>
 				
 					<category term="policies" />
@@ -1541,7 +1621,6 @@ that you can do this yourself by overriding this:&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&quot;&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&lt;/a&gt; (written by Marc Savy)&lt;/li&gt;
   &lt;li&gt;https://dzone.com/articles/adding-basic-authentication&lt;/li&gt;
 &lt;/ul&gt;
-
 </description>
 				
 					<category term="security" />
@@ -1638,7 +1717,6 @@ that you can do this yourself by overriding this:&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&quot;&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&lt;/a&gt; (written by Marc Savy)&lt;/li&gt;
   &lt;li&gt;https://dzone.com/articles/adding-basic-authentication&lt;/li&gt;
 &lt;/ul&gt;
-
 </description>
 				
 					<category term="security" />
@@ -5794,89 +5872,6 @@ back end service for the test instead of the echo service!  :)&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Authorization: good god, what is it good for?</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Quite a bit, actually.  :)&lt;/p&gt;
-
-&lt;p&gt;I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some
-point in the future we’re going to be renovating how policies are defined and
-configured in the API Manager UI.  But until then, you can refer to this blog
-post for an overview of how to configure Authorization!&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I won’t bury the lead - the key to getting Authorization to work is understanding
-that it &lt;em&gt;only&lt;/em&gt; works together with Authentication.  First you must add and
-configure a compatible &lt;em&gt;Authentication&lt;/em&gt; policy, which will be responsible for
-extracting the user’s roles and passing them along to the Authorization policy.&lt;/p&gt;
-
-&lt;h2 id=&quot;define-your-terms-sir&quot;&gt;Define your terms, sir!&lt;/h2&gt;
-&lt;p&gt;Let’s make sure we’re on the same page with respect to terminology, shall we?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Authorization&lt;/strong&gt;: the act of ensuring that the authenticated user has &lt;em&gt;permission&lt;/em&gt; to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-does-this-work-in-apiman&quot;&gt;How does this work in apiman?&lt;/h2&gt;
-
-&lt;p&gt;I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.&lt;/p&gt;
-
-&lt;p&gt;Basically you need to do the following two things:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy&lt;/li&gt;
-  &lt;li&gt;Add and configure an Authorization Policy.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s it in a nutshell!&lt;/p&gt;
-
-&lt;h2 id=&quot;give-me-more-details&quot;&gt;Give me more details!&lt;/h2&gt;
-
-&lt;p&gt;OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;User Guide&lt;/a&gt; or the &lt;a href=&quot;http://www.apiman.io/latest/tutorials.html&quot;&gt;Tutorials&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the &lt;em&gt;BASIC Authentication Policy&lt;/em&gt; and configure it as seen in the following screenshot:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/basic-auth-config.png&quot; alt=&quot;Example BASIC Authentication configuration&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/authorization-config.png&quot; alt=&quot;Example Authorization configuration&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-05-08/auth-policies.png&quot; alt=&quot;Example policy list&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Resource Path&lt;/strong&gt;: /.*&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Verb/action&lt;/strong&gt;: *&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Required Role&lt;/strong&gt;: &lt;your-role&gt;&lt;/your-role&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Good luck and come find us on the mailing list or IRC if you have any trouble!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="authorization" />
-				
-					<category term="authentication" />
-				
-					<category term="policy" />
-				
-				<pubDate>Fri, 08 May 2015 09:15:15 -0400</pubDate>
-				<link>http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Fri, 22 Jan 2016 10:51:42 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 27 Jan 2016 10:33:45 -0500</lastBuildDate>
 	</channel>
 </rss>
