@@ -9,6 +9,187 @@
 		
 		
 			<item>
+				<title>Apiman 1.2.1 Export and Import</title>
+				
+				        <dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author>
+				
+				<description>&lt;h3 id=&quot;the-question-you-dread&quot;&gt;The Question you Dread&lt;/h3&gt;
+
+&lt;p&gt;If you use a computer at home or at work, you’ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Did you make a backup?”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups.  In this post,  we’ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;For test data, we’ll use the same types of data (organizations, users, plans, policies, APIs and client apps), that we created in the initial post in this series. (  &lt;a href=&quot;http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html&quot;&gt;The Impatient New User Guide to apiman&lt;/a&gt; )&lt;/p&gt;
+
+&lt;p&gt;Note that since that post was written in January 2015, some of the names of the data elements have changed. You can either create the test data referred to in this post yourself, or you can import the data file attached to the post.&lt;/p&gt;
+
+&lt;h3 id=&quot;exportimport-in-apiman-121&quot;&gt;Export/Import in apiman 1.2.1&lt;/h3&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2.1 enables you to export your apiman configuration data to a file, which can later be imported into an apiman system. Note that this feature follows an all-or-nothing approach in that is does not support incremental backup and restore of selected apiman data.&lt;/p&gt;
+
+&lt;p&gt;The three main use cases that the export/import feature supports are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Backing up all your apiman data&lt;/li&gt;
+  &lt;li&gt;Upgrading to a newer version of apiman&lt;/li&gt;
+  &lt;li&gt;Migrating apiman data from a Test environment to a Production environment&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The export/import operations are only available to Administrative users. The export/import feature is accessed through the admin operations menu:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_1.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you select the &lt;strong&gt;Export/Import&lt;/strong&gt; Data feature, this menu is displayed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_2.png&quot; alt=&quot;Image: Export/Import Menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing to keep in mind is that while you are importing or exporting data, no changes to data should be made or else the export/import may encounter an error, or may result in incomplete results. To be safe, you should disable user access to the API Manager, both the Management UI and its REST interface, for the duration of the import or export operation.&lt;/p&gt;
+
+&lt;p&gt;We’ll look at exporting data first.&lt;/p&gt;
+
+&lt;h3 id=&quot;backing-up-apiman-data&quot;&gt;Backing up apiman Data&lt;/h3&gt;
+
+&lt;p&gt;To make a backup of all your apiman data, simply select the “Export All” button. The apiman data will be written to a file and downloaded by your browser. Your browser’s settings will determine where the file is saved.&lt;/p&gt;
+
+&lt;p&gt;The apiman data is written to a file named: api-manager-export.json&lt;/p&gt;
+
+&lt;p&gt;As its name indicates, the apiman data is written in JSON form. This format provides us with  several advantages. First of all, it’s the format in which apiman is able to import data. (We’ll perform an import later in this post.) Secondly, it’s a text file where the contents of the file are human readable. The content of the file is ALL the apiman data, both the data elements that you have created and the data elements with which apiman is preconfigured.&lt;/p&gt;
+
+&lt;p&gt;Reading this file can greatly increase your understanding of the elements that are defined in apiman. Let’s take a look at the elements in the file:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Users&lt;/strong&gt; - The preconfigured “admin” user is defined here, as are the new users we create.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gateways&lt;/strong&gt; - The preconfigured apiman Gateway is defined here.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Roles&lt;/strong&gt; - The preconfigured, permission-based roles, and new roles that we create, are defined here. For example, the “OrganizationOwner” role is shown to have these permissions: [ “apiAdmin”, “orgAdmin”, “apiView”, “orgEdit”, “clientEdit”, “clientAdmin”, “planView”, “orgView”, “planAdmin”, “clientView”, “planEdit”, “apiEdit” ]&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Policy Definitions&lt;/strong&gt; -  Next, the preconfigured policies, and new policies t2015-11-12-micro-services.markdownhat we create, are defined here. For example: the “RateLimitingPolicy” is described as “Enforces rate configurable request rate limits on an API.  This ensures that consumers can’t overload an API with too many requests.”&lt;/li&gt;
+  &lt;li&gt;The remainder of the file includes the elements that we create: &lt;strong&gt;Organizations, Plans, APIs, and Client Apps&lt;/strong&gt;. For example, here is the definition of the “echo” API that we created:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Apis&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ {
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;ApiBean&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;id&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;name&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n5&quot; name=&quot;n5&quot;&gt;5&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;description&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;The echo API&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n6&quot; name=&quot;n6&quot;&gt;6&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdBy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;serprov&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n7&quot; name=&quot;n7&quot;&gt;7&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773184836&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n8&quot; name=&quot;n8&quot;&gt;8&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;numPublished&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n9&quot; name=&quot;n9&quot;&gt;9&lt;/a&gt;&lt;/span&gt; },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n10&quot; name=&quot;n10&quot;&gt;10&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Versions&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n11&quot; name=&quot;n11&quot;&gt;11&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;ApiVersionBean&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n12&quot; name=&quot;n12&quot;&gt;12&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;id&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;10&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n13&quot; name=&quot;n13&quot;&gt;13&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;status&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Published&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n14&quot; name=&quot;n14&quot;&gt;14&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;endpoint&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;http://localhost:8080/apiman-echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n15&quot; name=&quot;n15&quot;&gt;15&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;endpointType&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;rest&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n16&quot; name=&quot;n16&quot;&gt;16&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;endpointContentType&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;json&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n17&quot; name=&quot;n17&quot;&gt;17&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;endpointProperties&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : { },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n18&quot; name=&quot;n18&quot;&gt;18&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;gateways&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n19&quot; name=&quot;n19&quot;&gt;19&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;gatewayId&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;TheGateway&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n20&quot; name=&quot;n20&quot;&gt;20&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;    } ],
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n21&quot; name=&quot;n21&quot;&gt;21&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;publicAPI&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;false&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n22&quot; name=&quot;n22&quot;&gt;22&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;plans&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n23&quot; name=&quot;n23&quot;&gt;23&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;planId&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;gold&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n24&quot; name=&quot;n24&quot;&gt;24&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;version&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;1.0&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n25&quot; name=&quot;n25&quot;&gt;25&lt;/a&gt;&lt;/span&gt;    } ],
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n26&quot; name=&quot;n26&quot;&gt;26&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;version&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;1.0&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n27&quot; name=&quot;n27&quot;&gt;27&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdBy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;serprov&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n28&quot; name=&quot;n28&quot;&gt;28&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773184845&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n29&quot; name=&quot;n29&quot;&gt;29&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;modifiedBy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;serprov&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n30&quot; name=&quot;n30&quot;&gt;30&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;modifiedOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773312563&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n31&quot; name=&quot;n31&quot;&gt;31&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;publishedOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773327835&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n32&quot; name=&quot;n32&quot;&gt;32&lt;/a&gt;&lt;/span&gt;  },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n33&quot; name=&quot;n33&quot;&gt;33&lt;/a&gt;&lt;/span&gt;  &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Policies&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n34&quot; name=&quot;n34&quot;&gt;34&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;id&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;14&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n35&quot; name=&quot;n35&quot;&gt;35&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;type&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Api&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n36&quot; name=&quot;n36&quot;&gt;36&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;organizationId&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;ACMEServices&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n37&quot; name=&quot;n37&quot;&gt;37&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;entityId&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n38&quot; name=&quot;n38&quot;&gt;38&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;entityVersion&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;1.0&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n39&quot; name=&quot;n39&quot;&gt;39&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;name&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;BASIC Authentication Policy&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n40&quot; name=&quot;n40&quot;&gt;40&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;configuration&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;realm&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Echo&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;requireBasicAuth&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:false,&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;staticIdentity&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:{&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;identities&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:[{&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;username&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;user1&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;,&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;password&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;admin123!&lt;/span&gt;&lt;span style=&quot;color:#b0b&quot;&gt;\&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;}]}}&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n41&quot; name=&quot;n41&quot;&gt;41&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdBy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;serprov&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n42&quot; name=&quot;n42&quot;&gt;42&lt;/a&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;createdOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773312553&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n43&quot; name=&quot;n43&quot;&gt;43&lt;/a&gt;&lt;/span&gt;     &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;modifiedBy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;serprov&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n44&quot; name=&quot;n44&quot;&gt;44&lt;/a&gt;&lt;/span&gt;     &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;modifiedOn&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1453773312553&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n45&quot; name=&quot;n45&quot;&gt;45&lt;/a&gt;&lt;/span&gt;     &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;definition&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n46&quot; name=&quot;n46&quot;&gt;46&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;id&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;BASICAuthenticationPolicy&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n47&quot; name=&quot;n47&quot;&gt;47&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;templates&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : [ ],
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n48&quot; name=&quot;n48&quot;&gt;48&lt;/a&gt;&lt;/span&gt;      &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;deleted&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n49&quot; name=&quot;n49&quot;&gt;49&lt;/a&gt;&lt;/span&gt;    },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n50&quot; name=&quot;n50&quot;&gt;50&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;    &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;orderIndex&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#00D&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n51&quot; name=&quot;n51&quot;&gt;51&lt;/a&gt;&lt;/span&gt;  } ]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;One thing to remember is that the exported data file represents ALL apiman data. It’s not yet possible to perform incremental data backups in apiman. If you attempt to import the data from this file into the same apiman installation from which it was generated, you will see unique primary key violations as the import operation will attempt to create duplicate data elements.&lt;/p&gt;
+
+&lt;p&gt;OK, now that we have this exported data file, what can we do with it?&lt;/p&gt;
+
+&lt;p&gt;Well, obviously, if something goes wrong with your installation of apiman, you can start over with a clean installation, and instead of manually recreating your data, you can import the data. (Personal note from the author: I work in software test/QE. Part of our testing is always destructive in nature. As a result, we are always “messing up” test data. The export/import feature enables us to quickly reinstall apiman and recover a clean test environment.) To perform the import after a new installation of apiman, you simply select and upload  the exported data file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_3.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Management UI displays the status of the import as the data is processed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-01-26/export_import_4.png&quot; alt=&quot;Image: Admin Choices&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How else can we use the exported data file?&lt;/p&gt;
+
+&lt;h3 id=&quot;upgrading-to-a-newer-version-of-apiman&quot;&gt;Upgrading to a Newer Version of apiman&lt;/h3&gt;
+
+&lt;p&gt;One of the best aspects of open source projects is the rapid rate at which new features are implemented and new versions are released. It’s exciting to watch projects quickly mature as features are added and bugs are fixed, and since the projects are open source, you can even make your own contributions. This has been the case with apiman over the past several months. New features have been added such as metrics and support for creating custom policies.&lt;/p&gt;
+
+&lt;p&gt;One downside to all the rapid change is that as new versions of apiman have been released, we’ve had to recreate all our apiman data as there was no way to migrate apiman data from one release to the next. The export/import feature now gives us a way to export apiman data from one apiman release and import it into a new apiman release.&lt;/p&gt;
+
+&lt;p&gt;NOTE: In cases where the apiman data model changes between versions, apiman will introduce tools to transform the JSON export file from an older format to the latest.  It has not yet been decided whether those tools will be built into the Import process, or released as a standalone utility.&lt;/p&gt;
+
+&lt;h3 id=&quot;migrating-apiman-data-from-a-test-environment-to-a-production-environment&quot;&gt;Migrating apiman Data from a &lt;em&gt;Test&lt;/em&gt; Environment to a &lt;em&gt;Production&lt;/em&gt; Environment&lt;/h3&gt;
+
+&lt;p&gt;It’s a common practice for organizations to maintain two separate installations of software releases:&lt;/p&gt;
+
+&lt;p&gt;A test environment, where the goal is to experiment with new features. This is typically an internal environment that gives up some measure of stability in exchange for the ability to “try out” new features as they become available. The rate of change for this environment is high as any disruption in service in this environment do not affect customers.
+A production environment, where the goal is stability. This is the environment that supports your customers. Changes happen slowly in this environment and new features are only installed after they are carefully tested as disruptions in service in this environment do affect customers.&lt;/p&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2 makes it possible for you to experiment with changes in your test environment, and, after the changes have been found to be stable, to easily migrate your test data from the test environment into your production environment. (You will, of course, create a backup of your production environment data before making any changes.  ;-)&lt;/p&gt;
+
+&lt;h3 id=&quot;migrating-apiman-from-one-storage-solution-to-another&quot;&gt;Migrating apiman from one storage solution to another&lt;/h3&gt;
+
+&lt;p&gt;Finally, when apiman is first installed, you must make various decisions about its configuration.  One of these decisions is where to store configuration and data.  When you first install apiman, you might decide that MySQL is the right choice.  However, somewhere along the line you might change your mind - perhaps you want to switch to postgresql, or even more drastically you might switch to Elasticsearch!  The Export/Import process described here solves the problem of how to migrate all your data from one storage location to another.&lt;/p&gt;
+
+&lt;p&gt;The process is basically the same as upgrading to a newer version of apiman.  But instead you will be upgrading to the same version of apiman, but with a different configuration.  Because the exported data is in a neutral (JSON) format, we can easily import into the new configuration.  This will result in all your data being migrated from MySQL to Elasticsearch (for example).&lt;/p&gt;
+
+&lt;h3 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The new export/import feature in apiman 1.2 provides an easy way to safeguard your apiman data and to make it possible to migrate your data between apiman releases and installations. In addition, since the exported data is human readable, it is a great resource for better understanding apiman data structures. And, it’s easy to use too!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="introduction" />
+				
+					<category term="overview" />
+				
+					<category term="backup" />
+				
+					<category term="export" />
+				
+					<category term="import" />
+				
+				<pubDate>Wed, 27 Jan 2016 06:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Apiman Names Have Been Changed to Protect the Guilty</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5669,209 +5850,6 @@ back end API for the test instead of the echo API!  :)&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing-redux.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>A great way to test your custom apiman policy!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;If you have tried creating your own custom apiman policy, you may have had a little bit of
-difficulty creating useful junit tests for it.  Many policies require various apiman
-runtime components to be available.  It can be super annoying trying to use something like
-mockito to create mock versions of everything your policy needs.  Even for simple policies
-you really just want a quick and effective way to test the implementation within a
-reasonably “real world” harness.&lt;/p&gt;
-
-&lt;p&gt;Well you’ve probably guessed by now that I’m about to show you how it’s done!  (OK fine,
-how it &lt;em&gt;will&lt;/em&gt; be done in the next release of apiman - 1.1.3.Final)&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;In this post I’ll explain (and show!) you how to write a unit test for your apiman
-policy, using the new Policy Tester junit framework we’ve created.&lt;/p&gt;
-
-&lt;h2 id=&quot;first-you-need-a-custom-policy&quot;&gt;First you need a custom policy!&lt;/h2&gt;
-
-&lt;p&gt;If you haven’t created a custom apiman policy yet, have a look at the
-&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;Developer Guide&lt;/a&gt; to
-learn how.&lt;/p&gt;
-
-&lt;p&gt;So for example, let’s say you’ve created your own simple custom policy class and it
-looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MySimplePolicy&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parseConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ConfigurationParseException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Fail-Test&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyFailureFactoryComponent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;failureFactory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IPolicyFailureFactoryComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doFailure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failureFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createFailure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyFailureType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Other&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Failure&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doApply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Response-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Goodbye World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doApply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;ok-ive-got-a-policy-how-do-i-test-it&quot;&gt;OK I’ve got a policy, how do I test it?&lt;/h2&gt;
-
-&lt;p&gt;Now that you’ve got your policy, you need a quick and effective way to test it.  I also
-think it’s important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using &lt;a href=&quot;http://arquillian.org/&quot;&gt;Arquillian&lt;/a&gt;
-to configure and publish a service with the custom policy to a running WildFly server.
-It actually works remarkably well, but the overhead of firing up a WildFly server just
-to test a single policy seemed excessive.  That work will likely lead into a separate
-testing effort focused on testing larger integration scenarios.&lt;/p&gt;
-
-&lt;p&gt;OK enough - let’s get to the test!  The first thing you need is to pull the Policy
-Tester dependency into your project’s pom.xml:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.apiman&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;apiman-test-policies&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.1.2-SNAPSHOT&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Great - now just create a new junit test and make sure it extends the &lt;code&gt;ApimanPolicyTest&lt;/code&gt;
-base test class.  In that junit test you’ll need to sprinkle in a few annotations
-provided by the apiman Policy Testing framework.  At a minimum you will need to
-include the &lt;code&gt;@TestingPolicy&lt;/code&gt; and &lt;code&gt;@Configuration&lt;/code&gt; annotations.  Both of these annotations
-can be specified at either the &lt;em&gt;Class&lt;/em&gt; or &lt;em&gt;Method&lt;/em&gt; level. The former tells the testing
-framework which policy is being tested.  The latter describes the policy configuration
-that should be used for the test.&lt;/p&gt;
-
-&lt;p&gt;Just look at the example, already:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@TestingPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySimplePolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTestPolicyTest1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ApimanPolicyTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Send a test HTTP request to the service (resulting in executing the policy).&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequestType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Now do some assertions on the result!&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Assert the request header that was added by the policy&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Assert the response header was added by the policy&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Goodbye World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Response-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;so-whats-going-on-here&quot;&gt;So what’s going on here?&lt;/h2&gt;
-
-&lt;p&gt;Let me tell you!  For each test method in your junit test, we’ll actually spin up a fully
-functional apiman API Gateway.  We’ll also publish a test service that’s configured with
-your custom policy (and using the policy configuration you specified in the &lt;code&gt;@Configuration&lt;/code&gt;
-annotation).  After that, it’s a simple matter of sending one or more simulated HTTP
-requests to the gateway.  You do that by sending a &lt;code&gt;PolicyTestRequest&lt;/code&gt; to the &lt;code&gt;send&lt;/code&gt; method.
-Easy peasy!&lt;/p&gt;
-
-&lt;p&gt;Note that it’s pretty easy to create a &lt;code&gt;PolicyTestRequest&lt;/code&gt; - there’s a nice little fluent
-builder you can use to create it.  The builder allows you to set the HTTP verb, the resource
-path, and any HTTP headers.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-about-the-back-end-apiservice&quot;&gt;What about the back-end API/service?&lt;/h2&gt;
-
-&lt;p&gt;Yeah that’s a good point.  Assuming your policy doesn’t produce a failure, the API Gateway
-we’re using for the test needs to “invoke” a back-end service and return the result.  We
-simulate this rather than actually going out and making a REST request.  By default, we
-create a simple Echo back-end service which bundles up all the information in the REST
-request (including anything your policy may have added to the request) and builds a JSON
-response that includes all that information.  This is handy because it allows you to
-verify that, for example, any HTTP headers your policy added to the request actually
-made it through to the back-end service.&lt;/p&gt;
-
-&lt;p&gt;Now are you ready for an advanced topic?  If not I understand, you can just hit the Back
-button on your browser!&lt;/p&gt;
-
-&lt;p&gt;Still here?  Great!  Another thing you can do is actually provide your own simulated
-back-end service.  This is necessary sometimes when your policy does something
-specific with, for example, the service response payload.  You may actually need your
-test to respond in a certain way.  To accomplish this all you need to do is use the
-&lt;code&gt;@BackEndService&lt;/code&gt; annotation, providing a &lt;em&gt;Class&lt;/em&gt; that implements the
-&lt;code&gt;IPolicyTestBackEndService&lt;/code&gt; interface.  You do that, and we’ll use your simulated
-back end service for the test instead of the echo service!  :)&lt;/p&gt;
-
-&lt;p&gt;What would that look like?  Something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@TestingPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySimplePolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTestPolicyTest1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ApimanPolicyTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@BackEndService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyCustomBackEndServiceImpl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Send a test HTTP request to the service (resulting in executing the policy).&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequestType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Now do some assertions on the result!&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;MyCustomBackEndServiceResponseBean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyCustomBackEndServiceResponseBean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Do some more assertions here using the entity from above!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And then perhaps your custom back end implementation class might look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyCustomBackEndServiceImpl&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyTestBackEndService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PolicyTestBackEndServiceResponse&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;invoke&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Create a valid service response for this request, and then configure it.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ServiceResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ServiceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;OK&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Date&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Server&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;apiman.policy-test&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;text/plain&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s respond with a classic &amp;quot;Hello World&amp;quot; for the response body&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestBackEndServiceResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;PolicyTestBackEndServiceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;serviceResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Alright - if you made it this far thanks for reading!!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="policy" />
-				
-					<category term="junit" />
-				
-					<category term="testing" />
-				
-				<pubDate>Sat, 09 May 2015 05:07:45 -0400</pubDate>
-				<link>http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 27 Jan 2016 10:33:45 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 27 Jan 2016 10:40:17 -0500</lastBuildDate>
 	</channel>
 </rss>
