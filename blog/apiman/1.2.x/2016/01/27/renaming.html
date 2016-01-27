@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>We got the moves like swagger! | apiman Open Source API Management</title>
-  <meta name="description" content="One of the weaknesses we’ve had in apiman until now is that service providers didn’t haveany way to document how to consume their services.  Well that has al...">
+  <title>Apiman Names Have Been Changed to Protect the Guilty | apiman Open Source API Management</title>
+  <meta name="description" content="Recently we released version 1.2 of apiman and part of that release includes an effortto rename some concepts to make them more clear (or to better align the...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
       });
   </script>
 
-  <link rel="canonical" href="http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html">
+  <link rel="canonical" href="http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html">
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
@@ -124,187 +124,81 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">We got the moves like swagger!</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 2, 2015</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Apiman Names Have Been Changed to Protect the Guilty</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jan 27, 2016</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, swagger, api, and ui</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and 1.2.x</span>
   </header>
 
 
-  
-    <!-- Old Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
-    </p>
   
 
   
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>One of the weaknesses we’ve had in apiman until now is that service providers didn’t have
-any way to document how to consume their services.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your service.  If you do,
-consumers will be able to browse your service documentation directly in the apiman UI.</p>
-
-<p>I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the application developer (aka the
-service consumer).</p>
+    <p>Recently we released version 1.2 of apiman and part of that release includes an effort
+to rename some concepts to make them more clear (or to better align them with industry standard
+terminology).  Read on below the fold to find out what changed!</p>
 
 <!--more-->
 
-<h2 id="adding-a-service-definition">Adding a Service Definition</h2>
-<p>As a service provider, the only thing you need to do is add a service definition to your
-service.  This is simple - just navigate to the new “Definition” tab in your service.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!</p>
+<h2 id="oh-god-why">Oh God, Why?</h2>
+<p>We’ve had some feedback that the names of some of the apiman entities are, in some cases,
+not as clear as they could be.  There was a fair bit of confusion, and so with the 1.2
+release we decided it was an opportunity to fix the problem.  To that end, here is a
+quick summary of the changes:</p>
 
-<h2 id="what-is-a-swagger-spec">What is a Swagger spec?</h2>
-<p>So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful web service.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):</p>
+<table>
+  <thead>
+    <tr>
+      <th>Old Name</th>
+      <th>New Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Organization</td>
+      <td>Organization</td>
+    </tr>
+    <tr>
+      <td>Plan</td>
+      <td>Plan</td>
+    </tr>
+    <tr>
+      <td><strong>Service</strong></td>
+      <td><strong>API</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Application</strong></td>
+      <td><strong>Client App</strong></td>
+    </tr>
+    <tr>
+      <td>Policy</td>
+      <td>Policy</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>API meta-data such as Name and Description</li>
-  <li>Resource Paths and the Operations/Methods they support</li>
-  <li>Input/Output types</li>
-</ul>
+<p>As you can see, most of the old entity names are unchanged.  But it turns out that
+<strong>Service</strong> and <strong>Application</strong> just weren’t great names.</p>
 
-<p>For more information I recommend navigating to the <a href="http://swagger.io/" target="_blank" rel="nofollow">Swagger Project</a>.</p>
+<h2 id="what-was-wrong-with-service">What Was Wrong With Service?</h2>
+<p>It turns out that there is no more ambiguous term in software these days that “Service”.
+The term can mean many different things to many different people.  Because apiman is an
+API Management system, it just made sense that we rename Service to API.  Now you can
+actually manage an API!</p>
 
-<h2 id="how-does-this-help-my-consumers">How does this help my consumers?</h2>
-<p>Once you’ve got a Swagger spec created and added to your service, your service
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View Service Definition” link available on
-the consumer’s “Service Details” page (the same page that consumers are shown when
-they have searched for a service).  Here’s an example:</p>
+<h2 id="ok-but-what-about-application">OK, But What About Application?</h2>
+<p>In this case, the term <strong>Application</strong> was confusing to some folks, because it wasn’t
+clear that the Application was really just the specific Client that was allowed to
+connect to an API.  Instead, many people assumed that “Application” was either an
+way to mashup multiple APIs, or some other sort of server-side thing.  Hopefully
+by using the term “Client” makes it more clear what it’s used for.</p>
 
-<p><img src="/blog/images/2015-06-02/service-details.png" alt="Service Details" /></p>
-
-<p>A service consumer can see that there is a service definition they can click on, which
-will give them a ton of information about how to use the service.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-service as described by the Swagger spec definition:</p>
-
-<p><img src="/blog/images/2015-06-02/service-definition.png" alt="Service Definition" /></p>
-
-<p>As always, thanks for making it to the end of my ramblings!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Obviously one of our goals is to make using apiman easier and more intuitive to all
+users.  We certainly hope that these name changes help with that goal.</p>
 
 <p>/post</p>
 

@@ -15,8 +15,9 @@ timezone: America/New_York
 # Build settings
 markdown: kramdown
 
-# kramdown:
-#   input: GFM
+kramdown:
+   input: GFM
+   hard_wrap: false
 
 destination: ../blog
 excerpt_separator: <!--more-->

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html</loc>
+    <lastmod>2016-01-27T03:30:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</loc>
     <lastmod>2016-01-22T07:00:00-05:00</lastmod>
   </url>

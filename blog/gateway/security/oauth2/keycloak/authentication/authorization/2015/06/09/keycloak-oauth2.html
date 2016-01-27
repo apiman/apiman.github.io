@@ -142,6 +142,9 @@
         
               
               
+        
+              
+              
                 http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html
               
         
@@ -304,7 +307,7 @@ mvn wildfly:deploy</code></pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3.Final<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote." target="_blank" rel="nofollow">1</a>]</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3.Final<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +348,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 </table>
 </div>
 <div class="paragraph">
-<p>First, log into the <a href="http://localhost:8080/auth/admin">Keycloak server</a>. If you’re following our walkthrough, the log-in details are identical to those mentioned earlier (<code>admin</code>, <code>admin123!</code>). You can see that there is already an <strong>apiman</strong> realm defined, but we’re going to create a new one, so navigate to <strong>Add Realm</strong> (top right), and import and upload <a href="/blog/resources/2015-06-04/stottie.json" target="_blank" rel="nofollow">this demonstration realm definition</a>; it provides an extremely simple setup where we have:</p>
+<p>First, log into the <a href="http://localhost:8080/auth/admin">Keycloak server</a>. If you’re following our walkthrough, the log-in details are identical to those mentioned earlier (<code>admin</code>, <code>admin123!</code>). You can see that there is already an <strong>apiman</strong> realm defined, but we’re going to create a new one, so navigate to <strong>Add Realm</strong> (top right), and import and upload <a href="/blog/resources/2015-06-04/stottie.json">this demonstration realm definition</a>; it provides an extremely simple setup where we have:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -450,7 +453,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realm</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://127.0.0.1:8080/auth/realms/stottie" class="bare" target="_blank" rel="nofollow">http://127.0.0.1:8080/auth/realms/stottie</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to our realm <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote." target="_blank" rel="nofollow">2</a>]</span>. Note that in older versions of Keycloak (pre <code>1.2.0</code>), the realm will just be the <strong>stottie</strong> (no path).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to our realm <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>. Note that in older versions of Keycloak (pre <code>1.2.0</code>), the realm will just be the <strong>stottie</strong> (no path).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keycloak Realm Certificate</p></td>
@@ -508,7 +511,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 </ul>
 </div>
 <div class="paragraph">
-<p>First, let’s retrieve a fresh token from Keycloak, and extract the <code>access_token</code> field from the json using <code>jq</code> <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote." target="_blank" rel="nofollow">3</a>]</span>.</p>
+<p>First, let’s retrieve a fresh token from Keycloak, and extract the <code>access_token</code> field from the json using <code>jq</code> <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -663,13 +666,13 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 <div id="footnotes">
 <hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1" target="_blank" rel="nofollow">1</a> Use the version corresponding to your selected release of apiman
+<a href="#_footnoteref_1">1</a> Use the version corresponding to your selected release of apiman
 </div>
 <div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2" target="_blank" rel="nofollow">2</a> Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the <code>iss</code> field
+<a href="#_footnoteref_2">2</a> Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the <code>iss</code> field
 </div>
 <div class="footnote" id="_footnote_3">
-<a href="#_footnoteref_3" target="_blank" rel="nofollow">3</a> We’re going to use <code>jq</code> to select the <code>access_token</code> field in our JSON, so if you don’t have <code>jq</code> installed you can use your package manager to get it: OS X Brew <code>brew install jq</code>; On Fedora <code>sudo yum install jq</code>; On Debian <code>sudo apt-get install jq</code>
+<a href="#_footnoteref_3">3</a> We’re going to use <code>jq</code> to select the <code>access_token</code> field in our JSON, so if you don’t have <code>jq</code> installed you can use your package manager to get it: OS X Brew <code>brew install jq</code>; On Fedora <code>sudo yum install jq</code>; On Debian <code>sudo apt-get install jq</code>
 </div>
 </div>
   </article>
