@@ -118,14 +118,14 @@
     </nav>
     
     <div class="container" id="download">
-        <div id="content" class="row tbd">
+        <div id="content" class="row">
             <div class="col-lg-10">
                 <h1 class="section-header">Getting Started (WildFly)</h1>
-				<ul class="nav nav-tabs">
-				  <li class="active"><a href="#wf9" role="tab" data-toggle="tab">WildFly 9</a></li>
-				  <li><a href="#wf8" role="tab" data-toggle="tab">WildFly 8</a></li>
-				</ul>
-<!--                 <p>One easy way to get started with <b>apiman</b> is to simply download WildFly 9 and the apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently recommend at least version 7.</p> -->
+                <p>One easy way to get started with <b>apiman</b> is to simply download WildFly 9 and the apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently recommend at least version 7.</p>
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#wf9" role="tab" data-toggle="tab">WildFly 9</a></li>
+                  <li><a href="#wf8" role="tab" data-toggle="tab">WildFly 8</a></li>
+                </ul>
             </div>
 
             <div class="tab-content">
@@ -133,41 +133,41 @@
                 <!-- WildFly 9 -->
                 <!-- ========= -->
                 <div role="tabpanel" class="tab-pane active" id="wf9">
-		            <div class="col-lg-7">
-		                <h3>Download</h3>
-		                <ul>
-		                  <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf9', 1)" href="http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip" rel="nofollow" target="_blank">9.0.2.Final</a></li>
-		                  <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf9-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.1.Final/apiman-distro-wildfly9-1.2.1.Final-overlay.zip" rel="nofollow" target="_blank">1.2.1.Final</a> overlay for WildFly 9</li>
-		                </ul>
-		                
-		                <h3>Install</h3>
-		                <ol>
-		                  <li>Unpack the WildFly 9 zip</li>
-		                  <li>Unpack the apiman 1.2.1.Final WildFly 9 overlay zip <b>inside the wildfly directory</b></li>
-		                </ol>
-		                
-		                <h3>Run</h3>
-		                <ol>
-		                  <li>Start WildFly 9 using the "standalone-apiman.xml" configuration</li>
-		                  <li>
-		                    Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">apiman UI</a> and login with admin/admin123!
-		                    <div class="alert alert-info" style="margin-top: 5px;">
-		                       <span class="pficon pficon-info"></span>
-		                       We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
-		                    </div>
-		                  </li>
-		                </ol>
-		                
-		                <h3>Configure</h3>
-		                <p>
-		                  The apiman distribution comes pre-configured with everything you should need to get started.
-		                  Please see the User Guide for information about how to change apiman configuration options
-		                  if you require more customization.
-		                </p>
-		            </div>
-		            <div class="col-lg-5" style="">
-		              <h3>Or simply try this...</h3>
-		              <pre class="code-block">
+                    <div class="col-lg-7">
+                        <h3>Download</h3>
+                        <ul>
+                          <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf9', 1)" href="http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip" rel="nofollow" target="_blank">9.0.2.Final</a></li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf9-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.1.Final/apiman-distro-wildfly9-1.2.1.Final-overlay.zip" rel="nofollow" target="_blank">1.2.1.Final</a> overlay for WildFly 9</li>
+                        </ul>
+                        
+                        <h3>Install</h3>
+                        <ol>
+                          <li>Unpack the WildFly 9 zip</li>
+                          <li>Unpack the apiman 1.2.1.Final WildFly 9 overlay zip <b>inside the wildfly directory</b></li>
+                        </ol>
+                        
+                        <h3>Run</h3>
+                        <ol>
+                          <li>Start WildFly 9 using the "standalone-apiman.xml" configuration</li>
+                          <li>
+                            Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">apiman UI</a> and login with admin/admin123!
+                            <div class="alert alert-info" style="margin-top: 5px;">
+                               <span class="pficon pficon-info"></span>
+                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                            </div>
+                          </li>
+                        </ol>
+                        
+                        <h3>Configure</h3>
+                        <p>
+                          The apiman distribution comes pre-configured with everything you should need to get started.
+                          Please see the User Guide for information about how to change apiman configuration options
+                          if you require more customization.
+                        </p>
+                    </div>
+                    <div class="col-lg-5" style="">
+                      <h3>Or simply try this...</h3>
+                      <pre class="code-block">
 mkdir ~/apiman-1.2.1.Final
 cd ~/apiman-1.2.1.Final
 curl http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip -o wildfly-9.0.2.Final.zip
@@ -176,8 +176,8 @@ unzip wildfly-9.0.2.Final.zip
 unzip -o apiman-distro-wildfly9-1.2.1.Final-overlay.zip -d wildfly-9.0.2.Final
 cd wildfly-9.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml
-		              </pre>
-		            </div>
+                      </pre>
+                    </div>
                 </div>
                 <!-- ========= -->
                 <!-- WildFly 8 -->
@@ -234,45 +234,94 @@ cd wildfly-8.2.0.Final
             <div class="col-lg-10" style="margin-top: 40px;">
                 <h1 class="section-header">Getting Started (Docker)</h1>
                 <p>If you prefer to get started by using the apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#docker-wf9" role="tab" data-toggle="tab">WildFly 9</a></li>
+                  <li><a href="#docker-wf8" role="tab" data-toggle="tab">WildFly 8</a></li>
+                </ul>
             </div>
 
-            <div class="col-lg-7">
-                <h3>Download</h3>
-                <ul>
-                  <li>Use docker to pull the "<a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">apiman WildFly 9</a>" docker image:  <strong>jboss/apiman-wildfly</strong></li>
-                </ul>
-                <h3>Run</h3>
-                <ul>
-                  <li>Use docker to run the "apiman WildFly 9" docker image</li>
-                  <li>
-                    Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
-                    <div class="alert alert-info" style="margin-top: 5px;">
-                       <span class="pficon pficon-info"></span>
-                       We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+            <div class="tab-content">
+                <!-- ========= -->
+                <!-- WildFly 9 -->
+                <!-- ========= -->
+                <div role="tabpanel" class="tab-pane active" id="docker-wf9">
+                    <div class="col-lg-7">
+                        <h3>Download</h3>
+                        <ul>
+                          <li>Use docker to pull the "<a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">apiman WildFly 9</a>" docker image:  <strong>jboss/apiman-wildfly</strong></li>
+                        </ul>
+                        <h3>Run</h3>
+                        <ul>
+                          <li>Use docker to run the "apiman WildFly 9" docker image</li>
+                          <li>
+                            Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
+                            <div class="alert alert-info" style="margin-top: 5px;">
+                               <span class="pficon pficon-info"></span>
+                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                            </div>
+                          </li>
+                        </ul>
+                        <h3>Configure</h3>
+                        <p>
+                          The apiman distribution comes pre-configured with everything you should need to get started.
+                          Please see the User Guide for information about how to change apiman configuration options
+                          if you require more customization.
+                        </p>
+                        <h3>More Info</h3>
+                        <p>
+                          For more information on apiman docker support, including how to extend the image for your own
+                          uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">click here</a>!
+                        </p>
                     </div>
-                  </li>
-                </ul>
-                <h3>Configure</h3>
-                <p>
-                  The apiman distribution comes pre-configured with everything you should need to get started.
-                  Please see the User Guide for information about how to change apiman configuration options
-                  if you require more customization.
-                </p>
-                <h3>More Info</h3>
-                <p>
-                  For more information on apiman docker support, including how to extend the image for your own
-                  uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">click here</a>!
-                </p>
+                    <div class="col-lg-5" style="">
+                      <h3>Or simply try this...</h3>
+                      <pre class="code-block">
+docker pull apiman/on-wildfly9:1.2.1.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly9:1.2.1.Final
+                      </pre>
+                    </div>
+                </div>
+                <!-- ========= -->
+                <!-- WildFly 8 -->
+                <!-- ========= -->
+                <div role="tabpanel" class="tab-pane" id="docker-wf8">
+                    <div class="col-lg-7">
+                        <h3>Download</h3>
+                        <ul>
+                          <li>Use docker to pull the "<a href="https://hub.docker.com/r/apiman/on-wildfly8/" rel="nofollow" target="_blank">apiman WildFly 8</a>" docker image:  <strong>jboss/apiman-wildfly</strong></li>
+                        </ul>
+                        <h3>Run</h3>
+                        <ul>
+                          <li>Use docker to run the "apiman WildFly 8" docker image</li>
+                          <li>
+                            Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
+                            <div class="alert alert-info" style="margin-top: 5px;">
+                               <span class="pficon pficon-info"></span>
+                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                            </div>
+                          </li>
+                        </ul>
+                        <h3>Configure</h3>
+                        <p>
+                          The apiman distribution comes pre-configured with everything you should need to get started.
+                          Please see the User Guide for information about how to change apiman configuration options
+                          if you require more customization.
+                        </p>
+                        <h3>More Info</h3>
+                        <p>
+                          For more information on apiman docker support, including how to extend the image for your own
+                          uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">click here</a>!
+                        </p>
+                    </div>
+                    <div class="col-lg-5" style="">
+                      <h3>Or simply try this...</h3>
+                      <pre class="code-block">
+docker pull apiman/on-wildfly8:1.2.1.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly8:1.2.1.Final
+                      </pre>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-lg-5" style="">
-              <h3>Or simply try this...</h3>
-              <pre class="code-block">
-docker pull jboss/apiman-wildfly
-docker run -it -p 8080:8080 -p 8443:8443 jboss/apiman-wildfly:1.2.1.Final
-              </pre>
-            </div>
-
         </div>
     
         <footer role="contentinfo">
