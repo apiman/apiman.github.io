@@ -9,7 +9,7 @@ module Jekyll
 
       a_elems = document.xpath('.//a').reduce([]) do |accum, link|
         link.attributes.select { |attr| attr.name == 'href' }
-                       .reject { |attr| internalRegex.match(URI(attr.value).host) }
+                       .reject { |attr| URI(attr.value).host.nil? || internalRegex.match(URI(attr.value).host) }
                        .each { |l| accum << link }
         accum
       end
