@@ -4,7 +4,9 @@ title:  "Plugins - Not Just For Policies Anymore"
 date:   2015-07-24 14:10:10
 author: eric_wittmann
 categories: api-manager api-gateway plugins development maven
+newUrl: 2015-07-24-plugin-components-redux
 ---
+
 As you may know, apiman has long supported custom policies provided by users.  If you
 aren't familiar with apiman plugins, you can find more about them by [clicking here](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html).
 
@@ -85,7 +87,7 @@ of something, plugins are now the way to go!
 
 
 ## Example Scenario
-There is a lot you can do now taht we support plugin components.  But it's probably
+There is a lot you can do now that we support plugin components.  But it's probably
 easiest to explain and understand if we take a simple example scenario.
 
 ### Use mongodb to store Gateway configuration information

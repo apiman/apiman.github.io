@@ -4,6 +4,7 @@ title:  "CORS? Of Course!"
 date:   2015-07-02 15:00:00 +0100
 author: marc_savy
 categories: security plugin policy cors
+newUrl: 2016-01-22-cors-redux
 ---
 
 If you're looking to define http://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] policy that should be perfect for the job.
@@ -47,12 +48,15 @@ For the purposes of this blogpost we'll contrive a scenario that allows us to de
 If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend service for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
 ```ShellSession
-cd ~/apiman-1.1.3.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.1.3.Final
 mvn clean install
 mvn wildfly:deploy
 ```
 
-Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!]. Create an *Organization* called *_Foo_*, then create a *Service* called *_Bar_*. Set your Service's implementation URL to be `http://127.0.0.1:8080/services/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *Make this service public*.
+Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!]. Create an *Organization* called *_Foo_*, then create a *Service* called *_Bar_*. Set your Service's implementation URL to be `http://127.0.0.1:8080/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *Make this service public*.
 
 Next, move to the *Policies* tab, click *_Add Policy_* and select *CORS Policy* from the dropdown list.
 

@@ -4,7 +4,9 @@ title:  "Authorization: good god, what is it good for?"
 date:   2015-05-08 13:15:15
 author: eric_wittmann
 categories: authorization authentication policy
+newUrl: 2015-05-08-authorization-redux
 ---
+
 Quite a bit, actually.  :)
 
 I want to talk about how Authorization currently works in apiman, because it's

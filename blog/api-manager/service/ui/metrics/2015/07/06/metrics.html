@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>At long last, Metrics R Us!</title>
+  <title>At long last, Metrics R Us! | apiman Open Source API Management</title>
   <meta name="description" content="A core feature of any good API Management solution is the recording of and reporting oninteresting metrics related to API requests.  Because apiman acts as a...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,7 +130,134 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, service, ui, and metrics</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p>A core feature of any good API Management solution is the recording of and reporting on
 interesting metrics related to API requests.  Because apiman acts as a central Gateway
 for all managed API traffic, it is the perfect location to record information about each
@@ -248,7 +376,7 @@ usage metrics might look like for a typical service:</p>
 <p>As you can see, this is highly valuable information to have.  We only have a couple of
 different categories of metrics exposed via the API and UI right now - so this is
 your opportunity to come tell us what you’d like to see!  Join the apiman metrics
-conversation on our <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">mailing list</a>
+conversation on our <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" target="_blank" rel="nofollow">mailing list</a>
 or <a href="http://www.apiman.io/latest/chat.html">IRC channel</a>.</p>
 
 <p>/post</p>
@@ -266,14 +394,14 @@ or <a href="http://www.apiman.io/latest/chat.html">IRC channel</a>.</p>
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
-                        <a href="disclosure.html">Open Source Disclosure</a>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

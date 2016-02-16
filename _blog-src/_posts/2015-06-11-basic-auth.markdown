@@ -4,6 +4,7 @@ title:  "Adding a BASIC Authentication Policy to a Managed Service in JBoss apim
 date:   2015-06-11 11:00:00
 author: len_dimaggio
 categories: authentication policy
+newUrl: 2015-06-11-basic-auth
 ---
 
 ![apiman logo](/blog/images/2015-06-11/1-apiman_logo.png)

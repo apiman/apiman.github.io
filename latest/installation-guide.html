@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="resources/images/favicon.ico">
-    <title>apiman :: installation guide</title>
+    <title>Installation Guide | apiman Open Source API Management</title>
 
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.1.9.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.1.9.Final" rel="stylesheet">
-    <link href="resources/css/apiman-guide.css?v=1.1.9.Final" rel="stylesheet">
-    <link href="resources/css/codehighlight.css?v=1.1.9.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.2.1.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.2.1.Final" rel="stylesheet">
+    <link href="resources/css/apiman-guide.css?v=1.2.1.Final" rel="stylesheet">
+    <link href="resources/css/codehighlight.css?v=1.2.1.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,6 +26,9 @@
     <script>
         $(document).ready(function() {
             $( "#guide" ).load("installation-guide/index.html", function() {
+                
+                $( 'h1.title' ).append('<a href="installation-guide/apiman-installation-guide.pdf" style="font-size: 16px" class="pull-right"><i class="fa fa-file-pdf-o fa-fw"></i>Download as PDF</a>');
+                
                 if (window.location.hash) {
                     var hash = location.hash.replace('#', '');
                     var elem = $("body").find("#" + hash);
@@ -50,8 +53,8 @@
   </head>
   <body class="installation-guide guide">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
       <div class="container">
@@ -71,19 +74,19 @@
             <li class="top-menu-item menu-item"><a href="roadmap.html">Roadmap</a></li>
             <li class="top-menu-item menu-item"><a href="/blog">Blog</a></li>
             <li class="top-menu-item menu-item dropdown">
-                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li class="menu-item">
-                        <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                        <a href="https://issues.jboss.org/browse/APIMAN" rel="nofollow" target="_blank">Report a Bug</a>
                     </li>
                     <li class="menu-item">
                         <a href="chat.html">Chat on IRC</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                        <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                        <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                     </li>
                     <li class="divider"></li>
                     <li class="menu-item">
@@ -92,7 +95,7 @@
                 </ul>
             </li>
             <li class="top-menu-item menu-item dropdown active">
-                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+                <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li class="menu-item">
                         <a href="tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -116,17 +119,17 @@
                     </li>
                 </ul>
             </li>
-<!--             <li class="top-menu-item menu-item dropdown"> -->
-<!--                 <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Version<b class="caret"></b></a> -->
-<!--                 <ul class="dropdown-menu"> -->
-<!--                     <li class="menu-item"> -->
-<!--                         <a href="/latest">Latest</a> -->
-<!--                     </li> -->
-<!--                     <li class="menu-item disabled"> -->
-<!--                         <a href="/1.1.9.Final">1.1.9.Final</a> -->
-<!--                     </li> -->
-<!--                 </ul> -->
-<!--             </li> -->
+            <li class="top-menu-item menu-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-angle-double-down"></i><span>Latest</span></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item disabled">
+                        <a href="/latest">Latest Version</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../1.1.x/installation-guide.html">Version 1.1.x</a>
+                    </li>
+                </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -154,7 +157,7 @@
                     </div>
                     <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
                         
-                        <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                        <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
                     </div>
                 </div>
                 <nav class="clearfix"></nav>

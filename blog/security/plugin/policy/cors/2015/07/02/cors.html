@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>CORS? Of Course!</title>
+  <title>CORS? Of Course! | apiman Open Source API Management</title>
   <meta name="description" content="If you&#8217;re looking to define CORS policies in your API Management layer, then we have an official plugin policy that should be perfect for the job.For t...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,12 +130,139 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> security, plugin, policy, and cors</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <div class="paragraph">
-<p>If you&#8217;re looking to define <a href="http://www.w3.org/TR/2014/REC-cors-20140116/">CORS policies</a> in your API Management layer, then we have an <a href="https://github.com/apiman/apiman-plugins">official plugin</a> policy that should be perfect for the job.</p>
+<p>If you’re looking to define <a href="http://www.w3.org/TR/2014/REC-cors-20140116/" target="_blank" rel="nofollow">CORS policies</a> in your API Management layer, then we have an <a href="https://github.com/apiman/apiman-plugins" target="_blank" rel="nofollow">official plugin</a> policy that should be perfect for the job.</p>
 </div>
 <div class="paragraph">
-<p>For those <a href="http://enable-cors.org/">unfamiliar with CORS</a>, it&#8217;s a way of precisely defining who and how a remote origin may invoke a service&#8217;s resources. Generally, due to the <a href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin policy</a>, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.</p>
+<p>For those <a href="http://enable-cors.org/" target="_blank" rel="nofollow">unfamiliar with CORS</a>, it’s a way of precisely defining who and how a remote origin may invoke a service’s resources. Generally, due to the <a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="nofollow">same-origin policy</a>, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.</p>
 </div>
 <div class="paragraph">
 <p>However, if we <em>want</em> our resource to be callable by some other, or all, origins, then we need to define a CORS policy.</p>
@@ -143,15 +271,15 @@
 <h2 id="installation">Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman plugins are referenced via their Maven coordinates, and can be installed most easily <a href="http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman">via the apiman Admin UI</a> (or <a href="http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html">REST interfaces</a> if you&#8217;re looking to automate things).</p>
+<p>Apiman plugins are referenced via their Maven coordinates, and can be installed most easily <a href="http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman">via the apiman Admin UI</a> (or <a href="http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html">REST interfaces</a> if you’re looking to automate things).</p>
 </div>
 <div class="paragraph">
-<p>For the <a href="https://github.com/apiman/apiman-plugins/tree/master/cors-policy">CORS plugin</a> <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>, the coordinates are as follows:</p>
+<p>For the <a href="https://github.com/apiman/apiman-plugins/tree/master/cors-policy" target="_blank" rel="nofollow">CORS plugin</a> <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>, the coordinates are as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 50%;" />
+<col style="width: 50%;" />
 </colgroup>
 <thead>
 <tr>
@@ -177,10 +305,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="let-s-give-it-a-go">Let&#8217;s give it a go</h2>
+<h2 id="let-s-give-it-a-go">Let’s give it a go</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For the purposes of this blogpost we&#8217;ll contrive a scenario that allows us to demonstrate a variety of the plugin&#8217;s functionality. However, if your precise use-case isn&#8217;t covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.</p>
+<p>For the purposes of this blogpost we’ll contrive a scenario that allows us to demonstrate a variety of the plugin’s functionality. However, if your precise use-case isn’t covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.</p>
 </div>
 <div class="sect2">
 <h3 id="preparation">Preparation</h3>
@@ -189,13 +317,16 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="ShellSession">cd ~/apiman-1.1.3.Final/wildfly-8.2.0.Final/apiman/quickstarts/echo-service/
+<pre class="CodeRay highlight"><code data-lang="ShellSession">cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.1.3.Final
 mvn clean install
 mvn wildfly:deploy</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Return to the <a href="http://127.0.0.1:8080/apimanui">apiman UI</a> and log in <span class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</span>. Create an <strong>Organization</strong> called <strong><em>Foo</em></strong>, then create a <strong>Service</strong> called <strong><em>Bar</em></strong>. Set your Service&#8217;s implementation URL to be <code><a href="http://127.0.0.1:8080/services/apiman-echo" class="bare">http://127.0.0.1:8080/services/apiman-echo</a></code>, and select <strong><em>Rest</em></strong> as the type. Move to the <strong>Plans</strong> tab and tick <strong>Make this service public</strong>.</p>
+<p>Return to the <a href="http://127.0.0.1:8080/apimanui" target="_blank" rel="nofollow">apiman UI</a> and log in <span class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</span>. Create an <strong>Organization</strong> called <strong><em>Foo</em></strong>, then create a <strong>Service</strong> called <strong><em>Bar</em></strong>. Set your Service’s implementation URL to be <code><a href="http://127.0.0.1:8080/apiman-echo" class="bare" target="_blank" rel="nofollow">http://127.0.0.1:8080/apiman-echo</a></code>, and select <strong><em>Rest</em></strong> as the type. Move to the <strong>Plans</strong> tab and tick <strong>Make this service public</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Next, move to the <strong>Policies</strong> tab, click <strong><em>Add Policy</em></strong> and select <strong>CORS Policy</strong> from the dropdown list.</p>
@@ -204,13 +335,13 @@ mvn wildfly:deploy</code></pre>
 <div class="sect2">
 <h3 id="plugin-settings">Plugin settings</h3>
 <div class="paragraph">
-<p>Let&#8217;s configure the settings as follows:</p>
+<p>Let’s configure the settings as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 20%;">
-<col style="width: 55%;">
+<col style="width: 25%;" />
+<col style="width: 20%;" />
+<col style="width: 55%;" />
 </colgroup>
 <thead>
 <tr>
@@ -226,29 +357,29 @@ mvn wildfly:deploy</code></pre>
 <p><code>true</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>We&#8217;ll not hit the backend if there&#8217;s a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the service whose results would be ignored by the user agent.</p>
+<p>We’ll not hit the backend if there’s a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the service whose results would be ignored by the user agent.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin">Access-Control-Allow-Origin</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin" target="_blank" rel="nofollow">Access-Control-Allow-Origin</a></p></th>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p><code><a href="http://newcastle.local" class="bare">http://newcastle.local</a></code></p>
+<p><code><a href="http://newcastle.local" class="bare" target="_blank" rel="nofollow">http://newcastle.local</a></code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>We&#8217;re going to use cURL to simulate a CORS request from this allowed origin.</p>
+<p>We’re going to use cURL to simulate a CORS request from this allowed origin.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers">Access-Control-Expose-Headers</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers" target="_blank" rel="nofollow">Access-Control-Expose-Headers</a></p></th>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p><code>Response-Counter</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>By default CORS will only allow a set of <a href="http://www.w3.org/TR/cors/#simple-header">simple headers</a> to be exposed in a <em>response</em> to the user agent, so we&#8217;ll set this additional one we want to see.</p>
+<p>By default CORS will only allow a set of <a href="http://www.w3.org/TR/cors/#simple-header" target="_blank" rel="nofollow">simple headers</a> to be exposed in a <em>response</em> to the user agent, so we’ll set this additional one we want to see.</p>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers">Access-Control-Allow-Headers</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers" target="_blank" rel="nofollow">Access-Control-Allow-Headers</a></p></th>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p><code>X-APIMAN-EXCELLENT</code></p>
 </div></div></td>
@@ -257,7 +388,7 @@ mvn wildfly:deploy</code></pre>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods">Access-Control-Allow-Methods</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods" target="_blank" rel="nofollow">Access-Control-Allow-Methods</a></p></th>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p><code>TRACE</code></p>
 </div></div></td>
@@ -266,7 +397,7 @@ mvn wildfly:deploy</code></pre>
 </div></div></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Max-Age">Access-Control-Max-Age</a></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Max-Age" target="_blank" rel="nofollow">Access-Control-Max-Age</a></p></th>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>9001</p>
 </div></div></td>
@@ -277,7 +408,7 @@ mvn wildfly:deploy</code></pre>
 </tbody>
 </table>
 <div class="paragraph">
-<p>After saving you&#8217;ll see it&#8217;s description says something along the lines of:</p>
+<p>After saving you’ll see it’s description says something along the lines of:</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -287,20 +418,20 @@ mvn wildfly:deploy</code></pre>
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Assuming you&#8217;ve saved everything, hit <strong>Publish</strong> and we&#8217;ll be ready to test.</p>
+<p>Assuming you’ve saved everything, hit <strong>Publish</strong> and we’ll be ready to test.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="access-control-to-major-tom">Access Control to Major Tom</h3>
 <div class="paragraph">
-<p>Generally, it&#8217;s the job of the user agent to set the <code>Origin</code> header, such as a browser or mobile client. However, we&#8217;ll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.</p>
+<p>Generally, it’s the job of the user agent to set the <code>Origin</code> header, such as a browser or mobile client. However, we’ll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.</p>
 </div>
 <div class="sect3">
 <h4 id="unwelcome-guests">Unwelcome guests</h4>
 <div class="sect4">
 <h5 id="no-ticket-to-fly">No ticket to fly</h5>
 <div class="paragraph">
-<p>In our first example, we&#8217;ll set an <code>Origin</code> that we didn&#8217;t permit:</p>
+<p>In our first example, we’ll set an <code>Origin</code> that we didn’t permit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -308,19 +439,19 @@ mvn wildfly:deploy</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s what comes back:</p>
+<p>Here’s what comes back:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">CORS: Origin not permitted.</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">headers</span><span class="delimiter">&quot;</span></span> : {
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">Access-Control-Allow-Origin</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">Access-Control-Expose-Headers</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Response-Counter</span><span class="delimiter">&quot;</span></span>
+   <span class="key"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">CORS: Origin not permitted.</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">headers</span><span class="delimiter">"</span></span> : {
+      <span class="key"><span class="delimiter">"</span><span class="content">Access-Control-Allow-Origin</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">Access-Control-Expose-Headers</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Response-Counter</span><span class="delimiter">"</span></span>
    },
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">responseCode</span><span class="delimiter">&quot;</span></span> : <span class="integer">400</span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Authorization</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">failureCode</span><span class="delimiter">&quot;</span></span> : <span class="integer">400</span>
+   <span class="key"><span class="delimiter">"</span><span class="content">responseCode</span><span class="delimiter">"</span></span> : <span class="integer">400</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Authorization</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">failureCode</span><span class="delimiter">"</span></span> : <span class="integer">400</span>
 }</code></pre>
 </div>
 </div>
@@ -331,7 +462,7 @@ mvn wildfly:deploy</code></pre>
 <div class="sect4">
 <h5 id="not-got-the-head-er-for-it">Not got the head(er) for it</h5>
 <div class="paragraph">
-<p>Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we&#8217;ll try to make a request with a header that we&#8217;ve not allowed: <code>X-SECRET</code>.</p>
+<p>Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we’ll try to make a request with a header that we’ve not allowed: <code>X-SECRET</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -344,12 +475,12 @@ mvn wildfly:deploy</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Authorization</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">failureCode</span><span class="delimiter">&quot;</span></span>: <span class="integer">400</span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">responseCode</span><span class="delimiter">&quot;</span></span>: <span class="integer">400</span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">CORS: Requested header not allowed</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">headers</span><span class="delimiter">&quot;</span></span>: {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">Access-Control-Max-Age</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">9001</span><span class="delimiter">&quot;</span></span>
+    <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Authorization</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">failureCode</span><span class="delimiter">"</span></span>: <span class="integer">400</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">responseCode</span><span class="delimiter">"</span></span>: <span class="integer">400</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">CORS: Requested header not allowed</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">headers</span><span class="delimiter">"</span></span>: {
+        <span class="key"><span class="delimiter">"</span><span class="content">Access-Control-Max-Age</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">9001</span><span class="delimiter">"</span></span>
     }
 }</code></pre>
 </div>
@@ -376,7 +507,7 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 <div class="sect4">
 <h5 id="keep-it-simple">Keep it simple</h5>
 <div class="paragraph">
-<p>Let&#8217;s set up a request that finally is playing by the parameters we configured earlier:</p>
+<p>Let’s set up a request that finally is playing by the parameters we configured earlier:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -401,21 +532,21 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 </div>
 </div>
 <div class="paragraph">
-<p>It works: excellent! Here&#8217;s our response body:</p>
+<p>It works: excellent! Here’s our response body:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="json">{
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">method</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">GET</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">resource</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/apiman-echo</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">uri</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">/apiman-echo</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">headers</span><span class="delimiter">&quot;</span></span> : {
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">Host</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">127.0.0.1:8080</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">User-Agent</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">curl/7.37.1</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">Accept</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">*/*</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">Connection</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">keep-alive</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">Cache-Control</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">no-cache</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">Pragma</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">no-cache</span><span class="delimiter">&quot;</span></span>
+  <span class="key"><span class="delimiter">"</span><span class="content">method</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">resource</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">/apiman-echo</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">uri</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">/apiman-echo</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">headers</span><span class="delimiter">"</span></span> : {
+    <span class="key"><span class="delimiter">"</span><span class="content">Host</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">127.0.0.1:8080</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">User-Agent</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">curl/7.37.1</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">Accept</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">*/*</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">Connection</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">keep-alive</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">Cache-Control</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">no-cache</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">Pragma</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">no-cache</span><span class="delimiter">"</span></span>
   }
 }</code></pre>
 </div>
@@ -427,10 +558,10 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 <div class="sect4">
 <h5 id="preflight-checks">Preflight checks</h5>
 <div class="paragraph">
-<p>Let&#8217;s do something a bit more complex that requires a <strong>preflight request</strong>, which is essentially a pre-check to see whether our request is acceptable before attempting it for real. We&#8217;ll set the headers <code>Access-Control-Request-Method</code> to <code>PATCH</code> and <code>Access-Control-Request-Headers</code> to <code>X-APIMAN-EXCELLENT</code>. Again, we&#8217;re using a permitted origin.</p>
+<p>Let’s do something a bit more complex that requires a <strong>preflight request</strong>, which is essentially a pre-check to see whether our request is acceptable before attempting it for real. We’ll set the headers <code>Access-Control-Request-Method</code> to <code>PATCH</code> and <code>Access-Control-Request-Headers</code> to <code>X-APIMAN-EXCELLENT</code>. Again, we’re using a permitted origin.</p>
 </div>
 <div class="paragraph">
-<p>To simulate it using cURL, let&#8217;s do:</p>
+<p>To simulate it using cURL, let’s do:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -467,7 +598,7 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 </div>
 </div>
 <div class="sect1">
-<h2 id="in-conclusion">In conclusion&#8230;&#8203;</h2>
+<h2 id="in-conclusion">In conclusion…​</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We built up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!</p>
@@ -475,15 +606,15 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 </div>
 </div>
 <div id="footnotes">
-<hr>
+<hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> One of our official plugins, the rest of which can be viewed at <a href="https://github.com/apiman/apiman-plugins/" class="bare">https://github.com/apiman/apiman-plugins/</a>. You can build and deploy your plugins publicly or privately in a similar manner
+<a href="#_footnoteref_1">1</a> One of our official plugins, the rest of which can be viewed at <a href="https://github.com/apiman/apiman-plugins/" class="bare" target="_blank" rel="nofollow">https://github.com/apiman/apiman-plugins/</a>. You can build and deploy your plugins publicly or privately in a similar manner
 </div>
 <div class="footnote" id="_footnote_2">
 <a href="#_footnoteref_2">2</a> Use the version corresponding to your selected release of apiman
 </div>
 <div class="footnote" id="_footnote_3">
-<a href="#_footnoteref_3">3</a> For simplicity&#8217;s sake, I suggest using the instructions in the <em>'Or simply try this&#8230;&#8203;'</em> box
+<a href="#_footnoteref_3">3</a> For simplicity’s sake, I suggest using the instructions in the <em>'Or simply try this…​'</em> box
 </div>
 <div class="footnote" id="_footnote_4">
 <a href="#_footnoteref_4">4</a> If you used the quickstart, the defaults are U: admin P: admin123!
@@ -502,14 +633,14 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
-                        <a href="disclosure.html">Open Source Disclosure</a>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

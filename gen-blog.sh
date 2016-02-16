@@ -1,3 +1,3 @@
 #! /bin/sh
 cd _blog-src
-jekyll build
+bundle exec jekyll build

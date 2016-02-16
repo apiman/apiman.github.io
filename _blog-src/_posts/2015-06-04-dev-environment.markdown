@@ -4,7 +4,9 @@ title:  "Setting up your apiman development environment"
 date:   2015-06-04 09:04:45
 author: eric_wittmann
 categories: eclipse development maven
+newUrl: 2015-06-04-dev-environment-redux
 ---
+
 For those of you who might be interested in hacking away at some core apiman code,
 I thought it might be nice to create a reasonably comprehensive step-by-step
 guide.  For the most part everything is straightforward, but there are a copule

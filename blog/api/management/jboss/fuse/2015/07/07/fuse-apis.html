@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Manage Fuse APIs with apiman</title>
+  <title>Manage Fuse APIs with apiman | apiman Open Source API Management</title>
   <meta name="description" content="This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, int...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,17 +130,144 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api, management, jboss, and fuse</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on <a href="http://camel.apache.org">Apache Camel</a>, an implementation of many of the most commonly used enterprise integration patterns (EIP).</p>
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p>This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on <a href="http://camel.apache.org" target="_blank" rel="nofollow">Apache Camel</a>, an implementation of many of the most commonly used enterprise integration patterns (EIP).</p>
 
 <!--more-->
 
 <h1 id="creating-api-provider-in-jboss-fuse">Creating API provider in JBoss Fuse</h1>
 
-<p>The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the <a href="http://www.jboss.org/products/fuse/developer-materials/#!project=fuse">developer materials</a> and other <a href="http://www.jboss.org/products/fuse/resources/">resources</a> at jboss.org.</p>
+<p>The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the <a href="http://www.jboss.org/products/fuse/developer-materials/#!project=fuse" target="_blank" rel="nofollow">developer materials</a> and other <a href="http://www.jboss.org/products/fuse/resources/" target="_blank" rel="nofollow">resources</a> at jboss.org.</p>
 
 <h3 id="installation">Installation</h3>
-<p>To obtain a distribution of JBoss Fuse please visit the JBoss Fuse <a href="http://www.jboss.org/products/fuse/download/">download page</a>.
+<p>To obtain a distribution of JBoss Fuse please visit the JBoss Fuse <a href="http://www.jboss.org/products/fuse/download/" target="_blank" rel="nofollow">download page</a>.
 Installation of JBoss Fuse is very simple, as the only thing you need to do is to unzip the distribution, e.g.</p>
 
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">unzip jboss-fuse-full-6.2.0.redhat-133.zip</code></pre></div>
@@ -180,15 +308,15 @@ Date: Tue, 07 Jul 2015 22:17:13 GMT
 Server: Jetty(8.1.17.v20150415)
 Transfer-Encoding: chunked
 
-<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span>
-<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://rest.fabric.quickstarts.fabric8.io/&quot;</span><span class="nt">&gt;</span>
+<span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"http://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ns0:id&gt;</span>123<span class="nt">&lt;/ns0:id&gt;</span>
     <span class="nt">&lt;ns0:name&gt;</span>John<span class="nt">&lt;/ns0:name&gt;</span>
 <span class="nt">&lt;/ns0:Customer&gt;</span></code></pre></div>
 
 <h1 id="configure-apiman-to-manage-fuse-endpoint">Configure apiman to manage Fuse endpoint</h1>
 
-<p>To install the latest version of apiman follow this <a href="http://www.apiman.io/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of <a href="http://www.wildfly.org/">Wildly 8</a> server.</p>
+<p>To install the latest version of apiman follow this <a href="http://www.apiman.io/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of <a href="http://www.wildfly.org/" target="_blank" rel="nofollow">Wildly 8</a> server.</p>
 
 <p>After completing the installation, start apiman by executing the following command from <code>&lt;wildfly&gt;/bin</code> folder:</p>
 
@@ -244,8 +372,8 @@ X-RateLimit-Limit: 5
 X-RateLimit-Remaining: 4
 X-RateLimit-Reset: 57
 
-<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span>
-<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://rest.fabric.quickstarts.fabric8.io/&quot;</span><span class="nt">&gt;</span>
+<span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
+<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"http://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ns0:id&gt;</span>123<span class="nt">&lt;/ns0:id&gt;</span>
     <span class="nt">&lt;ns0:name&gt;</span>John<span class="nt">&lt;/ns0:name&gt;</span>
 <span class="nt">&lt;/ns0:Customer&gt;</span></code></pre></div>
@@ -270,15 +398,15 @@ X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 8
 
 <span class="o">{</span>
-    <span class="s2">&quot;failureCode&quot;</span>: 10005, 
-    <span class="s2">&quot;headers&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;X-RateLimit-Limit&quot;</span>: <span class="s2">&quot;5&quot;</span>, 
-        <span class="s2">&quot;X-RateLimit-Remaining&quot;</span>: <span class="s2">&quot;0&quot;</span>, 
-        <span class="s2">&quot;X-RateLimit-Reset&quot;</span>: <span class="s2">&quot;8&quot;</span>
+    <span class="s2">"failureCode"</span>: 10005, 
+    <span class="s2">"headers"</span>: <span class="o">{</span>
+        <span class="s2">"X-RateLimit-Limit"</span>: <span class="s2">"5"</span>, 
+        <span class="s2">"X-RateLimit-Remaining"</span>: <span class="s2">"0"</span>, 
+        <span class="s2">"X-RateLimit-Reset"</span>: <span class="s2">"8"</span>
     <span class="o">}</span>, 
-    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Rate limit exceeded.&quot;</span>, 
-    <span class="s2">&quot;responseCode&quot;</span>: 429, 
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;Other&quot;</span>
+    <span class="s2">"message"</span>: <span class="s2">"Rate limit exceeded."</span>, 
+    <span class="s2">"responseCode"</span>: 429, 
+    <span class="s2">"type"</span>: <span class="s2">"Other"</span>
 <span class="o">}</span></code></pre></div>
 
 
@@ -295,14 +423,14 @@ X-RateLimit-Reset: 8
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
-                        <a href="disclosure.html">Open Source Disclosure</a>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

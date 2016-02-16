@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Microservices Architecture Day Appearance</title>
+  <title>Microservices Architecture Day Appearance | apiman Open Source API Management</title>
   <meta name="description" content="I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our sof...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,21 +130,27 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> microservices, conference, and talk</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <div class="paragraph">
-<p>I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within <a href="http://www.fabric8.io">Fabric8</a>. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.</p>
+<p>I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within <a href="http://www.fabric8.io" target="_blank" rel="nofollow">Fabric8</a>. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.</p>
 </div>
 <div class="paragraph">
 <p>Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.</p>
 </div>
 <div class="paragraph">
-<p>So, if you&#8217;re interested in understanding the value API management can have in a microservices architecture; please, read on!</p>
+<p>So, if you’re interested in understanding the value API management can have in a microservices architecture; please, read on!</p>
 </div>
 <div class="sect1">
 <h2 id="services-services-everywhere">Services, services, everywhere!</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <a href="http://www.kubernetes.io">microservices architecture</a> encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX&#8217;s <em>do one job and do it well</em> philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice&#8217;s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.</p>
+<p>A <a href="http://www.kubernetes.io" target="_blank" rel="nofollow">microservices architecture</a> encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX’s <em>do one job and do it well</em> philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice’s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.</p>
 </div>
 </div>
 </div>
@@ -154,10 +161,10 @@
 <p>A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on <em>each</em> of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.</p>
+<p>It’s quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on <em>each</em> of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.</p>
 </div>
 <div class="paragraph">
-<p>Instead, we can drastically improve the situation by using apiman to relieve individual services of that burden; simply configure and manage those tasks in a single, well-known location. We register our APIs with apiman, apply appropriate policies, and route public traffic through the gateway. We leave apiman to deal with these common problems, and let the microservice&#8217;s developers focus on their core task, rather than burning time on ancillary concerns.</p>
+<p>Instead, we can drastically improve the situation by using apiman to relieve individual services of that burden; simply configure and manage those tasks in a single, well-known location. We register our APIs with apiman, apply appropriate policies, and route public traffic through the gateway. We leave apiman to deal with these common problems, and let the microservice’s developers focus on their core task, rather than burning time on ancillary concerns.</p>
 </div>
 </div>
 </div>
@@ -165,16 +172,16 @@
 <h2 id="fickle-business-requirements">Fickle business requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Access to APIs often has business requirements which are independent of the core functionality the service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Quite aside from the microservices <em>faux pas</em> of contaminating a service with external business logic, we generally want to avoid this situation, as business requirements tend to change rapidly in response to events which are unrelated to the service&#8217;s purpose.</p>
+<p>Access to APIs often has business requirements which are independent of the core functionality the service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Quite aside from the microservices <em>faux pas</em> of contaminating a service with external business logic, we generally want to avoid this situation, as business requirements tend to change rapidly in response to events which are unrelated to the service’s purpose.</p>
 </div>
 <div class="paragraph">
-<p>For instance, marketing decide that the service is so popular that they&#8217;re going to offer two levels of access a <em>gold plan</em> and a <em>silver plan</em>; one of which allows 1000 requests per minute, the other 500. The developers trudge off and implement this in their service. Six months later, they decide they want to change this to bandwidth limits, and the <em>silver plan</em> should be able to do only <em>GET</em> requests. The developers of a variety of services are taken off their existing tasks to implement these changes.</p>
+<p>For instance, marketing decide that the service is so popular that they’re going to offer two levels of access a <em>gold plan</em> and a <em>silver plan</em>; one of which allows 1000 requests per minute, the other 500. The developers trudge off and implement this in their service. Six months later, they decide they want to change this to bandwidth limits, and the <em>silver plan</em> should be able to do only <em>GET</em> requests. The developers of a variety of services are taken off their existing tasks to implement these changes.</p>
 </div>
 <div class="paragraph">
-<p>Shifting business requirements are a natural part the software industry, however, the implementation burden is amplified in a microservices architecture. Thankfully, we can delegate that workload to our API Management solution, and even better, with the apiman UI it&#8217;s possible for non-technical people to create and manage the entire process. This is excellent from both standpoints, as the developers can concentrate on their core tasks, and the business people can take direct ownership and responsibility for implementing their policies; the two domains are kept entirely separate.</p>
+<p>Shifting business requirements are a natural part the software industry, however, the implementation burden is amplified in a microservices architecture. Thankfully, we can delegate that workload to our API Management solution, and even better, with the apiman UI it’s possible for non-technical people to create and manage the entire process. This is excellent from both standpoints, as the developers can concentrate on their core tasks, and the business people can take direct ownership and responsibility for implementing their policies; the two domains are kept entirely separate.</p>
 </div>
 <div class="paragraph">
-<p>Naturally, there will be cases where the in-built policies don&#8217;t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we&#8217;ve <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">written a number of guides</a> <a href="http://java.dzone.com/articles/customizing-jboss-apiman">on the topic</a>. It&#8217;s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for <a href="http://www.apiman.io/latest/user-guide.html#_plugins">non-technical people to drive</a>.</p>
+<p>Naturally, there will be cases where the in-built policies don’t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we’ve <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">written a number of guides</a> <a href="http://java.dzone.com/articles/customizing-jboss-apiman" target="_blank" rel="nofollow">on the topic</a>. It’s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for <a href="http://www.apiman.io/latest/user-guide.html#_plugins">non-technical people to drive</a>.</p>
 </div>
 </div>
 </div>
@@ -193,7 +200,7 @@
 <p>If we want to determine the value of a service to our organisation, then we need some objective metrics to determine <em>how</em> it is being used and whether it is performing as well as we hoped. Ideally, metrics should be collected in a manner that is consistent amongst all services to ensure that comparisons can be made fairly. The apiman gateway is in a unique position to collect lots of interesting data; siting at the transit point between the outside world and the services being offered. We collect, amongst other things, timing information; round-trip latencies; detailed error information (error codes, error output); application, service and organisation IDs. These can be analysed to produce a rich set of information which you can use to characterise the behaviour (or misbehaviour) of your services, including how external applications are interacting with them.</p>
 </div>
 <div class="paragraph">
-<p>Metrics collection, analysis and visualisation is an area we&#8217;re actively working hard on: in the community we&#8217;re looking to provide interesting opportunities to tie in with popular open source data-sinks and visualisers, whilst in integrated environments, we look to play well with native metrics collection infrastructure.</p>
+<p>Metrics collection, analysis and visualisation is an area we’re actively working hard on: in the community we’re looking to provide interesting opportunities to tie in with popular open source data-sinks and visualisers, whilst in integrated environments, we look to play well with native metrics collection infrastructure.</p>
 </div>
 </div>
 </div>
@@ -201,7 +208,7 @@
 <h2 id="papers-please">Papers, please</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You may have lots of services to offer, but unless people can find them, they won&#8217;t know about how useful they are. Hence, it&#8217;s important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we also make it easy to integrate into any other registry, such as Fabric8&#8217;s.</p>
+<p>You may have lots of services to offer, but unless people can find them, they won’t know about how useful they are. Hence, it’s important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we also make it easy to integrate into any other registry, such as Fabric8’s.</p>
 </div>
 </div>
 </div>
@@ -217,9 +224,9 @@
 </div>
 </div>
 <div id="footnotes">
-<hr>
+<hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins">official plugin policies</a>
+<a href="#_footnoteref_1">1</a> See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins" target="_blank" rel="nofollow">official plugin policies</a>
 </div>
 </div>
   </article>
@@ -235,14 +242,14 @@
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
-                        <a href="disclosure.html">Open Source Disclosure</a>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>

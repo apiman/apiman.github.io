@@ -4,6 +4,7 @@ title:  "An Impatient New User's Introduction to API Management with JBoss apima
 date:   2015-01-09 09:15:00
 author: len_dimaggio
 categories: introduction overview
+newUrl: 2015-01-09-impatient-new-user-redux
 ---
 
 Software application development models are evolutionary things. New technologies are always being created

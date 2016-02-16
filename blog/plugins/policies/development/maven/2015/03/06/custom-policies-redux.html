@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
+  <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
+  <title>Customizing JBoss apiman Through Policy Plugins | apiman Open Source API Management</title>
+  <meta name="description" content="This is the second in a series of articles exploring API management with JBoss apiman. The first articlewas a general introduction to apiman for impatient us...">
+
+  <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+  <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.1.9.Final" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.1.9.Final" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/blog/css/highlight.css" rel="stylesheet">
+  <link href="/blog/css/main.css" rel="stylesheet">
+  <link href="/blog/css/coderay-asciidoctor.css" rel="stylesheet">
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
+  <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-56678850-1', 'auto');
+              ga('send', 'pageview');
+      });
+  </script>
+
+  <link rel="canonical" href="http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html">
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+</head>
+
+  <body class="blog">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.apiman.io/latest/index.html">apiman</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/index.html">Overview</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/download.html">Download</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
+        <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/contributors.html">Contributors List</a>
+                </li>
+            </ul>
+        </li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
+                </li>
+            </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+    <div class="container" id="blog">
+      <div class="blog-content">
+        
+
+<div class="post">
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Customizing JBoss apiman Through Policy Plugins</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 6, 2015</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/ldimaggi">Len DiMaggio</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> plugins, policies, development, and maven</span>
+  </header>
+
+
+  
+
+  
+    <!-- New Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html
+              
+        
+              
+              
+        
+              
+              
+        
+        ">older revision</a>.
+    </p>
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p>This is the second in a series of articles exploring API management with JBoss apiman. The first article
+was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
+created users and organizations, and APIs, policies, contracts, and client apps. In this article,
+we’ll take the first step toward customizing apiman by creating new plugins to implement API policies.</p>
+
+<!--more-->
+
+<p>The major new feature added to release 1.0.2 of apiman <a href="http://www.apiman.io/">http://www.apiman.io/</a> is the ability to extend its features through a custom plugin framework. Since policies perform the most important apiman runtime operations, plugins that enable you to create new policies are the first type of plugins to be supported.</p>
+
+<p>In this article, we’ll examine all the steps that you must perform to create a new policy plugin, and then import it into apiman and configure an API to put it into use.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>For this article, we’ll assume that you have completed all the steps in the first article in this series. The first article guides even the most impatient user through installing and using apiman.</p>
+
+<h2 id="accessing-the-example-plugins">Accessing the Example Plugins</h2>
+
+<p>Like all JBoss software, apiman provides functioning example code that you can use as a starting point for your own plugins. The easiest way to create and package an apiman is as a standard maven project packaged as a .war file.</p>
+
+<p>To download a copy of the example plugins, execute this git command:</p>
+
+<pre><code>git clone https://github.com/apiman/apiman-plugins
+</code></pre>
+
+<p>When the git clone operation completes, you’ll have the source code for multiple example plugins. The exact set of plugins that you have downloaded may change, depending on when you download them, as more examples are always being added. For the purposes of this article, we’ll focus on the “config-policy” example plugin. This plugin demonstrates how a plugin can be used to set the value of properties in a message being processed by an API. Specifically, this plugin defines properties in the request and response headers and enables you to set their values to “true.”</p>
+
+<h2 id="requirements-for-a-plugin-implementation">Requirements for a Plugin Implementation</h2>
+
+<p>The easiest way that an apiman policy plugin can be build and packaged is as a standard maven project packaged as a .war file. There are just a few modifications that are required to convert a .war into a plugin.</p>
+
+<p>Let’s take a closer look at the files and directories that comprise the apiman config-policy plugin, and the changes that are needed to implement a plugin:</p>
+
+<pre><code>├---pom.xml
+└---src
+└---main
+├---apiman
+│  ├---plugin.json
+│  └---policyDefs
+│    ├---config-policyDef.json
+│    └---schemas
+│  └---config-policyDef.schema
+└---java
+└---io
+└---apiman
+└---plugins
+└---config_policy
+├---ConfigBean.java
+└---ConfigPolicy.java
+</code></pre>
+
+<p>The most obvious difference is the addition of the “apiman” directory. This directory is used to contain the configuration files for the plugin. (In other words, the files that make the project a plugin.) The only project-wide configuration change that you have to make is to modify the plugin’s maven pom.xml file to include the apiman directory when the project is built. The following lines are added to the plugin’s pom.xml file:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resource&gt;</span>  
+    <span class="nt">&lt;directory&gt;</span>src/main/apiman<span class="nt">&lt;/directory&gt;</span>  
+    <span class="nt">&lt;targetPath&gt;</span>META-INF/apiman<span class="nt">&lt;/targetPath&gt;</span>  
+    <span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>  
+<span class="nt">&lt;/resource&gt;</span></code></pre></div>
+
+<p>The result of these statements in the pom.xml file is that the contents of the apiman directory are included in the project build’s META-INF directory. (We’ll take a look at this later when we build the plugin project.) Setting filtering to true enables maven property expansion during the creation of the plugin war file.
+Configuration files for the plugin are contained in the apiman directory. The primary configuration file is the “plugin.json” file. This file is required for all apiman plugins, regardless of the plugin type. The meta-data contained in this file describes the plugin and is displayed in the API Manager UI.</p>
+
+<p>Since our example is contributing a policy, it must contain a JSON file that defines the policy. This JSON file is contained in the apiman/policyDefs directory and is named “config-policyDef.json.” This file defines the following fields for the policy:</p>
+
+<ul>
+  <li><em>id</em> - A unique identifier for the policy</li>
+  <li><em>name</em> - A user friendly (in other words, a human readable) name for the policy. This policy name is displayed in the API Manager UI</li>
+  <li><em>description</em> - A description of the policy</li>
+  <li><em>policyImpl</em> - This is the fully qualified classname name of the Java class that actually implements the policy. This value must be properly formatted to include information about the plugin, including placeholders for maven properties, for example, project version.</li>
+  <li><em>icon</em> - This is the name of a Font Awesome icon <a href="http://fontawesome.github.io/Font-Awesome/" target="_blank" rel="nofollow">http://fortawesome.github.io/Font-Awesome/</a> that is displayed for the Policy in the API Manager UI.</li>
+  <li><em>formType</em> - The type of policy configuration UI form. Our example uses JsonSchema.</li>
+  <li><em>form</em> - This is a relative path to the policy configuration UI form contained in the plugin. Our examples uses the JSON Schema that defines the configuration data format. (More on this file in a minute.</li>
+</ul>
+
+<p>In our example, the config-policyDef.json looks like this:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">"id"</span> <span class="p">:</span> <span class="s2">"config-policy"</span><span class="p">,</span>
+  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Config Policy"</span><span class="p">,</span>
+  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"A policy used to showcase policy configuration."</span><span class="p">,</span>
+  <span class="nt">"policyImpl"</span> <span class="s2">"plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy"</span><span class="p">,</span>
+  <span class="nt">"icon"</span> <span class="p">:</span> <span class="s2">"sliders"</span><span class="p">,</span>
+  <span class="nt">"formType"</span> <span class="p">:</span> <span class="s2">"JsonSchema"</span><span class="p">,</span>
+  <span class="nt">"form"</span> <span class="p">:</span> <span class="s2">"schemas/config-policyDef.schema"</span>
+<span class="p">}</span></code></pre></div>
+
+<p>We mentioned that since our example uses the JSON schema <a href="http://json-schema.org/documentation.html" target="_blank" rel="nofollow">http://json-schema.org/documentation.html</a>, we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy’s JSON schema defines two properties: requestHeader and responseHeader.</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>  
+  <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Configure HTTP Headers"</span><span class="p">,</span>
+  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end API."</span><span class="p">,</span>  
+  <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>  
+  <span class="nt">"properties"</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">"requestHeader"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Request Header"</span><span class="p">,</span>
+    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
+   <span class="p">},</span>
+   <span class="nt">"responseHeader"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Response Header"</span><span class="p">,</span>
+    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>That finishes the description of the policy’s configuration files. To complete the policy plugin, the example also requires the Java implementation for the policy itself. The policy implementation is contained in the src/main/java/io/apiman/plugins/config_policy/ConfigPolicy.java file. The policy is very simple as it merely appends a header to the http request and response.</p>
+
+<p>Java policy classes must implement the apiman IPolicy interface. This example takes that a step further by actually extending the io.apiman.gateway.engine.policies.AbstractMappedPolicy class. By doing so, the policy Java code can take advantage of the AbstractMappedPolicy’s class use of the Jackson (https://github.com/FasterXML/jackson) JSON parser to parse the policy configuration data into a Java bean. (In this example, the bean is implemented in  src/main/java/io/apiman/plugins/config_policy/ConfigBean.java.) If the policy implemented the IPolicy interface, instead of extending AbstractMappedPolicy, then the policy Java class would have to implement its own parser.</p>
+
+<h2 id="building-the-plugin-and-installing-it-into-the-maven-repo">Building the Plugin and Installing it into the Maven Repo</h2>
+
+<p>Building the plugin with maven is easy. Just execute this command from the directory that contains the plugin’s pom.xml file.</p>
+
+<pre><code>mvn install
+</code></pre>
+
+<p>In case you’re wondering why, we’re installing the plugin into the maven repo. The answer is simply that in the current release of apiman, the only supported install path is from the maven repo. Future releases of apiman will likely support additional installation paths.</p>
+
+<h2 id="installing-a-plugin-into-apiman">Installing a Plugin into apiman</h2>
+
+<p>In apiman, a policy plugin, once installed, is available on a system-wide basis. Accordingly, plugins can only be installed by an admin user. After you login as admin, you’ll see this in the admin UI:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-1.png" alt="System Administration" /></p>
+
+<p>After selecting “Manage Plugins,” you’ll see a screen that looks like this:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-2.png" alt="Plugins" /></p>
+
+<p>And, if you then select “Add Plugin,” you’ll see this screen:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-3.png" alt="Add Plugin" /></p>
+
+<p>The GroupId, ArtifactId, and Version information is all available in the example plugin’s pom.xml file:</p>
+
+<ul>
+  <li><em>GroupId</em>: io.apiman.plugins</li>
+  <li><em>ArtifactId</em>: apiman-plugins-config-policy</li>
+  <li><em>Version</em>: 1.0.3-SNAPSHOT</li>
+</ul>
+
+<p>After you enter this information for the plugin and click on “Add Plugin,” you’ll see this displayed in the UI:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-4.png" alt="Plugins" /></p>
+
+<p>Congratulations! The plugin is installed and is ready to be used! Let’s add it to an API and see it in action.</p>
+
+<h2 id="using-the-installed-plugin">Using the Installed Plugin</h2>
+
+<p>First, we have to log out of the admin account in the Admin UI and then log back in as the “serprov” API provider. Then, select our “echo” API, and create a new version of the API, based on the original version of the API:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-6.png" alt="New API Version" /></p>
+
+<p>And, when you add a new policy to the API, you’ll see the example config API that we just installed:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-5.png" alt="Add Policy" /></p>
+
+<p>When you select the Config Policy, you’ll be presented with a dialog where you can specify the values for the two properties defined in the policy:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-7.png" alt="Add Policy" /></p>
+
+<p>Let’s fill in some easy to remember values:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-8.png" alt="Add Policy" /></p>
+
+<p>After adding the policy, you’ll see it displayed in the policies defined for the API:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman-9.png" alt="Add Policy" /></p>
+
+<p>Then publish the API. In order to consume the API, login to the API Manager UI as the client app developer “appdev”, and create a new client app that uses the new API. (We covered the creation of new client apps in detail in the first article in this series)</p>
+
+<p>And when the API is invoked, you’ll see something like this:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman99.png" alt="REST Client" /></p>
+
+<p>And this:</p>
+
+<p><img src="/blog/images/2015-03-06/apiman100.png" alt="REST Client" /></p>
+
+<h2 id="in-conclusion">In Conclusion</h2>
+
+<p>OK, let’s recap. apiman is a rapidly growing and developing project. Each new release brings new features. In release 1.0.2, it became possible for users to contribute custom policies into their apiman installation through the API Manager UI.</p>
+
+  </article>
+
+</div>
+
+      </div>
+      <div class="blog-footer">
+        <footer role="contentinfo">
+    <div id="inner-footer" class="clearfix row">
+        <div id="widget-footer" class="clearfix">
+            <hr>
+            <div class="widget col-sm-6 col-md-6 widget_text">
+                <div class="textwidget">
+                    <p>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
+                    </p>
+                </div>
+            </div>
+            <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+            </div>
+        </div>
+        <nav class="clearfix"></nav>
+    </div>
+</footer>
+
+      </div>
+    </div>
+  </body>
+</html>

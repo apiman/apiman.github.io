@@ -4,6 +4,7 @@ title:  "The JBoss apiman API Manager REST services API"
 date:   2015-05-19 11:00:00
 author: len_dimaggio
 categories: rest api automation
+newUrl: 2015-05-19-rest-api-redux
 ---
 
 In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST services API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.
@@ -37,7 +38,7 @@ cd wildfly-8.2.0.Final
 
 Now that our apiman server is up and running, we can start to access the API Manager REST services API. However, before we start placing calls to services through the REST API, let’s take a look at how the API is organized.
 
-##The Organization of the API
+## The Organization of the API
 
 The documentation for the apiman REST API is available (for free, of course), here: http://www.apiman.io/latest/api-manager-restdocs.html
 
@@ -67,7 +68,7 @@ The services and their endpoints represented in the API are divided into these g
 
 Within each group, GET operations are defined to return information, and GET and POST operations are defined to make changes to apiman elements. Data passed to and returned from services through the API is in the form of JSON along with a return code.
 
-##Accessing Services in the API Manager REST services API
+## Accessing Services in the API Manager REST services API
 
  The best way to learn about the API Manager REST services API is to see it in action. Since these are REST services, it’s easy to access them. For example, we should be able to access the system status service with a simple GET operation at this endpoint:
 
@@ -109,7 +110,7 @@ As we mentioned earlier in this article, the responses returned by calls to the 
 
 Let’s carry on by looking at a more extensive example, where we use the REST API to automate a task that would be tedious if performed in the apiman Management UI.
 
-##A Larger Example
+## A Larger Example
 
 Let’s say that you want to create multiple new organizations. You could of course manually enter these into the apiman Management UI. But, if you have a large number of organizations, for example, one for each of the countries in the EU, or each of the states in the USA, this would be a tedious and error prone task. This is an ideal candidate task for automation with the REST API.
 
@@ -203,6 +204,6 @@ And finally, here are the organizations as displayed in the apiman Management UI
 
 (It’s been a tough year for Boston Bruins’ fans. It’s nice to see the team listed first, even if it’s just an alphabetic list.  ;-)
 
-##In Conclusion
+## In Conclusion
 
 The architecture of the apiman Management UI is that the UI is built on top of a REST API. This architecture makes it possible for you to directly access the services exposed by the API, and enables you to automate the tasks that you perform in the UI.

@@ -4,7 +4,9 @@ title:  "At long last, Metrics R Us!"
 date:   2015-07-06 15:10:22
 author: eric_wittmann
 categories: api-manager service ui metrics
+newUrl: 2015-07-06-metrics-redux
 ---
+
 A core feature of any good API Management solution is the recording of and reporting on
 interesting metrics related to API requests.  Because apiman acts as a central Gateway
 for all managed API traffic, it is the perfect location to record information about each

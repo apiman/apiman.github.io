@@ -4,7 +4,9 @@ title:  "A great way to test your custom apiman policy!"
 date:   2015-05-09 09:07:45
 author: eric_wittmann
 categories: policy junit testing
+newUrl: 2015-05-09-policy-testing-redux
 ---
+
 If you have tried creating your own custom apiman policy, you may have had a little bit of
 difficulty creating useful junit tests for it.  Many policies require various apiman
 runtime components to be available.  It can be super annoying trying to use something like

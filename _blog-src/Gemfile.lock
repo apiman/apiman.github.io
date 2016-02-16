@@ -1,9 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.5.0)
     asciidoctor (1.5.2)
     asciidoctor-diagram (1.3.0.preview.4)
       asciidoctor (~> 1.5.0)
+    ast (2.2.0)
     blankslate (2.1.2.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -42,8 +44,10 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.3.0)
       sass (~> 3.2)
+    jekyll-sitemap (0.9.0)
     jekyll-watch (1.2.1)
       listen (~> 2.7)
+    json_pure (1.8.3)
     kramdown (1.7.0)
     liquid (2.6.2)
     listen (2.10.0)
@@ -51,9 +55,17 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
+    method_source (0.8.2)
+    oga (2.0.0)
+      ast
+      ruby-ll (~> 2.1)
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.11)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     pygments.rb (0.6.3)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
@@ -61,8 +73,12 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.2.3)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     safe_yaml (1.0.4)
     sass (3.4.13)
+    slop (3.6.0)
     timers (4.0.1)
       hitimes
     toml (0.1.2)
@@ -78,3 +94,10 @@ DEPENDENCIES
   coderay
   jekyll (= 2.5.3)
   jekyll-asciidoc (= 1.0.0)
+  jekyll-sitemap (= 0.9.0)
+  json_pure
+  oga (= 2.0.0)
+  pry
+
+BUNDLED WITH
+   1.11.2

@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>A great way to test your custom apiman policy!</title>
+  <title>A great way to test your custom apiman policy! | apiman Open Source API Management</title>
   <meta name="description" content="If you have tried creating your own custom apiman policy, you may have had a little bit ofdifficulty creating useful junit tests for it.  Many policies requi...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +41,13 @@
   </script>
 
   <link rel="canonical" href="http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing.html">
-  <link rel="alternate" type="application/rss+xml" title="apiman blog" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 </head>
 
   <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about"></a>
-      <a class="rhlogo" href="http://www.redhat.com/"></a>
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
@@ -66,7 +67,7 @@
         <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
         <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
@@ -75,10 +76,10 @@
                     <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://twitter.com/apiman_io">Twitter Feed</a>
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">Mailing List</a>
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -87,7 +88,7 @@
             </ul>
         </li>
         <li class="top-menu-item menu-item dropdown">
-            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <a href="https://www.patternfly.org/visual-styles/" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
                     <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
@@ -129,7 +130,134 @@
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> policy, junit, and testing</span>
   </header>
 
-  <article class="post-content" style="margin-top: 20px; font-size: 14px; line-height: 20px">
+
+  
+    <!-- Old Post -->
+    <p class="bg-warning"
+       style="margin-top:15px; padding: 10px;">
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+                http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing-redux.html
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+              
+              
+        
+           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p>
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p>If you have tried creating your own custom apiman policy, you may have had a little bit of
 difficulty creating useful junit tests for it.  Many policies require various apiman
 runtime components to be available.  It can be super annoying trying to use something like
@@ -164,10 +292,10 @@ looks like this:</p>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">apply</span><span class="o">(</span><span class="n">ServiceRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">IPolicyContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">Object</span> <span class="n">config</span><span class="o">,</span>
             <span class="n">IPolicyChain</span><span class="o">&lt;</span><span class="n">ServiceRequest</span><span class="o">&gt;</span> <span class="n">chain</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">request</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;X-MTP-Header&quot;</span><span class="o">,</span> <span class="s">&quot;Hello World&quot;</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;X-Fail-Test&quot;</span><span class="o">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"X-MTP-Header"</span><span class="o">,</span> <span class="s">"Hello World"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">"X-Fail-Test"</span><span class="o">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">IPolicyFailureFactoryComponent</span> <span class="n">failureFactory</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getComponent</span><span class="o">(</span><span class="n">IPolicyFailureFactoryComponent</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-            <span class="n">chain</span><span class="o">.</span><span class="na">doFailure</span><span class="o">(</span><span class="n">failureFactory</span><span class="o">.</span><span class="na">createFailure</span><span class="o">(</span><span class="n">PolicyFailureType</span><span class="o">.</span><span class="na">Other</span><span class="o">,</span> <span class="mi">42</span><span class="o">,</span> <span class="s">&quot;Failure&quot;</span><span class="o">));</span>
+            <span class="n">chain</span><span class="o">.</span><span class="na">doFailure</span><span class="o">(</span><span class="n">failureFactory</span><span class="o">.</span><span class="na">createFailure</span><span class="o">(</span><span class="n">PolicyFailureType</span><span class="o">.</span><span class="na">Other</span><span class="o">,</span> <span class="mi">42</span><span class="o">,</span> <span class="s">"Failure"</span><span class="o">));</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
             <span class="n">chain</span><span class="o">.</span><span class="na">doApply</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
         <span class="o">}</span>
@@ -176,7 +304,7 @@ looks like this:</p>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">apply</span><span class="o">(</span><span class="n">ServiceResponse</span> <span class="n">response</span><span class="o">,</span> <span class="n">IPolicyContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">Object</span> <span class="n">config</span><span class="o">,</span>
             <span class="n">IPolicyChain</span><span class="o">&lt;</span><span class="n">ServiceResponse</span><span class="o">&gt;</span> <span class="n">chain</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">response</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;X-MTP-Response-Header&quot;</span><span class="o">,</span> <span class="s">&quot;Goodbye World&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"X-MTP-Response-Header"</span><span class="o">,</span> <span class="s">"Goodbye World"</span><span class="o">);</span>
         <span class="n">chain</span><span class="o">.</span><span class="na">doApply</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre></div>
@@ -185,7 +313,7 @@ looks like this:</p>
 
 <p>Now that you’ve got your policy, you need a quick and effective way to test it.  I also
 think it’s important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using <a href="http://arquillian.org/">Arquillian</a>
+breakpoints to debug the code.  We explored using <a href="http://arquillian.org/" target="_blank" rel="nofollow">Arquillian</a>
 to configure and publish a service with the custom policy to a running WildFly server.
 It actually works remarkably well, but the overhead of firing up a WildFly server just
 to test a single policy seemed excessive.  That work will likely lead into a separate
@@ -215,22 +343,22 @@ that should be used for the test.</p>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyTestPolicyTest1</span> <span class="kd">extends</span> <span class="n">ApimanPolicyTest</span> <span class="o">{</span>
 
     <span class="nd">@Test</span>
-    <span class="nd">@Configuration</span><span class="o">(</span><span class="s">&quot;{}&quot;</span><span class="o">)</span>
+    <span class="nd">@Configuration</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
         <span class="c1">// Send a test HTTP request to the service (resulting in executing the policy).</span>
-        <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">&quot;/some/resource&quot;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&quot;X-Test-Name&quot;</span><span class="o">,</span> <span class="s">&quot;testGet&quot;</span><span class="o">));</span>
+        <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">"/some/resource"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"X-Test-Name"</span><span class="o">,</span> <span class="s">"testGet"</span><span class="o">));</span>
 
         <span class="c1">// Now do some assertions on the result!</span>
         <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">code</span><span class="o">());</span>
         <span class="n">EchoResponse</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">entity</span><span class="o">(</span><span class="n">EchoResponse</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">&quot;GET&quot;</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getMethod</span><span class="o">());</span>
-        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">&quot;/some/resource&quot;</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getResource</span><span class="o">());</span>
-        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">&quot;testGet&quot;</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;X-Test-Name&quot;</span><span class="o">));</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">"GET"</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getMethod</span><span class="o">());</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">"/some/resource"</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getResource</span><span class="o">());</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">"testGet"</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">"X-Test-Name"</span><span class="o">));</span>
         <span class="c1">// Assert the request header that was added by the policy</span>
-        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;X-MTP-Header&quot;</span><span class="o">));</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">,</span> <span class="n">entity</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">"X-MTP-Header"</span><span class="o">));</span>
         <span class="c1">// Assert the response header was added by the policy</span>
-        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">&quot;Goodbye World&quot;</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&quot;X-MTP-Response-Header&quot;</span><span class="o">));</span>
+        <span class="n">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">(</span><span class="s">"Goodbye World"</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"X-MTP-Response-Header"</span><span class="o">));</span>
     <span class="o">}</span>
 
 <span class="o">}</span></code></pre></div>
@@ -276,12 +404,12 @@ back end service for the test instead of the echo service!  :)</p>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyTestPolicyTest1</span> <span class="kd">extends</span> <span class="n">ApimanPolicyTest</span> <span class="o">{</span>
 
     <span class="nd">@Test</span>
-    <span class="nd">@Configuration</span><span class="o">(</span><span class="s">&quot;{}&quot;</span><span class="o">)</span>
+    <span class="nd">@Configuration</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
     <span class="nd">@BackEndService</span><span class="o">(</span><span class="n">MyCustomBackEndServiceImpl</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
         <span class="c1">// Send a test HTTP request to the service (resulting in executing the policy).</span>
-        <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">&quot;/some/resource&quot;</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">&quot;X-Test-Name&quot;</span><span class="o">,</span> <span class="s">&quot;testGet&quot;</span><span class="o">));</span>
+        <span class="n">PolicyTestResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">send</span><span class="o">(</span><span class="n">PolicyTestRequest</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="n">PolicyTestRequestType</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="s">"/some/resource"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"X-Test-Name"</span><span class="o">,</span> <span class="s">"testGet"</span><span class="o">));</span>
 
         <span class="c1">// Now do some assertions on the result!</span>
         <span class="n">MyCustomBackEndServiceResponseBean</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">entity</span><span class="o">(</span><span class="n">MyCustomBackEndServiceResponseBean</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -299,12 +427,12 @@ back end service for the test instead of the echo service!  :)</p>
         <span class="c1">// Create a valid service response for this request, and then configure it.</span>
         <span class="n">ServiceResponse</span> <span class="n">serviceResponse</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ServiceResponse</span><span class="o">();</span>
         <span class="n">serviceResponse</span><span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
-        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">&quot;OK&quot;</span><span class="o">);</span>
-        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Date&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Server&quot;</span><span class="o">,</span> <span class="s">&quot;apiman.policy-test&quot;</span><span class="o">);</span>
-        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Content-Type&quot;</span><span class="o">,</span> <span class="s">&quot;text/plain&quot;</span><span class="o">);</span>
-        <span class="c1">// Let&#39;s respond with a classic &quot;Hello World&quot; for the response body</span>
-        <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="s">"OK"</span><span class="o">);</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"Date"</span><span class="o">,</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"Server"</span><span class="o">,</span> <span class="s">"apiman.policy-test"</span><span class="o">);</span>
+        <span class="n">serviceResponse</span><span class="o">.</span><span class="na">getHeaders</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"text/plain"</span><span class="o">);</span>
+        <span class="c1">// Let's respond with a classic "Hello World" for the response body</span>
+        <span class="n">String</span> <span class="n">body</span> <span class="o">=</span> <span class="s">"Hello World"</span><span class="o">;</span>
         <span class="n">PolicyTestBackEndServiceResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">PolicyTestBackEndServiceResponse</span><span class="o">(</span><span class="n">serviceResponse</span><span class="o">,</span> <span class="n">body</span><span class="o">);</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">;</span>
     <span class="o">}</span>
@@ -327,14 +455,14 @@ back end service for the test instead of the echo service!  :)</p>
             <div class="widget col-sm-6 col-md-6 widget_text">
                 <div class="textwidget">
                     <p>
-                        Copyright &copy; 2015 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, v2.0</a>.<br> 
-                        <a href="disclosure.html">Open Source Disclosure</a>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>
