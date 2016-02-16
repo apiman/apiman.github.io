@@ -42,7 +42,7 @@ information will be available via a new "View Service Definition" link available
 the consumer's "Service Details" page (the same page that consumers are shown when
 they have searched for a service).  Here's an example:
 
-![Service Details](/blog/images/2015-06-02/service-details.png)
+![Service Details](/blog/images/2015-06-02/api-details.png)
 
 A service consumer can see that there is a service definition they can click on, which
 will give them a ton of information about how to use the service.  In the future, we
@@ -53,7 +53,7 @@ see what to expect.  But for right now, we simply show live documentation about 
 service as described by the Swagger spec definition:
 
 
-![Service Definition](/blog/images/2015-06-02/service-definition.png)
+![Service Definition](/blog/images/2015-06-02/api-definition.png)
 
 
 As always, thanks for making it to the end of my ramblings!

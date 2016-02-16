@@ -5145,7 +5145,7 @@ information will be available via a new “View Service Definition” link avail
 the consumer’s “Service Details” page (the same page that consumers are shown when
 they have searched for a service).  Here’s an example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/service-details.png&quot; alt=&quot;Service Details&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-details.png&quot; alt=&quot;Service Details&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A service consumer can see that there is a service definition they can click on, which
 will give them a ton of information about how to use the service.  In the future, we
@@ -5155,7 +5155,7 @@ We can also allow them to simulate API calls right from the apiman UI - so they 
 see what to expect.  But for right now, we simply show live documentation about the
 service as described by the Swagger spec definition:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/service-definition.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-definition.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As always, thanks for making it to the end of my ramblings!&lt;/p&gt;
 
@@ -5850,6 +5850,6 @@ back end API for the test instead of the echo API!  :)&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing-redux.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 10 Feb 2016 18:14:08 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 17 Feb 2016 10:13:30 -0500</lastBuildDate>
 	</channel>
 </rss>

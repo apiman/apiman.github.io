@@ -455,7 +455,7 @@ And, better still, get involved! Contribute bug reports or feature requests. Wri
 
 ## Downloads Used in this Article
 
-* REST Client [http://restclient.net/](http://restclient.net/) FireFox Add-On - [https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3](https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3)
+* REST Client [http://restclient.net/](http://restclient.net/) FireFox Add-On - [https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3](https://addons.mozilla.org/en-US/firefox/addon/restclient/)
 * Echo service source code - [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
 * apiman 1.0 - [http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
 * WildFly 8.2.0 - [http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip)
