@@ -74,7 +74,7 @@ Since our example is contributing a policy, it must contain a JSON file that def
 * *name* - A user friendly (in other words, a human readable) name for the policy. This policy name is displayed in the API Manager UI
 * *description* - A description of the policy
 * *policyImpl* - This is the fully qualified classname name of the Java class that actually implements the policy. This value must be properly formatted to include information about the plugin, including placeholders for maven properties, for example, project version.
-* *icon* - This is the name of a Font Awesome icon [http://fortawesome.github.io/Font-Awesome/](http://fontawesome.github.io/Font-Awesome/) that is displayed for the Policy in the API Manager UI.
+* *icon* - This is the name of a Font Awesome icon [http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) that is displayed for the Policy in the API Manager UI.
 * *formType* - The type of policy configuration UI form. Our example uses JsonSchema.
 * *form* - This is a relative path to the policy configuration UI form contained in the plugin. Our examples uses the JSON Schema that defines the configuration data format. (More on this file in a minute.
 

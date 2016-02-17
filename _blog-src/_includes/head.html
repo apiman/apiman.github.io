@@ -38,6 +38,16 @@
       });
   </script>
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    {% if page.newUrl %}
+    <link rel="canonical" href="{% for post in site.posts %}
+              {% assign postName = post.path | find_post_by_path %}
+              {% if postName == page.newUrl %}
+                {{ site.url }}{{ site.baseurl }}{{ post.url }}
+              {% endif %}
+        {% endfor %}" />
+    {% else %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 </head>
