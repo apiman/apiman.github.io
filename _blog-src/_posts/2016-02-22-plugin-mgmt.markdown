@@ -222,7 +222,7 @@ And then, rebuild the plugin with this command:
 mvn clean install -DskipTests
 ```
 
-(The “skipTests” directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as it, or you can edit the test in the plugin to also look for a string of “quite true.”)
+(The “skipTests” directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of “quite true.”)
 
 Now, when we access the API again, we’ll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:
 

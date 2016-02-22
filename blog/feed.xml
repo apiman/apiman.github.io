@@ -9,6 +9,317 @@
 		
 		
 			<item>
+				<title>Apiman 1.2 - Improvements to Plugin Management</title>
+				
+				        <dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author>
+				
+				<description>&lt;p&gt;Apiman is not only preconfigured with a rich set of policies that you can use, right out of the box, but, from its earliest releases, apiman has also included a mechanism that you can use to define your own custom policies through plugins. This article describes the improvements introduced in apiman release 1.2.x that enable you to better manage your custom policy plugins.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;policies-the-most-important-part-of-api-management&quot;&gt;Policies, the Most Important Part of API Management&lt;/h3&gt;
+
+&lt;p&gt;In API Management, policies are where the action is. It’s through the application of policies that an API Management system such as apiman performs API governance. All the subsystems in apiman, from the Management API UI to the API Gateway, exist for one ultimate goal; to ensure that API governance is achieved by the application of policies to API requests. In apiman, a policy is a rule, or set of rules that controls responses to API requests. There are multiple types of apiman policies. Some policies allow or block access to APIs based on the IP address of the client application, while others allow or restrict access to specific resources provided by an API, while still others enable you to control or “throttle” the rate at which requests made to an API.&lt;/p&gt;
+
+&lt;h3 id=&quot;apiman-plugin-management-improvements---extending-flexibility&quot;&gt;Apiman Plugin Management Improvements - Extending Flexibility&lt;/h3&gt;
+
+&lt;p&gt;Apiman release 1.2.x adds these new features that enable you to better manage your custom policy plugins:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Uninstalling Policies&lt;/li&gt;
+  &lt;li&gt;Upgrading Policies&lt;/li&gt;
+  &lt;li&gt;Automatically Reloading SNAPSHOT Version Policies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The best way to understand how these features work is to see them in action.&lt;/p&gt;
+
+&lt;h3 id=&quot;uninstalling-a-policy-plugin&quot;&gt;Uninstalling a Policy Plugin&lt;/h3&gt;
+
+&lt;p&gt;Before we can uninstall a policy plugin, we have to install it.&lt;/p&gt;
+
+&lt;p&gt;Apiman is preconfigured with a core set of policy types that can handle many common situations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Authorization - Access to API resources is controlled by user roles&lt;/li&gt;
+  &lt;li&gt;BASIC Authentication - A username/password is required to access an API&lt;/li&gt;
+  &lt;li&gt;Caching - Cache responses from a backend API&lt;/li&gt;
+  &lt;li&gt;Ignored Resources - Paths to API resources that will not be accessible&lt;/li&gt;
+  &lt;li&gt;IP Blacklist - Clients with specific IP address(es) will be blocked from accessing an API&lt;/li&gt;
+  &lt;li&gt;IP Whitelist - Clients with specific IP address(es) will not be blocked from accessing an API (all IP addresses not listed will be blocked)&lt;/li&gt;
+  &lt;li&gt;Limiting - Access to an API is limited by the number of requests in a defined time period (generally used to create a fine-grained limit)&lt;/li&gt;
+  &lt;li&gt;Quota - Access to an API is limited by the number of requests in a defined time period (generally used to create a coarse-grained limit)&lt;/li&gt;
+  &lt;li&gt;Transfer Quota - Similar to a Quota policy, but based on the number of bytes transferred, not the number of requests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These core policy types cannot be uninstalled.&lt;/p&gt;
+
+&lt;p&gt;Apiman is also includes second set of policy types which can be optionally installed as plugins:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CORS - This plugin implements CORS (Cross-origin resource sharing): A method of controlling access to resources outside of an originating domain.&lt;/li&gt;
+  &lt;li&gt;HTTP Security - Provides a policy which allows security-related HTTP headers to be set, which can help mitigate a range of common security vulnerabilities.&lt;/li&gt;
+  &lt;li&gt;JSONP - A plugin that contributes a policy that turns a standard RESTful endpoint into a JSONP compatible endpoint.&lt;/li&gt;
+  &lt;li&gt;Keycloak OAuth - This plugin offers an OAuth2 policy which leverages the Keycloak authentication platform as the identity and access provider.&lt;/li&gt;
+  &lt;li&gt;Log Headers - Offers a simple policy that allows request headers to be added or stripped from the HTTP request (outgoing) or HTTP response (incoming).&lt;/li&gt;
+  &lt;li&gt;XML&amp;lt;-&amp;gt;JSON Transformation - This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The optional plugins are accessed in this administrative page in the apiman Management UI:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_1.png&quot; alt=&quot;Image: Optional Plugins&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To install a policy plugin, click on “Install” - for example, to install the Log Headers Policy:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_2.png&quot; alt=&quot;Image: Log Policy Plugin&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, it’s installed!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_3.png&quot; alt=&quot;Image: Log Policy Plugin Installed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;OK, we installed the policy plugin. Now, let’s uninstall it!&lt;/p&gt;
+
+&lt;p&gt;Uninstalling a policy plugin is as simple as installing it. All you do is select the plugin from the “Manage Plugins” page in the Administrative UI:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_4.png&quot; alt=&quot;Image: Log Policy Plugin Uninstalled &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are a couple of caveats to keep in mind when you uninstall a policy plugin:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First, uninstalling the plugin removes it from the apiman Management UI, but it still remains in use for all APIs in which it was previously configured.&lt;/li&gt;
+  &lt;li&gt;Second, if you want to completely remove the plugin from all APIs in which it was previously configured, you must manually click on each API, Plan, and Client App that uses the policy and remove it. Apiman does not include a single “kill” button to automatically remove all references to a policy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;upgrading-policy-plugins&quot;&gt;Upgrading Policy Plugins&lt;/h3&gt;
+
+&lt;p&gt;In addition to enabling you to create and install your own custom policies, apiman also provides a mechanism to upgrade to new versions of those policies. This is an especially useful feature as, over time, a policy may be upgraded to include bug fixes or new features.&lt;/p&gt;
+
+&lt;p&gt;The best way to illustrate how to upgrade a policy plugin is to follow the process step-by-step.&lt;/p&gt;
+
+&lt;p&gt;For this illustration, we’ll use one of the policy plugins provided in the official apiman plugins git repository ( &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;https://github.com/apiman/apiman-plugins&lt;/a&gt; ) as our custom plugin. Many of the plugins provided in this repository are also available set of “available plugins” packaged with apiman. We’ll use one of the plugins (“test-policy” - it’s a very simple policy that adds a header to the inbound http request) that is not already installed into apiman for this example.&lt;/p&gt;
+
+&lt;p&gt;(Note that in order to follow this example, you will have to have maven and git installed.)&lt;/p&gt;
+
+&lt;p&gt;To download the policy plugins, execute these commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;git clone https://github.com/apiman/apiman-plugins.git
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;cd apiman-plugins
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Before we build the plugins, we have to make one small change. The plugins as downloaded are assigned version numbers that include a -“SNAPSHOT” suffix. We will want to remove that suffix for this example. (Sneak peek: We will restore the suffix later in this article as apiman includes a new feature where “SNAPSHOT” version plugins are automatically reloaded.)&lt;/p&gt;
+
+&lt;p&gt;To make these changes, edit these files, and change the version from “1.2.2-SNAPSHOT” to “1.2.2”:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;./pom.xml
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;test-policy/pom.xml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, to build the plugins, and install them into your local maven repo (at runtime, the apiman API Gateway installs plugins from the local maven “.m2” repo directory), execute this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;mvn install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;OK, our policy plugin is built, let’s add it into the management UI.&lt;/p&gt;
+
+&lt;p&gt;As an administrative user, navigate to the “Manage Plugins” page in the Management UI and select the “Available Plugins” tab, and then, click on the “Add Custom Plugin” button. The following dialog is displayed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_5.png&quot; alt=&quot;Image: Add Custom Plugin &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fill in the details for the “test-policy” plugin. (You can find all this information in the plugin’s “pom.xml” file.) apiman will use this information to locate the policy plugin in your local maven repo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_6.png&quot; alt=&quot;Image: Add Custom Plugin Details &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, after you click on the “Add Plugin” button, the policy plugin is installed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_7.png&quot; alt=&quot;Image: Custom Plugin Added &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice that there are (2) buttons in the “Actions” column of the “Installed Plugins”  table. The button labeled with an “X” enables you to remove the plugin. The button labeled with an up-arrow enables you to upgrade the policy plugin.&lt;/p&gt;
+
+&lt;p&gt;In order for apiman to recognize that a plugin policy has been updated, the plugin version number must change. To change the version number of the test-policy plugin, edit these files, and change the version from “1.2.2” to “1.2.3”:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;./pom.xml
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;test-policy/pom.xml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, to rebuild the plugins, and install them into your local maven repo, execute this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;mvn clean install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy’s upgrade button. Enter the new plugin version number in the dialog that is displayed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_8.png&quot; alt=&quot;Image: Set the Updated Version Number &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, after you perform the upgrade by clicking on the “OK” button, the plugin is upgraded:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_9.png&quot; alt=&quot;Image: View the Updated Version Number &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are a few important things to keep in mind while upgrading policy plugins:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The upgraded version of a policy plugin replaces the previous version.&lt;/li&gt;
+  &lt;li&gt;Plans, APIs, or Client Apps that had previously been configured with the old version of the plugin policy will continue to use that older version. They will not be automatically updated to use the upgraded version of the policy plugin.&lt;/li&gt;
+  &lt;li&gt;New Plans, APIs, or Client Apps that are created after the policy plugin was upgraded will use the new/upgraded version.&lt;/li&gt;
+  &lt;li&gt;If you want to upgrade existing Plans, APIs, or Client Apps to use an upgraded policy plugin, then you will have to manually remove the old policy plugin version and then add the new policy plugin version. The apiman project documentation recommends against doing this unless there is a bug fix or new feature added in a policy plugin upgrade.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;automatically-reloading-snapshot-version-policies&quot;&gt;Automatically Reloading SNAPSHOT Version Policies&lt;/h3&gt;
+
+&lt;p&gt;The final new feature added to Plugin Management in apiman 1.2.x is the automatic reloading of SNAPSHOT version policy plugins.&lt;/p&gt;
+
+&lt;p&gt;When you are developing a custom policy plugin, you may have to uninstall and reinstall the plugin many times while it is being debugged. This can quickly become a time-consuming manual task. Apiman 1.2.x now makes it possible for you avoid this manual installing/re-installing.&lt;/p&gt;
+
+&lt;p&gt;As we’ve just seen, the apiman API Gateway installs policy plugins from your local maven repo. To be more efficient, the API Gateway caches plugins the first time that they are used. If, however, a plugin’s version ends with a “-SNAPSHOT” suffix, then the API Gateway will reload it every time the plugin is used.&lt;/p&gt;
+
+&lt;p&gt;So, by including a “-SNAPSHOT” suffix in your custom policy plugin’s version, you can iterate through changes to the policy plugin  without having to manually uninstall and then install each new version of the plugin.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a look at this in action.&lt;/p&gt;
+
+&lt;p&gt;Since we want to take advantage of the automatic reloading, we must restore the “-SNAPSHOT” suffix to the test-policy custom policy plugin. To make these changes, edit these files, and change the version from “1.2.3” to “1.2.2-SNAPSHOT”:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;./pom.xml
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt;test-policy/pom.xml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, to build the plugins, and install them into your local maven repo, execute this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;mvn clean install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And then add the custom policy plugin in the Management UI:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_10.png&quot; alt=&quot;Image: Add SNAPSHOT Plugin &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, here’s the installed plugin:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-02-22/plugin_mgmt_11.png&quot; alt=&quot;Image: View SNAPSHOT Plugin &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before we can configure the custom policy plugin, we need an API. For this example, we’ll use our old friend, “apiman-echo.” You can download this API from this git repository: &lt;a href=&quot;https://github.com/apiman/apiman-quickstarts&quot;&gt;https://github.com/apiman/apiman-quickstarts&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The steps to build, deploy, and configure this API are available in the first article in this series: &lt;a href=&quot;http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html&quot;&gt;The Impatient New User Guide to apiman&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We’ll use the postman web client to access the API. The first time that we access the API, we’ll see this response (note the text highlighted in green):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;{
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;method&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;GET&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;resource&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;/apiman-echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;uri&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;/apiman-echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n5&quot; name=&quot;n5&quot;&gt;5&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;headers&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n6&quot; name=&quot;n6&quot;&gt;6&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;*/*&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n7&quot; name=&quot;n7&quot;&gt;7&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Cache-Control&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;no-cache&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n8&quot; name=&quot;n8&quot;&gt;8&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;User-Agent&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n9&quot; name=&quot;n9&quot;&gt;9&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Connection&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;keep-alive&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n10&quot; name=&quot;n10&quot;&gt;10&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Test-Policy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;true&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n11&quot; name=&quot;n11&quot;&gt;11&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Postman-Token&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;8808bb68-1c1c-ef97-449d-ab60f620b0e5&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n12&quot; name=&quot;n12&quot;&gt;12&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Host&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;localhost:8080&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n13&quot; name=&quot;n13&quot;&gt;13&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept-Language&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;en-US,en;q=0.8&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n14&quot; name=&quot;n14&quot;&gt;14&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept-Encoding&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;gzip, deflate, sdch&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n15&quot; name=&quot;n15&quot;&gt;15&lt;/a&gt;&lt;/span&gt; },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n16&quot; name=&quot;n16&quot;&gt;16&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;bodyLength&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;null&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n17&quot; name=&quot;n17&quot;&gt;17&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;bodySha1&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n18&quot; name=&quot;n18&quot;&gt;18&lt;/a&gt;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;OK, now, let’s change the policy plugin. In this file: src/main/java/io/apiman/plugins/test_policy/TestPolicy.java&lt;/p&gt;
+
+&lt;p&gt;Change this line from this: request.getHeaders().put(“Test-Policy”, “true”);&lt;/p&gt;
+
+&lt;p&gt;To this: request.getHeaders().put(“Test-Policy”, “quite true”);&lt;/p&gt;
+
+&lt;p&gt;And then, rebuild the plugin with this command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;mvn clean install -DskipTests
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(The “skipTests” directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of “quite true.”)&lt;/p&gt;
+
+&lt;p&gt;Now, when we access the API again, we’ll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;{
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n2&quot; name=&quot;n2&quot;&gt;2&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;method&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;GET&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n3&quot; name=&quot;n3&quot;&gt;3&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;resource&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;/apiman-echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n4&quot; name=&quot;n4&quot;&gt;4&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;uri&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;/apiman-echo&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n5&quot; name=&quot;n5&quot;&gt;5&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;headers&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : {
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n6&quot; name=&quot;n6&quot;&gt;6&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;*/*&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n7&quot; name=&quot;n7&quot;&gt;7&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Cache-Control&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;no-cache&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n8&quot; name=&quot;n8&quot;&gt;8&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;User-Agent&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt; &lt;a href=&quot;#n9&quot; name=&quot;n9&quot;&gt;9&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Connection&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;keep-alive&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;strong&gt;&lt;a href=&quot;#n10&quot; name=&quot;n10&quot;&gt;10&lt;/a&gt;&lt;/strong&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Test-Policy&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;quite true&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n11&quot; name=&quot;n11&quot;&gt;11&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Postman-Token&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;bb900e07-249c-66e4-980a-2c9a70002c45&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n12&quot; name=&quot;n12&quot;&gt;12&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Host&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;localhost:8080&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n13&quot; name=&quot;n13&quot;&gt;13&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept-Language&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;en-US,en;q=0.8&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n14&quot; name=&quot;n14&quot;&gt;14&lt;/a&gt;&lt;/span&gt;   &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;Accept-Encoding&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;gzip, deflate, sdch&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n15&quot; name=&quot;n15&quot;&gt;15&lt;/a&gt;&lt;/span&gt; },
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n16&quot; name=&quot;n16&quot;&gt;16&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;bodyLength&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;null&lt;/span&gt;,
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n17&quot; name=&quot;n17&quot;&gt;17&lt;/a&gt;&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span&gt;bodySha1&lt;/span&gt;&lt;span style=&quot;color:#404&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; : &lt;span style=&quot;color:#088&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n18&quot; name=&quot;n18&quot;&gt;18&lt;/a&gt;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h3&gt;
+
+&lt;p&gt;From its first releases, apiman has provided users with flexibility, including support for adding custom policies through plugins. In the latest release, apiman has expanded on that flexibility by enabling users to uninstall policy plugins, upgrade policy plugins, and automatically reload policy plugins.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: &lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html&quot;&gt;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The “postman” client is available here: &lt;a href=&quot;https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en&quot;&gt;https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="introduction" />
+				
+					<category term="overview" />
+				
+					<category term="plugin" />
+				
+					<category term="management" />
+				
+				<pubDate>Mon, 22 Feb 2016 07:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Apiman 1.2.1 Export and Import</title>
 				
 				        <dc:creator>Len DiMaggio</dc:creator>
@@ -5647,209 +5958,6 @@ Return code = 200
 				<guid isPermaLink="true">http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>A great way to test your custom apiman policy!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;If you have tried creating your own custom apiman policy, you may have had a little bit of
-difficulty creating useful junit tests for it.  Many policies require various apiman
-runtime components to be available.  It can be super annoying trying to use something like
-mockito to create mock versions of everything your policy needs.  Even for simple policies
-you really just want a quick and effective way to test the implementation within a
-reasonably “real world” harness.&lt;/p&gt;
-
-&lt;p&gt;Well you’ve probably guessed by now that I’m about to show you how it’s done!  (OK fine,
-how it &lt;em&gt;will&lt;/em&gt; be done in the next release of apiman - 1.1.3.Final)&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;In this post I’ll explain (and show!) you how to write a unit test for your apiman
-policy, using the new Policy Tester junit framework we’ve created.&lt;/p&gt;
-
-&lt;h2 id=&quot;first-you-need-a-custom-policy&quot;&gt;First you need a custom policy!&lt;/h2&gt;
-
-&lt;p&gt;If you haven’t created a custom apiman policy yet, have a look at the
-&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;Developer Guide&lt;/a&gt; to
-learn how.&lt;/p&gt;
-
-&lt;p&gt;So for example, let’s say you’ve created your own simple custom policy class and it
-looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MySimplePolicy&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parseConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ConfigurationParseException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jsonConfiguration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Fail-Test&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyFailureFactoryComponent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;failureFactory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IPolicyFailureFactoryComponent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doFailure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failureFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createFailure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyFailureType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Other&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Failure&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doApply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IPolicyChain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Response-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Goodbye World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;chain&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;doApply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;ok-ive-got-a-policy-how-do-i-test-it&quot;&gt;OK I’ve got a policy, how do I test it?&lt;/h2&gt;
-
-&lt;p&gt;Now that you’ve got your policy, you need a quick and effective way to test it.  I also
-think it’s important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using &lt;a href=&quot;http://arquillian.org/&quot;&gt;Arquillian&lt;/a&gt;
-to configure and publish an API with the custom policy to a running WildFly server.
-It actually works remarkably well, but the overhead of firing up a WildFly server just
-to test a single policy seemed excessive.  That work will likely lead into a separate
-testing effort focused on testing larger integration scenarios.&lt;/p&gt;
-
-&lt;p&gt;OK enough - let’s get to the test!  The first thing you need is to pull the Policy
-Tester dependency into your project’s pom.xml:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.apiman&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;apiman-test-policies&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.1.2-SNAPSHOT&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Great - now just create a new junit test and make sure it extends the &lt;code&gt;ApimanPolicyTest&lt;/code&gt;
-base test class.  In that junit test you’ll need to sprinkle in a few annotations
-provided by the apiman Policy Testing framework.  At a minimum you will need to
-include the &lt;code&gt;@TestingPolicy&lt;/code&gt; and &lt;code&gt;@Configuration&lt;/code&gt; annotations.  Both of these annotations
-can be specified at either the &lt;em&gt;Class&lt;/em&gt; or &lt;em&gt;Method&lt;/em&gt; level. The former tells the testing
-framework which policy is being tested.  The latter describes the policy configuration
-that should be used for the test.&lt;/p&gt;
-
-&lt;p&gt;Just look at the example, already:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@TestingPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySimplePolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTestPolicyTest1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ApimanPolicyTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Send a test HTTP request to the API (resulting in executing the policy).&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequestType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Now do some assertions on the result!&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EchoResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Assert the request header that was added by the policy&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Assert the response header was added by the policy&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Goodbye World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-MTP-Response-Header&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;so-whats-going-on-here&quot;&gt;So what’s going on here?&lt;/h2&gt;
-
-&lt;p&gt;Let me tell you!  For each test method in your junit test, we’ll actually spin up a fully
-functional apiman API Gateway.  We’ll also publish a test API that’s configured with
-your custom policy (and using the policy configuration you specified in the &lt;code&gt;@Configuration&lt;/code&gt;
-annotation).  After that, it’s a simple matter of sending one or more simulated HTTP
-requests to the gateway.  You do that by sending a &lt;code&gt;PolicyTestRequest&lt;/code&gt; to the &lt;code&gt;send&lt;/code&gt; method.
-Easy peasy!&lt;/p&gt;
-
-&lt;p&gt;Note that it’s pretty easy to create a &lt;code&gt;PolicyTestRequest&lt;/code&gt; - there’s a nice little fluent
-builder you can use to create it.  The builder allows you to set the HTTP verb, the resource
-path, and any HTTP headers.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-about-the-back-end-api&quot;&gt;What about the back-end API?&lt;/h2&gt;
-
-&lt;p&gt;Yeah that’s a good point.  Assuming your policy doesn’t produce a failure, the API Gateway
-we’re using for the test needs to “invoke” a back-end API and return the result.  We
-simulate this rather than actually going out and making a REST request.  By default, we
-create a simple Echo back-end API which bundles up all the information in the REST
-request (including anything your policy may have added to the request) and builds a JSON
-response that includes all that information.  This is handy because it allows you to
-verify that, for example, any HTTP headers your policy added to the request actually
-made it through to the back-end API.&lt;/p&gt;
-
-&lt;p&gt;Now are you ready for an advanced topic?  If not I understand, you can just hit the Back
-button on your browser!&lt;/p&gt;
-
-&lt;p&gt;Still here?  Great!  Another thing you can do is actually provide your own simulated
-back-end API.  This is necessary sometimes when your policy does something
-specific with, for example, the API response payload.  You may actually need your
-test to respond in a certain way.  To accomplish this all you need to do is use the
-&lt;code&gt;@BackEndApi&lt;/code&gt; annotation, providing a &lt;em&gt;Class&lt;/em&gt; that implements the
-&lt;code&gt;IPolicyTestBackEndApi&lt;/code&gt; interface.  You do that, and we’ll use your simulated
-back end API for the test instead of the echo API!  :)&lt;/p&gt;
-
-&lt;p&gt;What would that look like?  Something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@TestingPolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySimplePolicy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTestPolicyTest1&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ApimanPolicyTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{}&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@BackEndApi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyCustomBackEndApiImpl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;testGet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Send a test HTTP request to the API (resulting in executing the policy).&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyTestRequestType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/some/resource&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-Test-Name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;testGet&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Now do some assertions on the result!&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;MyCustomBackEndApiResponseBean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyCustomBackEndApiResponseBean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Do some more assertions here using the entity from above!&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And then perhaps your custom back end implementation class might look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyCustomBackEndApiImpl&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IPolicyTestBackEndApi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PolicyTestBackEndApiResponse&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;invoke&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Create a valid API response for this request, and then configure it.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ApiResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ApiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;OK&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Date&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Server&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;apiman.policy-test&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;text/plain&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s respond with a classic &amp;quot;Hello World&amp;quot; for the response body&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;PolicyTestBackEndApiResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;PolicyTestBackEndApiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apiResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Alright - if you made it this far thanks for reading!!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="policy" />
-				
-					<category term="junit" />
-				
-					<category term="testing" />
-				
-				<pubDate>Sat, 09 May 2015 05:07:45 -0400</pubDate>
-				<link>http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/policy/junit/testing/2015/05/09/policy-testing-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 17 Feb 2016 11:40:54 -0500</lastBuildDate>
+		<lastBuildDate>Mon, 22 Feb 2016 14:12:22 -0500</lastBuildDate>
 	</channel>
 </rss>
