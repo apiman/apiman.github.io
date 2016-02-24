@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Re-Registering Your Client App(s)"
+date:   2016-02-24 10:30:00
+author: eric_wittmann
+categories: apiman 1.2.x gateway
+---
+
+In a recent blog post I explained why APIs used to be completely frozen 
+once they were published, and how we have loosened that restriction for
+Public APIs.  Similarly, we did not allow Client Apps to be changed and
+then re-registered.  This was never a good decision, since the Client App
+does not have anything "connected" to it (the way that an API may).  So
+we should never have restricted the registration of a Client App!
+
+<!--more-->
+
+## When Can I Re-Register?
+A Client App can be re-registered to the Gateway whenever it has been
+modified, or if it has been un-registered (is in the *Retired* state).
+
+
+## How Do I Re-Register?
+When you have made some changes to your Client App, you can re-register
+it by clicking the **Re-Register** button in the UI.
+
+![Image: Reregister Button](/blog/images/2016-02-24/re-register.png)
+
+As soon as you're comfortable with the changes you've made to your
+Client App, simply click the button and you should be all set!
+
+## Conclusion
+Again, we should never have restricted when users can update the settings
+of a Client App in the gateway.  This change should make it much easier
+for Client App Developers to make sensible changes and then push those
+changes to the gateway!
+
+/post
