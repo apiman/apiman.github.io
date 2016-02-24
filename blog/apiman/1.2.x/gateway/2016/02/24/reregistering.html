@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Authorization: good god, what is it good for? | apiman Open Source API Management</title>
-  <meta name="description" content="Quite a bit, actually.  :)I want to talk about how Authorization currently works in apiman, because it’sa little bit more loosely coupled than you might expe...">
+  <title>Re-Registering Your Client App(s) | apiman Open Source API Management</title>
+  <meta name="description" content="In a recent blog post I explained why APIs used to be completely frozen once they were published, and how we have loosened that restriction forPublic APIs.  ...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
   </script>
 
     
-    <link rel="canonical" href="http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/reregistering.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -127,210 +127,46 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization: good god, what is it good for?</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Re-Registering Your Client App(s)</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Feb 24, 2016</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, 1.2.x, and gateway</span>
   </header>
 
 
   
 
   
-    <!-- New Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
-    </p>
-  
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>Quite a bit, actually.  :)</p>
-
-<p>I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some
-point in the future we’re going to be renovating how policies are defined and
-configured in the API Manager UI.  But until then, you can refer to this blog
-post for an overview of how to configure Authorization!</p>
+    <p>In a recent blog post I explained why APIs used to be completely frozen 
+once they were published, and how we have loosened that restriction for
+Public APIs.  Similarly, we did not allow Client Apps to be changed and
+then re-registered.  This was never a good decision, since the Client App
+does not have anything “connected” to it (the way that an API may).  So
+we should never have restricted the registration of a Client App!</p>
 
 <!--more-->
 
-<p>I won’t bury the lead - the key to getting Authorization to work is understanding
-that it <em>only</em> works together with Authentication.  First you must add and
-configure a compatible <em>Authentication</em> policy, which will be responsible for
-extracting the user’s roles and passing them along to the Authorization policy.</p>
+<h2 id="when-can-i-re-register">When Can I Re-Register?</h2>
+<p>A Client App can be re-registered to the Gateway whenever it has been
+modified, or if it has been un-registered (is in the <em>Retired</em> state).</p>
 
-<h2 id="define-your-terms-sir">Define your terms, sir!</h2>
-<p>Let’s make sure we’re on the same page with respect to terminology, shall we?</p>
+<h2 id="how-do-i-re-register">How Do I Re-Register?</h2>
+<p>When you have made some changes to your Client App, you can re-register
+it by clicking the <strong>Re-Register</strong> button in the UI.</p>
 
-<ul>
-  <li><strong>Authentication</strong>: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.</li>
-  <li><strong>Authorization</strong>: the act of ensuring that the authenticated user has <em>permission</em> to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.</li>
-</ul>
+<p><img src="/blog/images/2016-02-24/re-register.png" alt="Image: Reregister Button" /></p>
 
-<h2 id="how-does-this-work-in-apiman">How does this work in apiman?</h2>
+<p>As soon as you’re comfortable with the changes you’ve made to your
+Client App, simply click the button and you should be all set!</p>
 
-<p>I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.</p>
-
-<p>Basically you need to do the following two things:</p>
-
-<ol>
-  <li>Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy</li>
-  <li>Add and configure an Authorization Policy.</li>
-</ol>
-
-<p>That’s it in a nutshell!</p>
-
-<h2 id="give-me-more-details">Give me more details!</h2>
-
-<p>OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a> or the <a href="http://www.apiman.io/latest/tutorials.html">Tutorials</a>.</p>
-
-<p>Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the <em>BASIC Authentication Policy</em> and configure it as seen in the following screenshot:</p>
-
-<p><img src="/blog/images/2015-05-08/basic-auth-config.png" alt="Example BASIC Authentication configuration" /></p>
-
-<p>Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:</p>
-
-<p><img src="/blog/images/2015-05-08/authorization-config.png" alt="Example Authorization configuration" /></p>
-
-<p>Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:</p>
-
-<p><img src="/blog/images/2015-05-08/auth-policies.png" alt="Example policy list" /></p>
-
-<p>If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:</p>
-
-<ul>
-  <li><strong>Resource Path</strong>: /.*</li>
-  <li><strong>Verb/action</strong>: *</li>
-  <li><strong>Required Role</strong>: <your-role></your-role></li>
-</ul>
-
-<p>Good luck and come find us on the mailing list or IRC if you have any trouble!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Again, we should never have restricted when users can update the settings
+of a Client App in the gateway.  This change should make it much easier
+for Client App Developers to make sensible changes and then push those
+changes to the gateway!</p>
 
 <p>/post</p>
 

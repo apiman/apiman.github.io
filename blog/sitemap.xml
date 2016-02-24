@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/reregistering.html</loc>
+    <lastmod>2016-02-24T05:30:00-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/republishing.html</loc>
+    <lastmod>2016-02-24T04:30:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html</loc>
     <lastmod>2016-02-22T07:30:00-05:00</lastmod>
   </url>
