@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>We got the moves like swagger! | apiman Open Source API Management</title>
-  <meta name="description" content="One of the weaknesses we’ve had in apiman until now is that API providers didn’t haveany way to document how to consume their APIs.  Well that has all change...">
+  <title>Storing Your Gateway Config in a Database | apiman Open Source API Management</title>
+  <meta name="description" content="One of the strongest features of apiman, in general, is its excellentextensibility.  Not only is it easy to add new policies, for example,but many of its cor...">
 
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
   </script>
 
     
-    <link rel="canonical" href="http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -127,202 +127,124 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">We got the moves like swagger!</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 2, 2015</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Storing Your Gateway Config in a Database</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 9, 2016</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, swagger, api, and ui</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, 1.2.x, gateway, jdbc, and registry</span>
   </header>
 
 
   
 
   
-    <!-- New Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
-    </p>
-  
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>One of the weaknesses we’ve had in apiman until now is that API providers didn’t have
-any way to document how to consume their APIs.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your API.  If you do,
-consumers will be able to browse your API documentation directly in the apiman UI.</p>
-
-<p>I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the client app developer (aka the
-API consumer).</p>
+    <p>One of the strongest features of apiman, in general, is its excellent
+extensibility.  Not only is it easy to add new policies, for example,
+but many of its core components are also pluggable.  This includes, 
+for example, the registry used by the API Gateway to store configuration
+information published to it by the manager.  This blog post will detail
+a new JDBC based implementation of that registry, explaining how you can
+store that information in a Database instead of in Elasticsearch (the
+default setting).</p>
 
 <!--more-->
 
-<h2 id="adding-an-api-definition">Adding an API Definition</h2>
-<p>As an API provider, the only thing you need to do is add an API definition to your
-API.  This is simple - just navigate to the new “Definition” tab in your API.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!</p>
+<h2 id="why-use-a-database-instead-of-elastic">Why Use a Database Instead of Elastic?</h2>
+<p>You may or may not be wondering why this is important.  Some users may
+not be comfortable storing persistent data in Elasticsearch.  Or perhaps
+a user doesn’t want to create a production deployment of Elasticsearch 
+at all and would prefer alternatives for each of the various Gateway
+components that currently uses it.  For these reasons (or others), we
+now (as of version 1.2.2.Final) have a JDBC implementation of the 
+API Gateway registry!</p>
 
-<h2 id="what-is-a-swagger-spec">What is a Swagger spec?</h2>
-<p>So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful API.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):</p>
+<p>Read on to learn how to use it!</p>
+
+<h2 id="setting-up-the-database">Setting Up the Database</h2>
+<p>First it’s important to note that the Gateway registry JDBC implementation
+does <em>not</em> leverage JPA.  Instead we use JDBC directly (with a little 
+help from Apache’s dbutils library) to store the data in the database
+and query it again.  For this reason, you will absolutely need to create
+your database and then configure it using one of the provided DDLs.</p>
+
+<p>You can find the DDLs included in the apiman distribution in the following
+directory:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$WILDFLY_ROOT/apiman/ddls/apiman-gateway*.ddl</code></pre></div>
+
+<p>We include DDLs for the following databases:</p>
 
 <ul>
-  <li>API meta-data such as Name and Description</li>
-  <li>Resource Paths and the Operations/Methods they support</li>
-  <li>Input/Output types</li>
+  <li>MySQL</li>
+  <li>PostgreSQL</li>
+  <li>Oracle</li>
+  <li>H2</li>
 </ul>
 
-<p>For more information I recommend navigating to the <a href="http://swagger.io/" target="_blank" rel="nofollow">Swagger Project</a>.</p>
+<p>Simply create a new database using tools that are appropriate to the
+type you are using (e.g. you can use the MySQL Workbench).  Then execute
+the DDL appropriate to your database type, so that all the correct 
+tables and indexes are created.</p>
 
-<h2 id="how-does-this-help-my-consumers">How does this help my consumers?</h2>
-<p>Once you’ve got a Swagger spec created and added to your API, your API
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View API Definition” link available on
-the consumer’s “API Details” page (the same page that consumers are shown when
-they have searched for an API).  Here’s an example:</p>
+<h2 id="configuring-apiman-to-use-it">Configuring Apiman to Use It</h2>
+<p>Once the database is created, you will need to make some configuration
+changes in apiman so that the Gateway will connect to the database and store
+information there instead of Elasticsearch.  There are two files that need
+to be created/modified to make this happen.</p>
 
-<p><img src="/blog/images/2015-06-02/api-details.png" alt="API Details" /></p>
+<h3 id="creating-a-datasource">Creating a Datasource</h3>
+<p>First, you will need to create a Datasource using whatever is appropriate
+for the platform you are running apiman on.  This will differ, for example,
+if you are running apiman on Tomcat rather than Wildfly or EAP.  Here are
+some documentation resources that may be helpful when creating a Datasource
+for your preferred runtime platform:</p>
 
-<p>An API consumer can see that there is an API definition they can click on, which
-will give them a ton of information about how to use the API.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-API as described by the Swagger spec definition:</p>
+<ul>
+  <li><a href="https://docs.jboss.org/author/display/WFLY10/DataSource+configuration" target="_blank" rel="nofollow">Wildfly 10</a></li>
+  <li><a href="https://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html#JDBC_Data_Sources" target="_blank" rel="nofollow">Apache Tomcat 8</a></li>
+</ul>
 
-<p><img src="/blog/images/2015-06-02/api-definition.png" alt="API Definition" /></p>
+<p>Make sure you download and install the JDBC driver for your database, and
+also make sure that you know the JNDI location of the datasource you wish
+to use.</p>
 
-<p>As always, thanks for making it to the end of my ramblings!</p>
+<h3 id="tweaking-apimanproperties">Tweaking apiman.properties</h3>
+<p>Finally, you have everything you need to now configure apiman to use the
+database.  You simply need to change some properties in <em>apiman.properties</em> 
+and you’ll be good to go!</p>
+
+<p>Specifically, you need to change the configuration of the Gateway Registry.
+The default settings in 1.2.2.Final for the Gateway Registry look like this:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry
+apiman-gateway.registry.client.type=jest
+apiman-gateway.registry.client.protocol=${apiman.es.protocol}
+apiman-gateway.registry.client.host=${apiman.es.host}
+apiman-gateway.registry.client.port=${apiman.es.port}
+apiman-gateway.registry.client.initialize=true
+apiman-gateway.registry.client.username=${apiman.es.username}
+apiman-gateway.registry.client.password=${apiman.es.password}
+apiman-gateway.registry.client.timeout=${apiman.es.timeout}</code></pre></div>
+
+<p>All of these properties can be replaced with the following settings:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry
+apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre></div>
+
+<p>Please note that the <em>apiman-gateway.registry.datasource.jndi-location</em> should
+be set to whatever value makes sense based on the deployment/configuration of
+your actual datasource.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Once you have configured the API Gateway to use a database to store your 
+configuration info, apiman will no longer store this type of data in 
+Elasticsearch.  This is perhaps one step closer to a world where you do
+not need to maintain/manager a production Elasticsearch instance.</p>
+
+<p>In future posts I will show you how you can swap out other Elasticsearch
+components for alternatives (e.g. Rate Limiting, Caching, etc).</p>
 
 <p>/post</p>
 

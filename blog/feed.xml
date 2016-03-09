@@ -9,6 +9,137 @@
 		
 		
 			<item>
+				<title>Storing Your Gateway Config in a Database</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;One of the strongest features of apiman, in general, is its excellent
+extensibility.  Not only is it easy to add new policies, for example,
+but many of its core components are also pluggable.  This includes, 
+for example, the registry used by the API Gateway to store configuration
+information published to it by the manager.  This blog post will detail
+a new JDBC based implementation of that registry, explaining how you can
+store that information in a Database instead of in Elasticsearch (the
+default setting).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;why-use-a-database-instead-of-elastic&quot;&gt;Why Use a Database Instead of Elastic?&lt;/h2&gt;
+&lt;p&gt;You may or may not be wondering why this is important.  Some users may
+not be comfortable storing persistent data in Elasticsearch.  Or perhaps
+a user doesn’t want to create a production deployment of Elasticsearch 
+at all and would prefer alternatives for each of the various Gateway
+components that currently uses it.  For these reasons (or others), we
+now (as of version 1.2.2.Final) have a JDBC implementation of the 
+API Gateway registry!&lt;/p&gt;
+
+&lt;p&gt;Read on to learn how to use it!&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-the-database&quot;&gt;Setting Up the Database&lt;/h2&gt;
+&lt;p&gt;First it’s important to note that the Gateway registry JDBC implementation
+does &lt;em&gt;not&lt;/em&gt; leverage JPA.  Instead we use JDBC directly (with a little 
+help from Apache’s dbutils library) to store the data in the database
+and query it again.  For this reason, you will absolutely need to create
+your database and then configure it using one of the provided DDLs.&lt;/p&gt;
+
+&lt;p&gt;You can find the DDLs included in the apiman distribution in the following
+directory:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$WILDFLY_ROOT/apiman/ddls/apiman-gateway*.ddl&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We include DDLs for the following databases:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MySQL&lt;/li&gt;
+  &lt;li&gt;PostgreSQL&lt;/li&gt;
+  &lt;li&gt;Oracle&lt;/li&gt;
+  &lt;li&gt;H2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Simply create a new database using tools that are appropriate to the
+type you are using (e.g. you can use the MySQL Workbench).  Then execute
+the DDL appropriate to your database type, so that all the correct 
+tables and indexes are created.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-apiman-to-use-it&quot;&gt;Configuring Apiman to Use It&lt;/h2&gt;
+&lt;p&gt;Once the database is created, you will need to make some configuration
+changes in apiman so that the Gateway will connect to the database and store
+information there instead of Elasticsearch.  There are two files that need
+to be created/modified to make this happen.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-a-datasource&quot;&gt;Creating a Datasource&lt;/h3&gt;
+&lt;p&gt;First, you will need to create a Datasource using whatever is appropriate
+for the platform you are running apiman on.  This will differ, for example,
+if you are running apiman on Tomcat rather than Wildfly or EAP.  Here are
+some documentation resources that may be helpful when creating a Datasource
+for your preferred runtime platform:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.jboss.org/author/display/WFLY10/DataSource+configuration&quot;&gt;Wildfly 10&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html#JDBC_Data_Sources&quot;&gt;Apache Tomcat 8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make sure you download and install the JDBC driver for your database, and
+also make sure that you know the JNDI location of the datasource you wish
+to use.&lt;/p&gt;
+
+&lt;h3 id=&quot;tweaking-apimanproperties&quot;&gt;Tweaking apiman.properties&lt;/h3&gt;
+&lt;p&gt;Finally, you have everything you need to now configure apiman to use the
+database.  You simply need to change some properties in &lt;em&gt;apiman.properties&lt;/em&gt; 
+and you’ll be good to go!&lt;/p&gt;
+
+&lt;p&gt;Specifically, you need to change the configuration of the Gateway Registry.
+The default settings in 1.2.2.Final for the Gateway Registry look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry
+apiman-gateway.registry.client.type=jest
+apiman-gateway.registry.client.protocol=${apiman.es.protocol}
+apiman-gateway.registry.client.host=${apiman.es.host}
+apiman-gateway.registry.client.port=${apiman.es.port}
+apiman-gateway.registry.client.initialize=true
+apiman-gateway.registry.client.username=${apiman.es.username}
+apiman-gateway.registry.client.password=${apiman.es.password}
+apiman-gateway.registry.client.timeout=${apiman.es.timeout}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;All of these properties can be replaced with the following settings:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry
+apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Please note that the &lt;em&gt;apiman-gateway.registry.datasource.jndi-location&lt;/em&gt; should
+be set to whatever value makes sense based on the deployment/configuration of
+your actual datasource.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Once you have configured the API Gateway to use a database to store your 
+configuration info, apiman will no longer store this type of data in 
+Elasticsearch.  This is perhaps one step closer to a world where you do
+not need to maintain/manager a production Elasticsearch instance.&lt;/p&gt;
+
+&lt;p&gt;In future posts I will show you how you can swap out other Elasticsearch
+components for alternatives (e.g. Rate Limiting, Caching, etc).&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="1.2.x" />
+				
+					<category term="gateway" />
+				
+					<category term="jdbc" />
+				
+					<category term="registry" />
+				
+				<pubDate>Wed, 09 Mar 2016 04:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Re-Registering Your Client App(s)</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5537,80 +5668,6 @@ API as described by the Swagger spec definition:&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>We got the moves like swagger!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;One of the weaknesses we’ve had in apiman until now is that service providers didn’t have
-any way to document how to consume their services.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your service.  If you do,
-consumers will be able to browse your service documentation directly in the apiman UI.&lt;/p&gt;
-
-&lt;p&gt;I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the application developer (aka the
-service consumer).&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;adding-a-service-definition&quot;&gt;Adding a Service Definition&lt;/h2&gt;
-&lt;p&gt;As a service provider, the only thing you need to do is add a service definition to your
-service.  This is simple - just navigate to the new “Definition” tab in your service.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-swagger-spec&quot;&gt;What is a Swagger spec?&lt;/h2&gt;
-&lt;p&gt;So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful web service.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;API meta-data such as Name and Description&lt;/li&gt;
-  &lt;li&gt;Resource Paths and the Operations/Methods they support&lt;/li&gt;
-  &lt;li&gt;Input/Output types&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For more information I recommend navigating to the &lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger Project&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-does-this-help-my-consumers&quot;&gt;How does this help my consumers?&lt;/h2&gt;
-&lt;p&gt;Once you’ve got a Swagger spec created and added to your service, your service
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View Service Definition” link available on
-the consumer’s “Service Details” page (the same page that consumers are shown when
-they have searched for a service).  Here’s an example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-details.png&quot; alt=&quot;Service Details&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A service consumer can see that there is a service definition they can click on, which
-will give them a ton of information about how to use the service.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-service as described by the Swagger spec definition:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-definition.png&quot; alt=&quot;Service Definition&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As always, thanks for making it to the end of my ramblings!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="api-manager" />
-				
-					<category term="swagger" />
-				
-					<category term="api" />
-				
-					<category term="ui" />
-				
-				<pubDate>Tue, 02 Jun 2015 05:04:45 -0400</pubDate>
-				<link>http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 24 Feb 2016 09:35:27 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 09 Mar 2016 10:12:14 -0500</lastBuildDate>
 	</channel>
 </rss>
