@@ -9,6 +9,173 @@
 		
 		
 			<item>
+				<title>Import APIs Into Apiman (API Catalog)</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;One of the less enjoyable aspects of apiman is the manual addition of an API
+that you wish to manage.  And if you have a bunch of APIs you want to manage,
+you can either use the apiman REST interface to script the creation of them,
+or else you’re stuck manually entering them into the UI.&lt;/p&gt;
+
+&lt;p&gt;However, if you take advantage of the new API Catalog feature, things might
+get a lot easier!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;why-import-an-api&quot;&gt;Why Import an API?&lt;/h2&gt;
+&lt;p&gt;By using the new API Manager to import an API rather than manually creating it
+(typically via the “New API” button in the UI) you can more quickly and 
+accurately add an API to apiman.  Importing an API from the API Catalog means
+that it will be created in apiman pre-configured with the endpoint information
+and some other relevant details.  This can obviously save you some time, and 
+make the process of managing your APIs a bit more streamlined.&lt;/p&gt;
+
+&lt;h2 id=&quot;browsing-the-api-catalog&quot;&gt;Browsing the API Catalog&lt;/h2&gt;
+&lt;p&gt;The long-term goal for importing APIs is to be able to import from multiple 
+different sources, including:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Swagger&lt;/li&gt;
+  &lt;li&gt;WADL&lt;/li&gt;
+  &lt;li&gt;RAML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, we currently only support importing APIs from an apiman API Catalog.
+I’ll talk more about how to configure the API Catalog later in this post.
+First, let’s focus on how to use the API Catalog.&lt;/p&gt;
+
+&lt;p&gt;The most user-friendly way to use the API Catalog is to browse it!  This can
+easily be done by clicking the “Browse available/importable APIs” link on the
+API Manager’s dashboard page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/dash-catalog.png&quot; alt=&quot;Image: Dashboard - Browse APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you click that link, you’ll be taken to the (very nice!) API Catalog
+Browser UI page.  Have a look, it’s actually pretty slick:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/api-catalog.png&quot; alt=&quot;Image: API Catalog Browser&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From this UI, you can filter the APIs available to be imported, find the
+one you want, and easily Import it into one of your Organizations.  You can
+easily filter by name, type, or tag - the hope is that you can quickly find
+the API you want to import.  Once you are ready, simply click the &lt;em&gt;Import&lt;/em&gt;
+button on the API card, which will result in the following dialog:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-api.png&quot; alt=&quot;Image: Import API&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After completing the information in the dialog, the API will be imported
+and you will be redirected to the newly imported API.&lt;/p&gt;
+
+&lt;h2 id=&quot;importing-multiple-apis&quot;&gt;Importing Multiple APIs&lt;/h2&gt;
+&lt;p&gt;Another way to import APIs from the API Catalog is to use the Import API(s)
+Wizard interface.  You can access the Import API(s) Wizard by clicking on the
+&lt;em&gt;Import API(s)&lt;/em&gt; button from within a particular Organization:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-apis-btn.png&quot; alt=&quot;Image: Import APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This wizard will allow you to import multiple APIs into a single Organization.
+Follow the wizard’s steps to find the APIs, choose them, configure some
+settings, and then import them.  Here are some screenshots, since pictures
+are more powerful than words (although the pictures do contain some words):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-api-wizard-1.png&quot; alt=&quot;Image: Import APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-api-wizard-2.png&quot; alt=&quot;Image: Import APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-api-wizard-3.png&quot; alt=&quot;Image: Import APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-23/import-api-wizard-4.png&quot; alt=&quot;Image: Import APIs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, the Import APIs Wizard is a nice way to find and import
+multiple APIs all at the same time, all into the same Organization.&lt;/p&gt;
+
+&lt;h2 id=&quot;customizing-the-api-catalog&quot;&gt;Customizing the API Catalog&lt;/h2&gt;
+&lt;p&gt;At this point you may be asking yourself how &lt;em&gt;your&lt;/em&gt; APIs might come to be
+listed in the API Catalog, rather than Flickr and Facebook.  That’s a great
+question, and we actually have two answers to it.  First, you can provide
+a simple JSON file that contains all of the APIs in your enterprise (along
+with optionally any other external APIs you might want to potentially 
+import).  Second, you can actually provide a fully custom implementation of
+the apiman &lt;em&gt;IApiCatalog&lt;/em&gt; java interface and contribute it via an apiman
+plugin!&lt;/p&gt;
+
+&lt;h3 id=&quot;providing-a-custom-api-catalog-file&quot;&gt;Providing a Custom API Catalog File&lt;/h3&gt;
+&lt;p&gt;The easiest way to include your own APIs into the catalog is to provide 
+your own custom API Catalog JSON file.  The default API Catalog implementation
+simply reads the API information from a JSON file (with a custom format
+specific to apiman).  An example of the format of this file can be found
+here:&lt;/p&gt;
+
+&lt;p&gt;https://raw.githubusercontent.com/apiman/apiman-api-catalog/master/catalog.json&lt;/p&gt;
+
+&lt;p&gt;Once you create your own file, you will need to make it available to apiman
+by configuring it in the &lt;em&gt;apiman.properties&lt;/em&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog
+apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Simply update the &lt;em&gt;apiman-manager.api-catalog.catalog-url&lt;/em&gt; property to provide
+a URL to your custom file.&lt;/p&gt;
+
+&lt;h3 id=&quot;implementing-your-own-api-catalog-plugin&quot;&gt;Implementing Your Own API Catalog Plugin&lt;/h3&gt;
+&lt;p&gt;Providing your own JSON file is fine, but it’s very static and doesn’t work
+well if you are often introducing new APIs.  Instead, you may want to implement
+your own API Catalog implementation and bundle it up into an apiman plugin.
+This approach will let you return the list of APIs from dynanmic sources such
+as API Registries (e.g. UDDI or perhaps something more platform-specific like
+kubernetes).&lt;/p&gt;
+
+&lt;p&gt;To do this, it’s probably best to read up on the existing apiman documentation
+about how to create and contribute a plugin:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin&quot;&gt;Developer Guide: Creating a Plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_contributing_a_core_component&quot;&gt;Developer Guide: Contributing a Core Component&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The component you will want to customize is &lt;em&gt;IApiCatalog&lt;/em&gt;, which can be found here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java&quot;&gt;IApiCatalog Java Interface&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Create an implementation of that interface, bundle it up in your custom plugin,
+and then configure apiman to use your implementation by modifying the right 
+properties in the &lt;em&gt;apiman.properties&lt;/em&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apiman-manager.api-catalog.type=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.catalog.MyCustomApiCatalog
+apiman-manager.api-catalog.my-property=value-1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The API Catalog is a great way to make it easier for your API Providers to quickly
+and accurately get APIs added to apiman, without using the apiman REST interface to
+do it programmatically.  There is a tremendous opportunity to integrate the API
+Catalog with your API registry, if you have one, or to simply provide a JSON file 
+with information about all your deployed APIs!&lt;/p&gt;
+
+&lt;p&gt;This feature will be introduced as of version &lt;em&gt;1.2.3.Final&lt;/em&gt;, which should be released
+tomorrow!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="1.2.x" />
+				
+					<category term="manager" />
+				
+					<category term="catalog" />
+				
+				<pubDate>Wed, 23 Mar 2016 06:30:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Storing Your Gateway Config in a Database</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5594,80 +5761,6 @@ processes again.&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>We got the moves like swagger!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;One of the weaknesses we’ve had in apiman until now is that API providers didn’t have
-any way to document how to consume their APIs.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your API.  If you do,
-consumers will be able to browse your API documentation directly in the apiman UI.&lt;/p&gt;
-
-&lt;p&gt;I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the client app developer (aka the
-API consumer).&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;adding-an-api-definition&quot;&gt;Adding an API Definition&lt;/h2&gt;
-&lt;p&gt;As an API provider, the only thing you need to do is add an API definition to your
-API.  This is simple - just navigate to the new “Definition” tab in your API.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-a-swagger-spec&quot;&gt;What is a Swagger spec?&lt;/h2&gt;
-&lt;p&gt;So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful API.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;API meta-data such as Name and Description&lt;/li&gt;
-  &lt;li&gt;Resource Paths and the Operations/Methods they support&lt;/li&gt;
-  &lt;li&gt;Input/Output types&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For more information I recommend navigating to the &lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger Project&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-does-this-help-my-consumers&quot;&gt;How does this help my consumers?&lt;/h2&gt;
-&lt;p&gt;Once you’ve got a Swagger spec created and added to your API, your API
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View API Definition” link available on
-the consumer’s “API Details” page (the same page that consumers are shown when
-they have searched for an API).  Here’s an example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-details.png&quot; alt=&quot;API Details&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;An API consumer can see that there is an API definition they can click on, which
-will give them a ton of information about how to use the API.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-API as described by the Swagger spec definition:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-02/api-definition.png&quot; alt=&quot;API Definition&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As always, thanks for making it to the end of my ramblings!&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="api-manager" />
-				
-					<category term="swagger" />
-				
-					<category term="api" />
-				
-					<category term="ui" />
-				
-				<pubDate>Tue, 02 Jun 2015 05:04:45 -0400</pubDate>
-				<link>http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 09 Mar 2016 10:12:14 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 23 Mar 2016 11:36:29 -0400</lastBuildDate>
 	</channel>
 </rss>

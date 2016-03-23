@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
+  <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
+  <title>Import APIs Into Apiman (API Catalog) | apiman Open Source API Management</title>
+  <meta name="description" content="One of the less enjoyable aspects of apiman is the manual addition of an APIthat you wish to manage.  And if you have a bunch of APIs you want to manage,you ...">
+
+  <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+  <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.2.2.Final" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.2.2.Final" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/blog/css/highlight.css" rel="stylesheet">
+  <link href="/blog/css/main.css" rel="stylesheet">
+  <link href="/blog/css/coderay-asciidoctor.css" rel="stylesheet">
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
+  <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-56678850-1', 'auto');
+              ga('send', 'pageview');
+      });
+  </script>
+
+    
+    <link rel="canonical" href="http://apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html">
+    
+
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+</head>
+
+  <body class="blog">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.apiman.io/latest/index.html">apiman</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/index.html">Overview</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/download.html">Download</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
+        <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/contributors.html">Contributors List</a>
+                </li>
+            </ul>
+        </li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
+                </li>
+            </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+    <div class="container" id="blog">
+      <div class="blog-content">
+        
+
+<div class="post">
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Import APIs Into Apiman (API Catalog)</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 23, 2016</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, 1.2.x, manager, and catalog</span>
+  </header>
+
+
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <p>One of the less enjoyable aspects of apiman is the manual addition of an API
+that you wish to manage.  And if you have a bunch of APIs you want to manage,
+you can either use the apiman REST interface to script the creation of them,
+or else you’re stuck manually entering them into the UI.</p>
+
+<p>However, if you take advantage of the new API Catalog feature, things might
+get a lot easier!</p>
+
+<!--more-->
+
+<h2 id="why-import-an-api">Why Import an API?</h2>
+<p>By using the new API Manager to import an API rather than manually creating it
+(typically via the “New API” button in the UI) you can more quickly and 
+accurately add an API to apiman.  Importing an API from the API Catalog means
+that it will be created in apiman pre-configured with the endpoint information
+and some other relevant details.  This can obviously save you some time, and 
+make the process of managing your APIs a bit more streamlined.</p>
+
+<h2 id="browsing-the-api-catalog">Browsing the API Catalog</h2>
+<p>The long-term goal for importing APIs is to be able to import from multiple 
+different sources, including:</p>
+
+<ul>
+  <li>Swagger</li>
+  <li>WADL</li>
+  <li>RAML</li>
+</ul>
+
+<p>However, we currently only support importing APIs from an apiman API Catalog.
+I’ll talk more about how to configure the API Catalog later in this post.
+First, let’s focus on how to use the API Catalog.</p>
+
+<p>The most user-friendly way to use the API Catalog is to browse it!  This can
+easily be done by clicking the “Browse available/importable APIs” link on the
+API Manager’s dashboard page.</p>
+
+<p><img src="/blog/images/2016-03-23/dash-catalog.png" alt="Image: Dashboard - Browse APIs" /></p>
+
+<p>Once you click that link, you’ll be taken to the (very nice!) API Catalog
+Browser UI page.  Have a look, it’s actually pretty slick:</p>
+
+<p><img src="/blog/images/2016-03-23/api-catalog.png" alt="Image: API Catalog Browser" /></p>
+
+<p>From this UI, you can filter the APIs available to be imported, find the
+one you want, and easily Import it into one of your Organizations.  You can
+easily filter by name, type, or tag - the hope is that you can quickly find
+the API you want to import.  Once you are ready, simply click the <em>Import</em>
+button on the API card, which will result in the following dialog:</p>
+
+<p><img src="/blog/images/2016-03-23/import-api.png" alt="Image: Import API" /></p>
+
+<p>After completing the information in the dialog, the API will be imported
+and you will be redirected to the newly imported API.</p>
+
+<h2 id="importing-multiple-apis">Importing Multiple APIs</h2>
+<p>Another way to import APIs from the API Catalog is to use the Import API(s)
+Wizard interface.  You can access the Import API(s) Wizard by clicking on the
+<em>Import API(s)</em> button from within a particular Organization:</p>
+
+<p><img src="/blog/images/2016-03-23/import-apis-btn.png" alt="Image: Import APIs" /></p>
+
+<p>This wizard will allow you to import multiple APIs into a single Organization.
+Follow the wizard’s steps to find the APIs, choose them, configure some
+settings, and then import them.  Here are some screenshots, since pictures
+are more powerful than words (although the pictures do contain some words):</p>
+
+<p><img src="/blog/images/2016-03-23/import-api-wizard-1.png" alt="Image: Import APIs" /></p>
+
+<p><img src="/blog/images/2016-03-23/import-api-wizard-2.png" alt="Image: Import APIs" /></p>
+
+<p><img src="/blog/images/2016-03-23/import-api-wizard-3.png" alt="Image: Import APIs" /></p>
+
+<p><img src="/blog/images/2016-03-23/import-api-wizard-4.png" alt="Image: Import APIs" /></p>
+
+<p>As you can see, the Import APIs Wizard is a nice way to find and import
+multiple APIs all at the same time, all into the same Organization.</p>
+
+<h2 id="customizing-the-api-catalog">Customizing the API Catalog</h2>
+<p>At this point you may be asking yourself how <em>your</em> APIs might come to be
+listed in the API Catalog, rather than Flickr and Facebook.  That’s a great
+question, and we actually have two answers to it.  First, you can provide
+a simple JSON file that contains all of the APIs in your enterprise (along
+with optionally any other external APIs you might want to potentially 
+import).  Second, you can actually provide a fully custom implementation of
+the apiman <em>IApiCatalog</em> java interface and contribute it via an apiman
+plugin!</p>
+
+<h3 id="providing-a-custom-api-catalog-file">Providing a Custom API Catalog File</h3>
+<p>The easiest way to include your own APIs into the catalog is to provide 
+your own custom API Catalog JSON file.  The default API Catalog implementation
+simply reads the API information from a JSON file (with a custom format
+specific to apiman).  An example of the format of this file can be found
+here:</p>
+
+<p>https://raw.githubusercontent.com/apiman/apiman-api-catalog/master/catalog.json</p>
+
+<p>Once you create your own file, you will need to make it available to apiman
+by configuring it in the <em>apiman.properties</em> file:</p>
+
+<pre><code>apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog
+apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
+</code></pre>
+
+<p>Simply update the <em>apiman-manager.api-catalog.catalog-url</em> property to provide
+a URL to your custom file.</p>
+
+<h3 id="implementing-your-own-api-catalog-plugin">Implementing Your Own API Catalog Plugin</h3>
+<p>Providing your own JSON file is fine, but it’s very static and doesn’t work
+well if you are often introducing new APIs.  Instead, you may want to implement
+your own API Catalog implementation and bundle it up into an apiman plugin.
+This approach will let you return the list of APIs from dynanmic sources such
+as API Registries (e.g. UDDI or perhaps something more platform-specific like
+kubernetes).</p>
+
+<p>To do this, it’s probably best to read up on the existing apiman documentation
+about how to create and contribute a plugin:</p>
+
+<ul>
+  <li><a href="http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin">Developer Guide: Creating a Plugin</a></li>
+  <li><a href="http://www.apiman.io/latest/developer-guide.html#_contributing_a_core_component">Developer Guide: Contributing a Core Component</a></li>
+</ul>
+
+<p>The component you will want to customize is <em>IApiCatalog</em>, which can be found here:</p>
+
+<p><a href="https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java" target="_blank" rel="nofollow">IApiCatalog Java Interface</a></p>
+
+<p>Create an implementation of that interface, bundle it up in your custom plugin,
+and then configure apiman to use your implementation by modifying the right 
+properties in the <em>apiman.properties</em> file:</p>
+
+<pre><code>apiman-manager.api-catalog.type=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.catalog.MyCustomApiCatalog
+apiman-manager.api-catalog.my-property=value-1
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The API Catalog is a great way to make it easier for your API Providers to quickly
+and accurately get APIs added to apiman, without using the apiman REST interface to
+do it programmatically.  There is a tremendous opportunity to integrate the API
+Catalog with your API registry, if you have one, or to simply provide a JSON file 
+with information about all your deployed APIs!</p>
+
+<p>This feature will be introduced as of version <em>1.2.3.Final</em>, which should be released
+tomorrow!</p>
+
+<p>/post</p>
+
+  </article>
+
+</div>
+
+      </div>
+      <div class="blog-footer">
+        <footer role="contentinfo">
+    <div id="inner-footer" class="clearfix row">
+        <div id="widget-footer" class="clearfix">
+            <hr>
+            <div class="widget col-sm-6 col-md-6 widget_text">
+                <div class="textwidget">
+                    <p>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
+                    </p>
+                </div>
+            </div>
+            <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+            </div>
+        </div>
+        <nav class="clearfix"></nav>
+    </div>
+</footer>
+
+      </div>
+    </div>
+  </body>
+</html>
