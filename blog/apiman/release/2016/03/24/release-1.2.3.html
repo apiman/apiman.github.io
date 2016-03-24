@@ -159,7 +159,7 @@ features.  Read on for more details!</p>
 <p>The release notes for this release can be found here:</p>
 
 <ul>
-  <li>http://red.ht/21HvJDe</li>
+  <li><a href="http://red.ht/21HvJDe" target="_blank" rel="nofollow">Release notes for 1.2.3.Final</a></li>
 </ul>
 
 <p>And of course, all of the standard sources of information have been updated:</p>
@@ -202,12 +202,12 @@ internal components.  One of those components is the Metrics feature, where we
 record metrics information for every request made to the Gateway.  In the default
 community edition of apiman we use Elasticsearch to record these metrics.  Version
 1.2.3.Final of apiman now includes an initial (tech preview) implementation that
-uses (Hawkular Metrics)[http://www.hawkular.org/docs/components/metrics/index.html] 
+uses <a href="http://www.hawkular.org/docs/components/metrics/index.html" target="_blank" rel="nofollow">Hawkular Metrics</a> 
 instead of Elasticsearch!</p>
 
 <h3 id="improvements-to-the-api-catalog-ui">Improvements to the API Catalog UI</h3>
 <p>A very cool recent feature of apiman is the new 
-(API Catalog browser UI)[http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html].<br />
+<a href="http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html">API Catalog browser UI</a>.<br />
 The API Catalog feature allows you to quickly filter the list of available APIs from
 the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
 with zero or more tags, and filtering can now be done based on these tags.  The UI
@@ -216,7 +216,7 @@ is pretty slick!</p>
 <h3 id="configurable-aes-data-encrypter-implementation">Configurable AES data encrypter implementation</h3>
 <p>You may or may not be aware that apiman encrypts any data that might be sensitive prior
 to storing it in the data store (manager) or registry (gateway).  There is a java
-interface called (IDataEncrypter)[https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java] 
+interface called <a href="https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java" target="_blank" rel="nofollow">IDataEncrypter</a> 
 that controls this behavior, and you can provide your own implementation via an apiman
 plugin if you choose.  Previously that was the only option available to you if you
 wanted a more secure implementation (the default implementation uses a well-known/hard-coded
