@@ -16,7 +16,7 @@ features.  Read on for more details!
 ## Where can I find more information?
 The release notes for this release can be found here:
 
-* http://red.ht/21HvJDe
+* [Release notes for 1.2.3.Final](http://red.ht/21HvJDe)
 
 And of course, all of the standard sources of information have been updated:
 
@@ -56,12 +56,12 @@ internal components.  One of those components is the Metrics feature, where we
 record metrics information for every request made to the Gateway.  In the default
 community edition of apiman we use Elasticsearch to record these metrics.  Version
 1.2.3.Final of apiman now includes an initial (tech preview) implementation that
-uses (Hawkular Metrics)[http://www.hawkular.org/docs/components/metrics/index.html] 
+uses [Hawkular Metrics](http://www.hawkular.org/docs/components/metrics/index.html) 
 instead of Elasticsearch!
 
 ### Improvements to the API Catalog UI
 A very cool recent feature of apiman is the new 
-(API Catalog browser UI)[http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html].  
+[API Catalog browser UI](http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html).  
 The API Catalog feature allows you to quickly filter the list of available APIs from
 the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
 with zero or more tags, and filtering can now be done based on these tags.  The UI
@@ -70,7 +70,7 @@ is pretty slick!
 ### Configurable AES data encrypter implementation
 You may or may not be aware that apiman encrypts any data that might be sensitive prior
 to storing it in the data store (manager) or registry (gateway).  There is a java
-interface called (IDataEncrypter)[https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java] 
+interface called [IDataEncrypter](https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java) 
 that controls this behavior, and you can provide your own implementation via an apiman
 plugin if you choose.  Previously that was the only option available to you if you
 wanted a more secure implementation (the default implementation uses a well-known/hard-coded
