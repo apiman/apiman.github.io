@@ -9,6 +9,104 @@
 		
 		
 			<item>
+				<title>Version 1.2.3.Final of apiman is released!</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;Greetings, earthlings!  Yesterday we released the &lt;em&gt;best&lt;/em&gt; version of apiman yet,
+and I’m not just saying that because the version number (1.2.3.Final) is awesome.
+This release has a bunch of bug fixes in it, as well as a few targetted new 
+features.  Read on for more details!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;where-can-i-find-more-information&quot;&gt;Where can I find more information?&lt;/h2&gt;
+&lt;p&gt;The release notes for this release can be found here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://red.ht/21HvJDe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And of course, all of the standard sources of information have been updated:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/&quot;&gt;The apiman project site&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;Latest User Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;just-give-me-the-highlights&quot;&gt;Just give me the highlights!&lt;/h2&gt;
+&lt;p&gt;Too busy to click the links above?  I get it.  I’ll give you the top changes in this
+release.&lt;/p&gt;
+
+&lt;h3 id=&quot;api-key-moved-from-contract-to-client-app&quot;&gt;API Key moved from Contract to Client App&lt;/h3&gt;
+&lt;p&gt;The big change from 1.2.2.Final is that we have moved the API Key from the Contract
+(which is the link between a Client App and an API it consumes) to the Client App.&lt;br /&gt;
+This change was suggested by a number of community members, and it does make a lot
+of sense.  The primary down-side to this change is that you are now limited to one
+Contract per Client App per API. Previously if an API was offered through, for example,
+a Gold and a Silver plan, you could actually create a Contract to &lt;em&gt;both&lt;/em&gt; of them.
+This is no longer possible.&lt;/p&gt;
+
+&lt;p&gt;It is worth noting that this change makes many things easier to do, now and going 
+forward.  API Key management is simpler - you just have one key for each Client App
+(version) you manage.  It also opens up the opportunity to allow other types of 
+API Keys (such as client certificates or Keycloak client IDs) beyond the default 
+Java UUID style keys.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-migration-when-upgrading-apiman&quot;&gt;Data migration when upgrading apiman&lt;/h3&gt;
+&lt;p&gt;Moving the API Key from the Contract to the Client App changed the apiman internal
+data model, which prompted us to implement a data migration feature integrated with
+the already-existing data import/export feature.  This means that you can export
+data from an older version of apiman, and then import that data into a newer version
+of apiman - and apiman will automatically tranform the import data to the latest
+data model.&lt;/p&gt;
+
+&lt;h3 id=&quot;initial-metrics-support-for-hawkular-metrics&quot;&gt;Initial metrics support for Hawkular Metrics&lt;/h3&gt;
+&lt;p&gt;As you all probably know, apiman supports different implementations of various core
+internal components.  One of those components is the Metrics feature, where we 
+record metrics information for every request made to the Gateway.  In the default
+community edition of apiman we use Elasticsearch to record these metrics.  Version
+1.2.3.Final of apiman now includes an initial (tech preview) implementation that
+uses (Hawkular Metrics)[http://www.hawkular.org/docs/components/metrics/index.html] 
+instead of Elasticsearch!&lt;/p&gt;
+
+&lt;h3 id=&quot;improvements-to-the-api-catalog-ui&quot;&gt;Improvements to the API Catalog UI&lt;/h3&gt;
+&lt;p&gt;A very cool recent feature of apiman is the new 
+(API Catalog browser UI)[http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html].&lt;br /&gt;
+The API Catalog feature allows you to quickly filter the list of available APIs from
+the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
+with zero or more tags, and filtering can now be done based on these tags.  The UI
+is pretty slick!&lt;/p&gt;
+
+&lt;h3 id=&quot;configurable-aes-data-encrypter-implementation&quot;&gt;Configurable AES data encrypter implementation&lt;/h3&gt;
+&lt;p&gt;You may or may not be aware that apiman encrypts any data that might be sensitive prior
+to storing it in the data store (manager) or registry (gateway).  There is a java
+interface called (IDataEncrypter)[https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java] 
+that controls this behavior, and you can provide your own implementation via an apiman
+plugin if you choose.  Previously that was the only option available to you if you
+wanted a more secure implementation (the default implementation uses a well-known/hard-coded
+secret key when doing AES encryption on the data, making it not-very-secure).  Now we
+offer that same AES encrypter but the secret key can be configured in the &lt;em&gt;apiman.properties&lt;/em&gt;
+file.&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-thanks-im-out&quot;&gt;OK thanks, I’m out!&lt;/h2&gt;
+&lt;p&gt;Thanks for reading - see you later.&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="release" />
+				
+				<pubDate>Thu, 24 Mar 2016 06:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/release/2016/03/24/release-1.2.3.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2016/03/24/release-1.2.3.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Import APIs Into Apiman (API Catalog)</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5535,232 +5633,6 @@ processes again.&lt;/p&gt;
 				<guid isPermaLink="true">http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Setting up your apiman development environment</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;For those of you who might be interested in hacking away at some core apiman code,
-I thought it might be nice to create a reasonably comprehensive step-by-step
-guide.  For the most part everything is straightforward, but there are a copule
-of tricks you can use to get up and running fast and to be able to easily
-iterate on any changes you make.&lt;/p&gt;
-
-&lt;p&gt;Read on if this sounds like something you want to do!&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;what-will-this-post-cover&quot;&gt;What will this post cover?&lt;/h2&gt;
-&lt;p&gt;Here is a high level overview of the steps we’ll take to getting a working
-apiman development environment.  First, here are my basic assumptions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You are a java developer and have JDK7 or higher installed&lt;/li&gt;
-  &lt;li&gt;You are familiar with maven and have it installed&lt;/li&gt;
-  &lt;li&gt;You know git and have it installed&lt;/li&gt;
-  &lt;li&gt;You want to use the Eclipse IDE&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Assuming you meet all of the above requirements, you should have no trouble
-with this guide!  Here is what this post will cover:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Getting the apiman source code&lt;/li&gt;
-  &lt;li&gt;Downloading and running Eclipse&lt;/li&gt;
-  &lt;li&gt;Configuring Eclipse for apiman development&lt;/li&gt;
-  &lt;li&gt;Importing the apiman source code into Eclipse&lt;/li&gt;
-  &lt;li&gt;Running Development versions of the apiman components&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;getting-the-apiman-source-code&quot;&gt;Getting the apiman source code&lt;/h2&gt;
-&lt;p&gt;The first thing you (obviously) need to do is download the apiman project
-source code.  All of the code is in github, of course.  You can find the
-code here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman&quot;&gt;https://github.com/apiman/apiman&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The ‘apiman’ github organization has a couple of additional repositories as
-well.  For example the quickstarts and plugins each have their own repos.
-But let’s stick with the core code for this post.&lt;/p&gt;
-
-&lt;p&gt;If you want to follow best practice, you should “fork” the apiman repository
-on github, then clone your forked copy.  Once you have used the github UI
-to fork the repository, you would do something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git clone git@github.com:&amp;lt;YOUR-GITHUB-ID&amp;gt;/apiman.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I also recommend adding the upstream github repository as another remote
-so that you can easily pull in upstream changes:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git remote add upstream git@github.com:apiman/apiman.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;downloading-and-running-eclipse&quot;&gt;Downloading and running Eclipse&lt;/h2&gt;
-&lt;p&gt;Alright - you’ve got the apiman code cloned on your local hard drive
-somewhere.  The next step is to download Eclipse (if you don’t already
-have it installed).  This can be done here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/downloads/&quot;&gt;http://www.eclipse.org/downloads/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I like to download the “Eclipse IDE for Java EE Developers” version
-because it comes with a lot of extra stuff I like to use.  But you should
-be fine with the basic version as well.  I’m going to use the EE version
-as I write this guide!&lt;/p&gt;
-
-&lt;p&gt;Once you’ve completed the download, just unpack it and run Eclipse.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/eclipse-fresh.png&quot; alt=&quot;Fresh Eclipse&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring-eclipse-for-apiman-development&quot;&gt;Configuring Eclipse for apiman development&lt;/h2&gt;
-&lt;p&gt;Great!  You’ve got Eclipse running.  Now let’s make a minor change
-to it specific to apiman development.  Go ahead and import the apiman code
-formatter specification.  You can find this file in the apiman code
-repository here:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman/tools/src/eclipse/apiman-eclipse-formatter.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Import that file in the Eclipse Preferences dialog here:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/eclipse-formatter.png&quot; alt=&quot;Eclipse Preferences&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;importing-the-apiman-source-code-into-eclipse&quot;&gt;Importing the apiman source code into Eclipse&lt;/h2&gt;
-&lt;p&gt;OK now we’re ready to import the apiman source code into Eclipse.  Because
-apiman uses maven as its build system, and because Eclipse has maven support
-built-in via m2e, this should be a snap.  Simply go to &lt;em&gt;File-&amp;gt;Import&lt;/em&gt; and
-choose &lt;em&gt;Maven/Existing Maven Projects&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/import-apiman.png&quot; alt=&quot;Import apiman&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/import-apiman-2.png&quot; alt=&quot;Import apiman Confirm&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Importing the projects into Eclipse may take some time, and Eclipse may
-yell at you about unresolved m2e plugins and whatnot.  Make sensible choices
-(e.g. resolve later) and go about your life.  Go get a cup of coffee, the
-build will probably take a few minutes.&lt;/p&gt;
-
-&lt;p&gt;It is possible you will run into a problem where the &lt;em&gt;apiman-manager-ui-hawtio&lt;/em&gt;
-project gets into a build loop.  This can be corrected by disabling the
-maven builder for that one project only.  Do this by right-click on that
-project and choosing properties:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/project-properties.png&quot; alt=&quot;Project Properties&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Typically this will leave you with a bunch of annoying warnings in Eclipse,
-most of which will be HTML Problems.  I will leave it as an exercise to the
-reader about how to disable those.&lt;/p&gt;
-
-&lt;p&gt;IMPORTANT:  you should have 0 java errors at this point!&lt;/p&gt;
-
-&lt;h2 id=&quot;running-development-versions-of-the-apiman-components&quot;&gt;Running Development versions of the apiman components&lt;/h2&gt;
-&lt;p&gt;Everything should now be loaded into Eclipse.  Now all you need is a quick
-way to run everything.  Of course you can &lt;em&gt;always&lt;/em&gt; do a full rebuild via
-maven and use the “install-all-wildfly8” profile:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd ~/git/apiman
-mvn clean install -Pinstall-all-wildfly8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;That will result in a full apiman environment installed in WildFly 8.  If you
-use this approach you can run apiman here:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd ~/git/apiman/tools/server-all/target/wildfly-8.2.0.Final
-./bin/standalone.sh --debug&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then you can connect a remote debugger to WildFly and debug apiman from Eclipse.&lt;/p&gt;
-
-&lt;p&gt;But a quicker way to run the various apiman components exists.&lt;/p&gt;
-
-&lt;p&gt;As you may or may not know, apiman consists of two components:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The API Manager (RESTful services + UI)&lt;/li&gt;
-  &lt;li&gt;The API Gateway&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can run/test these pieces together or separately.  Let’s first explore
-the API Manager.&lt;/p&gt;
-
-&lt;h3 id=&quot;launching-a-dev-version-of-the-api-manager-rest-services&quot;&gt;Launching a Dev version of the API Manager REST services&lt;/h3&gt;
-&lt;p&gt;This is actually really easy:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open up the java class &lt;em&gt;ManagerApiDevServer&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Debug As-&amp;gt;Java Application&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Easy as that!  It should fire up an instance of Jetty with the apiman API
-Manager backend (RESTful web services) deployed.  You can test this by going
-here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:7070/apiman/system/status&quot;&gt;http://localhost:7070/apiman/system/status&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Log in using username &lt;em&gt;admin&lt;/em&gt; and password &lt;em&gt;admin&lt;/em&gt;.  Oh by the way, did I mention
-that it runs on port 7070?  That’s important!&lt;/p&gt;
-
-&lt;h3 id=&quot;using-gulp-to-make-ui-changes&quot;&gt;Using gulp to make UI changes&lt;/h3&gt;
-&lt;p&gt;We use angularjs and typescript as the basis for the UI.  In order to develop
-UI code you’ll need to use gulp.  We have documented how to do this here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/blob/master/manager/ui/hawtio/README.md&quot;&gt;https://github.com/apiman/apiman/blob/master/manager/ui/hawtio/README.md&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Give that a quick read!  When it asks you to configure your new copy of the
-config.js file, it should look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;APIMAN_CONFIG_DATA&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;apiman&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1.1.0-SNAPSHOT&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;builtOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;2015-01-01&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;logoutUrl&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;logout&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;user&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;ui&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;header&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;api&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;endpoint&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://localhost:7070/apiman&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;auth&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;basic&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;quot;basic&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;If you get it all set up properly you should be able to point your browser here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:2772/api-manager/dash&quot;&gt;http://localhost:2772/api-manager/dash&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now whenever you make changes to any of the apiman angularjs code, the browser
-will automatically refresh and show you the changes!&lt;/p&gt;
-
-&lt;h3 id=&quot;launching-a-dev-version-of-the-api-gateway&quot;&gt;Launching a dev version of the API Gateway&lt;/h3&gt;
-&lt;p&gt;This one is easy as well.  Just open up the &lt;em&gt;GatewayDevServer&lt;/em&gt; java class
-and debug it as an application (just like the API Manager above!)…&lt;/p&gt;
-
-&lt;h2 id=&quot;wrapup&quot;&gt;Wrapup&lt;/h2&gt;
-&lt;p&gt;Whew!  That took longer than I thought.  Please let me know if you run into
-any snags.  There are probably lots of improvements you could explore, such as
-using JRebel to never have to restart the API Manager or API Gateway java
-processes again.&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="eclipse" />
-				
-					<category term="development" />
-				
-					<category term="maven" />
-				
-				<pubDate>Thu, 04 Jun 2015 05:04:45 -0400</pubDate>
-				<link>http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment.html</guid>
-			</item>
-		
-		<lastBuildDate>Thu, 24 Mar 2016 11:29:51 -0400</lastBuildDate>
+		<lastBuildDate>Thu, 24 Mar 2016 13:06:02 -0400</lastBuildDate>
 	</channel>
 </rss>
