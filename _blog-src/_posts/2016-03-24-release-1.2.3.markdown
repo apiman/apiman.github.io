@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "Version 1.2.3.Final of apiman is released!"
+date:   2016-03-24 10:00:00
+author: eric_wittmann
+categories: apiman release
+---
+
+Greetings, earthlings!  Yesterday we released the *best* version of apiman yet,
+and I'm not just saying that because the version number (1.2.3.Final) is awesome.
+This release has a bunch of bug fixes in it, as well as a few targetted new 
+features.  Read on for more details!
+
+<!--more-->
+
+## Where can I find more information?
+The release notes for this release can be found here:
+
+* http://red.ht/21HvJDe
+
+And of course, all of the standard sources of information have been updated:
+
+* [The apiman project site](http://www.apiman.io/)
+* [Latest User Guide](http://www.apiman.io/latest/user-guide.html)
+
+## Just give me the highlights!
+Too busy to click the links above?  I get it.  I'll give you the top changes in this
+release.
+
+### API Key moved from Contract to Client App
+The big change from 1.2.2.Final is that we have moved the API Key from the Contract
+(which is the link between a Client App and an API it consumes) to the Client App.  
+This change was suggested by a number of community members, and it does make a lot
+of sense.  The primary down-side to this change is that you are now limited to one
+Contract per Client App per API. Previously if an API was offered through, for example,
+a Gold and a Silver plan, you could actually create a Contract to *both* of them.
+This is no longer possible.
+
+It is worth noting that this change makes many things easier to do, now and going 
+forward.  API Key management is simpler - you just have one key for each Client App
+(version) you manage.  It also opens up the opportunity to allow other types of 
+API Keys (such as client certificates or Keycloak client IDs) beyond the default 
+Java UUID style keys.
+
+### Data migration when upgrading apiman
+Moving the API Key from the Contract to the Client App changed the apiman internal
+data model, which prompted us to implement a data migration feature integrated with
+the already-existing data import/export feature.  This means that you can export
+data from an older version of apiman, and then import that data into a newer version
+of apiman - and apiman will automatically tranform the import data to the latest
+data model.
+
+### Initial metrics support for Hawkular Metrics
+As you all probably know, apiman supports different implementations of various core
+internal components.  One of those components is the Metrics feature, where we 
+record metrics information for every request made to the Gateway.  In the default
+community edition of apiman we use Elasticsearch to record these metrics.  Version
+1.2.3.Final of apiman now includes an initial (tech preview) implementation that
+uses (Hawkular Metrics)[http://www.hawkular.org/docs/components/metrics/index.html] 
+instead of Elasticsearch!
+
+### Improvements to the API Catalog UI
+A very cool recent feature of apiman is the new 
+(API Catalog browser UI)[http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html].  
+The API Catalog feature allows you to quickly filter the list of available APIs from
+the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
+with zero or more tags, and filtering can now be done based on these tags.  The UI
+is pretty slick!
+
+### Configurable AES data encrypter implementation
+You may or may not be aware that apiman encrypts any data that might be sensitive prior
+to storing it in the data store (manager) or registry (gateway).  There is a java
+interface called (IDataEncrypter)[https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java] 
+that controls this behavior, and you can provide your own implementation via an apiman
+plugin if you choose.  Previously that was the only option available to you if you
+wanted a more secure implementation (the default implementation uses a well-known/hard-coded
+secret key when doing AES encryption on the data, making it not-very-secure).  Now we
+offer that same AES encrypter but the secret key can be configured in the *apiman.properties*
+file.
+
+## OK thanks, I'm out!
+Thanks for reading - see you later.
+
+/post
