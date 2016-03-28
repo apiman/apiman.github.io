@@ -9,6 +9,131 @@
 		
 		
 			<item>
+				<title>Apiman 1.2 - Introduction to User Roles in apiman</title>
+				
+				        <dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author>
+				
+				<description>&lt;p&gt;In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for user memberships as users can be members of multiple organizations. Permissions in apiman are role based. The actions that a user is able to perform are dependent on the roles to which the user is assigned when a user is added as a member of an organization.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Let’s start by looking at the roles that are preconfigured in apiman.&lt;/p&gt;
+
+&lt;h3 id=&quot;understanding-ootb-apiman-user-roles&quot;&gt;Understanding OOTB apiman user roles&lt;/h3&gt;
+
+&lt;p&gt;In apiman, each role defines a set of permissions granted by that role. When a user is made a member of an organization, that user must be assigned to a role. A role definition consists of a name and description, and, most importantly, a set of permissions that govern the user’s ability to view, edit, and administer the organization itself, as well as the organization’s plans, APIs, and applications.&lt;/p&gt;
+
+&lt;p&gt;Roles are managed in the Roles section of the apiman System Administration form in the Management UI.&lt;/p&gt;
+
+&lt;p&gt;Apiman is preconfigured with the following roles:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Organization Owner&lt;/li&gt;
+  &lt;li&gt;API Developer&lt;/li&gt;
+  &lt;li&gt;Client App Developer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These role names are self-explanatory. For example, a user assigned the Application Developer role is able to manage the organization’s applications but is blocked from managing its APIs or plans.&lt;/p&gt;
+
+&lt;p&gt;The full set of permissions provided in apiman by these preconfigured roles are:&lt;/p&gt;
+
+&lt;p&gt;Preconfigured apiman Role: Client App Developer&lt;br /&gt;
+Who Should be Assigned this Role: Users responsible for creating and managing client apps
+Permissions Granted to this Role: 
+- Client App View
+- Client App Edit
+- Client App Admin&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Preconfigured apiman Role&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Who Should be Assigned this Role&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Permissions Granted to this Role&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Client App Developer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Users responsible for creating and managing client apps&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Client App View, Client App Edit, Client App Admin&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Organization Owner&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Automatically granted to the user who creates an Organization&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;All permissions = Client App View, Client App Edit, Client App Admin, Plan View, Plan Edit, Plan Admin, API View, API Edit, API Admin, Organization View, Organization Edit, Organization Admin&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;API Developer&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Users responsible for creating and managing APIs&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Plan View, Plan Edit, Plan Admin, API View, API Edit, API Admin&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Organization owners can assign roles to users through the “Manage Members” form in the apiman Management UI. Each user must be assigned at least one role, but users can also be assigned multiple roles.&lt;/p&gt;
+
+&lt;p&gt;We’ll walk through an example of assigning a role to a user in a moment.&lt;/p&gt;
+
+&lt;p&gt;While apiman admin users can also modify the permissions as defined for these preconfigured roles, it can be easier to create new custom roles. We will also walk through an example of creating a new user role later in this post.&lt;/p&gt;
+
+&lt;h3 id=&quot;assigningrevoking-roles-for-organization-users&quot;&gt;Assigning/Revoking Roles for Organization Users&lt;/h3&gt;
+
+&lt;p&gt;It’s worth repeating that all data elements in apiman exist in the context of an organization.  As a result, it is important to understand that users can only manage these elements if they have the appropriate role for the organization in which the elements exist.  Therefore, a user must be granted membership in an organization.&lt;/p&gt;
+
+&lt;p&gt;It’s not possible for users to assign themselves roles. Roles must be assigned to a user by an organization owner. Assigning a role to a user is a straightforward task for an organization owner.&lt;/p&gt;
+
+&lt;p&gt;First, the organization must search for the user:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-28/roles_1.png&quot; alt=&quot;Image: Search for User&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And then, the organization owner can assign a role to the user from the existing set of roles:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-28/roles_2.png&quot; alt=&quot;Image: Assign Role&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Revoking a role for a user is just as easy. The organization owner simply has to search for the user, and then deselect a role for the user.&lt;/p&gt;
+
+&lt;p&gt;The same approach for assigning/revoking a role for a user is followed for the standard roles that are preconfigured in apiman, and for custom roles that you create.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-a-new-user-roledefining-the-role-permissions&quot;&gt;Creating a New User Role/Defining the Role Permissions&lt;/h3&gt;
+
+&lt;p&gt;In addition to providing a set of preconfigured roles, apiman also provides a means for apiman admin users to create new roles where you can define a custom set of permissions for each role. Custom roles give you the ability to exercise fine-grained control over the set of permissions granted to users.&lt;/p&gt;
+
+&lt;p&gt;Let’s look at an example of a custom role.&lt;/p&gt;
+
+&lt;p&gt;Imagine a situation where you have API developer users and application developer users. These sets of users can rely on apiman’s preconfigured roles. Let’s also imagine that you have a third set of user. You want these users to have read access to APIs and applications so that they can participate in a review/approval process. However, you do not want to give these users write access. For example, suppose you have to find a job for a certain relative of yours. He may be a thoroughly competent person, but you’d feel better if he didn’t have write access to anything valuable. A read-only role for your brother in law would look something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-28/roles_3.png&quot; alt=&quot;Image: Define New Role&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the “brother-in-law” role is created, you can assign it to other users in the same manner as any other role:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2016-03-28/roles_4.png&quot; alt=&quot;Image: View the Roles&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h3&gt;
+
+&lt;p&gt;A consistent pattern in apiman is a rich set of features provided OOTB, and a method for you to expand on these features by creating customizations. User roles enable you to assign users permissions based on the tasks that they perform. Apiman is preconfigured with a rich set of roles OOTB, and also enables you to create new, custom roles to handle additional types of users (even your brother-in-law).&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="introduction" />
+				
+					<category term="overview" />
+				
+					<category term="users" />
+				
+					<category term="roles" />
+				
+				<pubDate>Mon, 28 Mar 2016 03:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/introduction/overview/users/roles/2016/03/28/users_roles.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/users/roles/2016/03/28/users_roles.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Version 1.2.3.Final of apiman is released!</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5407,232 +5532,6 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Setting up your apiman development environment</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;For those of you who might be interested in hacking away at some core apiman code,
-I thought it might be nice to create a reasonably comprehensive step-by-step
-guide.  For the most part everything is straightforward, but there are a copule
-of tricks you can use to get up and running fast and to be able to easily
-iterate on any changes you make.&lt;/p&gt;
-
-&lt;p&gt;Read on if this sounds like something you want to do!&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;what-will-this-post-cover&quot;&gt;What will this post cover?&lt;/h2&gt;
-&lt;p&gt;Here is a high level overview of the steps we’ll take to getting a working
-apiman development environment.  First, here are my basic assumptions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You are a java developer and have JDK7 or higher installed&lt;/li&gt;
-  &lt;li&gt;You are familiar with maven and have it installed&lt;/li&gt;
-  &lt;li&gt;You know git and have it installed&lt;/li&gt;
-  &lt;li&gt;You want to use the Eclipse IDE&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Assuming you meet all of the above requirements, you should have no trouble
-with this guide!  Here is what this post will cover:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Getting the apiman source code&lt;/li&gt;
-  &lt;li&gt;Downloading and running Eclipse&lt;/li&gt;
-  &lt;li&gt;Configuring Eclipse for apiman development&lt;/li&gt;
-  &lt;li&gt;Importing the apiman source code into Eclipse&lt;/li&gt;
-  &lt;li&gt;Running Development versions of the apiman components&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;getting-the-apiman-source-code&quot;&gt;Getting the apiman source code&lt;/h2&gt;
-&lt;p&gt;The first thing you (obviously) need to do is download the apiman project
-source code.  All of the code is in github, of course.  You can find the
-code here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman&quot;&gt;https://github.com/apiman/apiman&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The ‘apiman’ github organization has a couple of additional repositories as
-well.  For example the quickstarts and plugins each have their own repos.
-But let’s stick with the core code for this post.&lt;/p&gt;
-
-&lt;p&gt;If you want to follow best practice, you should “fork” the apiman repository
-on github, then clone your forked copy.  Once you have used the github UI
-to fork the repository, you would do something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git clone git@github.com:&amp;lt;YOUR-GITHUB-ID&amp;gt;/apiman.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I also recommend adding the upstream github repository as another remote
-so that you can easily pull in upstream changes:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git remote add upstream git@github.com:apiman/apiman.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;downloading-and-running-eclipse&quot;&gt;Downloading and running Eclipse&lt;/h2&gt;
-&lt;p&gt;Alright - you’ve got the apiman code cloned on your local hard drive
-somewhere.  The next step is to download Eclipse (if you don’t already
-have it installed).  This can be done here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/downloads/&quot;&gt;http://www.eclipse.org/downloads/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I like to download the “Eclipse IDE for Java EE Developers” version
-because it comes with a lot of extra stuff I like to use.  But you should
-be fine with the basic version as well.  I’m going to use the EE version
-as I write this guide!&lt;/p&gt;
-
-&lt;p&gt;Once you’ve completed the download, just unpack it and run Eclipse.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/eclipse-fresh.png&quot; alt=&quot;Fresh Eclipse&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring-eclipse-for-apiman-development&quot;&gt;Configuring Eclipse for apiman development&lt;/h2&gt;
-&lt;p&gt;Great!  You’ve got Eclipse running.  Now let’s make a minor change
-to it specific to apiman development.  Go ahead and import the apiman code
-formatter specification.  You can find this file in the apiman code
-repository here:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman/tools/src/eclipse/apiman-eclipse-formatter.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Import that file in the Eclipse Preferences dialog here:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/eclipse-formatter.png&quot; alt=&quot;Eclipse Preferences&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;importing-the-apiman-source-code-into-eclipse&quot;&gt;Importing the apiman source code into Eclipse&lt;/h2&gt;
-&lt;p&gt;OK now we’re ready to import the apiman source code into Eclipse.  Because
-apiman uses maven as its build system, and because Eclipse has maven support
-built-in via m2e, this should be a snap.  Simply go to &lt;em&gt;File-&amp;gt;Import&lt;/em&gt; and
-choose &lt;em&gt;Maven/Existing Maven Projects&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/import-apiman.png&quot; alt=&quot;Import apiman&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/import-apiman-2.png&quot; alt=&quot;Import apiman Confirm&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Importing the projects into Eclipse may take some time, and Eclipse may
-yell at you about unresolved m2e plugins and whatnot.  Make sensible choices
-(e.g. resolve later) and go about your life.  Go get a cup of coffee, the
-build will probably take a few minutes.&lt;/p&gt;
-
-&lt;p&gt;It is possible you will run into a problem where the &lt;em&gt;apiman-manager-ui-hawtio&lt;/em&gt;
-project gets into a build loop.  This can be corrected by disabling the
-maven builder for that one project only.  Do this by right-click on that
-project and choosing properties:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-04/project-properties.png&quot; alt=&quot;Project Properties&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Typically this will leave you with a bunch of annoying warnings in Eclipse,
-most of which will be HTML Problems.  I will leave it as an exercise to the
-reader about how to disable those.&lt;/p&gt;
-
-&lt;p&gt;IMPORTANT:  you should have 0 java errors at this point!&lt;/p&gt;
-
-&lt;h2 id=&quot;running-development-versions-of-the-apiman-components&quot;&gt;Running Development versions of the apiman components&lt;/h2&gt;
-&lt;p&gt;Everything should now be loaded into Eclipse.  Now all you need is a quick
-way to run everything.  Of course you can &lt;em&gt;always&lt;/em&gt; do a full rebuild via
-maven and use the “install-all-wildfly8” profile:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd ~/git/apiman
-mvn clean install -Pinstall-all-wildfly8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;That will result in a full apiman environment installed in WildFly 8.  If you
-use this approach you can run apiman here:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd ~/git/apiman/tools/server-all/target/wildfly-8.2.0.Final
-./bin/standalone.sh --debug&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then you can connect a remote debugger to WildFly and debug apiman from Eclipse.&lt;/p&gt;
-
-&lt;p&gt;But a quicker way to run the various apiman components exists.&lt;/p&gt;
-
-&lt;p&gt;As you may or may not know, apiman consists of two components:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The API Manager (RESTful APIs + UI)&lt;/li&gt;
-  &lt;li&gt;The API Gateway&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can run/test these pieces together or separately.  Let’s first explore
-the API Manager.&lt;/p&gt;
-
-&lt;h3 id=&quot;launching-a-dev-version-of-the-api-manager-rest-apis&quot;&gt;Launching a Dev version of the API Manager REST APIs&lt;/h3&gt;
-&lt;p&gt;This is actually really easy:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open up the java class &lt;em&gt;ManagerApiDevServer&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Debug As-&amp;gt;Java Application&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Easy as that!  It should fire up an instance of Jetty with the apiman API
-Manager backend (RESTful APIs) deployed.  You can test this by going
-here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:7070/apiman/system/status&quot;&gt;http://localhost:7070/apiman/system/status&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Log in using username &lt;em&gt;admin&lt;/em&gt; and password &lt;em&gt;admin&lt;/em&gt;.  Oh by the way, did I mention
-that it runs on port 7070?  That’s important!&lt;/p&gt;
-
-&lt;h3 id=&quot;using-gulp-to-make-ui-changes&quot;&gt;Using gulp to make UI changes&lt;/h3&gt;
-&lt;p&gt;We use angularjs and typescript as the basis for the UI.  In order to develop
-UI code you’ll need to use gulp.  We have documented how to do this here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/blob/master/manager/ui/hawtio/README.md&quot;&gt;https://github.com/apiman/apiman/blob/master/manager/ui/hawtio/README.md&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Give that a quick read!  When it asks you to configure your new copy of the
-config.js file, it should look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;err&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;APIMAN_CONFIG_DATA&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;apiman&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;version&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;1.1.0-SNAPSHOT&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;builtOn&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;2015-01-01&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;logoutUrl&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;logout&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;user&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;ui&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;header&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;quot;api&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;endpoint&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://localhost:7070/apiman&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;quot;auth&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;basic&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;quot;basic&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;admin&amp;quot;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;If you get it all set up properly you should be able to point your browser here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://localhost:2772/api-manager/dash&quot;&gt;http://localhost:2772/api-manager/dash&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now whenever you make changes to any of the apiman angularjs code, the browser
-will automatically refresh and show you the changes!&lt;/p&gt;
-
-&lt;h3 id=&quot;launching-a-dev-version-of-the-api-gateway&quot;&gt;Launching a dev version of the API Gateway&lt;/h3&gt;
-&lt;p&gt;This one is easy as well.  Just open up the &lt;em&gt;GatewayDevServer&lt;/em&gt; java class
-and debug it as an application (just like the API Manager above!)…&lt;/p&gt;
-
-&lt;h2 id=&quot;wrapup&quot;&gt;Wrapup&lt;/h2&gt;
-&lt;p&gt;Whew!  That took longer than I thought.  Please let me know if you run into
-any snags.  There are probably lots of improvements you could explore, such as
-using JRebel to never have to restart the API Manager or API Gateway java
-processes again.&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="eclipse" />
-				
-					<category term="development" />
-				
-					<category term="maven" />
-				
-				<pubDate>Thu, 04 Jun 2015 05:04:45 -0400</pubDate>
-				<link>http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Thu, 24 Mar 2016 13:11:02 -0400</lastBuildDate>
+		<lastBuildDate>Mon, 28 Mar 2016 07:04:07 -0400</lastBuildDate>
 	</channel>
 </rss>

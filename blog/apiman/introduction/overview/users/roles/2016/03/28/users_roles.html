@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>We got the moves like swagger! | apiman Open Source API Management</title>
-  <meta name="description" content="One of the weaknesses we’ve had in apiman until now is that API providers didn’t haveany way to document how to consume their APIs.  Well that has all change...">
+  <title>Apiman 1.2 - Introduction to User Roles in apiman | apiman Open Source API Management</title>
+  <meta name="description" content="In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for ...">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 
   <!-- Canonical URL -->
     
-    <link rel="canonical" href="http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/introduction/overview/users/roles/2016/03/28/users_roles.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -135,211 +135,118 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">We got the moves like swagger!</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 2, 2015</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, swagger, api, and ui</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Apiman 1.2 - Introduction to User Roles in apiman</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 28, 2016</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/ldimaggi">Len DiMaggio</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, introduction, overview, users, and roles</span>
   </header>
 
 
   
 
   
-    <!-- New Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
-    </p>
-  
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>One of the weaknesses we’ve had in apiman until now is that API providers didn’t have
-any way to document how to consume their APIs.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your API.  If you do,
-consumers will be able to browse your API documentation directly in the apiman UI.</p>
-
-<p>I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the client app developer (aka the
-API consumer).</p>
+    <p>In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for user memberships as users can be members of multiple organizations. Permissions in apiman are role based. The actions that a user is able to perform are dependent on the roles to which the user is assigned when a user is added as a member of an organization.</p>
 
 <!--more-->
 
-<h2 id="adding-an-api-definition">Adding an API Definition</h2>
-<p>As an API provider, the only thing you need to do is add an API definition to your
-API.  This is simple - just navigate to the new “Definition” tab in your API.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!</p>
+<p>Let’s start by looking at the roles that are preconfigured in apiman.</p>
 
-<h2 id="what-is-a-swagger-spec">What is a Swagger spec?</h2>
-<p>So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful API.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):</p>
+<h3 id="understanding-ootb-apiman-user-roles">Understanding OOTB apiman user roles</h3>
+
+<p>In apiman, each role defines a set of permissions granted by that role. When a user is made a member of an organization, that user must be assigned to a role. A role definition consists of a name and description, and, most importantly, a set of permissions that govern the user’s ability to view, edit, and administer the organization itself, as well as the organization’s plans, APIs, and applications.</p>
+
+<p>Roles are managed in the Roles section of the apiman System Administration form in the Management UI.</p>
+
+<p>Apiman is preconfigured with the following roles:</p>
 
 <ul>
-  <li>API meta-data such as Name and Description</li>
-  <li>Resource Paths and the Operations/Methods they support</li>
-  <li>Input/Output types</li>
+  <li>Organization Owner</li>
+  <li>API Developer</li>
+  <li>Client App Developer</li>
 </ul>
 
-<p>For more information I recommend navigating to the <a href="http://swagger.io/" target="_blank" rel="nofollow">Swagger Project</a>.</p>
+<p>These role names are self-explanatory. For example, a user assigned the Application Developer role is able to manage the organization’s applications but is blocked from managing its APIs or plans.</p>
 
-<h2 id="how-does-this-help-my-consumers">How does this help my consumers?</h2>
-<p>Once you’ve got a Swagger spec created and added to your API, your API
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View API Definition” link available on
-the consumer’s “API Details” page (the same page that consumers are shown when
-they have searched for an API).  Here’s an example:</p>
+<p>The full set of permissions provided in apiman by these preconfigured roles are:</p>
 
-<p><img src="/blog/images/2015-06-02/api-details.png" alt="API Details" /></p>
+<p>Preconfigured apiman Role: Client App Developer<br />
+Who Should be Assigned this Role: Users responsible for creating and managing client apps
+Permissions Granted to this Role: 
+- Client App View
+- Client App Edit
+- Client App Admin</p>
 
-<p>An API consumer can see that there is an API definition they can click on, which
-will give them a ton of information about how to use the API.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-API as described by the Swagger spec definition:</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Preconfigured apiman Role</th>
+      <th style="text-align: center">Who Should be Assigned this Role</th>
+      <th style="text-align: center">Permissions Granted to this Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Client App Developer</td>
+      <td style="text-align: center">Users responsible for creating and managing client apps</td>
+      <td style="text-align: center">Client App View, Client App Edit, Client App Admin</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Organization Owner</td>
+      <td style="text-align: center">Automatically granted to the user who creates an Organization</td>
+      <td style="text-align: center">All permissions = Client App View, Client App Edit, Client App Admin, Plan View, Plan Edit, Plan Admin, API View, API Edit, API Admin, Organization View, Organization Edit, Organization Admin</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">API Developer</td>
+      <td style="text-align: center">Users responsible for creating and managing APIs</td>
+      <td style="text-align: center">Plan View, Plan Edit, Plan Admin, API View, API Edit, API Admin</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><img src="/blog/images/2015-06-02/api-definition.png" alt="API Definition" /></p>
+<p>Organization owners can assign roles to users through the “Manage Members” form in the apiman Management UI. Each user must be assigned at least one role, but users can also be assigned multiple roles.</p>
 
-<p>As always, thanks for making it to the end of my ramblings!</p>
+<p>We’ll walk through an example of assigning a role to a user in a moment.</p>
+
+<p>While apiman admin users can also modify the permissions as defined for these preconfigured roles, it can be easier to create new custom roles. We will also walk through an example of creating a new user role later in this post.</p>
+
+<h3 id="assigningrevoking-roles-for-organization-users">Assigning/Revoking Roles for Organization Users</h3>
+
+<p>It’s worth repeating that all data elements in apiman exist in the context of an organization.  As a result, it is important to understand that users can only manage these elements if they have the appropriate role for the organization in which the elements exist.  Therefore, a user must be granted membership in an organization.</p>
+
+<p>It’s not possible for users to assign themselves roles. Roles must be assigned to a user by an organization owner. Assigning a role to a user is a straightforward task for an organization owner.</p>
+
+<p>First, the organization must search for the user:</p>
+
+<p><img src="/blog/images/2016-03-28/roles_1.png" alt="Image: Search for User" /></p>
+
+<p>And then, the organization owner can assign a role to the user from the existing set of roles:</p>
+
+<p><img src="/blog/images/2016-03-28/roles_2.png" alt="Image: Assign Role" /></p>
+
+<p>Revoking a role for a user is just as easy. The organization owner simply has to search for the user, and then deselect a role for the user.</p>
+
+<p>The same approach for assigning/revoking a role for a user is followed for the standard roles that are preconfigured in apiman, and for custom roles that you create.</p>
+
+<h3 id="creating-a-new-user-roledefining-the-role-permissions">Creating a New User Role/Defining the Role Permissions</h3>
+
+<p>In addition to providing a set of preconfigured roles, apiman also provides a means for apiman admin users to create new roles where you can define a custom set of permissions for each role. Custom roles give you the ability to exercise fine-grained control over the set of permissions granted to users.</p>
+
+<p>Let’s look at an example of a custom role.</p>
+
+<p>Imagine a situation where you have API developer users and application developer users. These sets of users can rely on apiman’s preconfigured roles. Let’s also imagine that you have a third set of user. You want these users to have read access to APIs and applications so that they can participate in a review/approval process. However, you do not want to give these users write access. For example, suppose you have to find a job for a certain relative of yours. He may be a thoroughly competent person, but you’d feel better if he didn’t have write access to anything valuable. A read-only role for your brother in law would look something like this:</p>
+
+<p><img src="/blog/images/2016-03-28/roles_3.png" alt="Image: Define New Role" /></p>
+
+<p>Once the “brother-in-law” role is created, you can assign it to other users in the same manner as any other role:</p>
+
+<p><img src="/blog/images/2016-03-28/roles_4.png" alt="Image: View the Roles" /></p>
+
+<h3 id="in-conclusion">In Conclusion</h3>
+
+<p>A consistent pattern in apiman is a rich set of features provided OOTB, and a method for you to expand on these features by creating customizations. User roles enable you to assign users permissions based on the tasks that they perform. Apiman is preconfigured with a rich set of roles OOTB, and also enables you to create new, custom roles to handle additional types of users (even your brother-in-law).</p>
 
 <p>/post</p>
 

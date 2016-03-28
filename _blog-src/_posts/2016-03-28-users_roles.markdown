@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Apiman 1.2 - Introduction to User Roles in apiman"
-date:   2016-03-24 12:30:00
+date:   2016-03-28 07:00:00
 author: len_dimaggio
 categories: apiman introduction overview users roles
 ---
@@ -55,11 +55,11 @@ It’s not possible for users to assign themselves roles. Roles must be assigned
 
 First, the organization must search for the user:
 
-![Image: Search for User](/blog/images/2016-03-24/roles_1.png)
+![Image: Search for User](/blog/images/2016-03-28/roles_1.png)
 
 And then, the organization owner can assign a role to the user from the existing set of roles:
 
-![Image: Assign Role](/blog/images/2016-03-24/roles_2.png)
+![Image: Assign Role](/blog/images/2016-03-28/roles_2.png)
 
 Revoking a role for a user is just as easy. The organization owner simply has to search for the user, and then deselect a role for the user.
 
@@ -73,11 +73,11 @@ Let’s look at an example of a custom role.
 
 Imagine a situation where you have API developer users and application developer users. These sets of users can rely on apiman’s preconfigured roles. Let’s also imagine that you have a third set of user. You want these users to have read access to APIs and applications so that they can participate in a review/approval process. However, you do not want to give these users write access. For example, suppose you have to find a job for a certain relative of yours. He may be a thoroughly competent person, but you’d feel better if he didn’t have write access to anything valuable. A read-only role for your brother in law would look something like this:
 
-![Image: Define New Role](/blog/images/2016-03-24/roles_3.png)
+![Image: Define New Role](/blog/images/2016-03-28/roles_3.png)
 
 Once the “brother-in-law” role is created, you can assign it to other users in the same manner as any other role:
 
-![Image: View the Roles](/blog/images/2016-03-24/roles_4.png)
+![Image: View the Roles](/blog/images/2016-03-28/roles_4.png)
 
 ### In Conclusion
 
