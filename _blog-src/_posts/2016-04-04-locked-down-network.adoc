@@ -76,4 +76,4 @@ Some API managers have off-site only metrics implementations. Rest assured, ther
 
 == Conclusion
 
-A few small and easy tweaks are potentially necessary to making all of apiman's functionality work easily in a locked-down environment.
+A handful of trivial tweaks are potentially necessary to make all of apiman's features work in a locked-down environment.
