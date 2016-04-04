@@ -97,19 +97,19 @@ span.icon > .fa {
   .icon-warning:before {
     // @extend .fa-exclamation-triangle;
     content: "\f071";
-    color: scale-color(darkorange, $lightness: $rainbow-lightness);
+    color: scale-color(#FF8C00, $lightness: $rainbow-lightness);
   }
 
   .icon-caution:before {
     // @extend .fa-fire;
     content: "\f06d";
-    color: scale-color(orangered, $lightness: $rainbow-lightness);
+    color: scale-color(#FF4500, $lightness: $rainbow-lightness);
   }
 
   .icon-important:before {
     // @extend .icon-exclamation-circle;
     content: "\f06a";
-    color: scale-color(red, $lightness: $rainbow-lightness);
+    color: scale-color(#FF0000, $lightness: $rainbow-lightness);
   }
 }
 
