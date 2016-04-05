@@ -1,0 +1,85 @@
+---
+layout: post
+title: "Using apiman in a network with limited Internet access"
+date: 2016-04-05 15:00:00 BST
+author: marc_savy
+categories: configuration production offline
+---
+:toc: macro
+:toc-title:
+
+In plenty of enterprises, networks are either locked down or have very limited access the Internet. Often this is for security, privacy or other practical reasons.
+
+We've carefully designed apiman to be fully featured and easily configured when no Internet access is available; providing a great deal of flexibility and eschewing any "off-site only" functionality.
+
+So, if you're looking for API management in a locked-down network or Internet-free environment, read on!
+
+////
+Use this pattern to avoid asciidoctor rendering the HTML comment.
+<!--more-->
+////
+
+toc::[]
+
+== Apiman Plugins
+
+Apiman's extensibility is one of its key strengths, and it's extremely easy to write http://www.apiman.io/latest/developer-guide.html#_plugins[plugins] that can do almost anything. There are two default behaviours we are likely to want to configure when operating within a restricted network.
+
+=== Distribution and Management
+
+Apiman plugins are, by default loaded via http://central.sonatype.org/[The Central Repository] (often known as Maven Central), which is a fantastically convenient in most situations. All of apiman's components (manager, gateways, etc), will pull down the necessary plugins as and when they need them.
+
+However, without Internet access this clearly won't work as intended. We have three good options which you can configure in `apiman.properties`:
+
+```properties
+apiman.plugins.repositories=https://repo1.example.local/our-internal-repo/,http://repository.example.org/nexus/content/groups/public/ <1>
+
+apiman.plugins.repositories=file:///mnt/nfs/my/shared/maven/repo <2>
+
+apiman.plugins.repositories=<3>
+```
+<1> Use an internal https://maven.apache.org/repository-management.html#Available_Repository_Managers[repository or mirror] to deploy your own (and community) plugins to. This is likely the best option for many enterprises who may already have such infrastructure. Join multiple repositories with commas.
+<2> Mount a repository to a shared volume or filesystem on every machine running apiman.
+<3> Copy a valid Maven formatted repository containing your plugins to `~/.m2`, where apiman will look by default.
+
+TIP: *Advanced:* You can replace the https://github.com/apiman/apiman/blob/master/gateway/engine/core/src/main/java/io/apiman/gateway/engine/impl/DefaultPluginRegistry.java[default registry] entirely with an implementation of your own and set it via `apiman-gateway.plugin-registry` in `apiman.properties`.
+
+=== Registry (Plugin Catalogue)
+
+Our community releases contain a plugin registry which downloads a curated list of plugins. This lets the API Manager have a nice pre-populated list of plugins to install, rather than having to type the coordinates manually. To preserve this functionality simply download the registry file and make it available internally:
+
+```properties
+apiman-manager.plugins.registries=http://rawgit.com/apiman/apiman-plugin-registry/master/registry.json <1>
+
+apiman-manager.plugins.registries=file:///path/to/my/registry.json <2>
+```
+<1> The default JSON plugin registry's data URL.
+<2> As <1>, but replaced with a local copy. Naturally, you may want to add your own plugins here in place of the curated ones. A custom registry may not even use JSON - it's entirely up to you.
+
+TIP: When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable:
+
+```properties
+apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json
+```
+
+== API Catalogue
+
+The demonstration http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html[API Catalogue] (or catalog, if you're into American English) is also downloaded from the Internet, so you may want to make it available offline and customise it, too.
+
+Albeit not the topic of this blog, it's worth briefly mentioning most advanced users will likely want to implement code footnote:[Or find existing implementations] to https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java[search a real registry or catalogue] for APIs to import, such as https://github.com/fabric8io/fabric8-ipaas/blob/master/apiman/src/main/java/io/fabric8/apiman/KubernetesServiceCatalog.java[Kubernetes' service registry].
+
+```properties
+apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json <1>
+
+apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog <2>
+```
+<1> Default API catalogue. You can replace it with `file:///path/to/my/catalog.json` after downloading it.
+<2> If you write your own catalogue, then provide your own catalogue's implementation of the `IApiCatalog` interface here.
+
+== Metrics
+
+Some API managers have off-site only metrics implementations. Rest assured, there's http://www.apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html[none of that nonsense here]! Just ensure that your metrics store (such as ElasticSearch) is available for apiman to connect to and it'll work fine.
+
+== Conclusion
+
+A handful of trivial tweaks are potentially necessary to make all of apiman's features work in a locked-down environment.
