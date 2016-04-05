@@ -46,7 +46,7 @@ TIP: *Advanced:* You can replace the https://github.com/apiman/apiman/blob/maste
 
 === Registry (Plugin Catalogue)
 
-Our community releases contain a plugin registry which downloads a curated list of plugins. This lets the API Manager you have a nice prepopulated list of plugins to install, rather than having to type the coordinates manually. To preserve this functionality you can simply download the registry file and make it available internally:
+Our community releases contain a plugin registry which downloads a curated list of plugins. This lets the API Manager have a nice pre-populated list of plugins to install, rather than having to type the coordinates manually. To preserve this functionality simply download the registry file and make it available internally:
 
 ```properties
 apiman-manager.plugins.registries=http://rawgit.com/apiman/apiman-plugin-registry/master/registry.json <1>
@@ -55,6 +55,12 @@ apiman-manager.plugins.registries=file:///path/to/my/registry.json <2>
 ```
 <1> The default JSON plugin registry's data URL.
 <2> As <1>, but replaced with a local copy. Naturally, you may want to add your own plugins here in place of the curated ones. A custom registry may not even use JSON - it's entirely up to you.
+
+TIP: When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable:
+
+```properties
+apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json
+```
 
 == API Catalogue
 
