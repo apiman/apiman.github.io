@@ -8,7 +8,7 @@ categories: configuration production offline
 :toc: macro
 :toc-title:
 
-In plenty of enterprises, networks are either locked down or have very limited access the Internet. Often this is for security, privacy or other practical reasons.
+In plenty of enterprises, networks are either locked down or have very limited access to the Internet; often for security, privacy or other practical reasons.
 
 We've carefully designed apiman to be fully featured and easily configured when no Internet access is available; providing a great deal of flexibility and eschewing any "off-site only" functionality.
 
@@ -56,11 +56,7 @@ apiman-manager.plugins.registries=file:///path/to/my/registry.json <2>
 <1> The default JSON plugin registry's data URL.
 <2> As <1>, but replaced with a local copy. Naturally, you may want to add your own plugins here in place of the curated ones. A custom registry may not even use JSON - it's entirely up to you.
 
-TIP: When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable:
-
-```properties
-apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json
-```
+TIP: When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable: `apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json`
 
 == API Catalogue
 
