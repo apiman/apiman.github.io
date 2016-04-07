@@ -120,15 +120,10 @@ apiman-manager.plugins.registries=file:///path/to/my/registry.json &lt;i class=&
 &lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
-When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable:
+When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable: &lt;code&gt;apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json&lt;/code&gt;
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -5277,6 +5272,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html</guid>
 			</item>
 		
-		<lastBuildDate>Thu, 07 Apr 2016 07:00:53 -0400</lastBuildDate>
+		<lastBuildDate>Thu, 07 Apr 2016 08:16:23 -0400</lastBuildDate>
 	</channel>
 </rss>
