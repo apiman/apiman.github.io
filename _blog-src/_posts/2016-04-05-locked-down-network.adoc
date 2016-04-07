@@ -8,7 +8,7 @@ categories: configuration production offline
 :toc: macro
 :toc-title:
 
-In plenty of enterprises, networks are either locked down or have very limited access the Internet. Often this is for security, privacy or other practical reasons.
+In plenty of enterprises, networks are either locked down or have very limited access to the Internet; often for security, privacy or other practical reasons.
 
 We've carefully designed apiman to be fully featured and easily configured when no Internet access is available; providing a great deal of flexibility and eschewing any "off-site only" functionality.
 
