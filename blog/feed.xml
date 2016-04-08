@@ -9,6 +9,212 @@
 		
 		
 			<item>
+				<title>Covering Your Assets: Data Encryption in API Management</title>
+				
+				        <dc:creator>Rachel Yordán</dc:creator>
+				        <author>ryordan@redhat.com</author>
+				
+				<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, authorize and throttle requests. We encrypt the data that we share with other applications (hopefully!). But we often neglect one of the most essential components of the API layer: data storage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot; class=&quot;title&quot;&gt;&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#encrypting-data-as-a-component-of-api-management-security&quot;&gt;Encrypting Data as a Component of API Management Security&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#data-storage-in-apiman&quot;&gt;Data Storage in apiman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#idataencrypter-interface-and-data-encryption-classes&quot;&gt;IDataEncrypter Interface and Data Encryption Classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#setting-the-gateway-to-use-a-custom-encrypted-secret-key&quot;&gt;Setting the Gateway to use a Custom Encrypted Secret Key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#writing-your-own-encryption-plugin&quot;&gt;Writing Your Own Encryption Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#key-takeaways&quot;&gt;Key Takeaways&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;encrypting-data-as-a-component-of-api-management-security&quot;&gt;Encrypting Data as a Component of API Management Security&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We often forget that APIs are not meant to protect data, rather, to share data across applications. While providers are certainly responsible for designing their APIs to be secure, we must be equally cautious about &lt;em&gt;each&lt;/em&gt; component of the API layer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;data-storage-in-apiman&quot;&gt;Data Storage in apiman&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Designing, building, and maintaining an API can be a lot of work, often making security an afterthought. Using an API management platform can save you valuable time, allowing you to focus on other critical aspects of your business.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Apiman was designed with the goal of providing a secure, customizable platform for API providers that is easy to use. As an open source platform, it is highly extendable and maintained by a community of developers with the common goal of streamlining API management without compromising security.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;All sensitive data stored by apiman is fully encrypted&lt;/strong&gt; so that it is not stored in plain text, then later decrypted again on runtime or when publishing services. By default, the API Manager uses a relational database for storage. One of the many examples of data that gets stored are the credentials that must be provided when the manager wants to publish an API and makes an authenticated REST call to the gateway.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Data for the API gateway and API manager are stored separately to keep components fully decoupled. For a more detailed overview, please see our &lt;a href=&quot;http://www.apiman.io/latest/production-guide.html#_architecture_summary&quot;&gt;API layer architecture&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s swan dive into some code!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;idataencrypter-interface-and-data-encryption-classes&quot;&gt;IDataEncrypter Interface and Data Encryption Classes&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The component interface used by apiman to encrypt data (both in the API Manager and in the API Gateway) is called &lt;code&gt;IDataEncrypter&lt;/code&gt;. This interface provides the structure for the classes that encrypt keys and data, which is done synchronously using AES.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;By default, the &lt;code&gt;DefaultDataEncrypter&lt;/code&gt; class is the encrypter for the gateway. The encrypt and decrypt methods accept a single parameter for the string to be encrypted or decrypted, respectively. If you look at the code, you&amp;#8217;ll notice that the key is hard coded. For those of us that are looking for a more secure approach, we offer an alternative.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;AesDataEncrypter&lt;/code&gt; class is a data encrypter that accepts an encrypted secret key. When it is invoked, it expects a configuration object that contains a previously defined encrypted secret key.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;At this point you may be wondering how secret keys are obtained. A factory class called &lt;code&gt;ConfigFactory&lt;/code&gt; is responsible for creating a configuration Map using information from &lt;code&gt;apiman.properties&lt;/code&gt;. This configuration Map is later passed to &lt;code&gt;AesDataEncrypter&lt;/code&gt; as a parameter when it is constructed. The secret key included in the configuration Map is then used whenever data is encrypted or decrypted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;setting-the-gateway-to-use-a-custom-encrypted-secret-key&quot;&gt;Setting the Gateway to use a Custom Encrypted Secret Key&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;We highly recommend that users change the default gateway encryption class&lt;/strong&gt; to the more secure &lt;code&gt;AesDataEncrypter&lt;/code&gt; class. To do so, please follow these steps:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;openblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;1. Locate and open the &lt;code&gt;apiman.properties&lt;/code&gt; file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;2. Uncomment the following lines, located toward the top of the file (around line 10), by removing the hashtag at the beginning of each line:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman.encrypter.type=io.apiman.common.util.crypt.AesDataEncrypter
+apiman.encrypter.type.secretKey=&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;3. Add your encrypted secret key (&lt;em&gt;the key must be a 16 character string&lt;/em&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;4. Save and close the file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;5. $$$ Profit!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;writing-your-own-encryption-plugin&quot;&gt;Writing Your Own Encryption Plugin&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One of the major benefits of working with an open source API management platform, and open source projects in general, is the ability to read and modify the source code to make it work for your business needs. In apiman, we make it easy for you to write your own implementation of the data encrypter by &lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin&quot;&gt;creating a plugin that encrypts data&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Once your basic plugin is set up, you can then begin working on the Java component of your plugin that contains the functionality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Every encryption plugin must implement the &lt;code&gt;IDataEncrypter&lt;/code&gt; interface like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;SuperDataEncrypter&lt;/span&gt; &lt;span class=&quot;directive&quot;&gt;implements&lt;/span&gt; IDataEncrypter {
+  &lt;span class=&quot;comment&quot;&gt;/**
+  * Constructor.
+  */&lt;/span&gt;
+  &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; SuperDataEncrypter(&lt;span class=&quot;predefined-type&quot;&gt;Map&lt;/span&gt;&amp;lt;&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;, &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;&amp;gt; config) {
+    thing = config.get(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;thing&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//$NON-NLS-1$&lt;/span&gt;
+
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (thing == &lt;span class=&quot;predefined-constant&quot;&gt;null&lt;/span&gt;) {
+      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;exception&quot;&gt;RuntimeException&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Missing configuration property: apiman-manager.config.thing&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//$NON-NLS-1$&lt;/span&gt;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As you can see, the class is constructed with the configuration Map we discussed above. Once the &lt;code&gt;SuperDataEncrypter&lt;/code&gt; class is built, the configuration Map is checked for a &quot;thing&quot; key. If it is null, a runtime exception is thrown. Pretty, straightforward so far, right?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Whenever data is stored in a persistent store (either by the API Manager or by the API Gateway), the data encrypter is used to encrypt that data. You can pretty much guess what our next step will be:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;SuperDataEncrypter&lt;/span&gt; &lt;span class=&quot;directive&quot;&gt;implements&lt;/span&gt; IDataEncrypter {
+  &lt;span class=&quot;comment&quot;&gt;/**
+  * Constructor.
+  */&lt;/span&gt;
+  &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; SuperDataEncrypter(&lt;span class=&quot;predefined-type&quot;&gt;Map&lt;/span&gt;&amp;lt;&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;, &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;&amp;gt; config) {
+    thing = config.get(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;thing&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//$NON-NLS-1$&lt;/span&gt;
+
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (thing == &lt;span class=&quot;predefined-constant&quot;&gt;null&lt;/span&gt;) {
+      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;exception&quot;&gt;RuntimeException&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Missing configuration property: apiman-manager.config.thing&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//$NON-NLS-1$&lt;/span&gt;
+    }
+  }
+
+
+  &lt;span class=&quot;comment&quot;&gt;/* (non-Javadoc)
+   * @see io.apiman.common.util.crypt.IDataEncrypter#encrypt(java.lang.String)
+   */&lt;/span&gt;
+  &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+  &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; encrypt(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; plainText) {
+      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; AesEncrypter.encrypt(secretKey, plainText);
+  }
+
+  &lt;span class=&quot;comment&quot;&gt;/* (non-Javadoc)
+   * @see io.apiman.common.util.crypt.IDataEncrypter#decrypt(java.lang.String)
+   */&lt;/span&gt;
+  &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+  &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; decrypt(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; encryptedText) {
+      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; AesEncrypter.decrypt(secretKey, encryptedText);
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;From there, you can use your &lt;code&gt;SuperDataEncrypter&lt;/code&gt; class to write the functionality you need. For an example of an implementation you can take a look at the &lt;code&gt;AesDataEncrypter&lt;/code&gt; class we discussed earlier. You should be up and running in no time!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+If you are kind enough to want to share your plugin with the rest of the apiman community, create a pull request on the &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;apiman plugins repository&lt;/a&gt;. Contributors, please don&amp;#8217;t forget to write a unit test for any plugin you write (one that actually passes, kthx!).
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If your memory is as short-lived as mine, it’s probably best that we do a quick recap. In this article we discussed the importance of securing stored data, and why it should be treated as an essential component of your API security strategy. We then discussed how apiman encrypts and decrypts sensitive data, with a detailed review of the IDataEncrypter interface and the classes that implement it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For those of us with a guilty security conscience, we went over how to configure the API gateway to use an encrypted key that you provided in the &lt;code&gt;apiman.properties&lt;/code&gt; file. Because we’re über ambitious, we also took a look at how to write your very own implementation of said &lt;code&gt;IDataEncrypter&lt;/code&gt; interface and the methods you are required to implement.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As always, we &lt;em&gt;love&lt;/em&gt; hearing from you! So, if you have any questions or comments, feel free to leave them below or &lt;a href=&quot;http://www.apiman.io/latest/chat.html&quot;&gt;reach out to us&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+				
+					<category term="security" />
+				
+					<category term="gateway" />
+				
+				<pubDate>Wed, 13 Apr 2016 13:34:00 -0400</pubDate>
+				<link>http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Using apiman in a network with limited Internet access</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -5111,167 +5317,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth-redux.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Adding a BASIC Authentication Policy to a Managed Service in JBoss apiman</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/1-apiman_logo.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, but implement a layer of security to the services by adding an authentication requirement when clients access a managed service.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;securing-client-access-to-your-managed-services&quot;&gt;Securing Client Access to your Managed Services&lt;/h2&gt;
-
-&lt;p&gt;As we’ve seen in the previous articles in this series, apiman enables you to govern the usage of the services that it manages by defining policies in the Managament UI that are then applied at runtime by the API Gateway. The apiman API Gateway applies the policy rules that you define to requests that it proxies to the managed service:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-2.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The OOTB policies that are packaged with apiman enable you to apply a variety of types of controls, including rate limiting (where access to a service is assigned a usage threshold) and black/whitelisting by IP address (where the client’s IP address governs their access to the service).&lt;/p&gt;
-
-&lt;p&gt;However, managing a service with apiman does not automatically make that service secure. Happily, however, apiman provides a policy that enables you to easily set up authentication to control access to your managed service. (Note that this policy governs the clients’ authenticated access to the managed service, and not establishing a secure connection where apiman authenticates the back-end services. In other words, in this article, we’re interested in adding authentication between the blue and pink boxes in the above diagram.)&lt;/p&gt;
-
-&lt;h2 id=&quot;adding-a-basic-authentication-policy-to-a-managed-service&quot;&gt;Adding a BASIC Authentication Policy to a Managed Service&lt;/h2&gt;
-
-&lt;p&gt;apiman is packaged with multiple pre-configured policies:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Authorization - Access to services’ resources is controlled by user roles.&lt;/li&gt;
-  &lt;li&gt;BASIC Authentication - A username/password is required to access a service.&lt;/li&gt;
-  &lt;li&gt;Ignored Resources - Paths to services’ resources that will not be accessible. Requests to these service resource paths return a 404 (not found) error.&lt;/li&gt;
-  &lt;li&gt;IP Blacklist - Clients with specific IP address will be blocked from accessing a service.&lt;/li&gt;
-  &lt;li&gt;IP Whitelist - And, clients with specific IP address will not  be blocked from accessing a service.&lt;/li&gt;
-  &lt;li&gt;Rate Limiting - Access to a service is limited by the number of requests in a defined time period. We demonstrated an example of a rate limiting policy in the first article in this series.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We’re interested in the BASIC Authentication Policy. Let’s take a closer look. The dialog to add a BASIC authentication policy to a service looks like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-3.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In creating the BASIC policy, we define an Authentication Realm (think of this as an area to be protected, within which usernames and passwords exist) and an optional HTTP header. The optional HTTP header is used to optionally pass the user’s principal to the back-end service through an HTTP header. This is useful if the back-end system needs to know the username of the user calling it (e.g. to do user-specific operation). The “Transport security required” checkbox, if enabled, will cause the policy to fail if a client tries to connect to the service over http. The Policy will only accept credentials over https.&lt;/p&gt;
-
-&lt;p&gt;We’ll keep the Identity Source simple and select “Static Identities” and then define a user. Note that while this static approach is fine for testing purposes, you will want use one of the other Identity Source options (JBDS or LDAP) for a production environment as they can better handle a large number of users.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-4.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It’s important to remember that, in BASIC authentication, one of the factors that makes this, well, basic in nature, is that the username/password that you define are encoded (this is unencrypted base64 encoded text) when they are sent to the server. Since the text is not encrypted, it’s at risk of being copied and then used in an attack. For this reason, it’s safer to select the transport security option to configure SSL encryption.&lt;/p&gt;
-
-&lt;p&gt;To illustrate, here’s Java code that can encode and then decode the username:password string:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Base64.Encoder &lt;span class=&quot;nv&quot;&gt;encoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Base64.getEncoder&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;normalString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;user1&amp;quot;&lt;/span&gt; + &lt;span class=&quot;s2&quot;&gt;&amp;quot;:&amp;quot;&lt;/span&gt; + &lt;span class=&quot;s2&quot;&gt;&amp;quot;password1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;encodedString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; encoder.encodeToString&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;normalString.getBytes&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;StandardCharsets.UTF_8&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- System.out.println &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;The encoded string is: &amp;quot;&lt;/span&gt; + encodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-             
- Decoder &lt;span class=&quot;nv&quot;&gt;decoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Base64.getDecoder&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- byte&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unencodedStringArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; decoder.decode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;encodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;unencodedString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new String &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;unencodedStringArray&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- System.out.println &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;The unencoded string is: &amp;quot;&lt;/span&gt; + unencodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-   
- The encoded string is: dXNlcjE6cGFzc3dvcmQx  
- The unencoded string is: user1:password1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;So - unlike encrypted strings, your encoded username and password strings are not secure!&lt;/p&gt;
-
-&lt;p&gt;## When a Request is made to the Service&lt;/p&gt;
-
-&lt;p&gt;It’s interesting to see step-by-step what happens when a request is made to the service and the BASIC authentication policy is applied. Let’s take a look at the request and the responses. I used the “HttpFox” http analyzer (https://addons.mozilla.org/en-us/firefox/addon/httpfox/) to “listen in” on the requests sent to the server and the responses sent back.&lt;/p&gt;
-
-&lt;p&gt;Here’s the first request made to the service, notice that a username/password is not included.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Request-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;X11&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Linux x86_64&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; rv:24.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.9,*/*&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.8  
- Accept-Language     en-US,en&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     &lt;span class=&quot;nv&quot;&gt;__utma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1348865079.1409020839.1411395889.1419258109.7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;__utmz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1409020839.1.1.utmcsr&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmccn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmcmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s_fid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The response, as we expected, shows that the request has triggered an authentication failure. This is due to the authentication requirement that we defined and is being applied by the API Gateway. Note the 401 error code and the reference to BASIC authentication:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Status-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     HTTP/1.1 &lt;span class=&quot;m&quot;&gt;401&lt;/span&gt; Unauthorized  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- X-Policy-Failure-Type     Authentication  
- Date     Wed, &lt;span class=&quot;m&quot;&gt;03&lt;/span&gt; Jun &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 13:43:26 GMT  
- Connection     keep-alive  
- WWW-Authenticate     BASIC &lt;span class=&quot;nv&quot;&gt;realm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myRealm&amp;quot;&lt;/span&gt;  
- X-Policy-Failure-Code     &lt;span class=&quot;m&quot;&gt;10004&lt;/span&gt;  
- Content-Type     application/json  
- Content-Length     &lt;span class=&quot;m&quot;&gt;165&lt;/span&gt;  
- X-Policy-Failure-Message     BASIC authentication failed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The browser then automatically pops up a dialog for us to enter the username and password:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-5.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Request-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;X11&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Linux x86_64&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; rv:24.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.9,*/*&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.8  
- Accept-Language     en-US,en&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     &lt;span class=&quot;nv&quot;&gt;__utma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1348865079.1409020839.1411395889.1419258109.7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;__utmz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1409020839.1.1.utmcsr&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmccn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmcmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s_fid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive  
- Authorization     Basic dXNlcjE6cGFzc3dvcmQx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And, then we get the successful return code of 200 in a response:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Status-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     HTTP/1.1 &lt;span class=&quot;m&quot;&gt;200&lt;/span&gt; OK  
- Connection     keep-alive  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- Content-Length     &lt;span class=&quot;m&quot;&gt;755&lt;/span&gt;  
- Content-Type     application/json  
- Date     Wed, &lt;span class=&quot;m&quot;&gt;03&lt;/span&gt; Jun &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 13:43:34 GMT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Just because a service is managed doesn’t automatically make it secure. JBoss apiman provides you with multiple options to add an authentication requirement when clients access your managed service.&lt;/p&gt;
-
-&lt;h2 id=&quot;authors-acknowledgements&quot;&gt;Author’s Acknowledgements&lt;/h2&gt;
-
-&lt;p&gt;As always, the author would like to acknowledge Eric Wittmann and the apiman team for their  review comments and suggestions on writing this post, and for adding new features to apiman!&lt;/p&gt;
-
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
-
-&lt;p&gt;apiman&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://www.apiman.io&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Previous articles in this series:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://java.dzone.com/articles/impatient-new-users&lt;/li&gt;
-  &lt;li&gt;http://java.dzone.com/articles/customizing-jboss-apiman&lt;/li&gt;
-  &lt;li&gt;http://java.dzone.com/articles/jboss-apiman-api-manager-rest&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;HTTP Authentication: Basic and Digest Access Authentication&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://tools.ietf.org/html/rfc2617&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-				
-					<category term="authentication" />
-				
-					<category term="policy" />
-				
-				<pubDate>Thu, 11 Jun 2015 07:00:00 -0400</pubDate>
-				<link>http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html</guid>
-			</item>
-		
-		<lastBuildDate>Thu, 07 Apr 2016 08:16:23 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 13 Apr 2016 15:31:39 -0400</lastBuildDate>
 	</channel>
 </rss>
