@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
+  <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
+  <title>Covering Your Assets: Data Encryption in API Management | apiman Open Source API Management</title>
+  <meta name="description" content="In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, ...">
+
+  <!-- CSS -->
+  <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+  <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.2.3.Final" rel="stylesheet">
+  <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.2.3.Final" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/blog/css/highlight.css" rel="stylesheet">
+  <link href="/blog/css/main.css" rel="stylesheet">
+  <link href="/blog/css/coderay-asciidoctor.css" rel="stylesheet">
+
+
+  <!-- Scripts -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
+  <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+  <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
+
+  <!-- Canonical URL -->
+    
+    <link rel="canonical" href="http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html">
+    
+
+  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+
+
+  <!-- Google Analytics -->
+  <script>
+    $(document).ready(function() {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56678850-1', 'auto');
+      ga('send', 'pageview');
+    });
+  </script>
+</head>
+
+  <body class="blog">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.apiman.io/latest/index.html">apiman</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/index.html">Overview</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/download.html">Download</a></li>
+        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
+        <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/contributors.html">Contributors List</a>
+                </li>
+            </ul>
+        </li>
+        <li class="top-menu-item menu-item dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="http://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
+                </li>
+            </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+    <div class="container" id="blog">
+      <div class="blog-content">
+        
+
+<div class="post">
+  <header class="post-header" style="margin-top: 25px">
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Covering Your Assets: Data Encryption in API Management</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Apr 13, 2016</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/kahboom">Rachel Yordán</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> security and gateway</span>
+  </header>
+
+
+  
+
+  
+
+  <article class="post-content"
+           style="margin-top: 20px; font-size: 14px; line-height: 20px">
+    <div class="paragraph">
+<p>In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, authorize and throttle requests. We encrypt the data that we share with other applications (hopefully!). But we often neglect one of the most essential components of the API layer: data storage.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#encrypting-data-as-a-component-of-api-management-security">Encrypting Data as a Component of API Management Security</a>
+<ul class="sectlevel2">
+<li><a href="#data-storage-in-apiman">Data Storage in apiman</a></li>
+<li><a href="#idataencrypter-interface-and-data-encryption-classes">IDataEncrypter Interface and Data Encryption Classes</a></li>
+</ul>
+</li>
+<li><a href="#setting-the-gateway-to-use-a-custom-encrypted-secret-key">Setting the Gateway to use a Custom Encrypted Secret Key</a></li>
+<li><a href="#writing-your-own-encryption-plugin">Writing Your Own Encryption Plugin</a></li>
+<li><a href="#key-takeaways">Key Takeaways</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="encrypting-data-as-a-component-of-api-management-security">Encrypting Data as a Component of API Management Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We often forget that APIs are not meant to protect data, rather, to share data across applications. While providers are certainly responsible for designing their APIs to be secure, we must be equally cautious about <em>each</em> component of the API layer.</p>
+</div>
+<div class="sect2">
+<h3 id="data-storage-in-apiman">Data Storage in apiman</h3>
+<div class="paragraph">
+<p>Designing, building, and maintaining an API can be a lot of work, often making security an afterthought. Using an API management platform can save you valuable time, allowing you to focus on other critical aspects of your business.</p>
+</div>
+<div class="paragraph">
+<p>Apiman was designed with the goal of providing a secure, customizable platform for API providers that is easy to use. As an open source platform, it is highly extendable and maintained by a community of developers with the common goal of streamlining API management without compromising security.</p>
+</div>
+<div class="paragraph">
+<p><strong>All sensitive data stored by apiman is fully encrypted</strong> so that it is not stored in plain text, then later decrypted again on runtime or when publishing services. By default, the API Manager uses a relational database for storage. One of the many examples of data that gets stored are the credentials that must be provided when the manager wants to publish an API and makes an authenticated REST call to the gateway.</p>
+</div>
+<div class="paragraph">
+<p>Data for the API gateway and API manager are stored separately to keep components fully decoupled. For a more detailed overview, please see our <a href="http://www.apiman.io/latest/production-guide.html#_architecture_summary">API layer architecture</a>.</p>
+</div>
+<div class="paragraph">
+<p>Let’s swan dive into some code!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="idataencrypter-interface-and-data-encryption-classes">IDataEncrypter Interface and Data Encryption Classes</h3>
+<div class="paragraph">
+<p>The component interface used by apiman to encrypt data (both in the API Manager and in the API Gateway) is called <code>IDataEncrypter</code>. This interface provides the structure for the classes that encrypt keys and data, which is done synchronously using AES.</p>
+</div>
+<div class="paragraph">
+<p>By default, the <code>DefaultDataEncrypter</code> class is the encrypter for the gateway. The encrypt and decrypt methods accept a single parameter for the string to be encrypted or decrypted, respectively. If you look at the code, you’ll notice that the key is hard coded. For those of us that are looking for a more secure approach, we offer an alternative.</p>
+</div>
+<div class="paragraph">
+<p>The <code>AesDataEncrypter</code> class is a data encrypter that accepts an encrypted secret key. When it is invoked, it expects a configuration object that contains a previously defined encrypted secret key.</p>
+</div>
+<div class="paragraph">
+<p>At this point you may be wondering how secret keys are obtained. A factory class called <code>ConfigFactory</code> is responsible for creating a configuration Map using information from <code>apiman.properties</code>. This configuration Map is later passed to <code>AesDataEncrypter</code> as a parameter when it is constructed. The secret key included in the configuration Map is then used whenever data is encrypted or decrypted.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-the-gateway-to-use-a-custom-encrypted-secret-key">Setting the Gateway to use a Custom Encrypted Secret Key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>We highly recommend that users change the default gateway encryption class</strong> to the more secure <code>AesDataEncrypter</code> class. To do so, please follow these steps:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>1. Locate and open the <code>apiman.properties</code> file.</p>
+</div>
+<div class="paragraph">
+<p>2. Uncomment the following lines, located toward the top of the file (around line 10), by removing the hashtag at the beginning of each line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="properties">apiman.encrypter.type=io.apiman.common.util.crypt.AesDataEncrypter
+apiman.encrypter.type.secretKey=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3. Add your encrypted secret key (<em>the key must be a 16 character string</em>).</p>
+</div>
+<div class="paragraph">
+<p>4. Save and close the file.</p>
+</div>
+<div class="paragraph">
+<p>5. $$$ Profit!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="writing-your-own-encryption-plugin">Writing Your Own Encryption Plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the major benefits of working with an open source API management platform, and open source projects in general, is the ability to read and modify the source code to make it work for your business needs. In apiman, we make it easy for you to write your own implementation of the data encrypter by <a href="http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin">creating a plugin that encrypts data</a>.</p>
+</div>
+<div class="paragraph">
+<p>Once your basic plugin is set up, you can then begin working on the Java component of your plugin that contains the functionality.</p>
+</div>
+<div class="paragraph">
+<p>Every encryption plugin must implement the <code>IDataEncrypter</code> interface like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SuperDataEncrypter</span> <span class="directive">implements</span> IDataEncrypter {
+  <span class="comment">/**
+  * Constructor.
+  */</span>
+  <span class="directive">public</span> SuperDataEncrypter(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; config) {
+    thing = config.get(<span class="string"><span class="delimiter">"</span><span class="content">thing</span><span class="delimiter">"</span></span>); <span class="comment">//$NON-NLS-1$</span>
+
+    <span class="keyword">if</span> (thing == <span class="predefined-constant">null</span>) {
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">Missing configuration property: apiman-manager.config.thing</span><span class="delimiter">"</span></span>); <span class="comment">//$NON-NLS-1$</span>
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, the class is constructed with the configuration Map we discussed above. Once the <code>SuperDataEncrypter</code> class is built, the configuration Map is checked for a "thing" key. If it is null, a runtime exception is thrown. Pretty, straightforward so far, right?</p>
+</div>
+<div class="paragraph">
+<p>Whenever data is stored in a persistent store (either by the API Manager or by the API Gateway), the data encrypter is used to encrypt that data. You can pretty much guess what our next step will be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SuperDataEncrypter</span> <span class="directive">implements</span> IDataEncrypter {
+  <span class="comment">/**
+  * Constructor.
+  */</span>
+  <span class="directive">public</span> SuperDataEncrypter(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">String</span>&gt; config) {
+    thing = config.get(<span class="string"><span class="delimiter">"</span><span class="content">thing</span><span class="delimiter">"</span></span>); <span class="comment">//$NON-NLS-1$</span>
+
+    <span class="keyword">if</span> (thing == <span class="predefined-constant">null</span>) {
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">Missing configuration property: apiman-manager.config.thing</span><span class="delimiter">"</span></span>); <span class="comment">//$NON-NLS-1$</span>
+    }
+  }
+
+
+  <span class="comment">/* (non-Javadoc)
+   * @see io.apiman.common.util.crypt.IDataEncrypter#encrypt(java.lang.String)
+   */</span>
+  <span class="annotation">@Override</span>
+  <span class="directive">public</span> <span class="predefined-type">String</span> encrypt(<span class="predefined-type">String</span> plainText) {
+      <span class="keyword">return</span> AesEncrypter.encrypt(secretKey, plainText);
+  }
+
+  <span class="comment">/* (non-Javadoc)
+   * @see io.apiman.common.util.crypt.IDataEncrypter#decrypt(java.lang.String)
+   */</span>
+  <span class="annotation">@Override</span>
+  <span class="directive">public</span> <span class="predefined-type">String</span> decrypt(<span class="predefined-type">String</span> encryptedText) {
+      <span class="keyword">return</span> AesEncrypter.decrypt(secretKey, encryptedText);
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From there, you can use your <code>SuperDataEncrypter</code> class to write the functionality you need. For an example of an implementation you can take a look at the <code>AesDataEncrypter</code> class we discussed earlier. You should be up and running in no time!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you are kind enough to want to share your plugin with the rest of the apiman community, create a pull request on the <a href="https://github.com/apiman/apiman-plugins" target="_blank" rel="nofollow">apiman plugins repository</a>. Contributors, please don’t forget to write a unit test for any plugin you write (one that actually passes, kthx!).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="key-takeaways">Key Takeaways</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your memory is as short-lived as mine, it’s probably best that we do a quick recap. In this article we discussed the importance of securing stored data, and why it should be treated as an essential component of your API security strategy. We then discussed how apiman encrypts and decrypts sensitive data, with a detailed review of the IDataEncrypter interface and the classes that implement it.</p>
+</div>
+<div class="paragraph">
+<p>For those of us with a guilty security conscience, we went over how to configure the API gateway to use an encrypted key that you provided in the <code>apiman.properties</code> file. Because we’re über ambitious, we also took a look at how to write your very own implementation of said <code>IDataEncrypter</code> interface and the methods you are required to implement.</p>
+</div>
+<div class="paragraph">
+<p>As always, we <em>love</em> hearing from you! So, if you have any questions or comments, feel free to leave them below or <a href="http://www.apiman.io/latest/chat.html">reach out to us</a>.</p>
+</div>
+</div>
+</div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = '';
+        this.page.identifier = '/security/gateway/2016/04/13/data-encryption';
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//apiman.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+      </div>
+      <div class="blog-footer">
+        <footer role="contentinfo">
+    <div id="inner-footer" class="clearfix row">
+        <div id="widget-footer" class="clearfix">
+            <hr>
+            <div class="widget col-sm-6 col-md-6 widget_text">
+                <div class="textwidget">
+                    <p>
+                        Copyright &copy; 2016 Red Hat, Inc. All rights reserved.<br>
+                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        <a href="/latest/disclosure.html">Open Source Disclosure</a>
+                    </p>
+                </div>
+            </div>
+            <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+            </div>
+        </div>
+        <nav class="clearfix"></nav>
+    </div>
+
+    <!-- Adobe Analytics -->
+    <script src="//www.redhat.com/j/s_code.js" />
+    <script>
+        /**
+         * Adobe Analytics
+         *
+         * Variables reported to Adobe Analytics:
+         *  -pageName
+         *  -server
+         *  -channel
+         *  -first minor section
+         *  -second minor section (if available)
+         *  -third minor section (if available)
+         *  -full URL (domain + path + query string)
+         *  -base URL (domain + path)
+         *  -language
+         *  -country
+         *
+         */
+
+        /**
+         * Additional JS files to be loaded BEFORE adobe-analytics.js:
+         *
+         * - http://www.redhat.com/j/s_code.js
+         *
+         * Additional JS files to be loaded AFTER adobe-analytics.js
+         *
+         * - http://www.redhat.com/j/rh_omni_footer.js
+         */
+
+
+        (function() {
+
+            // Load the path name, without its initial /
+            var arr = location.pathname.substr(1, location.pathname.length).toLowerCase().split('/');
+            // If the path ends in index.html or whitespace, trim the array
+            if (arr[arr.length - 1] == "index.html" || arr[arr.length - 1] == "" ) {
+                arr.pop();
+            }
+
+            /*
+             * Assign values to Adobe Analytics properties
+             */
+
+            s.channel = "apiman | "; // The channel is our top level classification
+            s.server = "apiman"; // The server is ???
+            s.pageName = "apiman |  | " + (arr[arr.length -1] || "homepage"); // pageName is apiman | <Channel> | {page_name}. {page_name} has index.html removed
+            s.prop2 = s.eVar22 = "en"; // prop2/eVar22 is the ISO 639-1 language code
+            s.prop4 = s.eVar23 = encodeURI(location.search); //prop4/eVar23 is the query string of the page
+
+            // Pad the array as needed, so we can shift away later
+            for (var i = arr.length; i < 3; i++) {
+                arr[i] = "";
+            }
+
+            s.prop14 = s.eVar27 = arr.shift(); // prop14/eVar27 is the first minor section (normally /{minor_section_1})
+            s.prop15 = s.eVar28 = arr.shift(); // prop15/eVar28 is the second minor section (normally /a/{minor_section_2})
+            s.prop16 = s.eVar29 = arr.shift(); // prop16/eVar29 is the third minor section (normally /a/b/{minor_section_3})
+            s.prop21 = s.eVar18 = encodeURI(location.hostname+location.pathname).toLowerCase(); // prop21/eVar18 is the URL, less any query strings or fragments
+        })();
+    </script>
+    <script src="//www.redhat.com/assets/js/tracking/rh_omni_footer.js"/>
+</footer>
+
+      </div>
+    </div>
+  </body>
+</html>
