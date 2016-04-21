@@ -238,7 +238,7 @@ cd wildfly-9.0.2.Final
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                          <li><a href="http://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.zip" rel="nofollow" target="_blank">8.0.32</a></li>
+                          <li><a href="http://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip" rel="nofollow" target="_blank">8.0.33</a></li>
                           <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.3.Final/apiman-distro-tomcat8-1.2.3.Final-overlay.zip" rel="nofollow" target="_blank">1.2.3.Final</a> overlay for Tomcat 8</li>
                         </ul>
                         
@@ -272,11 +272,11 @@ cd wildfly-9.0.2.Final
                       <pre class="code-block">
 mkdir ~/apiman-1.2.3.Final
 cd ~/apiman-1.2.3.Final
-curl http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.zip -o apache-tomcat-8.0.32.zip
+curl http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip -o apache-tomcat-8.0.33.zip
 curl http://downloads.jboss.org/apiman/1.2.3.Final/apiman-distro-tomcat8-1.2.3.Final-overlay.zip -o apiman-distro-tomcat8-1.2.3.Final-overlay.zip
-unzip apache-tomcat-8.0.32.zip
-unzip -o apiman-distro-tomcat8-1.2.3.Final-overlay.zip -d apache-tomcat-8.0.32
-cd apache-tomcat-8.0.32
+unzip apache-tomcat-8.0.33.zip
+unzip -o apiman-distro-tomcat8-1.2.3.Final-overlay.zip -d apache-tomcat-8.0.33
+cd apache-tomcat-8.0.33
 chmod 755 bin/catalina.sh
 ./bin/catalina.sh run
                       </pre>
