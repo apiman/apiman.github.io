@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.2.3.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.2.3.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.2.4.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.2.4.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -295,20 +295,9 @@
                           <span class="header pull-right">Released In</span>
                         </div>
                         <li>
-                          <span>Policy Eventing</span>
+                          <span>API Manager</span>
                           <ul>
-                            <li>Pluggable event firing component in Gateway</li>
-                            <li>Ability to fire events from policies</li>
-                            <li>Rate limiting events</li>
-                            <li>Support internal and custom/external event listeners</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <span>Notifications/Tasks</span>
-                          <ul>
-                            <li>Per-user Task+Notification Inbox UI</li>
-                            <li>Add "Request Membership" functionality for organizations</li>
-                            <li>Full API to access tasks and notifications</li>
+                            <li><span class="completed">Support for deleting stuff (Orgs, Plans, APIs, Client Apps)</span> <span class="in-version">1.2.4.Final</span></li>
                           </ul>
                         </li>
                         <li>
@@ -316,6 +305,7 @@
                           <ul>
                             <li><span class="completed">LDAP Client async component</span> <span class="in-version">1.2.0.Final</span></li>
                             <li><span class="completed">JDBC Client async component</span> <span class="in-version">1.2.0.Final</span></li>
+                            <li><span class="completed">Circuit Breaker Policy</span> <span class="in-version">1.2.4.Final</span></li>
                           </ul>
                         </li>
                         <li>
@@ -367,6 +357,7 @@
                        <div><a href="http://red.ht/1OC1Tf7">1.2.1.Final</a> <span class="label-small">(2016 January 22)</span></div>
                        <div><a href="http://red.ht/1QGBN8F">1.2.2.Final</a> <span class="label-small">(2016 February 29)</span></div>
                        <div><a href="http://red.ht/21HvJDe">1.2.3.Final</a> <span class="label-small">(2016 March 23)</span></div>
+                       <div><a href="http://red.ht/23NVU1k">1.2.4.Final</a> <span class="label-small">(2016 April 22)</span></div>
                    </div>
                 </div>
              </div>
@@ -392,9 +383,20 @@
                           </ul>
                         </li>
                         <li>
+                          <span>Policy Eventing</span>
+                          <ul>
+                            <li>Pluggable event firing component in Gateway</li>
+                            <li>Ability to fire events from policies</li>
+                            <li>Rate limiting events</li>
+                            <li>Support internal and custom/external event listeners</li>
+                          </ul>
+                        </li>
+                        <li>
                           <span>Notifications/Tasks</span>
                           <ul>
-                            <li>Notifications from watched Organizations/APIs (see above)</li>
+                            <li>Per-user Task+Notification Inbox UI</li>
+                            <li>Add "Request Membership" functionality for organizations</li>
+                            <li>Full API to access tasks and notifications</li>
                           </ul>
                         </li>
                         <li>
