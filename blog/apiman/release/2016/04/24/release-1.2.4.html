@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Version 1.2.3.Final of apiman is released! | apiman Open Source API Management</title>
-  <meta name="description" content="Greetings, earthlings!  Yesterday we released the best version of apiman yet,and I’m not just saying that because the version number (1.2.3.Final) is awesome...">
+  <title>Version 1.2.4.Final of apiman is released! | apiman Open Source API Management</title>
+  <meta name="description" content="Greetings, earthlings!  On Friday of last week we released the absolute best version of apiman ever!  This release has a fair number of bugs fixed, as well a...">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
   <!-- Canonical URL -->
     
-    <link rel="canonical" href="http://apiman.io/blog/apiman/release/2016/03/24/release-1.2.3.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/release/2016/04/24/release-1.2.4.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -136,8 +136,8 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Version 1.2.3.Final of apiman is released!</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Mar 24, 2016</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Version 1.2.4.Final of apiman is released!</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Apr 24, 2016</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
   </header>
@@ -149,10 +149,9 @@
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>Greetings, earthlings!  Yesterday we released the <em>best</em> version of apiman yet,
-and I’m not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targeted new 
-features.  Read on for more details!</p>
+    <p>Greetings, earthlings!  On Friday of last week we released the <em>absolute best</em> version 
+of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
+things as well.  Read on for the details!</p>
 
 <!--more-->
 
@@ -160,7 +159,7 @@ features.  Read on for more details!</p>
 <p>The release notes for this release can be found here:</p>
 
 <ul>
-  <li><a href="http://red.ht/21HvJDe" target="_blank" rel="nofollow">Release notes for 1.2.3.Final</a></li>
+  <li><a href="http://red.ht/23NVU1k" target="_blank" rel="nofollow">Release notes for 1.2.4.Final</a></li>
 </ul>
 
 <p>And of course, all of the standard sources of information have been updated:</p>
@@ -171,59 +170,60 @@ features.  Read on for more details!</p>
 </ul>
 
 <h2 id="just-give-me-the-highlights">Just give me the highlights!</h2>
-<p>Too busy to click the links above?  I get it.  I’ll give you the top changes in this
-release.</p>
+<p>Mouse clicky finger too tired?  No worries, read on for some of the highlights
+(not the children’s magazine, but still pretty cool):</p>
 
-<h3 id="api-key-moved-from-contract-to-client-app">API Key moved from Contract to Client App</h3>
-<p>The big change from 1.2.2.Final is that we have moved the API Key from the Contract
-(which is the link between a Client App and an API it consumes) to the Client App.<br />
-This change was suggested by a number of community members, and it does make a lot
-of sense.  The primary down-side to this change is that you are now limited to one
-Contract per Client App per API. Previously if an API was offered through, for example,
-a Gold and a Silver plan, you could actually create a Contract to <em>both</em> of them.
-This is no longer possible.</p>
+<h3 id="deletes-finally">Deletes… Finally!</h3>
+<p>A really annoying thing about apiman, ever since version 1.0, has been the
+inability to delete anything.  Well now you can!  The following can now be
+deleted:</p>
 
-<p>It is worth noting that this change makes many things easier to do, now and going 
-forward.  API Key management is simpler - you just have one key for each Client App
-(version) you manage.  It also opens up the opportunity to allow other types of 
-API Keys (such as client certificates or Keycloak client IDs) beyond the default 
-Java UUID style keys.</p>
+<ul>
+  <li>Organizations</li>
+  <li>Plans</li>
+  <li>Client Apps</li>
+  <li>APIs</li>
+</ul>
 
-<h3 id="data-migration-when-upgrading-apiman">Data migration when upgrading apiman</h3>
-<p>Moving the API Key from the Contract to the Client App changed the apiman internal
-data model, which prompted us to implement a data migration feature integrated with
-the already-existing data import/export feature.  This means that you can export
-data from an older version of apiman, and then import that data into a newer version
-of apiman - and apiman will automatically tranform the import data to the latest
-data model.</p>
+<p>Note that there are some conditions that must be met, different for each type
+of thing, before a delete will be successful.  For example, you can only 
+delete an API if it has no (0) published versions.</p>
 
-<h3 id="initial-metrics-support-for-hawkular-metrics">Initial metrics support for Hawkular Metrics</h3>
-<p>As you all probably know, apiman supports different implementations of various core
-internal components.  One of those components is the Metrics feature, where we 
-record metrics information for every request made to the Gateway.  In the default
-community edition of apiman we use Elasticsearch to record these metrics.  Version
-1.2.3.Final of apiman now includes an initial (tech preview) implementation that
-uses <a href="http://www.hawkular.org/docs/components/metrics/index.html" target="_blank" rel="nofollow">Hawkular Metrics</a> 
-instead of Elasticsearch!</p>
+<h3 id="decent-logging-in-the-gateway">Decent Logging in the Gateway</h3>
+<p>We’re not done with this yet, but we finally have decent logging support in the
+Gateway.  In fact, if you’re creating a custom policy, you should access the 
+logger by getting it from the policy conext.  Something like this:</p>
 
-<h3 id="improvements-to-the-api-catalog-ui">Improvements to the API Catalog UI</h3>
-<p>A very cool recent feature of apiman is the new 
-<a href="http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html">API Catalog browser UI</a>.<br />
-The API Catalog feature allows you to quickly filter the list of available APIs from
-the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
-with zero or more tags, and filtering can now be done based on these tags.  The UI
-is pretty slick!</p>
+<pre><code>IApimanLogger logger = context.getLogger(getClass());
+logger.info("An INFO message here!");
+logger.debug("A DEBUG message here!");
+</code></pre>
 
-<h3 id="configurable-aes-data-encrypter-implementation">Configurable AES data encrypter implementation</h3>
-<p>You may or may not be aware that apiman encrypts any data that might be sensitive prior
-to storing it in the data store (manager) or registry (gateway).  There is a java
-interface called <a href="https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java" target="_blank" rel="nofollow">IDataEncrypter</a> 
-that controls this behavior, and you can provide your own implementation via an apiman
-plugin if you choose.  Previously that was the only option available to you if you
-wanted a more secure implementation (the default implementation uses a well-known/hard-coded
-secret key when doing AES encryption on the data, making it not-very-secure).  Now we
-offer that same AES encrypter but the secret key can be configured in the <em>apiman.properties</em>
-file.</p>
+<p>This is the best way to do logging in apiman.  You probably want to stay away
+from standard output or a custom logger implementation within your policy.</p>
+
+<h3 id="circuit-breaker-policy">Circuit Breaker Policy</h3>
+<p>Apiman now comes with a new Circuit Breaker policy (available as a plugin).
+If you’re not familiar with the circuit breaker pattern, I recemmend you go
+here:</p>
+
+<ul>
+  <li><a href="http://martinfowler.com/bliki/CircuitBreaker.html" target="_blank" rel="nofollow">Martin Fowler: Circuit Breaker Pattern</a></li>
+</ul>
+
+<h3 id="plugin-classloader-improvements">Plugin ClassLoader Improvements</h3>
+<p>A number of community members have been building their own custom plugins, and
+they’ve run into some issues with how classes and resources are loaded.  In
+this latest version of apiman we have made a few changes (and fixed a few bugs)
+that should make writing a custom policy much easier.  In particular, the 
+plugin classloader was not properly loading resources from library dependencies.
+This meant that, for example, any third party library you used that tried to
+load a service via a Java <em>ServiceLoader</em> would fail (because the service 
+loader’s configuration file would not be found).</p>
+
+<p>Additionally, we’re now setting the plugin’s classloader as the current thread’s
+context classloader.  This means that, again, any of those calls to ServiceLoader
+will be searching for resources in the correct classloader.</p>
 
 <h2 id="ok-thanks-im-out">OK thanks, I’m out!</h2>
 <p>Thanks for reading - see you later.</p>
@@ -236,7 +236,7 @@ file.</p>
 <script>
     var disqus_config = function () {
         this.page.url = '';
-        this.page.identifier = '/apiman/release/2016/03/24/release-1.2.3';
+        this.page.identifier = '/apiman/release/2016/04/24/release-1.2.4';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE

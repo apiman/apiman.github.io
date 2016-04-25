@@ -9,6 +9,104 @@
 		
 		
 			<item>
+				<title>Version 1.2.4.Final of apiman is released!</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;Greetings, earthlings!  On Friday of last week we released the &lt;em&gt;absolute best&lt;/em&gt; version 
+of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
+things as well.  Read on for the details!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;where-can-i-find-more-information&quot;&gt;Where can I find more information?&lt;/h2&gt;
+&lt;p&gt;The release notes for this release can be found here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://red.ht/23NVU1k&quot;&gt;Release notes for 1.2.4.Final&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And of course, all of the standard sources of information have been updated:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/&quot;&gt;The apiman project site&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;Latest User Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;just-give-me-the-highlights&quot;&gt;Just give me the highlights!&lt;/h2&gt;
+&lt;p&gt;Mouse clicky finger too tired?  No worries, read on for some of the highlights
+(not the children’s magazine, but still pretty cool):&lt;/p&gt;
+
+&lt;h3 id=&quot;deletes-finally&quot;&gt;Deletes… Finally!&lt;/h3&gt;
+&lt;p&gt;A really annoying thing about apiman, ever since version 1.0, has been the
+inability to delete anything.  Well now you can!  The following can now be
+deleted:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Organizations&lt;/li&gt;
+  &lt;li&gt;Plans&lt;/li&gt;
+  &lt;li&gt;Client Apps&lt;/li&gt;
+  &lt;li&gt;APIs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that there are some conditions that must be met, different for each type
+of thing, before a delete will be successful.  For example, you can only 
+delete an API if it has no (0) published versions.&lt;/p&gt;
+
+&lt;h3 id=&quot;decent-logging-in-the-gateway&quot;&gt;Decent Logging in the Gateway&lt;/h3&gt;
+&lt;p&gt;We’re not done with this yet, but we finally have decent logging support in the
+Gateway.  In fact, if you’re creating a custom policy, you should access the 
+logger by getting it from the policy conext.  Something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;IApimanLogger logger = context.getLogger(getClass());
+logger.info(&quot;An INFO message here!&quot;);
+logger.debug(&quot;A DEBUG message here!&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the best way to do logging in apiman.  You probably want to stay away
+from standard output or a custom logger implementation within your policy.&lt;/p&gt;
+
+&lt;h3 id=&quot;circuit-breaker-policy&quot;&gt;Circuit Breaker Policy&lt;/h3&gt;
+&lt;p&gt;Apiman now comes with a new Circuit Breaker policy (available as a plugin).
+If you’re not familiar with the circuit breaker pattern, I recemmend you go
+here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://martinfowler.com/bliki/CircuitBreaker.html&quot;&gt;Martin Fowler: Circuit Breaker Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;plugin-classloader-improvements&quot;&gt;Plugin ClassLoader Improvements&lt;/h3&gt;
+&lt;p&gt;A number of community members have been building their own custom plugins, and
+they’ve run into some issues with how classes and resources are loaded.  In
+this latest version of apiman we have made a few changes (and fixed a few bugs)
+that should make writing a custom policy much easier.  In particular, the 
+plugin classloader was not properly loading resources from library dependencies.
+This meant that, for example, any third party library you used that tried to
+load a service via a Java &lt;em&gt;ServiceLoader&lt;/em&gt; would fail (because the service 
+loader’s configuration file would not be found).&lt;/p&gt;
+
+&lt;p&gt;Additionally, we’re now setting the plugin’s classloader as the current thread’s
+context classloader.  This means that, again, any of those calls to ServiceLoader
+will be searching for resources in the correct classloader.&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-thanks-im-out&quot;&gt;OK thanks, I’m out!&lt;/h2&gt;
+&lt;p&gt;Thanks for reading - see you later.&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="release" />
+				
+				<pubDate>Sun, 24 Apr 2016 21:45:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/release/2016/04/24/release-1.2.4.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2016/04/24/release-1.2.4.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Covering Your Assets: Data Encryption in API Management</title>
 				
 				        <dc:creator>Rachel Yordán</dc:creator>
@@ -532,7 +630,7 @@ Permissions Granted to this Role:
 				
 				<description>&lt;p&gt;Greetings, earthlings!  Yesterday we released the &lt;em&gt;best&lt;/em&gt; version of apiman yet,
 and I’m not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targetted new 
+This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -5156,167 +5254,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Adding a BASIC Authentication Policy to a Managed API in JBoss apiman</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/1-apiman_logo.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage APIs, but implement a layer of security to the APIs by adding an authentication requirement when client apps access a managed API.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;securing-client-app-access-to-your-managed-apis&quot;&gt;Securing Client App Access to your Managed APIs&lt;/h2&gt;
-
-&lt;p&gt;As we’ve seen in the previous articles in this series, apiman enables you to govern the usage of the APIs that it manages by defining policies in the Managament UI that are then applied at runtime by the API Gateway. The apiman API Gateway applies the policy rules that you define to requests that it proxies to the managed API:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-2.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The OOTB policies that are packaged with apiman enable you to apply a variety of types of controls, including rate limiting (where access to an API is assigned a usage threshold) and black/whitelisting by IP address (where the client app’s IP address governs their access to the API).&lt;/p&gt;
-
-&lt;p&gt;However, managing an API with apiman does not automatically make that API secure. Happily, however, apiman provides a policy that enables you to easily set up authentication to control access to your managed API. (Note that this policy governs the client apps’ authenticated access to the managed API, and not establishing a secure connection where apiman authenticates the back-end APIs. In other words, in this article, we’re interested in adding authentication between the blue and pink boxes in the above diagram.)&lt;/p&gt;
-
-&lt;h2 id=&quot;adding-a-basic-authentication-policy-to-a-managed-api&quot;&gt;Adding a BASIC Authentication Policy to a Managed API&lt;/h2&gt;
-
-&lt;p&gt;apiman is packaged with multiple pre-configured policies:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Authorization - Access to APIs’ resources is controlled by user roles.&lt;/li&gt;
-  &lt;li&gt;BASIC Authentication - A username/password is required to access an API.&lt;/li&gt;
-  &lt;li&gt;Ignored Resources - Paths to APIs’ resources that will not be accessible. Requests to these API resource paths return a 404 (not found) error.&lt;/li&gt;
-  &lt;li&gt;IP Blacklist - Client apps with specific IP address will be blocked from accessing an API.&lt;/li&gt;
-  &lt;li&gt;IP Whitelist - And, client apps with specific IP address will not  be blocked from accessing an API.&lt;/li&gt;
-  &lt;li&gt;Rate Limiting - Access to an API is limited by the number of requests in a defined time period. We demonstrated an example of a rate limiting policy in the first article in this series.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We’re interested in the BASIC Authentication Policy. Let’s take a closer look. The dialog to add a BASIC authentication policy to an API looks like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-3.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In creating the BASIC policy, we define an Authentication Realm (think of this as an area to be protected, within which usernames and passwords exist) and an optional HTTP header. The optional HTTP header is used to optionally pass the user’s principal to the back-end API through an HTTP header. This is useful if the back-end system needs to know the username of the user calling it (e.g. to do user-specific operation). The “Transport security required” checkbox, if enabled, will cause the policy to fail if a client app tries to connect to the API over http. The Policy will only accept credentials over https.&lt;/p&gt;
-
-&lt;p&gt;We’ll keep the Identity Source simple and select “Static Identities” and then define a user. Note that while this static approach is fine for testing purposes, you will want use one of the other Identity Source options (JBDS or LDAP) for a production environment as they can better handle a large number of users.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-4.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It’s important to remember that, in BASIC authentication, one of the factors that makes this, well, basic in nature, is that the username/password that you define are encoded (this is unencrypted base64 encoded text) when they are sent to the server. Since the text is not encrypted, it’s at risk of being copied and then used in an attack. For this reason, it’s safer to select the transport security option to configure SSL encryption.&lt;/p&gt;
-
-&lt;p&gt;To illustrate, here’s Java code that can encode and then decode the username:password string:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Base64.Encoder &lt;span class=&quot;nv&quot;&gt;encoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Base64.getEncoder&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;normalString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;user1&amp;quot;&lt;/span&gt; + &lt;span class=&quot;s2&quot;&gt;&amp;quot;:&amp;quot;&lt;/span&gt; + &lt;span class=&quot;s2&quot;&gt;&amp;quot;password1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;encodedString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; encoder.encodeToString&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;normalString.getBytes&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;StandardCharsets.UTF_8&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- System.out.println &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;The encoded string is: &amp;quot;&lt;/span&gt; + encodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-             
- Decoder &lt;span class=&quot;nv&quot;&gt;decoder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Base64.getDecoder&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- byte&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;unencodedStringArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; decoder.decode&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;encodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- String &lt;span class=&quot;nv&quot;&gt;unencodedString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; new String &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;unencodedStringArray&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- System.out.println &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;The unencoded string is: &amp;quot;&lt;/span&gt; + unencodedString&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-   
- The encoded string is: dXNlcjE6cGFzc3dvcmQx  
- The unencoded string is: user1:password1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;So - unlike encrypted strings, your encoded username and password strings are not secure!&lt;/p&gt;
-
-&lt;p&gt;## When a Request is made to the API&lt;/p&gt;
-
-&lt;p&gt;It’s interesting to see step-by-step what happens when a request is made to the API and the BASIC authentication policy is applied. Let’s take a look at the request and the responses. I used the “HttpFox” http analyzer (https://addons.mozilla.org/en-us/firefox/addon/httpfox/) to “listen in” on the requests sent to the server and the responses sent back.&lt;/p&gt;
-
-&lt;p&gt;Here’s the first request made to the API, notice that a username/password is not included.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Request-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; GET /apiman-gateway/apiProducerOrg/echossl/1.0?apikey&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;X11&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Linux x86_64&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; rv:24.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.9,*/*&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.8  
- Accept-Language     en-US,en&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     &lt;span class=&quot;nv&quot;&gt;__utma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1348865079.1409020839.1411395889.1419258109.7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;__utmz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1409020839.1.1.utmcsr&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmccn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmcmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s_fid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The response, as we expected, shows that the request has triggered an authentication failure. This is due to the authentication requirement that we defined and is being applied by the API Gateway. Note the 401 error code and the reference to BASIC authentication:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Status-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     HTTP/1.1 &lt;span class=&quot;m&quot;&gt;401&lt;/span&gt; Unauthorized  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- X-Policy-Failure-Type     Authentication  
- Date     Wed, &lt;span class=&quot;m&quot;&gt;03&lt;/span&gt; Jun &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 13:43:26 GMT  
- Connection     keep-alive  
- WWW-Authenticate     BASIC &lt;span class=&quot;nv&quot;&gt;realm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;myRealm&amp;quot;&lt;/span&gt;  
- X-Policy-Failure-Code     &lt;span class=&quot;m&quot;&gt;10004&lt;/span&gt;  
- Content-Type     application/json  
- Content-Length     &lt;span class=&quot;m&quot;&gt;165&lt;/span&gt;  
- X-Policy-Failure-Message     BASIC authentication failed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The browser then automatically pops up a dialog for us to enter the username and password:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-11/apiman-5.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Request-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     GET /apiman-gateway/apiProducerOrg/echossl/1.0?apikey&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;X11&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Linux x86_64&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; rv:24.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.9,*/*&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.8  
- Accept-Language     en-US,en&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     &lt;span class=&quot;nv&quot;&gt;__utma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1348865079.1409020839.1411395889.1419258109.7&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;__utmz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;111872281.1409020839.1.1.utmcsr&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmccn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;direct&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;utmcmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;none&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s_fid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive  
- Authorization     Basic dXNlcjE6cGFzc3dvcmQx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;And, then we get the successful return code of 200 in a response:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Status-Line&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     HTTP/1.1 &lt;span class=&quot;m&quot;&gt;200&lt;/span&gt; OK  
- Connection     keep-alive  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- Content-Length     &lt;span class=&quot;m&quot;&gt;755&lt;/span&gt;  
- Content-Type     application/json  
- Date     Wed, &lt;span class=&quot;m&quot;&gt;03&lt;/span&gt; Jun &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 13:43:34 GMT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Just because an API is managed doesn’t automatically make it secure. JBoss apiman provides you with multiple options to add an authentication requirement when client apps access your managed API.&lt;/p&gt;
-
-&lt;h2 id=&quot;authors-acknowledgements&quot;&gt;Author’s Acknowledgements&lt;/h2&gt;
-
-&lt;p&gt;As always, the author would like to acknowledge Eric Wittmann and the apiman team for their  review comments and suggestions on writing this post, and for adding new features to apiman!&lt;/p&gt;
-
-&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
-
-&lt;p&gt;apiman&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://www.apiman.io&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Previous articles in this series:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://java.dzone.com/articles/impatient-new-users&lt;/li&gt;
-  &lt;li&gt;http://java.dzone.com/articles/customizing-jboss-apiman&lt;/li&gt;
-  &lt;li&gt;http://java.dzone.com/articles/jboss-apiman-api-manager-rest&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;HTTP Authentication: Basic and Digest Access Authentication&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http://tools.ietf.org/html/rfc2617&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-				
-					<category term="authentication" />
-				
-					<category term="policy" />
-				
-				<pubDate>Thu, 11 Jun 2015 07:00:00 -0400</pubDate>
-				<link>http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 13 Apr 2016 15:31:39 -0400</lastBuildDate>
+		<lastBuildDate>Mon, 25 Apr 2016 14:08:45 -0400</lastBuildDate>
 	</channel>
 </rss>
