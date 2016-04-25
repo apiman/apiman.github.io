@@ -16,7 +16,7 @@
 				
 				<description>&lt;p&gt;Greetings, earthlings!  On Friday of last week we released the &lt;em&gt;absolute best&lt;/em&gt; version 
 of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
-things as well.  Read on for the details!&lt;/p&gt;
+things.  Read on for the details!&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -69,7 +69,7 @@ from standard output or a custom logger implementation within your policy.&lt;/p
 
 &lt;h3 id=&quot;circuit-breaker-policy&quot;&gt;Circuit Breaker Policy&lt;/h3&gt;
 &lt;p&gt;Apiman now comes with a new Circuit Breaker policy (available as a plugin).
-If you’re not familiar with the circuit breaker pattern, I recemmend you go
+If you’re not familiar with the circuit breaker pattern, I recommend you go
 here:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -306,7 +306,7 @@ If you are kind enough to want to share your plugin with the rest of the apiman 
 				
 					<category term="gateway" />
 				
-				<pubDate>Wed, 13 Apr 2016 13:34:00 -0400</pubDate>
+				<pubDate>Wed, 13 Apr 2016 12:34:00 -0500</pubDate>
 				<link>http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</guid>
 			</item>
@@ -5254,6 +5254,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</guid>
 			</item>
 		
-		<lastBuildDate>Mon, 25 Apr 2016 14:08:45 -0400</lastBuildDate>
+		<lastBuildDate>Mon, 25 Apr 2016 14:28:18 -0400</lastBuildDate>
 	</channel>
 </rss>
