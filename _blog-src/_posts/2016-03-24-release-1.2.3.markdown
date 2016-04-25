@@ -8,7 +8,7 @@ categories: apiman release
 
 Greetings, earthlings!  Yesterday we released the *best* version of apiman yet,
 and I'm not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targetted new 
+This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!
 
 <!--more-->
