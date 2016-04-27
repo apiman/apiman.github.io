@@ -8,7 +8,7 @@ categories: apiman release
 
 Greetings, earthlings!  On Friday of last week we released the *absolute best* version 
 of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
-things as well.  Read on for the details!
+things.  Read on for the details!
 
 <!--more-->
 
@@ -57,7 +57,7 @@ from standard output or a custom logger implementation within your policy.
 
 ### Circuit Breaker Policy
 Apiman now comes with a new Circuit Breaker policy (available as a plugin).
-If you're not familiar with the circuit breaker pattern, I recemmend you go
+If you're not familiar with the circuit breaker pattern, I recommend you go
 here:
 
 * [Martin Fowler: Circuit Breaker Pattern](http://martinfowler.com/bliki/CircuitBreaker.html)
