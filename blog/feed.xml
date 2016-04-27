@@ -306,7 +306,7 @@ If you are kind enough to want to share your plugin with the rest of the apiman 
 				
 					<category term="gateway" />
 				
-				<pubDate>Wed, 13 Apr 2016 12:34:00 -0500</pubDate>
+				<pubDate>Wed, 13 Apr 2016 13:34:00 -0400</pubDate>
 				<link>http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</guid>
 			</item>
@@ -5254,6 +5254,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</guid>
 			</item>
 		
-		<lastBuildDate>Mon, 25 Apr 2016 14:28:18 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 27 Apr 2016 08:45:02 -0400</lastBuildDate>
 	</channel>
 </rss>
