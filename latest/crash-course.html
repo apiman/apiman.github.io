@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="resources/images/favicon.ico">
+    <title>Crash Course | apiman Open Source API Management</title>
+
+    <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+    <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.2.5.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.2.5.Final" rel="stylesheet">
+    <link href="resources/css/apiman-guide.css?v=1.2.5.Final" rel="stylesheet">
+    <link href="resources/css/codehighlight.css?v=1.2.5.Final" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="resources/jquery-1.11.1/js/jquery.min.js"></script>
+    <script src="resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $( "#guide" ).load("crash-course/index.html", function() {
+                
+                $( 'h1.title' ).append('<a href="crash-course/apiman-crash-course.pdf" style="font-size: 16px" class="pull-right"><i class="fa fa-file-pdf-o fa-fw"></i>Download as PDF</a>');
+                
+                if (window.location.hash) {
+                    var hash = location.hash.replace('#', '');
+                    var elem = $("body").find("#" + hash);
+                    var section = elem.closest(".titlepage");
+                    if (section) {
+                        var top = section.offset().top;
+                        $('html, body').animate({
+                            scrollTop: top
+                        }, 500);
+                    }
+                }
+            });
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-56678850-1', 'auto');
+                ga('send', 'pageview');
+        });
+    </script>
+  </head>
+  <body class="crash-course guide">
+    <div id="rhbar">
+      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+    </div>
+    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">apiman</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="top-menu-item menu-item"><a href="index.html">Overview</a></li>
+            <li class="top-menu-item menu-item"><a href="download.html">Download</a></li>
+            <li class="top-menu-item menu-item"><a href="roadmap.html">Roadmap</a></li>
+            <li class="top-menu-item menu-item"><a href="/blog">Blog</a></li>
+            <li class="top-menu-item menu-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item">
+                        <a href="https://issues.jboss.org/browse/APIMAN" rel="nofollow" target="_blank">Report a Bug</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="chat.html">Chat on IRC</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="contributors.html">Contributors List</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="top-menu-item menu-item dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Learn More<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item">
+                        <a href="tutorials.html">Tutorials &amp; Walkthroughs</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="crash-course.html">Crash Course!</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="installation-guide.html">Installation Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="user-guide.html">User Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="developer-guide.html">Developer Guide</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="production-guide.html">Production Guide</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-item">
+                        <a href="api-manager-restdocs.html">API Manager REST Endpoints</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="top-menu-item menu-item dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-angle-double-down"></i><span>Latest</span></a>
+                <ul class="dropdown-menu">
+                    <li class="menu-item disabled">
+                        <a href="/latest">Latest Version</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../1.1.x/user-guide.html#_crash_course">Version 1.1.x</a>
+                    </li>
+                </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container">
+        <div id="content" class="row tbd">
+            <div class="col-lg-12" id="guide">
+                <p>Loading the crash course, please wait...</p>
+            </div>
+        </div>
+    
+        <footer role="contentinfo">
+            <div id="inner-footer" class="clearfix row">
+                <div id="widget-footer" class="clearfix">
+                    <hr>
+                    <div class="widget col-sm-6 col-md-6 widget_text">
+                        <div class="textwidget">
+                            <p>
+                                Copyright © 2016 Red Hat, Inc. All rights reserved.<br>
+                                apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                                <a href="disclosure.html">Open Source Disclosure</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
+                        
+                        <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+                    </div>
+                </div>
+                <nav class="clearfix"></nav>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Adobe Analytics -->
+    <script src="http://www.redhat.com/j/s_code.js" />
+    <script>
+        /**
+         * Adobe Analytics
+         *
+         * Variables reported to Adobe Analytics:
+         *  -pageName
+         *  -server
+         *  -channel
+         *  -first minor section
+         *  -second minor section (if available)
+         *  -third minor section (if available)
+         *  -full URL (domain + path + query string)
+         *  -base URL (domain + path)
+         *  -language
+         *  -country
+         *
+         */
+
+        /**
+         * Additional JS files to be loaded BEFORE adobe-analytics.js:
+         *
+         * - http://www.redhat.com/j/s_code.js
+         *
+         * Additional JS files to be loaded AFTER adobe-analytics.js
+         *
+         * - http://www.redhat.com/j/rh_omni_footer.js
+         */
+
+
+        (function() {
+
+            // Load the path name, without its initial /
+            var arr = location.pathname.substr(1, location.pathname.length).toLowerCase().split('/');
+            // If the path ends in index.html or whitespace, trim the array
+            if (arr[arr.length - 1] == "index.html" || arr[arr.length - 1] == "" ) {
+                arr.pop();
+            }
+
+            /*
+             * Assign values to Adobe Analytics properties
+             */
+
+            s.channel = "apiman | {{Channel}}"; // The channel is our top level classification
+            s.server = "apiman"; // The server is ???
+            s.pageName = "apiman | {{Channel}} | " + (arr[arr.length -1] || "homepage"); // pageName is apiman | <Channel> | {page_name}. {page_name} has index.html removed
+            s.prop2 = s.eVar22 = "en"; // prop2/eVar22 is the ISO 639-1 language code
+            s.prop4 = s.eVar23 = encodeURI(location.search); //prop4/eVar23 is the query string of the page
+
+            // Pad the array as needed, so we can shift away later
+            for (var i = arr.length; i < 3; i++) {
+                arr[i] = "";
+            }
+
+            s.prop14 = s.eVar27 = arr.shift(); // prop14/eVar27 is the first minor section (normally /{minor_section_1})
+            s.prop15 = s.eVar28 = arr.shift(); // prop15/eVar28 is the second minor section (normally /a/{minor_section_2})
+            s.prop16 = s.eVar29 = arr.shift(); // prop16/eVar29 is the third minor section (normally /a/b/{minor_section_3})
+            s.prop21 = s.eVar18 = encodeURI(location.hostname+location.pathname).toLowerCase(); // prop21/eVar18 is the URL, less any query strings or fragments
+        })();
+    </script>
+    <script src="http://www.redhat.com/assets/js/tracking/rh_omni_footer.js"/>
+
+  </body>
+</html>
