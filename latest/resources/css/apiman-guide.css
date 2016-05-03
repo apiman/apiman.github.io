@@ -81,6 +81,11 @@
 #guide .inlinemediaobject img {
   width: 100%;
 }
+@media (min-width: 991px) {
+  body.crash-course #guide .inlinemediaobject img {
+    width: auto;
+  }
+}
 
 #guide .programlisting a img, #guide pre a img, #guide td a img, #guide td img {
     display:inline;
