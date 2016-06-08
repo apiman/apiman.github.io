@@ -12,7 +12,7 @@ Apiman is not only preconfigured with a rich set of policies that you can use, r
 
 ### Policies, the Most Important Part of API Management
 
-In API Management, policies are where the action is. It’s through the application of policies that an API Management system such as apiman performs API governance. All the subsystems in apiman, from the Management API UI to the API Gateway, exist for one ultimate goal; to ensure that API governance is achieved by the application of policies to API requests. In apiman, a policy is a rule, or set of rules that controls responses to API requests. There are multiple types of apiman policies. Some policies allow or block access to APIs based on the IP address of the client application, while others allow or restrict access to specific resources provided by an API, while still others enable you to control or “throttle” the rate at which requests made to an API.
+In API Management, policies are where the action is. It's through the application of policies that an API Management system such as apiman performs API governance. All the subsystems in apiman, from the Management API UI to the API Gateway, exist for one ultimate goal; to ensure that API governance is achieved by the application of policies to API requests. In apiman, a policy is a rule, or set of rules that controls responses to API requests. There are multiple types of apiman policies. Some policies allow or block access to APIs based on the IP address of the client application, while others allow or restrict access to specific resources provided by an API, while still others enable you to control or "throttle" the rate at which requests made to an API.
 
 ### Apiman Plugin Management Improvements - Extending Flexibility
 
@@ -48,31 +48,32 @@ Apiman is also includes second set of policy types which can be optionally insta
 - HTTP Security - Provides a policy which allows security-related HTTP headers to be set, which can help mitigate a range of common security vulnerabilities.
 - JSONP - A plugin that contributes a policy that turns a standard RESTful endpoint into a JSONP compatible endpoint.
 - Keycloak OAuth - This plugin offers an OAuth2 policy which leverages the Keycloak authentication platform as the identity and access provider.
-- Log Headers - Offers a simple policy that allows request headers to be added or stripped from the HTTP request (outgoing) or HTTP response (incoming).
+- Simple Headers - Offers a simple policy that allows request headers to be added or stripped from the HTTP request (outgoing) or HTTP response (incoming).
 - XML<->JSON Transformation - This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.
+- Log Headers - A policy that logs request and/or response headers to the server console.
 
 The optional plugins are accessed in this administrative page in the apiman Management UI:
 
 ![Image: Optional Plugins](/blog/images/2016-02-22/plugin_mgmt_1.png)
 
-To install a policy plugin, click on “Install” - for example, to install the Log Headers Policy:
+To install a policy plugin, click on "Install" - for example, to install the Log Headers Policy:
 
 ![Image: Log Policy Plugin](/blog/images/2016-02-22/plugin_mgmt_2.png)
 
-And, it’s installed!
+And, it's installed!
 
 ![Image: Log Policy Plugin Installed](/blog/images/2016-02-22/plugin_mgmt_3.png)
 
-OK, we installed the policy plugin. Now, let’s uninstall it!
+OK, we installed the policy plugin. Now, let's uninstall it!
 
-Uninstalling a policy plugin is as simple as installing it. All you do is select the plugin from the “Manage Plugins” page in the Administrative UI:
+Uninstalling a policy plugin is as simple as installing it. All you do is select the plugin from the "Manage Plugins" page in the Administrative UI:
 
 ![Image: Log Policy Plugin Uninstalled ](/blog/images/2016-02-22/plugin_mgmt_4.png)
 
 There are a couple of caveats to keep in mind when you uninstall a policy plugin:
 
 - First, uninstalling the plugin removes it from the apiman Management UI, but it still remains in use for all APIs in which it was previously configured.
-- Second, if you want to completely remove the plugin from all APIs in which it was previously configured, you must manually click on each API, Plan, and Client App that uses the policy and remove it. Apiman does not include a single “kill” button to automatically remove all references to a policy.
+- Second, if you want to completely remove the plugin from all APIs in which it was previously configured, you must manually click on each API, Plan, and Client App that uses the policy and remove it. Apiman does not include a single "kill" button to automatically remove all references to a policy.
 
 ### Upgrading Policy Plugins
 
@@ -80,7 +81,7 @@ In addition to enabling you to create and install your own custom policies, apim
 
 The best way to illustrate how to upgrade a policy plugin is to follow the process step-by-step. 
 
-For this illustration, we’ll use one of the policy plugins provided in the official apiman plugins git repository ( [https://github.com/apiman/apiman-plugins](https://github.com/apiman/apiman-plugins) ) as our custom plugin. Many of the plugins provided in this repository are also available set of “available plugins” packaged with apiman. We’ll use one of the plugins (“test-policy” - it’s a very simple policy that adds a header to the inbound http request) that is not already installed into apiman for this example.
+For this illustration, we'll use one of the policy plugins provided in the official apiman plugins git repository ( [https://github.com/apiman/apiman-plugins](https://github.com/apiman/apiman-plugins) ) as our custom plugin. Many of the plugins provided in this repository are also available set of "available plugins" packaged with apiman. We'll use one of the plugins ("test-policy" - it's a very simple policy that adds a header to the inbound http request) that is not already installed into apiman for this example.
 
 (Note that in order to follow this example, you will have to have maven and git installed.)
 
@@ -91,38 +92,38 @@ git clone https://github.com/apiman/apiman-plugins.git
 cd apiman-plugins
 ```
 
-Before we build the plugins, we have to make one small change. The plugins as downloaded are assigned version numbers that include a -“SNAPSHOT” suffix. We will want to remove that suffix for this example. (Sneak peek: We will restore the suffix later in this article as apiman includes a new feature where “SNAPSHOT” version plugins are automatically reloaded.)
+Before we build the plugins, we have to make one small change. The plugins as downloaded are assigned version numbers that include a -"SNAPSHOT" suffix. We will want to remove that suffix for this example. (Sneak peek: We will restore the suffix later in this article as apiman includes a new feature where "SNAPSHOT" version plugins are automatically reloaded.)
 
-To make these changes, edit these files, and change the version from “1.2.2-SNAPSHOT” to “1.2.2”:
+To make these changes, edit these files, and change the version from "1.2.2-SNAPSHOT" to "1.2.2":
 
 ```shell
 ./pom.xml
 test-policy/pom.xml
 ```
 
-Then, to build the plugins, and install them into your local maven repo (at runtime, the apiman API Gateway installs plugins from the local maven “.m2” repo directory), execute this command:
+Then, to build the plugins, and install them into your local maven repo (at runtime, the apiman API Gateway installs plugins from the local maven ".m2" repo directory), execute this command:
 
 ```shell
 mvn install
 ```
 
-OK, our policy plugin is built, let’s add it into the management UI.
+OK, our policy plugin is built, let's add it into the management UI.
 
-As an administrative user, navigate to the “Manage Plugins” page in the Management UI and select the “Available Plugins” tab, and then, click on the “Add Custom Plugin” button. The following dialog is displayed:
+As an administrative user, navigate to the "Manage Plugins" page in the Management UI and select the "Available Plugins" tab, and then, click on the "Add Custom Plugin" button. The following dialog is displayed:
 
 ![Image: Add Custom Plugin ](/blog/images/2016-02-22/plugin_mgmt_5.png)
 
-Fill in the details for the “test-policy” plugin. (You can find all this information in the plugin’s “pom.xml” file.) apiman will use this information to locate the policy plugin in your local maven repo:
+Fill in the details for the "test-policy" plugin. (You can find all this information in the plugin's "pom.xml" file.) apiman will use this information to locate the policy plugin in your local maven repo:
 
 ![Image: Add Custom Plugin Details ](/blog/images/2016-02-22/plugin_mgmt_6.png)
 
-And, after you click on the “Add Plugin” button, the policy plugin is installed:
+And, after you click on the "Add Plugin" button, the policy plugin is installed:
 
 ![Image: Custom Plugin Added ](/blog/images/2016-02-22/plugin_mgmt_7.png)
 
-Notice that there are (2) buttons in the “Actions” column of the “Installed Plugins”  table. The button labeled with an “X” enables you to remove the plugin. The button labeled with an up-arrow enables you to upgrade the policy plugin.
+Notice that there are (2) buttons in the "Actions" column of the "Installed Plugins"  table. The button labeled with an "X" enables you to remove the plugin. The button labeled with an up-arrow enables you to upgrade the policy plugin.
 
-In order for apiman to recognize that a plugin policy has been updated, the plugin version number must change. To change the version number of the test-policy plugin, edit these files, and change the version from “1.2.2” to “1.2.3”:
+In order for apiman to recognize that a plugin policy has been updated, the plugin version number must change. To change the version number of the test-policy plugin, edit these files, and change the version from "1.2.2" to "1.2.3":
 
 ```shell
 ./pom.xml
@@ -135,11 +136,11 @@ Then, to rebuild the plugins, and install them into your local maven repo, execu
 mvn clean install
 ```
 
-After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy’s upgrade button. Enter the new plugin version number in the dialog that is displayed:
+After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy's upgrade button. Enter the new plugin version number in the dialog that is displayed:
 
 ![Image: Set the Updated Version Number ](/blog/images/2016-02-22/plugin_mgmt_8.png)
 
-And, after you perform the upgrade by clicking on the “OK” button, the plugin is upgraded:
+And, after you perform the upgrade by clicking on the "OK" button, the plugin is upgraded:
 
 ![Image: View the Updated Version Number ](/blog/images/2016-02-22/plugin_mgmt_9.png)
 
@@ -156,13 +157,13 @@ The final new feature added to Plugin Management in apiman 1.2.x is the automati
 
 When you are developing a custom policy plugin, you may have to uninstall and reinstall the plugin many times while it is being debugged. This can quickly become a time-consuming manual task. Apiman 1.2.x now makes it possible for you avoid this manual installing/re-installing.
 
-As we’ve just seen, the apiman API Gateway installs policy plugins from your local maven repo. To be more efficient, the API Gateway caches plugins the first time that they are used. If, however, a plugin’s version ends with a “-SNAPSHOT” suffix, then the API Gateway will reload it every time the plugin is used.
+As we've just seen, the apiman API Gateway installs policy plugins from your local maven repo. To be more efficient, the API Gateway caches plugins the first time that they are used. If, however, a plugin's version ends with a "-SNAPSHOT" suffix, then the API Gateway will reload it every time the plugin is used.
 
-So, by including a “-SNAPSHOT” suffix in your custom policy plugin’s version, you can iterate through changes to the policy plugin  without having to manually uninstall and then install each new version of the plugin.
+So, by including a "-SNAPSHOT" suffix in your custom policy plugin's version, you can iterate through changes to the policy plugin  without having to manually uninstall and then install each new version of the plugin.
 
-Let’s take a look at this in action.
+Let's take a look at this in action.
 
-Since we want to take advantage of the automatic reloading, we must restore the “-SNAPSHOT” suffix to the test-policy custom policy plugin. To make these changes, edit these files, and change the version from “1.2.3” to “1.2.2-SNAPSHOT”:
+Since we want to take advantage of the automatic reloading, we must restore the "-SNAPSHOT" suffix to the test-policy custom policy plugin. To make these changes, edit these files, and change the version from "1.2.3" to "1.2.2-SNAPSHOT":
 
 ```shell
 ./pom.xml
@@ -179,15 +180,15 @@ And then add the custom policy plugin in the Management UI:
 
 ![Image: Add SNAPSHOT Plugin ](/blog/images/2016-02-22/plugin_mgmt_10.png)
 
-And, here’s the installed plugin:
+And, here's the installed plugin:
 
 ![Image: View SNAPSHOT Plugin ](/blog/images/2016-02-22/plugin_mgmt_11.png)
 
-Before we can configure the custom policy plugin, we need an API. For this example, we’ll use our old friend, “apiman-echo.” You can download this API from this git repository: [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
+Before we can configure the custom policy plugin, we need an API. For this example, we'll use our old friend, "apiman-echo." You can download this API from this git repository: [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
 
 The steps to build, deploy, and configure this API are available in the first article in this series: [The Impatient New User Guide to apiman](http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html)
 
-We’ll use the postman web client to access the API. The first time that we access the API, we’ll see this response (note the text highlighted in green):
+We'll use the postman web client to access the API. The first time that we access the API, we'll see this response (note the text highlighted in green):
 
 ```json
 {
@@ -210,7 +211,7 @@ We’ll use the postman web client to access the API. The first time that we acc
 }
 ```
 
-OK, now, let’s change the policy plugin. In this file: src/main/java/io/apiman/plugins/test_policy/TestPolicy.java
+OK, now, let's change the policy plugin. In this file: src/main/java/io/apiman/plugins/test_policy/TestPolicy.java
 
 Change this line from this: request.getHeaders().put("Test-Policy", "true");
 
@@ -222,9 +223,9 @@ And then, rebuild the plugin with this command:
 mvn clean install -DskipTests
 ```
 
-(The “skipTests” directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of “quite true.”)
+(The "skipTests" directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of "quite true.")
 
-Now, when we access the API again, we’ll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:
+Now, when we access the API again, we'll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:
 
 ```json
 {
@@ -255,6 +256,6 @@ From its first releases, apiman has provided users with flexibility, including s
 
 - You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: [http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html)
 
-- The “postman” client is available here: [https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+- The "postman" client is available here: [https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
 /post
