@@ -9,6 +9,97 @@
 		
 		
 			<item>
+				<title>Red Hat, 3scale, and apiman?</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;As some of you have undoubtedly already heard, Red Hat
+&lt;a href=&quot;https://www.redhat.com/en/about/press-releases/red-hat-acquire-api-management-leader-3scale&quot;&gt;recently announced&lt;/a&gt;
+the acquisition of &lt;a href=&quot;https://www.3scale.net/&quot;&gt;3scale&lt;/a&gt;, a commercial vendor of API Management software.&lt;/p&gt;
+
+&lt;p&gt;Because the apiman project is sponsored primarily by &lt;a href=&quot;https://www.redhat.com/&quot;&gt;Red Hat&lt;/a&gt;, you
+may be wondering how this impacts the project and its open source community.  In today’s blog post,
+I’ll do my best to answer that question as honestly and transparently as I can.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;summary-tldr&quot;&gt;Summary (TL;DR)&lt;/h2&gt;
+&lt;p&gt;On June 22, 2016 Red Hat announced that it was acquiring 3scale, a SaaS vendor of API Management technology
+and, obviously, a competitor of the apiman project.  3scale is a mature company with a very robust API Management
+solution.  Over the next few weeks/months, Red Hat will be working to merge the 3scale and apiman technologies
+to provide as excellent an API Management solution to its customers as possible.  It has not yet been decided
+exactly how this will happen, so for now the apiman project will continue to progress as normal, although perhaps 
+with a short term focus on bug fixes and smaller incremental improvements rather than larger feature work.&lt;/p&gt;
+
+&lt;p&gt;Read on for more detailed information!&lt;/p&gt;
+
+&lt;h2 id=&quot;is-the-apiman-project-over&quot;&gt;Is the apiman project over?&lt;/h2&gt;
+&lt;p&gt;Short answer:  &lt;em&gt;We’re not dead yet!&lt;/em&gt;  We’re not even &lt;a href=&quot;http://www.urbandictionary.com/define.php?term=pining%20for%20the%20fjords&quot;&gt;pining for the fjords&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;That said, I’m sorry to say that I don’t know exactly what the future will bring.  Red Hat will be working
+hard over the next days/weeks/months to accomplish the following goals:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Welcome the 3scale team to Red Hat, educating (indoctrinating?) them into our Open Source culture&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Fully&lt;/em&gt; Open Source the 3scale codebase&lt;/li&gt;
+  &lt;li&gt;Sensibly merge the apiman project’s efforts with the technology built by 3scale&lt;/li&gt;
+  &lt;li&gt;Deliver a merged offering both in the upstream community (perhaps even here) and as a Red Hat supported product&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’re certainly committed to this wonderful community of API Management enthusiasts (and also those of you who
+grudgingly accept its benefits), so you’re &lt;em&gt;most certainly&lt;/em&gt; not going to see us disappearing anytime soon!&lt;/p&gt;
+
+&lt;h2 id=&quot;will-the-3scale-technology-become-open-source&quot;&gt;Will the 3scale technology become open source?&lt;/h2&gt;
+&lt;p&gt;Absolutely.  This is the Red Hat Way - all product offerings are developed in the upstream open source 
+community before they become supported products.  API Management will of course be no different.  The timing
+of this effort is still unclear, and it will depend on a number of factors.  It is, however, inevitable.  (insert
+maniacal laughter here)&lt;/p&gt;
+
+&lt;h2 id=&quot;but-3scale-isnt-on-premise&quot;&gt;But 3scale isn’t on-premise!&lt;/h2&gt;
+&lt;p&gt;Yes that’s true - the 3scale technology has a few components that are exclusively available in the cloud, 
+due to the SaaS nature of their offering.  It may even be a strong reason why you are working with or evaluating
+apiman, because our technology is entirely on-premise.  I can understand this to be a valid concern.  What I
+can say is that part of the merge of apiman with 3scale &lt;em&gt;will&lt;/em&gt; result in an on-premise version of the 
+technology.  Red Hat is aware that this is an absolute requirement for many of its customers, and it will
+definitely happen as soon as possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;were-planning-on-going-to-production-with-apiman-what-should-we-do&quot;&gt;We’re planning on going to production with apiman, what should we do?&lt;/h2&gt;
+&lt;p&gt;Well obviously I cannot tell you what to do!  This is, unfortunately, an issue that I do not currently know
+how to resolve.  As mentioned above, the project is not going away, but its future has certainly changed and
+will be reshaped over the course of the next few weeks.  Because those decisions have not yet been made,
+and will not be made for a little bit of time yet, I cannot offer any specific advice.&lt;/p&gt;
+
+&lt;h2 id=&quot;we-have-custom-apiman-plugins-will-they-work-in-the-future&quot;&gt;We have custom apiman plugins, will they work in the future?&lt;/h2&gt;
+&lt;p&gt;This is another great question, and I could probably just refer you to the answer right above this one.
+One of the primary tasks ahead of us (apiman and 3scale engineering teams) is to work together to sensibly
+merge the two technologies into a single Open Source API Management project.  Until we have had a chance to
+analyze the two, we won’t know which pieces will remain and which will not.  Certainly it is the case that
+apiman’s extensibility is one of our strongest features, and we will need to make sure that the merged 
+technology remains equivalently flexible.  But at this point, we won’t know what form that will take, and 
+so I cannot say for certain whether any/all existing apiman plugins will make sense in the future.&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you-to-our-users&quot;&gt;Thank you to our users!&lt;/h2&gt;
+&lt;p&gt;Thanks for reading!  We have a great community here in apiman, which something I am very thankful for.  I
+hope that the influx of technology, expertise, and manpower that comes along with Red Hat’s acquisition
+of 3scale will only strengthen our Open Ssource API Management community.  Please stick with us and know
+that your feedback (positive or negative) is important!  Always tell us what you think, don’t pull any
+punches, and keep being awesome!&lt;/p&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="3scale" />
+				
+				<pubDate>Wed, 22 Jun 2016 21:30:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Version 1.2.4.Final of apiman is released!</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -5144,117 +5235,6 @@ You must explicitly enable client authentication for any services you want prote
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Microservices Architecture Day Appearance</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within &lt;a href=&quot;http://www.fabric8.io&quot;&gt;Fabric8&lt;/a&gt;. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;So, if you&amp;#8217;re interested in understanding the value API management can have in a microservices architecture; please, read on!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;services-services-everywhere&quot;&gt;Services, services, everywhere!&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;A &lt;a href=&quot;http://www.kubernetes.io&quot;&gt;microservices architecture&lt;/a&gt; encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX&amp;#8217;s &lt;em&gt;do one job and do it well&lt;/em&gt; philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice&amp;#8217;s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;avoiding-reimplementation-of-cross-cutting-functionality&quot;&gt;Avoiding reimplementation of cross-cutting functionality&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnote_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It&amp;#8217;s quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on &lt;em&gt;each&lt;/em&gt; of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Instead, we can drastically improve the situation by using apiman to relieve individual services of that burden; simply configure and manage those tasks in a single, well-known location. We register our APIs with apiman, apply appropriate policies, and route public traffic through the gateway. We leave apiman to deal with these common problems, and let the microservice&amp;#8217;s developers focus on their core task, rather than burning time on ancillary concerns.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fickle-business-requirements&quot;&gt;Fickle business requirements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Access to APIs often has business requirements which are independent of the core functionality the service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Quite aside from the microservices &lt;em&gt;faux pas&lt;/em&gt; of contaminating a service with external business logic, we generally want to avoid this situation, as business requirements tend to change rapidly in response to events which are unrelated to the service&amp;#8217;s purpose.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;For instance, marketing decide that the service is so popular that they&amp;#8217;re going to offer two levels of access a &lt;em&gt;gold plan&lt;/em&gt; and a &lt;em&gt;silver plan&lt;/em&gt;; one of which allows 1000 requests per minute, the other 500. The developers trudge off and implement this in their service. Six months later, they decide they want to change this to bandwidth limits, and the &lt;em&gt;silver plan&lt;/em&gt; should be able to do only &lt;em&gt;GET&lt;/em&gt; requests. The developers of a variety of services are taken off their existing tasks to implement these changes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Shifting business requirements are a natural part the software industry, however, the implementation burden is amplified in a microservices architecture. Thankfully, we can delegate that workload to our API Management solution, and even better, with the apiman UI it&amp;#8217;s possible for non-technical people to create and manage the entire process. This is excellent from both standpoints, as the developers can concentrate on their core tasks, and the business people can take direct ownership and responsibility for implementing their policies; the two domains are kept entirely separate.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Naturally, there will be cases where the in-built policies don&amp;#8217;t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we&amp;#8217;ve &lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;written a number of guides&lt;/a&gt; &lt;a href=&quot;http://java.dzone.com/articles/customizing-jboss-apiman&quot;&gt;on the topic&lt;/a&gt;. It&amp;#8217;s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html#_plugins&quot;&gt;non-technical people to drive&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;clear-demarcation&quot;&gt;Clear demarcation&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Of all the microservices constituting an entire system, it is likely that only a subset of those should be exposed to the outside world. The rest are there to provide internal or compositional functionality. The apiman gateway can provide a natural boundary between public and private; only those services that are explicitly being offered through the gateway are visible, and the rest can be walled off (either at the network level, or via &lt;a href=&quot;http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security&quot;&gt;mutual authentication&lt;/a&gt; mechanisms).&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;watching-the-world-go-by&quot;&gt;Watching the world go by&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If we want to determine the value of a service to our organisation, then we need some objective metrics to determine &lt;em&gt;how&lt;/em&gt; it is being used and whether it is performing as well as we hoped. Ideally, metrics should be collected in a manner that is consistent amongst all services to ensure that comparisons can be made fairly. The apiman gateway is in a unique position to collect lots of interesting data; siting at the transit point between the outside world and the services being offered. We collect, amongst other things, timing information; round-trip latencies; detailed error information (error codes, error output); application, service and organisation IDs. These can be analysed to produce a rich set of information which you can use to characterise the behaviour (or misbehaviour) of your services, including how external applications are interacting with them.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Metrics collection, analysis and visualisation is an area we&amp;#8217;re actively working hard on: in the community we&amp;#8217;re looking to provide interesting opportunities to tie in with popular open source data-sinks and visualisers, whilst in integrated environments, we look to play well with native metrics collection infrastructure.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;papers-please&quot;&gt;Papers, please&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;You may have lots of services to offer, but unless people can find them, they won&amp;#8217;t know about how useful they are. Hence, it&amp;#8217;s important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we also make it easy to integrate into any other registry, such as Fabric8&amp;#8217;s.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;in-conclusion&quot;&gt;In conclusion&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;API Management will be at the heart of many successful microservices setups. It unifies common functionality; provides a place to discover, register and manage services; reduces the scope for costly errors and inconsistencies; and, provides a natural barrier between internal and external where it can collect valuable metrics and audit information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It was a pleasure to meet all of those developers who are interested in apiman - and it was particularly interesting to hear your use-cases. I would encourage you to keep giving us your feedback, as it directly impacts our features, priorities and schedule.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;div class=&quot;footnote&quot; id=&quot;_footnote_1&quot;&gt;
-&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt; See our &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html#_typical_use_cases&quot;&gt;user guide&lt;/a&gt; and be sure to look at our range of &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;official plugin policies&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="microservices" />
-				
-					<category term="conference" />
-				
-					<category term="talk" />
-				
-				<pubDate>Mon, 15 Jun 2015 16:30:00 -0400</pubDate>
-				<link>http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 22 Jun 2016 11:09:41 -0400</lastBuildDate>
+		<lastBuildDate>Thu, 23 Jun 2016 13:44:05 -0400</lastBuildDate>
 	</channel>
 </rss>

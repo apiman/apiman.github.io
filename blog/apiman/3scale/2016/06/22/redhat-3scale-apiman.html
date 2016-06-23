@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>We got the moves like swagger! | apiman Open Source API Management</title>
-  <meta name="description" content="One of the weaknesses we’ve had in apiman until now is that API providers didn’t haveany way to document how to consume their APIs.  Well that has all change...">
+  <title>Red Hat, 3scale, and apiman? | apiman Open Source API Management</title>
+  <meta name="description" content="As some of you have undoubtedly already heard, Red Hatrecently announcedthe acquisition of 3scale, a commercial vendor of API Management software.Because the...">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
   <!-- Canonical URL -->
     
-    <link rel="canonical" href="http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger-redux.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -139,223 +139,90 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">We got the moves like swagger!</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 2, 2015</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Red Hat, 3scale, and apiman?</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 22, 2016</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, swagger, api, and ui</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and 3scale</span>
   </header>
 
 
   
 
   
-    <!-- New Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/api-manager/swagger/api/ui/2015/06/02/swagger.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
-    </p>
-  
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>One of the weaknesses we’ve had in apiman until now is that API providers didn’t have
-any way to document how to consume their APIs.  Well that has all changed with version
-1.1.3.Final.  Now you can upload a Swagger spec document for your API.  If you do,
-consumers will be able to browse your API documentation directly in the apiman UI.</p>
+    <p>As some of you have undoubtedly already heard, Red Hat
+<a href="https://www.redhat.com/en/about/press-releases/red-hat-acquire-api-management-leader-3scale" target="_blank" rel="nofollow">recently announced</a>
+the acquisition of <a href="https://www.3scale.net/" target="_blank" rel="nofollow">3scale</a>, a commercial vendor of API Management software.</p>
 
-<p>I think we can all agree that this is a welcome change and really improves the usability
-of the system, particularly from the perspective of the client app developer (aka the
-API consumer).</p>
+<p>Because the apiman project is sponsored primarily by <a href="https://www.redhat.com/" target="_blank" rel="nofollow">Red Hat</a>, you
+may be wondering how this impacts the project and its open source community.  In today’s blog post,
+I’ll do my best to answer that question as honestly and transparently as I can.</p>
 
 <!--more-->
 
-<h2 id="adding-an-api-definition">Adding an API Definition</h2>
-<p>As an API provider, the only thing you need to do is add an API definition to your
-API.  This is simple - just navigate to the new “Definition” tab in your API.
-There you will be able to copy/paste or drag/drop a Swagger spec.  Make sure you set the
-definition type to Swagger (JSON), and don’t forget to click Save!</p>
+<h2 id="summary-tldr">Summary (TL;DR)</h2>
+<p>On June 22, 2016 Red Hat announced that it was acquiring 3scale, a SaaS vendor of API Management technology
+and, obviously, a competitor of the apiman project.  3scale is a mature company with a very robust API Management
+solution.  Over the next few weeks/months, Red Hat will be working to merge the 3scale and apiman technologies
+to provide as excellent an API Management solution to its customers as possible.  It has not yet been decided
+exactly how this will happen, so for now the apiman project will continue to progress as normal, although perhaps 
+with a short term focus on bug fixes and smaller incremental improvements rather than larger feature work.</p>
 
-<h2 id="what-is-a-swagger-spec">What is a Swagger spec?</h2>
-<p>So maybe not everyone knows what Swagger is.  Swagger is a way to formally describe a
-RESTful API.  A Swagger spec is a JSON document that describes everything
-about your RESTful API, including (but not limited to):</p>
+<p>Read on for more detailed information!</p>
+
+<h2 id="is-the-apiman-project-over">Is the apiman project over?</h2>
+<p>Short answer:  <em>We’re not dead yet!</em>  We’re not even <a href="http://www.urbandictionary.com/define.php?term=pining%20for%20the%20fjords" target="_blank" rel="nofollow">pining for the fjords</a>!</p>
+
+<p>That said, I’m sorry to say that I don’t know exactly what the future will bring.  Red Hat will be working
+hard over the next days/weeks/months to accomplish the following goals:</p>
 
 <ul>
-  <li>API meta-data such as Name and Description</li>
-  <li>Resource Paths and the Operations/Methods they support</li>
-  <li>Input/Output types</li>
+  <li>Welcome the 3scale team to Red Hat, educating (indoctrinating?) them into our Open Source culture</li>
+  <li><em>Fully</em> Open Source the 3scale codebase</li>
+  <li>Sensibly merge the apiman project’s efforts with the technology built by 3scale</li>
+  <li>Deliver a merged offering both in the upstream community (perhaps even here) and as a Red Hat supported product</li>
 </ul>
 
-<p>For more information I recommend navigating to the <a href="http://swagger.io/" target="_blank" rel="nofollow">Swagger Project</a>.</p>
+<p>We’re certainly committed to this wonderful community of API Management enthusiasts (and also those of you who
+grudgingly accept its benefits), so you’re <em>most certainly</em> not going to see us disappearing anytime soon!</p>
 
-<h2 id="how-does-this-help-my-consumers">How does this help my consumers?</h2>
-<p>Once you’ve got a Swagger spec created and added to your API, your API
-consumers will be able to browse live documentation right from the apiman UI.  This
-information will be available via a new “View API Definition” link available on
-the consumer’s “API Details” page (the same page that consumers are shown when
-they have searched for an API).  Here’s an example:</p>
+<h2 id="will-the-3scale-technology-become-open-source">Will the 3scale technology become open source?</h2>
+<p>Absolutely.  This is the Red Hat Way - all product offerings are developed in the upstream open source 
+community before they become supported products.  API Management will of course be no different.  The timing
+of this effort is still unclear, and it will depend on a number of factors.  It is, however, inevitable.  (insert
+maniacal laughter here)</p>
 
-<p><img src="/blog/images/2015-06-02/api-details.png" alt="API Details" /></p>
+<h2 id="but-3scale-isnt-on-premise">But 3scale isn’t on-premise!</h2>
+<p>Yes that’s true - the 3scale technology has a few components that are exclusively available in the cloud, 
+due to the SaaS nature of their offering.  It may even be a strong reason why you are working with or evaluating
+apiman, because our technology is entirely on-premise.  I can understand this to be a valid concern.  What I
+can say is that part of the merge of apiman with 3scale <em>will</em> result in an on-premise version of the 
+technology.  Red Hat is aware that this is an absolute requirement for many of its customers, and it will
+definitely happen as soon as possible.</p>
 
-<p>An API consumer can see that there is an API definition they can click on, which
-will give them a ton of information about how to use the API.  In the future, we
-plan to allow consumers to do all sorts of interesting things with the Swagger spec.
-For example, we can help consumers generate a client SDK in a variety of languages.
-We can also allow them to simulate API calls right from the apiman UI - so they can
-see what to expect.  But for right now, we simply show live documentation about the
-API as described by the Swagger spec definition:</p>
+<h2 id="were-planning-on-going-to-production-with-apiman-what-should-we-do">We’re planning on going to production with apiman, what should we do?</h2>
+<p>Well obviously I cannot tell you what to do!  This is, unfortunately, an issue that I do not currently know
+how to resolve.  As mentioned above, the project is not going away, but its future has certainly changed and
+will be reshaped over the course of the next few weeks.  Because those decisions have not yet been made,
+and will not be made for a little bit of time yet, I cannot offer any specific advice.</p>
 
-<p><img src="/blog/images/2015-06-02/api-definition.png" alt="API Definition" /></p>
+<h2 id="we-have-custom-apiman-plugins-will-they-work-in-the-future">We have custom apiman plugins, will they work in the future?</h2>
+<p>This is another great question, and I could probably just refer you to the answer right above this one.
+One of the primary tasks ahead of us (apiman and 3scale engineering teams) is to work together to sensibly
+merge the two technologies into a single Open Source API Management project.  Until we have had a chance to
+analyze the two, we won’t know which pieces will remain and which will not.  Certainly it is the case that
+apiman’s extensibility is one of our strongest features, and we will need to make sure that the merged 
+technology remains equivalently flexible.  But at this point, we won’t know what form that will take, and 
+so I cannot say for certain whether any/all existing apiman plugins will make sense in the future.</p>
 
-<p>As always, thanks for making it to the end of my ramblings!</p>
+<h2 id="thank-you-to-our-users">Thank you to our users!</h2>
+<p>Thanks for reading!  We have a great community here in apiman, which something I am very thankful for.  I
+hope that the influx of technology, expertise, and manpower that comes along with Red Hat’s acquisition
+of 3scale will only strengthen our Open Ssource API Management community.  Please stick with us and know
+that your feedback (positive or negative) is important!  Always tell us what you think, don’t pull any
+punches, and keep being awesome!</p>
 
 <p>/post</p>
 
@@ -365,7 +232,7 @@ API as described by the Swagger spec definition:</p>
 <script>
     var disqus_config = function () {
         this.page.url = '';
-        this.page.identifier = '/api-manager/swagger/api/ui/2015/06/02/swagger-redux';
+        this.page.identifier = '/apiman/3scale/2016/06/22/redhat-3scale-apiman';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
