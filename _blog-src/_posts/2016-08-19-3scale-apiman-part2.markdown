@@ -116,6 +116,7 @@ Finally, here are some takeaways from this post, just to reinforce them.
 
 
 ## Our contributors
+
 ### Core team:
 * Eric Wittmann [https://github.com/EricWittmann](https://github.com/EricWittmann)
 * Marc Savy [https://github.com/msavy](https://github.com/msavy)
