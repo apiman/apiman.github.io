@@ -122,10 +122,13 @@ solution possible!&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;our-contributors&quot;&gt;Our contributors&lt;/h2&gt;
-&lt;p&gt;### Core team:
-* Eric Wittmann &lt;a href=&quot;https://github.com/EricWittmann&quot;&gt;https://github.com/EricWittmann&lt;/a&gt;
-* Marc Savy &lt;a href=&quot;https://github.com/msavy&quot;&gt;https://github.com/msavy&lt;/a&gt;
-* Rachel Yordán &lt;a href=&quot;https://github.com/kahboom&quot;&gt;https://github.com/kahboom&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;core-team&quot;&gt;Core team:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Eric Wittmann &lt;a href=&quot;https://github.com/EricWittmann&quot;&gt;https://github.com/EricWittmann&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Marc Savy &lt;a href=&quot;https://github.com/msavy&quot;&gt;https://github.com/msavy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rachel Yordán &lt;a href=&quot;https://github.com/kahboom&quot;&gt;https://github.com/kahboom&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;thank-you-to-our-community-contributors-in-commit-order&quot;&gt;Thank you to our community contributors, in commit order:&lt;/h3&gt;
 &lt;ul&gt;
@@ -5126,6 +5129,6 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html</guid>
 			</item>
 		
-		<lastBuildDate>Fri, 19 Aug 2016 11:06:11 -0400</lastBuildDate>
+		<lastBuildDate>Fri, 19 Aug 2016 11:10:43 -0400</lastBuildDate>
 	</channel>
 </rss>
