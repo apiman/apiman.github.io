@@ -9,6 +9,164 @@
 		
 		
 			<item>
+				<title>3scale and apiman - Part Deux</title>
+				
+				        <dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author>
+				
+				<description>&lt;p&gt;It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 
+the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying 
+to figure out some stuff for the apiman community.  Here some of the things we wanted to suss out:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How the apiman development team can best focus its efforts, now that 3scale will be the basis for Red Hat’s API Management technology.&lt;/li&gt;
+  &lt;li&gt;How to best support the existing apiman community going forward, given the restrictions on continued development of the apiman API Management solution.&lt;/li&gt;
+  &lt;li&gt;How can existing apiman users transition to a Red Hat supported API Management solution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It doesn’t sound like much, but it actually really is.  We’ve made some preliminary decisions, and 
+because we want to be as transparent and upfront as possible, read on to find out what they are!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;I know everyone in the apiman community probably has a lot of questions, so let’s dive right in (with 
+the most important questions first).  Please note that none of this is written in stone - software 
+development in general, and this situation in particular, is often very fluid.  I’m saying we reserve 
+the right to change our minds!  But this post represents the best information we have right now - and 
+we like to keep the apiman community in the loop as much as possible.&lt;/p&gt;
+
+&lt;p&gt;Of course, if you have questions that aren’t covered by this post (very likely!) you can always find 
+us on IRC or send questions to the mailing list.  Links to both can be found up above in the “Get 
+Involved” menu.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-will-happen-to-the-current-apiman-api-management-solution&quot;&gt;What will happen to the current apiman API Management solution?&lt;/h2&gt;
+&lt;p&gt;We discussed a number of options, but we think it’s best for everyone if we put the full apiman API 
+Management solution into maintenance mode.  What does this mean?  Well, it means that we will address 
+critical bugs and any issues that are trivial to implement/fix.  Of course, we will continue to accept 
+community contributions, making sure that they meaningfully improve the overall solution.  This will 
+allow anyone using a current version of apiman to continue using it, without worrying about the 
+community edition disappearing.  However, it DOES mean that you should not expect significant new 
+features to be added (unless they are contributed by the larger apiman community).&lt;/p&gt;
+
+&lt;p&gt;It should be noted that apiman continues to be extremely extensible - so there’s nothing stopping 
+individual users from implementing their own core apiman components and/or custom policies.  While 
+we would prefer it if custom components and policies developed by users were contributed back to 
+the project, we understand that it’s often either not appropriate or not possible.&lt;/p&gt;
+
+&lt;p&gt;We explored the idea of donating the apiman project to a popular open source software foundation 
+(e.g. apache or eclipse) but decided that it was premature.  The idea hasn’t been ruled out for 
+the future, but for now we’re going to keep apiman right where it is.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-migration-path-from-apiman-to-red-hats-3scale-based-api-management-product&quot;&gt;What is the migration path from apiman to Red Hat’s 3scale-based API Management product?&lt;/h2&gt;
+&lt;p&gt;Obviously not all of our users were specifically looking for a Red Hat supported version.  It’s 
+certainly the case that many are perfectly happy using the community edition.  That said, many of 
+you may be wondering what the migration path will be from the apiman community edition to Red Hat’s 
+API Management solution.&lt;/p&gt;
+
+&lt;p&gt;There are actually several aspects to this problem, and we won’t be able to solve them all.  Ultimately 
+the answer is that there won’t be any sort of automatic migration from an apiman configuration to a 3scale 
+one.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;However&lt;/em&gt;, we will be updating apiman’s API Gateway to work with the 3scale solution (acting as an optional 
+replacement for e.g. the 3scale NGINX-based gateway) while also supporting all existing apiman policies.&lt;br /&gt;
+Effectively, this will result in an API Gateway that will implement the 3scale gateway functionality &lt;em&gt;and&lt;/em&gt; 
+the apiman gateway functionality (including custom policies!) in one neat package.  For those of you in 
+the community who have invested time and effort into creating your own custom policies, this will allow 
+you to continue using them!  Not only that, but you will continue to have access to all of the policies 
+that exist today in apiman (along with any new ones we might release in the future).&lt;/p&gt;
+
+&lt;p&gt;Additionally, we will be releasing a standalone community version of this new API Gateway - a version that 
+can be configured and can operate without any additional components (3scale or otherwise).  At the same 
+time, we will have a version that works in conjunction with the current 3scale platform (again, as an 
+alternative to the 3scale NGINX- based gateway).&lt;/p&gt;
+
+&lt;h2 id=&quot;will-the-apiman-team-be-working-on-the-3scale-api-management-product&quot;&gt;Will the apiman team be working on the 3scale API Management product?&lt;/h2&gt;
+&lt;p&gt;Other than creating and maintaining the already mentioned Java-based API Gateway, the apiman team will not 
+be contributing significantly to the 3scale API Management product/platform at this time.  There are a 
+number of reasons for this, but the primary issue is that apiman and 3scale have chosen very different 
+languages and technologies as the basis for our respective solutions.  We don’t have any experience/expertise 
+in the technologies that make up the 3scale platform, and vice versa.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, 3scale already has a superb team of engineers, testers, and designers.  I’m quite certain that 
+the future of Red Hat’s API Management technology is very bright!&lt;/p&gt;
+
+&lt;h2 id=&quot;so-what-cool-new-projects-will-the-apiman-team-be-working-on&quot;&gt;So what cool new projects will the apiman team be working on?&lt;/h2&gt;
+&lt;p&gt;Well we’ve already mentioned the new (repurposed?) API Gateway that will go a long way to bring together the 
+3scale and apiman technologies.  In addition to that, we have a few new things in the pipeline.&lt;/p&gt;
+
+&lt;p&gt;One additional API Management related mini-project that we’ve already put together is a standalone Rate 
+Limiting [Micro-]Service.  The goal of “apiman-rls” is to create a specially designed server that can manage 
+large numbers of rate limits in an efficient and accurate way.  A new github repository has already been 
+created and we’ve already got a prototype implementation, which you can find here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman-rls&quot;&gt;https://github.com/apiman/apiman-rls&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Additionally, we’re exploring a number of other new projects, although it’s too early to talk about them
+yet (no final decisions have been made).  Keep your eye on this space for future announcements!&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusionfinal-thoughts&quot;&gt;Conclusion/Final Thoughts&lt;/h2&gt;
+&lt;p&gt;As always, thanks for reading this blog post.  And of course, thank you to the entire apiman community 
+for your interest, support AND for being awesome!  Of course we would have preferred to see the apiman 
+project continue to be Red Hat’s commercial API Management solution.  That wasn’t in the cards, but I 
+know that we and the newly acquired 3scale team will do their damndest to push out the best API Management 
+solution possible!&lt;/p&gt;
+
+&lt;p&gt;Finally, here are some takeaways from this post, just to reinforce them.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apiman is staying right where it is, but will be put into “maintenance” mode - we’ll only be working on critical bugs and easy-to-implement issues.&lt;/li&gt;
+  &lt;li&gt;We’ll be releasing a new version of the API Gateway that works with the 3scale technology, but ALSO functions in a standalone community mode.&lt;/li&gt;
+  &lt;li&gt;All existing apiman policies will be ported to the new API Gateway.&lt;/li&gt;
+  &lt;li&gt;Custom apiman policies will be trivial to modify such that they work in the new API Gateway.&lt;/li&gt;
+  &lt;li&gt;New apiman branded project:  Rate Limiting [Micro-]Service (apiman-rls)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;our-contributors&quot;&gt;Our contributors&lt;/h2&gt;
+&lt;p&gt;### Core team:
+* Eric Wittmann &lt;a href=&quot;https://github.com/EricWittmann&quot;&gt;https://github.com/EricWittmann&lt;/a&gt;
+* Marc Savy &lt;a href=&quot;https://github.com/msavy&quot;&gt;https://github.com/msavy&lt;/a&gt;
+* Rachel Yordán &lt;a href=&quot;https://github.com/kahboom&quot;&gt;https://github.com/kahboom&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;thank-you-to-our-community-contributors-in-commit-order&quot;&gt;Thank you to our community contributors, in commit order:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gary Brown &lt;a href=&quot;https://github.com/objectiser&quot;&gt;https://github.com/objectiser&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Brett Meyer &lt;a href=&quot;https://github.com/brmeyer&quot;&gt;https://github.com/brmeyer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rubén Romero Montes &lt;a href=&quot;https://github.com/ruromero&quot;&gt;https://github.com/ruromero&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Kurt Stam &lt;a href=&quot;https://github.com/kurtstam&quot;&gt;https://github.com/kurtstam&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jorge Morales Pou &lt;a href=&quot;https://github.com/jorgemoralespou&quot;&gt;https://github.com/jorgemoralespou&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jakub Cechacek &lt;a href=&quot;https://github.com/jcechace&quot;&gt;https://github.com/jcechace&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Brandon Gaisford &lt;a href=&quot;https://github.com/bgaisford&quot;&gt;https://github.com/bgaisford&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;eprogramming&lt;/li&gt;
+  &lt;li&gt;Alexandre Kieling &lt;a href=&quot;https://github.com/alexkieling&quot;&gt;https://github.com/alexkieling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Kevin Horvatin &lt;a href=&quot;https://github.com/KevinHorvatin&quot;&gt;https://github.com/KevinHorvatin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ton Swieb &lt;a href=&quot;https://github.com/tonswieb&quot;&gt;https://github.com/tonswieb&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Charles Moulliard &lt;a href=&quot;https://github.com/cmoulliard&quot;&gt;https://github.com/cmoulliard&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Boris Korogvich &lt;a href=&quot;https://github.com/VEINHORN&quot;&gt;https://github.com/VEINHORN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Pete Cornish &lt;a href=&quot;https://github.com/outofcoffee&quot;&gt;https://github.com/outofcoffee&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Andrea Rizzini&lt;/li&gt;
+  &lt;li&gt;Wojciech Trocki &lt;a href=&quot;https://github.com/wtrocki/&quot;&gt;https://github.com/wtrocki/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Santiago&lt;/li&gt;
+  &lt;li&gt;Nick Cross &lt;a href=&quot;https://github.com/ncross&quot;&gt;https://github.com/ncross&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bram Vonk &lt;a href=&quot;https://github.com/bramvonk&quot;&gt;https://github.com/bramvonk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ayman Abdelghany&lt;/li&gt;
+  &lt;li&gt;Paul Semprini &lt;a href=&quot;https://github.com/Semprini&quot;&gt;https://github.com/Semprini&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bennet Schulz &lt;a href=&quot;https://github.com/bennetelli&quot;&gt;https://github.com/bennetelli&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;/post&lt;/p&gt;
+</description>
+				
+					<category term="apiman" />
+				
+					<category term="3scale" />
+				
+				<pubDate>Fri, 19 Aug 2016 07:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Red Hat, 3scale, and apiman?</title>
 				
 				        <dc:creator>Eric Wittmann</dc:creator>
@@ -4968,273 +5126,6 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Cover yourself up! Protecting your services with mutual auth</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your services directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst services are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The class of solutions to this problem generally falls under the banner of &lt;strong&gt;mutual authentication&lt;/strong&gt;. One such mutual auth offering apiman supports is Mutually Authenticated TLS&lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnote_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;what-is-mutual-transport-layer-security-mutual-tls&quot;&gt;What is mutual transport layer security (Mutual TLS)?&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination as to whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;However, in a typical apiman setup the gateway is acting as the client and the services&lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnote_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/span&gt; act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of &lt;em&gt;both&lt;/em&gt; client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Luckily, apiman makes this &lt;a href=&quot;http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security&quot;&gt;extremely easy to set this up&lt;/a&gt;, so let&amp;#8217;s dive in and explore what&amp;#8217;s possible.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Let&amp;#8217;s assume &#39;node&#39; refers generically to a participant in our system, either a gateway or a service.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There are two main elements we need to work with: &lt;strong&gt;keystores&lt;/strong&gt;, which contain a node&amp;#8217;s private key material, and &lt;strong&gt;truststores&lt;/strong&gt;, which contain public certificates instructing the node whom it should trust.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Ideally, each node should have its own keystore, whose key material is signed by a &lt;strong&gt;trusted certificate authority&lt;/strong&gt;; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA&amp;#8217;s certificate to our node&amp;#8217;s keystores, then &lt;em&gt;any&lt;/em&gt; certificate issued by it will be trusted by virtue of the issuer&amp;#8217;s authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It bears mentioning that any applications&lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnote_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/span&gt; legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot; style=&quot;text-align: center&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;http://www.apiman.io/blog/images/generated/gateway-mtls.svg&quot; alt=&quot;Simple mutual auth setup&quot; width=&quot;787&quot; height=&quot;437&quot;&gt;
-&lt;/div&gt;
-&lt;div class=&quot;title&quot;&gt;Figure 1. Simple mutual auth setup&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Notice that the services trust the gateway (and vice versa), but the services &lt;em&gt;do not&lt;/em&gt; trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn&amp;#8217;t hold a trusted certificate, so it fails.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;the-keys-to-success&quot;&gt;The keys to success&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;admonitionblock caution&quot;&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class=&quot;icon&quot;&gt;
-&lt;i class=&quot;fa icon-caution&quot; title=&quot;Caution&quot;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&quot;content&quot;&gt;
-Remember, this is just a quick blog demonstration; you need to take extreme care with how you look after your key infrastructure to avoid a catastrophic security incident. If you&amp;#8217;re unsure, consult someone who knows what they&amp;#8217;re doing!
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;truststore&quot;&gt;Truststore&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Let&amp;#8217;s create a simple shared truststore that we&amp;#8217;ll use on all of our nodes. We&amp;#8217;re going to imagine that we have an internal root CA called &lt;code&gt;apimanCA&lt;/code&gt;, and that whomever controls it has taken &lt;a href=&quot;https://i.imgur.com/sYeorwQ.png&quot;&gt;appropriate security precautions&lt;/a&gt; to ensure no baddies get their certificates signed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;keytool -import -keystore shared_trust_store.jks -file apimanCA.cer -alias apimanCA&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;That&amp;#8217;s the easy bit done, now onto key wrangling.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;keystore&quot;&gt;Keystore&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Each of our nodes needs its own keystore, which we can create using &lt;code&gt;keytool&lt;/code&gt;, followed by generating a &lt;em&gt;certificate signing request&lt;/em&gt; (CSR), which we can then send to our CA to be signed:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;keytool -keystore gateway_ks.jks -genkey -alias gateway -keyalg rsa
-keytool -keystore gateway_ks.jks -certreq -alias gateway -keyalg rsa -file gateway.csr
-
-keytool -keystore service_a_ks.jks -genkey -alias service_a -keyalg rsa
-keytool -keystore service_a_ks.jks -certreq -alias service_a -keyalg rsa -file service_a.csr&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Do the same for &lt;em&gt;each of your services&lt;/em&gt;, and send off the &lt;code&gt;csr&lt;/code&gt; files to be signed by CA (internal or otherwise). They should come back as certificate replies in one of several formats, import them back into their &lt;em&gt;corresponding keystores&lt;/em&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;keytool -import -keystore gateway_ks.jks -file gateway.cer -alias gateway
-keytool -import -keystore service_a_ks.jks -file service_a.cer -alias service_a&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;hooking-it-up&quot;&gt;Hooking it up&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Your services may not use Java, so you&amp;#8217;ll need to find the appropriate solution for enabling mutual TLS in your language&amp;#8217;s ecosystem. It doesn&amp;#8217;t really matter, as long as you have the appropriate certificates hooked in and have set &lt;strong&gt;client authentication to required&lt;/strong&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;gateway-to-heaven&quot;&gt;Gateway to Heaven&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It&amp;#8217;s easy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let&amp;#8217;s edit &lt;code&gt;apiman.properties&lt;/code&gt; on our gateway(s) with a few simple settings to test things out:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;# ---------------------------------------------------------------------
-# SSL/TLS settings for the gateway connector(s).
-# ---------------------------------------------------------------------
-
-# Trust store contains certificate(s) trusted by gateway.
-apiman-gateway.connector-factory.tls.trustStore=/path/to/shared_trust_store.jks
-apiman-gateway.connector-factory.tls.trustStorePassword=password
-
-# Key store contains gateway&#39;s keys (including private components: keep it safe).
-apiman-gateway.connector-factory.tls.keyStore=/path/to/gateway_ks.jks
-apiman-gateway.connector-factory.tls.keyStorePassword=password
-apiman-gateway.connector-factory.tls.keyPassword=password
-
-# Whether certificate host checks should be bypassed. *Use with great care.*
-apiman-gateway.connector-factory.tls.allowAnyHost=true&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The last option is to make our testing easier by removing hostname checks on the certificates, but you should disable that in production. Have a look at &lt;a href=&quot;http://www.apiman.io/latest/installation-guide.html#_make_changes_to_apiman_properties_3&quot;&gt;our setup guide&lt;/a&gt; for a full list of options.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;service-is-everything&quot;&gt;Service is Everything&lt;/h3&gt;
-&lt;div class=&quot;admonitionblock important&quot;&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class=&quot;icon&quot;&gt;
-&lt;i class=&quot;fa icon-important&quot; title=&quot;Important&quot;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&quot;content&quot;&gt;
-You must explicitly enable client authentication for any services you want protected by mutual TLS.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Here&amp;#8217;s a small Java example using Jetty to create a tiny service with mutual authentication enabled. We hook up our &lt;em&gt;keystore&lt;/em&gt; and &lt;em&gt;truststore&lt;/em&gt; with respective hard-to-guess passwords, and set &lt;code&gt;setNeedClientAuth(true)&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;directive&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; main(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;... args) &lt;span class=&quot;directive&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;exception&quot;&gt;Exception&lt;/span&gt; {
-      Server server = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Server();
-      server.setStopAtShutdown(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;);
-
-      HttpConfiguration http_config = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HttpConfiguration();
-      http_config.setSecureScheme(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      http_config.setSecurePort(&lt;span class=&quot;integer&quot;&gt;8009&lt;/span&gt;);
-
-      SslContextFactory sslContextFactory = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SslContextFactory();
-      sslContextFactory.setKeyStorePath(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/tmp/keys/service_a_ks.jks&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      sslContextFactory.setKeyStorePassword(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      sslContextFactory.setKeyManagerPassword(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      sslContextFactory.setTrustStorePath(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/tmp/keys/shared_trust_store.jks&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      sslContextFactory.setTrustStorePassword(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-      &lt;span class=&quot;comment&quot;&gt;// Important: Require client auth&lt;/span&gt;
-      sslContextFactory.setNeedClientAuth(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;);
-
-      HttpConfiguration https_config = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HttpConfiguration(http_config);
-      https_config.addCustomizer(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SecureRequestCustomizer());
-
-      ServerConnector sslConnector = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ServerConnector(server, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SslConnectionFactory(
-              sslContextFactory, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;http/1.1&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;), &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HttpConnectionFactory(https_config));
-      sslConnector.setPort(&lt;span class=&quot;integer&quot;&gt;8009&lt;/span&gt;);
-      server.addConnector(sslConnector);
-      server.setHandler(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; AbstractHandler() {
-
-          &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
-          &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; handle(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; target, Request baseRequest,
-                  HttpServletRequest request, HttpServletResponse response) &lt;span class=&quot;directive&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;exception&quot;&gt;IOException&lt;/span&gt;,
-                  ServletException {
-              response.setContentType(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;text/html;charset=utf-8&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-              response.setStatus(HttpServletResponse.SC_OK);
-              baseRequest.setHandled(&lt;span class=&quot;predefined-constant&quot;&gt;true&lt;/span&gt;);
-              response.getWriter().println(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;apiman saves the day, again!&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
-          }
-      });
-      server.start();
-  }&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;fire-it-up&quot;&gt;Fire it up&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Restart everything, and you should be ready to test it!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;When creating a service that is protected by mutual TLS you should set the &lt;strong&gt;API Security&lt;/strong&gt; dropdown in the &lt;strong&gt;Implementation&lt;/strong&gt; tab to &lt;code&gt;MTLS/Two-Way-SSL&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;http://www.apiman.io/blog/images/2015-06-16/enable-mtls.png&quot; alt=&quot;enable mtls&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If things don&amp;#8217;t seem to be working quite how you expected, you&amp;#8217;ll probably notice that the error messages emitted are fairly vague. If you need more information to figure out what&amp;#8217;s going on then you can pass the flag &lt;code&gt;-Djavax.net.debug=all&lt;/code&gt;, which will print helpful debug info from &lt;a href=&quot;https://docs.oracle.com/javase/7/docs/technotes/guides/security/jsse/ReadDebug.html&quot;&gt;Java&amp;#8217;s SSL subsystems&lt;/a&gt; onto the console.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;ShellSession&quot;&gt;./bin/standalone.sh -Djavax.net.debug=all -c standalone-apiman.xml&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;in-conclusion&quot;&gt;In Conclusion&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Mutually authenticated TLS is a good way to ensure both client and server are who they claim to be before connecting to one another. If you need to prevent unauthorized direct access to your services, this is an option worth considering.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&quot;footnotes&quot;&gt;
-&lt;hr&gt;
-&lt;div class=&quot;footnote&quot; id=&quot;_footnote_1&quot;&gt;
-&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt; Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
-&lt;/div&gt;
-&lt;div class=&quot;footnote&quot; id=&quot;_footnote_2&quot;&gt;
-&lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt; We refer to the set of APIs managed by apiman as services
-&lt;/div&gt;
-&lt;div class=&quot;footnote&quot; id=&quot;_footnote_3&quot;&gt;
-&lt;a href=&quot;#_footnoteref_3&quot;&gt;3&lt;/a&gt; Applications are the users of our services, like browsers, mobile apps, etc
-&lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="gateway" />
-				
-					<category term="security" />
-				
-					<category term="mutual-auth" />
-				
-					<category term="ssl" />
-				
-					<category term="mtls" />
-				
-				<pubDate>Tue, 16 Jun 2015 12:00:00 -0400</pubDate>
-				<link>http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html</guid>
-			</item>
-		
-		<lastBuildDate>Thu, 23 Jun 2016 13:44:05 -0400</lastBuildDate>
+		<lastBuildDate>Fri, 19 Aug 2016 11:06:11 -0400</lastBuildDate>
 	</channel>
 </rss>

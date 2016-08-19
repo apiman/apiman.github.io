@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://apiman.io/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html</loc>
+    <lastmod>2016-08-19T07:00:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html</loc>
     <lastmod>2016-06-22T21:30:00-04:00</lastmod>
   </url>
