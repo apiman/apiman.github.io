@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.2.8.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.2.8.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.2.9.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.2.9.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -141,14 +141,14 @@
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                          <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf10', 1)" href="http://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final.zip" rel="nofollow" target="_blank">10.0.0.Final</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-wildfly10-1.2.8.Final-overlay.zip" rel="nofollow" target="_blank">1.2.8.Final</a> overlay for WildFly 10</li>
+                          <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf10', 1)" href="http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip" rel="nofollow" target="_blank">10.1.0.Final</a></li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-wildfly10-1.2.9.Final-overlay.zip" rel="nofollow" target="_blank">1.2.9.Final</a> overlay for WildFly 10</li>
                         </ul>
                         
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the WildFly 10 zip</li>
-                          <li>Unpack the apiman 1.2.8.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
+                          <li>Unpack the apiman 1.2.9.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
                         </ol>
                         
                         <h3>Run</h3>
@@ -173,13 +173,13 @@
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.2.8.Final
-cd ~/apiman-1.2.8.Final
-curl http://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final.zip -o wildfly-10.0.0.Final.zip
-curl http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-wildfly10-1.2.8.Final-overlay.zip -o apiman-distro-wildfly10-1.2.8.Final-overlay.zip
-unzip wildfly-10.0.0.Final.zip
-unzip -o apiman-distro-wildfly10-1.2.8.Final-overlay.zip -d wildfly-10.0.0.Final
-cd wildfly-10.0.0.Final
+mkdir ~/apiman-1.2.9.Final
+cd ~/apiman-1.2.9.Final
+curl http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip -o wildfly-10.1.0.Final.zip
+curl http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-wildfly10-1.2.9.Final-overlay.zip -o apiman-distro-wildfly10-1.2.9.Final-overlay.zip
+unzip wildfly-10.1.0.Final.zip
+unzip -o apiman-distro-wildfly10-1.2.9.Final-overlay.zip -d wildfly-10.1.0.Final
+cd wildfly-10.1.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml
                       </pre>
                     </div>
@@ -192,13 +192,13 @@ cd wildfly-10.0.0.Final
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf9', 1)" href="http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip" rel="nofollow" target="_blank">9.0.2.Final</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf9-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-wildfly9-1.2.8.Final-overlay.zip" rel="nofollow" target="_blank">1.2.8.Final</a> overlay for WildFly 9</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf9-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-wildfly9-1.2.9.Final-overlay.zip" rel="nofollow" target="_blank">1.2.9.Final</a> overlay for WildFly 9</li>
                         </ul>
                         
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the WildFly 9 zip</li>
-                          <li>Unpack the apiman 1.2.8.Final WildFly 9 overlay zip <b>inside the wildfly directory</b></li>
+                          <li>Unpack the apiman 1.2.9.Final WildFly 9 overlay zip <b>inside the wildfly directory</b></li>
                         </ol>
                         
                         <h3>Run</h3>
@@ -223,12 +223,12 @@ cd wildfly-10.0.0.Final
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.2.8.Final
-cd ~/apiman-1.2.8.Final
+mkdir ~/apiman-1.2.9.Final
+cd ~/apiman-1.2.9.Final
 curl http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip -o wildfly-9.0.2.Final.zip
-curl http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-wildfly9-1.2.8.Final-overlay.zip -o apiman-distro-wildfly9-1.2.8.Final-overlay.zip
+curl http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-wildfly9-1.2.9.Final-overlay.zip -o apiman-distro-wildfly9-1.2.9.Final-overlay.zip
 unzip wildfly-9.0.2.Final.zip
-unzip -o apiman-distro-wildfly9-1.2.8.Final-overlay.zip -d wildfly-9.0.2.Final
+unzip -o apiman-distro-wildfly9-1.2.9.Final-overlay.zip -d wildfly-9.0.2.Final
 cd wildfly-9.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml
                       </pre>
@@ -242,13 +242,13 @@ cd wildfly-9.0.2.Final
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip" rel="nofollow" target="_blank">8.0.33</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-tomcat8-1.2.8.Final-overlay.zip" rel="nofollow" target="_blank">1.2.8.Final</a> overlay for Tomcat 8</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-tomcat8-1.2.9.Final-overlay.zip" rel="nofollow" target="_blank">1.2.9.Final</a> overlay for Tomcat 8</li>
                         </ul>
                         
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the Apache Tomcat 8 zip</li>
-                          <li>Unpack the apiman 1.2.8.Final Tomcat 8 overlay zip <b>inside the tomcat directory</b></li>
+                          <li>Unpack the apiman 1.2.9.Final Tomcat 8 overlay zip <b>inside the tomcat directory</b></li>
                         </ol>
                         
                         <h3>Run</h3>
@@ -273,12 +273,12 @@ cd wildfly-9.0.2.Final
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.2.8.Final
-cd ~/apiman-1.2.8.Final
+mkdir ~/apiman-1.2.9.Final
+cd ~/apiman-1.2.9.Final
 curl http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip -o apache-tomcat-8.0.33.zip
-curl http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-tomcat8-1.2.8.Final-overlay.zip -o apiman-distro-tomcat8-1.2.8.Final-overlay.zip
+curl http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-tomcat8-1.2.9.Final-overlay.zip -o apiman-distro-tomcat8-1.2.9.Final-overlay.zip
 unzip apache-tomcat-8.0.33.zip
-unzip -o apiman-distro-tomcat8-1.2.8.Final-overlay.zip -d apache-tomcat-8.0.33
+unzip -o apiman-distro-tomcat8-1.2.9.Final-overlay.zip -d apache-tomcat-8.0.33
 cd apache-tomcat-8.0.33
 chmod 755 bin/catalina.sh
 ./bin/catalina.sh run
@@ -293,13 +293,13 @@ chmod 755 bin/catalina.sh
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://www.jboss.org/products/eap/overview/" rel="nofollow" target="_blank">EAP</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-eap7', 1)" href="http://www.jboss.org/products/eap/download/" rel="nofollow" target="_blank"><b>7.0</b></a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-eap7-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.8.Final/apiman-distro-eap7-1.2.8.Final-overlay.zip" rel="nofollow" target="_blank">1.2.8.Final</a> overlay for EAP 7</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-eap7-overlay', 1)" href="http://downloads.jboss.org/apiman/1.2.9.Final/apiman-distro-eap7-1.2.9.Final-overlay.zip" rel="nofollow" target="_blank">1.2.9.Final</a> overlay for EAP 7</li>
                         </ul>
                         
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the EAP 7 zip</li>
-                          <li>Unpack the apiman 1.2.8.Final EAP 7 overlay zip <b>inside the EAP directory</b></li>
+                          <li>Unpack the apiman 1.2.9.Final EAP 7 overlay zip <b>inside the EAP directory</b></li>
                         </ol>
                         
                         <h3>Run</h3>
@@ -371,8 +371,8 @@ chmod 755 bin/catalina.sh
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-docker pull apiman/on-wildfly10:1.2.8.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly10:1.2.8.Final
+docker pull apiman/on-wildfly10:1.2.9.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly10:1.2.9.Final
                       </pre>
                     </div>
                 </div>
@@ -411,8 +411,8 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly10:1.2.8.Final
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-docker pull apiman/on-wildfly9:1.2.8.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly9:1.2.8.Final
+docker pull apiman/on-wildfly9:1.2.9.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly9:1.2.9.Final
                       </pre>
                     </div>
                 </div>
