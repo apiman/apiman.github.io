@@ -175,27 +175,28 @@ config.js file, it should look like this:
 
 {% highlight json %}
 var APIMAN_CONFIG_DATA = {
-    "apiman" : {
-        "version" : "1.1.0-SNAPSHOT",
-        "builtOn" : "2015-01-01",
-        "logoutUrl" : "logout"
-    },
-    "user" : {
-        "username" : "admin"
-    },
-    "ui" : {
-        "header" : true
-    },
-    "api" : {
-        "endpoint" : "http://localhost:7070/apiman",
-        "auth" : {
-            "type" : "basic",
-            "basic" : {
-                "username" : "admin",
-                "password" : "admin"
-            }
-        }
+  "apiman" : {
+    "version" : "1.2.0-SNAPSHOT",
+    "builtOn" : "2015-01-01",
+    "logoutUrl" : "logout"
+  },
+  "user" : {
+    "username" : "admin"
+  },
+  "ui" : {
+    "header" : "apiman",
+    "metrics" : true
+  },
+  "api" : {
+    "endpoint" : "http://localhost:8080/apiman",
+    "auth" : {
+      "type" : "basic",
+      "basic" : {
+        "username" : "admin",
+        "password" : "admin123!"
+      }
     }
+  }
 };
 {% endhighlight %}
 
