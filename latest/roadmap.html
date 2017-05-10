@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.2.9.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.2.9.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.3.0.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.3.0.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -127,9 +127,7 @@
 
                 <div class="alert alert-warning" style="margin-top: 10px; background-color: #fdf2e5; border-width: 1px; line-height: 24px">
                   <span class="fa fa-fw fa-info-circle" style="color: #eb7720; font-size: 18px; line-height: 24px"></span>
-                  <strong>Red Hat has acquired <a href="https://www.3scale.net/">3scale</a>!</strong>
-                  Interested in how this affects the apiman project?  Click <a href="/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html">here</a>
-                  and then <a href="/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html">here</a>.
+                  Expect continued roadmap updates.
                 </div>
 
                 <p>
@@ -297,7 +295,7 @@
              <div class="col-lg-12">
                 <!-- Version 1.2 -->
                 <h2 class=""><a class="" data-toggle="collapse" href="#features1_2" aria-expanded="true" >1.2 (Plugins, Import/Export, Notifications &amp; Events)</a></h2>
-                <div id="features1_2" class="collapse in">
+                <div id="features1_2" class="collapse">
                    <div class="col-lg-9">
                       <!-- Version 1.2 -->
                       <ul class="release">
@@ -378,15 +376,16 @@
                    </div>
                 </div>
              </div>
+           </div>
 
              <div class="col-lg-12">
                 <!-- Version 1.3 -->
-                <h2 class=""><a class="" data-toggle="collapse" href="#features1_3" aria-expanded="true" >1.3 (Social and Transports)</a></h2>
-                <div id="features1_3" class="collapse">
+                <h2 class=""><a class="" data-toggle="collapse" href="#features1_3" aria-expanded="true" >1.3 (Integration)</a></h2>
+                <div id="features1_3" class="collapse in">
                    <div class="col-lg-9">
                       <!-- Version 1.3 -->
                       <ul class="release">
-                        <li>
+                        <!-- <li>
                           <span>API Manager</span>
                           <ul>
                             <li>Additional documentation support - WSDL, RAML, etc</li>
@@ -398,7 +397,8 @@
                             <li>Policy overhead ratings (measure of how impactful of performance a particular Policy will be)</li>
                             <li>Joint API ownership (joint ownership by multiple Organizations)</li>
                           </ul>
-                        </li>
+                        </li> -->
+
                         <li>
                           <span>Policy Eventing</span>
                           <ul>
@@ -408,18 +408,37 @@
                             <li>Support internal and custom/external event listeners</li>
                           </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                           <span>Notifications/Tasks</span>
                           <ul>
                             <li>Per-user Task+Notification Inbox UI</li>
                             <li>Add "Request Membership" functionality for organizations</li>
                             <li>Full API to access tasks and notifications</li>
                           </ul>
-                        </li>
+                        </li> -->
                         <li>
                           <span>API Gateway</span>
                           <ul>
                             <li>JMS Support</li>
+                            <li class="completed">
+                              Headless Registry (loads gateway config from JSON) <a href="https://apiman.gitbooks.io/apiman-installation-guide/content/installation-guide/vertx/download.html#_headless_elasticsearch" target="_blank">(Documentation)</a>
+                              <span class="in-version">1.3.0.Final</span>
+                            </li>
+                            <li class="completed">
+                              Production-grade Vert.x Gateway Distro <a href="https://apiman.gitbooks.io/apiman-installation-guide/content/installation-guide/vertx/download.html" target="_blank">(More Info)</a>
+                              <span class="in-version">1.3.0.Final</span>
+                            </li>
+                            <li>
+                              3scale Registry (loads gateway config from 3scale backend with apiman policy overlay)
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span>Policies &amp; Components</span>
+                          <ul>
+                            <li>
+                              3scale Plugin (3scale auth, reporting, etc)
+                            </li>
                           </ul>
                         </li>
                       </ul>
@@ -435,7 +454,7 @@
                     <div class="widget col-sm-6 col-md-6 widget_text">
                         <div class="textwidget">
                             <p>
-                                Copyright © 2015 Red Hat, Inc. All rights reserved.<br>
+                                Copyright © 2017 Red Hat, Inc. All rights reserved.<br>
                                 apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                                 <a href="disclosure.html">Open Source Disclosure</a>
                             </p>
