@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Using apiman in a network with limited Internet access | apiman Open Source API Management</title>
-  <meta name="description" content="In plenty of enterprises, networks are either locked down or have very limited access to the Internet; often for security, privacy or other practical reasons...">
+  <title>Version 1.3.0.Final of apiman is released! | apiman Open Source API Management</title>
+  <meta name="description" content="Last week we released apiman 1.3.0.Final. It&#8217;s been rather a long while coming, but hopefully you&#8217;ll be pleased with the improvements.This releas...">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
   <!-- Canonical URL -->
     
-    <link rel="canonical" href="http://apiman.io/blog/configuration/production/offline/2016/04/05/locked-down-network.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/release/2017/05/25/release-1.3.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -139,10 +139,10 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Using apiman in a network with limited Internet access</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Apr 5, 2016</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Version 1.3.0.Final of apiman is released!</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 25, 2017</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/msavy">Marc Savy</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> configuration, production, and offline</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
   </header>
 
 
@@ -153,66 +153,97 @@
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <div class="paragraph">
-<p>In plenty of enterprises, networks are either locked down or have very limited access to the Internet; often for security, privacy or other practical reasons.</p>
+<p>Last week we released apiman <em>1.3.0.Final</em>. It’s been <em>rather</em> a long while coming, but hopefully you’ll be pleased with the improvements.</p>
 </div>
 <div class="paragraph">
-<p>We’ve carefully designed apiman to be fully featured and easily configured when no Internet access is available; providing a great deal of flexibility and eschewing any "off-site only" functionality.</p>
+<p>This release has some important new features, a substantial number of bug-fixes, and marks the official release of the Apiman Vert.x Gateway.</p>
 </div>
 <div class="paragraph">
-<p>So, if you’re looking for API management in a locked-down network or Internet-free environment, read on!</p>
+<p>Importantly, this release has a lot of background work which has prepared the  the ground for the upcoming initial community integration with 3scale, as outlined in previous blogs.</p>
 </div>
-<div id="toc" class="toc">
-<div id="toctitle" class="title"></div>
-<ul class="sectlevel1">
-<li><a href="#apiman-plugins">Apiman Plugins</a>
-<ul class="sectlevel2">
-<li><a href="#distribution-and-management">Distribution and Management</a></li>
-<li><a href="#registry-plugin-catalogue">Registry (Plugin Catalogue)</a></li>
-</ul>
+<div class="sect1">
+<h2 id="where-can-i-find-more-information">Where can I find more information?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The release notes for this release can be found here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://red.ht/2q31DBP" target="_blank" rel="nofollow">Release notes for 1.3.0.Final</a></p>
 </li>
-<li><a href="#api-catalogue">API Catalogue</a></li>
-<li><a href="#metrics">Metrics</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </div>
+<div class="paragraph">
+<p>And of course, all of the standard sources of information have been updated:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.apiman.io/">The apiman project site</a></p>
+</li>
+<li>
+<p><a href="https://apiman.gitbooks.io/apiman-user-guide/" target="_blank" rel="nofollow">Latest User Guide</a></p>
+</li>
+<li>
+<p><a href="https://apiman.gitbooks.io/apiman-installation-guide/" target="_blank" rel="nofollow">Latest Installation Guide</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="apiman-plugins">Apiman Plugins</h2>
+<h2 id="highlights">Highlights</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman’s extensibility is one of its key strengths, and it’s extremely easy to write <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">plugins</a> that can do almost anything. There are two default behaviours we are likely to want to configure when operating within a restricted network.</p>
+<p>Just want to know about the good stuff? Let’s have a brief look at some of the more important changes in this version.</p>
 </div>
-<div class="sect2">
-<h3 id="distribution-and-management">Distribution and Management</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bug-smashing-galore">Bug smashing galore</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Apiman plugins are, by default loaded via <a href="http://central.sonatype.org/" target="_blank" rel="nofollow">The Central Repository</a> (often known as Maven Central), which is a fantastically convenient in most situations. All of apiman’s components (manager, gateways, etc), will pull down the necessary plugins as and when they need them.</p>
+<p>A substantial number of bugs have been resolved <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>. If there was something <em>bugging</em> you, then it’s worth trying out 1.3.0.Final to see whether your issue has been fixed.</p>
 </div>
 <div class="paragraph">
-<p>However, without Internet access this clearly won’t work as intended. We have three good options which you can configure in <code>apiman.properties</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="properties">apiman.plugins.repositories=https://repo1.example.local/our-internal-repo/,http://repository.example.org/nexus/content/groups/public/ <i class="conum" data-value="1"></i><b>(1)</b>
-
-apiman.plugins.repositories=file:///mnt/nfs/my/shared/maven/repo <i class="conum" data-value="2"></i><b>(2)</b>
-
-apiman.plugins.repositories= <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+<p>Otherwise, please do consider filing an issue!</p>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Use an internal <a href="https://maven.apache.org/repository-management.html#Available_Repository_Managers" target="_blank" rel="nofollow">repository or mirror</a> to deploy your own (and community) plugins to. This is likely the best option for many enterprises who may already have such infrastructure. Join multiple repositories with commas.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Mount a repository to a shared volume or filesystem on every machine running apiman.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Copy a valid Maven formatted repository containing your plugins to <code>~/.m2</code>, where apiman will look by default.</td>
-</tr>
-</table>
+</div>
+<div class="sect1">
+<h2 id="vert-x-comes-to-the-fore">Vert.x comes to the fore</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Vert.x Apiman Gateway has finally left the <em>tech preview</em> stable and been reworked and polished to the point that it has been officially released. It is now the recommended platform for those who need high performance.</p>
+</div>
+<div class="paragraph">
+<p>For those that aren’t familiar with Vert.x, it’s an asynchronous, reactive toolkit that provides a high throughput and low latency platform is perfectly matched to the apiman gateway.</p>
+</div>
+<div class="paragraph">
+<p>Please <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html" target="_blank" rel="nofollow">try it out</a> and <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" target="_blank" rel="nofollow">let us know what you think</a>! We hope you’ll be impressed.</p>
+</div>
+<div class="paragraph">
+<p>Out of the box there are Elasticsearch and <a href="#headless-registry">Headless</a> configuration examples. It also uses an asynchronous log4j2 configuration which should provide excellent performance <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>.</p>
+</div>
+<div class="paragraph">
+<p>Here’s a really quick way to try it out.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download and run the <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/servlet/install.html#_installing_in_wildfly_10" target="_blank" rel="nofollow">WildFly 10 quickstart</a>.</p>
+</li>
+<li>
+<p>Download and run the <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html" target="_blank" rel="nofollow">Vert.x Gateway distro</a>.</p>
+</li>
+<li>
+<p>Add your new gateway through the <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/install.html" target="_blank" rel="nofollow">Apiman UI</a>.</p>
+</li>
+<li>
+<p>Start publishing stuff! 🎉</p>
+</li>
+</ol>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -221,101 +252,85 @@ apiman.plugins.repositories= <i class="conum" data-value="3"></i><b>(3)</b></cod
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<strong>Advanced:</strong> You can replace the <a href="https://github.com/apiman/apiman/blob/master/gateway/engine/core/src/main/java/io/apiman/gateway/engine/impl/DefaultPluginRegistry.java" target="_blank" rel="nofollow">default registry</a> entirely with an implementation of your own and set it via <code>apiman-gateway.plugin-registry</code> in <code>apiman.properties</code>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="registry-plugin-catalogue">Registry (Plugin Catalogue)</h3>
-<div class="paragraph">
-<p>Our community releases contain a plugin registry which downloads a curated list of plugins. This lets the API Manager have a nice pre-populated list of plugins to install, rather than having to type the coordinates manually. To preserve this functionality simply download the registry file and make it available internally:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="properties">apiman-manager.plugins.registries=http://rawgit.com/apiman/apiman-plugin-registry/master/registry.json <i class="conum" data-value="1"></i><b>(1)</b>
-
-apiman-manager.plugins.registries=file:///path/to/my/registry.json <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The default JSON plugin registry’s data URL.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>As &lt;1&gt;, but replaced with a local copy. Naturally, you may want to add your own plugins here in place of the curated ones. A custom registry may not even use JSON - it’s entirely up to you.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-When running in WildFly/EAP you can use appropriate platform system properties to make the config more portable: <code>apiman-manager.plugins.registries=file:///${jboss.server.config.dir}/apiman-plugin-registry.json</code>
+This is a gateway only implementation. It is paired with any Servlet-based Apiman Manager. Just add it through the <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/install.html" target="_blank" rel="nofollow">Apiman UI</a>.
 </td>
 </tr>
 </table>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="api-catalogue">API Catalogue</h2>
+<h2 id="headless-registry">Headless registry</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The demonstration <a href="http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html">API Catalogue</a> (or catalog, if you’re into American English) is also downloaded from the Internet, so you may want to make it available offline and customise it, too.</p>
+<p><a href="https://youtu.be/5rAOyh7YmEc?t=12s" target="_blank" rel="nofollow">Feeling headless?</a> <span class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</span>. We’ve introduced an <em>immutable headless registry</em> that loads gateway configuration as JSON from a local or remote location (file, http or https).</p>
 </div>
 <div class="paragraph">
-<p>Albeit not the topic of this blog, it’s worth briefly mentioning most advanced users will likely want to implement code <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span> to <a href="https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java" target="_blank" rel="nofollow">search a real registry or catalogue</a> for APIs to import, such as <a href="https://github.com/fabric8io/fabric8-ipaas/blob/master/apiman/src/main/java/io/fabric8/apiman/KubernetesServiceCatalog.java" target="_blank" rel="nofollow">Kubernetes' service registry</a>.</p>
+<p>It even <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html#_required_parameters" target="_blank" rel="nofollow">supports authentication</a>, if you need to secure that configuration.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="properties">apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json <i class="conum" data-value="1"></i><b>(1)</b>
-
-apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<div class="paragraph">
+<p>At the moment it’s probably for more advanced users, as some JSON-wrangling is required, but it’s a really powerful feature that will suit many people’s immutable architectures. Some of users don’t actually need the apiman UI or Manager; as there is no human interaction aspects to their workflow (e.g. B2B scenarios, monitoring, managed through other systems, etc).</p>
 </div>
+<div class="paragraph">
+<p>To find out more:</p>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Default API catalogue. You can replace it with <code><a href="file:///path/to/my/catalog.json" class="bare">file:///path/to/my/catalog.json</a></code> after downloading it.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>If you write your own catalogue, then provide your own catalogue’s implementation of the <code>IApiCatalog</code> interface here.</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Look at the <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html" target="_blank" rel="nofollow">Headless Registry documentation</a>, which contains extensive explanation of how to build your JSON.</p>
+</li>
+<li>
+<p>Then try out the Headless ES  <a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_elasticsearch" target="_blank" rel="nofollow">configuration</a> that ships with <a href="http://www.apiman.io/latest/download.html#vertx">the distro</a>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="metrics">Metrics</h2>
+<h2 id="new-documentation">New documentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some API managers have off-site only metrics implementations. Rest assured, there’s <a href="http://www.apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html">none of that nonsense here</a>! Just ensure that your metrics store (such as ElasticSearch) is available for apiman to connect to and it’ll work fine.</p>
+<p>Given the new additions, documentation has been reworked (excluding developer guide) and is now using GitBook. We welcome your critique on whether this is an improvement versus the older documentation and you can still figure out what you need.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://apiman.gitbooks.io/apiman-installation-guide/" target="_blank" rel="nofollow">Apiman Installation Guide</a></p>
+</li>
+<li>
+<p><a href="https://apiman.gitbooks.io/apiman-user-guide/" target="_blank" rel="nofollow">Apiman User Guide</a></p>
+</li>
+<li>
+<p><a href="https://apiman.gitbooks.io/apiman-deployment-guide/" target="_blank" rel="nofollow">Apiman Deployment Guide</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="thank-you">Thank you!</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A handful of trivial tweaks are potentially necessary to make all of apiman’s features work in a locked-down environment.</p>
+<p>There’s lots more <em>good stuff</em> to come and with much greater regularity, so stay tuned (releases, blogs, plugins, etc).</p>
+</div>
+<div class="paragraph">
+<p>Thanks to the community members who have made contributions to this release via code, filing bugs, and even some in-person meetings.</p>
+</div>
+<div class="paragraph">
+<p>Finally, it’s my pleasure to be doing my first release announcement for apiman, having stepped up to tech lead for the apiman gateway.</p>
 </div>
 </div>
 </div>
 <div id="footnotes">
 <hr />
 <div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> Or find existing implementations
+<a href="#_footnoteref_1">1</a> As usual, we probably forgot to create tickets for all of the bugs, so include "misc bugs splattered"
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a> Usual caveats with logging apply.
+</div>
+<div class="footnote" id="_footnote_3">
+<a href="#_footnoteref_3">3</a> Sorry.
 </div>
 </div>
   </article>
@@ -324,7 +339,7 @@ apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalo
 <script>
     var disqus_config = function () {
         this.page.url = '';
-        this.page.identifier = '/configuration/production/offline/2016/04/05/locked-down-network';
+        this.page.identifier = '/apiman/release/2017/05/25/release-1.3';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
