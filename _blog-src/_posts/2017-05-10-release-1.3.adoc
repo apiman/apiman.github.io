@@ -47,7 +47,7 @@ Otherwise, please do consider filing an issue!
 
 The Vert.x Apiman Gateway has finally left the _tech preview_ stable and been reworked and polished to the point that it has been officially released. It is now the recommended platform for those who need high performance.
 
-For those that aren't familiar with Vert.x, it's an asynchronous, reactive toolkit that provides a high throughput and low latency platform is perfectly matched to the apiman gateway.
+For those that aren't familiar with Vert.x, it's an asynchronous, reactive toolkit that provides a high throughput and low latency; it's a perfect match for the apiman gateway.
 
 Please https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html[try it out] and https://lists.jboss.org/mailman/listinfo/apiman-user[let us know what you think]! We hope you'll be impressed.
 
