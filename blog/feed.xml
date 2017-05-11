@@ -80,7 +80,7 @@
 &lt;p&gt;The Vert.x Apiman Gateway has finally left the &lt;em&gt;tech preview&lt;/em&gt; stable and been reworked and polished to the point that it has been officially released. It is now the recommended platform for those who need high performance.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;For those that aren&amp;#8217;t familiar with Vert.x, it&amp;#8217;s an asynchronous, reactive toolkit that provides a high throughput and low latency platform is perfectly matched to the apiman gateway.&lt;/p&gt;
+&lt;p&gt;For those that aren&amp;#8217;t familiar with Vert.x, it&amp;#8217;s an asynchronous, reactive toolkit that provides a high throughput and low latency; it&amp;#8217;s a perfect match for the apiman gateway.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Please &lt;a href=&quot;https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html&quot;&gt;try it out&lt;/a&gt; and &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/apiman-user&quot;&gt;let us know what you think&lt;/a&gt;! We hope you&amp;#8217;ll be impressed.&lt;/p&gt;
@@ -4944,6 +4944,6 @@ or &lt;a href=&quot;http://www.apiman.io/latest/chat.html&quot;&gt;IRC channel&l
 				<guid isPermaLink="true">http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 10 May 2017 12:41:07 -0400</lastBuildDate>
+		<lastBuildDate>Thu, 11 May 2017 12:26:33 -0400</lastBuildDate>
 	</channel>
 </rss>
