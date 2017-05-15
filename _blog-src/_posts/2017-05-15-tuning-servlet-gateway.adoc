@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat)"
-date: 2017-05-14 16:00:00 BST
+date: 2017-05-15 16:00:00 BST
 author: marc_savy
 categories: apiman gateway performance
 ---
@@ -19,7 +19,7 @@ Use this pattern to avoid asciidoctor rendering the HTML comment.
 
 == Increase maximum allowed connections
 
-At the time of publishing (1.3.0.Final), the OkHttpClient max connections setting can be increased with by setting the `http.maxConnections` system property footnote:[This option is valid as of OkHttpClient 2.4.0, and is changed in later versions. We will endeavour to provide backwards compatibility when apiman upgrades.]:
+At the time of publishing (1.3.0.Final), the OkHttpClient max connections setting can be increased by setting the `http.maxConnections` system property footnote:[This option is valid as of OkHttpClient 2.4.0, and is changed in later versions. We will endeavour to provide backwards compatibility when apiman upgrades.]:
 
 `-Dhttp.maxConnections=100`
 
@@ -27,7 +27,7 @@ This should increase the number of connections that can be handled between apima
 
 === WildFly/EAP
 
-You can also increase the WildFly/EAP connection limit. In your `standalone.xml`, look for the Undertow subsystem, and add an increase `request-limit` to the `filters` section.
+You can also increase the WildFly/EAP connection limit. In your `standalone.xml`, look for the Undertow subsystem, and add a `request-limit` to the `filters` section.
 
 ```xml
 <request-limit name="limit-connections" max-concurrent-requests="15000" queue-size="100"/>
@@ -43,7 +43,7 @@ This should improve the number of connections that can be handled between the cl
 
 === Tomcat
 
-For Tomcat the equivalent options appear to be `maxConnections` and `maxThreads`. https://tomcat.apache.org/tomcat-9.0-doc/config/http.html#Standard_Implementation[Refer to the documentation for more].
+For Tomcat, the equivalent options appear to be `maxConnections` and `maxThreads`. https://tomcat.apache.org/tomcat-9.0-doc/config/http.html#Standard_Implementation[Refer to the documentation for more].
 
 == Some community-contributed IO tweaks
 
