@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>Authorization: good god, what is it good for? | apiman Open Source API Management</title>
-  <meta name="description" content="Quite a bit, actually.  :)I want to talk about how Authorization currently works in apiman, because it’sa little bit more loosely coupled than you might expe...">
+  <title>Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat) | apiman Open Source API Management</title>
+  <meta name="description" content="In this blog, we&#8217;ll outline a few simple tweaks you can make to improve the performance of the Apiman Gateway when running on servlet platforms (WildFl...">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
   <!-- Canonical URL -->
     
-    <link rel="canonical" href="http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization-redux.html">
+    <link rel="canonical" href="http://apiman.io/blog/apiman/gateway/performance/2017/05/15/tuning-servlet-gateway.html">
     
 
   <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
@@ -139,253 +139,124 @@
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
-    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Authorization: good god, what is it good for?</h1>
-    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 8, 2015</span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://www.github.com/ericwittmann">Eric Wittmann</a></span>
-    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> authorization, authentication, and policy</span>
+    <h1 style="color: #666; font-weight: bold" class="post-title section-header">Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat)</h1>
+    <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> May 15, 2017</span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/msavy">Marc Savy</a></span>
+    <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, gateway, and performance</span>
   </header>
 
 
   
 
   
-    <!-- New Post -->
-    <p class="bg-warning"
-       style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/authorization/authentication/policy/2015/05/08/authorization.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
-    </p>
-  
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
-    <p>Quite a bit, actually.  :)</p>
-
-<p>I want to talk about how Authorization currently works in apiman, because it’s
-a little bit more loosely coupled than you might expect.  Note that at some
-point in the future we’re going to be renovating how policies are defined and
-configured in the API Manager UI.  But until then, you can refer to this blog
-post for an overview of how to configure Authorization!</p>
-
-<!--more-->
-
-<p>I won’t bury the lead - the key to getting Authorization to work is understanding
-that it <em>only</em> works together with Authentication.  First you must add and
-configure a compatible <em>Authentication</em> policy, which will be responsible for
-extracting the user’s roles and passing them along to the Authorization policy.</p>
-
-<h2 id="define-your-terms-sir">Define your terms, sir!</h2>
-<p>Let’s make sure we’re on the same page with respect to terminology, shall we?</p>
-
+    <div class="paragraph">
+<p>In this blog, we’ll outline a few simple tweaks you can make to improve the performance of the Apiman Gateway when running on servlet platforms (WildFly, EAP, Tomcat, etc).</p>
+</div>
+<div class="paragraph">
+<p>Most of the focus will be on WildFly and EAP, but others will be more broadly applicable.</p>
+</div>
+<div class="paragraph">
+<p>Naturally, these are very rough pointers and should merely be hints for areas that could prove fruitful. There’s no one-size-fits all approach to tuning, so always profile and keep tweaking to find the best settings for your workloads.</p>
+</div>
+<div class="sect1">
+<h2 id="increase-maximum-allowed-connections">Increase maximum allowed connections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the time of publishing (1.3.0.Final), the OkHttpClient max connections setting can be increased by setting the <code>http.maxConnections</code> system property <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>:</p>
+</div>
+<div class="paragraph">
+<p><code>-Dhttp.maxConnections=100</code></p>
+</div>
+<div class="paragraph">
+<p>This should increase the number of connections that can be handled between apiman and the backend API.</p>
+</div>
+<div class="sect2">
+<h3 id="wildfly-eap">WildFly/EAP</h3>
+<div class="paragraph">
+<p>You can also increase the WildFly/EAP connection limit. In your <code>standalone.xml</code>, look for the Undertow subsystem, and add a <code>request-limit</code> to the <code>filters</code> section.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;request-limit</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">limit-connections</span><span class="delimiter">"</span></span> <span class="attribute-name">max-concurrent-requests</span>=<span class="string"><span class="delimiter">"</span><span class="content">15000</span><span class="delimiter">"</span></span> <span class="attribute-name">queue-size</span>=<span class="string"><span class="delimiter">"</span><span class="content">100</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here are some config examples:</p>
+</div>
+<div class="ulist">
 <ul>
-  <li><strong>Authentication</strong>: the act of validating that a user is who she claims to be, by checking provided credentials against some source of identity.  Examples include BASIC Authentication and OAuth2.</li>
-  <li><strong>Authorization</strong>: the act of ensuring that the authenticated user has <em>permission</em> to perform the requested action or view the requested data.  Typically involves checking that the user possesses one or more required roles.</li>
+<li>
+<p><a href="https://github.com/wildfly/wildfly/blob/10.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-3.1.xml#L110" target="_blank" rel="nofollow">WildFly 10</a></p>
+</li>
+<li>
+<p><a href="https://github.com/wildfly/wildfly/blob/9.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-2.0.xml#L104" target="_blank" rel="nofollow">WildFly 9</a></p>
+</li>
+<li>
+<p><a href="https://github.com/wildfly/wildfly/blob/8.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-1.2.xml#L101" target="_blank" rel="nofollow">WildFly 8</a></p>
+</li>
 </ul>
-
-<h2 id="how-does-this-work-in-apiman">How does this work in apiman?</h2>
-
-<p>I’m glad you asked.  In apiman we have split these two functions out into separate policies.  This allows us to use the same Authorization policy regardless of what type of Authentication is being used.</p>
-
-<p>Basically you need to do the following two things:</p>
-
-<ol>
-  <li>Add and configure an Authentication policy such as the BASIC Authentication Policy or the Keycloak OAuth2 Authentication Policy</li>
-  <li>Add and configure an Authorization Policy.</li>
-</ol>
-
-<p>That’s it in a nutshell!</p>
-
-<h2 id="give-me-more-details">Give me more details!</h2>
-
-<p>OK, OK.  If you’re reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a> or the <a href="http://www.apiman.io/latest/tutorials.html">Tutorials</a>.</p>
-
-<p>Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the <em>BASIC Authentication Policy</em> and configure it as seen in the following screenshot:</p>
-
-<p><img src="/blog/images/2015-05-08/basic-auth-config.png" alt="Example BASIC Authentication configuration" /></p>
-
-<p>Once you’ve added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:</p>
-
-<p><img src="/blog/images/2015-05-08/authorization-config.png" alt="Example Authorization configuration" /></p>
-
-<p>Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:</p>
-
-<p><img src="/blog/images/2015-05-08/auth-policies.png" alt="Example policy list" /></p>
-
-<p>If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a global required role to access your API, that’s easy too:</p>
-
-<ul>
-  <li><strong>Resource Path</strong>: /.*</li>
-  <li><strong>Verb/action</strong>: *</li>
-  <li><strong>Required Role</strong>: <your-role></your-role></li>
-</ul>
-
-<p>Good luck and come find us on the mailing list or IRC if you have any trouble!</p>
-
-<p>/post</p>
-
+</div>
+<div class="paragraph">
+<p>This should improve the number of connections that can be handled between the client (caller) and the apiman gateway.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tomcat">Tomcat</h3>
+<div class="paragraph">
+<p>For Tomcat, the equivalent options appear to be <code>maxConnections</code> and <code>maxThreads</code>. <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/http.html#Standard_Implementation" target="_blank" rel="nofollow">Refer to the documentation for more</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="some-community-contributed-io-tweaks">Some community-contributed IO tweaks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Community member Harry Trinta <a href="https://lists.jboss.org/pipermail/apiman-user/2017-January/000758.html" target="_blank" rel="nofollow">shared some tweaks to IO settings</a> he found useful for WildFly 10 when running Apiman at high load.</p>
+</div>
+<div class="paragraph">
+<p>If you’re seeing broken pipe errors or dropped connections, it may be worth tweaking these parameters.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-usual-jvm-and-os-tweaks">The usual JVM and OS tweaks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is an entire speciality in of itself and out of scope for t his brief blog, but it’s worth mentioning in passing. You should run some profiling on your workloads to see whether various JVM tweaks could improve your performance.</p>
+</div>
+<div class="paragraph">
+<p>In your list of things to try should be heap size, garbage collector and collector settings <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>. It is also likely worth evaluating your system as a whole; do you have other processes on the system which may be <a href="https://github.com/giltene/jHiccup" target="_blank" rel="nofollow">causing hiccups</a>; do you have enough file handles available; have you tweaked your protocol settings?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-the-vert-x-gateway-implementation">Use the Vert.x gateway implementation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get superior performance, consider using the <a href="https://apiman.gitbooks.io/apiman-installation-guide/content/installation-guide/vertx/download.html" target="_blank" rel="nofollow">Vert.x gateway distribution</a>. Vert.x is an async platform, optimised for high-throughput scenarios and is ideally suited to the apiman gateway.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr />
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a> This option is valid as of OkHttpClient 2.4.0, and is changed in later versions. We will endeavour to provide backwards compatibility when apiman upgrades.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a> Anyone want to try Shenandoah GC :-)?
+</div>
+</div>
   </article>
 
   <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
         this.page.url = '';
-        this.page.identifier = '/authorization/authentication/policy/2015/05/08/authorization-redux';
+        this.page.identifier = '/apiman/gateway/performance/2017/05/15/tuning-servlet-gateway';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
