@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=1.3.0.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=1.3.0.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=1.3.1.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=1.3.1.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -128,7 +128,7 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#wf10" role="tab" data-toggle="tab">WildFly 10</a></li>
                   <li><a href="#vertx" role="tab" data-toggle="tab">WildFly 10 &amp; Vert.x Gateway</a></li>
-                  <li><a href="#wf9" role="tab" data-toggle="tab">WildFly 9</a></li>
+                  <li><a href="#headless" role="tab" data-toggle="tab">3scale &amp; Headless</a></li>
                   <li><a href="#tc8" role="tab" data-toggle="tab">Tomcat 8+</a></li>
                   <li><a href="#eap7" role="tab" data-toggle="tab">EAP 7</a></li>
                 </ul>
@@ -143,13 +143,13 @@
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf10', 1)" href="http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip" rel="nofollow" target="_blank">10.1.0.Final</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly10-1.3.0.Final-overlay.zip" rel="nofollow" target="_blank">1.3.0.Final</a> overlay for WildFly 10</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-wildfly10-1.3.1.Final-overlay.zip" rel="nofollow" target="_blank">1.3.1.Final</a> overlay for WildFly 10</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the WildFly 10 zip</li>
-                          <li>Unpack the apiman 1.3.0.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
+                          <li>Unpack the apiman 1.3.1.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
                         </ol>
 
                         <h3>Run</h3>
@@ -174,12 +174,12 @@
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.3.0.Final
-cd ~/apiman-1.3.0.Final
+mkdir ~/apiman-1.3.1.Final
+cd ~/apiman-1.3.1.Final
 curl http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip -o wildfly-10.1.0.Final.zip
-curl http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly10-1.3.0.Final-overlay.zip -o apiman-distro-wildfly10-1.3.0.Final-overlay.zip
+curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-wildfly10-1.3.1.Final-overlay.zip -o apiman-distro-wildfly10-1.3.1.Final-overlay.zip
 unzip wildfly-10.1.0.Final.zip
-unzip -o apiman-distro-wildfly10-1.3.0.Final-overlay.zip -d wildfly-10.1.0.Final
+unzip -o apiman-distro-wildfly10-1.3.1.Final-overlay.zip -d wildfly-10.1.0.Final
 cd wildfly-10.1.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml
                       </pre>
@@ -188,19 +188,19 @@ cd wildfly-10.1.0.Final
                 <!-- ============== -->
                 <!-- Vert.x + WF 10 -->
                 <!-- ============== -->
-                <div role="tabpanel" class="tab-pane active" id="vertx">
+                <div role="tabpanel" class="tab-pane" id="vertx">
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf10', 1)" href="http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip" rel="nofollow" target="_blank">10.1.0.Final</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly10-1.3.0.Final-overlay.zip" rel="nofollow" target="_blank">1.3.0.Final</a> overlay for WildFly 10</li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-vertx-1.3.0.Final.zip" rel="nofollow" target="_blank">1.3.0.Final</a> Vert.x Gateway</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-wildfly10-1.3.1.Final-overlay.zip" rel="nofollow" target="_blank">1.3.1.Final</a> overlay for WildFly 10</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-vertx-1.3.1.Final.zip" rel="nofollow" target="_blank">1.3.1.Final</a> Vert.x Gateway</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the WildFly 10 zip</li>
-                          <li>Unpack the apiman 1.3.0.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
+                          <li>Unpack the apiman 1.3.1.Final WildFly 10 overlay zip <b>inside the wildfly directory</b></li>
                           <li>Unpack the Vert.x Gateway zip</li>
                         </ol>
 
@@ -215,7 +215,7 @@ cd wildfly-10.1.0.Final
                             </div>
                           </li>
                           <li>Start the Vert.x Gateway using the Elasticsearch config:
-                            <p><tt>./apiman-gateway.sh --conf configs/es-conf.json</tt></p>
+                            <p><tt>./apiman-gateway.sh --conf configs/conf-es.json</tt></p>
                           </li>
                         </ol>
 
@@ -231,19 +231,19 @@ cd wildfly-10.1.0.Final
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
 // Step 1
-mkdir ~/apiman-1.3.0.Final
-cd ~/apiman-1.3.0.Final
+mkdir ~/apiman-1.3.1.Final
+cd ~/apiman-1.3.1.Final
 curl http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip -o wildfly-10.1.0.Final.zip
-curl http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly10-1.3.0.Final-overlay.zip -o apiman-distro-wildfly10-1.3.0.Final-overlay.zip
+curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-wildfly10-1.3.1.Final-overlay.zip -o apiman-distro-wildfly10-1.3.1.Final-overlay.zip
 unzip wildfly-10.1.0.Final.zip
-unzip -o apiman-distro-wildfly10-1.3.0.Final-overlay.zip -d wildfly-10.1.0.Final
+unzip -o apiman-distro-wildfly10-1.3.1.Final-overlay.zip -d wildfly-10.1.0.Final
 cd wildfly-10.1.0.Final
 ./bin/standalone.sh -c standalone-apiman.xml
 
 // Step 2
-cd ~/apiman-1.3.0.Final
-curl http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-vertx-1.3.0.Final.zip -o apiman-distro-vertx-1.3.0.Final.zip
-cd apiman-distro-vertx-1.3.0.Final
+cd ~/apiman-1.3.1.Final
+curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-vertx-1.3.1.Final.zip -o apiman-distro-vertx-1.3.1.Final.zip
+cd apiman-distro-vertx-1.3.1.Final
 ./apiman-gateway.sh --conf=configs/conf-es.json
 
 // Step 3
@@ -253,56 +253,57 @@ Add the gateway to the Manager.
                 </div>
 
 
-                <!-- ========= -->
-                <!-- WildFly 9 -->
-                <!-- ========= -->
-                <div role="tabpanel" class="tab-pane" id="wf9">
+                <!-- ============== -->
+                <!-- Headless & 3scale -->
+                <!-- ============== -->
+                <div role="tabpanel" class="tab-pane" id="headless">
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                          <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf9', 1)" href="http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip" rel="nofollow" target="_blank">9.0.2.Final</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf9-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly9-1.3.0.Final-overlay.zip" rel="nofollow" target="_blank">1.3.0.Final</a> overlay for WildFly 9</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-vertx-1.3.1.Final.zip" rel="nofollow" target="_blank">1.3.1.Final</a> Vert.x Gateway</li>
                         </ul>
 
                         <h3>Install</h3>
-                        <ol>
-                          <li>Unpack the WildFly 9 zip</li>
-                          <li>Unpack the apiman 1.3.0.Final WildFly 9 overlay zip <b>inside the wildfly directory</b></li>
-                        </ol>
+                        <ul>
+                          <li>Unpack the Vert.x Gateway zip</li>
+                        </ul>
 
                         <h3>Run</h3>
-                        <ol>
-                          <li>Start WildFly 9 using the "standalone-apiman.xml" configuration</li>
-                          <li>
-                            Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">apiman UI</a> and login with admin/admin123!
-                            <div class="alert alert-info" style="margin-top: 5px;">
-                               <span class="pficon pficon-info"></span>
-                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
-                            </div>
+                        <ul>
+                          <li>Start the Vert.x Gateway using your chosen config, available in the <tt>configs</tt> directory:
+                            <ul>
+                              <li>Apiman Headless: <tt>./apiman-gateway.sh --conf configs/conf-headless-es.json</tt></li>
+                              <li>3scale: <tt>./apiman-gateway.sh --conf configs/conf-3scale-immutable-es.json</tt></li>
+                            </ul>
                           </li>
-                        </ol>
+                        </ul>
 
                         <h3>Configure</h3>
-                        <p>
-                          The apiman distribution comes pre-configured with everything you should need to get started.
-                          Please see the User Guide for information about how to change apiman configuration options
-                          if you require more customization.
-                        </p>
+                        <ol>
+                          <li>Start up an instance of Elasticsearch</li>
+                          <li>
+                            Configure your gateway as per the documentation for your config, and the annotations on the examples in <tt>configs</tt>.
+                            <ul>
+                              <li><a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_headless_elasticsearch" target="_blank">Headless config</a></li>
+                              <li><a href="https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_3scale_immutable" target="_blank">3scale immutable config</a></li>
+                            </ul>
+                          </li>
+                        </ol>
                     </div>
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.3.0.Final
-cd ~/apiman-1.3.0.Final
-curl http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip -o wildfly-9.0.2.Final.zip
-curl http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-wildfly9-1.3.0.Final-overlay.zip -o apiman-distro-wildfly9-1.3.0.Final-overlay.zip
-unzip wildfly-9.0.2.Final.zip
-unzip -o apiman-distro-wildfly9-1.3.0.Final-overlay.zip -d wildfly-9.0.2.Final
-cd wildfly-9.0.2.Final
-./bin/standalone.sh -c standalone-apiman.xml
+mkdir ~/apiman-1.3.1.Final
+cd ~/apiman-1.3.1.Final
+curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-vertx-1.3.1.Final.zip -o apiman-distro-vertx-1.3.1.Final.zip
+cd apiman-distro-vertx-1.3.1.Final
+// Modify your conf-es.json and start elasticsearch
+./apiman-gateway.sh --conf=configs/conf-es.json
                       </pre>
                     </div>
                 </div>
+
+
                 <!-- ======== -->
                 <!-- Tomcat 8 -->
                 <!-- ======== -->
@@ -311,13 +312,13 @@ cd wildfly-9.0.2.Final
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip" rel="nofollow" target="_blank">8.0.33</a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-tomcat8-1.3.0.Final-overlay.zip" rel="nofollow" target="_blank">1.3.0.Final</a> overlay for Tomcat 8</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-tomcat8-1.3.1.Final-overlay.zip" rel="nofollow" target="_blank">1.3.1.Final</a> overlay for Tomcat 8</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the Apache Tomcat 8 zip</li>
-                          <li>Unpack the apiman 1.3.0.Final Tomcat 8 overlay zip <b>inside the tomcat directory</b></li>
+                          <li>Unpack the apiman 1.3.1.Final Tomcat 8 overlay zip <b>inside the tomcat directory</b></li>
                         </ol>
 
                         <h3>Run</h3>
@@ -342,12 +343,12 @@ cd wildfly-9.0.2.Final
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-1.3.0.Final
-cd ~/apiman-1.3.0.Final
+mkdir ~/apiman-1.3.1.Final
+cd ~/apiman-1.3.1.Final
 curl http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip -o apache-tomcat-8.0.33.zip
-curl http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-tomcat8-1.3.0.Final-overlay.zip -o apiman-distro-tomcat8-1.3.0.Final-overlay.zip
+curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-tomcat8-1.3.1.Final-overlay.zip -o apiman-distro-tomcat8-1.3.1.Final-overlay.zip
 unzip apache-tomcat-8.0.33.zip
-unzip -o apiman-distro-tomcat8-1.3.0.Final-overlay.zip -d apache-tomcat-8.0.33
+unzip -o apiman-distro-tomcat8-1.3.1.Final-overlay.zip -d apache-tomcat-8.0.33
 cd apache-tomcat-8.0.33
 chmod 755 bin/catalina.sh
 ./bin/catalina.sh run
@@ -362,13 +363,13 @@ chmod 755 bin/catalina.sh
                         <h3>Download</h3>
                         <ul>
                           <li><a href="http://www.jboss.org/products/eap/overview/" rel="nofollow" target="_blank">EAP</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-eap7', 1)" href="http://www.jboss.org/products/eap/download/" rel="nofollow" target="_blank"><b>7.0</b></a></li>
-                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-eap7-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.0.Final/apiman-distro-eap7-1.3.0.Final-overlay.zip" rel="nofollow" target="_blank">1.3.0.Final</a> overlay for EAP 7</li>
+                          <li>apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-eap7-overlay', 1)" href="http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-eap7-1.3.1.Final-overlay.zip" rel="nofollow" target="_blank">1.3.1.Final</a> overlay for EAP 7</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the EAP 7 zip</li>
-                          <li>Unpack the apiman 1.3.0.Final EAP 7 overlay zip <b>inside the EAP directory</b></li>
+                          <li>Unpack the apiman 1.3.1.Final EAP 7 overlay zip <b>inside the EAP directory</b></li>
                         </ol>
 
                         <h3>Run</h3>
@@ -400,7 +401,6 @@ chmod 755 bin/catalina.sh
                 <p>If you prefer to get started by using the apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#docker-wf10" role="tab" data-toggle="tab">WildFly 10</a></li>
-                  <li><a href="#docker-wf9" role="tab" data-toggle="tab">WildFly 9</a></li>
                 </ul>
             </div>
 
@@ -440,48 +440,8 @@ chmod 755 bin/catalina.sh
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-docker pull apiman/on-wildfly10:1.3.0.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly10:1.3.0.Final
-                      </pre>
-                    </div>
-                </div>
-                <!-- ========= -->
-                <!-- WildFly 9 -->
-                <!-- ========= -->
-                <div role="tabpanel" class="tab-pane" id="docker-wf9">
-                    <div class="col-lg-7">
-                        <h3>Download</h3>
-                        <ul>
-                          <li>Use docker to pull the "<a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">apiman WildFly 9</a>" docker image:  <strong>apiman/on-wildfly9</strong></li>
-                        </ul>
-                        <h3>Run</h3>
-                        <ul>
-                          <li>Use docker to run the "apiman WildFly 9" docker image</li>
-                          <li>
-                            Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
-                            <div class="alert alert-info" style="margin-top: 5px;">
-                               <span class="pficon pficon-info"></span>
-                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
-                            </div>
-                          </li>
-                        </ul>
-                        <h3>Configure</h3>
-                        <p>
-                          The apiman distribution comes pre-configured with everything you should need to get started.
-                          Please see the User Guide for information about how to change apiman configuration options
-                          if you require more customization.
-                        </p>
-                        <h3>More Info</h3>
-                        <p>
-                          For more information on apiman docker support, including how to extend the image for your own
-                          uses, <a href="https://registry.hub.docker.com/u/jboss/apiman-wildfly/" rel="nofollow" target="_blank">click here</a>!
-                        </p>
-                    </div>
-                    <div class="col-lg-5" style="">
-                      <h3>Or simply try this...</h3>
-                      <pre class="code-block">
-docker pull apiman/on-wildfly9:1.3.0.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly9:1.3.0.Final
+docker pull apiman/on-wildfly10:1.3.1.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly10:1.3.1.Final
                       </pre>
                     </div>
                 </div>
