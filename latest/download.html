@@ -297,8 +297,9 @@ mkdir ~/apiman-1.3.1.Final
 cd ~/apiman-1.3.1.Final
 curl http://downloads.jboss.org/apiman/1.3.1.Final/apiman-distro-vertx-1.3.1.Final.zip -o apiman-distro-vertx-1.3.1.Final.zip
 cd apiman-distro-vertx-1.3.1.Final
-// Modify your conf-es.json and start elasticsearch
-./apiman-gateway.sh --conf=configs/conf-es.json
+// Modify your conf.json and start elasticsearch
+./apiman-gateway.sh --conf=configs/conf-headless-es.json
+./apiman-gateway.sh --conf=configs/conf-3scale-immutable-es.json
                       </pre>
                     </div>
                 </div>
