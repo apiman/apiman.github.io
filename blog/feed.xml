@@ -24,17 +24,13 @@
 &lt;p&gt;You can now use the Apiman Gateway with the 3scale Manager/UI as an alternative to the Apiman Manager/UI! &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnote_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Using an overlay file you can augment your 3scale APIs with apiman policies.&lt;br&gt;
-There will hopefully be an opportunity for a more cohesive and deeper integration with 3scale in the near future.&lt;br&gt;
-Your feedback and demand will drive this; I hope as many people try it out this functionality as possible!&lt;/p&gt;
+&lt;p&gt;Using an overlay file you can augment your 3scale APIs with apiman policies. There will hopefully be an opportunity for a more cohesive and deeper integration with 3scale in the near future. Your feedback and demand will drive this; I hope as many people try it out this functionality as possible!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The new 3scale registry and plugin can perform all of the usual 3scale functions, such as auth, reporting, metrics, and rate-limiting; with the addition breadth of apiman&amp;#8217;s policies and pluggable functionality.&lt;br&gt;
-The one exception is that 3scale OAuth is currently not implemented (apiman&amp;#8217;s OAuth plugins work as normal).&lt;/p&gt;
+&lt;p&gt;The new 3scale registry and plugin can perform all of the usual 3scale functions, such as auth, reporting, metrics, and rate-limiting; with the addition breadth of apiman&amp;#8217;s policies and pluggable functionality. The one exception is that 3scale OAuth is currently not implemented (apiman&amp;#8217;s OAuth plugins work as normal).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We&amp;#8217;ll be providing some additional blogposts over the coming days to demonstrate the new features in a more digestible form, but the documentation is available already.&lt;br&gt;
-Just &lt;a href=&quot;http://www.apiman.io/latest/download.html#headless&quot;&gt;download the &lt;em&gt;3scale &amp;amp; Headless&lt;/em&gt; Vert.x distro&lt;/a&gt; and follow the instructions:&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;ll be providing some additional blogposts over the coming days to demonstrate the new features in a more digestible form, but the documentation is available already. Just &lt;a href=&quot;http://www.apiman.io/latest/download.html#headless&quot;&gt;download the &lt;em&gt;3scale &amp;amp; Headless&lt;/em&gt; Vert.x distro&lt;/a&gt; and follow the instructions:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
@@ -55,18 +51,13 @@ Just &lt;a href=&quot;http://www.apiman.io/latest/download.html#headless&quot;&g
 &lt;h2 id=&quot;bug-fixes-improvements&quot;&gt;Bug-fixes &amp;amp; Improvements&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;A good number of bugs were squashed in this release.&lt;br&gt;
-Please try it out and let us know if your issues persist (if you had any!).&lt;/p&gt;
+&lt;p&gt;A good number of bugs were squashed in this release. Please try it out and let us know if your issues persist (if you had any!).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The HTTP codes returned in error cases have been improved, including connection issues (e.g. DNS, timeouts, etc).&lt;br&gt;
-You should no longer get HTTP 500 for these, and the error messages should be more meaningful.&lt;br&gt;
-Let us know if there still seem to be issues in this area.&lt;/p&gt;
+&lt;p&gt;The HTTP codes returned in error cases have been improved, including connection issues (e.g. DNS, timeouts, etc).  You should no longer get HTTP 500 for these, and the error messages should be more meaningful. Let us know if there still seem to be issues in this area.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There were a few issues with TLS on the Vert.x gateway that have been improved (e.g. devmode was not working properly).&lt;br&gt;
-In the near future we&amp;#8217;ll look to provide some sort of self-signed certificate generation so that TLS can be configured OOTB.&lt;br&gt;
-As an added bonus, if you provide ALPN Boot, then HTTP/2 should just work &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnote_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;There were a few issues with TLS on the Vert.x gateway that have been improved (e.g. devmode was not working properly). In the near future we&amp;#8217;ll look to provide some sort of self-signed certificate generation so that TLS can be configured OOTB. As an added bonus, if you provide ALPN Boot, then HTTP/2 should just work &lt;span class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnote_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;The release notes for this release can be found here:&lt;/p&gt;
@@ -84,8 +75,7 @@ As an added bonus, if you provide ALPN Boot, then HTTP/2 should just work &lt;sp
 &lt;h2 id=&quot;you-can-help&quot;&gt;You can help!&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Please try the new functionality and let us know how you find it.&lt;br&gt;
-Your demand and feedback is extremely important to the future direction of this project.&lt;/p&gt;
+&lt;p&gt;Please try the new functionality and let us know how you find it. Your demand and feedback is extremely important to the future direction of this project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -96,7 +86,7 @@ Your demand and feedback is extremely important to the future direction of this 
 &lt;p&gt;Expect another release very soon with more functionality, configurability and tooling.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Some users have reported issues with the new GitBook documentation, so I&amp;#8217;ll be looking to improve this.&lt;/p&gt;
+&lt;p&gt;Some users have reported issues with the new GitBook documentation, so we&amp;#8217;ll be looking to improve this.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4888,6 +4878,6 @@ X-RateLimit-Reset: 8
 				<guid isPermaLink="true">http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 28 Jun 2017 11:22:10 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 28 Jun 2017 11:30:21 -0400</lastBuildDate>
 	</channel>
 </rss>
