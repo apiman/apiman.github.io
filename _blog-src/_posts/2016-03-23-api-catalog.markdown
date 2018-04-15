@@ -104,7 +104,7 @@ by configuring it in the *apiman.properties* file:
 
 ```
 apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog
-apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
+apiman-manager.api-catalog.catalog-url=https://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
 ```
 
 Simply update the *apiman-manager.api-catalog.catalog-url* property to provide

@@ -223,7 +223,7 @@ at a URL accessible to the API Manager.  This can either be done by stashing it
 in some web server location so you have an http based URL, or you can store
 it locally on the API Manager server so as to have a valid file based URL.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_point_apiman_at_your_enterprise_api_catalog"/>4.5.1.3. Point apiman at Your Enterprise API Catalog</h4></div></div></div><p>The last step is to make apiman aware of your custom API Catalog file.  The
 catalog is configured in the <span class="strong"><strong>apiman.properties</strong></span> file via these properties:</p><pre class="screen">apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog
-apiman-manager.api-catalog.catalog-url=http://cdn.rawgit.com/apiman/apiman-api-catalog/1.2.0.Final/catalog.json</pre><p>Simply change the URL defined by the <code class="literal">apiman-manager.api-catalog.catalog-url</code> property
+apiman-manager.api-catalog.catalog-url=https://cdn.rawgit.com/apiman/apiman-api-catalog/1.2.0.Final/catalog.json</pre><p>Simply change the URL defined by the <code class="literal">apiman-manager.api-catalog.catalog-url</code> property
 and you’re good to go!</p><div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip</h2><p>For even more customization, you can actually implement your own API Catalog
 java class.  This approach will allow you to find your APIs in whatever location they
 happen to be (e.g. a database, registry, etc).  Please see the Developer Guide
@@ -237,7 +237,7 @@ example of the format here:</p><p><a class="link" href="https://github.com/apima
 at a URL accessible to the API Manager.  This can either be done by stashing it
 in some web server location so you have an http based URL, or you can store
 it locally on the API Manager server so as to have a valid file based URL.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="_point_apiman_at_your_enterprise_plugin_registry"/>4.6.1.3. Point apiman at Your Enterprise Plugin Registry</h4></div></div></div><p>The last step is to make apiman aware of your custom plugin registry file.  The
-registry is configured in the <span class="strong"><strong>apiman.properties</strong></span> file via the following property:</p><pre class="screen">apiman-manager.plugins.registries=http://cdn.rawgit.com/apiman/apiman-plugin-registry/1.2.0.Final/registry.json</pre><p>The value of this property is a comma-separated list of URLs.  Each URL in the list
+registry is configured in the <span class="strong"><strong>apiman.properties</strong></span> file via the following property:</p><pre class="screen">apiman-manager.plugins.registries=https://cdn.rawgit.com/apiman/apiman-plugin-registry/1.2.0.Final/registry.json</pre><p>The value of this property is a comma-separated list of URLs.  Each URL in the list
 should point to a valid plugin registry JSON file.  So to include your enterprise
 plugins in the list, simply add the URL to your plugin registry to the end of the
 existing list.</p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="_how_to_use_property_replacement_in_policy_config"/>4.7. How To:  Use Property Replacement in Policy Config</h2></div></div></div><p>It is often useful to externalize certain information that varies from one deployment

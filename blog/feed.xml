@@ -1072,7 +1072,7 @@ apiman.plugins.repositories= &lt;i class=&quot;conum&quot; data-value=&quot;3&qu
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-manager.plugins.registries=http://rawgit.com/apiman/apiman-plugin-registry/master/registry.json &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-manager.plugins.registries=https://rawgit.com/apiman/apiman-plugin-registry/master/registry.json &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
 apiman-manager.plugins.registries=file:///path/to/my/registry.json &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1115,7 +1115,7 @@ When running in WildFly/EAP you can use appropriate platform system properties t
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-manager.api-catalog.catalog-url=https://rawgit.com/apiman/apiman-api-catalog/master/catalog.json &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
 apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1498,7 +1498,7 @@ here:&lt;/p&gt;
 by configuring it in the &lt;em&gt;apiman.properties&lt;/em&gt; file:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog
-apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
+apiman-manager.api-catalog.catalog-url=https://rawgit.com/apiman/apiman-api-catalog/master/catalog.json
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Simply update the &lt;em&gt;apiman-manager.api-catalog.catalog-url&lt;/em&gt; property to provide
@@ -4878,6 +4878,6 @@ X-RateLimit-Reset: 8
 				<guid isPermaLink="true">http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</guid>
 			</item>
 		
-		<lastBuildDate>Wed, 28 Jun 2017 11:30:21 -0400</lastBuildDate>
+		<lastBuildDate>Wed, 28 Jun 2017 11:31:32 -0400</lastBuildDate>
 	</channel>
 </rss>

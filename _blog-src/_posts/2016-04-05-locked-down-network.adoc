@@ -49,7 +49,7 @@ TIP: *Advanced:* You can replace the https://github.com/apiman/apiman/blob/maste
 Our community releases contain a plugin registry which downloads a curated list of plugins. This lets the API Manager have a nice pre-populated list of plugins to install, rather than having to type the coordinates manually. To preserve this functionality simply download the registry file and make it available internally:
 
 ```properties
-apiman-manager.plugins.registries=http://rawgit.com/apiman/apiman-plugin-registry/master/registry.json <1>
+apiman-manager.plugins.registries=https://rawgit.com/apiman/apiman-plugin-registry/master/registry.json <1>
 
 apiman-manager.plugins.registries=file:///path/to/my/registry.json <2>
 ```
@@ -65,7 +65,7 @@ The demonstration http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03
 Albeit not the topic of this blog, it's worth briefly mentioning most advanced users will likely want to implement code footnote:[Or find existing implementations] to https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java[search a real registry or catalogue] for APIs to import, such as https://github.com/fabric8io/fabric8-ipaas/blob/master/apiman/src/main/java/io/fabric8/apiman/KubernetesServiceCatalog.java[Kubernetes' service registry].
 
 ```properties
-apiman-manager.api-catalog.catalog-url=http://rawgit.com/apiman/apiman-api-catalog/master/catalog.json <1>
+apiman-manager.api-catalog.catalog-url=https://rawgit.com/apiman/apiman-api-catalog/master/catalog.json <1>
 
 apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalog <2>
 ```
