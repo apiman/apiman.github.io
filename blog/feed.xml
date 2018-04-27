@@ -9,6 +9,237 @@
 		
 		
 			<item>
+				<title>Version 1.3.4.Final of Apiman is released!</title>
+				
+				        <dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author>
+				
+				<description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Apiman 1.3.4.Final is out and ready for you all to try.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You may be wondering where 1.3.2.Final and 1.3.3.Final are; early community testing found some regressions, so we skipped formally announcing those.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;download-1-3-4-final&quot;&gt;Download 1.3.4.Final&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-vertx-1.3.4.Final.zip&quot;&gt;Vert.x (Gateway Only)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly10-1.3.4.Final-overlay.zip&quot;&gt;WildFly 10 or EAP 7.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly11-1.3.4.Final-overlay.zip&quot;&gt;WildFly 11&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-eap7-1.3.4.Final-overlay.zip&quot;&gt;EAP 7&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-tomcat8-1.3.4.Final-overlay.zip&quot;&gt;Tomcat 8+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Or directly from &lt;a href=&quot;https://github.com/apiman/apiman/releases/tag/apiman-1.3.4.Final&quot;&gt;GitHub&lt;/a&gt; or &lt;a href=&quot;https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.apiman%22%20AND%20v%3A%221.3.4.Final%22&quot;&gt;Maven Central&lt;/a&gt; if you prefer (faster in some regions).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;tonnes-of-bug-fixes&quot;&gt;Tonnes of bug-fixes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you had bugs, please try 1.3.4.Final. There&amp;#8217;s a reasonable chance we addressed them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This includes issues such as: same-key headers being handled improperly in the Servlet edition; a variety of config and UI bugs; import-export issues; Vert.x config and connection issues.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you still have problems, then please let us know on the &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/apiman-user&quot;&gt;mailing list&lt;/a&gt; or via filing a bug.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;list-entities-directly-on-the-gateway-api&quot;&gt;List entities directly on the Gateway API&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We extended the Apiman Gateway API to allow you to list entities directly. This is useful for &lt;a href=&quot;https://github.com/apiman/apiman-cli&quot;&gt;our CLI&lt;/a&gt; (which will soon be bundled with Apiman releases).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;ll have some more formal documentation shortly, but a short summary:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock tip&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+The credentials to access the Apiman Gateway API are likely different than the UI. The quickstart demo is &lt;code&gt;apimanager/apiman123!&lt;/code&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;shell&quot;&gt;$ curl -k &#39;https://apimanager:apiman123!@localhost:8443/apiman-gateway-api/organizations&#39;
+
+[&amp;quot;FooOrganization&amp;quot;, &amp;quot;OtherOrg&amp;quot;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;List Organizations&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;code&gt;apiman-gateway-api/organizations&lt;/code&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Returns: Array of Organization IDs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;List all APIs in Organization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;code&gt;api-gateway-api/organization/{Organization ID}/apis&lt;/code&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Returns: Array of API IDs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;List all Api Versions in Organization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;code&gt;api-gateway-api/organization/{Organization ID}/apis/{API Version}&lt;/code&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Returns: Array of &lt;a href=&quot;https://github.com/apiman/apiman/blob/master/gateway/engine/beans/src/main/java/io/apiman/gateway/engine/beans/Api.java&quot;&gt;API Version&lt;/a&gt; objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;List all Clients in Organization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;code&gt;api-gateway-api/organization/{organizationId}/clients&lt;/code&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Returns: Array of Client IDs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;List all Client Versions in Organization&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&lt;code&gt;api-gateway-api/organization/{Organization ID}/clients/{Client Version}&lt;/code&gt;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Returns: Array of &lt;a href=&quot;https://github.com/apiman/apiman/blob/master/gateway/engine/beans/src/main/java/io/apiman/gateway/engine/beans/Api.java&quot;&gt;Client Version&lt;/a&gt; objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;wildfly-11&quot;&gt;WildFly 11&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We&amp;#8217;re now officially distributing a WildFly 11 overlay, with a newer version of Keycloak.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There are corresponding Docker quickstart images available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;master-docker-builds&quot;&gt;Master Docker builds&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As a component of our CI, we are now producing Docker builds of all successful builds of Apiman&amp;#8217;s master branch. So, if you need to test something on the bleeding edge, it should be much easier now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly11:master&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Latest always refers to the latest &lt;strong&gt;release&lt;/strong&gt; (e.g 1.3.4.Final), whilst master refers to the latest successful HEAD of master and hence moves frequently.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;cli-work&quot;&gt;CLI work&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Working with the community, we&amp;#8217;ve been successfully developing a large amount of &lt;a href=&quot;https://github.com/apiman/apiman-cli&quot;&gt;CLI functionality&lt;/a&gt;. We expect this to be bundled with an Apiman release soon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One key feature will be the ability to apply YAML declarations against the Apiman Manager or Apiman Gateway, allowing users to set the state of their system in a more static way.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This will be in addition to traditional CLI functions to do one thing at a time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Separate blog-post on that soon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;apiman-plans-to-move-to-elasticsearch-5-x-give-your-feedback&quot;&gt;Apiman plans to move to Elasticsearch 5.x. Give your feedback.&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The next planned release of Apiman will move Elasticsearch to 5.x. We plan to drop ES 1.x support. If an upgrade/migration would be particularly problematic, please let us know on the mailing list or open a ticket.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The work on this is nearing completion, so feedback now would be valuable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;release-notes&quot;&gt;Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note that some issues resolved may not have been assigned tickets, so this is a partial set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&amp;amp;version=12335096&quot;&gt;Release notes for 1.3.3.Final&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&amp;amp;version=12337455&quot;&gt;Release notes for 1.3.4.Final&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;thanks-to-the-community&quot;&gt;Thanks to the Community&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Thanks to the community for their valuable contributions to this release. We had a meaningful number of features, bug reports, and bug-fixes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+				
+					<category term="apiman" />
+				
+					<category term="release" />
+				
+				<pubDate>Fri, 27 Apr 2018 14:10:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/release/2018/04/27/release-1.3.4.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2018/04/27/release-1.3.4.html</guid>
+			</item>
+		
+		
+			<item>
 				<title>Version 1.3.1.Final of apiman is released!</title>
 				
 				        <dc:creator>Marc Savy</dc:creator>
@@ -4705,179 +4936,6 @@ X-RateLimit-Reset: 8
 				<guid isPermaLink="true">http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis-redux.html</guid>
 			</item>
 		
-		
-			<item>
-				<title>Manage Fuse APIs with apiman</title>
-				
-				        <dc:creator>Stefan Bunciak</dc:creator>
-				        <author>sbunciak@redhat.com</author>
-				
-				<description>&lt;p&gt;This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on &lt;a href=&quot;http://camel.apache.org&quot;&gt;Apache Camel&lt;/a&gt;, an implementation of many of the most commonly used enterprise integration patterns (EIP).&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h1 id=&quot;creating-api-provider-in-jboss-fuse&quot;&gt;Creating API provider in JBoss Fuse&lt;/h1&gt;
-
-&lt;p&gt;The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I’m using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the &lt;a href=&quot;http://www.jboss.org/products/fuse/developer-materials/#!project=fuse&quot;&gt;developer materials&lt;/a&gt; and other &lt;a href=&quot;http://www.jboss.org/products/fuse/resources/&quot;&gt;resources&lt;/a&gt; at jboss.org.&lt;/p&gt;
-
-&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
-&lt;p&gt;To obtain a distribution of JBoss Fuse please visit the JBoss Fuse &lt;a href=&quot;http://www.jboss.org/products/fuse/download/&quot;&gt;download page&lt;/a&gt;.
-Installation of JBoss Fuse is very simple, as the only thing you need to do is to unzip the distribution, e.g.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;unzip jboss-fuse-full-6.2.0.redhat-133.zip&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;You might also want to enable the default admin user by uncommenting the last line in &lt;code&gt;&amp;lt;fuse_dir&amp;gt;/etc/users.properties&lt;/code&gt;. Without a user configured you won’t be able to log into Fuse management console.&lt;/p&gt;
-
-&lt;h3 id=&quot;server-startup&quot;&gt;Server startup&lt;/h3&gt;
-
-&lt;p&gt;To start Fuse simply execute the following command from &lt;code&gt;&amp;lt;fuse_dir&amp;gt;/bin&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;./fuse&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Once JBoss Fuse is loaded proceed by creating a new Fuse Fabric instance. To do that execute &lt;code&gt;fabric:create&lt;/code&gt; command from Fuse CLI:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;JBossFuse:karaf@root&amp;gt; fabric:create&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at &lt;a href=&quot;http://localhost:8181&quot;&gt;http://localhost:8181&lt;/a&gt;. 
-In Fabric perspective, under Containers tabs click on the &lt;em&gt;Create&lt;/em&gt; button to open the &lt;em&gt;Create New Container form&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/fabric.png&quot; alt=&quot;List of Fabric containers&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;On the &lt;em&gt;Create New Container&lt;/em&gt; page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select the ‘rest’ profile for it. This will ensure that Fabric pickups the REST Quickstart and deploys it to this container. Finish the operation by hitting the &lt;em&gt;Create and start container&lt;/em&gt; button.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/container.png&quot; alt=&quot;Create Fabric Container&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
-You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on &lt;em&gt;APIs&lt;/em&gt; section under the &lt;em&gt;Services&lt;/em&gt; tab. 
-Note the &lt;em&gt;Location&lt;/em&gt; field - that’s the &lt;strong&gt;base url&lt;/strong&gt; the for endpoint implementation. We will use it later in the apiman manager.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/apis.png&quot; alt=&quot;APIs deployed to Fuse Fabric&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There is a default user preconfigured so you can verify if the application was successfully deployed. It’s available at &lt;code&gt;&amp;lt;location&amp;gt;/customerservice/customers/123&lt;/code&gt; (e.g. &lt;a href=&quot;http://localhost:8182/cxf/crm/customerservice/customers/123&quot;&gt;http://localhost:8182/cxf/crm/customerservice/customers/123&lt;/a&gt;)&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;[sbunciak@sbunciak ~]$ http http://localhost:8182/cxf/crm/customerservice/customers/123
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Date: Tue, 07 Jul 2015 22:17:13 GMT
-Server: Jetty(8.1.17.v20150415)
-Transfer-Encoding: chunked
-
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:Customer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ns0=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://rest.fabric.quickstarts.fabric8.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:id&amp;gt;&lt;/span&gt;123&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:id&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:name&amp;gt;&lt;/span&gt;John&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:name&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:Customer&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;configure-apiman-to-manage-fuse-endpoint&quot;&gt;Configure apiman to manage Fuse endpoint&lt;/h1&gt;
-
-&lt;p&gt;To install the latest version of apiman follow this &lt;a href=&quot;http://www.apiman.io/latest/download.html&quot;&gt;guide&lt;/a&gt;. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of &lt;a href=&quot;http://www.wildfly.org/&quot;&gt;Wildly 8&lt;/a&gt; server.&lt;/p&gt;
-
-&lt;p&gt;After completing the installation, start apiman by executing the following command from &lt;code&gt;&amp;lt;wildfly&amp;gt;/bin&lt;/code&gt; folder:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;./standalone.sh -c standalone-apiman.xml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;quick-public-service-setup&quot;&gt;Quick public service setup&lt;/h3&gt;
-
-&lt;p&gt;For demonstration purposes I’ll be creating a Public Service, however in real life you might want to configure different plans, various contracts, etc. 
-Please consult the apiman &lt;a href=&quot;http://www.apiman.io/latest/user-guide.html&quot;&gt;user guide&lt;/a&gt; for more details.&lt;/p&gt;
-
-&lt;p&gt;In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
-You can do that easily in apiman manager, typically available at: &lt;a href=&quot;http://localhost:8080/apimanui&quot;&gt;http://localhost:8080/apimanui&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once logged into the apiman manager, locate the Organizations sections on the initial page, select &lt;em&gt;Create a New Organization&lt;/em&gt; link, provide a name and hit &lt;em&gt;Create Organization&lt;/em&gt; button. This will take you to organization details page where you can create a new Service by clicking on &lt;em&gt;New Service&lt;/em&gt; button under &lt;em&gt;Services&lt;/em&gt; tab:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/service.png&quot; alt=&quot;Image: Create Service&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You will be asked to provide a name and a version for this Service. Once the service is successfully created there are few things remaining before you can publish and start using it. 
-First, you need to provide an implementation base url on the &lt;em&gt;Implementation&lt;/em&gt; tab. Use the base URL of the REST Quickstart and save your changes:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/implementation.png&quot; alt=&quot;Image: Provide Endpoint Implementation&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
-I used the Rate Limiting policy to limit usage of this service to 5 per minute:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/policy.png&quot; alt=&quot;Image: Assign policy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you are all set to make the service public by checking &lt;em&gt;Make this service public&lt;/em&gt; under &lt;em&gt;Plans&lt;/em&gt; tab, saving the changes and clicking the &lt;em&gt;Publish&lt;/em&gt; button (which should be now enabled).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/publish.png&quot; alt=&quot;Image: Publish Service&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;After you have published the service, have a look at the &lt;em&gt;Endpoint&lt;/em&gt; tab to look up the URL to be used to invoke this public service:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-07-07/endpoint.png&quot; alt=&quot;Image: Managed Service Endpoint&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;testing-your-setup&quot;&gt;Testing your setup&lt;/h1&gt;
-
-&lt;p&gt;Depending on which policy you assinged to the Public Service you might experience different behavior. However, if you followed the tutorial and assigned the Rate Limiting policy after reaching the maximum number of allowed requests you will get an output similar to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;First request should succeed:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;[sbunciak@sbunciak ~]$ http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify=no
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Type: application/xml
-Date: Tue, 07 Jul 2015 21:01:02 GMT
-Server: Jetty(8.1.17.v20150415)
-Transfer-Encoding: chunked
-X-Powered-By: Undertow/1
-X-RateLimit-Limit: 5
-X-RateLimit-Remaining: 4
-X-RateLimit-Reset: 57
-
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:Customer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ns0=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://rest.fabric.quickstarts.fabric8.io/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:id&amp;gt;&lt;/span&gt;123&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:id&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ns0:name&amp;gt;&lt;/span&gt;John&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:name&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ns0:Customer&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Executing 5 consecutive requests should fail with &lt;code&gt;HTTP 429 Too Many Requests&lt;/code&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;sbunciak@sbunciak ~&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;http https://localhost:8443/apiman-gateway/CustomerOrganization/CrmRestService/1.0/customerservice/customers/123 --verify&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no
-HTTP/1.1 &lt;span class=&quot;m&quot;&gt;429&lt;/span&gt; Too Many Requests
-Connection: keep-alive
-Content-Length: 176
-Content-Type: application/json
-Date: Tue, &lt;span class=&quot;m&quot;&gt;07&lt;/span&gt; Jul &lt;span class=&quot;m&quot;&gt;2015&lt;/span&gt; 21:00:51 GMT
-Server: WildFly/8
-X-Policy-Failure-Code: 10005
-X-Policy-Failure-Message: Rate limit exceeded.
-X-Policy-Failure-Type: Other
-X-Powered-By: Undertow/1
-X-RateLimit-Limit: 5
-X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 8
-
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;failureCode&amp;quot;&lt;/span&gt;: 10005, 
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;headers&amp;quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Limit&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;5&amp;quot;&lt;/span&gt;, 
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Remaining&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;, 
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;X-RateLimit-Reset&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;8&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;, 
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;message&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Rate limit exceeded.&amp;quot;&lt;/span&gt;, 
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;responseCode&amp;quot;&lt;/span&gt;: 429, 
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Other&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-				
-					<category term="api" />
-				
-					<category term="management" />
-				
-					<category term="jboss" />
-				
-					<category term="fuse" />
-				
-				<pubDate>Tue, 07 Jul 2015 11:15:15 -0400</pubDate>
-				<link>http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/api/management/jboss/fuse/2015/07/07/fuse-apis.html</guid>
-			</item>
-		
-		<lastBuildDate>Wed, 28 Jun 2017 11:31:32 -0400</lastBuildDate>
+		<lastBuildDate>Fri, 27 Apr 2018 08:55:10 -0400</lastBuildDate>
 	</channel>
 </rss>
