@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Version 1.3.5.Final of Apiman is released"
+date: 2018-04-28 00:01:00 BST
+author: marc_savy
+categories: apiman release
+---
+
+Apiman 1.3.5.Final is out and ready for you all to try.
+
+This just contains some UI reversions, as we still have some tough-to-fix gremlins. We'll bring the updates back once we're able to fix the issues.
+
+It contains all of the same fixes and features as 1.3.4.Final.
+
+== Download 1.3.5.Final
+
+* link:http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-vertx-1.3.5.Final.zip[Vert.x (Gateway Only)]
+
+
+* link:http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly10-1.3.5.Final-overlay.zip[WildFly 10 or EAP 7.1]
+
+* link:http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly11-1.3.5.Final-overlay.zip[WildFly 11]
+
+* link:http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-eap7-1.3.5.Final-overlay.zip[EAP 7]
+
+* link:http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-tomcat8-1.3.5.Final-overlay.zip[Tomcat 8+]
+
+* Or directly from https://github.com/apiman/apiman/releases/tag/apiman-1.3.5.Final[GitHub] or https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.apiman%22%20AND%20v%3A%221.3.5.Final%22[Maven Central] if you prefer (faster in some regions).
