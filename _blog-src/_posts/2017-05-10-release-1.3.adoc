@@ -16,10 +16,7 @@ This release has some important new features, a substantial number of bug-fixes,
 
 Importantly, this release has a lot of background work which has prepared the  the ground for the upcoming initial community integration with 3scale, as outlined in previous blogs.
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 == Where can I find more information?
 

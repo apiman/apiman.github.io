@@ -10,10 +10,7 @@ categories: security gateway
 
 In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, authorize and throttle requests. We encrypt the data that we share with other applications (hopefully!). But we often neglect one of the most essential components of the API layer: data storage.
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 toc::[]
 

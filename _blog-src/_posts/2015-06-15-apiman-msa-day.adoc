@@ -12,10 +12,7 @@ Given the packed schedule, there was a limited amount of time to explore apiman 
 
 So, if you're interested in understanding the value API management can have in a microservices architecture; please, read on!
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!-- more -->
 
 == Services, services, everywhere!
 

@@ -12,10 +12,7 @@ Most of the focus will be on WildFly and EAP, but others will be more broadly ap
 
 Naturally, these are very rough pointers and should merely be hints for areas that could prove fruitful. There's no one-size-fits all approach to tuning, so always profile and keep tweaking to find the best settings for your workloads.
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 == Increase maximum allowed connections
 

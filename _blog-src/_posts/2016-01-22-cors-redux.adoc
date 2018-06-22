@@ -13,10 +13,7 @@ For those http://enable-cors.org/[unfamiliar with CORS], it's a way of precisely
 
 However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let's user agent know what's allowed.
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 == Preparation
 

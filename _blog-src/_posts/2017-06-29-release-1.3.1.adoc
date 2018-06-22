@@ -15,10 +15,7 @@ categories: apiman release
 
 I'm delighted to announce that Apiman 1.3.1.Final is out, with several notable new features and improvements footnote:[The more eagle-eyed amongst you will no doubt have noticed that most of this was actually released a few days ago.].
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+// <!--more-->
 
 == 3scale-related functionality
 

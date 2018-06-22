@@ -9,10 +9,7 @@ oldUrl: 2015-06-09-keycloak-oauth2
 
 One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I'll outline in this blogpost.
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 == Preparation
 

@@ -14,10 +14,7 @@ We've carefully designed apiman to be fully featured and easily configured when 
 
 So, if you're looking for API management in a locked-down network or Internet-free environment, read on!
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 toc::[]
 

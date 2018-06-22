@@ -11,10 +11,7 @@ The last thing you want after carefully setting up your system with apiman is fo
 
 The class of solutions to this problem generally falls under the banner of **mutual authentication**. One such mutual auth offering apiman supports is Mutually Authenticated TLSfootnote:[Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!].
 
-////
-Use this pattern to avoid asciidoctor rendering the HTML comment.
-<!--more-->
-////
+//<!--more-->
 
 == What is mutual transport layer security (Mutual TLS)?
 
