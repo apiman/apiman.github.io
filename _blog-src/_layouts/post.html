@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign author = site.data.authors[page.author] %}
+{%- assign author = site.data.authors[page.author] -%}
 
 <div class="post">
   <header class="post-header" style="margin-top: 25px">
@@ -12,12 +12,12 @@ layout: default
   </header>
 
 
-  {% if page.newUrl %}
+  {%- if page.newUrl -%}
     <!-- Old Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
         Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
-        {% strip %}
+        {%- strip -%}
         {%- for post in site.posts -%}
               {%- assign postName = post.path | find_post_by_path -%}
               {%- if postName == page.newUrl -%}
@@ -27,9 +27,9 @@ layout: default
         {%- endstrip -%}
            ">here</a>. This version was written for <b>apiman 1.1.x</b>.
     </p>
-  {% endif %}
+  {%- endif -%}
 
-  {% if page.oldUrl %}
+  {%- if page.oldUrl -%}
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
@@ -42,12 +42,12 @@ layout: default
         {%- endfor -%}
         ">older revision</a>.
     </p>
-  {% endif %}
+  {%- endif -%}
 
   <article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
     {{ content | modify_external_links: "^.*?[.]?(apiman[.]io|localhost).*?" }}
   </article>
 
-  {% include disqus.html %}
+  {%- include disqus.html -%}
 </div>

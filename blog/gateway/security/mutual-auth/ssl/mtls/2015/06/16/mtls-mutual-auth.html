@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,176 +33,7 @@
   <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
   <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
 
-  <!-- Canonical URL -->
-    
-    <link rel="canonical" href="
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        " />
-    
-
-  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <!-- Canonical URL --><link rel="canonical" href="http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html" /><link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -219,13 +49,11 @@
     });
   </script>
 </head>
-
-  <body class="blog">
+<body class="blog">
     <div id="rhbar">
       <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
       <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div>
-    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -295,33 +123,19 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
-
-    <div class="container" id="blog">
+<div class="container" id="blog">
       <div class="blog-content">
-        
-
-<div class="post">
+        <div class="post">
   <header class="post-header" style="margin-top: 25px">
     <h1 style="color: #666; font-weight: bold" class="post-title section-header">Cover yourself up! Protecting your services with mutual auth</h1>
     <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 16, 2015</span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> <a href="https://github.com/msavy">Marc Savy</a></span>
     <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> gateway, security, mutual-auth, ssl, and mtls</span>
-  </header>
-
-
-  
-    <!-- Old Post -->
+  </header><!-- Old Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
-        http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
-    </p>
-  
-
-  
-
-  <article class="post-content"
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
+    </p><article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <div class="paragraph">
 <p>The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your services directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst services are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).</p>
@@ -567,9 +381,7 @@ You must explicitly enable client authentication for any services you want prote
 <a href="#_footnoteref_3">3</a>. Applications are the users of our services, like browsers, mobile apps, etc
 </div>
 </div>
-  </article>
-
-  <div id="disqus_thread"></div>
+  </article><div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
         this.page.url = '';
@@ -587,12 +399,10 @@ You must explicitly enable client authentication for any services you want prote
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-
 </div>
 
       </div>
-      <div class="blog-footer">
-        <footer role="contentinfo">
+      <div class="blog-footer"><footer role="contentinfo">
     <div id="inner-footer" class="clearfix row">
         <div id="widget-footer" class="clearfix">
             <hr>
@@ -675,8 +485,7 @@ You must explicitly enable client authentication for any services you want prote
     </script>
     <script src="//www.redhat.com/assets/js/tracking/rh_omni_footer.js"/>
 </footer>
-
-      </div>
+</div>
     </div>
   </body>
 </html>

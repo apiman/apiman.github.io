@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>{% if page.title %}{{ page.title }} | apiman Open Source API Management{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{%- if page.title -%}{{ page.title }} | apiman Open Source API Management{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{%- if page.excerpt -%}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- CSS -->
   <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -33,16 +33,16 @@
   <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
 
   <!-- Canonical URL -->
-    {% if page.newUrl %}
-    <link rel="canonical" href="{% for post in site.posts %}
-              {% assign postName = post.path | find_post_by_path %}
-              {% if postName == page.newUrl %}
+    {%- if page.newUrl -%}
+    <link rel="canonical" href="{%- for post in site.posts -%}
+              {%- assign postName = post.path | find_post_by_path -%}
+              {%- if postName == page.newUrl -%}
                 {{ site.url }}{{ site.baseurl }}{{ post.url }}
-              {% endif %}
-        {% endfor %}" />
-    {% else %}
+              {%- endif -%}
+        {%- endfor -%}" />
+    {%- else -%}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
+    {%- endif -%}
 
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 

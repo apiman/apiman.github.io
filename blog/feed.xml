@@ -5,16 +5,204 @@
 		<description>The Apiman project brings an open source development methodology to API Management, coupling a rich API design &amp; configuration layer with a blazingly fast runtime.  This is the official Apiman blog, where we discuss....whatever we&amp;#39;re thinking about!
 </description>
                 <link>http://apiman.io/blog</link>
-		<atom:link href="http://apiman.io/feed.xml" rel="self" type="application/rss+xml" />
-		
-		
-			<item>
-				<title>Version 1.3.5.Final of Apiman is released</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+		<atom:link href="http://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
+				<title>Version 1.4 of Apiman is released!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m delighted to announce that Apiman 1.4 has been released (actually, 1.4.1.Final as of this blog post &lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The most important change in this release is that we&amp;#8217;ve upgraded support for Elasticsearch from 1.x to 5.x. It may also support Elasticsearch 2.x, but this isn&amp;#8217;t officially supported (let us know your experiences).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A significant number of changes across the ES platform were needed to bring this improvement; including in Apiman Gateway, Apiman Manager, Apiman Metrics, test harnesses, and the ES distribution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you experience any issues, please report them to us via &lt;a href=&quot;https://issues.jboss.org/browse/APIMAN/&quot;&gt;JIRA&lt;/a&gt;, &lt;a href=&quot;https://github.com/apiman/apiman&quot;&gt;GitHub&lt;/a&gt;, or &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/apiman-user&quot;&gt;the mailing list&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;upgrading&quot;&gt;Upgrading&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Depending on your approach, to upgrade you can simply use Apiman&amp;#8217;s &lt;a href=&quot;http://www.apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html&quot;&gt;export-import feature&lt;/a&gt;, or upgrade the indices by following Elasticsearch&amp;#8217;s upgrade guides (likely trickier; I recommend export-import).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We also now launch and manage ES in a significantly different way than previously (as an external process), as the &lt;a href=&quot;https://www.elastic.co/blog/elasticsearch-the-server&quot;&gt;old method is no longer supported&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;policies-can-suppressallow-headers-in-connectors&quot;&gt;Policies can suppress/allow headers in connectors.&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A new function has been added to &lt;code&gt;IPolicyContext&lt;/code&gt; which enables policy authors to explicitly suppress or allow headers that may otherwise have different treatment by default.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;IConnectorConfig getConnectorConfiguration();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Using &lt;code&gt;IConnectorConfig&lt;/code&gt; a policy author may explicitly override the connector&amp;#8217;s default filtering of headers. These may vary slightly by platform, but generally would by default filter out headers such as &lt;code&gt;X-Api-Key&lt;/code&gt;. This is applied at the &lt;strong&gt;end of the policy chain&lt;/strong&gt; right before the connection is established.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This feature is useful to unblock certain headers that may otherwise be disallowed, or block headers in such a way that it would even apply to subsequent policies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Here&amp;#8217;s an example, using the &lt;code&gt;suppressRequestHeader&lt;/code&gt; method:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; doApply(ApiRequest request, IPolicyContext context, ...) {
+    &lt;span class=&quot;comment&quot;&gt;// Get connector config&lt;/span&gt;
+    IConnectorConfig connectorConfig = context.getConnectorConfiguration();
+
+    &lt;span class=&quot;comment&quot;&gt;// Ban header. Connector will filter this out.&lt;/span&gt;
+    connectorConfig.suppressRequestHeader(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;X-SECRET&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+    &lt;span class=&quot;local-variable&quot;&gt;super&lt;/span&gt;.doApply(request, context, config, chain);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even if another policy in the chain added an &lt;code&gt;X-SECRET&lt;/code&gt; header, it would still be filtered out &lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We hope to expand the functionality of &lt;code&gt;IConnectorConfig&lt;/code&gt; in future to allow more control of the connector by policies than is possible presently.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;download-1-4-1-final&quot;&gt;Download 1.4.1.Final&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-vertx-1.4.1.Final.zip&quot;&gt;Vert.x (Gateway Only)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly10-1.4.1.Final-overlay.zip&quot;&gt;WildFly 10 or EAP 7.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly11-1.4.1.Final-overlay.zip&quot;&gt;WildFly 11&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-eap7-1.4.1.Final-overlay.zip&quot;&gt;EAP 7&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-tomcat8-1.4.1.Final-overlay.zip&quot;&gt;Tomcat 8+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;release-notes&quot;&gt;Release Notes&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&amp;amp;version=12337953&quot;&gt;1.4.0.Final&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&amp;amp;version=12338072&quot;&gt;1.4.1.Final&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Enhancements&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1334&quot;&gt;APIMAN-1334&lt;/a&gt; - Allow policies to suppress/allow headers in connector.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Bugs&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1266&quot;&gt;APIMAN-1266&lt;/a&gt; - Error when adding plugin that has previously been deleted (Oracle 12C database)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1296&quot;&gt;APIMAN-1296&lt;/a&gt; - The API Key policy plugin (apikey-policy) expects the requestHeader property to be all lowercase as of 1.3.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1318&quot;&gt;APIMAN-1318&lt;/a&gt; - Export/Import of a plugin with policies does not work because of its ID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1320&quot;&gt;APIMAN-1320&lt;/a&gt; - Gateway API: Clients still inserted even when invalid&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1321&quot;&gt;APIMAN-1321&lt;/a&gt; - Elasticsearch data is deleted at tomcat shutdown&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1324&quot;&gt;APIMAN-1324&lt;/a&gt; - index_already_exists_exception when starting WF quickstart&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1335&quot;&gt;APIMAN-1335&lt;/a&gt; - ApiKeyPolicy from apikey-policy is throwing an NPE on null connectorConfig using the Vert.x gateway&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1337&quot;&gt;APIMAN-1337&lt;/a&gt; - SoapAuthorizationPolicy missing i18n messages&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Tasks&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-892&quot;&gt;APIMAN-892&lt;/a&gt; - Upgrade to Elasticsearch 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Sub-tasks&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1323&quot;&gt;APIMAN-1323&lt;/a&gt; - Rework test harness to cope better with out of order JSON&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1325&quot;&gt;APIMAN-1325&lt;/a&gt; - Upgrade Jest HTTP Client for ES&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1326&quot;&gt;APIMAN-1326&lt;/a&gt; - Upgrade Gateway to ES 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1327&quot;&gt;APIMAN-1327&lt;/a&gt; - Upgrade Manager to ES 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1328&quot;&gt;APIMAN-1328&lt;/a&gt; - Upgrade metrics to ES 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1329&quot;&gt;APIMAN-1329&lt;/a&gt; - Update test harness and tests to ES 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1330&quot;&gt;APIMAN-1330&lt;/a&gt; - Update QueryBuilders to ES 5.x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1331&quot;&gt;APIMAN-1331&lt;/a&gt; - Switch to EmbeddedElastic instead of (actually) embedded&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1332&quot;&gt;APIMAN-1332&lt;/a&gt; - Update ES distro to include Elasticsearch distro zip&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://issues.jboss.org/browse/APIMAN-1333&quot;&gt;APIMAN-1333&lt;/a&gt; - Handle EmbeddedElastic hanging process when JVM killed ungracefully.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_1&quot;&gt;
+&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt;. We fixed a couple of bugs spotted in 1.4.0.Final by the community before the blog was written
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
+&lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. Unless it explicitly overrode your suppression!
+&lt;/div&gt;
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Fri, 22 Jun 2018 14:40:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/release/2018/06/22/release-1.4.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2018/06/22/release-1.4.html</guid>
+			</item><item>
+				<title>Version 1.3.5.Final of Apiman is released</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Apiman 1.3.5.Final is out and ready for you all to try.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -49,25 +237,12 @@
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Sat, 28 Apr 2018 00:01:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Sat, 28 Apr 2018 00:01:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2018/04/28/release-1.3.5.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2018/04/28/release-1.3.5.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Version 1.3.4.Final of Apiman is released!</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Version 1.3.4.Final of Apiman is released!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Apiman 1.3.4.Final is out and ready for you all to try.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -280,25 +455,12 @@ The credentials to access the Apiman Gateway API are likely different than the U
 &lt;p&gt;Thanks to the community for their valuable contributions to this release. We had a meaningful number of features, bug reports, and bug-fixes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Fri, 27 Apr 2018 14:10:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Fri, 27 Apr 2018 14:10:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2018/04/27/release-1.3.4.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2018/04/27/release-1.3.4.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Version 1.3.1.Final of apiman is released!</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Version 1.3.1.Final of apiman is released!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;I&amp;#8217;m delighted to announce that Apiman 1.3.1.Final is out, with several notable new features and improvements &lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
@@ -385,25 +547,12 @@ The credentials to access the Apiman Gateway API are likely different than the U
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_3&quot;&gt;
 &lt;a href=&quot;#_footnoteref_3&quot;&gt;3&lt;/a&gt;. More in a blog soon.
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Thu, 29 Jun 2017 17:00:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Thu, 29 Jun 2017 17:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2017/06/29/release-1.3.1.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2017/06/29/release-1.3.1.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Version 1.3.0.Final of apiman is released!</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Version 1.3.0.Final of apiman is released!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Last week we released apiman &lt;em&gt;1.3.0.Final&lt;/em&gt;. It&amp;#8217;s been &lt;em&gt;rather&lt;/em&gt; a long while coming, but hopefully you&amp;#8217;ll be pleased with the improvements.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -583,25 +732,12 @@ This is a gateway only implementation. It is paired with any Servlet-based Apima
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_3&quot;&gt;
 &lt;a href=&quot;#_footnoteref_3&quot;&gt;3&lt;/a&gt;. Sorry.
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Thu, 25 May 2017 16:00:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Thu, 25 May 2017 16:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2017/05/25/release-1.3.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2017/05/25/release-1.3.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat)</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat)</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;In this blog, we&amp;#8217;ll outline a few simple tweaks you can make to improve the performance of the Apiman Gateway when running on servlet platforms (WildFly, EAP, Tomcat, etc).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -698,27 +834,12 @@ This is a gateway only implementation. It is paired with any Servlet-based Apima
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
 &lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. Anyone want to try Shenandoah GC :-)?
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="apiman" />
-				
-					<category term="gateway" />
-				
-					<category term="performance" />
-				
-				<pubDate>Mon, 15 May 2017 16:00:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="apiman" /><category term="gateway" /><category term="performance" /><pubDate>Mon, 15 May 2017 16:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/gateway/performance/2017/05/15/tuning-servlet-gateway.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/gateway/performance/2017/05/15/tuning-servlet-gateway.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>3scale and apiman - Part Deux</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 
+			</item><item>
+				<title>3scale and apiman - Part Deux</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 
 the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying 
 to figure out some stuff for the apiman community.  Here some of the things we wanted to suss out:&lt;/p&gt;
 
@@ -861,25 +982,12 @@ solution possible!&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="3scale" />
-				
-				<pubDate>Fri, 19 Aug 2016 07:00:00 -0400</pubDate>
+</description><category term="apiman" /><category term="3scale" /><pubDate>Fri, 19 Aug 2016 07:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/3scale/2016/08/19/3scale-apiman-part2.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Red Hat, 3scale, and apiman?</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;As some of you have undoubtedly already heard, Red Hat
+			</item><item>
+				<title>Red Hat, 3scale, and apiman?</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;As some of you have undoubtedly already heard, Red Hat
 &lt;a href=&quot;https://www.redhat.com/en/about/press-releases/red-hat-acquire-api-management-leader-3scale&quot;&gt;recently announced&lt;/a&gt;
 the acquisition of &lt;a href=&quot;https://www.3scale.net/&quot;&gt;3scale&lt;/a&gt;, a commercial vendor of API Management software.&lt;/p&gt;
 
@@ -952,25 +1060,12 @@ that your feedback (positive or negative) is important!  Always tell us what you
 punches, and keep being awesome!&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="3scale" />
-				
-				<pubDate>Wed, 22 Jun 2016 21:30:00 -0400</pubDate>
+</description><category term="apiman" /><category term="3scale" /><pubDate>Wed, 22 Jun 2016 21:30:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Version 1.2.4.Final of apiman is released!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Greetings, earthlings!  On Friday of last week we released the &lt;em&gt;absolute best&lt;/em&gt; version 
+			</item><item>
+				<title>Version 1.2.4.Final of apiman is released!</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;Greetings, earthlings!  On Friday of last week we released the &lt;em&gt;absolute best&lt;/em&gt; version 
 of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
 things.  Read on for the details!&lt;/p&gt;
 
@@ -1050,25 +1145,12 @@ will be searching for resources in the correct classloader.&lt;/p&gt;
 &lt;p&gt;Thanks for reading - see you later.&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Sun, 24 Apr 2016 21:45:00 -0400</pubDate>
+</description><category term="apiman" /><category term="release" /><pubDate>Sun, 24 Apr 2016 21:45:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2016/04/24/release-1.2.4.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2016/04/24/release-1.2.4.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Covering Your Assets: Data Encryption in API Management</title>
-				
-				        <dc:creator>Rachel Yordán</dc:creator>
-				        <author>ryordan@redhat.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Covering Your Assets: Data Encryption in API Management</title><dc:creator>Rachel Yordán</dc:creator>
+				        <author>ryordan@redhat.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, authorize and throttle requests. We encrypt the data that we share with other applications (hopefully!). But we often neglect one of the most essential components of the API layer: data storage.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
@@ -1256,25 +1338,12 @@ If you are kind enough to want to share your plugin with the rest of the apiman 
 &lt;p&gt;As always, we &lt;em&gt;love&lt;/em&gt; hearing from you! So, if you have any questions or comments, feel free to leave them below or &lt;a href=&quot;http://www.apiman.io/latest/chat.html&quot;&gt;reach out to us&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="security" />
-				
-					<category term="gateway" />
-				
-				<pubDate>Wed, 13 Apr 2016 13:34:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="security" /><category term="gateway" /><pubDate>Wed, 13 Apr 2016 13:34:00 -0400</pubDate>
 				<link>http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/gateway/2016/04/13/data-encryption.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Using apiman in a network with limited Internet access</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Using apiman in a network with limited Internet access</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;In plenty of enterprises, networks are either locked down or have very limited access to the Internet; often for security, privacy or other practical reasons.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -1439,27 +1508,12 @@ apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalo
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_1&quot;&gt;
 &lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt;. Or find existing implementations
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="configuration" />
-				
-					<category term="production" />
-				
-					<category term="offline" />
-				
-				<pubDate>Tue, 05 Apr 2016 15:00:00 -0400</pubDate>
+&lt;/div&gt;</description><category term="configuration" /><category term="production" /><category term="offline" /><pubDate>Tue, 05 Apr 2016 15:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/configuration/production/offline/2016/04/05/locked-down-network.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/configuration/production/offline/2016/04/05/locked-down-network.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Apiman 1.2 - Introduction to User Roles in apiman</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for user memberships as users can be members of multiple organizations. Permissions in apiman are role based. The actions that a user is able to perform are dependent on the roles to which the user is assigned when a user is added as a member of an organization.&lt;/p&gt;
+			</item><item>
+				<title>Apiman 1.2 - Introduction to User Roles in apiman</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;p&gt;In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for user memberships as users can be members of multiple organizations. Permissions in apiman are role based. The actions that a user is able to perform are dependent on the roles to which the user is assigned when a user is added as a member of an organization.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -1562,31 +1616,12 @@ Permissions Granted to this Role:&lt;/p&gt;
 &lt;p&gt;A consistent pattern in apiman is a rich set of features provided OOTB, and a method for you to expand on these features by creating customizations. User roles enable you to assign users permissions based on the tasks that they perform. Apiman is preconfigured with a rich set of roles OOTB, and also enables you to create new, custom roles to handle additional types of users (even your brother-in-law).&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="introduction" />
-				
-					<category term="overview" />
-				
-					<category term="users" />
-				
-					<category term="roles" />
-				
-				<pubDate>Mon, 28 Mar 2016 03:00:00 -0400</pubDate>
+</description><category term="apiman" /><category term="introduction" /><category term="overview" /><category term="users" /><category term="roles" /><pubDate>Mon, 28 Mar 2016 03:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/introduction/overview/users/roles/2016/03/28/users_roles.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/users/roles/2016/03/28/users_roles.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Version 1.2.3.Final of apiman is released!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Greetings, earthlings!  Yesterday we released the &lt;em&gt;best&lt;/em&gt; version of apiman yet,
+			</item><item>
+				<title>Version 1.2.3.Final of apiman is released!</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;Greetings, earthlings!  Yesterday we released the &lt;em&gt;best&lt;/em&gt; version of apiman yet,
 and I’m not just saying that because the version number (1.2.3.Final) is awesome.
 This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!&lt;/p&gt;
@@ -1666,25 +1701,12 @@ file.&lt;/p&gt;
 &lt;p&gt;Thanks for reading - see you later.&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="release" />
-				
-				<pubDate>Thu, 24 Mar 2016 06:00:00 -0400</pubDate>
+</description><category term="apiman" /><category term="release" /><pubDate>Thu, 24 Mar 2016 06:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/release/2016/03/24/release-1.2.3.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2016/03/24/release-1.2.3.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Import APIs Into Apiman (API Catalog)</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;One of the less enjoyable aspects of apiman is the manual addition of an API
+			</item><item>
+				<title>Import APIs Into Apiman (API Catalog)</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;One of the less enjoyable aspects of apiman is the manual addition of an API
 that you wish to manage.  And if you have a bunch of APIs you want to manage,
 you can either use the apiman REST interface to script the creation of them,
 or else you’re stuck manually entering them into the UI.&lt;/p&gt;
@@ -1829,29 +1851,108 @@ with information about all your deployed APIs!&lt;/p&gt;
 tomorrow!&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="1.2.x" />
-				
-					<category term="manager" />
-				
-					<category term="catalog" />
-				
-				<pubDate>Wed, 23 Mar 2016 06:30:00 -0400</pubDate>
+</description><category term="apiman" /><category term="1.2.x" /><category term="manager" /><category term="catalog" /><pubDate>Wed, 23 Mar 2016 06:30:00 -0400</pubDate>
 				<link>http://apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Storing Your Gateway Config in a Database</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;One of the strongest features of apiman, in general, is its excellent
+			</item><item>
+				<title>Storing Your Gateway Config in a Database</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>One of the strongest features of apiman, in general, is its excellent
+extensibility.  Not only is it easy to add new policies, for example,
+but many of its core components are also pluggable.  This includes, 
+for example, the registry used by the API Gateway to store configuration
+information published to it by the manager.  This blog post will detail
+a new JDBC based implementation of that registry, explaining how you can
+store that information in a Database instead of in Elasticsearch (the
+default setting).
+
+&lt;!--more--&gt;
+
+## Why Use a Database Instead of Elastic?
+You may or may not be wondering why this is important.  Some users may
+not be comfortable storing persistent data in Elasticsearch.  Or perhaps
+a user doesn't want to create a production deployment of Elasticsearch 
+at all and would prefer alternatives for each of the various Gateway
+components that currently uses it.  For these reasons (or others), we
+now (as of version 1.2.2.Final) have a JDBC implementation of the 
+API Gateway registry!
+
+Read on to learn how to use it!
+
+## Setting Up the Database
+First it's important to note that the Gateway registry JDBC implementation
+does *not* leverage JPA.  Instead we use JDBC directly (with a little 
+help from Apache's dbutils library) to store the data in the database
+and query it again.  For this reason, you will absolutely need to create
+your database and then configure it using one of the provided DDLs.
+
+You can find the DDLs included in the apiman distribution in the following
+directory:&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$WILDFLY_ROOT/apiman/ddls/apiman-gateway*.ddl&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;We include DDLs for the following databases:
+
+* MySQL
+* PostgreSQL
+* Oracle
+* H2
+
+Simply create a new database using tools that are appropriate to the
+type you are using (e.g. you can use the MySQL Workbench).  Then execute
+the DDL appropriate to your database type, so that all the correct 
+tables and indexes are created.
+
+## Configuring Apiman to Use It
+Once the database is created, you will need to make some configuration
+changes in apiman so that the Gateway will connect to the database and store
+information there instead of Elasticsearch.  There are two files that need
+to be created/modified to make this happen.
+
+### Creating a Datasource
+First, you will need to create a Datasource using whatever is appropriate
+for the platform you are running apiman on.  This will differ, for example,
+if you are running apiman on Tomcat rather than Wildfly or EAP.  Here are
+some documentation resources that may be helpful when creating a Datasource
+for your preferred runtime platform:
+
+* [Wildfly 10](https://docs.jboss.org/author/display/WFLY10/DataSource+configuration)
+* [Apache Tomcat 8](https://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html#JDBC_Data_Sources)
+
+Make sure you download and install the JDBC driver for your database, and
+also make sure that you know the JNDI location of the datasource you wish
+to use.
+
+### Tweaking apiman.properties
+Finally, you have everything you need to now configure apiman to use the
+database.  You simply need to change some properties in *apiman.properties* 
+and you'll be good to go!
+
+Specifically, you need to change the configuration of the Gateway Registry.
+The default settings in 1.2.2.Final for the Gateway Registry look like this:&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry
+apiman-gateway.registry.client.type=jest
+apiman-gateway.registry.client.protocol=${apiman.es.protocol}
+apiman-gateway.registry.client.host=${apiman.es.host}
+apiman-gateway.registry.client.port=${apiman.es.port}
+apiman-gateway.registry.client.initialize=true
+apiman-gateway.registry.client.username=${apiman.es.username}
+apiman-gateway.registry.client.password=${apiman.es.password}
+apiman-gateway.registry.client.timeout=${apiman.es.timeout}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;All of these properties can be replaced with the following settings:&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry
+apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;Please note that the *apiman-gateway.registry.datasource.jndi-location* should
+be set to whatever value makes sense based on the deployment/configuration of
+your actual datasource.
+
+## Conclusion
+Once you have configured the API Gateway to use a database to store your 
+configuration info, apiman will no longer store this type of data in 
+Elasticsearch.  This is perhaps one step closer to a world where you do
+not need to maintain/manager a production Elasticsearch instance.
+
+In future posts I will show you how you can swap out other Elasticsearch
+components for alternatives (e.g. Rate Limiting, Caching, etc).
+
+/post
+</description><category term="apiman" /><category term="1.2.x" /><category term="gateway" /><category term="jdbc" /><category term="registry" /><pubDate>Wed, 09 Mar 2016 04:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.markdown.bak</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.markdown.bak</guid>
+			</item><item>
+				<title>Storing Your Gateway Config in a Database</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;One of the strongest features of apiman, in general, is its excellent
 extensibility.  Not only is it easy to add new policies, for example,
 but many of its core components are also pluggable.  This includes, 
 for example, the registry used by the API Gateway to store configuration
@@ -1958,31 +2059,12 @@ not need to maintain/manager a production Elasticsearch instance.&lt;/p&gt;
 components for alternatives (e.g. Rate Limiting, Caching, etc).&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="1.2.x" />
-				
-					<category term="gateway" />
-				
-					<category term="jdbc" />
-				
-					<category term="registry" />
-				
-				<pubDate>Wed, 09 Mar 2016 04:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="1.2.x" /><category term="gateway" /><category term="jdbc" /><category term="registry" /><pubDate>Wed, 09 Mar 2016 04:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Re-Registering Your Client App(s)</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;In a recent blog post I explained why APIs used to be completely frozen 
+			</item><item>
+				<title>Re-Registering Your Client App(s)</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;In a recent blog post I explained why APIs used to be completely frozen 
 once they were published, and how we have loosened that restriction for
 Public APIs.  Similarly, we did not allow Client Apps to be changed and
 then re-registered.  This was never a good decision, since the Client App
@@ -2011,27 +2093,12 @@ for Client App Developers to make sensible changes and then push those
 changes to the gateway!&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="1.2.x" />
-				
-					<category term="gateway" />
-				
-				<pubDate>Wed, 24 Feb 2016 05:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="1.2.x" /><category term="gateway" /><pubDate>Wed, 24 Feb 2016 05:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/reregistering.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/reregistering.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Re-Publishing Your API(s)</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;An early design decision we made in apiman was to not allow APIs to be
+			</item><item>
+				<title>Re-Publishing Your API(s)</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;An early design decision we made in apiman was to not allow APIs to be
 re-published to the Gateway.  The reasoning was that Client Apps may have
 established Contracts with the API, and thus have agreed to specific terms
 and conditions (whether implicit or explicit).  Therefore, we shouldn’t 
@@ -2087,27 +2154,12 @@ only using Public APIs, then there’s no reason to prevent changes from
 being republished!&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="1.2.x" />
-				
-					<category term="gateway" />
-				
-				<pubDate>Wed, 24 Feb 2016 04:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="1.2.x" /><category term="gateway" /><pubDate>Wed, 24 Feb 2016 04:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/republishing.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/gateway/2016/02/24/republishing.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Apiman 1.2 - Improvements to Plugin Management</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;Apiman is not only preconfigured with a rich set of policies that you can use, right out of the box, but, from its earliest releases, apiman has also included a mechanism that you can use to define your own custom policies through plugins. This article describes the improvements introduced in apiman release 1.2.x that enable you to better manage your custom policy plugins.&lt;/p&gt;
+			</item><item>
+				<title>Apiman 1.2 - Improvements to Plugin Management</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;p&gt;Apiman is not only preconfigured with a rich set of policies that you can use, right out of the box, but, from its earliest releases, apiman has also included a mechanism that you can use to define your own custom policies through plugins. This article describes the improvements introduced in apiman release 1.2.x that enable you to better manage your custom policy plugins.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -2365,31 +2417,12 @@ test-policy/pom.xml
 &lt;/ul&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="introduction" />
-				
-					<category term="overview" />
-				
-					<category term="plugin" />
-				
-					<category term="management" />
-				
-				<pubDate>Mon, 22 Feb 2016 07:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="introduction" /><category term="overview" /><category term="plugin" /><category term="management" /><pubDate>Mon, 22 Feb 2016 07:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Apiman 1.2.1 Export and Import</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;h3 id=&quot;the-question-you-dread&quot;&gt;The Question you Dread&lt;/h3&gt;
+			</item><item>
+				<title>Apiman 1.2.1 Export and Import</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;h3 id=&quot;the-question-you-dread&quot;&gt;The Question you Dread&lt;/h3&gt;
 
 &lt;p&gt;If you use a computer at home or at work, you’ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying:&lt;/p&gt;
 
@@ -2541,33 +2574,12 @@ A production environment, where the goal is stability. This is the environment t
 
 &lt;p&gt;/post&lt;/p&gt;
 
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="introduction" />
-				
-					<category term="overview" />
-				
-					<category term="backup" />
-				
-					<category term="export" />
-				
-					<category term="import" />
-				
-				<pubDate>Wed, 27 Jan 2016 06:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="introduction" /><category term="overview" /><category term="backup" /><category term="export" /><category term="import" /><pubDate>Wed, 27 Jan 2016 06:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Apiman Names Have Been Changed to Protect the Guilty</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Recently we released version 1.2 of apiman and part of that release includes an effort
+			</item><item>
+				<title>Apiman Names Have Been Changed to Protect the Guilty</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;Recently we released version 1.2 of apiman and part of that release includes an effort
 to rename some concepts to make them more clear (or to better align them with industry standard
 terminology).  Read on below the fold to find out what changed!&lt;/p&gt;
 
@@ -2631,25 +2643,12 @@ by using the term “Client” makes it more clear what it’s used for.&lt;/p&g
 users.  We certainly hope that these name changes help with that goal.&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-					<category term="1.2.x" />
-				
-				<pubDate>Wed, 27 Jan 2016 03:30:00 -0500</pubDate>
+</description><category term="apiman" /><category term="1.2.x" /><pubDate>Wed, 27 Jan 2016 03:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/1.2.x/2016/01/27/renaming.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Cover yourself up! Protecting your APIs with mutual auth</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Cover yourself up! Protecting your APIs with mutual auth</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -2889,33 +2888,12 @@ You must explicitly enable client authentication for any APIs you want protected
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
 &lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. Client Apps are the users of our APIs, like browsers, mobile apps, etc
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="gateway" />
-				
-					<category term="security" />
-				
-					<category term="mutual-auth" />
-				
-					<category term="ssl" />
-				
-					<category term="mtls" />
-				
-					<category term="1.2.x" />
-				
-				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
+&lt;/div&gt;</description><category term="gateway" /><category term="security" /><category term="mutual-auth" /><category term="ssl" /><category term="mtls" /><category term="1.2.x" /><pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/1.2.x/2016/01/22/mtls-mutual-auth-redux.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Keycloak and dagger: Securing your APIs with OAuth2</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>Keycloak and dagger: Securing your APIs with OAuth2</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&amp;#8217;ll outline in this blogpost.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
@@ -3323,35 +3301,12 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
 &lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. We&amp;#8217;re going to use &lt;code&gt;jq&lt;/code&gt; to select the &lt;code&gt;access_token&lt;/code&gt; field in our JSON, so if you don&amp;#8217;t have &lt;code&gt;jq&lt;/code&gt; installed you can use your package manager to get it: OS X Brew &lt;code&gt;brew install jq&lt;/code&gt;; On Fedora &lt;code&gt;sudo yum install jq&lt;/code&gt;; On Debian &lt;code&gt;sudo apt-get install jq&lt;/code&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="gateway" />
-				
-					<category term="security" />
-				
-					<category term="oauth2" />
-				
-					<category term="keycloak" />
-				
-					<category term="authentication" />
-				
-					<category term="authorization" />
-				
-					<category term="1.2.x" />
-				
-				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
+&lt;/div&gt;</description><category term="gateway" /><category term="security" /><category term="oauth2" /><category term="keycloak" /><category term="authentication" /><category term="authorization" /><category term="1.2.x" /><pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>CORS? Of Course!</title>
-				
-				        <dc:creator>Marc Savy</dc:creator>
-				        <author>marc@rhymewithgravy.com</author>
-				
-				<description>&lt;div class=&quot;paragraph&quot;&gt;
+			</item><item>
+				<title>CORS? Of Course!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;If you&amp;#8217;re looking to define &lt;a href=&quot;http://www.w3.org/TR/2014/REC-cors-20140116/&quot;&gt;CORS policies&lt;/a&gt; in your API Management layer, then we have an &lt;a href=&quot;https://github.com/apiman/apiman-plugins&quot;&gt;official plugin&lt;/a&gt; that should be perfect for the job.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -3687,31 +3642,12 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
 &lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. If you used the quickstart, the defaults are U: admin P: admin123!
 &lt;/div&gt;
-&lt;/div&gt;</description>
-				
-					<category term="security" />
-				
-					<category term="plugin" />
-				
-					<category term="policy" />
-				
-					<category term="cors" />
-				
-					<category term="1.2.x" />
-				
-				<pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
+&lt;/div&gt;</description><category term="security" /><category term="plugin" /><category term="policy" /><category term="cors" /><category term="1.2.x" /><pubDate>Fri, 22 Jan 2016 07:00:00 -0500</pubDate>
 				<link>http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Finally!  Apiman 1.2.1.Final is released!</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;It’s been ages since apiman had a new release!  Well the reason for that is we’ve been
+			</item><item>
+				<title>Finally!  Apiman 1.2.1.Final is released!</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;It’s been ages since apiman had a new release!  Well the reason for that is we’ve been
 pushing to get the first version of &lt;em&gt;1.2.x&lt;/em&gt; out the door.  I’m here to tell you - that
 day has finally arrived.&lt;/p&gt;
 
@@ -3799,23 +3735,145 @@ designed to satisfy the following use-cases:&lt;/p&gt;
 &lt;p&gt;You know what, don’t even worry about it.&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="apiman" />
-				
-				<pubDate>Fri, 22 Jan 2016 06:30:00 -0500</pubDate>
+</description><category term="apiman" /><pubDate>Fri, 22 Jan 2016 06:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/apiman/2016/01/22/release-1.2.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>The More You Know: apiman micro-services?</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;Let’s spend a little bit of time learning more about one of the newer ways you
+			</item><item>
+				<title>The More You Know: apiman micro-services?</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>Let's spend a little bit of time learning more about one of the newer ways you
+can run apiman:  as a set of micro-services.
+
+Running apiman in this way has several advantages, including (but not limited to):
+
+* Fast startup time
+* Fully decoupled
+* Easily debuggable from an IDE
+* Quick to test different configurations
+* Independently scale (esp. via fabric8/openshift/kubernetes)
+
+&lt;!--more--&gt;
+
+On the other hand, breaking everything apart has some disadvantages as well.
+Some of these include:
+
+* Need to fire up multiple, separate Java processes
+* No authentication integration with Keycloak out of the box
+
+## What are they?
+What do we mean by &quot;apiman micro-services&quot;?  Well, by default if you download 
+apiman from the [project site](http://apiman.io/), you'll get everything delivered
+to you in one convenient package.  This package extracts into an existing WildFly
+installation, and thus everything runs as a web application within the application
+server.  This is very convenient to evaluate the software, but it's not ideal for
+development or for dockerizing.
+
+In addition to our support for WildFly and EAP, we also now support simply running
+the various components of apiman as standalone Java applications.  You can find 
+the specific source modules that provide this functionality here:
+
+* [API Manager Micro-Service (source)](https://github.com/apiman/apiman/tree/master/manager/api/micro)
+* [API Gateway Micro-Service (source)](https://github.com/apiman/apiman/tree/master/gateway/platforms/war/micro)
+
+These two modules provide Java classes which use an embedded version of Jetty to 
+start up the API Manager and API Gateway as simple standalone Java processes.  Each
+micro-service includes a Starter class with a Java main method.  Both micro-services
+are designed to be easily extensible/customizable to fit whatever purpose or 
+configuration is desired.
+
+## How do I use them?
+As I mentioned, the micro-services are intended to be extended and customized.  So
+you could create a new maven project and add the specific apiman micro service
+module as a dependency and then....
+
+OK I probably lost you already.  It's actually not very hard, so here's a whole
+github repository full of examples:
+
+[https://github.com/apiman/apiman-servers](https://github.com/apiman/apiman-servers)
+
+Each of the modules in there is a very simple pre-baked and configured micro-service
+based on what apiman provides.  So for example, if you want to run an Elasticsearch
+version of the API Gateway along with a Postgres version of the API Manager, you 
+could follow these two sets of directions:
+
+* [API Gateway micro-service with Elastic](https://github.com/apiman/apiman-servers/blob/master/gateway-es/README.md)
+* [API Manager micro-service with Postgres](https://github.com/apiman/apiman-servers/blob/master/manager-postgres/README.md)
+
+If you run both of these at the same time, you will end up with two entirely separate
+Java processes running embedded Jetty and listening on different ports.
+
+## What about the API Manager UI?
+There are two ways you can access the API Manager User Interface.  The first is that
+it's built into the API Manager micro-service!  Once you have the Manager micro-service
+running, you should be able to go here:
+
+* [http://localhost:8080/apimanui/](http://localhost:8080/apimanui/)
+
+### Using gulp (development only)
+If you're looking to use the micro-services to make it easier to do development
+work on apiman, then you might find yourself needing to modify the User Interface.
+You can do this by running &quot;gulp&quot; in the UI module of the apiman source tree:&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/git/apiman/manager/ui/hawtio/
+ewittman@falcon ~/git/apiman/apiman/manager/ui/hawtio
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gulp
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Using gulpfile ~/git/apiman/apiman/manager/ui/hawtio/gulpfile.js
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'default'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'build'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'browserify'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'css'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'fonts'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'images'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Finished &lt;span class=&quot;s1&quot;&gt;'build'&lt;/span&gt; after 58 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'watch'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Finished &lt;span class=&quot;s1&quot;&gt;'watch'&lt;/span&gt; after 10 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Starting &lt;span class=&quot;s1&quot;&gt;'connect'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Finished &lt;span class=&quot;s1&quot;&gt;'connect'&lt;/span&gt; after 49 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Finished &lt;span class=&quot;s1&quot;&gt;'default'&lt;/span&gt; after 126 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:29] Server started http://localhost:2772
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:30] Finished &lt;span class=&quot;s1&quot;&gt;'css'&lt;/span&gt; after 589 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:37] Finished &lt;span class=&quot;s1&quot;&gt;'images'&lt;/span&gt; after 7.49 s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Finished &lt;span class=&quot;s1&quot;&gt;'fonts'&lt;/span&gt; after 12 s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Finished &lt;span class=&quot;s1&quot;&gt;'browserify'&lt;/span&gt; after 12 s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Starting &lt;span class=&quot;s1&quot;&gt;'path-adjust'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Finished &lt;span class=&quot;s1&quot;&gt;'path-adjust'&lt;/span&gt; after 38 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Starting &lt;span class=&quot;s1&quot;&gt;'clean-defs'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Finished &lt;span class=&quot;s1&quot;&gt;'clean-defs'&lt;/span&gt; after 7.87 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:41] Starting &lt;span class=&quot;s1&quot;&gt;'tsc'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Finished &lt;span class=&quot;s1&quot;&gt;'tsc'&lt;/span&gt; after 4.19 s
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Starting &lt;span class=&quot;s1&quot;&gt;'template'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Finished &lt;span class=&quot;s1&quot;&gt;'template'&lt;/span&gt; after 132 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Starting &lt;span class=&quot;s1&quot;&gt;'concat'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Finished &lt;span class=&quot;s1&quot;&gt;'concat'&lt;/span&gt; after 72 ms
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Starting &lt;span class=&quot;s1&quot;&gt;'clean'&lt;/span&gt;...
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;14:56:45] Finished &lt;span class=&quot;s1&quot;&gt;'clean'&lt;/span&gt; after 8.82 ms&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;Once you have the API Manager micro-service *and* gulp running, you should be
+able to access the UI by going here:
+
+* [http://localhost:2772/api-manager](http://localhost:2772/api-manager)
+
+## Warning: Authentication
+At the moment, the biggest problem with the micro-services is the issue of user
+authentication.  Currently, only very simple BASIC authentication is supported.
+
+&gt; It's always tricky talking about authentication with apiman - but in this context
+&gt; I'm referring to authenticating into the apiman UI and REST services.  All of the
+&gt; authentication related *Policies* will work.
+
+The micro-services allow you to specify your own users.list file, which should
+include the static set of users you wish to allow access.  In the future, we will
+be improving the micro-services to support other authentication mechanisms.  Note
+that you can do this yourself by overriding this:
+
+* [Gateway Micro-Service Authentication Handler+Filter](https://github.com/apiman/apiman/blob/master/gateway/platforms/war/micro/src/main/java/io/apiman/gateway/platforms/war/micro/GatewayMicroService.java#L319-L332)
+* [Manager Micro-Service Authentication Handler+Filter](https://github.com/apiman/apiman/blob/master/manager/api/micro/src/main/java/io/apiman/manager/api/micro/ManagerApiMicroService.java#L192-L211)
+
+
+Good luck and come find us on the mailing list or IRC if you have any trouble!
+
+/post
+</description><category term="micro-services" /><category term="development" /><pubDate>Thu, 12 Nov 2015 08:30:00 -0500</pubDate>
+				<link>http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.markdown.bak</link>
+				<guid isPermaLink="true">http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.markdown.bak</guid>
+			</item><item>
+				<title>The More You Know: apiman micro-services?</title><dc:creator>Eric Wittmann</dc:creator>
+				        <author>eric.wittmann@redhat.com</author><description>&lt;p&gt;Let’s spend a little bit of time learning more about one of the newer ways you
 can run apiman:  as a set of micro-services.&lt;/p&gt;
 
 &lt;p&gt;Running apiman in this way has several advantages, including (but not limited to):&lt;/p&gt;
@@ -3962,25 +4020,12 @@ that you can do this yourself by overriding this:&lt;/p&gt;
 &lt;p&gt;Good luck and come find us on the mailing list or IRC if you have any trouble!&lt;/p&gt;
 
 &lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="micro-services" />
-				
-					<category term="development" />
-				
-				<pubDate>Thu, 12 Nov 2015 08:30:00 -0500</pubDate>
+</description><category term="micro-services" /><category term="development" /><pubDate>Thu, 12 Nov 2015 08:30:00 -0500</pubDate>
 				<link>http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/micro-services/development/2015/11/12/micro-services.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>apiman Limiting Policies</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed services through the use of rate limiting policies.&lt;/p&gt;
+			</item><item>
+				<title>apiman Limiting Policies</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;p&gt;In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed services through the use of rate limiting policies.&lt;/p&gt;
 
 &lt;p&gt;The runtime core of apiman is the API Gateway and the policies that it applies to incoming requests to services. apiman is configured out of the box with a variety of policies that can be used to govern access to services managed by the API Gateway based on IP address, user authentication, and usage levels. From its first release, apiman has supported rate limiting policies, where the upper limit for use of a service could be governed by a policy. In its new 1.1.6 release, apiman has expanded this support to include quota based limiting policies.&lt;/p&gt;
 
@@ -4021,23 +4066,12 @@ that you can do this yourself by overriding this:&lt;/p&gt;
 &lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
 
 &lt;p&gt;As always, the author would like to acknowledge Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
-</description>
-				
-					<category term="policies" />
-				
-				<pubDate>Mon, 17 Aug 2015 07:00:00 -0400</pubDate>
+</description><category term="policies" /><pubDate>Mon, 17 Aug 2015 07:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/policies/2015/08/17/limiting-policies.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/policies/2015/08/17/limiting-policies.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>apiman Limiting Policies</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed APIs through the use of rate limiting policies.&lt;/p&gt;
+			</item><item>
+				<title>apiman Limiting Policies</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;p&gt;In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed APIs through the use of rate limiting policies.&lt;/p&gt;
 
 &lt;p&gt;The runtime core of apiman is the API Gateway and the policies that it applies to incoming requests to APIs. apiman is configured out of the box with a variety of policies that can be used to govern access to APIs managed by the API Gateway based on IP address, user authentication, and usage levels. From its first release, apiman has supported rate limiting policies, where the upper limit for use of an API could be governed by a policy. In its new 1.1.6 release, apiman has expanded this support to include quota based limiting policies.&lt;/p&gt;
 
@@ -4078,23 +4112,12 @@ that you can do this yourself by overriding this:&lt;/p&gt;
 &lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
 
 &lt;p&gt;As always, the author would like to acknowledge Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
-</description>
-				
-					<category term="policies" />
-				
-				<pubDate>Mon, 17 Aug 2015 07:00:00 -0400</pubDate>
+</description><category term="policies" /><pubDate>Mon, 17 Aug 2015 07:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/policies/2015/08/17/limiting-policies-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/policies/2015/08/17/limiting-policies-redux.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>apiman Policy and Endpoint Security</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed services at the policy level, and and at the endpoint level for its managed and unmanaged endpoints.&lt;/p&gt;
+			</item><item>
+				<title>apiman Policy and Endpoint Security</title><dc:creator>Len DiMaggio</dc:creator>
+				        <author>ldimaggi@redhat.com</author><description>&lt;p&gt;In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed services at the policy level, and and at the endpoint level for its managed and unmanaged endpoints.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -4174,617 +4197,9 @@ that you can do this yourself by overriding this:&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&quot;&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&lt;/a&gt; (written by Marc Savy)&lt;/li&gt;
   &lt;li&gt;https://dzone.com/articles/adding-basic-authentication&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-				
-					<category term="security" />
-				
-				<pubDate>Mon, 03 Aug 2015 07:00:00 -0400</pubDate>
+</description><category term="security" /><pubDate>Mon, 03 Aug 2015 07:00:00 -0400</pubDate>
 				<link>http://apiman.io/blog/security/2015/08/03/policy-endpoint-security.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/security/2015/08/03/policy-endpoint-security.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>apiman Policy and Endpoint Security</title>
-				
-				        <dc:creator>Len DiMaggio</dc:creator>
-				        <author>ldimaggi@redhat.com</author>
-				
-				<description>&lt;p&gt;In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed APIs at the policy level, and and at the endpoint level for its managed and unmanaged endpoints.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;unintentionally-insecure&quot;&gt;Unintentionally Insecure?&lt;/h2&gt;
-
-&lt;p&gt;If you read the first article in this series closely (https://dzone.com/articles/impatient-new-users) you might have noticed that in the course of creating an API whose endpoint was managed by the apiman API Gateway, we also inadvertently left that API in a very insecure state as unauthorized client apps could bypass the gateway and access the API directly.  We discussed how to configure authentication in a policy for the managed API endpoint in the most recent post in this series (https://dzone.com/articles/adding-basic-authentication). This authentication policy provides username/password security for clients as they access the managed API through the API Gateway, but it does not protect the API from unauthorized access attempts that bypass the Gateway completely. To make the API secure from unauthorized client apps, endpoint level security should also be configured.&lt;/p&gt;
-
-&lt;p&gt;In this article, we’ll examine both apiman policy level and endpoint level security, how they compare, and how they differ.&lt;/p&gt;
-
-&lt;h2 id=&quot;complementary-types-of-security-provided-by-apiman&quot;&gt;Complementary Types of Security Provided by apiman&lt;/h2&gt;
-
-&lt;p&gt;The best way to start our discussion of the different, but complementary types of security that we’ll examine in this article is with a diagram. The nodes involved are the client apps that will access our APIs, the apiman API Gateway, and the servers that host our APIs:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.apiman.io/blog/images/2015-08-03/apiman_security-redux.png&quot; alt=&quot;apiman logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let’s work our way through the diagram from left to right and start by taking a look at Policy Level Security.&lt;/p&gt;
-
-&lt;h2 id=&quot;policy-level-security&quot;&gt;Policy Level Security&lt;/h2&gt;
-
-&lt;p&gt;apiman includes several pre-defined policies OOTB. The policies provide support for controlling access to APIs based on the rate at which the APIs are invoked, the IP address of the client apps that access the APIs, authorization, and authentication. In the most recent article in this series, we showed how to configure an authentication policy. To keep things simple, we chose BASIC authentication. This BASIC Authentication policy provides security for the communication channel between the client apps and the apiman API Gateway. An incoming request to the API Gateway from a client initiates the policy chain, the policy is applied and the client is requested to supply a username and password.  The level of security provided by this policy can be enhanced if the policy is configured with SSL encryption.&lt;/p&gt;
-
-&lt;p&gt;But, this policy level security only secures the left side of the diagram, that is the communication channel between the client apps and the API Gateway. In this communication channel, the client apps play the role of the client, and the API Gateway plays the role of the server.&lt;/p&gt;
-
-&lt;p&gt;We also want to secure the right side of the diagram, where the API Gateway plays the role of a client, and the APIs play the role of the servers.&lt;/p&gt;
-
-&lt;p&gt;(It’s also worth noting that while policy security protects the managed API, it does nothing to protect the unmanaged API as this API can be reached directly, without going through the API Gateway. This is illustrated by the red line in the diagram. So, while access to the managed API through the apiman API Gateway is secure, policy security does not secure the unmanaged API endpoint.)&lt;/p&gt;
-
-&lt;h2 id=&quot;endpoint-level-security&quot;&gt;Endpoint Level Security&lt;/h2&gt;
-
-&lt;p&gt;In contrast to policy level security, with endpoint security we are securing the right side of the diagram.&lt;/p&gt;
-
-&lt;p&gt;A recent post by Marc Savy to the apiman blog &lt;a href=&quot;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&quot;&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&lt;/a&gt; described how to configure Mutually Authenticated TLS (Transport Layer Security) between the API Gateway and the managed APIs. With Mutual TLS, bi-direction authentication is configured so that the identities of both the client and server are verified before a connection can be made.&lt;/p&gt;
-
-&lt;p&gt;In setting up Mutual TLS, keystores, containing a node’s private key, and truststores, containing public certificates to govern the other nodes that the node should trust, were created. The API Gateway was configured in its apiman.properties file to reference the keystores and truststores.  The API was configured with mutual authentication by setting the API Security dropdown in the Implementation tab to MTLS/Two-Way-SSL. Finally, the API was programmed with mutual authentication enabled. With Mutual TLS configured, the communication channel on the right side of the diagram, from the API Gateway to the APIs, was made secure.&lt;/p&gt;
-
-&lt;p&gt;We should also note that, unlike policy security, endpoint security also secures the APIs from attempts to bypass the API Gateway. With Mutual TLS, a two-way trust pattern is created. The API Gateway trusts the APIs and the APIs trust the API Gateway. The APIs, however, do not trust the client apps. As is shown by the large “X” character that indicates that a client app cannot bypass the API Gateway and access the APIs directly.&lt;/p&gt;
-
-&lt;p&gt;One last point that is important to remember is that the endpoint level of security applies to all requests made to the APIs, regardless of whatever policies are configured.&lt;/p&gt;
-
-&lt;h2 id=&quot;compare-and-contrast&quot;&gt;Compare and Contrast&lt;/h2&gt;
-
-&lt;p&gt;To summarize, the differences between policy level security and endpoint level security are:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Policy Level Security&lt;/th&gt;
-      &lt;th&gt;End Point Level Security&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Secures communications between the client apps (clients) and API Gateway (server)&lt;/td&gt;
-      &lt;td&gt;Secures communications between the API Gateway (client) and APIs (servers)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Configured in an API Gateway policy&lt;/td&gt;
-      &lt;td&gt;Configured for the API Gateway as a whole in apiman.properties and with key/certificates infrastructure&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Applied by the policy at runtime&lt;/td&gt;
-      &lt;td&gt;Applied for all API requests, regardless of the policies configured for an API&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Does not secure the unmanaged API from access by unauthorized clients&lt;/td&gt;
-      &lt;td&gt;Secures the unmanaged API endpoints from access by unauthorized clients&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;author-acknowledgements&quot;&gt;Author Acknowledgements&lt;/h2&gt;
-
-&lt;p&gt;As always, the author would like to acknowledge Marc Savy, Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&quot;&gt;http://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html&lt;/a&gt; (written by Marc Savy)&lt;/li&gt;
-  &lt;li&gt;https://dzone.com/articles/adding-basic-authentication&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				
-					<category term="security" />
-				
-				<pubDate>Mon, 03 Aug 2015 07:00:00 -0400</pubDate>
-				<link>http://apiman.io/blog/security/2015/08/03/policy-endpoint-security-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/security/2015/08/03/policy-endpoint-security-redux.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Plugins - Not Just For Policies Anymore</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;As you may know, apiman has long supported custom policies provided by users.  If you
-aren’t familiar with apiman plugins, you can find more about them by &lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;clicking here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As of version 1.1.5.Final, plugins are now even more useful.  You can provide custom
-implementations of various core apiman system components via plugins.  This allows users
-to customize apiman easily, without any changes to the classpath and without rebuilding
-the core apiman application.&lt;/p&gt;
-
-&lt;p&gt;In this blog post I’ll explain how it works.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;review-what-is-a-plugin&quot;&gt;Review: What is a plugin?&lt;/h2&gt;
-&lt;p&gt;First, here are some good resources you can use to learn more about apiman plugins:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;Customizing JBoss apiman Through Policy Plugins&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;apiman Developer Guide: Plugins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;No patience to read those links?  That’s OK - I’ll give you a quick breakdown.&lt;/p&gt;
-
-&lt;p&gt;An apiman plugin is basically a WAR file with one additional required file.  The additional
-file is &lt;code class=&quot;highlighter-rouge&quot;&gt;META-INF/apiman/plugin.json&lt;/code&gt; and it contains some meta-data about the plugin.  An
-example of a plugin.json file (from the JSONP policy plugin):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frameworkVersion&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;JSONP Policy Plugin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This plugin turns an endpoint into a JSONP compatible endpoint.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.1.5.Final&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We chose WAR as the plugin format because it allows all of the file types we need, it
-is a well-known structure, and it’s easy to create (e.g. via maven).&lt;/p&gt;
-
-&lt;p&gt;When contributing a custom apiman component via a plugin, all you need is the &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin.json&lt;/code&gt;
-file and the java class file(s) that implement the appropriate component interface.  Of
-course, because a plugin is a WAR, you can also include any library dependencies your 
-component might need.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-are-these-components-are-you-talking-about&quot;&gt;What are these components are you talking about?&lt;/h2&gt;
-&lt;p&gt;apiman is made up of a number of components that work together to accomplish the goal of
-API Management.  There are two primary pieces of the apiman story:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;API Manager&lt;/li&gt;
-  &lt;li&gt;API Gateway&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Each of these consists of its own components.  For example, the API Manager is made up of
-the following (not necessarily an exhaustive list):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Storage Component&lt;/li&gt;
-  &lt;li&gt;Query Component&lt;/li&gt;
-  &lt;li&gt;IDM Component&lt;/li&gt;
-  &lt;li&gt;Metrics Accessor Component (consumes metrics data)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;On the other hand, the API Gateway consists of a separate set of components, such as:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Configuration Registry&lt;/li&gt;
-  &lt;li&gt;Rate Limiting Component&lt;/li&gt;
-  &lt;li&gt;Shared State Component&lt;/li&gt;
-  &lt;li&gt;Metrics Component (produces metrics data)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By default, the apiman quickstart uses default values for all of these, resulting in
-a stable, working system with the following characteristics:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stores API Manager data in a JDBC database&lt;/li&gt;
-  &lt;li&gt;Records and queries metrics data via Elasticsearch&lt;/li&gt;
-  &lt;li&gt;Stores Gateway configuration information in Infinispan&lt;/li&gt;
-  &lt;li&gt;Uses infinispan to share rate limiting state across gateway nodes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are alternative configurations of apiman that you can use without needing to
-resort to plugins.  For example, we provide Elasticsearch implementations of many of
-the components mentioned above.  So you could easily switch from Infinispan to ES in
-the Gateway, if you wanted.  However, if you wish to provide a custom implementation
-of something, plugins are now the way to go!&lt;/p&gt;
-
-&lt;h2 id=&quot;example-scenario&quot;&gt;Example Scenario&lt;/h2&gt;
-&lt;p&gt;There is a lot you can do now that we support plugin components.  But it’s probably
-easiest to explain and understand if we take a simple example scenario.&lt;/p&gt;
-
-&lt;h3 id=&quot;use-mongodb-to-store-gateway-configuration-information&quot;&gt;Use mongodb to store Gateway configuration information&lt;/h3&gt;
-&lt;p&gt;If you download the apiman quickstart, the default configuration is to use the built
-in WildFly 8 infinispan subsystem to store the API Gateway configuration info.  This
-includes all services published to the Gateway, and all applications registered with
-it as well.  Perhaps you would rather that data be stored in mongodb?  Since we don’t
-have a mongodb implementation of the Gateway Registry, you’ll need to implement it
-yourself and bundle it up into a plugin!&lt;/p&gt;
-
-&lt;h3 id=&quot;create-a-apiman-gateway-mongodb-plugin&quot;&gt;Create a apiman-gateway-mongodb plugin&lt;/h3&gt;
-&lt;p&gt;I won’t go through the entire process of creating an apiman plugin here, since it is
-already well documented (and linked above).  You’ll need a WAR maven project with a
-&lt;code class=&quot;highlighter-rouge&quot;&gt;plugin.json&lt;/code&gt; file in the right place, which might look something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frameworkVersion&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mongodb plugin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This plugin provides a mongodb implementation of the Gateway registry.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You will also need an implementation of the Gateway’s &lt;code class=&quot;highlighter-rouge&quot;&gt;io.apiman.gateway.engine.IRegistry&lt;/code&gt;
-interface.  Let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;MongoDbRegistry.java&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apiman&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gateway&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.async.IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.Application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.Service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ServiceContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ServiceRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * An implementation of the {@link IRegistry} interface using mongodb.
- */&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MongoDbRegistry&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IRegistry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * Constructor.
-     * @param config
-     */&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MongoDbRegistry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#getContract(io.apiman.gateway.engine.beans.ServiceRequest, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServiceContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#publishService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;publishService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#retireService(io.apiman.gateway.engine.beans.Service, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;retireService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#registerApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;registerApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#unregisterApplication(io.apiman.gateway.engine.beans.Application, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unregisterApplication&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#getService(java.lang.String, java.lang.String, java.lang.String, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;organizationId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serviceVersion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Obviously you will want to include any mongodb client libraries you need, and then
-implement the actual functionality of the class.  I leave that as an exercise for the
-reader.  Note that most of the Gateway components have asynchronous APIs.  If possible
-you should attempt to use asynchronous techniques when providing implementations.&lt;/p&gt;
-
-&lt;h3 id=&quot;switching-to-your-custom-implementation-in-apimanproperties&quot;&gt;Switching to your custom implementation in apiman.properties&lt;/h3&gt;
-&lt;p&gt;Now you’ve got a component you want to use, and it’s all nicely wrapped up in a shiny
-new plugin.  Your next step is to actually use it!  Using a custom component is as
-simple as referencing it in the &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman.properties&lt;/code&gt; file.  You’ll need to remove
-this line first:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.ispn.InfinispanRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and then add something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The format of the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman-gateway.registry&lt;/code&gt; is very important - when 
-using a plugin you must specify the maven information of your plugin so that 
-apiman can locate and download it.  See the apiman documentation for additional
-details about how plugins are loaded.&lt;/p&gt;
-
-&lt;p&gt;Note that you can also provide configuration parameters to your component.  That
-will obviously be helpful since it will probably need connection details.  So 
-really your configuration might look something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
-apiman-gateway.registry.mongo.host=localhost
-apiman-gateway.registry.mongo.port=27017
-apiman-gateway.registry.mongo.username=sa
-apiman-gateway.registry.mongo.password=sa123!
-apiman-gateway.registry.mongo.database=apiman&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These configuration options will be passed to your component in its constructor if
-your class has a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&amp;lt;String,String&amp;gt;&lt;/code&gt; constructor.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;This is a powerful new feature for extending and customizing apiman to better suit
-your needs.  Of course we will want to continue offering the most popular component
-implementations as a core part of apiman.  However there will always be many more
-options than we can easily implement and support.  For this reason we wanted to 
-provide an easy way for users (and the apiman community at large) to contribute.&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="api-manager" />
-				
-					<category term="api-gateway" />
-				
-					<category term="plugins" />
-				
-					<category term="development" />
-				
-					<category term="maven" />
-				
-				<pubDate>Fri, 24 Jul 2015 10:10:10 -0400</pubDate>
-				<link>http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components.html</guid>
-			</item>
-		
-		
-			<item>
-				<title>Plugins - Not Just For Policies Anymore</title>
-				
-				        <dc:creator>Eric Wittmann</dc:creator>
-				        <author>eric.wittmann@redhat.com</author>
-				
-				<description>&lt;p&gt;As you may know, apiman has long supported custom policies provided by users.  If you
-aren’t familiar with apiman plugins, you can find more about them by &lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;clicking here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As of version 1.1.5.Final, plugins are now even more useful.  You can provide custom
-implementations of various core apiman system components via plugins.  This allows users
-to customize apiman easily, without any changes to the classpath and without rebuilding
-the core apiman application.&lt;/p&gt;
-
-&lt;p&gt;In this blog post I’ll explain how it works.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;review-what-is-a-plugin&quot;&gt;Review: What is a plugin?&lt;/h2&gt;
-&lt;p&gt;First, here are some good resources you can use to learn more about apiman plugins:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html&quot;&gt;Customizing JBoss apiman Through Policy Plugins&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_plugins&quot;&gt;apiman Developer Guide: Plugins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;No patience to read those links?  That’s OK - I’ll give you a quick breakdown.&lt;/p&gt;
-
-&lt;p&gt;An apiman plugin is basically a WAR file with one additional required file.  The additional
-file is &lt;code class=&quot;highlighter-rouge&quot;&gt;META-INF/apiman/plugin.json&lt;/code&gt; and it contains some meta-data about the plugin.  An
-example of a plugin.json file (from the JSONP policy plugin):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frameworkVersion&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;JSONP Policy Plugin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This plugin turns an endpoint into a JSONP compatible endpoint.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.1.5.Final&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;We chose WAR as the plugin format because it allows all of the file types we need, it
-is a well-known structure, and it’s easy to create (e.g. via maven).&lt;/p&gt;
-
-&lt;p&gt;When contributing a custom apiman component via a plugin, all you need is the &lt;code class=&quot;highlighter-rouge&quot;&gt;plugin.json&lt;/code&gt;
-file and the java class file(s) that implement the appropriate component interface.  Of
-course, because a plugin is a WAR, you can also include any library dependencies your 
-component might need.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-are-these-components-are-you-talking-about&quot;&gt;What are these components are you talking about?&lt;/h2&gt;
-&lt;p&gt;apiman is made up of a number of components that work together to accomplish the goal of
-API Management.  There are two primary pieces of the apiman story:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;API Manager&lt;/li&gt;
-  &lt;li&gt;API Gateway&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Each of these consists of its own components.  For example, the API Manager is made up of
-the following (not necessarily an exhaustive list):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Storage Component&lt;/li&gt;
-  &lt;li&gt;Query Component&lt;/li&gt;
-  &lt;li&gt;IDM Component&lt;/li&gt;
-  &lt;li&gt;Metrics Accessor Component (consumes metrics data)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;On the other hand, the API Gateway consists of a separate set of components, such as:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Configuration Registry&lt;/li&gt;
-  &lt;li&gt;Rate Limiting Component&lt;/li&gt;
-  &lt;li&gt;Shared State Component&lt;/li&gt;
-  &lt;li&gt;Metrics Component (produces metrics data)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By default, the apiman quickstart uses default values for all of these, resulting in
-a stable, working system with the following characteristics:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stores API Manager data in a JDBC database&lt;/li&gt;
-  &lt;li&gt;Records and queries metrics data via Elasticsearch&lt;/li&gt;
-  &lt;li&gt;Stores Gateway configuration information in Infinispan&lt;/li&gt;
-  &lt;li&gt;Uses infinispan to share rate limiting state across gateway nodes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are alternative configurations of apiman that you can use without needing to
-resort to plugins.  For example, we provide Elasticsearch implementations of many of
-the components mentioned above.  So you could easily switch from Infinispan to ES in
-the Gateway, if you wanted.  However, if you wish to provide a custom implementation
-of something, plugins are now the way to go!&lt;/p&gt;
-
-&lt;h2 id=&quot;example-scenario&quot;&gt;Example Scenario&lt;/h2&gt;
-&lt;p&gt;There is a lot you can do now that we support plugin components.  But it’s probably
-easiest to explain and understand if we take a simple example scenario.&lt;/p&gt;
-
-&lt;h3 id=&quot;use-mongodb-to-store-gateway-configuration-information&quot;&gt;Use mongodb to store Gateway configuration information&lt;/h3&gt;
-&lt;p&gt;If you download the apiman quickstart, the default configuration is to use the built
-in WildFly 8 infinispan subsystem to store the API Gateway configuration info.  This
-includes all APIs published to the Gateway, and all client apps registered with
-it as well.  Perhaps you would rather that data be stored in mongodb?  Since we don’t
-have a mongodb implementation of the Gateway Registry, you’ll need to implement it
-yourself and bundle it up into a plugin!&lt;/p&gt;
-
-&lt;h3 id=&quot;create-a-apiman-gateway-mongodb-plugin&quot;&gt;Create a apiman-gateway-mongodb plugin&lt;/h3&gt;
-&lt;p&gt;I won’t go through the entire process of creating an apiman plugin here, since it is
-already well documented (and linked above).  You’ll need a WAR maven project with a
-&lt;code class=&quot;highlighter-rouge&quot;&gt;plugin.json&lt;/code&gt; file in the right place, which might look something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frameworkVersion&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mongodb plugin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This plugin provides a mongodb implementation of the Gateway registry.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You will also need an implementation of the Gateway’s &lt;code class=&quot;highlighter-rouge&quot;&gt;io.apiman.gateway.engine.IRegistry&lt;/code&gt;
-interface.  Let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;MongoDbRegistry.java&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apiman&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;gateway&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.async.IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ClientApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.Api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ApiContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;io.apiman.gateway.engine.beans.ApiRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * An implementation of the {@link IRegistry} interface using mongodb.
- */&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MongoDbRegistry&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IRegistry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * Constructor.
-     * @param config
-     */&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MongoDbRegistry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#getContract(io.apiman.gateway.engine.beans.ApiRequest, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ApiContract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#publishApi(io.apiman.gateway.engine.beans.Api, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;publishApi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Api&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#retireApi(io.apiman.gateway.engine.beans.Api, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;retireApi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Api&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#registerClientApp(io.apiman.gateway.engine.beans.ClientApp, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;registerClientApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ClientApp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#unregisterClientApp(io.apiman.gateway.engine.beans.ClientApp, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unregisterClientApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ClientApp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;cm&quot;&gt;/**
-     * @see io.apiman.gateway.engine.IRegistry#getApi(java.lang.String, java.lang.String, java.lang.String, io.apiman.gateway.engine.async.IAsyncResultHandler)
-     */&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getApi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;organizationId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apiId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;IAsyncResultHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Obviously you will want to include any mongodb client libraries you need, and then
-implement the actual functionality of the class.  I leave that as an exercise for the
-reader.  Note that most of the Gateway components have asynchronous APIs.  If possible
-you should attempt to use asynchronous techniques when providing implementations.&lt;/p&gt;
-
-&lt;h3 id=&quot;switching-to-your-custom-implementation-in-apimanproperties&quot;&gt;Switching to your custom implementation in apiman.properties&lt;/h3&gt;
-&lt;p&gt;Now you’ve got a component you want to use, and it’s all nicely wrapped up in a shiny
-new plugin.  Your next step is to actually use it!  Using a custom component is as
-simple as referencing it in the &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman.properties&lt;/code&gt; file.  You’ll need to remove
-this line first:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=io.apiman.gateway.engine.ispn.InfinispanRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and then add something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The format of the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman-gateway.registry&lt;/code&gt; is very important - when 
-using a plugin you must specify the maven information of your plugin so that 
-apiman can locate and download it.  See the apiman documentation for additional
-details about how plugins are loaded.&lt;/p&gt;
-
-&lt;p&gt;Note that you can also provide configuration parameters to your component.  That
-will obviously be helpful since it will probably need connection details.  So 
-really your configuration might look something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
-apiman-gateway.registry.mongo.host=localhost
-apiman-gateway.registry.mongo.port=27017
-apiman-gateway.registry.mongo.username=sa
-apiman-gateway.registry.mongo.password=sa123!
-apiman-gateway.registry.mongo.database=apiman&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These configuration options will be passed to your component in its constructor if
-your class has a &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&amp;lt;String,String&amp;gt;&lt;/code&gt; constructor.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;This is a powerful new feature for extending and customizing apiman to better suit
-your needs.  Of course we will want to continue offering the most popular component
-implementations as a core part of apiman.  However there will always be many more
-options than we can easily implement and support.  For this reason we wanted to 
-provide an easy way for users (and the apiman community at large) to contribute.&lt;/p&gt;
-
-&lt;p&gt;/post&lt;/p&gt;
-</description>
-				
-					<category term="api-manager" />
-				
-					<category term="api-gateway" />
-				
-					<category term="plugins" />
-				
-					<category term="development" />
-				
-					<category term="maven" />
-				
-				<pubDate>Fri, 24 Jul 2015 10:10:10 -0400</pubDate>
-				<link>http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components-redux.html</link>
-				<guid isPermaLink="true">http://apiman.io/blog/api-manager/api-gateway/plugins/development/maven/2015/07/24/plugin-components-redux.html</guid>
-			</item>
-		
-		<lastBuildDate>Fri, 22 Jun 2018 06:36:46 -0400</lastBuildDate>
+			</item><lastBuildDate>Fri, 22 Jun 2018 09:53:54 -0400</lastBuildDate>
 	</channel>
 </rss>
