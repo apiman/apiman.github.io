@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user.html">older revision</a>.
     </p>
   
 
@@ -379,22 +219,22 @@ to the API and track its use.</p>
 
 <p>The commands that you will execute will look something like this:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir apiman
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir apiman
 <span class="nb">cd </span>apiman
 unzip wildfly-8.2.0.Final.zip
-unzip -o apiman-distro-wildfly8-1.0.0.Final-overlay.zip -d wildfly-8.2.0.Final</code></pre></div>
+unzip <span class="nt">-o</span> apiman-distro-wildfly8-1.0.0.Final-overlay.zip <span class="nt">-d</span> wildfly-8.2.0.Final</code></pre></figure>
 
 <p>Then, to start the server, execute these commands:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>wildfly-8.2.0.Final
-./bin/standalone.sh -c standalone-apiman.xml</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>wildfly-8.2.0.Final
+./bin/standalone.sh <span class="nt">-c</span> standalone-apiman.xml</code></pre></figure>
 
 <p>The server will write logging messages to the screen. When you see some messages that look like this, you’ll know that the server is up and running with apiman installed:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">13:57:03,229 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS018559: Deployed "apiman-ds.xml" (runtime-name : "apiman-ds.xml")
+<figure class="highlight"><pre><code class="language-text" data-lang="text">13:57:03,229 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS018559: Deployed "apiman-ds.xml" (runtime-name : "apiman-ds.xml")
 13:57:03,261 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on &lt;a href="http://127.0.0.1:9990/management"&gt;http://127.0.0.1:9990/management&lt;/a&gt;
 13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on &lt;a href="http://127.0.0.1:9990"&gt;http://127.0.0.1:9990&lt;/a&gt;
-13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 5518ms - Started 754 of 858 services (171 services are lazy, passive or on-demand)</code></pre></div>
+13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 5518ms - Started 754 of 858 services (171 services are lazy, passive or on-demand)</code></pre></figure>
 
 <p>If this were a production server, the first thing that we’d do is to change the OOTB default admin username and/or password. apiman is configured by default to use JBoss KeyCloak <a href="http://keycloak.jboss.org/" target="_blank" rel="nofollow">http://keycloak.jboss.org/</a> for password security. Also, the default database used by apiman to store contract and API information is the H2 database. For a production server, you’d want to reconfigure this to use a production database. Note: apiman includes DDLs for both MySQL and PostgreSQL.</p>
 
@@ -454,22 +294,22 @@ unzip -o apiman-distro-wildfly8-1.0.0.Final-overlay.zip -d wildfly-8.2.0.Final</
 
 <p>The source code for the example API is contained in a git repo (http://git-scm.com) hosted at github (https://github.com/apiman). To download a copy of the example API, navigate to the directory in which you want to build the API and execute this git command:</p>
 
-<pre><code>git clone git@github.com:apiman/apiman-quickstarts.git
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:apiman/apiman-quickstarts.git
+</code></pre></div></div>
 
 <p>As the source code is downloading, you’ll see output that looks like this:</p>
 
-<pre><code>git clone git@github.com:apiman/apiman-quickstarts.git
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:apiman/apiman-quickstarts.git
 Initialized empty Git repository in /tmp/tmp/apiman-quickstarts/.git/
 remote: Counting objects: 104, done.
 remote: Total 104 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (104/104), 18.16 KiB, done.
 Resolving deltas: 100% (40/40), done.
-</code></pre>
+</code></pre></div></div>
 
 <p>And, after the download is complete, you’ll see a populated directory tree that looks like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">└── apiman-quickstarts
+<figure class="highlight"><pre><code class="language-text" data-lang="text">└── apiman-quickstarts
   ├── echo-api
   │  ├── pom.xml
   │  ├── README.md
@@ -493,23 +333,23 @@ Resolving deltas: 100% (40/40), done.
   └── src
    └── main
    └── assembly
-   └── dist.xml</code></pre></div>
+   └── dist.xml</code></pre></figure>
 
 <p>As we mentioned earlier in the post, the example API is very simple. The only action that the API performs is to echo back in responses the meta data in the REST (http://en.wikipedia.org/wiki/Representational_state_transfer) requests that it receives.</p>
 
 <p>Maven is used to build the API. To build the API into a deployable .war file, navigate to the directory into which you downloaded the API example:</p>
 
-<pre><code>cd apiman-quickstarts/echo-api
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd apiman-quickstarts/echo-api
+</code></pre></div></div>
 
 <p>And then execute this maven command:</p>
 
-<pre><code>mvn package
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn package
+</code></pre></div></div>
 
 <p>As the API is being built into a .war file, you’ll see output that looks like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">[INFO] Scanning for projects...
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[INFO] Scanning for projects...
 [INFO]
 [INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
 [INFO]
@@ -548,26 +388,26 @@ Resolving deltas: 100% (40/40), done.
 [INFO] Total time: 1.184 s
 [INFO] Finished at: 2014-12-26T16:11:19-05:00
 [INFO] Final Memory: 14M/295M
-[INFO] ------------------------------------------------------------------------</code></pre></div>
+[INFO] ------------------------------------------------------------------------</code></pre></figure>
 
 <p>If you look closely, near the end of the output, you’ll see the location of the .war file:</p>
 
-<pre><code>/jboss/local/redhat_git/apiman-quickstarts/echo-api/target/apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/jboss/local/redhat_git/apiman-quickstarts/echo-api/target/apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war
+</code></pre></div></div>
 
 <p>To deploy the API, we can copy the .war file to our WildFly server’s “deployments” directory. After you copy the API’s .war file to the deployments directory, you’ll see output like this generated by the WildFly server:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">16:54:44,313 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015876: Starting deployment of "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name: "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")
+<figure class="highlight"><pre><code class="language-text" data-lang="text">16:54:44,313 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015876: Starting deployment of "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name: "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")
 16:54:44,397 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /apiman-echo
-16:54:44,455 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name : "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")</code></pre></div>
+16:54:44,455 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name : "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")</code></pre></figure>
 
 <p>Make special note of this line of output:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">16:54:44,397 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /apiman-echo</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">16:54:44,397 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /apiman-echo</code></pre></figure>
 
 <p>This output indicates that the URL of the deployed example API is:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">[a href="http://localhost:8080/apiman-echo" style="text-decoration: none;"]http://localhost:8080/apiman-echo</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[a href="http://localhost:8080/apiman-echo" style="text-decoration: none;"]http://localhost:8080/apiman-echo</code></pre></figure>
 
 <p>Remember, however, that this is the URL of the deployed example API if we access it directly. We’ll refer to this as the “unmanaged API” as we are able to connect to the API directly, without going through the API Gateway.  The URL to access the API through the API Gateway (“the managed API”) at runtime will be different.</p>
 

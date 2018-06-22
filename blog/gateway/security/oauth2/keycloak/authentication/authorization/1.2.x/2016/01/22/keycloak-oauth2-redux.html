@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/1.2.x/2016/01/22/keycloak-oauth2-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/gateway/security/oauth2/keycloak/authentication/authorization/2015/06/09/keycloak-oauth2.html">older revision</a>.
     </p>
   
 
@@ -481,11 +321,11 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 <div class="paragraph">
 <p>Navigate to <strong>Add Policy</strong>, and select <strong>Keycloak OAuth Policy</strong> from the drop-down list. A substantial set of options are available for your perusal, but for the purposes of this blog demo we’ll set the following:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33%;" />
-<col style="width: 33%;" />
-<col style="width: 33%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -498,7 +338,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realm</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://127.0.0.1:8080/auth/realms/stottie" class="bare" target="_blank" rel="nofollow">http://127.0.0.1:8080/auth/realms/stottie</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path to our realm <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>. Note that in older versions of Keycloak (pre <code>1.2.0</code>), the realm will just be the <strong>stottie</strong> (no path).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to our realm <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>. Note that in older versions of Keycloak (pre <code>1.2.0</code>), the realm will just be the <strong>stottie</strong> (no path).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keycloak Realm Certificate</p></td>
@@ -561,7 +401,7 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 </ul>
 </div>
 <div class="paragraph">
-<p>First, let’s retrieve a fresh token from Keycloak, and extract the <code>access_token</code> field from the json using <code>jq</code> <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>.</p>
+<p>First, let’s retrieve a fresh token from Keycloak, and extract the <code>access_token</code> field from the json using <code>jq</code> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -620,11 +460,11 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 <div class="paragraph">
 <p>We’re going to add two rules:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33%;" />
-<col style="width: 33%;" />
-<col style="width: 33%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -635,24 +475,24 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>/rincewind/.*</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>*</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>echomeister</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>/secret/.*</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>*</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>overlord</p>
 </div></div></td>
 </tr>
@@ -720,11 +560,11 @@ There are a huge number of configuration permutations with Keycloak, and the mos
 </div>
 <div id="footnotes">
 <hr />
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the <code>iss</code> field
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the <code>iss</code> field
 </div>
-<div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a> We’re going to use <code>jq</code> to select the <code>access_token</code> field in our JSON, so if you don’t have <code>jq</code> installed you can use your package manager to get it: OS X Brew <code>brew install jq</code>; On Fedora <code>sudo yum install jq</code>; On Debian <code>sudo apt-get install jq</code>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. We’re going to use <code>jq</code> to select the <code>access_token</code> field in our JSON, so if you don’t have <code>jq</code> installed you can use your package manager to get it: OS X Brew <code>brew install jq</code>; On Fedora <code>sudo yum install jq</code>; On Debian <code>sudo apt-get install jq</code>
 </div>
 </div>
   </article>

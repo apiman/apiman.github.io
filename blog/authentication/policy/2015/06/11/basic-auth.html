@@ -147,7 +147,13 @@
         
               
               
+        
+              
+              
                 http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html
+              
+        
+              
               
         
               
@@ -197,7 +203,7 @@
         " />
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -309,10 +315,7 @@
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
         Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
-        
-                http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html
-        
-           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+        http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
     </p>
   
 
@@ -363,18 +366,18 @@
 
 <p>To illustrate, here’s Java code that can encode and then decode the username:password string:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Base64.Encoder <span class="nv">encoder</span> <span class="o">=</span> Base64.getEncoder<span class="o">()</span><span class="p">;</span>  
- String <span class="nv">normalString</span> <span class="o">=</span> <span class="s2">"user1"</span> + <span class="s2">":"</span> + <span class="s2">"password1"</span><span class="p">;</span>  
- String <span class="nv">encodedString</span> <span class="o">=</span> encoder.encodeToString<span class="o">(</span>normalString.getBytes<span class="o">(</span>StandardCharsets.UTF_8<span class="o">))</span><span class="p">;</span>  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> Base64.Encoder encoder <span class="o">=</span> Base64.getEncoder<span class="o">()</span><span class="p">;</span>  
+ String normalString <span class="o">=</span> <span class="s2">"user1"</span> + <span class="s2">":"</span> + <span class="s2">"password1"</span><span class="p">;</span>  
+ String encodedString <span class="o">=</span> encoder.encodeToString<span class="o">(</span>normalString.getBytes<span class="o">(</span>StandardCharsets.UTF_8<span class="o">))</span><span class="p">;</span>  
  System.out.println <span class="o">(</span><span class="s2">"The encoded string is: "</span> + encodedString<span class="o">)</span><span class="p">;</span>  
              
- Decoder <span class="nv">decoder</span> <span class="o">=</span> Base64.getDecoder<span class="o">()</span><span class="p">;</span>  
- byte<span class="o">[]</span> <span class="nv">unencodedStringArray</span> <span class="o">=</span> decoder.decode<span class="o">(</span>encodedString<span class="o">)</span><span class="p">;</span>  
- String <span class="nv">unencodedString</span> <span class="o">=</span> new String <span class="o">(</span>unencodedStringArray<span class="o">)</span><span class="p">;</span>  
+ Decoder decoder <span class="o">=</span> Base64.getDecoder<span class="o">()</span><span class="p">;</span>  
+ byte[] unencodedStringArray <span class="o">=</span> decoder.decode<span class="o">(</span>encodedString<span class="o">)</span><span class="p">;</span>  
+ String unencodedString <span class="o">=</span> new String <span class="o">(</span>unencodedStringArray<span class="o">)</span><span class="p">;</span>  
  System.out.println <span class="o">(</span><span class="s2">"The unencoded string is: "</span> + unencodedString<span class="o">)</span><span class="p">;</span>  
    
  The encoded string is: dXNlcjE6cGFzc3dvcmQx  
- The unencoded string is: user1:password1</code></pre></div>
+ The unencoded string is: user1:password1  </code></pre></figure>
 
 <p>So - unlike encrypted strings, your encoded username and password strings are not secure!</p>
 
@@ -384,28 +387,28 @@
 
 <p>Here’s the first request made to the service, notice that a username/password is not included.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Request-Line<span class="o">)</span> GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span> GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
  Host     localhost:8443  
  User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
+ Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
  Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
  Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmccn</span><span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmcmd</span><span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive</code></pre></div>
+ Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
+ Connection     keep-alive  </code></pre></figure>
 
 <p>The response, as we expected, shows that the request has triggered an authentication failure. This is due to the authentication requirement that we defined and is being applied by the API Gateway. Note the 401 error code and the reference to BASIC authentication:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 <span class="m">401</span> Unauthorized  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 401 Unauthorized  
  X-Powered-By     Undertow/1  
  Server     WildFly/8  
  X-Policy-Failure-Type     Authentication  
- Date     Wed, <span class="m">03</span> Jun <span class="m">2015</span> 13:43:26 GMT  
+ Date     Wed, 03 Jun 2015 13:43:26 GMT  
  Connection     keep-alive  
  WWW-Authenticate     BASIC <span class="nv">realm</span><span class="o">=</span><span class="s2">"myRealm"</span>  
- X-Policy-Failure-Code     <span class="m">10004</span>  
+ X-Policy-Failure-Code     10004  
  Content-Type     application/json  
- Content-Length     <span class="m">165</span>  
- X-Policy-Failure-Message     BASIC authentication failed.</code></pre></div>
+ Content-Length     165  
+ X-Policy-Failure-Message     BASIC authentication failed.  </code></pre></figure>
 
 <p>The browser then automatically pops up a dialog for us to enter the username and password:</p>
 
@@ -413,25 +416,26 @@
 
 <p>A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Request-Line<span class="o">)</span>     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span>     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
  Host     localhost:8443  
  User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
+ Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
  Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
  Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmccn</span><span class="o">=(</span>direct<span class="o">)</span><span class="p">|</span><span class="nv">utmcmd</span><span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
+ Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
  Connection     keep-alive  
- Authorization     Basic dXNlcjE6cGFzc3dvcmQx</code></pre></div>
+ Authorization     Basic dXNlcjE6cGFzc3dvcmQx  </code></pre></figure>
 
 <p>And, then we get the successful return code of 200 in a response:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 <span class="m">200</span> OK  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 200 OK  
  Connection     keep-alive  
  X-Powered-By     Undertow/1  
  Server     WildFly/8  
- Content-Length     <span class="m">755</span>  
+ Content-Length     755  
  Content-Type     application/json  
- Date     Wed, <span class="m">03</span> Jun <span class="m">2015</span> 13:43:34 GMT</code></pre></div>
+ Date     Wed, 03 Jun 2015 13:43:34 GMT  
+ </code></pre></figure>
 
 <h2 id="in-conclusion">In Conclusion</h2>
 

@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/apiman/1.2.x/gateway/jdbc/registry/2016/03/09/jdbc-registry.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -184,7 +184,7 @@ your database and then configure it using one of the provided DDLs.</p>
 <p>You can find the DDLs included in the apiman distribution in the following
 directory:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">$WILDFLY_ROOT/apiman/ddls/apiman-gateway*.ddl</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$WILDFLY_ROOT/apiman/ddls/apiman-gateway*.ddl</code></pre></figure>
 
 <p>We include DDLs for the following databases:</p>
 
@@ -230,7 +230,7 @@ and you’ll be good to go!</p>
 <p>Specifically, you need to change the configuration of the Gateway Registry.
 The default settings in 1.2.2.Final for the Gateway Registry look like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry
+<figure class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry
 apiman-gateway.registry.client.type=jest
 apiman-gateway.registry.client.protocol=${apiman.es.protocol}
 apiman-gateway.registry.client.host=${apiman.es.host}
@@ -238,12 +238,12 @@ apiman-gateway.registry.client.port=${apiman.es.port}
 apiman-gateway.registry.client.initialize=true
 apiman-gateway.registry.client.username=${apiman.es.username}
 apiman-gateway.registry.client.password=${apiman.es.password}
-apiman-gateway.registry.client.timeout=${apiman.es.timeout}</code></pre></div>
+apiman-gateway.registry.client.timeout=${apiman.es.timeout}</code></pre></figure>
 
 <p>All of these properties can be replaced with the following settings:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry
-apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry
+apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre></figure>
 
 <p>Please note that the <em>apiman-gateway.registry.datasource.jndi-location</em> should
 be set to whatever value makes sense based on the deployment/configuration of

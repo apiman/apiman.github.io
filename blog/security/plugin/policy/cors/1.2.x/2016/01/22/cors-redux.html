@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/security/plugin/policy/cors/1.2.x/2016/01/22/cors-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/security/plugin/policy/cors/2015/07/02/cors.html">older revision</a>.
     </p>
   
 
@@ -331,7 +171,7 @@
 <h2 id="preparation">Preparation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you have the <a href="http://www.apiman.io/latest/download.html">apiman quickstart</a> running <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>, you next need to deploy the <strong><em>echo-service</em></strong> to act as the backend API for our demo. <strong>Substitute the path below</strong> for the appropriate one corresponding to the version you downloaded.</p>
+<p>If you have the <a href="http://www.apiman.io/latest/download.html">apiman quickstart</a> running <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, you next need to deploy the <strong><em>echo-service</em></strong> to act as the backend API for our demo. <strong>Substitute the path below</strong> for the appropriate one corresponding to the version you downloaded.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -344,7 +184,7 @@ mvn wildfly:deploy</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Return to the <a href="http://127.0.0.1:8080/apimanui" target="_blank" rel="nofollow">apiman UI</a> and log in <span class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span>, navigate to the <strong>manage plugins</strong> page:</p>
+<p>Return to the <a href="http://127.0.0.1:8080/apimanui" target="_blank" rel="nofollow">apiman UI</a> and log in <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>, navigate to the <strong>manage plugins</strong> page:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -362,7 +202,7 @@ mvn wildfly:deploy</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="let-s-give-it-a-go">Let’s give it a go</h2>
+<h2 id="lets-give-it-a-go">Let’s give it a go</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For the purposes of this blogpost we’ll contrive a scenario that allows us to demonstrate a variety of the plugin’s functionality. However, if your precise use-case isn’t covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.</p>
@@ -378,7 +218,7 @@ mvn wildfly:deploy</code></pre>
 <div class="paragraph">
 <p>Let’s configure the settings as follows:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;" />
 <col style="width: 20%;" />
@@ -394,55 +234,55 @@ mvn wildfly:deploy</code></pre>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Terminate on CORS error</p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>true</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>We’ll not hit the backend if there’s a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the API whose results would be ignored by the user agent.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin" target="_blank" rel="nofollow">Access-Control-Allow-Origin</a></p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code><a href="http://newcastle.local" class="bare" target="_blank" rel="nofollow">http://newcastle.local</a></code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>We’re going to use cURL to simulate a CORS request from this allowed origin.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers" target="_blank" rel="nofollow">Access-Control-Expose-Headers</a></p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>Response-Counter</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>By default CORS will only allow a set of <a href="http://www.w3.org/TR/cors/#simple-header" target="_blank" rel="nofollow">simple headers</a> to be exposed in a <em>response</em> to the user agent, so we’ll set this additional one we want to see.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers" target="_blank" rel="nofollow">Access-Control-Allow-Headers</a></p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>X-APIMAN-EXCELLENT</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>By default CORS only allows <em>requests</em> to include a set of basic headers, and we want our API to be able to see the value of our <em>X-APIMAN-EXCELLENT</em> header, so we specify it as allowed here.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods" target="_blank" rel="nofollow">Access-Control-Allow-Methods</a></p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>TRACE</code></p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>By default, only <code>GET</code>, <code>HEAD</code>, <code>POST</code> are allowed verbs. We want to use <code>TRACE</code>, so we add it to the list.</p>
 </div></div></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Max-Age" target="_blank" rel="nofollow">Access-Control-Max-Age</a></p></th>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>9001</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>How long the browser should cache your CORS policy for (to avoid repeated preflight requests).</p>
 </div></div></td>
 </tr>
@@ -501,7 +341,7 @@ mvn wildfly:deploy</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="not-got-the-head-er-for-it">Not got the head(er) for it</h5>
+<h5 id="not-got-the-header-for-it">Not got the head(er) for it</h5>
 <div class="paragraph">
 <p>Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we’ll try to make a request with a header that we’ve not allowed: <code>X-SECRET</code>.</p>
 </div>
@@ -648,11 +488,11 @@ When <code>Host</code> and <code>Origin</code> are equal, a request will automat
 </div>
 <div id="footnotes">
 <hr />
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> For simplicity’s sake, I suggest using the instructions in the <em>'Or simply try this…​'</em> box
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. For simplicity’s sake, I suggest using the instructions in the <em>'Or simply try this…​'</em> box
 </div>
-<div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a> If you used the quickstart, the defaults are U: admin P: admin123!
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. If you used the quickstart, the defaults are U: admin P: admin123!
 </div>
 </div>
   </article>

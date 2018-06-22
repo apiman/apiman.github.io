@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/api-manager/service/ui/metrics/2015/07/06/metrics.html">older revision</a>.
     </p>
   
 
@@ -366,22 +206,22 @@ implement your own!  Custom metrics systems is likely a separate blog post, but 
 that <em>storing</em> metrics data into an alternate system is easy - simply implement the
 <em>IMetrics</em> interface:</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">io</span><span class="o">.</span><span class="na">apiman</span><span class="o">.</span><span class="na">gateway</span><span class="o">.</span><span class="na">engine</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">io</span><span class="o">.</span><span class="na">apiman</span><span class="o">.</span><span class="na">gateway</span><span class="o">.</span><span class="na">engine</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IMetrics</span> <span class="o">{</span>
 
-  <span class="cm">/**</span>
-<span class="cm">  * Records the metrics for a single request.  Most implementations will likely</span>
-<span class="cm">  * asynchronously process this information.</span>
-<span class="cm">  */</span>
+  <span class="cm">/**
+  * Records the metrics for a single request.  Most implementations will likely
+  * asynchronously process this information.
+  */</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">record</span><span class="o">(</span><span class="n">RequestMetric</span> <span class="n">metric</span><span class="o">);</span>
 
-  <span class="cm">/**</span>
-<span class="cm">  * Provides the component registry (before any call to {@link #record(RequestMetric)})</span>
-<span class="cm">  * is made. Metrics can then access HTTP client components, etc.</span>
-<span class="cm">  */</span>
+  <span class="cm">/**
+  * Provides the component registry (before any call to {@link #record(RequestMetric)})
+  * is made. Metrics can then access HTTP client components, etc.
+  */</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setComponentRegistry</span><span class="o">(</span><span class="n">IComponentRegistry</span> <span class="n">registry</span><span class="o">);</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <p>A little bit of configuration foo in the apiman.properties is all it takes to switch
 from elasticsearch to your custom provider.</p>
@@ -400,13 +240,13 @@ for the latest information, but at the time of this blog post the available metr
 endpoints are:</p>
 
 <ul>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/usage</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/appUsage</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/planUsage</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/responseStats</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/summaryResponseStats</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/planResponseStats</version></api_id></org_id></li>
-  <li>/organizations/<org_id>/apis/<api_id>/versions/<version>/metrics/appResponseStats</version></api_id></org_id></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/usage</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appUsage</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planUsage</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/responseStats</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/summaryResponseStats</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/planResponseStats</VERSION></API_ID></ORG_ID></li>
+  <li>/organizations/<ORG_ID>/apis/<API_ID>/versions/<VERSION>/metrics/appResponseStats</VERSION></API_ID></ORG_ID></li>
 </ul>
 
 <p>The ‘usage’ endpoints return information about the number of requests made.  The

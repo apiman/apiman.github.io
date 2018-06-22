@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html">older revision</a>.
     </p>
   
 
@@ -336,14 +176,14 @@
 
 <p>We covered installing apiman in the first article in this series (see: http://java.dzone.com/articles/impatient-new-users), so we won’t repeat that information here. A minimal set of install instructions are always available on the apiman site (http://www.apiman.io/latest/). The current set of instructions as of this writing are:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/apiman-1.1.2.Final  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir ~/apiman-1.1.2.Final  
 <span class="nb">cd</span> ~/apiman-1.1.2.Final  
 wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
 wget http://downloads.jboss.org/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
 unzip wildfly-8.2.0.Final.zip  
-unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
+unzip <span class="nt">-o</span> apiman-distro-wildfly8-1.1.2.Final-overlay.zip <span class="nt">-d</span> wildfly-8.2.0.Final  
 <span class="nb">cd </span>wildfly-8.2.0.Final  
-./bin/standalone.sh -c standalone-apiman.xml</code></pre></div>
+./bin/standalone.sh <span class="nt">-c</span> standalone-apiman.xml  </code></pre></figure>
 
 <p>Now that our apiman server is up and running, we can start to access the API Manager REST API. However, before we start placing calls to APIs through the REST API, let’s take a look at how the API is organized.</p>
 
@@ -399,8 +239,8 @@ unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final
 
 <p>Let’s try this with curl. If we execute the following command, we should see the current system status:</p>
 
-<pre><code>curl -X GET http://localhost:8080/apiman/system/status
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET http://localhost:8080/apiman/system/status
+</code></pre></div></div>
 
 <p>Well, that error is not exactly what we expected. There was no output.</p>
 
@@ -410,28 +250,28 @@ unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final
 
 <p>In order to resolve this failure, we have to send a properly encoded basic authorization header with every request you make. In Java8, we can generate a key by base64 encoding this string for the OOTB admin username and password: admin:admin123! with this statememt:</p>
 
-<pre><code>base64encode(concat('admin', ':', 'admin123!'))
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>base64encode(concat('admin', ':', 'admin123!'))
+</code></pre></div></div>
 
 <p>This yields a key with a value of: YWRtaW46YWRtaW4xMjMh</p>
 
 <p>Now, let’s try that curl command again, but this time, we’ll include the key in the authorization header:</p>
 
-<pre><code>$ curl -H "Authorization: Basic YWRtaW46YWRtaW4xMjMh"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -H "Authorization: Basic YWRtaW46YWRtaW4xMjMh"
 http://localhost:8080/apiman/system/status
-</code></pre>
+</code></pre></div></div>
 
 <p>And the result is:</p>
 
-<pre><code>{"up":true,"version":"1.1.2-SNAPSHOT"}
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"up":true,"version":"1.1.2-SNAPSHOT"}
+</code></pre></div></div>
 
 <p>As we mentioned earlier in this article, the responses returned by calls to the REST API are in in the form of JSON. In the case of our call to the http://localhost:8080/apiman/system/status endpoint, the expected format of the response is:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="err">version</span> <span class="err">:</span> <span class="err">string</span>
-    <span class="err">up</span> <span class="err">:</span> <span class="err">boolean</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="err">version</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+    </span><span class="err">up</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>Let’s carry on by looking at a more extensive example, where we use the REST API to automate a task that would be tedious if performed in the apiman Management UI.</p>
 
@@ -443,50 +283,94 @@ http://localhost:8080/apiman/system/status
 
 <p>Here’s an example program with an ice hockey flavor - the highlights are noted below:</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="lineno"> 1</span> <span class="kn">package</span> <span class="n">apimanExample</span><span class="o">;</span>
-<span class="lineno"> 2</span> <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>  
-<span class="lineno"> 3</span> <span class="kn">import</span> <span class="nn">java.io.OutputStreamWriter</span><span class="o">;</span>  
-<span class="lineno"> 4</span> <span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="o">;</span>  
-<span class="lineno"> 5</span> <span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>  
-<span class="lineno"> 6</span> <span class="kn">import</span> <span class="nn">java.nio.charset.StandardCharsets</span><span class="o">;</span>  
-<span class="lineno"> 7</span> <span class="kn">import</span> <span class="nn">java.util.Base64</span><span class="o">;</span>  
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimplePutOrg</span> <span class="o">{</span>  
-<span class="lineno">10</span> 
-<span class="lineno">11</span>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>  
-<span class="lineno">12</span> 
-<span class="lineno">13</span>         <span class="n">String</span> <span class="o">[</span> <span class="o">]</span> <span class="o">[</span> <span class="o">]</span> <span class="n">originalSix</span> <span class="o">=</span> <span class="o">{</span>  
-<span class="lineno">14</span>             <span class="o">{</span> <span class="s">"Boston"</span><span class="o">,</span> <span class="s">"Chicago"</span><span class="o">,</span> <span class="s">"Detroit"</span><span class="o">,</span> <span class="s">"Montreal"</span><span class="o">,</span> <span class="s">"New York"</span><span class="o">,</span> <span class="s">"Toronto"</span><span class="o">},</span>  
-<span class="lineno">15</span>             <span class="o">{</span> <span class="s">"Bruins"</span><span class="o">,</span> <span class="s">"BlackHawks"</span><span class="o">,</span> <span class="s">"Red Wings"</span><span class="o">,</span> <span class="s">"Canadiens"</span><span class="o">,</span> <span class="s">"Rangers"</span><span class="o">,</span> <span class="s">"Maple Leafs"</span><span class="o">}</span>  
-<span class="lineno">16</span>         <span class="o">};</span>
-<span class="lineno">17</span>         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
-<span class="lineno">18</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Creating new apiman org for: "</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]);</span>  
-<span class="lineno">19</span>             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Return code = "</span> <span class="o">+</span> <span class="n">createNewOrg</span> <span class="o">(</span><span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">],</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]));</span>  
-<span class="lineno">20</span>         <span class="o">}</span>
-<span class="lineno">21</span>     <span class="o">}</span>  
-<span class="lineno">22</span> 
-<span class="lineno">23</span>     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">createNewOrg</span> <span class="o">(</span><span class="n">String</span> <span class="n">newOrgName</span><span class="o">,</span> <span class="n">String</span> <span class="n">newOrgDescription</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>  
-<span class="lineno">24</span>         <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">URL</span><span class="o">(</span><span class="s">"http://localhost:8080/apiman/organizations"</span><span class="o">);</span>  
-<span class="lineno">25</span>         <span class="n">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>  
-<span class="lineno">26</span> 
-<span class="lineno">27</span>         <span class="n">Base64</span><span class="o">.</span><span class="na">Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">getEncoder</span><span class="o">();</span>  
-<span class="lineno">28</span>         <span class="n">String</span> <span class="n">normalString</span> <span class="o">=</span> <span class="s">"admin:admin123!"</span><span class="o">;</span>  
-<span class="lineno">29</span>         <span class="n">String</span> <span class="n">encodedString</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeToString</span><span class="o">(</span><span class="n">normalString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>  
-<span class="lineno">30</span> 
-<span class="lineno">31</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Basic "</span>  <span class="o">+</span> <span class="n">encodedString</span><span class="o">);</span>  
-<span class="lineno">32</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>  
-<span class="lineno">33</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setDoOutput</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>  
-<span class="lineno">34</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
-<span class="lineno">35</span>         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
-<span class="lineno">36</span> 
-<span class="lineno">37</span>         <span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">OutputStreamWriter</span><span class="o">(</span><span class="n">connection</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>  
-<span class="lineno">38</span>         <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"{\"name\":\""</span> <span class="o">+</span> <span class="n">newOrgName</span> <span class="o">+</span> <span class="s">" a new org\",\"description\":\""</span> <span class="o">+</span> <span class="n">newOrgDescription</span> <span class="o">+</span> <span class="s">"\"}"</span><span class="o">));</span>  
-<span class="lineno">39</span>         <span class="n">osw</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>  
-<span class="lineno">40</span>         <span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>  
-<span class="lineno">41</span> 
-<span class="lineno">42</span>         <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="lineno">43</span>     <span class="o">}</span>  
-<span class="lineno">44</span> <span class="o">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="code"><pre><span class="kn">package</span> <span class="n">apimanExample</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>  
+<span class="kn">import</span> <span class="nn">java.io.OutputStreamWriter</span><span class="o">;</span>  
+<span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="o">;</span>  
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>  
+<span class="kn">import</span> <span class="nn">java.nio.charset.StandardCharsets</span><span class="o">;</span>  
+<span class="kn">import</span> <span class="nn">java.util.Base64</span><span class="o">;</span>  
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimplePutOrg</span> <span class="o">{</span>  
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>  
+
+        <span class="n">String</span> <span class="o">[</span> <span class="o">]</span> <span class="o">[</span> <span class="o">]</span> <span class="n">originalSix</span> <span class="o">=</span> <span class="o">{</span>  
+            <span class="o">{</span> <span class="s">"Boston"</span><span class="o">,</span> <span class="s">"Chicago"</span><span class="o">,</span> <span class="s">"Detroit"</span><span class="o">,</span> <span class="s">"Montreal"</span><span class="o">,</span> <span class="s">"New York"</span><span class="o">,</span> <span class="s">"Toronto"</span><span class="o">},</span>  
+            <span class="o">{</span> <span class="s">"Bruins"</span><span class="o">,</span> <span class="s">"BlackHawks"</span><span class="o">,</span> <span class="s">"Red Wings"</span><span class="o">,</span> <span class="s">"Canadiens"</span><span class="o">,</span> <span class="s">"Rangers"</span><span class="o">,</span> <span class="s">"Maple Leafs"</span><span class="o">}</span>  
+        <span class="o">};</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Creating new apiman org for: "</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]);</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span> <span class="o">(</span><span class="s">"Return code = "</span> <span class="o">+</span> <span class="n">createNewOrg</span> <span class="o">(</span><span class="n">originalSix</span> <span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">i</span><span class="o">],</span> <span class="n">originalSix</span> <span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="n">i</span><span class="o">]));</span>  
+        <span class="o">}</span>
+    <span class="o">}</span>  
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">createNewOrg</span> <span class="o">(</span><span class="n">String</span> <span class="n">newOrgName</span><span class="o">,</span> <span class="n">String</span> <span class="n">newOrgDescription</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>  
+        <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://localhost:8080/apiman/organizations"</span><span class="o">);</span>  
+        <span class="n">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>  
+
+        <span class="n">Base64</span><span class="o">.</span><span class="na">Encoder</span> <span class="n">encoder</span> <span class="o">=</span> <span class="n">Base64</span><span class="o">.</span><span class="na">getEncoder</span><span class="o">();</span>  
+        <span class="n">String</span> <span class="n">normalString</span> <span class="o">=</span> <span class="s">"admin:admin123!"</span><span class="o">;</span>  
+        <span class="n">String</span> <span class="n">encodedString</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="na">encodeToString</span><span class="o">(</span><span class="n">normalString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>  
+
+        <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"Basic "</span>  <span class="o">+</span> <span class="n">encodedString</span><span class="o">);</span>  
+        <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>  
+        <span class="n">connection</span><span class="o">.</span><span class="na">setDoOutput</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>  
+        <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
+        <span class="n">connection</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>  
+
+        <span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">connection</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>  
+        <span class="n">osw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"{\"name\":\""</span> <span class="o">+</span> <span class="n">newOrgName</span> <span class="o">+</span> <span class="s">" a new org\",\"description\":\""</span> <span class="o">+</span> <span class="n">newOrgDescription</span> <span class="o">+</span> <span class="s">"\"}"</span><span class="o">));</span>  
+        <span class="n">osw</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>  
+        <span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>  
+
+        <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+    <span class="o">}</span>  
+<span class="o">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Code highlights:</p>
 
@@ -501,7 +385,7 @@ http://localhost:8080/apiman/system/status
 
 <p>When we run this example, the following output indicates that the calls to the service through the REST API were successful, based on the return code of 200:</p>
 
-<pre><code>Creating new apiman org for: Boston:Bruins  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creating new apiman org for: Boston:Bruins  
 Return code = 200  
 Creating new apiman org for: Chicago:BlackHawks  
 Return code = 200  
@@ -513,17 +397,17 @@ Creating new apiman org for: New York:Rangers
 Return code = 200  
 Creating new apiman org for: Toronto:Maple Leafs  
 Return code = 200  
-</code></pre>
+</code></pre></div></div>
 
 <p>And - here’s the server output that tracks the creation of the new organizations:</p>
 
-<pre><code>21:17:53,205 INFO [stdout] (default task-19) Created organization Boston a new org: OrganizationBean [id=Bostonaneworg, name=Boston a new org, description=Bruins, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>21:17:53,205 INFO [stdout] (default task-19) Created organization Boston a new org: OrganizationBean [id=Bostonaneworg, name=Boston a new org, description=Bruins, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
 21:17:53,233 INFO [stdout] (default task-21) Created organization Chicago a new org: OrganizationBean [id=Chicagoaneworg, name=Chicago a new org, description=BlackHawks, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
 21:17:53,253 INFO [stdout] (default task-23) Created organization Detroit a new org: OrganizationBean [id=Detroitaneworg, name=Detroit a new org, description=Red Wings, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
 21:17:53,275 INFO [stdout] (default task-25) Created organization Montreal a new org: OrganizationBean [id=Montrealaneworg, name=Montreal a new org, description=Canadiens, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
 21:17:53,295 INFO [stdout] (default task-27) Created organization New York a new org: OrganizationBean [id=NewYorkaneworg, name=New York a new org, description=Rangers, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
 21:17:53,316 INFO [stdout] (default task-29) Created organization Toronto a new org: OrganizationBean [id=Torontoaneworg, name=Toronto a new org, description=Maple Leafs, createdBy=admin, createdOn=Sun May 17 21:17:53 GMT-05:00 2015, modifiedBy=admin, modifiedOn=Sun May 17 21:17:53 GMT-05:00 2015]  
-</code></pre>
+</code></pre></div></div>
 
 <p>And finally, here are the organizations as displayed in the apiman Management UI:</p>
 

@@ -153,10 +153,16 @@
         
               
               
-                http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html
+        
+              
               
         
               
+              
+        
+              
+              
+                http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html
               
         
               
@@ -197,7 +203,7 @@
         " />
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -309,10 +315,7 @@
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
         Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="
-        
-                http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html
-        
-           ">here</a>. This version was written for <b>apiman 1.1.x</b>.
+        http://apiman.io/blog/eclipse/development/maven/2015/06/04/dev-environment-redux.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
     </p>
   
 
@@ -367,12 +370,12 @@ But let’s stick with the core code for this post.</p>
 on github, then clone your forked copy.  Once you have used the github UI
 to fork the repository, you would do something like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">git clone git@github.com:&lt;YOUR-GITHUB-ID&gt;/apiman.git</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git clone git@github.com:&lt;YOUR-GITHUB-ID&gt;/apiman.git</code></pre></figure>
 
 <p>I also recommend adding the upstream github repository as another remote
 so that you can easily pull in upstream changes:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">git remote add upstream git@github.com:apiman/apiman.git</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">git remote add upstream git@github.com:apiman/apiman.git</code></pre></figure>
 
 <h2 id="downloading-and-running-eclipse">Downloading and running Eclipse</h2>
 <p>Alright - you’ve got the apiman code cloned on your local hard drive
@@ -396,7 +399,7 @@ to it specific to apiman development.  Go ahead and import the apiman code
 formatter specification.  You can find this file in the apiman code
 repository here:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">apiman/tools/src/eclipse/apiman-eclipse-formatter.xml</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">apiman/tools/src/eclipse/apiman-eclipse-formatter.xml</code></pre></figure>
 
 <p>Import that file in the Eclipse Preferences dialog here:</p>
 
@@ -435,14 +438,14 @@ reader about how to disable those.</p>
 way to run everything.  Of course you can <em>always</em> do a full rebuild via
 maven and use the “install-all-wildfly8” profile:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd ~/git/apiman
-mvn clean install -Pinstall-all-wildfly8</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd ~/git/apiman
+mvn clean install -Pinstall-all-wildfly8</code></pre></figure>
 
 <p>That will result in a full apiman environment installed in WildFly 8.  If you
 use this approach you can run apiman here:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd ~/git/apiman/tools/server-all/target/wildfly-8.2.0.Final
-./bin/standalone.sh --debug</code></pre></div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd ~/git/apiman/tools/server-all/target/wildfly-8.2.0.Final
+./bin/standalone.sh --debug</code></pre></figure>
 
 <p>Then you can connect a remote debugger to WildFly and debug apiman from Eclipse.</p>
 
@@ -484,29 +487,29 @@ UI code you’ll need to use gulp.  We have documented how to do this here:</p>
 <p>Give that a quick read!  When it asks you to configure your new copy of the
 config.js file, it should look like this:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">var</span> <span class="err">APIMAN_CONFIG_DATA</span> <span class="err">=</span> <span class="p">{</span>
-    <span class="nt">"apiman"</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"version"</span> <span class="p">:</span> <span class="s2">"1.1.0-SNAPSHOT"</span><span class="p">,</span>
-        <span class="nt">"builtOn"</span> <span class="p">:</span> <span class="s2">"2015-01-01"</span><span class="p">,</span>
-        <span class="nt">"logoutUrl"</span> <span class="p">:</span> <span class="s2">"logout"</span>
-    <span class="p">},</span>
-    <span class="nt">"user"</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"username"</span> <span class="p">:</span> <span class="s2">"admin"</span>
-    <span class="p">},</span>
-    <span class="nt">"ui"</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"header"</span> <span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="nt">"api"</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"endpoint"</span> <span class="p">:</span> <span class="s2">"http://localhost:7070/apiman"</span><span class="p">,</span>
-        <span class="nt">"auth"</span> <span class="p">:</span> <span class="p">{</span>
-            <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"basic"</span><span class="p">,</span>
-            <span class="nt">"basic"</span> <span class="p">:</span> <span class="p">{</span>
-                <span class="nt">"username"</span> <span class="p">:</span> <span class="s2">"admin"</span><span class="p">,</span>
-                <span class="nt">"password"</span> <span class="p">:</span> <span class="s2">"admin"</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span><span class="err">;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">var</span><span class="w"> </span><span class="err">APIMAN_CONFIG_DATA</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"apiman"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.0-SNAPSHOT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"builtOn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"logoutUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"logout"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ui"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"header"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"api"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"endpoint"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:7070/apiman"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"basic"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"basic"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">;</span></code></pre></figure>
 
 <p>If you get it all set up properly you should be able to point your browser here:</p>
 

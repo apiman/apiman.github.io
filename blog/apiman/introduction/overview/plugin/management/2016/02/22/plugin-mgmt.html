@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/apiman/introduction/overview/plugin/management/2016/02/22/plugin-mgmt.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -241,31 +241,22 @@
 
 <p>To download the policy plugins, execute these commands:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>git clone https://github.com/apiman/apiman-plugins.git
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>cd apiman-plugins
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/apiman/apiman-plugins.git
+<span class="nb">cd </span>apiman-plugins
+</code></pre></div></div>
 
 <p>Before we build the plugins, we have to make one small change. The plugins as downloaded are assigned version numbers that include a -“SNAPSHOT” suffix. We will want to remove that suffix for this example. (Sneak peek: We will restore the suffix later in this article as apiman includes a new feature where “SNAPSHOT” version plugins are automatically reloaded.)</p>
 
 <p>To make these changes, edit these files, and change the version from “1.2.2-SNAPSHOT” to “1.2.2”:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>./pom.xml
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>test-policy/pom.xml
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./pom.xml
+test-policy/pom.xml
+</code></pre></div></div>
 
 <p>Then, to build the plugins, and install them into your local maven repo (at runtime, the apiman API Gateway installs plugins from the local maven “.m2” repo directory), execute this command:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>mvn install
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn install
+</code></pre></div></div>
 
 <p>OK, our policy plugin is built, let’s add it into the management UI.</p>
 
@@ -285,20 +276,14 @@
 
 <p>In order for apiman to recognize that a plugin policy has been updated, the plugin version number must change. To change the version number of the test-policy plugin, edit these files, and change the version from “1.2.2” to “1.2.3”:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>./pom.xml
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>test-policy/pom.xml
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./pom.xml
+test-policy/pom.xml
+</code></pre></div></div>
 
 <p>Then, to rebuild the plugins, and install them into your local maven repo, execute this command:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>mvn clean install
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean install
+</code></pre></div></div>
 
 <p>After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy’s upgrade button. Enter the new plugin version number in the dialog that is displayed:</p>
 
@@ -331,20 +316,14 @@
 
 <p>Since we want to take advantage of the automatic reloading, we must restore the “-SNAPSHOT” suffix to the test-policy custom policy plugin. To make these changes, edit these files, and change the version from “1.2.3” to “1.2.2-SNAPSHOT”:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>./pom.xml
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>test-policy/pom.xml
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./pom.xml
+test-policy/pom.xml
+</code></pre></div></div>
 
 <p>Then, to build the plugins, and install them into your local maven repo, execute this command:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>mvn clean install
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean install
+</code></pre></div></div>
 
 <p>And then add the custom policy plugin in the Management UI:</p>
 
@@ -360,28 +339,25 @@
 
 <p>We’ll use the postman web client to access the API. The first time that we access the API, we’ll see this response (note the text highlighted in green):</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> <span style="color:#606"><span style="color:#404">"</span><span>method</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">GET</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span> <span style="color:#606"><span style="color:#404">"</span><span>resource</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">/apiman-echo</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> <span style="color:#606"><span style="color:#404">"</span><span>uri</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">/apiman-echo</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> <span style="color:#606"><span style="color:#404">"</span><span>headers</span><span style="color:#404">"</span></span> : {
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">*/*</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Cache-Control</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">no-cache</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>User-Agent</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Connection</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">keep-alive</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   <span style="color:#606"><span style="color:#404">"</span><span>Test-Policy</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">true</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Postman-Token</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">8808bb68-1c1c-ef97-449d-ab60f620b0e5</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Host</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">localhost:8080</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept-Language</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">en-US,en;q=0.8</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept-Encoding</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">gzip, deflate, sdch</span><span style="color:#710">"</span></span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span> },
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span> <span style="color:#606"><span style="color:#404">"</span><span>bodyLength</span><span style="color:#404">"</span></span> : <span style="color:#088">null</span>,
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span> <span style="color:#606"><span style="color:#404">"</span><span>bodySha1</span><span style="color:#404">"</span></span> : <span style="color:#088">null</span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>}
-</pre></div>
-</div>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/apiman-echo"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"uri"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/apiman-echo"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"headers"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"Accept"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"*/*"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Cache-Control"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"User-Agent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Connection"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Test-Policy"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Postman-Token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8808bb68-1c1c-ef97-449d-ab60f620b0e5"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Host"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost:8080"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Accept-Language"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US,en;q=0.8"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Accept-Encoding"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip, deflate, sdch"</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"bodyLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"bodySha1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>OK, now, let’s change the policy plugin. In this file: src/main/java/io/apiman/plugins/test_policy/TestPolicy.java</p>
 
@@ -391,38 +367,32 @@
 
 <p>And then, rebuild the plugin with this command:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>mvn clean install -DskipTests
-</pre></div>
-</div>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean install <span class="nt">-DskipTests</span>
+</code></pre></div></div>
 
 <p>(The “skipTests” directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of “quite true.”)</p>
 
 <p>Now, when we access the API again, we’ll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:</p>
 
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> <span style="color:#606"><span style="color:#404">"</span><span>method</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">GET</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span> <span style="color:#606"><span style="color:#404">"</span><span>resource</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">/apiman-echo</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> <span style="color:#606"><span style="color:#404">"</span><span>uri</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">/apiman-echo</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> <span style="color:#606"><span style="color:#404">"</span><span>headers</span><span style="color:#404">"</span></span> : {
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">*/*</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Cache-Control</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">no-cache</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>User-Agent</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Connection</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">keep-alive</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   <span style="color:#606"><span style="color:#404">"</span><span>Test-Policy</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">quite true</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Postman-Token</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">bb900e07-249c-66e4-980a-2c9a70002c45</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Host</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">localhost:8080</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept-Language</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">en-US,en;q=0.8</span><span style="color:#710">"</span></span>,
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>   <span style="color:#606"><span style="color:#404">"</span><span>Accept-Encoding</span><span style="color:#404">"</span></span> : <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">"</span><span style="color:#D20">gzip, deflate, sdch</span><span style="color:#710">"</span></span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span> },
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span> <span style="color:#606"><span style="color:#404">"</span><span>bodyLength</span><span style="color:#404">"</span></span> : <span style="color:#088">null</span>,
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span> <span style="color:#606"><span style="color:#404">"</span><span>bodySha1</span><span style="color:#404">"</span></span> : <span style="color:#088">null</span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>}
-</pre></div>
-</div>
-</div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GET"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"resource"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/apiman-echo"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"uri"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/apiman-echo"</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"headers"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"Accept"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"*/*"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Cache-Control"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"no-cache"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"User-Agent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Connection"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"keep-alive"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Test-Policy"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"quite true"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Postman-Token"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bb900e07-249c-66e4-980a-2c9a70002c45"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Host"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost:8080"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Accept-Language"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US,en;q=0.8"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Accept-Encoding"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gzip, deflate, sdch"</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"bodyLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+ </span><span class="s2">"bodySha1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="in-conclusion">In Conclusion</h3>
 

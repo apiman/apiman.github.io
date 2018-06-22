@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -173,7 +173,7 @@
 <h2 id="avoiding-reimplementation-of-cross-cutting-functionality">Avoiding reimplementation of cross-cutting functionality</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
+<p>A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div class="paragraph">
 <p>It’s quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on <em>each</em> of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.</p>
@@ -240,8 +240,8 @@
 </div>
 <div id="footnotes">
 <hr />
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins" target="_blank" rel="nofollow">official plugin policies</a>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins" target="_blank" rel="nofollow">official plugin policies</a>
 </div>
 </div>
   </article>

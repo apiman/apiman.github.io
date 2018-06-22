@@ -39,7 +39,7 @@
     <link rel="canonical" href="http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -152,167 +152,7 @@
     <!-- New Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-        
-              
-              
-                http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html
-              
-        
-              
-              
-        
-              
-              
-        
-        ">older revision</a>.
+        Note: This is a redux of our blogpost for <b>apiman 1.2.x</b>. If you're still using <b>apiman 1.1.x</b>, you can refer to the <a href="http://apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html">older revision</a>.
     </p>
   
 
@@ -339,8 +179,8 @@ we’ll take the first step toward customizing apiman by creating new plugins to
 
 <p>To download a copy of the example plugins, execute this git command:</p>
 
-<pre><code>git clone https://github.com/apiman/apiman-plugins
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/apiman/apiman-plugins
+</code></pre></div></div>
 
 <p>When the git clone operation completes, you’ll have the source code for multiple example plugins. The exact set of plugins that you have downloaded may change, depending on when you download them, as more examples are always being added. For the purposes of this article, we’ll focus on the “config-policy” example plugin. This plugin demonstrates how a plugin can be used to set the value of properties in a message being processed by an API. Specifically, this plugin defines properties in the request and response headers and enables you to set their values to “true.”</p>
 
@@ -350,7 +190,7 @@ we’ll take the first step toward customizing apiman by creating new plugins to
 
 <p>Let’s take a closer look at the files and directories that comprise the apiman config-policy plugin, and the changes that are needed to implement a plugin:</p>
 
-<pre><code>├---pom.xml
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├---pom.xml
 └---src
 └---main
 ├---apiman
@@ -366,15 +206,15 @@ we’ll take the first step toward customizing apiman by creating new plugins to
 └---config_policy
 ├---ConfigBean.java
 └---ConfigPolicy.java
-</code></pre>
+</code></pre></div></div>
 
 <p>The most obvious difference is the addition of the “apiman” directory. This directory is used to contain the configuration files for the plugin. (In other words, the files that make the project a plugin.) The only project-wide configuration change that you have to make is to modify the plugin’s maven pom.xml file to include the apiman directory when the project is built. The following lines are added to the plugin’s pom.xml file:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resource&gt;</span>  
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resource&gt;</span>  
     <span class="nt">&lt;directory&gt;</span>src/main/apiman<span class="nt">&lt;/directory&gt;</span>  
     <span class="nt">&lt;targetPath&gt;</span>META-INF/apiman<span class="nt">&lt;/targetPath&gt;</span>  
     <span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>  
-<span class="nt">&lt;/resource&gt;</span></code></pre></div>
+<span class="nt">&lt;/resource&gt;</span></code></pre></figure>
 
 <p>The result of these statements in the pom.xml file is that the contents of the apiman directory are included in the project build’s META-INF directory. (We’ll take a look at this later when we build the plugin project.) Setting filtering to true enables maven property expansion during the creation of the plugin war file.
 Configuration files for the plugin are contained in the apiman directory. The primary configuration file is the “plugin.json” file. This file is required for all apiman plugins, regardless of the plugin type. The meta-data contained in this file describes the plugin and is displayed in the API Manager UI.</p>
@@ -393,37 +233,37 @@ Configuration files for the plugin are contained in the apiman directory. The pr
 
 <p>In our example, the config-policyDef.json looks like this:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">"id"</span> <span class="p">:</span> <span class="s2">"config-policy"</span><span class="p">,</span>
-  <span class="nt">"name"</span> <span class="p">:</span> <span class="s2">"Config Policy"</span><span class="p">,</span>
-  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"A policy used to showcase policy configuration."</span><span class="p">,</span>
-  <span class="nt">"policyImpl"</span> <span class="s2">"plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy"</span><span class="p">,</span>
-  <span class="nt">"icon"</span> <span class="p">:</span> <span class="s2">"sliders"</span><span class="p">,</span>
-  <span class="nt">"formType"</span> <span class="p">:</span> <span class="s2">"JsonSchema"</span><span class="p">,</span>
-  <span class="nt">"form"</span> <span class="p">:</span> <span class="s2">"schemas/config-policyDef.schema"</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"config-policy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Config Policy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"A policy used to showcase policy configuration."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"policyImpl"</span><span class="w"> </span><span class="s2">"plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sliders"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JsonSchema"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"form"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"schemas/config-policyDef.schema"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>We mentioned that since our example uses the JSON schema <a href="http://json-schema.org/documentation.html" target="_blank" rel="nofollow">http://json-schema.org/documentation.html</a>, we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy’s JSON schema defines two properties: requestHeader and responseHeader.</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>  
-  <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Configure HTTP Headers"</span><span class="p">,</span>
-  <span class="nt">"description"</span> <span class="p">:</span> <span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end API."</span><span class="p">,</span>  
-  <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>  
-  <span class="nt">"properties"</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">"requestHeader"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Request Header"</span><span class="p">,</span>
-    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
-    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
-   <span class="p">},</span>
-   <span class="nt">"responseHeader"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">"title"</span> <span class="p">:</span> <span class="s2">"Response Header"</span><span class="p">,</span>
-    <span class="nt">"type"</span> <span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
-    <span class="nt">"minLength"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">"maxLength"</span> <span class="p">:</span> <span class="mi">64</span>
-   <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  
+  </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Configure HTTP Headers"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end API."</span><span class="p">,</span><span class="w">  
+  </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">  
+  </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"requestHeader"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request Header"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"maxLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"responseHeader"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Response Header"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"maxLength"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">64</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>That finishes the description of the policy’s configuration files. To complete the policy plugin, the example also requires the Java implementation for the policy itself. The policy implementation is contained in the src/main/java/io/apiman/plugins/config_policy/ConfigPolicy.java file. The policy is very simple as it merely appends a header to the http request and response.</p>
 
@@ -433,8 +273,8 @@ Configuration files for the plugin are contained in the apiman directory. The pr
 
 <p>Building the plugin with maven is easy. Just execute this command from the directory that contains the plugin’s pom.xml file.</p>
 
-<pre><code>mvn install
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn install
+</code></pre></div></div>
 
 <p>In case you’re wondering why, we’re installing the plugin into the maven repo. The answer is simply that in the current release of apiman, the only supported install path is from the maven repo. Future releases of apiman will likely support additional installation paths.</p>
 

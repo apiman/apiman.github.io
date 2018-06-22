@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
   <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
-  <title>apiman Blog | Open Source API Management</title>
-  <meta name="description" content="The apiman project brings an open source development methodology to API Management, coupling a rich API design & configuration layer with a blazingly fast runtime.  This is the official apiman blog, where we discuss....whatever we're thinking about!
+  <title>Apiman Blog | Open Source API Management</title>
+  <meta name="description" content="The Apiman project brings an open source development methodology to API Management, coupling a rich API design & configuration layer with a blazingly fast runtime.  This is the official Apiman blog, where we discuss....whatever we&#39;re thinking about!
 ">
 
   <!-- CSS -->
@@ -40,7 +40,7 @@
     <link rel="canonical" href="http://apiman.io/blog/">
     
 
-  <link rel="alternate" type="application/rss+xml" title="apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -440,12 +440,12 @@ The credentials to access the Apiman Gateway API are likely different than the U
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <div class="paragraph">
-<p>I&#8217;m delighted to announce that Apiman 1.3.1.Final is out, with several notable new features and improvements <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
+<p>I&#8217;m delighted to announce that Apiman 1.3.1.Final is out, with several notable new features and improvements <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div id="footnotes">
 <hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> The more eagle-eyed amongst you will no doubt have noticed that most of this was actually released a few days ago.
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. The more eagle-eyed amongst you will no doubt have noticed that most of this was actually released a few days ago.
 </div>
 </div>
                   </div>
@@ -899,12 +899,12 @@ terminology).  Read on below the fold to find out what changed!</p>
 <p>The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).</p>
 </div>
 <div class="paragraph">
-<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>.</p>
+<p>The class of solutions to this problem generally falls under the banner of <strong>mutual authentication</strong>. One such mutual auth offering apiman supports is Mutually Authenticated TLS<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
 </div>
 <div id="footnotes">
 <hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a> Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!
 </div>
 </div>
                   </div>
@@ -1024,6 +1024,8 @@ can run apiman:  as a set of micro-services.</p>
                 </div>
               </div>
             </div>
+            
+          
             
           
             
@@ -1168,8 +1170,6 @@ now!</p>
             
           
             
-          
-            
 	      
             <div class="container blog-post-item">
               <div class="row">
@@ -1188,6 +1188,89 @@ now!</p>
 <div class="paragraph">
 <p>So, if you&#8217;re interested in understanding the value API management can have in a microservices architecture; please, read on!</p>
 </div>
+<div class="sect1">
+<h2 id="services-services-everywhere">Services, services, everywhere!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <a href="http://www.kubernetes.io">microservices architecture</a> encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX&#8217;s <em>do one job and do it well</em> philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice&#8217;s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avoiding-reimplementation-of-cross-cutting-functionality">Avoiding reimplementation of cross-cutting functionality</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A problem that can quickly become apparent is that key pieces of important common functionality are required that are difficult or undesirable to reimplement in every API. Good examples of this would be security concerns like authentication and authorization, or business concerns like rate-limiting, billing and auditing <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s quite clear why we would want to avoid this situation. Imagine we have hundreds of microservices we need to expose to the outside world; the nightmare scenario is that we have to implement complex and prone-to-change authentication and authorization schemes on <em>each</em> of them. Quite aside from bloating and complicating our microservices, it is going to be extremely difficult to guarantee that each service has implemented all of this common functionality consistently and correctly - we could quite plausibly be leaving holes in our system simply by virtue of surface area.</p>
+</div>
+<div class="paragraph">
+<p>Instead, we can drastically improve the situation by using apiman to relieve individual services of that burden; simply configure and manage those tasks in a single, well-known location. We register our APIs with apiman, apply appropriate policies, and route public traffic through the gateway. We leave apiman to deal with these common problems, and let the microservice&#8217;s developers focus on their core task, rather than burning time on ancillary concerns.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fickle-business-requirements">Fickle business requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Access to APIs often has business requirements which are independent of the core functionality the service itself offers. For instance, whilst a mapping application might only be interested in coordinates, its business requirements could dictate that we need to capture metrics; initiate contracts with, and issue keys to, API consumers; and, audit their interactions with the system. Quite aside from the microservices <em>faux pas</em> of contaminating a service with external business logic, we generally want to avoid this situation, as business requirements tend to change rapidly in response to events which are unrelated to the service&#8217;s purpose.</p>
+</div>
+<div class="paragraph">
+<p>For instance, marketing decide that the service is so popular that they&#8217;re going to offer two levels of access a <em>gold plan</em> and a <em>silver plan</em>; one of which allows 1000 requests per minute, the other 500. The developers trudge off and implement this in their service. Six months later, they decide they want to change this to bandwidth limits, and the <em>silver plan</em> should be able to do only <em>GET</em> requests. The developers of a variety of services are taken off their existing tasks to implement these changes.</p>
+</div>
+<div class="paragraph">
+<p>Shifting business requirements are a natural part the software industry, however, the implementation burden is amplified in a microservices architecture. Thankfully, we can delegate that workload to our API Management solution, and even better, with the apiman UI it&#8217;s possible for non-technical people to create and manage the entire process. This is excellent from both standpoints, as the developers can concentrate on their core tasks, and the business people can take direct ownership and responsibility for implementing their policies; the two domains are kept entirely separate.</p>
+</div>
+<div class="paragraph">
+<p>Naturally, there will be cases where the in-built policies don&#8217;t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we&#8217;ve <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">written a number of guides</a> <a href="http://java.dzone.com/articles/customizing-jboss-apiman">on the topic</a>. It&#8217;s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for <a href="http://www.apiman.io/latest/user-guide.html#_plugins">non-technical people to drive</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="clear-demarcation">Clear demarcation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Of all the microservices constituting an entire system, it is likely that only a subset of those should be exposed to the outside world. The rest are there to provide internal or compositional functionality. The apiman gateway can provide a natural boundary between public and private; only those services that are explicitly being offered through the gateway are visible, and the rest can be walled off (either at the network level, or via <a href="http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security">mutual authentication</a> mechanisms).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="watching-the-world-go-by">Watching the world go by</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If we want to determine the value of a service to our organisation, then we need some objective metrics to determine <em>how</em> it is being used and whether it is performing as well as we hoped. Ideally, metrics should be collected in a manner that is consistent amongst all services to ensure that comparisons can be made fairly. The apiman gateway is in a unique position to collect lots of interesting data; siting at the transit point between the outside world and the services being offered. We collect, amongst other things, timing information; round-trip latencies; detailed error information (error codes, error output); application, service and organisation IDs. These can be analysed to produce a rich set of information which you can use to characterise the behaviour (or misbehaviour) of your services, including how external applications are interacting with them.</p>
+</div>
+<div class="paragraph">
+<p>Metrics collection, analysis and visualisation is an area we&#8217;re actively working hard on: in the community we&#8217;re looking to provide interesting opportunities to tie in with popular open source data-sinks and visualisers, whilst in integrated environments, we look to play well with native metrics collection infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="papers-please">Papers, please</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You may have lots of services to offer, but unless people can find them, they won&#8217;t know about how useful they are. Hence, it&#8217;s important to have a well-known service registry through which internal and external consumers can find and consume your APIs. Developers can easily log into the apiman UI to browse and search for registered APIs, and we also make it easy to integrate into any other registry, such as Fabric8&#8217;s.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="in-conclusion">In conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>API Management will be at the heart of many successful microservices setups. It unifies common functionality; provides a place to discover, register and manage services; reduces the scope for costly errors and inconsistencies; and, provides a natural barrier between internal and external where it can collect valuable metrics and audit information.</p>
+</div>
+<div class="paragraph">
+<p>It was a pleasure to meet all of those developers who are interested in apiman - and it was particularly interesting to hear your use-cases. I would encourage you to keep giving us your feedback, as it directly impacts our features, priorities and schedule.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins">official plugin policies</a>
+</div>
+</div>
                   </div>
                   <div style="margin-bottom: 20px">
                     <a href="/blog/microservices/conference/talk/2015/06/15/apiman-msa-day.html" style="font-size: 15px">(read more)</a>
@@ -1195,6 +1278,8 @@ now!</p>
                 </div>
               </div>
             </div>
+            
+          
             
           
             
@@ -1398,8 +1483,6 @@ sources. The applications often consume these services through their APIs.</p>
                 </div>
               </div>
             </div>
-            
-          
             
           
         </div>
