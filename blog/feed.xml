@@ -8,7 +8,7 @@
 		<atom:link href="http://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
 				<title>Customising path patterns for your Apiman Gateway</title><dc:creator>Marc Savy</dc:creator>
 				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;One common request we here is how to create custom URL patterns for the Apiman Gateway.&lt;/p&gt;
+&lt;p&gt;One common request we hear is how to create custom URL patterns for the Apiman Gateway.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;For example, this means allowing changing the (Public API) default:&lt;/p&gt;
@@ -9708,6 +9708,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 04:15:00 -0500</pubDate>
 				<link>http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Tue, 03 Jul 2018 10:44:17 -0400</lastBuildDate>
+			</item><lastBuildDate>Tue, 03 Jul 2018 11:22:17 -0400</lastBuildDate>
 	</channel>
 </rss>
