@@ -6,7 +6,7 @@ author: marc_savy
 categories: apiman gateway manager plugin extensibility
 ---
 
-One common request we here is how to create custom URL patterns for the Apiman Gateway.
+One common request we hear is how to create custom URL patterns for the Apiman Gateway.
 
 For example, this means allowing changing the (Public API) default:
 
