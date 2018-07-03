@@ -6,6 +6,246 @@
 </description>
                 <link>http://apiman.io/blog</link>
 		<atom:link href="http://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
+				<title>Customising path patterns for your Apiman Gateway</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One common request we here is how to create custom URL patterns for the Apiman Gateway.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For example, this means allowing changing the (Public API) default:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;http://gatewayhost:port/{organizationId}/{apiId}/{version}/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To a custom alternative. As a simple example we&amp;#8217;re going to hard-code an organisation in. We&amp;#8217;ll assume that we&amp;#8217;ve established a convention to always publish our APIs to a particular org. That will change the pattern to:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;http://gatewayhost:port/{apiId}/{version}/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+If you&amp;#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or later as a bug prevented plugins from loading from static config.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;create-a-plugin-skeleton&quot;&gt;Create a plugin skeleton&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;admonitionblock tip&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Check &lt;a href=&quot;http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin&quot;&gt;out our documentation for creating Apiman Plugins&lt;/a&gt; for more in-depth information.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;One of Apiman&amp;#8217;s handiest features is its plugin subsystem. This allows you to fully modularise custom code and distribute it through familiar channels like Maven repositories. It&amp;#8217;s much more convenient than trying to play around with customising the class-path and messing around to make sure files are in the right place.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First, check out this plugin skeleton:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;$ git clone http://github.com/apiman/apiman-plugins.git
+$ cd custom-path-parser-demo/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Have a look at &lt;code&gt;CustomPathParserImpl.java&lt;/code&gt;. It implements &lt;code&gt;IApiRequestPathParser&lt;/code&gt; and takes the incoming path and headers; it returns an &lt;code&gt;ApiRequestPathInfo&lt;/code&gt; that instructs Apiman what the &lt;code&gt;orgId&lt;/code&gt;, &lt;code&gt;apiId&lt;/code&gt;, &lt;code&gt;apiVersion&lt;/code&gt;, and &lt;code&gt;resource&lt;/code&gt; are, allowing Apiman to map the incoming request correctly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;CustomPathParserImpl&lt;/span&gt; &lt;span class=&quot;directive&quot;&gt;implements&lt;/span&gt; IApiRequestPathParser {
+    &lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; ApiRequestPathInfo parseEndpoint(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; path, HeaderMap headers) {
+        &lt;span class=&quot;comment&quot;&gt;// Your custom path logic&lt;/span&gt;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For reference the default implementation is &lt;a href=&quot;https://github.com/apiman/apiman/blob/master/gateway/engine/core/src/main/java/io/apiman/gateway/engine/impl/DefaultRequestPathParser.java&quot;&gt;io.apiman.gateway.engine.impl.DefaultRequestPathParser&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;creating-our-custom-version&quot;&gt;Creating our custom version&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In our demonstration &lt;code&gt;CustomPathParserImpl&lt;/code&gt; we will use a very simple parser that doesn&amp;#8217;t inspect any headers. I recommend you check the default implementation to find &lt;a href=&quot;https://github.com/apiman/apiman/blob/master/common/util/src/main/java/io/apiman/common/util/ApimanPathUtils.java&quot;&gt;utilities&lt;/a&gt; that handles alternative ways of capturing versioning info, such as accept headers, version headers, etc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First we&amp;#8217;ll add a constructor with a string map. This will allow us to pass in configuration information from our static config file (&lt;code&gt;apiman.properties&lt;/code&gt; or &lt;code&gt;conf.json&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; defaultOrgName;
+
+&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; CustomPathParserImpl(&lt;span class=&quot;predefined-type&quot;&gt;Map&lt;/span&gt;&amp;lt;&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;, &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;&amp;gt; config) {
+   &lt;span class=&quot;comment&quot;&gt;// Pass in the defaultOrgName from static config or just use &amp;quot;DefaultOrg&amp;quot;.&lt;/span&gt;
+   &lt;span class=&quot;local-variable&quot;&gt;this&lt;/span&gt;.defaultOrgName = config.getOrDefault(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;defaultOrgName&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;DefaultOrg&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+}
+
+&lt;span class=&quot;directive&quot;&gt;public&lt;/span&gt; ApiRequestPathInfo parseEndpoint(&lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt; path, HeaderMap headers) {
+   &lt;span class=&quot;predefined-type&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;type&quot;&gt;[]&lt;/span&gt; split = StringUtils.split(path, &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;integer&quot;&gt;3&lt;/span&gt;);
+
+   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (split == &lt;span class=&quot;predefined-constant&quot;&gt;null&lt;/span&gt; || split.length &amp;lt; &lt;span class=&quot;integer&quot;&gt;2&lt;/span&gt;) {
+      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;exception&quot;&gt;IllegalArgumentException&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Invalid path format, expected /apiId/apiVersion/&amp;lt;resource path&amp;gt;&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;);
+   }
+
+   ApiRequestPathInfo parsed = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ApiRequestPathInfo();
+   &lt;span class=&quot;comment&quot;&gt;// Let's set the org name manually as our configured `defaultOrgName`&lt;/span&gt;
+   parsed.orgId = defaultOrgName;
+   parsed.apiId = split[&lt;span class=&quot;integer&quot;&gt;0&lt;/span&gt;];
+   parsed.apiVersion = split[&lt;span class=&quot;integer&quot;&gt;1&lt;/span&gt;];
+   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (split.length &amp;gt; &lt;span class=&quot;integer&quot;&gt;2&lt;/span&gt;) {
+      parsed.resource = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; + split[&lt;span class=&quot;integer&quot;&gt;2&lt;/span&gt;];
+   } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+      parsed.resource = &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+   }
+   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; parsed;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So now, if we have a path like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;/FooApi/1.0/some/resource&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This will become:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dlist&quot;&gt;
+&lt;dl&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;orgId&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;DefaultOrg&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;apiId&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;FooApi&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;apiVersion&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;1.0&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&quot;hdlist1&quot;&gt;resource&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;/some/resource&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Which would be the equivalent of the default style of:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;/DefaultOrg/FooApi/1.0/some/resource&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;wiring-it-up&quot;&gt;Wiring it up&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Change the versions as applicable.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Run &lt;code&gt;mvn clean install&lt;/code&gt; at the demo project&amp;#8217;s root. Then open your Apiman configuration file (either apiman.properties or conf.json).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For the Vert.x Gateway:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;&lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;request-parser&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;plugin:io.apiman.plugins:custom-path-parser-plugin-demo:1.4.3.Final:war/io.apiman.plugins.demo.custompathparser.CustomPathParserImpl&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {
+        &lt;span class=&quot;key&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;defaultOrgName&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;content&quot;&gt;Apiman&lt;/span&gt;&lt;span class=&quot;delimiter&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;error&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;error&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;error&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;error&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;error&quot;&gt;e&lt;/span&gt;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For the Servlet Gateway:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;apiman-gateway.request-parser=plugin:io.apiman.plugins:custom-path-parser-plugin-demo:1.4.3.Final:war/io.apiman.plugins.demo.custompathparser.CustomPathParserImpl
+apiman-gateway.request-parser.defaultOrgName=Apiman // Whatever you like&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code&gt;$ curl 'http://localhost:8082/TheApi/2'
+{
+  &quot;method&quot; : &quot;GET&quot;,
+  &quot;resource&quot; : &quot;/services/echo/foobar/&quot;,
+  &quot;uri&quot; : &quot;/services/echo/foobar/&quot;,
+  &quot;headers&quot; : {
+    &quot;Accept&quot; : &quot;*/*&quot;,
+    &quot;Host&quot; : &quot;localhost:8080&quot;,
+    &quot;transfer-encoding&quot; : &quot;chunked&quot;,
+    &quot;User-Agent&quot; : &quot;curl/7.54.0&quot;
+  },
+  &quot;bodyLength&quot; : null,
+  &quot;bodySha1&quot; : null,
+  &quot;counter&quot; : 2
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Double check that your plugin is structured correctly and you have all of the names right in your plugin URL. Otherwise you will get errors complaining that your classes are not found.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We created a simple plugin to provide custom URL mappings to the Apiman Gateway and configured our gateways to use our code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A future improvement extending IApiRequestPathParser will allow for the Apiman Gateway to report URLs back to the Apiman Manager (or whomever publishes) in a more granular fashion (rather than just using &lt;code&gt;parseEndpoint&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category term="apiman" /><category term="gateway" /><category term="manager" /><category term="plugin" /><category term="extensibility" /><pubDate>Tue, 03 Jul 2018 16:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/gateway/manager/plugin/extensibility/2018/07/03/custom-url-parser.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/gateway/manager/plugin/extensibility/2018/07/03/custom-url-parser.html</guid>
+			</item><item>
 				<title>Version 1.4.3 of Apiman is released!</title><dc:creator>Marc Savy</dc:creator>
 				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Apiman 1.4.3.Final is out. It contains a couple of bug-fixes. Most notably, a bug in the Vert.x Gateway that prevented plugins specified in static config (&lt;code&gt;conf.json&lt;/code&gt;) from being loaded properly.&lt;/p&gt;
@@ -9468,6 +9708,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 04:15:00 -0500</pubDate>
 				<link>http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Tue, 03 Jul 2018 10:25:06 -0400</lastBuildDate>
+			</item><lastBuildDate>Tue, 03 Jul 2018 10:44:17 -0400</lastBuildDate>
 	</channel>
 </rss>
