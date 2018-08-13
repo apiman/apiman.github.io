@@ -6,6 +6,92 @@
 </description>
                 <link>http://apiman.io/blog</link>
 		<atom:link href="http://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
+				<title>Version 1.5 of Apiman is released!</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m happy to announce that Apiman 1.5.1.Final is out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It contains an important new policy feature: the ability to modify policy failures before they are returned to users (even if they are thrown by another policy).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This means that policies such as CORS can add their headers, irrespective of whether the request was successful or not (e.g. due to rate limiting).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;failure-processing&quot;&gt;Failure Processing&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When a policy throws a failure (e.g. rate limit reached), previously this caused an immediate termination that bypassed all other policies. &lt;strong&gt;Failure processing&lt;/strong&gt; was requested in the community to allow policies to modify failures emitted by other policies, such that headers can be set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To implement this, you simply need to override the default method &lt;code&gt;processFailure&lt;/code&gt; in &lt;code&gt;IPolicy&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; processFailure(PolicyFailure failure, IPolicyContext context, &lt;span class=&quot;predefined-type&quot;&gt;Object&lt;/span&gt; config,  IPolicyFailureChain chain) { ... }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Or, if you&amp;#8217;re using &lt;code&gt;AbstractMappedPolicy&lt;/code&gt;, then you should override &lt;code&gt;doProcessFailure&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;directive&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; doProcessFailure(PolicyFailure failure, IPolicyContext context, C config, IPolicyFailureChain chain) { ... }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For example, in the &lt;a href=&quot;https://github.com/msavy/apiman-plugins/blob/fd2aa46c62a60c7450a3777527f37723908e0865/cors-policy/src/main/java/io/apiman/plugins/cors_policy/CorsPolicy.java#L114-L125&quot;&gt;CORS plugin&lt;/a&gt; it simply adds the headers:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;CodeRay highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;annotation&quot;&gt;@Override&lt;/span&gt;
+ &lt;span class=&quot;directive&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;void&lt;/span&gt; doProcessFailure(PolicyFailure failure, IPolicyContext context, CorsConfigBean config,
+         IPolicyFailureChain chain) {
+
+     CaseInsensitiveStringMultiMap corsHeaders = getResponseHeaders(context);
+
+     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(corsHeaders != EMPTY_MAP) {
+         failure.getHeaders().putAll(corsHeaders.toMap());
+     }
+
+     chain.doFailure(failure);
+ }&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Meaning that even if a rate limit is hit, then the headers will still be added.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;If you experience any issues, please report them to us via &lt;a href=&quot;https://issues.jboss.org/browse/APIMAN/&quot;&gt;JIRA&lt;/a&gt;, &lt;a href=&quot;https://github.com/apiman/apiman&quot;&gt;GitHub&lt;/a&gt;, or &lt;a href=&quot;https://lists.jboss.org/mailman/listinfo/apiman-user&quot;&gt;the mailing list&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;download-1-5-1-final&quot;&gt;Download 1.5.1.Final&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-vertx-1.5.1.Final.zip&quot;&gt;Vert.x (Gateway Only)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly10-1.5.1.Final-overlay.zip&quot;&gt;WildFly 10 or EAP 7.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly11-1.5.1.Final-overlay.zip&quot;&gt;WildFly 11&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-eap7-1.5.1.Final-overlay.zip&quot;&gt;EAP 7&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-tomcat8-1.5.1.Final-overlay.zip&quot;&gt;Tomcat 8+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category term="apiman" /><category term="release" /><pubDate>Mon, 13 Aug 2018 23:00:00 -0400</pubDate>
+				<link>http://apiman.io/blog/apiman/release/2018/08/13/release-1.5.html</link>
+				<guid isPermaLink="true">http://apiman.io/blog/apiman/release/2018/08/13/release-1.5.html</guid>
+			</item><item>
 				<title>Customising path patterns for your Apiman Gateway</title><dc:creator>Marc Savy</dc:creator>
 				        <author>marc@rhymewithgravy.com</author><description>&lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;One common request we hear is how to create custom URL patterns for the Apiman Gateway.&lt;/p&gt;
@@ -9708,6 +9794,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 04:15:00 -0500</pubDate>
 				<link>http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Tue, 03 Jul 2018 11:22:17 -0400</lastBuildDate>
+			</item><lastBuildDate>Mon, 13 Aug 2018 17:12:04 -0400</lastBuildDate>
 	</channel>
 </rss>
