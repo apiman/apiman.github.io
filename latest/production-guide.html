@@ -20,15 +20,15 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <script src="resources/jquery-1.11.1/js/jquery.min.js"></script>
     <script src="resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
             $( "#guide" ).load("production-guide/index.html", function() {
-                
+
                 $( 'h1.title' ).append('<a href="production-guide/apiman-production-guide.pdf" style="font-size: 16px" class="pull-right"><i class="fa fa-file-pdf-o fa-fw"></i>Download as PDF</a>');
-                
+
                 if (window.location.hash) {
                     var hash = location.hash.replace('#', '');
                     var elem = $("body").find("#" + hash);
@@ -81,13 +81,7 @@
                         <a href="https://issues.jboss.org/browse/APIMAN" rel="nofollow" target="_blank">Report a Bug</a>
                     </li>
                     <li class="menu-item">
-                        <a href="chat.html">Chat on IRC</a>
-                    </li>
-                    <li class="menu-item">
                         <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                     </li>
                     <li class="divider"></li>
                     <li class="menu-item">
@@ -138,14 +132,14 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    
+
     <div class="container">
         <div id="content" class="row tbd">
             <div class="col-lg-12" id="guide">
                 <p>Loading the production guide, please wait...</p>
             </div>
         </div>
-    
+
         <footer role="contentinfo">
             <div id="inner-footer" class="clearfix row">
                 <div id="widget-footer" class="clearfix">
@@ -160,7 +154,7 @@
                         </div>
                     </div>
                     <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                        
+
                         <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
                     </div>
                 </div>
