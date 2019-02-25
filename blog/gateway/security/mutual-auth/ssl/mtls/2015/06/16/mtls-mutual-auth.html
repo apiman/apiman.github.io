@@ -78,13 +78,7 @@
                     <a href="https://issues.jboss.org/browse/APIMAN">Report a Bug</a>
                 </li>
                 <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/chat.html">Chat on IRC</a>
-                </li>
-                <li class="menu-item">
                     <a href="https://twitter.com/apiman_io" rel="nofollow" target="_blank">Twitter Feed</a>
-                </li>
-                <li class="menu-item">
-                    <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" rel="nofollow" target="_blank">Mailing List</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
@@ -173,11 +167,30 @@
 <div class="paragraph">
 <p>It bears mentioning that any applications<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="listingblock">
+<div class="title">Simple mutual auth setup</div>
 <div class="content">
-<img src="/blog/images/generated/gateway-mtls.svg" alt="gateway mtls" width="787" height="468" />
+<pre>Failed to generate image: Could not find the 'dot' executable in PATH; add it to the PATH or specify its location using the 'graphvizdot' document attribute
+digraph G {
+    graph [fontname = "arial", rankdir = LR, splines=true, overlap=false];
+    node[shape=record, fontname = "arial"];
+    edge [fontname = "arial"];
+
+    Application[label="Application", height=1];
+    Gateway[label="Gateway", height=4];
+
+    ServiceA[label="Service A", height=1];
+    ServiceB[label="Service B", height=1];
+    ServiceC[label="Service C", height=1];
+
+    Application -&gt; Gateway [label="Gateway Auth Only", dir="both"];
+    Application -&gt; ServiceC [label="Not Authenticated Failure", style="dashed", color="red"]
+
+    Gateway -&gt; ServiceA [label="Mutual Auth", dir="both"];
+    Gateway -&gt; ServiceB [label="Mutual Auth", dir="both"];
+    Gateway -&gt; ServiceC [label="Mutual Auth", dir="both"];
+}</pre>
 </div>
-<div class="title">Figure 1. Simple mutual auth setup</div>
 </div>
 <div class="paragraph">
 <p>Notice that the services trust the gateway (and vice versa), but the services <em>do not</em> trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn’t hold a trusted certificate, so it fails.</p>

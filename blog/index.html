@@ -29,7 +29,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+  
   <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
   <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
   <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
@@ -590,8 +590,8 @@ The credentials to access the Apiman Gateway API are likely different than the U
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and 3scale</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning
-the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying
+                    <p>It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 
+the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying 
 to figure out some stuff for the apiman community.  Here some of the things we wanted to suss out:</p>
 
 <ul>
@@ -600,7 +600,7 @@ to figure out some stuff for the apiman community.  Here some of the things we w
   <li>How can existing apiman users transition to a Red Hat supported API Management solution.</li>
 </ul>
 
-<p>It doesn’t sound like much, but it actually really is.  We’ve made some preliminary decisions, and
+<p>It doesn’t sound like much, but it actually really is.  We’ve made some preliminary decisions, and 
 because we want to be as transparent and upfront as possible, read on to find out what they are!</p>
 
 
@@ -641,7 +641,7 @@ I’ll do my best to answer that question as honestly and transparently as I can
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>Greetings, earthlings!  On Friday of last week we released the <em>absolute best</em> version
+                    <p>Greetings, earthlings!  On Friday of last week we released the <em>absolute best</em> version 
 of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
 things.  Read on for the details!</p>
 
@@ -719,7 +719,7 @@ things.  Read on for the details!</p>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <p>Greetings, earthlings!  Yesterday we released the <em>best</em> version of apiman yet,
 and I’m not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targeted new
+This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!</p>
 
 
@@ -762,7 +762,7 @@ get a lot easier!</p>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <p>One of the strongest features of apiman, in general, is its excellent
 extensibility.  Not only is it easy to add new policies, for example,
-but many of its core components are also pluggable.  This includes,
+but many of its core components are also pluggable.  This includes, 
 for example, the registry used by the API Gateway to store configuration
 information published to it by the manager.  This blog post will detail
 a new JDBC based implementation of that registry, explaining how you can
@@ -784,7 +784,7 @@ default setting).</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, 1.2.x, and gateway</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>In a recent blog post I explained why APIs used to be completely frozen
+                    <p>In a recent blog post I explained why APIs used to be completely frozen 
 once they were published, and how we have loosened that restriction for
 Public APIs.  Similarly, we did not allow Client Apps to be changed and
 then re-registered.  This was never a good decision, since the Client App
@@ -809,11 +809,11 @@ we should never have restricted the registration of a Client App!</p>
                     <p>An early design decision we made in apiman was to not allow APIs to be
 re-published to the Gateway.  The reasoning was that Client Apps may have
 established Contracts with the API, and thus have agreed to specific terms
-and conditions (whether implicit or explicit).  Therefore, we shouldn’t
+and conditions (whether implicit or explicit).  Therefore, we shouldn’t 
 allow the API provider to modify those terms and re-publish the API, as it
 may violate the agreement.</p>
 
-<p>However, we later added the concept of a Public API, which allows any
+<p>However, we later added the concept of a Public API, which allows any 
 client to invoke it without first creating a Contract.  It is clear that
 API providers should be able to re-publish a Public API (presumably after
 changing the API’s configuration).</p>

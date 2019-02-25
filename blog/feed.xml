@@ -2970,11 +2970,30 @@ users.  We certainly hope that these name changes help with that goal.&lt;/p&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;It bears mentioning that any client apps&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/sup&gt; legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;imageblock&quot; style=&quot;text-align: center&quot;&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Simple mutual auth setup&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;http://www.apiman.io/blog/images/generated/gateway-mtls-redux.svg&quot; alt=&quot;gateway mtls redux&quot; width=&quot;751&quot; height=&quot;468&quot;&gt;
+&lt;pre&gt;Failed to generate image: Could not find the 'dot' executable in PATH; add it to the PATH or specify its location using the 'graphvizdot' document attribute
+digraph G {
+    graph [fontname = &quot;arial&quot;, rankdir = LR, splines=true, overlap=false];
+    node[shape=record, fontname = &quot;arial&quot;];
+    edge [fontname = &quot;arial&quot;];
+
+    ClientApp[label=&quot;Client App&quot;, height=1];
+    Gateway[label=&quot;Gateway&quot;, height=4];
+
+    APIA[label=&quot;API A&quot;, height=1];
+    APIB[label=&quot;API B&quot;, height=1];
+    APIC[label=&quot;API C&quot;, height=1];
+
+    ClientApp -&amp;gt; Gateway [label=&quot;Gateway Auth Only&quot;, dir=&quot;both&quot;];
+    ClientApp -&amp;gt; APIC [label=&quot;Not Authenticated Failure&quot;, style=&quot;dashed&quot;, color=&quot;red&quot;]
+
+    Gateway -&amp;gt; APIA [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+    Gateway -&amp;gt; APIB [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+    Gateway -&amp;gt; APIC [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+}&lt;/pre&gt;
 &lt;/div&gt;
-&lt;div class=&quot;title&quot;&gt;Figure 1. Simple mutual auth setup&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Notice that the APIs trust the gateway (and vice versa), but the APIs &lt;em&gt;do not&lt;/em&gt; trust the client app. The client app tries its luck and attempts to bypass the gateway, but it doesn&amp;#8217;t hold a trusted certificate, so it fails.&lt;/p&gt;
@@ -5876,11 +5895,30 @@ When &lt;code&gt;Host&lt;/code&gt; and &lt;code&gt;Origin&lt;/code&gt; are equal
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;It bears mentioning that any applications&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/sup&gt; legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the service.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;imageblock&quot; style=&quot;text-align: center&quot;&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Simple mutual auth setup&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;http://www.apiman.io/blog/images/generated/gateway-mtls.svg&quot; alt=&quot;gateway mtls&quot; width=&quot;787&quot; height=&quot;468&quot;&gt;
+&lt;pre&gt;Failed to generate image: Could not find the 'dot' executable in PATH; add it to the PATH or specify its location using the 'graphvizdot' document attribute
+digraph G {
+    graph [fontname = &quot;arial&quot;, rankdir = LR, splines=true, overlap=false];
+    node[shape=record, fontname = &quot;arial&quot;];
+    edge [fontname = &quot;arial&quot;];
+
+    Application[label=&quot;Application&quot;, height=1];
+    Gateway[label=&quot;Gateway&quot;, height=4];
+
+    ServiceA[label=&quot;Service A&quot;, height=1];
+    ServiceB[label=&quot;Service B&quot;, height=1];
+    ServiceC[label=&quot;Service C&quot;, height=1];
+
+    Application -&amp;gt; Gateway [label=&quot;Gateway Auth Only&quot;, dir=&quot;both&quot;];
+    Application -&amp;gt; ServiceC [label=&quot;Not Authenticated Failure&quot;, style=&quot;dashed&quot;, color=&quot;red&quot;]
+
+    Gateway -&amp;gt; ServiceA [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+    Gateway -&amp;gt; ServiceB [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+    Gateway -&amp;gt; ServiceC [label=&quot;Mutual Auth&quot;, dir=&quot;both&quot;];
+}&lt;/pre&gt;
 &lt;/div&gt;
-&lt;div class=&quot;title&quot;&gt;Figure 1. Simple mutual auth setup&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Notice that the services trust the gateway (and vice versa), but the services &lt;em&gt;do not&lt;/em&gt; trust the application. The application tries its luck and attempts to bypass the gateway, but it doesn&amp;#8217;t hold a trusted certificate, so it fails.&lt;/p&gt;
@@ -9794,6 +9832,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 04:15:00 -0500</pubDate>
 				<link>http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">http://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Tue, 18 Dec 2018 17:19:33 -0500</lastBuildDate>
+			</item><lastBuildDate>Mon, 25 Feb 2019 12:12:33 -0500</lastBuildDate>
 	</channel>
 </rss>
