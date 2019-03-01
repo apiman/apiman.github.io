@@ -25,8 +25,8 @@
   </licenses>
 
   <issueManagement>
-    <system>jira</system>
-    <url>https://issues.jboss.org/browse/APIMAN</url>
+    <system>github</system>
+    <url>https://github.com/apiman/apiman/issues</url>
   </issueManagement>
 
   <scm>
