@@ -6,8 +6,8 @@ var com = {
 };
 com.qmino.miredot.restApiSource = {
 	"projectName":"apiman-manager-api-rest",
-	"projectVersion":"1.5.5-SNAPSHOT",
-	"projectTitle":"API Manager REST Services (1.5.5-SNAPSHOT)",
+	"projectVersion":"1.5.6-SNAPSHOT",
+	"projectTitle":"API Manager REST Services (1.5.6-SNAPSHOT)",
 	"buildSystem":"maven 3",
 	"miredotVersion":"1.6.2",
 	"miredotRevision":"f89b750ce8b9",
@@ -16,7 +16,7 @@ com.qmino.miredot.restApiSource = {
 	"singlePage":false,
 	"hideLogoOnTop":false,
 	"initialCollapseLevel":1,
-	"dateOfGeneration":"2020-01-15 11:51:10",
+	"dateOfGeneration":"2020-03-06 13:08:38",
 	"validLicense":true,
 	"licenseErrorMessage":null,
 	"licenseType":"PRO",
@@ -59,6 +59,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_members_MemberBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_members_MemberBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out",
 		"content":[
 		],
 	},
@@ -362,18 +374,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_idm_UserPermissionsBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_idm_UserPermissionsBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_idm_UserPermissionsBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_idm_UserPermissionsBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_summary_PluginSummaryBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_summary_PluginSummaryBean_in",
@@ -383,6 +383,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_summary_PluginSummaryBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_summary_PluginSummaryBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_idm_UserPermissionsBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_idm_UserPermissionsBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_idm_UserPermissionsBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_idm_UserPermissionsBean_out",
 		"content":[
 		],
 	},
@@ -434,18 +446,6 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
-	"io_apiman_manager_api_beans_idm_CurrentUserBean_in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_idm_CurrentUserBean_in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_idm_CurrentUserBean_out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_idm_CurrentUserBean_out",
-		"content":[
-		],
-	},
 	"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in",
@@ -455,6 +455,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_idm_CurrentUserBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_idm_CurrentUserBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_idm_CurrentUserBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_idm_CurrentUserBean_out",
 		"content":[
 		],
 	},
@@ -626,6 +638,18 @@ com.qmino.miredot.restApiSource.tos = {
 		"content":[
 		],
 	},
+	"io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out",
+		"content":[
+		],
+	},
 	"io_apiman_manager_api_beans_gateways_NewGatewayBean_in":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_gateways_NewGatewayBean_in",
@@ -731,18 +755,6 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_clients_ClientBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_clients_ClientBean_out",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in",
-		"content":[
-		],
-	},
-	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out":{
-		"type":"complex",
-		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out",
 		"content":[
 		],
 	},
@@ -1007,6 +1019,18 @@ com.qmino.miredot.restApiSource.tos = {
 	"io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out":{
 		"type":"complex",
 		"name":"io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__in":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__in",
+		"content":[
+		],
+	},
+	"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out":{
+		"type":"complex",
+		"name":"io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out",
 		"content":[
 		],
 	},
@@ -1652,23 +1676,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 		"required":false,
 	},
 	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"roles",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"collection",
 			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -1757,6 +1781,58 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in"].content = [
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out"].content = [
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"].content = [
 	{
 		"name":"name",
@@ -1781,44 +1857,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
-		"name":"initialVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
@@ -1830,20 +1868,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"publicAPI",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -1860,6 +1901,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"parsePayload",
 		"comment":null,
 		"fullComment":null,
@@ -1867,6 +1916,33 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 			"type":"simple",
 			"typeValue":"boolean",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"initialVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -1897,45 +1973,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
-		"name":"initialVersion",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
 		"deprecated":false,
 		"required":false,
 	},
 	{
 		"name":"definitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -1965,6 +2014,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
+		"name":"parsePayload",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"plans",
 		"comment":null,
 		"fullComment":null,
@@ -1976,13 +2036,29 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean
 		"required":false,
 	},
 	{
-		"name":"parsePayload",
+		"name":"initialVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -2128,17 +2204,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlan
 		"required":false,
 	},
 	{
-		"name":"planDescription",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"planId",
 		"comment":null,
 		"fullComment":null,
@@ -2151,6 +2216,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlan
 	},
 	{
 		"name":"planName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planDescription",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2176,17 +2252,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlan
 		"required":false,
 	},
 	{
-		"name":"planDescription",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"planId",
 		"comment":null,
 		"fullComment":null,
@@ -2199,6 +2264,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlan
 	},
 	{
 		"name":"planName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planDescription",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2239,23 +2315,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -2295,62 +2371,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
@@ -2373,12 +2393,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
-		"name":"definitionUrl",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2395,10 +2426,51 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"endpointType",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -2425,36 +2497,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
-		"name":"publicAPI",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"api",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"gateways",
 		"comment":null,
 		"fullComment":null,
@@ -2473,6 +2515,40 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 			"type":"simple",
 			"typeValue":"boolean",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -2511,18 +2587,150 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
-		"name":"definitionType",
+		"name":"api",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"endpointContentType",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"retiredOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"gateways",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publishedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"parsePayload",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -2545,150 +2753,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersion
 		"required":false,
 	},
 	{
-		"name":"createdBy",
+		"name":"definitionType",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"endpointContentType",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"definitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publishedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"retiredOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"parsePayload",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicAPI",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"gateways",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"api",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -2727,6 +2803,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiB
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"].content = [
 	{
+		"name":"apiId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"planId",
 		"comment":null,
 		"fullComment":null,
@@ -2739,17 +2826,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 	},
 	{
 		"name":"apiOrgId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2775,7 +2851,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_out"].content = [
 	{
-		"name":"apiOrgId",
+		"name":"apiVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2797,7 +2873,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 		"required":false,
 	},
 	{
-		"name":"planId",
+		"name":"apiOrgId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2808,7 +2884,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewCo
 		"required":false,
 	},
 	{
-		"name":"apiVersion",
+		"name":"planId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2853,6 +2929,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrga
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrganizationBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"].content = [
 	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"username",
 		"comment":null,
 		"fullComment":null,
@@ -2864,7 +2951,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in
 		"required":false,
 	},
 	{
-		"name":"email",
+		"name":"fullName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2881,17 +2968,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2912,7 +2988,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"].content = [
 	{
-		"name":"username",
+		"name":"fullName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -2934,23 +3010,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_ou
 		"required":false,
 	},
 	{
-		"name":"fullName",
+		"name":"username",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"admin",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -2962,6 +3027,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_ou
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"admin",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3108,23 +3184,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_in
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3376,51 +3452,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"required":false,
 	},
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"routeDefinitionUrl",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"tags",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
 		"name":"definitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3440,6 +3483,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 	},
 	{
 		"name":"icon",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"namespace",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3472,12 +3526,34 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"required":false,
 	},
 	{
-		"name":"namespace",
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"routeDefinitionUrl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"tags",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
 		},
 		"deprecated":false,
 		"required":false,
@@ -3531,39 +3607,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"required":false,
 	},
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"routeDefinitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"tags",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"icon",
 		"comment":null,
 		"fullComment":null,
@@ -3575,7 +3618,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"required":false,
 	},
 	{
-		"name":"definitionUrl",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3586,7 +3629,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"required":false,
 	},
 	{
-		"name":"endpoint",
+		"name":"definitionUrl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3626,6 +3669,39 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Availab
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"routeDefinitionUrl",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"tags",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"].comment = null;
@@ -3642,7 +3718,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 		"required":false,
 	},
 	{
-		"name":"type",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3664,7 +3740,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"type",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3745,17 +3821,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"artifactId",
 		"comment":null,
 		"fullComment":null,
@@ -3768,6 +3833,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPlug
 	},
 	{
 		"name":"groupId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -3841,23 +3917,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_AvailableApiBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -3900,28 +3976,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
@@ -3939,6 +3993,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -3992,7 +4068,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4014,7 +4090,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4029,14 +4105,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_Organizati
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"].content = [
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"definitionUrl",
 		"comment":null,
 		"fullComment":null,
@@ -4044,6 +4112,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefi
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -4052,14 +4128,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefi
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefinitionBean_out"].content = [
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"definitionUrl",
 		"comment":null,
 		"fullComment":null,
@@ -4067,6 +4135,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiDefi
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -4101,23 +4177,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -4228,14 +4304,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 		"required":false,
 	},
 	{
-		"name":"type",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"description",
 		"comment":null,
 		"fullComment":null,
@@ -4243,6 +4311,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"type",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -4351,58 +4427,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].content = [
-	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"userId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].content = [
-	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"userId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -4416,7 +4440,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"type",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4438,7 +4462,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"type",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4493,23 +4517,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -4552,17 +4576,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"artifactId",
 		"comment":null,
 		"fullComment":null,
@@ -4575,6 +4588,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 	},
 	{
 		"name":"groupId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4631,6 +4655,58 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginS
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].content = [
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"userId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].content = [
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"userId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -4644,7 +4720,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"required":false,
 	},
 	{
-		"name":"description",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4655,7 +4731,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -4685,6 +4761,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"required":false,
 	},
 	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -4702,17 +4789,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicAPI",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -4774,6 +4850,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"required":false,
 	},
 	{
+		"name":"publicAPI",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -4791,17 +4878,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVers
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"publicAPI",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -4940,6 +5016,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientS
 		"required":false,
 	},
 	{
+		"name":"numContracts",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -4957,17 +5044,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientS
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"numContracts",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5010,6 +5086,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientS
 		"required":false,
 	},
 	{
+		"name":"numContracts",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -5027,17 +5114,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientS
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"numContracts",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5080,6 +5156,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSumm
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -5097,17 +5184,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSumm
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5150,6 +5226,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSumm
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -5171,160 +5258,9 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSumm
 		"deprecated":false,
 		"required":false,
 	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].content = [
-	{
-		"name":"username",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"joinedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"admin",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].content = [
-	{
-		"name":"username",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"email",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"fullName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"admin",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"joinedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"permissions",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in"].content = [
 	{
 		"name":"name",
@@ -5399,6 +5335,146 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Update
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].content = [
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"joinedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"admin",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].content = [
+	{
+		"name":"fullName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"email",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"username",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"joinedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"admin",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"permissions",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_PermissionBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_in"].content = [
 	{
 		"name":"name",
@@ -5434,12 +5510,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"required":false,
 	},
 	{
-		"name":"policyDefinitionId",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5456,18 +5532,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"icon",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"icon",
+		"name":"policyDefinitionId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5515,17 +5591,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"required":false,
 	},
 	{
-		"name":"policyDefinitionId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"icon",
 		"comment":null,
 		"fullComment":null,
@@ -5554,6 +5619,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyS
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"policyDefinitionId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -5641,23 +5717,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntryBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -5689,7 +5765,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5701,17 +5777,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 	},
 	{
 		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5744,6 +5809,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
+		"name":"entityType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"what",
 		"comment":null,
 		"fullComment":null,
@@ -5752,10 +5825,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"entityType",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntityType"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -5786,7 +5862,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"who",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -5830,13 +5906,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"who",
+		"name":"what",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntryType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -5849,10 +5922,13 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_audit_AuditEntr
 		"required":false,
 	},
 	{
-		"name":"what",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_audit_AuditEntryType"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -5902,6 +5978,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"required":false,
 	},
 	{
+		"name":"page",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"orderBy",
 		"comment":null,
 		"fullComment":null,
@@ -5914,17 +6001,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_PagingBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"page",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -5944,14 +6020,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].content = [
 	{
-		"name":"orderBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"filters",
 		"comment":null,
 		"fullComment":null,
@@ -5970,6 +6038,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"orderBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_OrderByBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_out"].comment = null;
@@ -5983,7 +6059,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"required":false,
 	},
 	{
-		"name":"organizationId",
+		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6005,7 +6081,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"required":false,
 	},
 	{
-		"name":"entityId",
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6028,17 +6104,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 		"required":false,
 	},
 	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
@@ -6051,6 +6116,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionB
 	},
 	{
 		"name":"entityVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6087,7 +6163,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 		"required":false,
 	},
 	{
-		"name":"failures",
+		"name":"total",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6098,7 +6174,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 		"required":false,
 	},
 	{
-		"name":"total",
+		"name":"failures",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6172,7 +6248,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"description",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6183,7 +6259,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVer
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6350,7 +6426,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
-		"name":"numClients",
+		"name":"numApis",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6361,7 +6437,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
-		"name":"numApis",
+		"name":"numClients",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6420,6 +6496,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 		"required":false,
 	},
 	{
+		"name":"numClients",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"numMembers",
 		"comment":null,
 		"fullComment":null,
@@ -6432,17 +6519,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Organiz
 	},
 	{
 		"name":"numApis",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"numClients",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6483,23 +6559,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -6617,7 +6693,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserB
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_out"].content = [
 	{
-		"name":"email",
+		"name":"fullName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6628,7 +6704,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserB
 		"required":false,
 	},
 	{
-		"name":"fullName",
+		"name":"email",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6641,9 +6717,50 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_in"].content = [
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out"].content = [
+	{
+		"name":"endpoint",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGatewayBean_in"].content = [
 	{
 		"name":"name",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6658,17 +6775,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGat
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"description",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -6744,7 +6850,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"type",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6766,7 +6872,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"type",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -6821,23 +6927,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -6891,17 +6997,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 		"required":false,
 	},
 	{
-		"name":"version",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"artifactId",
 		"comment":null,
 		"fullComment":null,
@@ -6914,6 +7009,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginB
 	},
 	{
 		"name":"groupId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7024,23 +7130,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7364,14 +7470,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"type",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_policies_PolicyType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"description",
 		"comment":null,
 		"fullComment":null,
@@ -7379,6 +7477,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"type",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_policies_PolicyType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7405,28 +7511,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"entityVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
@@ -7438,18 +7522,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
+		"name":"entityVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7482,6 +7555,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"definition",
 		"comment":null,
 		"fullComment":null,
@@ -7496,6 +7591,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7565,17 +7671,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"organizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"entityId",
 		"comment":null,
 		"fullComment":null,
@@ -7609,7 +7704,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7631,7 +7726,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -7648,6 +7743,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"organizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7698,6 +7804,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
@@ -7709,13 +7826,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"api",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7735,14 +7849,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 		"deprecated":false,
 		"required":false,
 	},
-	{
-		"name":"api",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_in"],
-		"deprecated":false,
-		"required":false,
-	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_in"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_in"].comment = null;
@@ -7755,6 +7861,30 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 			"type":"simple",
 			"typeValue":"number",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plan",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"api",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7777,30 +7907,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_Contr
 			"type":"simple",
 			"typeValue":"date string",
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"client",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"api",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plan",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -7850,23 +7956,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientB
 		"required":false,
 	},
 	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -7941,58 +8047,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientB
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_in"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"].content = [
-	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"totalSize",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsSummaryBean_in"].content = [
 	{
 		"name":"errors",
@@ -8006,7 +8060,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 		"required":false,
 	},
 	{
-		"name":"failures",
+		"name":"total",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8017,7 +8071,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_Respons
 		"required":false,
 	},
 	{
-		"name":"total",
+		"name":"failures",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8157,12 +8211,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in
 		"required":false,
 	},
 	{
-		"name":"autoGrant",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8179,12 +8233,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_in
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"autoGrant",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"date string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8238,17 +8292,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_ou
 		"required":false,
 	},
 	{
-		"name":"autoGrant",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
@@ -8266,6 +8309,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_ou
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"autoGrant",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8453,28 +8507,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
@@ -8497,7 +8529,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"lockedOn",
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8512,6 +8555,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"comment":null,
 		"fullComment":null,
 		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_in"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"lockedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -8550,29 +8604,15 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
+		"name":"plan",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8594,30 +8634,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersi
 		"required":false,
 	},
 	{
-		"name":"lockedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plan",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
-		"deprecated":false,
-		"required":false,
-	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_in"].content = [
-	{
-		"name":"name",
+		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8628,7 +8645,33 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"description",
+		"name":"createdOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"lockedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_in"].content = [
+	{
+		"name":"name",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8650,7 +8693,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"id",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8661,18 +8704,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"up",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"builtOn",
+		"name":"id",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8689,6 +8721,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"builtOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"up",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8731,23 +8785,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemSt
 		"required":false,
 	},
 	{
-		"name":"up",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"up",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -8879,23 +8933,23 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchRe
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"].content = [
 	{
-		"name":"beans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"totalSize",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -8916,7 +8970,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 		"required":false,
 	},
 	{
-		"name":"description",
+		"name":"version",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8927,7 +8981,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 		"required":false,
 	},
 	{
-		"name":"version",
+		"name":"description",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -8957,6 +9011,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 		"required":false,
 	},
 	{
+		"name":"apiKey",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -8969,17 +9034,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 	},
 	{
 		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiKey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9046,6 +9100,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 		"required":false,
 	},
 	{
+		"name":"apiKey",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"organizationId",
 		"comment":null,
 		"fullComment":null,
@@ -9058,17 +9123,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientV
 	},
 	{
 		"name":"organizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiKey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9094,14 +9148,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"type",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"description",
 		"comment":null,
 		"fullComment":null,
@@ -9109,6 +9155,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"type",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -9125,28 +9179,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 	},
 	{
 		"name":"configuration",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9174,6 +9206,28 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"createdBy",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9246,7 +9300,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"createdOn",
+		"name":"modifiedOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9268,7 +9322,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9283,61 +9337,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Gatewa
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_in"].content = [
 	{
-		"name":"apiOrganizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiOrganizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clientOrganizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clientOrganizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiDescription",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
@@ -9349,7 +9348,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"planId",
+		"name":"apiId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9360,7 +9359,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"apiId",
+		"name":"planId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9382,7 +9381,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"clientId",
+		"name":"contractId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"planName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9393,7 +9403,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"planName",
+		"name":"clientId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9426,17 +9436,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"contractId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"number",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"clientName",
 		"comment":null,
 		"fullComment":null,
@@ -9449,6 +9448,61 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 	},
 	{
 		"name":"apiName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiOrganizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientOrganizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiOrganizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiDescription",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientOrganizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9463,7 +9517,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"].content = [
 	{
-		"name":"apiOrganizationId",
+		"name":"apiVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9474,7 +9528,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"apiDescription",
+		"name":"clientVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9485,29 +9539,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"clientOrganizationId",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clientOrganizationName",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiOrganizationName",
+		"name":"planVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9551,34 +9583,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"clientVersion",
+		"name":"contractId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"apiVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"planVersion",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9617,18 +9627,62 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Contrac
 		"required":false,
 	},
 	{
-		"name":"contractId",
+		"name":"planName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"number",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"planName",
+		"name":"apiOrganizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientOrganizationId",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiDescription",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"apiOrganizationName",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clientOrganizationName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9687,6 +9741,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
+		"name":"icon",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"templates",
 		"comment":null,
 		"fullComment":null,
@@ -9694,6 +9759,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 			"type":"collection",
 			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_in"],
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"formType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -9709,26 +9782,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"formType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"policyImpl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"icon",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -9798,17 +9852,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"templates",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"pluginId",
 		"comment":null,
 		"fullComment":null,
@@ -9820,20 +9863,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"formType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"form",
+		"name":"deleted",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -9850,13 +9885,32 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_Policy
 		"required":false,
 	},
 	{
-		"name":"deleted",
+		"name":"templates",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionTemplateBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"form",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
+			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"formType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -9953,28 +10007,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
-		"name":"modifiedOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
@@ -9997,10 +10029,24 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
-		"name":"client",
+		"name":"createdBy",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"modifiedOn",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
@@ -10023,6 +10069,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 			"type":"simple",
 			"typeValue":"date string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_in"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10072,29 +10126,15 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
+		"name":"client",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"createdBy",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"createdOn",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"date string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10116,7 +10156,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
-		"name":"apikey",
+		"name":"modifiedBy",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10127,7 +10167,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
-		"name":"publishedOn",
+		"name":"createdOn",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10149,19 +10189,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientV
 		"required":false,
 	},
 	{
-		"name":"client",
+		"name":"publishedOn",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"date string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_in"].content = [
 	{
-		"name":"detail",
+		"name":"apikey",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10171,6 +10210,10 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 		"deprecated":false,
 		"required":false,
 	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_in"].content = [
 	{
 		"name":"success",
 		"comment":null,
@@ -10178,6 +10221,17 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_Gateway
 		"typeValue":{
 			"type":"simple",
 			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"detail",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -10224,23 +10278,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"definitionType",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
+		"name":"publicAPI",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10251,12 +10300,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"cloneVersion",
+		"name":"clone",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"boolean",
 		},
 		"deprecated":false,
 		"required":false,
@@ -10273,12 +10322,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"endpoint",
+		"name":"plans",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
 		},
 		"deprecated":false,
 		"required":false,
@@ -10292,23 +10341,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"publicAPI",
+		"name":"cloneVersion",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_in"],
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -10321,6 +10359,22 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 			"type":"simple",
 			"typeValue":"boolean",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"definitionType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10340,34 +10394,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"definitionType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"clone",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"cloneVersion",
+		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10379,17 +10406,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 	},
 	{
 		"name":"definitionUrl",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"string",
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10419,6 +10435,39 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
+		"name":"parsePayload",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"clone",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"boolean",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"cloneVersion",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"string",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"plans",
 		"comment":null,
 		"fullComment":null,
@@ -10430,13 +10479,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVers
 		"required":false,
 	},
 	{
-		"name":"parsePayload",
+		"name":"definitionType",
 		"comment":null,
 		"fullComment":null,
-		"typeValue":{
-			"type":"simple",
-			"typeValue":"boolean",
-		},
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_ApiDefinitionType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10597,7 +10651,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiName
 		"required":false,
 	},
 	{
-		"name":"current",
+		"name":"ownedByUser",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10608,7 +10662,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiName
 		"required":false,
 	},
 	{
-		"name":"ownedByUser",
+		"name":"current",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -10689,6 +10743,58 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCr
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaFilterBean_out"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__in"].content = [
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_in"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out"].content = [
+	{
+		"name":"totalSize",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"simple",
+			"typeValue":"number",
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"beans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_searchResults_UserSearchResult_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"].content = [
 	{
 		"name":"configuration",
@@ -10751,32 +10857,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePla
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].content = [
 	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointProperties",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"map",
-			"typeKey":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"string",
-			},
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"endpoint",
 		"comment":null,
 		"fullComment":null,
@@ -10784,14 +10864,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 			"type":"simple",
 			"typeValue":"string",
 		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
-		"name":"endpointType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -10818,6 +10890,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 		"required":false,
 	},
 	{
+		"name":"endpointType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointType"],
+		"deprecated":false,
+		"required":false,
+	},
+	{
 		"name":"gateways",
 		"comment":null,
 		"fullComment":null,
@@ -10839,18 +10919,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 		"deprecated":false,
 		"required":false,
 	},
-];
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].ordered = "false";
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].comment = null;
-com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out"].content = [
-	{
-		"name":"endpointContentType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
-		"deprecated":false,
-		"required":false,
-	},
 	{
 		"name":"endpointProperties",
 		"comment":null,
@@ -10869,6 +10937,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
+		"deprecated":false,
+		"required":false,
+	},
+];
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].ordered = "false";
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"].comment = null;
+com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_out"].content = [
 	{
 		"name":"endpoint",
 		"comment":null,
@@ -10900,17 +10980,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 		"required":false,
 	},
 	{
-		"name":"plans",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":{
-			"type":"collection",
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
-		},
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"parsePayload",
 		"comment":null,
 		"fullComment":null,
@@ -10929,6 +10998,43 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiV
 			"type":"collection",
 			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiGatewayBean_out"],
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"plans",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"collection",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiPlanBean_out"],
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointProperties",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":{
+			"type":"map",
+			"typeKey":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"string",
+			},
+		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"endpointContentType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_apis_EndpointContentType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -11082,12 +11188,12 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"pluginId",
+		"name":"icon",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"number",
+			"typeValue":"string",
 		},
 		"deprecated":false,
 		"required":false,
@@ -11101,18 +11207,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"policyImpl",
+		"name":"pluginId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
 			"type":"simple",
-			"typeValue":"string",
+			"typeValue":"number",
 		},
 		"deprecated":false,
 		"required":false,
 	},
 	{
-		"name":"icon",
+		"name":"policyImpl",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -11182,14 +11288,6 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"required":false,
 	},
 	{
-		"name":"formType",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
-		"deprecated":false,
-		"required":false,
-	},
-	{
 		"name":"policyImpl",
 		"comment":null,
 		"fullComment":null,
@@ -11200,18 +11298,18 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyD
 		"deprecated":false,
 		"required":false,
 	},
+	{
+		"name":"formType",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_summary_PolicyFormType"],
+		"deprecated":false,
+		"required":false,
+	},
 ];
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"].ordered = "false";
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_UpdateGatewayBean_in"].content = [
-	{
-		"name":"type",
-		"comment":null,
-		"fullComment":null,
-		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
-		"deprecated":false,
-		"required":false,
-	},
 	{
 		"name":"description",
 		"comment":null,
@@ -11220,6 +11318,14 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_Update
 			"type":"simple",
 			"typeValue":"string",
 		},
+		"deprecated":false,
+		"required":false,
+	},
+	{
+		"name":"type",
+		"comment":null,
+		"fullComment":null,
+		"typeValue":com.qmino.miredot.restApiSource.enums["io_apiman_manager_api_beans_gateways_GatewayType"],
 		"deprecated":false,
 		"required":false,
 	},
@@ -11299,7 +11405,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberR
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_in"].comment = null;
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberRoleBean_out"].content = [
 	{
-		"name":"roleId",
+		"name":"roleName",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -11310,7 +11416,7 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberR
 		"required":false,
 	},
 	{
-		"name":"roleName",
+		"name":"roleId",
 		"comment":null,
 		"fullComment":null,
 		"typeValue":{
@@ -11355,12 +11461,321 @@ com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ApiKeyB
 com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ApiKeyBean_out"].comment = null;
 com.qmino.miredot.restApiSource.interfaces = [
 	{
-		"beschrijving":"Use this endpoint to search for organizations. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/search/organizations",
-		"http":"POST",
-		"title":"Search for Organizations",
+		"beschrijving":"Use this endpoint to get a list of all Contracts for an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
+		"http":"GET",
+		"title":"List All Contracts for an Client",
 		"tags":[
-			
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
+			},
+			"comment":"A list of Contracts.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Contracts is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client is not found.",
+			},
+		],
+		"hash":"1573696462",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about the currently authenticated user.",
+		"url":"/users/currentuser/info",
+		"http":"GET",
+		"title":"Get Current User Information",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"],
+			"comment":"Information about the authenticated user.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the information is correctly returned.",
+			},
+		],
+		"hash":"-18729759",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint deletes a Gateway by its unique ID.",
+		"url":"/gateways/{gatewayId}",
+		"http":"DELETE",
+		"title":"Delete a Gateway",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the delete is successful.",
+			},
+		],
+		"hash":"626901080",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"gatewayId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The ID of the Gateway to delete.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by plan.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planResponseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (per Plan)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"1223249644",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for available APIs within any configured API catalogs. If no API catalogs are configured, this will always return zero results.",
+		"url":"/search/apiCatalog/entries",
+		"http":"POST",
+		"title":"Search for APIs in API Catalogs",
+		"tags":[
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11378,8 +11793,8 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__out"],
-			"comment":"The search results (a page of organizations).",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"],
+			"comment":"The search results (a page of available APIs).",
 		},
 		"statusCodes":[
 			{
@@ -11387,7 +11802,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the search is successful.",
 			},
 		],
-		"hash":"-1330388304",
+		"hash":"276535166",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11417,12 +11832,3295 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to list all of the versions of an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
+		"http":"GET",
+		"title":"List Client Versions",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"],
+			},
+			"comment":"A list of Clients.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Client versions is successfully returned.",
+			},
+		],
+		"hash":"403818521",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed information about a single version of an API. If the user has not \"apiView\" permissions, sensitive data won't be returned.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
+		"http":"GET",
+		"title":"Get API Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"A API version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API version is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API version does not exist.",
+			},
+		],
+		"hash":"-317624296",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all plugins that have been added to the system.",
+		"url":"/plugins/",
+		"http":"GET",
+		"title":"List All Plugins",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"],
+			},
+			"comment":"A list of plugins.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of plugins is successfully returned.",
+			},
+		],
+		"hash":"937475817",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by client.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientResponseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (per Client)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"1476581646",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get the client's current API Key. This call will fail if you do not have the proper permission to see the information.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apikey",
+		"http":"GET",
+		"title":"Get API Key",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ApiKeyBean_out"],
+			"comment":"The API Key value.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client's API Key is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-779838070",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client Version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a single policy definition by its ID.",
+		"url":"/policyDefs/{policyDefinitionId}",
+		"http":"GET",
+		"title":"Get Policy Definition by ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_out"],
+			"comment":"A policy definition if found.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the policy definition is returned successfully.",
+			},
+		],
+		"hash":"-1521442722",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"policyDefinitionId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The ID of the policy definition.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the versions of a Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions",
+		"http":"GET",
+		"title":"List Plan Versions",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVersionSummaryBean_out"],
+			},
+			"comment":"A list of Plans. when trying to get, update, or delete an plan that does not exist",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Plan versions is successfully returned.",
+			},
+		],
+		"hash":"2025326519",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new Plan. Note that it is important to also create an initial version of the Plan (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Plan Version\". If the former is done, then a first Plan version will be created automatically by this endpoint.",
+		"url":"/organizations/{organizationId}/plans",
+		"http":"POST",
+		"title":"Create Plan",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
+			"comment":"Full details about the newly created Plan.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Plan is successfully created.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"1607802820",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanBean_in"],
+					"comment":"Information about the new Plan.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint can be used to access the full information about an apiman plugin. The plugin is retrieved using the ID it was given when it was added. The ID information can be retrieved by listing all plugins or remembered when a plugin is first added.",
+		"url":"/plugins/{pluginId}",
+		"http":"GET",
+		"title":"Get Plugin by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
+			"comment":"An apiman plugin.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the plugin exists and is returned.",
+			},
+		],
+		"hash":"-1037507013",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"pluginId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"the plugin id",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for users. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/users",
+		"http":"POST",
+		"title":"Search for Users",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_search_searchResults_UserSearchResult__out"],
+			"comment":"The search results (a page of users).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"1082455447",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns all APIs that the user has permission to view.",
+		"url":"/users/{userId}/apis",
+		"http":"GET",
+		"title":"List User APIs",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
+			},
+			"comment":"List of APIs.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API list is successfully returned.",
+			},
+		],
+		"hash":"-1759004623",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for organizations. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/organizations",
+		"http":"POST",
+		"title":"Search for Organizations",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_OrganizationSummaryBean__out"],
+			"comment":"The search results (a page of organizations).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"670524142",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to change the order of Policies for an API. When a Policy is added to the API, it is added as the last Policy in the list of API Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the API, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/reorderPolicies",
+		"http":"POST",
+		"title":"Re-Order API Policies",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the re-ordering of Policies was successful.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-1318197898",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
+					"comment":"The Policies in the desired order.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about a single Organization by its ID.",
+		"url":"/organizations/{organizationId}",
+		"http":"GET",
+		"title":"Get Organization By ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
+			"comment":"The Organization.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Organization was successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"663565712",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization id.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve detailed information about a single API Contract for an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
+		"http":"GET",
+		"title":"Get API Contract",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_out"],
+			"comment":"Details about a single Contract.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Contract is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client version does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Contract is not found.",
+			},
+		],
+		"hash":"-159521956",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"contractId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The ID of the Contract.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return total response type statistics over the given date range. Basically this will return three numbers: total request, # failed responses, # error responses.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/summaryResponseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (Summary)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsSummaryBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"193895596",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Call this endpoint in order to execute actions for apiman entities such as Plans, APIs, or Clients. The type of the action must be included in the request payload.",
+		"url":"/actions/",
+		"http":"POST",
+		"title":"Execute an Entity Action",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the action completes successfully.",
+			},
+		],
+		"hash":"-2115263537",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionBean_in"],
+					"comment":"The details about what action to execute.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns all of the permissions assigned to a specific user.",
+		"url":"/users/{userId}/permissions",
+		"http":"GET",
+		"title":"Get User's Permissions",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"],
+			"comment":"All of the user's permissions.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the permissions are successfully retrieved.",
+			},
+		],
+		"hash":"55407208",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user's ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to remove a Policy from the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
+		"http":"DELETE",
+		"title":"Remove API Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Policy was successfully deleted.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
+			},
+		],
+		"hash":"237618689",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a new Policy to the Plan version.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies",
+		"http":"POST",
+		"title":"Add Plan Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full details about the newly added Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully added.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+		],
+		"hash":"215645169",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
+					"comment":"Information about the new Policy.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the Policies configured for the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
+		"http":"GET",
+		"title":"List All Client Policies",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+			},
+			"comment":"A List of Policies.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Policies is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"18809139",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Update the meta information about a policy definition.",
+		"url":"/policyDefs/{policyDefinitionId}",
+		"http":"PUT",
+		"title":"Update Policy Definition",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the update was successful.",
+			},
+		],
+		"hash":"-221816855",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"policyDefinitionId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The policy definition ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in"],
+					"comment":"New meta-data for the policy definition.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns all clients that the user has permission to edit. This endpoint is used in the UI for creating a contract - only show the clients the user has permissions to edit",
+		"url":"/users/{userId}/editable-clients",
+		"http":"GET",
+		"title":"List User Clients",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+			},
+			"comment":"List of clients.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the client list is successfully returned.",
+			},
+		],
+		"hash":"41438550",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new version of the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions",
+		"http":"POST",
+		"title":"Create Plan Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
+			"comment":"Full details about the newly created Plan version. when trying to get, update, or delete an plan that does not exist",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Plan version is created successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the Plan version already exists.",
+			},
+		],
+		"hash":"1686043217",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVersionBean_in"],
+					"comment":"Initial information about the new Plan version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all APIs in the Organization.",
+		"url":"/organizations/{organizationId}/apis",
+		"http":"GET",
+		"title":"List APIs",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
+			},
+			"comment":"A list of APIs.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of APIs is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"-1087022841",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all Contracts created with this API. This will return Contracts created by between any Client and through any Plan.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/contracts",
+		"http":"GET",
+		"title":"List API Contracts",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
+			},
+			"comment":"A list of Contracts.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Contracts is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"712169543",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of Contracts to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of Contracts per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as JSON data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/json",
+		"http":"GET",
+		"title":"Get API Registry (JSON)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"API Registry information or temporary download information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API Registry information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"1005685448",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"download",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"Query parameter set to true in order to generate a download link.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for APIs. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/apis",
+		"http":"POST",
+		"title":"Search for APIs",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"],
+			"comment":"The search results (a page of APIs).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"-2101809160",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the Policies configured for the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
+		"http":"GET",
+		"title":"List All API Policies",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+			},
+			"comment":"A List of Policies.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Policies is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1607658384",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint is used to test the Gateway's settings prior to either creating or updating it. The information will be used to attempt to create a link between the API Manager and the Gateway, by simply trying to ping the Gateway's \"status\" endpoint.",
+		"url":"/gateways/",
+		"http":"PUT",
+		"title":"Test a Gateway",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_out"],
+			"comment":"The result of testing the Gateway settings.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the test is performed (regardless of the outcome of the test).",
+			},
+		],
+		"hash":"1619889614",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGatewayBean_in"],
+					"comment":"Details of the Gateway for testing.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns audit activity information about the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/activity",
+		"http":"GET",
+		"title":"Get Plan Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit activity entries. when trying to get, update, or delete an plan that does not exist",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+		],
+		"hash":"1737367757",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity should be returned.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list the Plans configured for the given API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/plans",
+		"http":"GET",
+		"title":"List API Plans",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"],
+			},
+			"comment":"A list of API plans.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API plans are successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API cannot be found.",
+			},
+		],
+		"hash":"-1301073360",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Revoke all of a user's role memberships from the org.",
+		"url":"/organizations/{organizationId}/members/{userId}",
+		"http":"DELETE",
+		"title":"Revoke All Memberships",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the user's memberships were successfully revoked.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the user does not exist.",
+			},
+		],
+		"hash":"1264488986",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to break a Contract with an API.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
+		"http":"DELETE",
+		"title":"Break Contract",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Contract is successfully broken.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Contract does not exist.",
+			},
+		],
+		"hash":"-1008527961",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"contractId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Contract ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific client. This will return request count data broken down by API. It basically answers the question \"which APIs is my client really using?\".",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/metrics/apiUsage",
+		"http":"GET",
+		"title":"Get Client Usage Metrics (per API)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"],
+			"comment":"Usage metrics information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the metrics data is successfully returned.",
+			},
+		],
+		"hash":"-1790474751",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"from",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The start of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"to",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update information about an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}",
+		"http":"PUT",
+		"title":"Update API",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API is updated successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1326891089",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"],
+					"comment":"Updated API information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new Client. Note that it is important to also create an initial version of the Client (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Client Version\". If the former is done, then a first Client version will be created automatically by this endpoint.",
+		"url":"/organizations/{organizationId}/clients",
+		"http":"POST",
+		"title":"Create Client",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+			"comment":"Full details about the newly created Client.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client is successfully created.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"1431300356",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"],
+					"comment":"Information about the new Client.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to search for clients. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
+		"url":"/search/clients",
+		"http":"POST",
+		"title":"Search for Clients",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"],
+			"comment":"The search results (a page of clients).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search is successful.",
+			},
+		],
+		"hash":"-690237545",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint is called to create a new Gateway.",
+		"url":"/gateways/",
+		"http":"POST",
+		"title":"Create a Gateway",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_out"],
+			"comment":"The newly created Gateway.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Gateway is created successfully.",
+			},
+		],
+		"hash":"1677162168",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGatewayBean_in"],
+					"comment":"The details of the new Gateway.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed status information for a single version of an API. This is useful to figure out why an API is not yet in the 'Ready' state (which is required before it can be published to a Gateway).",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/status",
+		"http":"GET",
+		"title":"Get API Version Status",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"],
+			"comment":"Status information about an API version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the status information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API version does not exist.",
+			},
+		],
+		"hash":"1327852906",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed information about a single version of an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}",
+		"http":"GET",
+		"title":"Get Client Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
+			"comment":"An Client version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client version is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client version does not exist.",
+			},
+		],
+		"hash":"-419149743",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to create a new Organization.",
 		"url":"/organizations/",
 		"http":"POST",
 		"title":"Create Organization",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11449,7 +15147,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the Organization was successfully created.",
 			},
 		],
-		"hash":"-675432518",
+		"hash":"-1343854916",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11479,12 +15177,2508 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to get a list of all Plans in the Organization.",
+		"url":"/organizations/{organizationId}/plans",
+		"http":"GET",
+		"title":"List Plans",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSummaryBean_out"],
+			},
+			"comment":"A list of Plans.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Plans is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"-457395482",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns audit activity information about the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/activity",
+		"http":"GET",
+		"title":"Get API Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit activity entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"1574269832",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity should be returned.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to delete a policy definition by its ID. If the policy definition was added automatically from an installed plugin, this will fail. The only way to remove such policy definitions is to remove the plugin.",
+		"url":"/policyDefs/{policyDefinitionId}",
+		"http":"DELETE",
+		"title":"Delete policy definition.",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the policy definition is successfully deleted.",
+			},
+		],
+		"hash":"-1060104051",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"policyDefinitionId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The policy definition ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/activity",
+		"http":"GET",
+		"title":"Get Plan Version Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit activity entries are successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan version does not exist.",
+			},
+		],
+		"hash":"-56820286",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity data to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit clients. For example, when creating a new Client, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
+		"url":"/users/{userId}/clientorgs",
+		"http":"GET",
+		"title":"Get Organizations (app-edit)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+			},
+			"comment":"A list of organizations.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the organizations are successfully returned.",
+			},
+		],
+		"hash":"-838398617",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":null,
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"",
+		"url":"/system/import",
+		"http":"POST",
+		"title":null,
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"text/plain",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":null,
+		},
+		"statusCodes":[
+		],
+		"hash":"-1248517386",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Updates meta-information about a single Organization.",
+		"url":"/organizations/{organizationId}",
+		"http":"PUT",
+		"title":"Update Organization By ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Organization meta-data is successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"358633221",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrganizationBean_in"],
+					"comment":"Updated Organization information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Delete a ClientApp",
+		"url":"/organizations/{organizationId}/clients/{clientId}",
+		"http":"DELETE",
+		"title":"Delete a client",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Organization was successfully deleted",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the delete preconditions have not been met (i.e. sub-elements are still active, such as still-registered ClientVersions).",
+			},
+		],
+		"hash":"1133384171",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID the client exists within",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The ClientApp ID to dlete",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new apiman role. A role consists of a set of permissions granted to a user when that user is given the role within the context of an organization.",
+		"url":"/roles/",
+		"http":"POST",
+		"title":"Create Role",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
+			"comment":"Full information about the created role.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the role is created successfully.",
+			},
+		],
+		"hash":"-1862652516",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean_in"],
+					"comment":"The new role.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns the list of organizations that the user is a member of. The user is a member of an organization if she has at least one role for the org.",
+		"url":"/users/{userId}/organizations",
+		"http":"GET",
+		"title":"List User Organizations",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+			},
+			"comment":"List of organizations.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the organization list is successfully returned.",
+			},
+		],
+		"hash":"508849970",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about the Managed API's gateway endpoint. In other words, this returns the actual live endpoint on the API Gateway - the endpoint that a client should use when invoking the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/endpoint",
+		"http":"GET",
+		"title":"Get API Endpoint",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"],
+			"comment":"The live API endpoint information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the endpoint information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"2096275611",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all policy definitions contributed by the plugin.",
+		"url":"/plugins/{pluginId}/policyDefs",
+		"http":"GET",
+		"title":"Get Plugin Policy Definitions",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"],
+			},
+			"comment":"A list of policy definitions.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of policy definitions is returned successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the plugin does not exist.",
+			},
+		],
+		"hash":"-1634597381",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"pluginId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"the plugin id The plugin ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint delivers the gateway endpoint for the corresponding gateway id",
+		"url":"/gateways/{gatewayId}/endpoint",
+		"http":"GET",
+		"title":"This endpoint delivers the gateway endpoint for the corresponding gateway id",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayEndpointSummaryBean_out"],
+			"comment":"The corresponding gateway endpoint",
+		},
+		"statusCodes":[
+		],
+		"hash":"-669256592",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"gatewayId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"gateway id",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint is used to download a file that was previously generated by some other REST API call. For example, when exporting data via the /system/export endpoint, a temporary download link may be created. This represents that temporary download link. In this example, the download will result in the exported data.",
+		"url":"/downloads/{downloadId}",
+		"http":"GET",
+		"title":"Download File",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+			"text/xml",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"A binary file.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"On success.",
+			},
+		],
+		"hash":"-1847460723",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"downloadId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":null,
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the versions of an API. If the user has not \"apiView\" permissions, sensitive data won't be returned.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
+		"http":"GET",
+		"title":"List API Versions",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"],
+			},
+			"comment":"A list of APIs.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of API versions is successfully returned.",
+			},
+		],
+		"hash":"-703067018",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve information about a single Plan by ID. Note that this only returns information about the Plan, not about any particular *version* of the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}",
+		"http":"GET",
+		"title":"Get Plan By ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
+			"comment":"An Plan. when trying to get, update, or delete an plan that does not exist",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Plan is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+		],
+		"hash":"349067710",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/activity",
+		"http":"GET",
+		"title":"Get Client Version Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit activity entries are successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client version does not exist.",
+			},
+		],
+		"hash":"1229998368",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity data to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to delete an API's definition document. When this is done, the \"definitionType\" field on the API will be set to None.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"DELETE",
+		"title":"Remove API Definition",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API definition was successfully deleted.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"693600806",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all Clients in the Organization.",
+		"url":"/organizations/{organizationId}/clients",
+		"http":"GET",
+		"title":"List Clients",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+			},
+			"comment":"A list of Clients.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Clients is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"1152858308",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the API's definition document. An API definition will vary depending on the type of API, and the type of definition used. For example, it might be a Swagger document or a WSDL file. To use this endpoint, simply PUT the updated API Definition document in its entirety, making sure to set the Content-Type appropriately for the type of definition document. The content will be stored and the API's \"Definition Type\" field will be updated. <br /> Whenever an API's definition is updated, the \"definitionType\" property of that API is automatically set based on the request Content-Type. There is no other way to set the API's definition type property. The following is a map of Content-Type to API definition type. <table> <thead> <tr><th>Content Type</th><th>API Definition Type</th></tr> </thead> <tbody> <tr><td>application/json</td><td>SwaggerJSON</td></tr> <tr><td>application/x-yaml</td><td>SwaggerYAML</td></tr> <tr><td>application/wsdl+xml</td><td>WSDL</td></tr> </tbody> </table>",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"PUT",
+		"title":"Update API Definition",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API definition was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-373570616",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit plans. For example, when creating a new Plan, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
+		"url":"/users/{userId}/planorgs",
+		"http":"GET",
+		"title":"Get Organizations (plan-edit)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+			},
+			"comment":"A list of organizations.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the organizations are successfully returned.",
+			},
+		],
+		"hash":"24990217",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":null,
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about a specific user by the User ID.",
+		"url":"/users/{userId}",
+		"http":"GET",
+		"title":"Get User by ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"],
+			"comment":"Full user information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the user exists and information is returned.",
+			},
+		],
+		"hash":"-376631816",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a plugin to apiman. A plugin consists of the maven coordinates of an artifact deployed to a remote maven repository (e.g. maven central).",
+		"url":"/plugins/",
+		"http":"POST",
+		"title":"Add a Plugin",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
+			"comment":"Full details about the plugin that was added.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the plugin was added successfully.",
+			},
+		],
+		"hash":"1116364284",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_in"],
+					"comment":"The plugin to add.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to delete an API. There are multiple restrictions on this capability. Specifically, the API must not have any published versions. If you try to delete an API with one or more published versions, it will fail with an <code>EntityStillActiveException</code> error.",
+		"url":"/organizations/{organizationId}/apis/{apiId}",
+		"http":"DELETE",
+		"title":"Delete API",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API is updated successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the API cannot be deleted.",
+			},
+		],
+		"hash":"523681102",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to delete a plan. Only an unlocked plan may be deleted.",
+		"url":"/organizations/{organizationId}/plans/{planId}",
+		"http":"DELETE",
+		"title":"Delete Plan",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Plan was successfully deleted",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the Plan cannot be deleted.",
+			},
+		],
+		"hash":"-810512695",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the information about a user. This will fail unless the authenticated user is an admin or identical to the user being updated.",
+		"url":"/users/{userId}",
+		"http":"PUT",
+		"title":"Update a User by ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the user information is successfully updated.",
+			},
+		],
+		"hash":"-397613003",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_in"],
+					"comment":"Updated user information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a new Policy to the API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
+		"http":"POST",
+		"title":"Add API Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full details about the newly added Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully added.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-1573868978",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
+					"comment":"Information about the new Policy.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new version of the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
+		"http":"POST",
+		"title":"Create API Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"Full details about the newly created API version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API version is created successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the API version already exists.",
+			},
+		],
+		"hash":"1134508319",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"],
+					"comment":"Initial information about the new API version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Plan Policy.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
+		"http":"PUT",
+		"title":"Update Plan Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Policy was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
+			},
+		],
+		"hash":"-861448155",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
+					"comment":"New meta-data and/or configuration for the Policy.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Call this endpoint to delete a plugin.",
+		"url":"/plugins/{pluginId}",
+		"http":"DELETE",
+		"title":"Delete a Plugin by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the plugin was deleted successfully.",
+			},
+		],
+		"hash":"688191622",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"pluginId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"the plugin id The plugin's ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as XML data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/xml",
+		"http":"GET",
+		"title":"Get API Registry (XML)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/xml",
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"API Registry information.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API Registry information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-2143504449",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"download",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"Query parameter set to true in order to generate a download link.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about a single Policy in the Client version.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"http":"GET",
+		"title":"Get Client Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full information about the Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-547890733",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to get a Policy Chain for the specific API version. A Policy Chain is a useful summary to better understand which Policies would be executed for a request to this API through a particular Plan offered by the API. Often this information is interesting prior to create a Contract with the API.",
 		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/plans/{planId}/policyChain",
 		"http":"GET",
 		"title":"Get API Policy Chain",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11514,7 +17708,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"702259410",
+		"hash":"-413965868",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11604,7 +17798,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the update is successful.",
 			},
 		],
-		"hash":"1350378359",
+		"hash":"1111242421",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11643,12 +17837,625 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"This endpoint deletes a Gateway by its unique ID.",
-		"url":"/gateways/{gatewayId}",
-		"http":"DELETE",
-		"title":"Delete a Gateway",
+		"beschrijving":"Lists all members of the organization.",
+		"url":"/organizations/{organizationId}/members",
+		"http":"GET",
+		"title":"List Organization Members",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"],
+			},
+			"comment":"List of members.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of members is returned successfully.",
+			},
+		],
+		"hash":"878459349",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single API Policy.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
+		"http":"PUT",
+		"title":"Update API Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Policy was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
+			},
+		],
+		"hash":"-738437266",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
+					"comment":"New meta-data and/or configuration for the Policy.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about a single Policy in the API version.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
+		"http":"GET",
+		"title":"Get API Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full information about the Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"339724460",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update the information about an existing role. The role is identified by its ID.",
+		"url":"/roles/{roleId}",
+		"http":"PUT",
+		"title":"Update a Role by ID",
 		"tags":[
 			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the role is updated successfully.",
+			},
+		],
+		"hash":"-1658998901",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"roleId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The role ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleBean_in"],
+					"comment":"Updated role information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all policy definitions that have been added to apiman.",
+		"url":"/policyDefs/",
+		"http":"GET",
+		"title":"List Policy Definitions",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"],
+			},
+			"comment":"A list of policy definitions.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the policy definition list is successfully returned.",
+			},
+		],
+		"hash":"-1664984997",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns all clients that the user has permission to view.",
+		"url":"/users/{userId}/viewable-clients",
+		"http":"GET",
+		"title":"List User Clients",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
+			},
+			"comment":"List of clients.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the client list is successfully returned.",
+			},
+		],
+		"hash":"986157402",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve a list of all plugins available to be installed. This list is generated by querying all of the plugin registries configured in apiman and returning the list of plugins found in each (sorted by name). Note that this endpoint includes all plugins, even those already installed.",
+		"url":"/plugins/availablePlugins",
+		"http":"GET",
+		"title":"List Available Plugins",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"],
+			},
+			"comment":"A list of available plugins.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the plugins are returned successfully.",
+			},
+			{
+				"httpCode":403,
+				"comment":"If the user is not an admin.",
+			},
+		],
+		"hash":"-1211950494",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Returns audit activity information for a single Organization. The audit information that is returned represents all of the activity associated with this Organization (i.e. an audit log for everything in the Organization).",
+		"url":"/organizations/{organizationId}/activity",
+		"http":"GET",
+		"title":"Get Organization Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"List of audit/activity entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"-893589729",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"Which page of activity results to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to remove a Policy from the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"http":"DELETE",
+		"title":"Remove Client Policy",
+		"tags":[
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11668,10 +18475,18 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"statusCodes":[
 			{
 				"httpCode":204,
-				"comment":"If the delete is successful.",
+				"comment":"If the Policy was successfully deleted.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
 			},
 		],
-		"hash":"1415376726",
+		"hash":"-1544069026",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11681,12 +18496,39 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"inputs":{
 			"PATH":[
 				{
-					"name":"gatewayId",
+					"name":"organizationId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The ID of the Gateway to delete.",
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -11705,12 +18547,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to add a new Policy to the Plan version.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies",
+		"beschrijving":"Use this endpoint to change the order of Policies for a Plan. When a Policy is added to the Plan, it is added as the last Policy in the list of Plan Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Plan, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/reorderPolicies",
 		"http":"POST",
-		"title":"Add Plan Policy",
+		"title":"Re-Order Plan Policies",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11721,27 +18563,24 @@ com.qmino.miredot.restApiSource.interfaces = [
 			"application/json",
 		],
 		"produces":[
-			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full details about the newly added Policy.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully added.",
+				"httpCode":204,
+				"comment":"If the re-ordering of Policies was successful.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Plan does not exist.",
 			},
 		],
-		"hash":"1055255023",
+		"hash":"-1592900953",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11782,8 +18621,8 @@ com.qmino.miredot.restApiSource.interfaces = [
 			],
 			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
-					"comment":"Information about the new Policy.",
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
+					"comment":"The Policies in the desired order.",
 					"jaxrs":"BODY",
 				},
 			],
@@ -11798,12 +18637,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update information about an Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}",
-		"http":"PUT",
-		"title":"Update Client",
+		"beschrijving":"Use this endpoint to break all contracts between this client and its APIs.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
+		"http":"DELETE",
+		"title":"Break All Contracts",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11811,10 +18650,8 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-			"application/json",
 		],
 		"produces":[
-			"application/json",
 		],
 		"roles":[
 		],
@@ -11824,15 +18661,15 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the Client is updated successfully.",
+				"httpCode":200,
+				"comment":"If the operation is successful.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Client does not exist.",
 			},
 		],
-		"hash":"-2019476817",
+		"hash":"984261893",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11859,78 +18696,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"],
-					"comment":"Updated Client information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint is used to download a file that was previously generated by some other REST API call. For example, when exporting data via the /system/export endpoint, a temporary download link may be created. This represents that temporary download link. In this example, the download will result in the exported data.",
-		"url":"/downloads/{downloadId}",
-		"http":"GET",
-		"title":"Download File",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-			"text/xml",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":"A binary file.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"On success.",
-			},
-		],
-		"hash":"-1545632561",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"downloadId",
+					"name":"version",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":null,
+					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -11949,12 +18721,80 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by client.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientResponseStats",
-		"http":"GET",
-		"title":"Get API Response Statistics (per Client)",
+		"beschrijving":"Grant membership in a role to a user.",
+		"url":"/organizations/{organizationId}/roles",
+		"http":"POST",
+		"title":"Grant Membership(s)",
 		"tags":[
-			
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the membership(s) were successfully granted.",
+			},
+		],
+		"hash":"-2101987833",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_in"],
+					"comment":"Roles to grant, and the ID of the user.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Revoke membership in a role.",
+		"url":"/organizations/{organizationId}/roles/{roleId}/{userId}",
+		"http":"DELETE",
+		"title":"Revoke Single Membership",
+		"tags":[
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -11964,23 +18804,20 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"consumes":[
 		],
 		"produces":[
-			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerClientBean_out"],
-			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
+				"httpCode":204,
+				"comment":"If the membership was successfully revoked.",
 			},
 		],
-		"hash":"1562213900",
+		"hash":"1433615296",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -11999,207 +18836,27 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"apiId",
+					"name":"roleId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The API ID.",
+					"comment":"The role ID.",
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"version",
+					"name":"userId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get detailed information about a single version of an API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
-		"http":"GET",
-		"title":"Get API Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
-			"comment":"A API version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API version is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API version does not exist.",
-			},
-		],
-		"hash":"671390230",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
+					"comment":"The user ID.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new Client. Note that it is important to also create an initial version of the Client (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Client Version\". If the former is done, then a first Client version will be created automatically by this endpoint.",
-		"url":"/organizations/{organizationId}/clients",
-		"http":"POST",
-		"title":"Create Client",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
-			"comment":"Full details about the newly created Client.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Client is successfully created.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"219250178",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientBean_in"],
-					"comment":"Information about the new Client.",
-					"jaxrs":"BODY",
-				},
 			],
 			"HEADER":[
 			],
@@ -12217,7 +18874,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"http":"POST",
 		"title":"Update API Definition from URL",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12245,7 +18902,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the API does not exist.",
 			},
 		],
-		"hash":"-1700177734",
+		"hash":"-1353790728",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12302,249 +18959,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get information about a specific user by the User ID.",
-		"url":"/users/{userId}",
-		"http":"GET",
-		"title":"Get User by ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserBean_out"],
-			"comment":"Full user information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the user exists and information is returned.",
-			},
-		],
-		"hash":"1466094454",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Client Policy.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
-		"http":"PUT",
-		"title":"Update Client Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully updated.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"1092358409",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
-					"comment":"New meta-data and/or configuration for the Policy.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Grant membership in a role to a user.",
-		"url":"/organizations/{organizationId}/roles",
-		"http":"POST",
-		"title":"Grant Membership(s)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the membership(s) were successfully granted.",
-			},
-		],
-		"hash":"1016258949",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_GrantRolesBean_in"],
-					"comment":"Roles to grant, and the ID of the user.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
 		"beschrijving":"Use this endpoint to retrieve the form associated with a particular policy definition. Plugins may contribute policy definitions to apiman. Part of that contribution *may* include a form for the UI to display when configuring an instance of the policy. This endpoint returns this form.",
 		"url":"/plugins/{pluginId}/policyDefs/{policyDefId}/form",
 		"http":"GET",
 		"title":"Get Plugin Policy Form",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12585,7 +19005,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the form does not exist.",
 			},
 		],
-		"hash":"-393357420",
+		"hash":"858657686",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12628,12 +19048,666 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
+		"beschrijving":"Use this endpoint to delete a role by its ID.",
+		"url":"/roles/{roleId}",
+		"http":"DELETE",
+		"title":"Delete a Role by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the role is deleted.",
+			},
+		],
+		"hash":"1873273886",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"roleId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The role ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve the API's definition document. An API definition document can be several different types, depending on the API type and technology used to define the API. For example, this endpoint might return a WSDL document, or a Swagger JSON document.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
+		"http":"GET",
+		"title":"Get API Definition",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+			"application/wsdl+xml",
+			"application/x-yaml",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"simple",
+				"typeValue":"javax.ws.rs.core.Response",
+			},
+			"comment":"The API Definition document (e.g. a Swagger JSON file).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API definition is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API version does not exist.",
+			},
+		],
+		"hash":"795706577",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to remove a Policy from the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
+		"http":"DELETE",
+		"title":"Remove Plan Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Policy was successfully deleted.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Policy does not exist.",
+			},
+		],
+		"hash":"1644389308",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to change the order of Policies for an Client. When a Policy is added to the Client, it is added as the last Policy in the list of Client Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Client, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/reorderPolicies",
+		"http":"POST",
+		"title":"Re-Order Client Policies",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the re-ordering of Policies was successful.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"1057434565",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
+					"comment":"The Policies in the desired order.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve information about a single Client by ID. Note that this only returns information about the Client, not about any particular *version* of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}",
+		"http":"GET",
+		"title":"Get Client By ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
+			"comment":"An Client.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-1201343584",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new version of the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
+		"http":"POST",
+		"title":"Create Client Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
+			"comment":"Full details about the newly created Client version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Client version is created successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the Client version already exists.",
+			},
+		],
+		"hash":"-402617395",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"],
+					"comment":"Initial information about the new Client version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve information about a single API by ID. Note that this only returns information about the API, not about any particular *version* of the API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}",
+		"http":"GET",
+		"title":"Get API By ID",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+			"comment":"A API.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"6897593",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Call this endpoint to get the details of a single configured Gateway.",
+		"url":"/gateways/{gatewayId}",
+		"http":"GET",
+		"title":"Get a Gateway by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_out"],
+			"comment":"The Gateway identified by {gatewayId}",
+		},
+		"statusCodes":[
+		],
+		"hash":"1621230707",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"gatewayId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The ID of the Gateway to get.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
 		"beschrijving":"Use this endpoint to export data from the API Manager to a file. All data in the API Manager, including global/admin information, will be exported. The resulting file should be suitable for importing into some other instance of the apiman API Manager. This is useful for upgrades, migrations between environments, and backups.",
 		"url":"/system/export",
 		"http":"GET",
 		"title":"Export Data",
 		"tags":[
-			
+			"admin",
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12662,7 +19736,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"On successful export",
 			},
 		],
-		"hash":"-30001108",
+		"hash":"-331829270",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12696,12 +19770,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of request count data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/usage",
+		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit APIs. For example, when creating a new API, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
+		"url":"/users/{userId}/apiorgs",
 		"http":"GET",
-		"title":"Get API Usage Metrics",
+		"title":"Get Organizations (api-edit)",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12718,8 +19792,135 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageHistogramBean_out"],
-			"comment":"Usage metrics information.",
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
+			},
+			"comment":"A list of organizations.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the organizations are successfully returned.",
+			},
+		],
+		"hash":"1567140286",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":null,
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint lists all of the roles currently defined in apiman.",
+		"url":"/roles/",
+		"http":"GET",
+		"title":"List all Roles",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
+			},
+			"comment":"A list of roles.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the role list is returned successfully.",
+			},
+		],
+		"hash":"1358272044",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of response statistics data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute The data returned includes total request counts, failure counts, and error counts for each data point in the histogram.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/responseStats",
+		"http":"GET",
+		"title":"Get API Response Statistics (Histogram)",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsHistogramBean_out"],
+			"comment":"Response statistics metrics information.",
 		},
 		"statusCodes":[
 			{
@@ -12727,7 +19928,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"1369248390",
+		"hash":"2125543531",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12803,12 +20004,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update the API's definition document. An API definition will vary depending on the type of API, and the type of definition used. For example, it might be a Swagger document or a WSDL file. To use this endpoint, simply PUT the updated API Definition document in its entirety, making sure to set the Content-Type appropriately for the type of definition document. The content will be stored and the API's \"Definition Type\" field will be updated. <br /> Whenever an API's definition is updated, the \"definitionType\" property of that API is automatically set based on the request Content-Type. There is no other way to set the API's definition type property. The following is a map of Content-Type to API definition type. <table> <thead> <tr><th>Content Type</th><th>API Definition Type</th></tr> </thead> <tbody> <tr><td>application/json</td><td>SwaggerJSON</td></tr> <tr><td>application/x-yaml</td><td>SwaggerYAML</td></tr> <tr><td>application/wsdl+xml</td><td>WSDL</td></tr> </tbody> </table>",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
-		"http":"PUT",
-		"title":"Update API Definition",
+		"beschrijving":"Use this endpoint to get information about a single Policy in the Plan version.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
+		"http":"GET",
+		"title":"Get Plan Policy",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12818,24 +20019,27 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"consumes":[
 		],
 		"produces":[
+			"application/json",
 		],
 		"roles":[
 		],
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full information about the Policy.",
 		},
 		"statusCodes":[
 			{
-				"httpCode":204,
-				"comment":"If the API definition was successfully updated.",
+				"httpCode":200,
+				"comment":"If the Policy is successfully returned.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the API does not exist.",
+				"comment":"If the Plan does not exist.",
 			},
 		],
-		"hash":"1046148934",
+		"hash":"514700913",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12854,12 +20058,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"apiId",
+					"name":"planId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The API ID.",
+					"comment":"The Plan ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -12868,7 +20072,771 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The API version.",
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"policyId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The Policy ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to retrieve information about a single Role by its ID.",
+		"url":"/roles/{roleId}",
+		"http":"GET",
+		"title":"Get a Role by ID",
+		"tags":[
+			"admin",
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
+			"comment":"A role.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the role is returned successfully.",
+			},
+		],
+		"hash":"-1900943763",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"roleId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The role ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint provides a way to search for roles. The search criteria is provided in the body of the request, including filters, order-by, and paging information.@",
+		"url":"/search/roles",
+		"http":"POST",
+		"title":"Search for Roles",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out"],
+			"comment":"The search results (a page of roles).",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the search completes successfully.",
+			},
+		],
+		"hash":"-590343412",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
+					"comment":"The search criteria.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to create a new API. Note that it is important to also create an initial version of the API (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create API Version\". If the former is done, then a first API version will be created automatically by this endpoint.",
+		"url":"/organizations/{organizationId}/apis",
+		"http":"POST",
+		"title":"Create API",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
+			"comment":"Full details about the newly created API.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the API is successfully created.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
+			},
+		],
+		"hash":"1336039234",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"],
+					"comment":"Information about the new API.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get information about the user's audit history. This returns audit entries corresponding to each of the actions taken by the user. For example, when a user creates a new Organization, an audit entry is recorded and would be included in the result of this endpoint.",
+		"url":"/users/{userId}/activity",
+		"http":"GET",
+		"title":"Get User Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"List of audit entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the activity is successfully returned.",
+			},
+		],
+		"hash":"90386567",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"userId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The user ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+				{
+					"name":"page",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The page of the results to return.",
+					"jaxrs":"QUERY",
+				},
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of results per page to return.",
+					"jaxrs":"QUERY",
+				},
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get detailed information about a single version of a Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}",
+		"http":"GET",
+		"title":"Get Plan Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
+			"comment":"An Plan version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Plan version is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan version does not exist.",
+			},
+		],
+		"hash":"-879304589",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to add a new Policy to the Client version.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
+		"http":"POST",
+		"title":"Add Client Policy",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
+			"comment":"Full details about the newly added Policy.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the Policy is successfully added.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-685118001",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
+					"comment":"Information about the new Policy.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to get a list of all namespaces available to be searched within. Not all platforms support this functionality. If no namespaces are found, then the UI should simply suppress the namespace filter.",
+		"url":"/search/apiCatalog/namespaces",
+		"http":"GET",
+		"title":"List All Namespaces in API Catalogs",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiNamespaceBean_out"],
+			},
+			"comment":"The list of namespaces.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the namespaces were successfully returned.",
+			},
+		],
+		"hash":"-1655427652",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update information about an Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}",
+		"http":"PUT",
+		"title":"Update Client",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Client is updated successfully.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Client does not exist.",
+			},
+		],
+		"hash":"-1635738515",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"clientId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Client ID.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_UpdateClientBean_in"],
+					"comment":"Updated Client information.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns a list of all the Gateways that have been configured.",
+		"url":"/gateways/",
+		"http":"GET",
+		"title":"List All Gateways",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewaySummaryBean_out"],
+			},
+			"comment":"A list of configured Gateways.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the gateways are successfully returned.",
+			},
+		],
+		"hash":"-1190531866",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to list all of the Policies configured for the Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies",
+		"http":"GET",
+		"title":"List All Plan Policies",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":{
+				"type":"collection",
+				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
+			},
+			"comment":"A List of Policies.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the list of Policies is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Plan does not exist.",
+			},
+		],
+		"hash":"-331463471",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"planId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Plan version.",
 					"jaxrs":"PATH",
 				},
 			],
@@ -12892,7 +20860,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"http":"PUT",
 		"title":"Update API Key",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -12927,7 +20895,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the Client has the wrong status.",
 			},
 		],
-		"hash":"-1181261430",
+		"hash":"1839695688",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -12984,316 +20952,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update information about a single version of an API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
-		"http":"PUT",
-		"title":"Update API Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
-			"comment":"The updated API Version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the API version information was successfully updated.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"-140545606",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"],
-					"comment":"Updated information about the API version.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to change the order of Policies for an Client. When a Policy is added to the Client, it is added as the last Policy in the list of Client Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Client, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/reorderPolicies",
-		"http":"POST",
-		"title":"Re-Order Client Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the re-ordering of Policies was successful.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"-1407081465",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
-					"comment":"The Policies in the desired order.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to search for clients. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/search/clients",
-		"http":"POST",
-		"title":"Search for Clients",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ClientSummaryBean__out"],
-			"comment":"The search results (a page of clients).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the search is successful.",
-			},
-		],
-		"hash":"-21815147",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Call this endpoint in order to execute actions for apiman entities such as Plans, APIs, or Clients. The type of the action must be included in the request payload.",
-		"url":"/actions/",
-		"http":"POST",
-		"title":"Execute an Entity Action",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the action completes successfully.",
-			},
-		],
-		"hash":"-1326787891",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_actions_ActionBean_in"],
-					"comment":"The details about what action to execute.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get detailed status information for a single version of an API. This is useful to figure out why an API is not yet in the 'Ready' state (which is required before it can be published to a Gateway).",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/status",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of request count data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/usage",
 		"http":"GET",
-		"title":"Get API Version Status",
+		"title":"Get API Usage Metrics",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -13310,654 +20974,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionStatusBean_out"],
-			"comment":"Status information about an API version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the status information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API version does not exist.",
-			},
-		],
-		"hash":"-1547394840",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all APIs that the user has permission to edit.",
-		"url":"/users/{userId}/apis",
-		"http":"GET",
-		"title":"List User APIs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
-			},
-			"comment":"List of APIs.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API list is successfully returned.",
-			},
-		],
-		"hash":"-243102033",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all policy definitions that have been added to apiman.",
-		"url":"/policyDefs/",
-		"http":"GET",
-		"title":"List Policy Definitions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"],
-			},
-			"comment":"A list of policy definitions.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the policy definition list is successfully returned.",
-			},
-		],
-		"hash":"1185461149",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Revoke all of a user's role memberships from the org.",
-		"url":"/organizations/{organizationId}/members/{userId}",
-		"http":"DELETE",
-		"title":"Revoke All Memberships",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the user's memberships were successfully revoked.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the user does not exist.",
-			},
-		],
-		"hash":"52438808",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to break a Contract with an API.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
-		"http":"DELETE",
-		"title":"Break Contract",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Contract is successfully broken.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Contract does not exist.",
-			},
-		],
-		"hash":"265482217",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"contractId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Contract ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the versions of an API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
-		"http":"GET",
-		"title":"List API Versions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionSummaryBean_out"],
-			},
-			"comment":"A list of APIs.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of API versions is successfully returned.",
-			},
-		],
-		"hash":"-1882625292",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get detailed information about a single version of a Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}",
-		"http":"GET",
-		"title":"Get Plan Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
-			"comment":"An Plan version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Plan version is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan version does not exist.",
-			},
-		],
-		"hash":"-284625355",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to remove a Policy from the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
-		"http":"DELETE",
-		"title":"Remove Client Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"778081312",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return total response type statistics over the given date range. Basically this will return three numbers: total request, # failed responses, # error responses.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/summaryResponseStats",
-		"http":"GET",
-		"title":"Get API Response Statistics (Summary)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsSummaryBean_out"],
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsageHistogramBean_out"],
 			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
@@ -13966,4317 +20983,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"-664114902",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint allows updating information about the authenticated user.",
-		"url":"/currentuser/info",
-		"http":"PUT",
-		"title":"Update Current User Information",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the update is successful.",
-			},
-		],
-		"hash":"1076186977",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_in"],
-					"comment":"Data to use when updating the user.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all of the permissions assigned to the currently authenticated user.",
-		"url":"/permissions/",
-		"http":"GET",
-		"title":"Get Current User's Permissions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"],
-			"comment":"All of the user's permissions.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the permissions are successfully retrieved.",
-			},
-		],
-		"hash":"-133467057",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new apiman role. A role consists of a set of permissions granted to a user when that user is given the role within the context of an organization.",
-		"url":"/roles/",
-		"http":"POST",
-		"title":"Create Role",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
-			"comment":"Full information about the created role.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the role is created successfully.",
-			},
-		],
-		"hash":"601832090",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_NewRoleBean_in"],
-					"comment":"The new role.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Call this endpoint to get the details of a single configured Gateway.",
-		"url":"/gateways/{gatewayId}",
-		"http":"GET",
-		"title":"Get a Gateway by ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_out"],
-			"comment":"The Gateway identified by {gatewayId}",
-		},
-		"statusCodes":[
-		],
-		"hash":"7562805",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"gatewayId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The ID of the Gateway to get.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint can be used to access the full information about an apiman plugin. The plugin is retrieved using the ID it was given when it was added. The ID information can be retrieved by listing all plugins or remembered when a plugin is first added.",
-		"url":"/plugins/{pluginId}",
-		"http":"GET",
-		"title":"Get Plugin by ID",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
-			"comment":"An apiman plugin.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the plugin exists and is returned.",
-			},
-		],
-		"hash":"805219257",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"pluginId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"the plugin id",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint lists all of the roles currently defined in apiman.",
-		"url":"/roles/",
-		"http":"GET",
-		"title":"List all Roles",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
-			},
-			"comment":"A list of roles.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the role list is returned successfully.",
-			},
-		],
-		"hash":"589907054",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the Gateways that have been configured.",
-		"url":"/gateways/",
-		"http":"GET",
-		"title":"List All Gateways",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewaySummaryBean_out"],
-			},
-			"comment":"A list of configured Gateways.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the gateways are successfully returned.",
-			},
-		],
-		"hash":"623738724",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all plugins that have been added to the system.",
-		"url":"/plugins/",
-		"http":"GET",
-		"title":"List All Plugins",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"],
-			},
-			"comment":"A list of plugins.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of plugins is successfully returned.",
-			},
-		],
-		"hash":"1273095339",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to add a policy definition to apiman. The policy definition can optionall include the 'id' property. If no 'id' is supplied, one will be generated based on the name.",
-		"url":"/policyDefs/",
-		"http":"POST",
-		"title":"Add Policy Definition",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_out"],
-			"comment":"Details about the policy definition that was added.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the policy definition is added successfully.",
-			},
-		],
-		"hash":"-1860241840",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_in"],
-					"comment":"The policy definition to add.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/activity",
-		"http":"GET",
-		"title":"Get Client Version Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit activity entries are successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client version does not exist.",
-			},
-		],
-		"hash":"1488100066",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity data to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to delete an API's definition document. When this is done, the \"definitionType\" field on the API will be set to None.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
-		"http":"DELETE",
-		"title":"Remove API Definition",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the API definition was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"2113320356",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns audit activity information about the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/activity",
-		"http":"GET",
-		"title":"Get Client Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit activity entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"368756653",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity should be returned.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns audit activity information about the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/activity",
-		"http":"GET",
-		"title":"Get Plan Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit activity entries. when trying to get, update, or delete an plan that does not exist",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-		],
-		"hash":"-342742837",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity should be returned.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to add a new Policy to the Client version.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
-		"http":"POST",
-		"title":"Add Client Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full details about the newly added Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully added.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"-1273899955",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
-					"comment":"Information about the new Policy.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get the client's current API Key. This call will fail if you do not have the proper permission to see the information.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apikey",
-		"http":"GET",
-		"title":"Get API Key",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ApiKeyBean_out"],
-			"comment":"The API Key value.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Client's API Key is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"475349000",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client Version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve a list of all plugins available to be installed. This list is generated by querying all of the plugin registries configured in apiman and returning the list of plugins found in each (sorted by name). Note that this endpoint includes all plugins, even those already installed.",
-		"url":"/plugins/availablePlugins",
-		"http":"GET",
-		"title":"List Available Plugins",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PluginSummaryBean_out"],
-			},
-			"comment":"A list of available plugins.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the plugins are returned successfully.",
-			},
-			{
-				"httpCode":403,
-				"comment":"If the user is not an admin.",
-			},
-		],
-		"hash":"121469024",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all APIs in the Organization.",
-		"url":"/organizations/{organizationId}/apis",
-		"http":"GET",
-		"title":"List APIs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
-			},
-			"comment":"A list of APIs.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of APIs is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-1363933996",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint is called to create a new Gateway.",
-		"url":"/gateways/",
-		"http":"POST",
-		"title":"Create a Gateway",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_GatewayBean_out"],
-			"comment":"The newly created Gateway.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Gateway is created successfully.",
-			},
-		],
-		"hash":"-1101902538",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGatewayBean_in"],
-					"comment":"The details of the new Gateway.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by plan. It basically answers the question \"which API plans are most used?\".",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planUsage",
-		"http":"GET",
-		"title":"Get API Usage Metrics (per Plan)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"],
-			"comment":"Usage metrics information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"942613575",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Update the meta information about a policy definition.",
-		"url":"/policyDefs/{policyDefinitionId}",
-		"http":"PUT",
-		"title":"Update Policy Definition",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the update was successful.",
-			},
-		],
-		"hash":"-566011861",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"policyDefinitionId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The policy definition ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyDefinitionBean_in"],
-					"comment":"New meta-data for the policy definition.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve information about a single Role by its ID.",
-		"url":"/roles/{roleId}",
-		"http":"GET",
-		"title":"Get a Role by ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_RoleBean_out"],
-			"comment":"A role.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the role is returned successfully.",
-			},
-		],
-		"hash":"-58217493",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"roleId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The role ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about a single Policy in the API version.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
-		"http":"GET",
-		"title":"Get API Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full information about the Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"595817966",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all namespaces available to be searched within. Not all platforms support this functionality. If no namespaces are found, then the UI should simply suppress the namespace filter.",
-		"url":"/search/apiCatalog/namespaces",
-		"http":"GET",
-		"title":"List All Namespaces in API Catalogs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiNamespaceBean_out"],
-			},
-			"comment":"The list of namespaces.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the namespaces were successfully returned.",
-			},
-		],
-		"hash":"1729151102",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the versions of an Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
-		"http":"GET",
-		"title":"List Client Versions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientVersionSummaryBean_out"],
-			},
-			"comment":"A list of Clients.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Client versions is successfully returned.",
-			},
-		],
-		"hash":"1605693659",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to search for users. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/users/search",
-		"http":"POST",
-		"title":"Search for Users",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_UserBean__out"],
-			"comment":"The search results (a page of organizations).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the search is successful.",
-			},
-		],
-		"hash":"990611556",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Plans in the Organization.",
-		"url":"/organizations/{organizationId}/plans",
-		"http":"GET",
-		"title":"List Plans",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanSummaryBean_out"],
-			},
-			"comment":"A list of Plans.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Plans is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"211026916",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve information about a single Plan by ID. Note that this only returns information about the Plan, not about any particular *version* of the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}",
-		"http":"GET",
-		"title":"Get Plan By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
-			"comment":"An Plan. when trying to get, update, or delete an plan that does not exist",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Plan is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-		],
-		"hash":"-246606276",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about a single Organization by its ID.",
-		"url":"/organizations/{organizationId}",
-		"http":"GET",
-		"title":"Get Organization By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_OrganizationBean_out"],
-			"comment":"The Organization.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Organization was successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-1820549874",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization id.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list the Plans configured for the given API version.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/plans",
-		"http":"GET",
-		"title":"List API Plans",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiPlanSummaryBean_out"],
-			},
-			"comment":"A list of API plans.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API plans are successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API cannot be found.",
-			},
-		],
-		"hash":"-8349966",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Revoke membership in a role.",
-		"url":"/organizations/{organizationId}/roles/{roleId}/{userId}",
-		"http":"DELETE",
-		"title":"Revoke Single Membership",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the membership was successfully revoked.",
-			},
-		],
-		"hash":"1374696322",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"roleId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The role ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as XML data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/xml",
-		"http":"GET",
-		"title":"Get API Registry (XML)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/xml",
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":"API Registry information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API Registry information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"-1027279171",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"download",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"Query parameter set to true in order to generate a download link.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve information about a single API by ID. Note that this only returns information about the API, not about any particular *version* of the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}",
-		"http":"GET",
-		"title":"Get API By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
-			"comment":"A API.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"-150865029",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update the information about an existing role. The role is identified by its ID.",
-		"url":"/roles/{roleId}",
-		"http":"PUT",
-		"title":"Update a Role by ID",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the role is updated successfully.",
-			},
-		],
-		"hash":"-155724339",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"roleId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The role ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateRoleBean_in"],
-					"comment":"Updated role information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific client. This will return request count data broken down by API. It basically answers the question \"which APIs is my client really using?\".",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/metrics/apiUsage",
-		"http":"GET",
-		"title":"Get Client Usage Metrics (per API)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ClientUsagePerApiBean_out"],
-			"comment":"Usage metrics information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"-96650685",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Delete an org",
-		"url":"/organizations/{organizationId}",
-		"http":"DELETE",
-		"title":"Delete an organization",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Organization was successfully deleted",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the delete preconditions have not been met (i.e. sub-elements are still active, such as still-published APIs).",
-			},
-		],
-		"hash":"295869917",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID to delete",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to break all contracts between this client and its APIs.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
-		"http":"DELETE",
-		"title":"Break All Contracts",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the operation is successful.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"-2017982009",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update information about an API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}",
-		"http":"PUT",
-		"title":"Update API",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the API is updated successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"1267972115",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiBean_in"],
-					"comment":"Updated API information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the APIs the current user has permission to edit. This includes all APIs from all Organizations the user has API edit privileges for.",
-		"url":"/currentuser/apis",
-		"http":"GET",
-		"title":"Get Current User's APIs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiSummaryBean_out"],
-			},
-			"comment":"A list of APIs.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the APIs are successfully returned.",
-			},
-		],
-		"hash":"1953016041",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by client. It basically answers the question \"who is calling my API?\".",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientUsage",
-		"http":"GET",
-		"title":"Get API Usage Metrics (per Client)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"],
-			"comment":"Usage metrics information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"-1926708311",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"from",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The start of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"to",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The end of a valid date range.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit clients. For example, when creating a new Client, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
-		"url":"/currentuser/clientorgs",
-		"http":"GET",
-		"title":"Get Organizations (app-edit)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-			},
-			"comment":"A list of organizations.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the organizations are successfully returned.",
-			},
-		],
-		"hash":"264719941",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to change the order of Policies for an API. When a Policy is added to the API, it is added as the last Policy in the list of API Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the API, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/reorderPolicies",
-		"http":"POST",
-		"title":"Re-Order API Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the re-ordering of Policies was successful.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"-201972620",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
-					"comment":"The Policies in the desired order.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns the list of organizations that the user is a member of. The user is a member of an organization if she has at least one role for the org.",
-		"url":"/users/{userId}/organizations",
-		"http":"GET",
-		"title":"List User Organizations",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-			},
-			"comment":"List of organizations.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the organization list is successfully returned.",
-			},
-		],
-		"hash":"1777337972",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Contracts for an Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
-		"http":"GET",
-		"title":"List All Contracts for an Client",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
-			},
-			"comment":"A list of Contracts.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Contracts is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client is not found.",
-			},
-		],
-		"hash":"1716179148",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Returns audit activity information for a single Organization. The audit information that is returned represents all of the activity associated with this Organization (i.e. an audit log for everything in the Organization).",
-		"url":"/organizations/{organizationId}/activity",
-		"http":"GET",
-		"title":"Get Organization Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"List of audit/activity entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"644252897",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity results to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get audit activity information for a single version of the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/activity",
-		"http":"GET",
-		"title":"Get Plan Version Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit activity entries are successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan version does not exist.",
-			},
-		],
-		"hash":"1217189892",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity data to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint simply returns the status of the apiman system. This is a useful endpoint to use when testing a client's connection to the apiman API Manager REST services.",
-		"url":"/system/status",
-		"http":"GET",
-		"title":"Get System Status",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_out"],
-			"comment":"System status information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"On success.",
-			},
-		],
-		"hash":"233771903",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update the information about a user. This will fail unless the authenticated user is an admin or identical to the user being updated.",
-		"url":"/users/{userId}",
-		"http":"PUT",
-		"title":"Update a User by ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the user information is successfully updated.",
-			},
-		],
-		"hash":"1105661559",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UpdateUserBean_in"],
-					"comment":"Updated user information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about the currently authenticated user.",
-		"url":"/currentuser/info",
-		"http":"GET",
-		"title":"Get Current User Information",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_CurrentUserBean_out"],
-			"comment":"Information about the authenticated user.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the information is correctly returned.",
-			},
-		],
-		"hash":"1953252350",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the Policies configured for the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies",
-		"http":"GET",
-		"title":"List All Plan Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
-			},
-			"comment":"A List of Policies.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Policies is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-		],
-		"hash":"-75369965",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to delete a role by its ID.",
-		"url":"/roles/{roleId}",
-		"http":"DELETE",
-		"title":"Delete a Role by ID",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the role is deleted.",
-			},
-		],
-		"hash":"259605984",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"roleId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The role ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns audit activity information about the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/activity",
-		"http":"GET",
-		"title":"Get API Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"A list of audit activity entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the audit information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"1230074826",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of activity should be returned.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of entries per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single API Policy.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
-		"http":"PUT",
-		"title":"Update API Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully updated.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"-1787769108",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_UpdatePolicyBean_in"],
-					"comment":"New meta-data and/or configuration for the Policy.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit plans. For example, when creating a new Plan, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
-		"url":"/currentuser/planorgs",
-		"http":"GET",
-		"title":"Get Organizations (plan-edit)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-			},
-			"comment":"A list of organizations.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the organizations are successfully returned.",
-			},
-		],
-		"hash":"-1053226073",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to update information about a Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}",
-		"http":"PUT",
-		"title":"Update Plan",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Plan is updated successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist. when trying to get, update, or delete an plan that does not exist",
-			},
-		],
-		"hash":"-336207765",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_in"],
-					"comment":"Updated Plan information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Call this endpoint to delete a plugin.",
-		"url":"/plugins/{pluginId}",
-		"http":"DELETE",
-		"title":"Delete a Plugin by ID",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the plugin was deleted successfully.",
-			},
-		],
-		"hash":"-925476280",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"pluginId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"the plugin id The plugin's ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return a full histogram of response statistics data based on the provided date range and interval. Valid intervals are: month, week, day, hour, minute The data returned includes total request counts, failure counts, and error counts for each data point in the histogram.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/responseStats",
-		"http":"GET",
-		"title":"Get API Response Statistics (Histogram)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsHistogramBean_out"],
-			"comment":"Response statistics metrics information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the metrics data is successfully returned.",
-			},
-		],
-		"hash":"1123438697",
+		"hash":"1417223304",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18352,12 +21059,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to retrieve the API's definition document. An API definition document can be several different types, depending on the API type and technology used to define the API. For example, this endpoint might return a WSDL document, or a Swagger JSON document.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/definition",
-		"http":"GET",
-		"title":"Get API Definition",
+		"beschrijving":"Use this endpoint to create a Contract between the Client and an API. In order to create a Contract, the caller must specify the Organization, ID, and Version of the API. Additionally the caller must specify the ID of the Plan it wished to use for the Contract with the API.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
+		"http":"POST",
+		"title":"Create an API Contract",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -18365,98 +21072,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"compressed":false,
 		"deprecated":false,
 		"consumes":[
-		],
-		"produces":[
 			"application/json",
-			"application/wsdl+xml",
-			"application/x-yaml",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":"The API Definition document (e.g. a Swagger JSON file).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API definition is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API version does not exist.",
-			},
-		],
-		"hash":"1051800083",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve detailed information about a single API Contract for an Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}",
-		"http":"GET",
-		"title":"Get API Contract",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
 		],
 		"produces":[
 			"application/json",
@@ -18467,23 +21083,19 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"permitAll":false,
 		"output":{
 			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_out"],
-			"comment":"Details about a single Contract.",
+			"comment":"Full details about the newly created Contract.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Contract is successfully returned.",
+				"comment":"If the Contract is successfully created.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Client version does not exist.",
 			},
-			{
-				"httpCode":404,
-				"comment":"If the Contract is not found.",
-			},
 		],
-		"hash":"-17039270",
+		"hash":"1894272026",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18519,19 +21131,15 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
-				{
-					"name":"contractId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The ID of the Contract.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"],
+					"comment":"Required information about the new Contract.",
+					"jaxrs":"BODY",
+				},
 			],
 			"HEADER":[
 			],
@@ -18544,12 +21152,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to get information about a single Policy in the Client version.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
+		"beschrijving":"This endpoint simply returns the status of the apiman system. This is a useful endpoint to use when testing a client's connection to the apiman API Manager REST services.",
+		"url":"/system/status",
 		"http":"GET",
-		"title":"Get Client Policy",
+		"title":"Get System Status",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -18566,20 +21174,80 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full information about the Policy.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_system_SystemStatusBean_out"],
+			"comment":"System status information.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the Policy is successfully returned.",
+				"comment":"On success.",
+			},
+		],
+		"hash":"1526001665",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"This endpoint returns audit activity information about the Client.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/activity",
+		"http":"GET",
+		"title":"Get Client Activity",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
+			"comment":"A list of audit activity entries.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the audit information is successfully returned.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the Organization does not exist.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Client does not exist.",
 			},
 		],
-		"hash":"871828817",
+		"hash":"-2099722449",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18606,26 +21274,26 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
+			],
+			"QUERY":[
 				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
+					"name":"page",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"number",
 					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
+					"comment":"Which page of activity should be returned.",
+					"jaxrs":"QUERY",
 				},
-			],
-			"QUERY":[
+				{
+					"name":"count",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"number",
+					},
+					"comment":"The number of entries per page to return.",
+					"jaxrs":"QUERY",
+				},
 			],
 			"BODY":[
 			],
@@ -18640,12 +21308,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Plan Policy.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
+		"beschrijving":"Use this endpoint to update the meta-data or configuration of a single Client Policy.",
+		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies/{policyId}",
 		"http":"PUT",
-		"title":"Update Plan Policy",
+		"title":"Update Client Policy",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -18671,14 +21339,14 @@ com.qmino.miredot.restApiSource.interfaces = [
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Plan does not exist.",
+				"comment":"If the Client does not exist.",
 			},
 			{
 				"httpCode":404,
 				"comment":"If the Policy does not exist.",
 			},
 		],
-		"hash":"969003111",
+		"hash":"-1329684153",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -18697,12 +21365,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"jaxrs":"PATH",
 				},
 				{
-					"name":"planId",
+					"name":"clientId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Plan ID.",
+					"comment":"The Client ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -18711,7 +21379,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Plan version.",
+					"comment":"The Client version.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -18744,91 +21412,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to delete a plan. Only an unlocked plan may be deleted.",
-		"url":"/organizations/{organizationId}/plans/{planId}",
-		"http":"DELETE",
-		"title":"Delete Plan",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Plan was successfully deleted",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the Plan cannot be deleted.",
-			},
-		],
-		"hash":"270637451",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the Policies configured for the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by client. It basically answers the question \"who is calling my API?\".",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/clientUsage",
 		"http":"GET",
-		"title":"List All API Policies",
+		"title":"Get API Usage Metrics (per Client)",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -18845,159 +21434,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
-			},
-			"comment":"A List of Policies.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Policies is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"-1432121842",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to delete a policy definition by its ID. If the policy definition was added automatically from an installed plugin, this will fail. The only way to remove such policy definitions is to remove the plugin.",
-		"url":"/policyDefs/{policyDefinitionId}",
-		"http":"DELETE",
-		"title":"Delete policy definition.",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the policy definition is successfully deleted.",
-			},
-		],
-		"hash":"-1813846193",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"policyDefinitionId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The policy definition ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return response type statistics broken down by plan.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planResponseStats",
-		"http":"GET",
-		"title":"Get API Response Statistics (per Plan)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_ResponseStatsPerPlanBean_out"],
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerClientBean_out"],
 			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
@@ -19006,7 +21443,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"365239146",
+		"hash":"777142443",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -19076,1744 +21513,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to add a new Policy to the API version.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies",
-		"http":"POST",
-		"title":"Add API Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full details about the newly added Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully added.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"-299858800",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_NewPolicyBean_in"],
-					"comment":"Information about the new Policy.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about a single Policy in the Plan version.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
-		"http":"GET",
-		"title":"Get Plan Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyBean_out"],
-			"comment":"Full information about the Policy.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Policy is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-		],
-		"hash":"-136334993",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all clients that the user has permission to edit.",
-		"url":"/users/{userId}/clients",
-		"http":"GET",
-		"title":"List User Clients",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
-			},
-			"comment":"List of clients.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the client list is successfully returned.",
-			},
-		],
-		"hash":"-340901348",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to delete an API. There are multiple restrictions on this capability. Specifically, the API must not have any published versions. If you try to delete an API with one or more published versions, it will fail with an <code>EntityStillActiveException</code> error.",
-		"url":"/organizations/{organizationId}/apis/{apiId}",
-		"http":"DELETE",
-		"title":"Delete API",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the API is updated successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the API cannot be deleted.",
-			},
-		],
-		"hash":"-688369076",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to remove a Policy from the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/policies/{policyId}",
-		"http":"DELETE",
-		"title":"Remove Plan Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"-1588944898",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to remove a Policy from the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/policies/{policyId}",
-		"http":"DELETE",
-		"title":"Remove API Policy",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Policy was successfully deleted.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Policy does not exist.",
-			},
-		],
-		"hash":"1657338239",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"policyId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The Policy ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns all of the permissions assigned to a specific user.",
-		"url":"/permissions/{userId}",
-		"http":"GET",
-		"title":"Get User's Permissions",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_idm_UserPermissionsBean_out"],
-			"comment":"All of the user's permissions.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the permissions are successfully retrieved.",
-			},
-		],
-		"hash":"1737627941",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user's ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to retrieve information about a single Client by ID. Note that this only returns information about the Client, not about any particular *version* of the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}",
-		"http":"GET",
-		"title":"Get Client By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientBean_out"],
-			"comment":"An Client.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Client is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"1881573534",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Clients in the Organization.",
-		"url":"/organizations/{organizationId}/clients",
-		"http":"GET",
-		"title":"List Clients",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
-			},
-			"comment":"A list of Clients.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Clients is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-738311614",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all policy definitions contributed by the plugin.",
-		"url":"/plugins/{pluginId}/policyDefs",
-		"http":"GET",
-		"title":"Get Plugin Policy Definitions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicyDefinitionSummaryBean_out"],
-			},
-			"comment":"A list of policy definitions.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of policy definitions is returned successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the plugin does not exist.",
-			},
-		],
-		"hash":"-867858951",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"pluginId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"the plugin id The plugin ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new API. Note that it is important to also create an initial version of the API (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create API Version\". If the former is done, then a first API version will be created automatically by this endpoint.",
-		"url":"/organizations/{organizationId}/apis",
-		"http":"POST",
-		"title":"Create API",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiBean_out"],
-			"comment":"Full details about the newly created API.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API is successfully created.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"159318720",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiBean_in"],
-					"comment":"Information about the new API.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about the user's audit history. This returns audit entries corresponding to each of the actions taken by the user. For example, when a user creates a new Organization, an audit entry is recorded and would be included in the result of this endpoint.",
-		"url":"/users/{userId}/activity",
-		"http":"GET",
-		"title":"Get User Activity",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_audit_AuditEntryBean__out"],
-			"comment":"List of audit entries.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the activity is successfully returned.",
-			},
-		],
-		"hash":"758808965",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"userId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The user ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The page of the results to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of results per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Delete a ClientApp",
-		"url":"/organizations/{organizationId}/clients/{clientId}",
-		"http":"DELETE",
-		"title":"Delete a client",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":204,
-				"comment":"If the Organization was successfully deleted",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the delete preconditions have not been met (i.e. sub-elements are still active, such as still-registered ClientVersions).",
-			},
-		],
-		"hash":"736588845",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID the client exists within",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The ClientApp ID to dlete",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint is used to test the Gateway's settings prior to either creating or updating it. The information will be used to attempt to create a link between the API Manager and the Gateway, by simply trying to ping the Gateway's \"status\" endpoint.",
-		"url":"/gateways/",
-		"http":"PUT",
-		"title":"Test a Gateway",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_GatewayTestResultBean_out"],
-			"comment":"The result of testing the Gateway settings.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the test is performed (regardless of the outcome of the test).",
-			},
-		],
-		"hash":"-1341658164",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_gateways_NewGatewayBean_in"],
-					"comment":"Details of the Gateway for testing.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the versions of a Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions",
-		"http":"GET",
-		"title":"List Plan Versions",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PlanVersionSummaryBean_out"],
-			},
-			"comment":"A list of Plans. when trying to get, update, or delete an plan that does not exist",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Plan versions is successfully returned.",
-			},
-		],
-		"hash":"-181241607",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new version of the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions",
-		"http":"POST",
-		"title":"Create API Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
-			"comment":"Full details about the newly created API version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API version is created successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the API version already exists.",
-			},
-		],
-		"hash":"483472413",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_NewApiVersionBean_in"],
-					"comment":"Initial information about the new API version.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to search for APIs. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/search/apis",
-		"http":"POST",
-		"title":"Search for APIs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_ApiSummaryBean__out"],
-			"comment":"The search results (a page of APIs).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the search is successful.",
-			},
-		],
-		"hash":"192245690",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new version of the Plan.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions",
-		"http":"POST",
-		"title":"Create Plan Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanVersionBean_out"],
-			"comment":"Full details about the newly created Plan version. when trying to get, update, or delete an plan that does not exist",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Plan version is created successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Plan does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the Plan version already exists.",
-			},
-		],
-		"hash":"-1189204529",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"planId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanVersionBean_in"],
-					"comment":"Initial information about the new Plan version.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get detailed information about a single version of an Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}",
-		"http":"GET",
-		"title":"Get Client Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
-			"comment":"An Client version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Client version is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client version does not exist.",
-			},
-		],
-		"hash":"-163056237",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to search for available APIs within any configured API catalogs. If no API catalogs are configured, this will always return zero results.",
-		"url":"/search/apiCatalog/entries",
-		"http":"POST",
-		"title":"Search for APIs in API Catalogs",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_summary_AvailableApiBean__out"],
-			"comment":"The search results (a page of available APIs).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the search is successful.",
-			},
-		],
-		"hash":"1779809728",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the Policies configured for the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/policies",
-		"http":"GET",
-		"title":"List All Client Policies",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_PolicySummaryBean_out"],
-			},
-			"comment":"A List of Policies.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Policies is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"1311532533",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint provides a way to search for roles. The search criteria is provided in the body of the request, including filters, order-by, and paging information.",
-		"url":"/roles/search",
-		"http":"POST",
-		"title":"Search for Roles",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchResultsBean_io_apiman_manager_api_beans_idm_RoleBean__out"],
-			"comment":"The search results (a page of roles).",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the search completes successfully.",
-			},
-		],
-		"hash":"-1965772529",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_search_SearchCriteriaBean_in"],
-					"comment":"The search criteria.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
 		"beschrijving":"Use this endpoint to get audit activity information for a single version of the API.",
 		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/activity",
 		"http":"GET",
 		"title":"Get API Version Activity",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -20843,7 +21548,7 @@ com.qmino.miredot.restApiSource.interfaces = [
 				"comment":"If the API version does not exist.",
 			},
 		],
-		"hash":"1556586021",
+		"hash":"2069678247",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -20913,12 +21618,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"Use this endpoint to change the order of Policies for a Plan. When a Policy is added to the Plan, it is added as the last Policy in the list of Plan Policies. Sometimes the order of Policies is important, so it is often useful to re-order the Policies by invoking this endpoint. The body of the request should include all of the Policies for the Plan, in the new desired order. Note that only the IDs of each of the Policies is actually required in the request, at a minimum.",
-		"url":"/organizations/{organizationId}/plans/{planId}/versions/{version}/reorderPolicies",
+		"beschrijving":"Use this endpoint to add a policy definition to apiman. The policy definition can optionall include the 'id' property. If no 'id' is supplied, one will be generated based on the name.",
+		"url":"/policyDefs/",
 		"http":"POST",
-		"title":"Re-Order Plan Policies",
+		"title":"Add Policy Definition",
 		"tags":[
-			
+			"admin",
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -20927,6 +21632,160 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"deprecated":false,
 		"consumes":[
 			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_out"],
+			"comment":"Details about the policy definition that was added.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":200,
+				"comment":"If the policy definition is added successfully.",
+			},
+		],
+		"hash":"896882830",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_in"],
+					"comment":"The policy definition to add.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update information about a single version of an API.",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}",
+		"http":"PUT",
+		"title":"Update API Version",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_ApiVersionBean_out"],
+			"comment":"The updated API Version.",
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the API version information was successfully updated.",
+			},
+			{
+				"httpCode":404,
+				"comment":"If the API does not exist.",
+			},
+		],
+		"hash":"-1970996872",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"apiId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API ID.",
+					"jaxrs":"PATH",
+				},
+				{
+					"name":"version",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The API version.",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+				{
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_apis_UpdateApiVersionBean_in"],
+					"comment":"Updated information about the API version.",
+					"jaxrs":"BODY",
+				},
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Delete an org",
+		"url":"/organizations/{organizationId}",
+		"http":"DELETE",
+		"title":"Delete an organization",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
 		],
 		"produces":[
 		],
@@ -20939,14 +21798,82 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"statusCodes":[
 			{
 				"httpCode":204,
-				"comment":"If the re-ordering of Policies was successful.",
+				"comment":"If the Organization was successfully deleted",
+			},
+			{
+				"httpCode":409,
+				"comment":"If the delete preconditions have not been met (i.e. sub-elements are still active, such as still-published APIs).",
+			},
+		],
+		"hash":"-1998184933",
+		"responseHeaders":{
+			"headers":[
+			],
+			"customHeaders":[
+			],
+		},
+		"inputs":{
+			"PATH":[
+				{
+					"name":"organizationId",
+					"typeValue":{
+						"type":"simple",
+						"typeValue":"string",
+					},
+					"comment":"The Organization ID to delete",
+					"jaxrs":"PATH",
+				},
+			],
+			"QUERY":[
+			],
+			"BODY":[
+			],
+			"HEADER":[
+			],
+			"COOKIE":[
+			],
+			"FORM":[
+			],
+			"MATRIX":[
+			],
+		},
+	},
+	{
+		"beschrijving":"Use this endpoint to update information about a Plan.",
+		"url":"/organizations/{organizationId}/plans/{planId}",
+		"http":"PUT",
+		"title":"Update Plan",
+		"tags":[
+
+		],
+		"authors":[
+			"eric.wittmann@redhat.com",
+		],
+		"compressed":false,
+		"deprecated":false,
+		"consumes":[
+			"application/json",
+		],
+		"produces":[
+			"application/json",
+		],
+		"roles":[
+		],
+		"rolesAllowed":null,
+		"permitAll":false,
+		"output":{
+		},
+		"statusCodes":[
+			{
+				"httpCode":204,
+				"comment":"If the Plan is updated successfully.",
 			},
 			{
 				"httpCode":404,
-				"comment":"If the Plan does not exist.",
+				"comment":"If the Plan does not exist. when trying to get, update, or delete an plan that does not exist",
 			},
 		],
-		"hash":"-1349655703",
+		"hash":"450351401",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -20973,22 +21900,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The Plan ID.",
 					"jaxrs":"PATH",
 				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Plan version.",
-					"jaxrs":"PATH",
-				},
 			],
 			"QUERY":[
 			],
 			"BODY":[
 				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyChainBean_in"],
-					"comment":"The Policies in the desired order.",
+					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_UpdatePlanBean_in"],
+					"comment":"Updated Plan information.",
 					"jaxrs":"BODY",
 				},
 			],
@@ -21003,67 +21921,12 @@ com.qmino.miredot.restApiSource.interfaces = [
 		},
 	},
 	{
-		"beschrijving":"",
-		"url":"/system/import",
-		"http":"POST",
-		"title":null,
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"text/plain",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":null,
-		},
-		"statusCodes":[
-		],
-		"hash":"1642032952",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get information about the Managed API's gateway endpoint. In other words, this returns the actual live endpoint on the API Gateway - the endpoint that a client should use when invoking the API.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/endpoint",
+		"beschrijving":"Retrieves metrics/analytics information for a specific API. This will return request count data broken down by plan. It basically answers the question \"which API plans are most used?\".",
+		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/metrics/planUsage",
 		"http":"GET",
-		"title":"Get API Endpoint",
+		"title":"Get API Usage Metrics (per Plan)",
 		"tags":[
-			
+
 		],
 		"authors":[
 			"eric.wittmann@redhat.com",
@@ -21080,366 +21943,16 @@ com.qmino.miredot.restApiSource.interfaces = [
 		"rolesAllowed":null,
 		"permitAll":false,
 		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ApiVersionEndpointSummaryBean_out"],
-			"comment":"The live API endpoint information.",
+			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_metrics_UsagePerPlanBean_out"],
+			"comment":"Usage metrics information.",
 		},
 		"statusCodes":[
 			{
 				"httpCode":200,
-				"comment":"If the endpoint information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
+				"comment":"If the metrics data is successfully returned.",
 			},
 		],
-		"hash":"-2056208999",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a list of all Contracts created with this API. This will return Contracts created by between any Client and through any Plan.",
-		"url":"/organizations/{organizationId}/apis/{apiId}/versions/{version}/contracts",
-		"http":"GET",
-		"title":"List API Contracts",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ContractSummaryBean_out"],
-			},
-			"comment":"A list of Contracts.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of Contracts is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the API does not exist.",
-			},
-		],
-		"hash":"1986179721",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"apiId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The API version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-				{
-					"name":"page",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"Which page of Contracts to return.",
-					"jaxrs":"QUERY",
-				},
-				{
-					"name":"count",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"number",
-					},
-					"comment":"The number of Contracts per page to return.",
-					"jaxrs":"QUERY",
-				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a Contract between the Client and an API. In order to create a Contract, the caller must specify the Organization, ID, and Version of the API. Additionally the caller must specify the ID of the Plan it wished to use for the Contract with the API.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts",
-		"http":"POST",
-		"title":"Create an API Contract",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_ContractBean_out"],
-			"comment":"Full details about the newly created Contract.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Contract is successfully created.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client version does not exist.",
-			},
-		],
-		"hash":"-1561085416",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"version",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client version.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_contracts_NewContractBean_in"],
-					"comment":"Required information about the new Contract.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to list all of the Clients the current user has permission to edit. This includes all Clients from all Organizations the user has client edit privileges for.",
-		"url":"/currentuser/clients",
-		"http":"GET",
-		"title":"Get Current User's Clients",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_ClientSummaryBean_out"],
-			},
-			"comment":"A list of Clients.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the clients are successfully returned.",
-			},
-		],
-		"hash":"39101624",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Lists all members of the organization.",
-		"url":"/organizations/{organizationId}/members",
-		"http":"GET",
-		"title":"List Organization Members",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_members_MemberBean_out"],
-			},
-			"comment":"List of members.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the list of members is returned successfully.",
-			},
-		],
-		"hash":"-1012710573",
+		"hash":"-1204291127",
 		"responseHeaders":{
 			"headers":[
 			],
@@ -21457,313 +21970,13 @@ com.qmino.miredot.restApiSource.interfaces = [
 					"comment":"The organization ID.",
 					"jaxrs":"PATH",
 				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new version of the Client.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions",
-		"http":"POST",
-		"title":"Create Client Version",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_ClientVersionBean_out"],
-			"comment":"Full details about the newly created Client version.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Client version is created successfully.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-			{
-				"httpCode":409,
-				"comment":"If the Client version already exists.",
-			},
-		],
-		"hash":"-1430400949",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
 				{
-					"name":"organizationId",
+					"name":"apiId",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_clients_NewClientVersionBean_in"],
-					"comment":"Initial information about the new Client version.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to create a new Plan. Note that it is important to also create an initial version of the Plan (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to \"Create Plan Version\". If the former is done, then a first Plan version will be created automatically by this endpoint.",
-		"url":"/organizations/{organizationId}/plans",
-		"http":"POST",
-		"title":"Create Plan",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_PlanBean_out"],
-			"comment":"Full details about the newly created Plan.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Plan is successfully created.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"355787714",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plans_NewPlanBean_in"],
-					"comment":"Information about the new Plan.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get a single policy definition by its ID.",
-		"url":"/policyDefs/{policyDefinitionId}",
-		"http":"GET",
-		"title":"Get Policy Definition by ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_policies_PolicyDefinitionBean_out"],
-			"comment":"A policy definition if found.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the policy definition is returned successfully.",
-			},
-		],
-		"hash":"874780892",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"policyDefinitionId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The ID of the policy definition.",
-					"jaxrs":"PATH",
-				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to get registry style information about all APIs that this Client consumes. This is a useful endpoint to invoke in order to retrieve a summary of every API consumed by the client. The information returned by this endpoint could potentially be included directly in a client as a way to lookup endpoint information for the APIs it wishes to consume. This variant of the API Registry is formatted as JSON data. Note that, optionally, you can generate a temporary download link instead of getting the registry file directly. To do this, simply pass download=true as a query parameter. The result will then be a JSON object with information about the temporary download link. The ID of the download can then be used when making a call to the /downloads/{downloadId} endpoint to fetch the actual content.",
-		"url":"/organizations/{organizationId}/clients/{clientId}/versions/{version}/apiregistry/json",
-		"http":"GET",
-		"title":"Get API Registry (JSON)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"simple",
-				"typeValue":"javax.ws.rs.core.Response",
-			},
-			"comment":"API Registry information or temporary download information.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the API Registry information is successfully returned.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Client does not exist.",
-			},
-		],
-		"hash":"1248930698",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-				{
-					"name":"organizationId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
-				},
-				{
-					"name":"clientId",
-					"typeValue":{
-						"type":"simple",
-						"typeValue":"string",
-					},
-					"comment":"The Client ID.",
+					"comment":"The API ID.",
 					"jaxrs":"PATH",
 				},
 				{
@@ -21772,213 +21985,29 @@ com.qmino.miredot.restApiSource.interfaces = [
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Client version.",
+					"comment":"The API version.",
 					"jaxrs":"PATH",
 				},
 			],
 			"QUERY":[
 				{
-					"name":"download",
+					"name":"from",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"Query parameter set to true in order to generate a download link.",
+					"comment":"The start of a valid date range.",
 					"jaxrs":"QUERY",
 				},
-			],
-			"BODY":[
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Updates meta-information about a single Organization.",
-		"url":"/organizations/{organizationId}",
-		"http":"PUT",
-		"title":"Update Organization By ID",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the Organization meta-data is successfully updated.",
-			},
-			{
-				"httpCode":404,
-				"comment":"If the Organization does not exist.",
-			},
-		],
-		"hash":"-38162105",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
 				{
-					"name":"organizationId",
+					"name":"to",
 					"typeValue":{
 						"type":"simple",
 						"typeValue":"string",
 					},
-					"comment":"The Organization ID.",
-					"jaxrs":"PATH",
+					"comment":"The end of a valid date range.",
+					"jaxrs":"QUERY",
 				},
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_orgs_UpdateOrganizationBean_in"],
-					"comment":"Updated Organization information.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"Use this endpoint to add a plugin to apiman. A plugin consists of the maven coordinates of an artifact deployed to a remote maven repository (e.g. maven central).",
-		"url":"/plugins/",
-		"http":"POST",
-		"title":"Add a Plugin",
-		"tags":[
-			"admin",
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-			"application/json",
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_PluginBean_out"],
-			"comment":"Full details about the plugin that was added.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the plugin was added successfully.",
-			},
-		],
-		"hash":"-1845183494",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
-			],
-			"BODY":[
-				{
-					"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_plugins_NewPluginBean_in"],
-					"comment":"The plugin to add.",
-					"jaxrs":"BODY",
-				},
-			],
-			"HEADER":[
-			],
-			"COOKIE":[
-			],
-			"FORM":[
-			],
-			"MATRIX":[
-			],
-		},
-	},
-	{
-		"beschrijving":"This endpoint returns a list of all the organizations for which the current user has permission to edit APIs. For example, when creating a new API, the user interface must ask the user to choose within which Organization to create it. This endpoint lists the valid choices for the current user.",
-		"url":"/currentuser/apiorgs",
-		"http":"GET",
-		"title":"Get Organizations (api-edit)",
-		"tags":[
-			
-		],
-		"authors":[
-			"eric.wittmann@redhat.com",
-		],
-		"compressed":false,
-		"deprecated":false,
-		"consumes":[
-		],
-		"produces":[
-			"application/json",
-		],
-		"roles":[
-		],
-		"rolesAllowed":null,
-		"permitAll":false,
-		"output":{
-			"typeValue":{
-				"type":"collection",
-				"typeValue":com.qmino.miredot.restApiSource.tos["io_apiman_manager_api_beans_summary_OrganizationSummaryBean_out"],
-			},
-			"comment":"A list of organizations.",
-		},
-		"statusCodes":[
-			{
-				"httpCode":200,
-				"comment":"If the organizations are successfully returned.",
-			},
-		],
-		"hash":"-1224109834",
-		"responseHeaders":{
-			"headers":[
-			],
-			"customHeaders":[
-			],
-		},
-		"inputs":{
-			"PATH":[
-			],
-			"QUERY":[
 			],
 			"BODY":[
 			],
@@ -21998,1052 +22027,476 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1330388304",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
+		"interface":"1573696462",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientVersionContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1573696462",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientVersionContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"626901080",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"626901080",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1223249644",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsPerPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1223249644",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsPerPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"276535166",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchApiCatalog",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"403818521",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClientVersions",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"403818521",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClientVersions",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-317624296",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"937475817",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"list",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1476581646",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsPerClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1476581646",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsPerClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-779838070",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-779838070",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-779838070",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1521442722",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyDefinitionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2025326519",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlanVersions",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2025326519",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlanVersions",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1607802820",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidNameException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1607802820",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1607802820",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1607802820",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1037507013",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1037507013",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1082455447",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchUsers",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1759004623",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getApis",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"670524142",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
 		"implementationMethod":"searchOrgs",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-675432518",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationAlreadyExistsException",
+		"interface":"-1318197898",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-675432518",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-1318197898",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-675432518",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
+		"interface":"-1318197898",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderApiPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"702259410",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicyChain",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"663565712",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"702259410",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicyChain",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"interface":"-159521956",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1350378359",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+		"interface":"-159521956",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1350378359",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-159521956",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ContractNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1415376726",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+		"interface":"193895596",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsSummary",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1415376726",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1055255023",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1055255023",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1055255023",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2019476817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2019476817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
-		"description":"Missing parameter documentation",
-		"failedBuild":"false",
-		"interface":"-1545632561",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
-		"implementationMethod":"download",
-		"entity":"downloadId",
+		"interface":"193895596",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStatsSummary",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
 	},
 	{
 		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
 		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"-1545632561",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
-		"implementationMethod":"download",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.DownloadNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1545632561",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IDownloadResource",
-		"implementationMethod":"download",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.DownloadNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1562213900",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1562213900",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"671390230",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"671390230",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"219250178",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"219250178",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"219250178",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"219250178",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1700177734",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinitionFromURL",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1700177734",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinitionFromURL",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1700177734",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinitionFromURL",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1466094454",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1092358409",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1092358409",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1092358409",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1092358409",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1016258949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1016258949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1016258949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1016258949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"grant",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-393357420",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getPolicyForm",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginResourceNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-393357420",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getPolicyForm",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-393357420",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getPolicyForm",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginNotFoundException",
-	},
-	{
-		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
-		"description":"Missing parameter documentation",
-		"failedBuild":"false",
-		"interface":"-30001108",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
-		"implementationMethod":"exportData",
-		"entity":"download",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1369248390",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsage",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1369248390",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsage",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1046148934",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1046148934",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1046148934",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1181261430",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1181261430",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1181261430",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidClientStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1181261430",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-140545606",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-140545606",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-140545606",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1407081465",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1407081465",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1407081465",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-21815147",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchClients",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-21815147",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchClients",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1326787891",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IActionResource",
+		"interface":"-2115263537",
+		"implementationClass":"io.apiman.manager.api.rest.IActionResource",
 		"implementationMethod":"performAction",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ActionException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1547394840",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionStatus",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-2115263537",
+		"implementationClass":"io.apiman.manager.api.rest.IActionResource",
+		"implementationMethod":"performAction",
+		"entity":"io.apiman.manager.api.rest.exceptions.ActionException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1547394840",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionStatus",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"interface":"-2115263537",
+		"implementationClass":"io.apiman.manager.api.rest.IActionResource",
+		"implementationMethod":"performAction",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1185461149",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"list",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"55407208",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getPermissionsForUser",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
+		"interface":"55407208",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getPermissionsForUser",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"237618689",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
+		"interface":"237618689",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"52438808",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revokeAll",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"237618689",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"265482217",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ContractNotFoundException",
+		"interface":"237618689",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"265482217",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"215645169",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"265482217",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+		"interface":"215645169",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"265482217",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidClientStatusException",
+		"interface":"215645169",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1882625292",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApiVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+		"interface":"18809139",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1882625292",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApiVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"18809139",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-284625355",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-284625355",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"778081312",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"778081312",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"778081312",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"778081312",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-664114902",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsSummary",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-664114902",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsSummary",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-133467057",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
-		"implementationMethod":"getPermissionsForCurrentUser",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"601832090",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"601832090",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"7562805",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"7562805",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"805219257",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"805219257",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"589907054",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"list",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"623738724",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"list",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1273095339",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"list",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1860241840",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1860241840",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1488100066",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1488100066",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2113320356",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2113320356",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"2113320356",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"368756653",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"368756653",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-342742837",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-342742837",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1273899955",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1273899955",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1273899955",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"475349000",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"475349000",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"475349000",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientApiKey",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"121469024",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getAvailablePlugins",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"PARTIAL_RESOURCE_OVERLAP",
-		"description":"This rest interface (partially) hides another rest interface",
-		"failedBuild":"false",
-		"interface":"121469024",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getAvailablePlugins",
-		"entity":"Overlaps with: /plugins/{pluginId}",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1363933996",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1363933996",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1101902538",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1101902538",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"942613575",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"942613575",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"18809139",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"JAXRS_MISSING_CONSUMES",
 		"description":"Interface specifies a JAXRS-BODY parameter, but does not specify a Consumes value.",
 		"failedBuild":"false",
-		"interface":"-566011861",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"interface":"-221816855",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
 		"implementationMethod":"update",
 		"entity":null,
 	},
@@ -23051,1349 +22504,548 @@ com.qmino.miredot.projectWarnings = [
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-566011861",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"interface":"-221816855",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-566011861",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
+		"interface":"-221816855",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyDefinitionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-58217493",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
+		"interface":"41438550",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getEditableClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-58217493",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1686043217",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidVersionException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"595817966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
+		"interface":"1686043217",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"595817966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"1686043217",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"595817966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1686043217",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"595817966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"interface":"-1087022841",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listApis",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1605693659",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClientVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"712169543",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1605693659",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClientVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
+		"interface":"712169543",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"990611556",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
-		"implementationMethod":"search",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"211026916",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"211026916",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-246606276",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-246606276",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1820549874",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1820549874",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-8349966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-8349966",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionPlans",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1374696322",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1374696322",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1374696322",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1374696322",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"revoke",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1027279171",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryXML",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1027279171",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryXML",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-150865029",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-150865029",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-155724339",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-155724339",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-96650685",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientUsagePerApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-96650685",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientUsagePerApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"295869917",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.EntityStillActiveException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"295869917",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"295869917",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2017982009",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAllContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-2017982009",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteAllContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1267972115",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1267972115",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1926708311",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1926708311",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getUsagePerClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-201972620",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-201972620",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-201972620",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1716179148",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1716179148",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"644252897",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"activity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"644252897",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"activity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1217189892",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1217189892",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1105661559",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1105661559",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IUserResource",
-		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-75369965",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-75369965",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-75369965",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"259605984",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.RoleNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"259605984",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1230074826",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1230074826",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1787769108",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1787769108",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1787769108",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1787769108",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updateApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-336207765",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-336207765",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-925476280",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-925476280",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1123438697",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStats",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1123438697",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStats",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1051800083",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1051800083",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiDefinition",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-17039270",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ContractNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-17039270",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-17039270",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"871828817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"871828817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"871828817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"871828817",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClientPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"1005685448",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryJSON",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"969003111",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"updatePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1005685448",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryJSON",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"270637451",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+		"interface":"1005685448",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryJSON",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"270637451",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-2101809160",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchApis",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"270637451",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidPlanStatusException",
+		"interface":"-2101809160",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchApis",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1432121842",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"1607658384",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"listApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1432121842",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"1607658384",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"listApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1432121842",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"1607658384",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"listApiPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1813846193",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1813846193",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"delete",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"365239146",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidMetricCriteriaException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"365239146",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getResponseStatsPerPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-299858800",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-299858800",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-299858800",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-136334993",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-136334993",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-136334993",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-136334993",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getPlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-688369076",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-688369076",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-688369076",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1588944898",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1588944898",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1588944898",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1588944898",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deletePlanPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1657338239",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1657338239",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1657338239",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1657338239",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteApiPolicy",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1737627941",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
-		"implementationMethod":"getPermissionsForUser",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.UserNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1737627941",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPermissionsResource",
-		"implementationMethod":"getPermissionsForUser",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1881573534",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1881573534",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-738311614",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClients",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-738311614",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClients",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-867858951",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"getPolicyDefs",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"159318720",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"159318720",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"159318720",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"159318720",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApi",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"736588845",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.EntityStillActiveException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"736588845",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"736588845",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"deleteClient",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1341658164",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IGatewayResource",
+		"interface":"1619889614",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
 		"implementationMethod":"test",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-181241607",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+		"interface":"1737367757",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-181241607",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listPlanVersions",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1737367757",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"483472413",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
+		"interface":"-1301073360",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionPlans",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"483472413",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1264488986",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"483472413",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionAlreadyExistsException",
+		"interface":"1264488986",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"483472413",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createApiVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
+		"interface":"1264488986",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"192245690",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchApis",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"1264488986",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revokeAll",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"192245690",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchApis",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+		"interface":"-1008527961",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1189204529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
+		"interface":"-1008527961",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidClientStatusException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1189204529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-1008527961",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1189204529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionAlreadyExistsException",
+		"interface":"-1008527961",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ContractNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1189204529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlanVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
+		"interface":"-1790474751",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientUsagePerApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-163056237",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"-1790474751",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientUsagePerApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1326891089",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1326891089",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1431300356",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidNameException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1431300356",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1431300356",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1431300356",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-690237545",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-690237545",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-690237545",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1677162168",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1677162168",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1327852906",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionStatus",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1327852906",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionStatus",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-419149743",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"getClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-163056237",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"-419149743",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"getClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1779809728",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISearchResource",
-		"implementationMethod":"searchApiCatalog",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+		"interface":"-1343854916",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidNameException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1311532533",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"-1343854916",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationAlreadyExistsException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1311532533",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-1343854916",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1311532533",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listClientPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionNotFoundException",
+		"interface":"-457395482",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlans",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1965772529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"search",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidSearchCriteriaException",
+		"interface":"-457395482",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlans",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1965772529",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IRoleResource",
-		"implementationMethod":"search",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1574269832",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1556586021",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1574269832",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"1556586021",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionActivity",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"interface":"-1060104051",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1349655703",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanVersionNotFoundException",
+		"interface":"-1060104051",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyDefinitionNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1349655703",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"interface":"-56820286",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1349655703",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"reorderPlanPolicies",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"-56820286",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"-838398617",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getClientOrganizations",
+		"entity":"userId",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-838398617",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getClientOrganizations",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"JAVADOC_MISSING_SUMMARY",
 		"description":"Missing summary tag",
 		"failedBuild":"false",
-		"interface":"1642032952",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"interface":"-1248517386",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
 		"implementationMethod":"importData",
 		"entity":null,
 	},
@@ -24401,8 +23053,8 @@ com.qmino.miredot.projectWarnings = [
 		"category":"JAVADOC_MISSING_INTERFACEDOCUMENTATION",
 		"description":"Missing interface documentation",
 		"failedBuild":"false",
-		"interface":"1642032952",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"interface":"-1248517386",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
 		"implementationMethod":"importData",
 		"entity":null,
 	},
@@ -24410,280 +23062,1720 @@ com.qmino.miredot.projectWarnings = [
 		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
 		"description":"Missing return type documentation",
 		"failedBuild":"false",
-		"interface":"1642032952",
-		"implementationClass":"io.apiman.manager.api.rest.contract.ISystemResource",
+		"interface":"-1248517386",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
 		"implementationMethod":"importData",
 		"entity":null,
 	},
 	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
 		"failedBuild":"false",
-		"interface":"-2056208999",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.GatewayNotFoundException",
+		"interface":"-1248517386",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
+		"implementationMethod":"importData",
+		"entity":"javax.ws.rs.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-2056208999",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
+		"interface":"-1248517386",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
+		"implementationMethod":"importData",
+		"entity":"javax.ws.rs.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-2056208999",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionEndpointInfo",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidApiStatusException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1986179721",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1986179721",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiVersionContracts",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiVersionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ApiNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1561085416",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createContract",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ContractAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1012710573",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listMembers",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1012710573",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"listMembers",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1430400949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1430400949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1430400949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidVersionException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-1430400949",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createClientVersion",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientVersionAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"355787714",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"355787714",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PlanAlreadyExistsException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"355787714",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"355787714",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"createPlan",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.InvalidNameException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"874780892",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PolicyDefinitionNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"874780892",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPolicyDefinitionResource",
-		"implementationMethod":"get",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1248930698",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryJSON",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"1248930698",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
-		"implementationMethod":"getApiRegistryJSON",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.ClientNotFoundException",
-	},
-	{
-		"category":"REST_UNMAPPED_EXCEPTION",
-		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
-		"failedBuild":"false",
-		"interface":"-38162105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"358633221",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.OrganizationNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-38162105",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IOrganizationResource",
+		"interface":"358633221",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
 		"implementationMethod":"update",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1845183494",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginAlreadyExistsException",
+		"interface":"1133384171",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1845183494",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
-		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.NotAuthorizedException",
+		"interface":"1133384171",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
 	},
 	{
 		"category":"REST_UNMAPPED_EXCEPTION",
 		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
 		"failedBuild":"false",
-		"interface":"-1845183494",
-		"implementationClass":"io.apiman.manager.api.rest.contract.IPluginResource",
+		"interface":"1133384171",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.EntityStillActiveException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1862652516",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
 		"implementationMethod":"create",
-		"entity":"io.apiman.manager.api.rest.contract.exceptions.PluginNotFoundException",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1862652516",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"508849970",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getOrganizations",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2096275611",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2096275611",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2096275611",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionEndpointInfo",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidApiStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1634597381",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getPolicyDefs",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1634597381",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getPolicyDefs",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-669256592",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"getGatewayEndpoint",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"-1847460723",
+		"implementationClass":"io.apiman.manager.api.rest.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"downloadId",
+	},
+	{
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
+		"failedBuild":"false",
+		"interface":"-1847460723",
+		"implementationClass":"io.apiman.manager.api.rest.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"io.apiman.manager.api.rest.exceptions.DownloadNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1847460723",
+		"implementationClass":"io.apiman.manager.api.rest.IDownloadResource",
+		"implementationMethod":"download",
+		"entity":"io.apiman.manager.api.rest.exceptions.DownloadNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-703067018",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listApiVersions",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"349067710",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"349067710",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1229998368",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1229998368",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"693600806",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"693600806",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"693600806",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1152858308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1152858308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-373570616",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-373570616",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-373570616",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidApiStatusException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"24990217",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getPlanOrganizations",
+		"entity":"userId",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"24990217",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getPlanOrganizations",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-376631816",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1116364284",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1116364284",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1116364284",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"523681102",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"523681102",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"523681102",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidApiStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-810512695",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-810512695",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-810512695",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidPlanStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-397613003",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-397613003",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1573868978",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1573868978",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1573868978",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1134508319",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1134508319",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1134508319",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1134508319",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-861448155",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-861448155",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-861448155",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-861448155",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"688191622",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"688191622",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginNotFoundException",
+	},
+	{
+		"category":"JAVADOC_MISSING_EXCEPTION_DOCUMENTATION",
+		"description":"Exception thrown by method has no comment",
+		"failedBuild":"false",
+		"interface":"-2143504449",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryXML",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2143504449",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryXML",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2143504449",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiRegistryXML",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-547890733",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-547890733",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-547890733",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-547890733",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-413965868",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiPolicyChain",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1111242421",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1111242421",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"878459349",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listMembers",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"878459349",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listMembers",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-738437266",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-738437266",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-738437266",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-738437266",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"339724460",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"339724460",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"339724460",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"339724460",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1658998901",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1658998901",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"update",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"986157402",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getClients",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1211950494",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getAvailablePlugins",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"PARTIAL_RESOURCE_OVERLAP",
+		"description":"This rest interface (partially) hides another rest interface",
+		"failedBuild":"false",
+		"interface":"-1211950494",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getAvailablePlugins",
+		"entity":"Overlaps with: /plugins/{pluginId}",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-893589729",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"activity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-893589729",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"activity",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1544069026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1544069026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1544069026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1544069026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1592900953",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1592900953",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1592900953",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"984261893",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteAllContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"984261893",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deleteAllContracts",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2101987833",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"grant",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2101987833",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"grant",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2101987833",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"grant",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2101987833",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"grant",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1433615296",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revoke",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1433615296",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revoke",
+		"entity":"io.apiman.manager.api.rest.exceptions.UserNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1433615296",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revoke",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1433615296",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"revoke",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1353790728",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinitionFromURL",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1353790728",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinitionFromURL",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1353790728",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiDefinitionFromURL",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidApiStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"858657686",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getPolicyForm",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyDefinitionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"858657686",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getPolicyForm",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginResourceNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"858657686",
+		"implementationClass":"io.apiman.manager.api.rest.IPluginResource",
+		"implementationMethod":"getPolicyForm",
+		"entity":"io.apiman.manager.api.rest.exceptions.PluginNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1873273886",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1873273886",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"795706577",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiDefinition",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1644389308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1644389308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1644389308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1644389308",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"deletePlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1057434565",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1057434565",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1057434565",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"reorderClientPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1201343584",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1201343584",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-402617395",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-402617395",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-402617395",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-402617395",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"6897593",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"6897593",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1621230707",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.GatewayNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1621230707",
+		"implementationClass":"io.apiman.manager.api.rest.IGatewayResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"-331829270",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
+		"implementationMethod":"exportData",
+		"entity":"download",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-331829270",
+		"implementationClass":"io.apiman.manager.api.rest.ISystemResource",
+		"implementationMethod":"exportData",
+		"entity":"javax.ws.rs.NotAuthorizedException",
+	},
+	{
+		"category":"JAVADOC_MISSING_PARAMETER_DOCUMENTATION",
+		"description":"Missing parameter documentation",
+		"failedBuild":"false",
+		"interface":"1567140286",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getApiOrganizations",
+		"entity":"userId",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1567140286",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getApiOrganizations",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2125543531",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStats",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2125543531",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getResponseStats",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"514700913",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"514700913",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"514700913",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"514700913",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1900943763",
+		"implementationClass":"io.apiman.manager.api.rest.IRoleResource",
+		"implementationMethod":"get",
+		"entity":"io.apiman.manager.api.rest.exceptions.RoleNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-590343412",
+		"implementationClass":"io.apiman.manager.api.rest.ISearchResource",
+		"implementationMethod":"searchRoles",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidSearchCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1336039234",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidNameException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1336039234",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1336039234",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1336039234",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createApi",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"90386567",
+		"implementationClass":"io.apiman.manager.api.rest.IUserResource",
+		"implementationMethod":"getActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-879304589",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-879304589",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getPlanVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-685118001",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-685118001",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-685118001",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1635738515",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1635738515",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-331463471",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-331463471",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-331463471",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"listPlanPolicies",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1839695688",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1839695688",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidClientStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1839695688",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidVersionException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1839695688",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientApiKey",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1417223304",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsage",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1417223304",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsage",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ContractAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"1894272026",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"createContract",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2099722449",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-2099722449",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getClientActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1329684153",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.ClientVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1329684153",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1329684153",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1329684153",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateClientPolicy",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"777142443",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsagePerClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"777142443",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsagePerClient",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2069678247",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"2069678247",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getApiVersionActivity",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"896882830",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.PolicyDefinitionAlreadyExistsException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"896882830",
+		"implementationClass":"io.apiman.manager.api.rest.IPolicyDefinitionResource",
+		"implementationMethod":"create",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1970996872",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1970996872",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.ApiVersionNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1970996872",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updateApiVersion",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidApiStatusException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1998184933",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1998184933",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.OrganizationNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1998184933",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"delete",
+		"entity":"io.apiman.manager.api.rest.exceptions.EntityStillActiveException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"450351401",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.PlanNotFoundException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"450351401",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"updatePlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1204291127",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsagePerPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.NotAuthorizedException",
+	},
+	{
+		"category":"REST_UNMAPPED_EXCEPTION",
+		"description":"Exception is thrown by interface specification, but is not mapped in the MireDot configuration. As such, the return errorcode can not be documented properly.",
+		"failedBuild":"false",
+		"interface":"-1204291127",
+		"implementationClass":"io.apiman.manager.api.rest.IOrganizationResource",
+		"implementationMethod":"getUsagePerPlan",
+		"entity":"io.apiman.manager.api.rest.exceptions.InvalidMetricCriteriaException",
 	},
 ];
 com.qmino.miredot.processErrors = [
