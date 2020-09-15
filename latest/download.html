@@ -152,8 +152,8 @@
                       <pre class="code-block">
 mkdir ~/apiman-2.0.0.Final
 cd ~/apiman-2.0.0.Final
-curl https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
-curl https://github.com/apiman/apiman/releases/download/2.0.0.Final/apiman-distro-wildfly-2.0.0.Final-overlay.zip -o apiman-distro-wildfly-2.0.0.Final-overlay.zip
+curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.0.0.Final/apiman-distro-wildfly-2.0.0.Final-overlay.zip -o apiman-distro-wildfly-2.0.0.Final-overlay.zip
 unzip wildfly-20.0.1.Final.zip
 unzip -o apiman-distro-wildfly-2.0.0.Final-overlay.zip -d wildfly-20.0.1.Final
 cd wildfly-20.0.1.Final
