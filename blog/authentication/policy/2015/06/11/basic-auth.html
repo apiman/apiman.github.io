@@ -4,16 +4,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msvalidate.01" content="C3BF2C67B92C75F2DEAA096973652038" />
-  <link rel="shortcut icon" href="http://www.apiman.io/latest/resources/images/favicon.ico">
+  <link rel="shortcut icon" href="https://www.apiman.io/latest/resources/images/favicon.ico">
   <title>Adding a BASIC Authentication Policy to a Managed Service in JBoss apiman | apiman Open Source API Management</title>
   <meta name="description" content="In this, the fourth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to not just manage services, b...">
 
   <!-- CSS -->
-  <link href="http://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
-  <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-  <link href="http://www.apiman.io/latest/resources/css/apiman-web.css?v=1.2.7.Final" rel="stylesheet">
-  <link href="http://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.2.7.Final" rel="stylesheet">
+  <link href="https://www.apiman.io/latest/resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.apiman.io/latest/resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
+  <link href="https://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+  <link href="https://www.apiman.io/latest/resources/css/apiman-web.css?v=1.2.7.Final" rel="stylesheet">
+  <link href="https://www.apiman.io/latest/resources/css/apiman-web.responsive.css?v=1.2.7.Final" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="/blog/css/highlight.css" rel="stylesheet">
   <link href="/blog/css/main.css" rel="stylesheet">
@@ -28,12 +28,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  
-  <script src="http://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
-  <script src="http://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+
+  <script src="https://www.apiman.io/latest/resources/jquery-1.11.1/js/jquery.min.js"></script>
+  <script src="https://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
   <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
 
-  <!-- Canonical URL --><link rel="canonical" href="http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html" /><link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
+  <!-- Canonical URL --><link rel="canonical" href="https://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html" /><link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="https://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -52,8 +52,8 @@
 </head>
 <body class="blog">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -63,14 +63,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://www.apiman.io/latest/index.html">apiman</a>
+      <a class="navbar-brand" href="https://www.apiman.io/latest/index.html">apiman</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/index.html">Overview</a></li>
-        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/download.html">Download</a></li>
-        <li class="top-menu-item menu-item"><a href="http://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
-        <li class="top-menu-item menu-item active"><a href="http://www.apiman.io/blog/">Blog</a></li>
+        <li class="top-menu-item menu-item"><a href="https://www.apiman.io/latest/index.html">Overview</a></li>
+        <li class="top-menu-item menu-item"><a href="https://www.apiman.io/latest/download.html">Download</a></li>
+        <li class="top-menu-item menu-item"><a href="https://www.apiman.io/latest/roadmap.html">Roadmap</a></li>
+        <li class="top-menu-item menu-item active"><a href="https://www.apiman.io/blog/">Blog</a></li>
         <li class="top-menu-item menu-item dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">Get Involved<b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -82,7 +82,7 @@
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/contributors.html">Contributors List</a>
+                    <a href="https://www.apiman.io/latest/contributors.html">Contributors List</a>
                 </li>
             </ul>
         </li>
@@ -90,27 +90,27 @@
             <a href="" class="dropdown-toggle" data-toggle="dropdown">Learn More<b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
+                    <a href="https://www.apiman.io/latest/tutorials.html">Tutorials &amp; Walkthroughs</a>
                 </li>
                 <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/crash-course.html">Crash Course!</a>
-                </li>
-                <li class="divider"></li>
-                <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
-                </li>
-                <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/user-guide.html">User Guide</a>
-                </li>
-                <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
-                </li>
-                <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                    <a href="https://www.apiman.io/latest/crash-course.html">Crash Course!</a>
                 </li>
                 <li class="divider"></li>
                 <li class="menu-item">
-                    <a href="http://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
+                    <a href="https://www.apiman.io/latest/installation-guide.html">Installation Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.apiman.io/latest/user-guide.html">User Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.apiman.io/latest/developer-guide.html">Developer Guide</a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://www.apiman.io/latest/production-guide.html">Production Guide</a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-item">
+                    <a href="https://www.apiman.io/latest/api-manager-restdocs.html">API Manager REST Endpoints</a>
                 </li>
             </ul>
         </li>
@@ -129,7 +129,7 @@
   </header><!-- Old Post -->
     <p class="bg-warning"
        style="margin-top:15px; padding: 10px;">
-        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="http://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
+        Note: A newer revision of this blogpost for <b>apiman 1.2.x</b> can be found <a href="https://apiman.io/blog/authentication/policy/2015/06/11/basic-auth.html">here</a>. This version was written for <b>apiman 1.1.x</b>.
     </p><article class="post-content"
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p><img src="/blog/images/2015-06-11/1-apiman_logo.png" alt="apiman logo" /></p>
@@ -175,17 +175,17 @@
 
 <p>To illustrate, here’s Java code that can encode and then decode the username:password string:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> Base64.Encoder encoder <span class="o">=</span> Base64.getEncoder<span class="o">()</span><span class="p">;</span>  
- String normalString <span class="o">=</span> <span class="s2">"user1"</span> + <span class="s2">":"</span> + <span class="s2">"password1"</span><span class="p">;</span>  
- String encodedString <span class="o">=</span> encoder.encodeToString<span class="o">(</span>normalString.getBytes<span class="o">(</span>StandardCharsets.UTF_8<span class="o">))</span><span class="p">;</span>  
- System.out.println <span class="o">(</span><span class="s2">"The encoded string is: "</span> + encodedString<span class="o">)</span><span class="p">;</span>  
-             
- Decoder decoder <span class="o">=</span> Base64.getDecoder<span class="o">()</span><span class="p">;</span>  
- byte[] unencodedStringArray <span class="o">=</span> decoder.decode<span class="o">(</span>encodedString<span class="o">)</span><span class="p">;</span>  
- String unencodedString <span class="o">=</span> new String <span class="o">(</span>unencodedStringArray<span class="o">)</span><span class="p">;</span>  
- System.out.println <span class="o">(</span><span class="s2">"The unencoded string is: "</span> + unencodedString<span class="o">)</span><span class="p">;</span>  
-   
- The encoded string is: dXNlcjE6cGFzc3dvcmQx  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> Base64.Encoder encoder <span class="o">=</span> Base64.getEncoder<span class="o">()</span><span class="p">;</span>
+ String normalString <span class="o">=</span> <span class="s2">"user1"</span> + <span class="s2">":"</span> + <span class="s2">"password1"</span><span class="p">;</span>
+ String encodedString <span class="o">=</span> encoder.encodeToString<span class="o">(</span>normalString.getBytes<span class="o">(</span>StandardCharsets.UTF_8<span class="o">))</span><span class="p">;</span>
+ System.out.println <span class="o">(</span><span class="s2">"The encoded string is: "</span> + encodedString<span class="o">)</span><span class="p">;</span>
+
+ Decoder decoder <span class="o">=</span> Base64.getDecoder<span class="o">()</span><span class="p">;</span>
+ byte[] unencodedStringArray <span class="o">=</span> decoder.decode<span class="o">(</span>encodedString<span class="o">)</span><span class="p">;</span>
+ String unencodedString <span class="o">=</span> new String <span class="o">(</span>unencodedStringArray<span class="o">)</span><span class="p">;</span>
+ System.out.println <span class="o">(</span><span class="s2">"The unencoded string is: "</span> + unencodedString<span class="o">)</span><span class="p">;</span>
+
+ The encoded string is: dXNlcjE6cGFzc3dvcmQx
  The unencoded string is: user1:password1  </code></pre></figure>
 
 <p>So - unlike encrypted strings, your encoded username and password strings are not secure!</p>
@@ -196,27 +196,27 @@
 
 <p>Here’s the first request made to the service, notice that a username/password is not included.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span> GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
- Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span> GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1
+ Host     localhost:8443
+ User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0
+ Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8
+ Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5
+ Accept-Encoding     gzip, deflate
+ Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290
  Connection     keep-alive  </code></pre></figure>
 
 <p>The response, as we expected, shows that the request has triggered an authentication failure. This is due to the authentication requirement that we defined and is being applied by the API Gateway. Note the 401 error code and the reference to BASIC authentication:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 401 Unauthorized  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- X-Policy-Failure-Type     Authentication  
- Date     Wed, 03 Jun 2015 13:43:26 GMT  
- Connection     keep-alive  
- WWW-Authenticate     BASIC <span class="nv">realm</span><span class="o">=</span><span class="s2">"myRealm"</span>  
- X-Policy-Failure-Code     10004  
- Content-Type     application/json  
- Content-Length     165  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 401 Unauthorized
+ X-Powered-By     Undertow/1
+ Server     WildFly/8
+ X-Policy-Failure-Type     Authentication
+ Date     Wed, 03 Jun 2015 13:43:26 GMT
+ Connection     keep-alive
+ WWW-Authenticate     BASIC <span class="nv">realm</span><span class="o">=</span><span class="s2">"myRealm"</span>
+ X-Policy-Failure-Code     10004
+ Content-Type     application/json
+ Content-Length     165
  X-Policy-Failure-Message     BASIC authentication failed.  </code></pre></figure>
 
 <p>The browser then automatically pops up a dialog for us to enter the username and password:</p>
@@ -225,25 +225,25 @@
 
 <p>A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span>     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1  
- Host     localhost:8443  
- User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0  
- Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8  
- Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5  
- Accept-Encoding     gzip, deflate  
- Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290  
- Connection     keep-alive  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Request-Line<span class="o">)</span>     GET /apiman-gateway/serviceProducerOrg/echossl/1.0?apikey<span class="o">=</span>6f8784cd-5754-47b0-9b8b-b2eb8c5b190f HTTP/1.1
+ Host     localhost:8443
+ User-Agent     Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="p">;</span> rv:24.0<span class="o">)</span> Gecko/20100101 Firefox/24.0
+ Accept     text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8
+ Accept-Language     en-US,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5
+ Accept-Encoding     gzip, deflate
+ Cookie     <span class="nv">__utma</span><span class="o">=</span>111872281.1348865079.1409020839.1411395889.1419258109.7<span class="p">;</span> <span class="nv">__utmz</span><span class="o">=</span>111872281.1409020839.1.1.utmcsr<span class="o">=(</span>direct<span class="o">)</span>|utmccn<span class="o">=(</span>direct<span class="o">)</span>|utmcmd<span class="o">=(</span>none<span class="o">)</span><span class="p">;</span> <span class="nv">s_fid</span><span class="o">=</span>72CCAD206D09146C-233B60F47DBEA290
+ Connection     keep-alive
  Authorization     Basic dXNlcjE6cGFzc3dvcmQx  </code></pre></figure>
 
 <p>And, then we get the successful return code of 200 in a response:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 200 OK  
- Connection     keep-alive  
- X-Powered-By     Undertow/1  
- Server     WildFly/8  
- Content-Length     755  
- Content-Type     application/json  
- Date     Wed, 03 Jun 2015 13:43:34 GMT  
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="o">(</span>Status-Line<span class="o">)</span>     HTTP/1.1 200 OK
+ Connection     keep-alive
+ X-Powered-By     Undertow/1
+ Server     WildFly/8
+ Content-Length     755
+ Content-Type     application/json
+ Date     Wed, 03 Jun 2015 13:43:34 GMT
  </code></pre></figure>
 
 <h2 id="in-conclusion">In Conclusion</h2>
@@ -259,21 +259,21 @@
 <p>apiman</p>
 
 <ul>
-  <li>http://www.apiman.io</li>
+  <li>https://www.apiman.io</li>
 </ul>
 
 <p>Previous articles in this series:</p>
 
 <ul>
-  <li>http://java.dzone.com/articles/impatient-new-users</li>
-  <li>http://java.dzone.com/articles/customizing-jboss-apiman</li>
-  <li>http://java.dzone.com/articles/jboss-apiman-api-manager-rest</li>
+  <li>https://java.dzone.com/articles/impatient-new-users</li>
+  <li>https://java.dzone.com/articles/customizing-jboss-apiman</li>
+  <li>https://java.dzone.com/articles/jboss-apiman-api-manager-rest</li>
 </ul>
 
 <p>HTTP Authentication: Basic and Digest Access Authentication</p>
 
 <ul>
-  <li>http://tools.ietf.org/html/rfc2617</li>
+  <li>https://tools.ietf.org/html/rfc2617</li>
 </ul>
 
 
@@ -306,13 +306,13 @@
                 <div class="textwidget">
                     <p>
                         Copyright &copy; 2017 Red Hat, Inc. All rights reserved.<br>
-                        apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                        apiman code is open source and released under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                         <a href="/latest/disclosure.html">Open Source Disclosure</a>
                     </p>
                 </div>
             </div>
             <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
-                <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+                <a href="https://www.redhat.com" rel="nofollow" target="_blank"><img src="https://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
             </div>
         </div>
         <nav class="clearfix"></nav>
