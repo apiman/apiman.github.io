@@ -9,7 +9,7 @@
 
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
-    <link href="http://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
+    <link href="https://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
     <link href="resources/css/apiman-web.css?v=2.0.0.Final" rel="stylesheet">
     <link href="resources/css/apiman-web.responsive.css?v=2.0.0.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,8 +36,8 @@
   </head>
   <body class="download">
     <div id="rhbar">
-      <a class="jbdevlogo" href="http://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="http://www.redhat.com/" rel="nofollow" target="_blank"></a>
+      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
+      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
     </div>
     <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
       <div class="container">
@@ -54,6 +54,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="top-menu-item menu-item"><a href="index.html">Overview</a></li>
             <li class="top-menu-item menu-item active"><a href="download.html">Download</a></li>
+            <li class="top-menu-item menu-item"><a href="roadmap.html">Roadmap</a></li>
             <li class="top-menu-item menu-item"><a href="/blog">Blog</a></li>
             <li class="top-menu-item menu-item dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow" target="_blank">Get Involved<b class="caret"></b></a>
@@ -118,7 +119,7 @@
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                          <li><a href="http://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip" rel="nofollow" target="_blank">20.0.1.Final</a></li>
+                          <li><a href="https://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip" rel="nofollow" target="_blank">20.0.1.Final</a></li>
                           <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.0.0.Final/apiman-distro-wildfly-2.0.0.Final-overlay.zip" rel="nofollow" target="_blank">2.0.0.Final</a> overlay for WildFly</li>
                         </ul>
 
@@ -132,10 +133,10 @@
                         <ol>
                           <li>Start WildFly using the "standalone-apiman.xml" configuration</li>
                           <li>
-                            Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">Apiman UI</a> and login with admin/admin123!
+                            Point your browser at the <a href="https://localhost:8080/apimanui/" rel="nofollow" target="_blank">Apiman UI</a> and login with admin/admin123!
                             <div class="alert alert-info" style="margin-top: 5px;">
                                <span class="pficon pficon-info"></span>
-                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                               We strongly recommend you change the admin password(s) by <a href="https://localhost:8080/auth/admin/">logging in to keycloak</a>!
                             </div>
                           </li>
                         </ol>
@@ -182,10 +183,10 @@ cd wildfly-20.0.1.Final
                         <ul>
                           <li>Use docker to run the "Apiman WildFly" docker image</li>
                           <li>
-                            Point your browser at the <a href="http://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
+                            Point your browser at the <a href="https://localhost:8080/apimanui/">apiman UI</a> and login with admin/admin123!
                             <div class="alert alert-info" style="margin-top: 5px;">
                                <span class="pficon pficon-info"></span>
-                               We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to keycloak</a>!
+                               We strongly recommend you change the admin password(s) by <a href="https://localhost:8080/auth/admin/">logging in to keycloak</a>!
                             </div>
                           </li>
                         </ul>
@@ -218,15 +219,15 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.0.0.Final
                     <div class="widget col-sm-6 col-md-6 widget_text">
                         <div class="textwidget">
                             <p>
-                                Copyright © 2018 Red Hat, Inc. All rights reserved.<br>
-                                apiman code is open source and released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
+                                Copyright © <script>document.write(new Date().getFullYear())</script> Red Hat, Inc. All rights reserved.<br>
+                                apiman code is open source and released under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache License, v2.0</a>.<br>
                                 <a href="disclosure.html">Open Source Disclosure</a>
                             </p>
                         </div>
                     </div>
                     <div class="widget col-sm-6 col-md-6 widget_text" style="text-align: right">
 
-                        <a href="http://www.redhat.com" rel="nofollow" target="_blank"><img src="http://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
+                        <a href="https://www.redhat.com" rel="nofollow" target="_blank"><img src="https://static.jboss.org/theme/images/common/redhat_logo.png" alt="Red Hat"></a>
                     </div>
                 </div>
                 <nav class="clearfix"></nav>
