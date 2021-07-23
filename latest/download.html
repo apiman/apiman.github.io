@@ -107,9 +107,18 @@
     <div class="container" id="download">
         <div id="content" class="row">
             <div class="col-lg-10">
-                <h1 class="section-header">Getting Started (WildFly, Docker)</h1>
-                <p>One easy way to get started with <b>Apiman</b> is to simply download WildFly and the Apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently require at least version 8.</p>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#wf" role="tab" data-toggle="tab">WildFly</a></li>
+                    <li><a href="#wildfly-docker" role="tab" data-toggle="tab">WildFly Docker</a></li>
+                    <li><a href="#tomcat" role="tab" data-toggle="tab">Tomcat</a></li>
+                    <li><a href="#vertx" role="tab" data-toggle="tab">Vert.x Gateway</a></li>
+                </ul>
+                <div class="alert alert-info" style="margin-top: 10px; background-color: #fdf2e5; border-width: 1px; line-height: 24px">
+                    <span class="fa fa-fw fa-info-circle" style="color: #eb7720; font-size: 18px; line-height: 24px"></span>
+                    Migration Note: If you are updating from an older Apiman version, please check out the <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html">Migration Guide</a>
+                </div>
             </div>
+
 
             <div class="tab-content">
                 <!-- ======== -->
@@ -117,6 +126,8 @@
                 <!-- ======== -->
                 <div role="tabpanel" class="tab-pane active" id="wf">
                     <div class="col-lg-7">
+                        <h1 class="section-header">Getting Started (WildFly)</h1>
+                        <p>One easy way to get started with <b>Apiman</b> is to simply download WildFly and the Apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently require at least version 8.</p>
                         <h3>Download</h3>
                         <ul>
                           <li><a href="https://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip" rel="nofollow" target="_blank">20.0.1.Final</a></li>
@@ -162,19 +173,14 @@ cd wildfly-20.0.1.Final
                       </pre>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-10" style="margin-top: 40px;">
-                <h1 class="section-header">Getting Started (Docker)</h1>
-                <p>If you prefer to get started by using the Apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
-            </div>
-
-            <div class="tab-content">
                 <!-- ======== -->
-                <!-- WildFly -->
+                <!-- WildFly Docker -->
                 <!-- ======== -->
-                <div role="tabpanel" class="tab-pane active" id="docker-wf10">
+                <div role="tabpanel" class="tab-pane" id="wildfly-docker">
                     <div class="col-lg-7">
+                        <h1 class="section-header">Getting Started (Docker)</h1>
+                        <p>If you prefer to get started by using the Apiman docker images, that's cool too!  Skip all the steps above and follow the instructions in this section instead.</p>
                         <h3>Download</h3>
                         <ul>
                           <li>Use docker to pull the "<a href="https://hub.docker.com/r/apiman/on-wildfly/" rel="nofollow" target="_blank">Apiman WildFly</a>" docker image:  <strong>apiman/on-wildfly</strong></li>
@@ -210,7 +216,126 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final
                       </pre>
                     </div>
                 </div>
-            </div>
+
+                <!-- ======== -->
+                <!-- Tomcat 8 -->
+                <!-- ======== -->
+                <div role="tabpanel" class="tab-pane" id="tomcat">
+                    <div class="col-lg-7">
+                        <h3>Download</h3>
+                        <ul>
+                            <li><a href="https://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip" rel="nofollow" target="_blank">9.0.50</a></li>
+                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-tomcat-2.1.0.Final-overlay.zip" rel="nofollow" target="_blank">2.1.0.Final</a> overlay for Tomcat</li>
+                        </ul>
+
+                        <h3>Install</h3>
+                        <ol>
+                            <li>Unpack the Apache Tomcat zip</li>
+                            <li>Unpack the Apiman 2.1.0.Final Tomcat overlay zip <b>inside the tomcat directory</b></li>
+                        </ol>
+
+                        <h3>Run</h3>
+                        <ol>
+                            <li>Start Tomcat using the default configuration</li>
+                            <li>
+                                Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">Apiman UI</a> and login with admin/admin123!
+                                <div class="alert alert-info" style="margin-top: 5px;">
+                                    <span class="pficon pficon-info"></span>
+                                    We strongly recommend you change the admin password in <em>tomcat-users.xml</em>!
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h3>Configure</h3>
+                        <p>
+                            The Apiman distribution comes pre-configured with everything you should need to get started.
+                            Please see the User Guide for information about how to change apiman configuration options
+                            if you require more customization.
+                        </p>
+                    </div>
+                    <div class="col-lg-5" style="">
+                        <h3>Or simply try this...</h3>
+                        <pre class="code-block">
+mkdir ~/apiman-2.1.0.Final
+cd ~/apiman-2.1.0.Final
+curl -L https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip -o apache-tomcat-9.0.50.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-tomcat-2.1.0.Final-overlay.zip -o apiman-distro-tomcat8-2.1.0.Final-overlay.zip
+unzip apache-tomcat-9.0.50.zip
+unzip -o apiman-distro-tomcat8-2.1.0.Final-overlay.zip -d apache-tomcat-9.0.50
+cd apache-tomcat-9.0.50
+chmod 755 bin/catalina.sh
+./bin/catalina.sh run
+                          </pre>
+                    </div>
+                </div>
+
+                <!-- ============== -->
+                <!-- Vert.x + Wildfly -->
+                <!-- ============== -->
+                <div role="tabpanel" class="tab-pane" id="vertx">
+                    <div class="col-lg-7">
+                        <h3>Download</h3>
+                        <ul>
+                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-vertx-2.1.0.Final.zip" rel="nofollow" target="_blank">2.1.0.Final</a> Vert.x Gateway</li>
+                        </ul>
+
+                        <h3>Install</h3>
+                        <ol>
+                            <li>Vert.x is only used for the Gateway and you need to set up WildFly or Tomcat for the Manager UI</li>
+                            <li>Unpack the Vert.x Gateway zip</li>
+                        </ol>
+
+                        <h3>Run</h3>
+                        <ol>
+                            <li>Start WildFly/Tomcat</li>
+                            <li>
+                                Point your browser at the <a href="http://localhost:8080/apimanui/" rel="nofollow" target="_blank">Apiman UI</a> and login with admin/admin123!
+                                <div class="alert alert-info" style="margin-top: 5px;">
+                                    <span class="pficon pficon-info"></span>
+                                    We strongly recommend you change the admin password(s) by <a href="http://localhost:8080/auth/admin/">logging in to Keycloak</a>!
+                                </div>
+                            </li>
+                            <li>Start the Vert.x Gateway using the Elasticsearch config:
+                                <p><code>./apiman-gateway.sh --conf configs/conf-es.json</code></p>
+                            </li>
+                        </ol>
+
+                        <h3>Configure</h3>
+                        <ol>
+                            <li><a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/quickstart.html#_vert_x_gateway_and_servlet_based_manager" target="_blank">Check out the installation guide for more info!</a></li>
+                            <li>The Apiman distribution comes pre-configured with everything you should need to get started.
+                                Please see the User Guide for information about how to change Apiman configuration options
+                                if you require more customization.</li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-5" style="">
+                        <h3>Or simply try this...</h3>
+                        <pre class="code-block">
+// Step 1
+mkdir ~/apiman-2.1.0.Final
+cd ~/apiman-2.1.0.Final
+curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip
+unzip wildfly-20.0.1.Final.zip
+unzip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip -d wildfly-20.0.1.Final
+cd wildfly-20.0.1.Final
+./bin/standalone.sh -c standalone-apiman.xml
+
+// Step 2
+cd ~/apiman-2.1.0.Final
+curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-vertx-2.1.0.Final.zip -o apiman-distro-vertx-2.1.0.Final.zip
+cd apiman-distro-vertx-2.1.0.Final
+./apiman-gateway.sh --conf=configs/conf-es.json
+
+// Step 3
+Add the gateway to the Manager.
+                      </pre>
+                    </div>
+                </div>
+
+            </div> <!--tab content-->
+        </div> <!--container-->
+
 
         <footer role="contentinfo">
             <div id="inner-footer" class="clearfix row">
