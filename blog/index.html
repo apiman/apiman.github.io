@@ -34,7 +34,7 @@
   <script src="https://www.apiman.io/latest/resources/bootstrap-3.3.0/js/bootstrap.min.js"></script>
   <script id="dsq-count-scr" src="//apiman.disqus.com/count.js" async></script>
 
-  <!-- Canonical URL --><link rel="canonical" href="https://apiman.io/blog/"><link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="https://apiman.io/blog/feed.xml" />
+  <!-- Canonical URL --><link rel="canonical" href="http://apiman.io/blog/"><link rel="alternate" type="application/rss+xml" title="Apiman Blog | Open Source API Management" href="http://apiman.io/blog/feed.xml" />
 
 
   <!-- Google Analytics -->
@@ -127,6 +127,37 @@
         <div class="post-list"><div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
+                  <h1><a href="/blog/apiman/release/2018/08/13/apiman-2.1.0.Final-released.html"></a></h1>
+                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Aug 13, 2018</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
+                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
+                    <p>I’m very pleased to say that we’ve released Apiman 2.1.0.Final 👏. We’ve splatted a huge number of bugs and made a lot of improvements to stability, performance, and security.</p>
+
+<p>Please <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html">consult the migration guide here</a> if you are planning to upgrade from an earlier version if Apiman (especially if you’re using Elasticsearch).</p>
+
+<p>Apiman now can run on any currently released version of Java (assuming the underlying platform can, of course).</p>
+
+<p>You can see all of the things we’ve fixed in Apiman 2.1.0.Final, <a href="https://github.com/apiman/apiman/releases/tag/2.1.0.Final">and you can download the latest overlays, etc, over on our GitHub repo</a>.</p>
+
+<p>If you prefer the Apiman website, <a href="https://www.apiman.io/latest/download.html">it’s available right away on the downloads page.</a>.</p>
+
+<p>As usual, there are some simple Docker quickstart images available: <code class="highlighter-rouge">docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final</code>.</p>
+
+<p>A lot of work has gone into this release and we’re just getting started 🏃‍♂️.</p>
+
+<p>Let us know how you find Apiman 2.1.0!</p>
+
+
+                  </div>
+                  <div style="margin-bottom: 20px">
+                    <a href="/blog/apiman/release/2018/08/13/apiman-2.1.0.Final-released.html" style="font-size: 15px">(read more)</a>
+                  </div>
+                </div>
+              </div>
+            </div><div class="container blog-post-item">
+              <div class="row">
+                <div class="col-md-12">
                   <h1><a href="/blog/apiman/release/2018/08/13/release-1.5.html">Version 1.5 of Apiman is released!</a></h1>
                   <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Aug 13, 2018</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
@@ -163,7 +194,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>https://gatewayhost:port/{organizationId}/{apiId}/{version}/</code></pre>
+<pre class="CodeRay highlight"><code>http://gatewayhost:port/{organizationId}/{apiId}/{version}/</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -171,7 +202,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>https://gatewayhost:port/{apiId}/{version}/</code></pre>
+<pre class="CodeRay highlight"><code>http://gatewayhost:port/{apiId}/{version}/</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -258,19 +289,19 @@ If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or la
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-vertx-1.3.5.Final.zip">Vert.x (Gateway Only)</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-vertx-1.3.5.Final.zip">Vert.x (Gateway Only)</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly10-1.3.5.Final-overlay.zip">WildFly 10 or EAP 7.1</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly10-1.3.5.Final-overlay.zip">WildFly 10 or EAP 7.1</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly11-1.3.5.Final-overlay.zip">WildFly 11</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-wildfly11-1.3.5.Final-overlay.zip">WildFly 11</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-eap7-1.3.5.Final-overlay.zip">EAP 7</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-eap7-1.3.5.Final-overlay.zip">EAP 7</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-tomcat8-1.3.5.Final-overlay.zip">Tomcat 8+</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.5.Final/apiman-distro-tomcat8-1.3.5.Final-overlay.zip">Tomcat 8+</a></p>
 </li>
 <li>
 <p>Or directly from <a href="https://github.com/apiman/apiman/releases/tag/apiman-1.3.5.Final">GitHub</a> or <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.apiman%22%20AND%20v%3A%221.3.5.Final%22">Maven Central</a> if you prefer (faster in some regions).</p>
@@ -305,19 +336,19 @@ If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or la
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-vertx-1.3.4.Final.zip">Vert.x (Gateway Only)</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-vertx-1.3.4.Final.zip">Vert.x (Gateway Only)</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly10-1.3.4.Final-overlay.zip">WildFly 10 or EAP 7.1</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly10-1.3.4.Final-overlay.zip">WildFly 10 or EAP 7.1</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly11-1.3.4.Final-overlay.zip">WildFly 11</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly11-1.3.4.Final-overlay.zip">WildFly 11</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-eap7-1.3.4.Final-overlay.zip">EAP 7</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-eap7-1.3.4.Final-overlay.zip">EAP 7</a></p>
 </li>
 <li>
-<p><a href="https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-tomcat8-1.3.4.Final-overlay.zip">Tomcat 8+</a></p>
+<p><a href="http://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-tomcat8-1.3.4.Final-overlay.zip">Tomcat 8+</a></p>
 </li>
 <li>
 <p>Or directly from <a href="https://github.com/apiman/apiman/releases/tag/apiman-1.3.4.Final">GitHub</a> or <a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.apiman%22%20AND%20v%3A%221.3.4.Final%22">Maven Central</a> if you prefer (faster in some regions).</p>
@@ -590,8 +621,8 @@ The credentials to access the Apiman Gateway API are likely different than the U
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and 3scale</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning
-the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying
+                    <p>It’s been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 
+the 3scale API Management solution into a Red Hat supported product.  In that time, we’ve been trying 
 to figure out some stuff for the apiman community.  Here some of the things we wanted to suss out:</p>
 
 <ul>
@@ -600,7 +631,7 @@ to figure out some stuff for the apiman community.  Here some of the things we w
   <li>How can existing apiman users transition to a Red Hat supported API Management solution.</li>
 </ul>
 
-<p>It doesn’t sound like much, but it actually really is.  We’ve made some preliminary decisions, and
+<p>It doesn’t sound like much, but it actually really is.  We’ve made some preliminary decisions, and 
 because we want to be as transparent and upfront as possible, read on to find out what they are!</p>
 
 
@@ -613,8 +644,8 @@ because we want to be as transparent and upfront as possible, read on to find ou
             </div><div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
-                  <h1><a href="/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html">Red Hat, 3scale, and apiman?</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 22, 2016</span>
+                  <h1><a href="/blog/apiman/3scale/2016/06/23/redhat-3scale-apiman.html">Red Hat, 3scale, and apiman?</a></h1>
+                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Jun 23, 2016</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and 3scale</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
@@ -629,26 +660,26 @@ I’ll do my best to answer that question as honestly and transparently as I can
 
                   </div>
                   <div style="margin-bottom: 20px">
-                    <a href="/blog/apiman/3scale/2016/06/22/redhat-3scale-apiman.html" style="font-size: 15px">(read more)</a>
+                    <a href="/blog/apiman/3scale/2016/06/23/redhat-3scale-apiman.html" style="font-size: 15px">(read more)</a>
                   </div>
                 </div>
               </div>
             </div><div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
-                  <h1><a href="/blog/apiman/release/2016/04/24/release-1.2.4.html">Version 1.2.4.Final of apiman is released!</a></h1>
-                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Apr 24, 2016</span>
+                  <h1><a href="/blog/apiman/release/2016/04/25/release-1.2.4.html">Version 1.2.4.Final of apiman is released!</a></h1>
+                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Apr 25, 2016</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>Greetings, earthlings!  On Friday of last week we released the <em>absolute best</em> version
+                    <p>Greetings, earthlings!  On Friday of last week we released the <em>absolute best</em> version 
 of apiman ever!  This release has a fair number of bugs fixed, as well as a few new
 things.  Read on for the details!</p>
 
 
                   </div>
                   <div style="margin-bottom: 20px">
-                    <a href="/blog/apiman/release/2016/04/24/release-1.2.4.html" style="font-size: 15px">(read more)</a>
+                    <a href="/blog/apiman/release/2016/04/25/release-1.2.4.html" style="font-size: 15px">(read more)</a>
                   </div>
                 </div>
               </div>
@@ -719,7 +750,7 @@ things.  Read on for the details!</p>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <p>Greetings, earthlings!  Yesterday we released the <em>best</em> version of apiman yet,
 and I’m not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targeted new
+This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!</p>
 
 
@@ -762,7 +793,7 @@ get a lot easier!</p>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <p>One of the strongest features of apiman, in general, is its excellent
 extensibility.  Not only is it easy to add new policies, for example,
-but many of its core components are also pluggable.  This includes,
+but many of its core components are also pluggable.  This includes, 
 for example, the registry used by the API Gateway to store configuration
 information published to it by the manager.  This blog post will detail
 a new JDBC based implementation of that registry, explaining how you can
@@ -784,7 +815,7 @@ default setting).</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Eric Wittmann</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman, 1.2.x, and gateway</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>In a recent blog post I explained why APIs used to be completely frozen
+                    <p>In a recent blog post I explained why APIs used to be completely frozen 
 once they were published, and how we have loosened that restriction for
 Public APIs.  Similarly, we did not allow Client Apps to be changed and
 then re-registered.  This was never a good decision, since the Client App
@@ -809,11 +840,11 @@ we should never have restricted the registration of a Client App!</p>
                     <p>An early design decision we made in apiman was to not allow APIs to be
 re-published to the Gateway.  The reasoning was that Client Apps may have
 established Contracts with the API, and thus have agreed to specific terms
-and conditions (whether implicit or explicit).  Therefore, we shouldn’t
+and conditions (whether implicit or explicit).  Therefore, we shouldn’t 
 allow the API provider to modify those terms and re-publish the API, as it
 may violate the agreement.</p>
 
-<p>However, we later added the concept of a Public API, which allows any
+<p>However, we later added the concept of a Public API, which allows any 
 client to invoke it without first creating a Contract.  It is clear that
 API providers should be able to re-publish a Public API (presumably after
 changing the API’s configuration).</p>
@@ -936,10 +967,10 @@ terminology).  Read on below the fold to find out what changed!</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> security, plugin, policy, cors, and 1.2.x</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <div class="paragraph">
-<p>If you&#8217;re looking to define <a href="https://www.w3.org/TR/2014/REC-cors-20140116/">CORS policies</a> in your API Management layer, then we have an <a href="https://github.com/apiman/apiman-plugins">official plugin</a> that should be perfect for the job.</p>
+<p>If you&#8217;re looking to define <a href="http://www.w3.org/TR/2014/REC-cors-20140116/">CORS policies</a> in your API Management layer, then we have an <a href="https://github.com/apiman/apiman-plugins">official plugin</a> that should be perfect for the job.</p>
 </div>
 <div class="paragraph">
-<p>For those <a href="https://enable-cors.org/">unfamiliar with CORS</a>, it&#8217;s a way of precisely defining who and how a remote origin may invoke an API&#8217;s resources. Generally, due to the <a href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin policy</a>, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.</p>
+<p>For those <a href="http://enable-cors.org/">unfamiliar with CORS</a>, it&#8217;s a way of precisely defining who and how a remote origin may invoke an API&#8217;s resources. Generally, due to the <a href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin policy</a>, a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.</p>
 </div>
 <div class="paragraph">
 <p>However, if we <em>want</em> our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let&#8217;s user agent know what&#8217;s allowed.</p>
@@ -1045,7 +1076,7 @@ can run apiman:  as a set of micro-services.</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api-manager, api-gateway, plugins, development, and maven</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <p>As you may know, apiman has long supported custom policies provided by users.  If you
-aren’t familiar with apiman plugins, you can find more about them by <a href="https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html">clicking here</a>.</p>
+aren’t familiar with apiman plugins, you can find more about them by <a href="http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html">clicking here</a>.</p>
 
 <p>As of version 1.1.5.Final, plugins are now even more useful.  You can provide custom
 implementations of various core apiman system components via plugins.  This allows users
@@ -1069,7 +1100,7 @@ the core apiman application.</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Stefan Bunciak</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> api, management, jboss, and fuse</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
-                    <p>This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on <a href="https://camel.apache.org">Apache Camel</a>, an implementation of many of the most commonly used enterprise integration patterns (EIP).</p>
+                    <p>This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on <a href="http://camel.apache.org">Apache Camel</a>, an implementation of many of the most commonly used enterprise integration patterns (EIP).</p>
 
 
                   </div>
@@ -1113,7 +1144,7 @@ now!</p>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> microservices, conference, and talk</span>
                   <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
                     <div class="paragraph">
-<p>I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within <a href="https://www.fabric8.io">Fabric8</a>. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.</p>
+<p>I had the pleasure of presenting on apiman at the recent Microservices Architecture Developer Day, with our colleague Kurt delivering a short demo of our software running within <a href="http://www.fabric8.io">Fabric8</a>. It was particularly enjoyable meeting developers who are interested in, or are already using, apiman - so, thank you for your insightful questions both during, and after, the presentation.</p>
 </div>
 <div class="paragraph">
 <p>Given the packed schedule, there was a limited amount of time to explore apiman plus microservices, and hence this seems like a good opportunity to write a blog post expanding upon the themes I touched upon.</p>
@@ -1125,7 +1156,7 @@ now!</p>
 <h2 id="services-services-everywhere">Services, services, everywhere!</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <a href="https://www.kubernetes.io">microservices architecture</a> encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX&#8217;s <em>do one job and do it well</em> philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice&#8217;s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.</p>
+<p>A <a href="http://www.kubernetes.io">microservices architecture</a> encourages the decomposition of problems into small, isolated and reusable chunks; much in the same spirit as UNIX&#8217;s <em>do one job and do it well</em> philosophy. This brings with it a whole raft of benefits, for instance: we can scale each component independently, avoiding unnecessarily dragging along other components which just happen to reside in the same monolith; we can easily have a single team wholly responsible for a single microservice&#8217;s lifecycle, simplifying debugging and allowing them to use their skills and technologies of choice; and, we can easily create new functionality via composition. However, this proliferation of heterogeneous services poses some challenges, a significant subset of which API Management is a key solution to.</p>
 </div>
 </div>
 </div>
@@ -1156,7 +1187,7 @@ now!</p>
 <p>Shifting business requirements are a natural part the software industry, however, the implementation burden is amplified in a microservices architecture. Thankfully, we can delegate that workload to our API Management solution, and even better, with the apiman UI it&#8217;s possible for non-technical people to create and manage the entire process. This is excellent from both standpoints, as the developers can concentrate on their core tasks, and the business people can take direct ownership and responsibility for implementing their policies; the two domains are kept entirely separate.</p>
 </div>
 <div class="paragraph">
-<p>Naturally, there will be cases where the in-built policies don&#8217;t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we&#8217;ve <a href="https://www.apiman.io/latest/developer-guide.html#_plugins">written a number of guides</a> <a href="https://java.dzone.com/articles/customizing-jboss-apiman">on the topic</a>. It&#8217;s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for <a href="https://www.apiman.io/latest/user-guide.html#_plugins">non-technical people to drive</a>.</p>
+<p>Naturally, there will be cases where the in-built policies don&#8217;t meet your specific needs. Apiman was designed grounds-up with the assumption that many users would want to write custom policies, and as such, we&#8217;ve <a href="http://www.apiman.io/latest/developer-guide.html#_plugins">written a number of guides</a> <a href="http://java.dzone.com/articles/customizing-jboss-apiman">on the topic</a>. It&#8217;s extremely easy to create, install and version control your own policies, including UI components that make it trivially easy for <a href="http://www.apiman.io/latest/user-guide.html#_plugins">non-technical people to drive</a>.</p>
 </div>
 </div>
 </div>
@@ -1164,7 +1195,7 @@ now!</p>
 <h2 id="clear-demarcation">Clear demarcation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Of all the microservices constituting an entire system, it is likely that only a subset of those should be exposed to the outside world. The rest are there to provide internal or compositional functionality. The apiman gateway can provide a natural boundary between public and private; only those services that are explicitly being offered through the gateway are visible, and the rest can be walled off (either at the network level, or via <a href="https://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security">mutual authentication</a> mechanisms).</p>
+<p>Of all the microservices constituting an entire system, it is likely that only a subset of those should be exposed to the outside world. The rest are there to provide internal or compositional functionality. The apiman gateway can provide a natural boundary between public and private; only those services that are explicitly being offered through the gateway are visible, and the rest can be walled off (either at the network level, or via <a href="http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security">mutual authentication</a> mechanisms).</p>
 </div>
 </div>
 </div>
@@ -1201,7 +1232,7 @@ now!</p>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. See our <a href="https://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins">official plugin policies</a>
+<a href="#_footnoteref_1">1</a>. See our <a href="http://www.apiman.io/latest/user-guide.html#_typical_use_cases">user guide</a> and be sure to look at our range of <a href="https://github.com/apiman/apiman-plugins">official plugin policies</a>
 </div>
 </div>
                   </div>
