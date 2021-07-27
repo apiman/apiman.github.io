@@ -44,7 +44,7 @@ Out of the box, apiman stores the metrics information into an elasticsearch inde
 elasticsearch instance is provided as part of the apiman distribution and is enabled and
 running by default.  If you wish to use a different elasticsearch instance that's of
 course no problem - all it requires is some tweaking of settings in the apiman.properties
-file.  I recommend having a look at the [Installation Guide](http://www.apiman.io/latest/installation-guide.html)
+file.  I recommend having a look at the [Installation Guide](https://www.apiman.io/latest/installation-guide.html)
 for more details.
 
 The intention is to support various metrics storage systems, not just elasticsearch.
@@ -85,7 +85,7 @@ providers we support (elasticsearch, hawkular, influxcb, etc).  However, we do p
 a set of REST endpoints you can use to extract common metrics.  These REST endpoints are
 available as a part of the standard API Manager's REST API.
 
-Please refer to the [API documentation](http://www.apiman.io/latest/api-manager-restdocs.html)
+Please refer to the [API documentation](https://www.apiman.io/latest/api-manager-restdocs.html)
 for the latest information, but at the time of this blog post the available metrics
 endpoints are:
 
@@ -127,6 +127,6 @@ As you can see, this is highly valuable information to have.  We only have a cou
 different categories of metrics exposed via the API and UI right now - so this is
 your opportunity to come tell us what you'd like to see!  Join the apiman metrics
 conversation on our [mailing list](https://lists.jboss.org/mailman/listinfo/apiman-user)
-or [IRC channel](http://www.apiman.io/latest/chat.html).
+or [IRC channel](https://www.apiman.io/latest/chat.html).
 
 /post

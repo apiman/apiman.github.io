@@ -20,11 +20,11 @@ toc::[]
 
 == Apiman Plugins
 
-Apiman's extensibility is one of its key strengths, and it's extremely easy to write http://www.apiman.io/latest/developer-guide.html#_plugins[plugins] that can do almost anything. There are two default behaviours we are likely to want to configure when operating within a restricted network.
+Apiman's extensibility is one of its key strengths, and it's extremely easy to write https://www.apiman.io/latest/developer-guide.html#_plugins[plugins] that can do almost anything. There are two default behaviours we are likely to want to configure when operating within a restricted network.
 
 === Distribution and Management
 
-Apiman plugins are, by default loaded via http://central.sonatype.org/[The Central Repository] (often known as Maven Central), which is a fantastically convenient in most situations. All of apiman's components (manager, gateways, etc), will pull down the necessary plugins as and when they need them.
+Apiman plugins are, by default loaded via https://central.sonatype.org/[The Central Repository] (often known as Maven Central), which is a fantastically convenient in most situations. All of apiman's components (manager, gateways, etc), will pull down the necessary plugins as and when they need them.
 
 However, without Internet access this clearly won't work as intended. We have three good options which you can configure in `apiman.properties`:
 
@@ -57,7 +57,7 @@ TIP: When running in WildFly/EAP you can use appropriate platform system propert
 
 == API Catalogue
 
-The demonstration http://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html[API Catalogue] (or catalog, if you're into American English) is also downloaded from the Internet, so you may want to make it available offline and customise it, too.
+The demonstration https://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html[API Catalogue] (or catalog, if you're into American English) is also downloaded from the Internet, so you may want to make it available offline and customise it, too.
 
 Albeit not the topic of this blog, it's worth briefly mentioning most advanced users will likely want to implement code footnote:[Or find existing implementations] to https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java[search a real registry or catalogue] for APIs to import, such as https://github.com/fabric8io/fabric8-ipaas/blob/master/apiman/src/main/java/io/fabric8/apiman/KubernetesServiceCatalog.java[Kubernetes' service registry].
 
@@ -71,7 +71,7 @@ apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalo
 
 == Metrics
 
-Some API managers have off-site only metrics implementations. Rest assured, there's http://www.apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html[none of that nonsense here]! Just ensure that your metrics store (such as ElasticSearch) is available for apiman to connect to and it'll work fine.
+Some API managers have off-site only metrics implementations. Rest assured, there's https://www.apiman.io/blog/api-manager/api/ui/metrics/2015/07/06/metrics-redux.html[none of that nonsense here]! Just ensure that your metrics store (such as ElasticSearch) is available for apiman to connect to and it'll work fine.
 
 == Conclusion
 

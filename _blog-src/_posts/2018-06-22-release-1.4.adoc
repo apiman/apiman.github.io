@@ -18,7 +18,7 @@ If you experience any issues, please report them to us via https://issues.jboss.
 
 == Upgrading
 
-Depending on your approach, to upgrade you can simply use Apiman's http://www.apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html[export-import feature], or upgrade the indices by following Elasticsearch's upgrade guides (likely trickier; I recommend export-import).
+Depending on your approach, to upgrade you can simply use Apiman's https://www.apiman.io/blog/apiman/introduction/overview/backup/export/import/2016/01/27/export-import.html[export-import feature], or upgrade the indices by following Elasticsearch's upgrade guides (likely trickier; I recommend export-import).
 
 
 We also now launch and manage ES in a significantly different way than previously (as an external process), as the https://www.elastic.co/blog/elasticsearch-the-server[old method is no longer supported].
@@ -54,46 +54,46 @@ We hope to expand the functionality of `IConnectorConfig` in future to allow mor
 
 == Download 1.4.1.Final
 
-* link:http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-vertx-1.4.1.Final.zip[Vert.x (Gateway Only)]
+* link:https://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-vertx-1.4.1.Final.zip[Vert.x (Gateway Only)]
 
 
-* link:http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly10-1.4.1.Final-overlay.zip[WildFly 10 or EAP 7.1]
+* link:https://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly10-1.4.1.Final-overlay.zip[WildFly 10 or EAP 7.1]
 
-* link:http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly11-1.4.1.Final-overlay.zip[WildFly 11]
+* link:https://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-wildfly11-1.4.1.Final-overlay.zip[WildFly 11]
 
-* link:http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-eap7-1.4.1.Final-overlay.zip[EAP 7]
+* link:https://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-eap7-1.4.1.Final-overlay.zip[EAP 7]
 
-* link:http://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-tomcat8-1.4.1.Final-overlay.zip[Tomcat 8+]
+* link:https://downloads.jboss.org/apiman/1.4.1.Final/apiman-distro-tomcat8-1.4.1.Final-overlay.zip[Tomcat 8+]
 
 == Release Notes
 * https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12337953[1.4.0.Final]
 * https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12338072[1.4.1.Final]
 
 .Enhancements
-* http://issues.jboss.org/browse/APIMAN-1334[APIMAN-1334] - Allow policies to suppress/allow headers in connector.
+* https://issues.jboss.org/browse/APIMAN-1334[APIMAN-1334] - Allow policies to suppress/allow headers in connector.
 
 .Bugs
-* http://issues.jboss.org/browse/APIMAN-1266[APIMAN-1266] - Error when adding plugin that has previously been deleted (Oracle 12C database)
-* http://issues.jboss.org/browse/APIMAN-1296[APIMAN-1296] - The API Key policy plugin (apikey-policy) expects the requestHeader property to be all lowercase as of 1.3.1
-* http://issues.jboss.org/browse/APIMAN-1318[APIMAN-1318] - Export/Import of a plugin with policies does not work because of its ID
-* http://issues.jboss.org/browse/APIMAN-1320[APIMAN-1320] - Gateway API: Clients still inserted even when invalid
-* http://issues.jboss.org/browse/APIMAN-1321[APIMAN-1321] - Elasticsearch data is deleted at tomcat shutdown
-* http://issues.jboss.org/browse/APIMAN-1324[APIMAN-1324] - index_already_exists_exception when starting WF quickstart
-* http://issues.jboss.org/browse/APIMAN-1335[APIMAN-1335] - ApiKeyPolicy from apikey-policy is throwing an NPE on null connectorConfig using the Vert.x gateway
-* http://issues.jboss.org/browse/APIMAN-1337[APIMAN-1337] - SoapAuthorizationPolicy missing i18n messages
+* https://issues.jboss.org/browse/APIMAN-1266[APIMAN-1266] - Error when adding plugin that has previously been deleted (Oracle 12C database)
+* https://issues.jboss.org/browse/APIMAN-1296[APIMAN-1296] - The API Key policy plugin (apikey-policy) expects the requestHeader property to be all lowercase as of 1.3.1
+* https://issues.jboss.org/browse/APIMAN-1318[APIMAN-1318] - Export/Import of a plugin with policies does not work because of its ID
+* https://issues.jboss.org/browse/APIMAN-1320[APIMAN-1320] - Gateway API: Clients still inserted even when invalid
+* https://issues.jboss.org/browse/APIMAN-1321[APIMAN-1321] - Elasticsearch data is deleted at tomcat shutdown
+* https://issues.jboss.org/browse/APIMAN-1324[APIMAN-1324] - index_already_exists_exception when starting WF quickstart
+* https://issues.jboss.org/browse/APIMAN-1335[APIMAN-1335] - ApiKeyPolicy from apikey-policy is throwing an NPE on null connectorConfig using the Vert.x gateway
+* https://issues.jboss.org/browse/APIMAN-1337[APIMAN-1337] - SoapAuthorizationPolicy missing i18n messages
 
 
 .Tasks
-* http://issues.jboss.org/browse/APIMAN-892[APIMAN-892] - Upgrade to Elasticsearch 5.x
+* https://issues.jboss.org/browse/APIMAN-892[APIMAN-892] - Upgrade to Elasticsearch 5.x
 
 .Sub-tasks
-* http://issues.jboss.org/browse/APIMAN-1323[APIMAN-1323] - Rework test harness to cope better with out of order JSON
-* http://issues.jboss.org/browse/APIMAN-1325[APIMAN-1325] - Upgrade Jest HTTP Client for ES
-* http://issues.jboss.org/browse/APIMAN-1326[APIMAN-1326] - Upgrade Gateway to ES 5.x
-* http://issues.jboss.org/browse/APIMAN-1327[APIMAN-1327] - Upgrade Manager to ES 5.x
-* http://issues.jboss.org/browse/APIMAN-1328[APIMAN-1328] - Upgrade metrics to ES 5.x
-* http://issues.jboss.org/browse/APIMAN-1329[APIMAN-1329] - Update test harness and tests to ES 5.x
-* http://issues.jboss.org/browse/APIMAN-1330[APIMAN-1330] - Update QueryBuilders to ES 5.x
-* http://issues.jboss.org/browse/APIMAN-1331[APIMAN-1331] - Switch to EmbeddedElastic instead of (actually) embedded
-* http://issues.jboss.org/browse/APIMAN-1332[APIMAN-1332] - Update ES distro to include Elasticsearch distro zip
-* http://issues.jboss.org/browse/APIMAN-1333[APIMAN-1333] - Handle EmbeddedElastic hanging process when JVM killed ungracefully.
+* https://issues.jboss.org/browse/APIMAN-1323[APIMAN-1323] - Rework test harness to cope better with out of order JSON
+* https://issues.jboss.org/browse/APIMAN-1325[APIMAN-1325] - Upgrade Jest HTTP Client for ES
+* https://issues.jboss.org/browse/APIMAN-1326[APIMAN-1326] - Upgrade Gateway to ES 5.x
+* https://issues.jboss.org/browse/APIMAN-1327[APIMAN-1327] - Upgrade Manager to ES 5.x
+* https://issues.jboss.org/browse/APIMAN-1328[APIMAN-1328] - Upgrade metrics to ES 5.x
+* https://issues.jboss.org/browse/APIMAN-1329[APIMAN-1329] - Update test harness and tests to ES 5.x
+* https://issues.jboss.org/browse/APIMAN-1330[APIMAN-1330] - Update QueryBuilders to ES 5.x
+* https://issues.jboss.org/browse/APIMAN-1331[APIMAN-1331] - Switch to EmbeddedElastic instead of (actually) embedded
+* https://issues.jboss.org/browse/APIMAN-1332[APIMAN-1332] - Update ES distro to include Elasticsearch distro zip
+* https://issues.jboss.org/browse/APIMAN-1333[APIMAN-1333] - Handle EmbeddedElastic hanging process when JVM killed ungracefully.

@@ -27,7 +27,7 @@ Some of these include:
 
 ## What are they?
 What do we mean by "apiman micro-services"?  Well, by default if you download 
-apiman from the [project site](http://apiman.io/), you'll get everything delivered
+apiman from the [project site](https://apiman.io/), you'll get everything delivered
 to you in one convenient package.  This package extracts into an existing WildFly
 installation, and thus everything runs as a web application within the application
 server.  This is very convenient to evaluate the software, but it's not ideal for

@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   a blazingly fast runtime.  This is the official Apiman blog, where
   we discuss....whatever we&#39;re thinking about!
 baseurl: "/blog"
-url: "http://apiman.io" # the base hostname & protocol for your site
+url: "https://apiman.io" # the base hostname & protocol for your site
 twitter_username: apiman_io
 github_username: apiman
 timezone: America/New_York

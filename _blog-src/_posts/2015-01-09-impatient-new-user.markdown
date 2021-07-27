@@ -55,11 +55,11 @@ A note on software versions: In this post we'll use the latest available version
 
 ## Getting apiman
 
-Like all JBoss software, installation of apiman is simple. First, you will need an application server on which to install and run apiman. We'll use the open source JBoss WildFly server release 8.2 [http://www.wildfly.org/](http://www.wildfly.org/).  To make things easier, apiman includes a pointer to JBoss WildFly on its download page here: [http://www.apiman.io/latest/download.html](http://www.apiman.io/latest/download.html)
+Like all JBoss software, installation of apiman is simple. First, you will need an application server on which to install and run apiman. We'll use the open source JBoss WildFly server release 8.2 [https://www.wildfly.org/](https://www.wildfly.org/).  To make things easier, apiman includes a pointer to JBoss WildFly on its download page here: [https://www.apiman.io/latest/download.html](https://www.apiman.io/latest/download.html)
 
-To install WildFly, simply download [http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip) and unzip the file into the directory in which you want to run the sever.
+To install WildFly, simply download [https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip) and unzip the file into the directory in which you want to run the sever.
 
-Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: [http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
+Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: [https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
 
 The commands that you will execute will look something like this:
 
@@ -86,7 +86,7 @@ The server will write logging messages to the screen. When you see some messages
 13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 5518ms - Started 754 of 858 services (171 services are lazy, passive or on-demand)
 {% endhighlight %}
 
-If this were a production server, the first thing that we'd do is to change the OOTB default admin username and/or password. apiman is configured by default to use JBoss KeyCloak [http://keycloak.jboss.org/](http://keycloak.jboss.org/) for password security. Also, the default database used by apiman to store contract and service information is the H2 database. For a production server, you'd want to reconfigure this to use a production database. Note: apiman includes DDLs for both MySQL and PostgreSQL.
+If this were a production server, the first thing that we'd do is to change the OOTB default admin username and/or password. apiman is configured by default to use JBoss KeyCloak [https://keycloak.jboss.org/](https://keycloak.jboss.org/) for password security. Also, the default database used by apiman to store contract and service information is the H2 database. For a production server, you'd want to reconfigure this to use a production database. Note: apiman includes DDLs for both MySQL and PostgreSQL.
 
 For the purposes of our demo, we'll keep things simple and use the default configuration.
 
@@ -140,7 +140,7 @@ Before we can define a service, the policies that govern how it is accessed, the
 
 ## Getting and Building and Deploying the Example Service
 
-The source code for the example service is contained in a git repo (http://git-scm.com) hosted at github (https://github.com/apiman). To download a copy of the example service, navigate to the directory in which you want to build the service and execute this git command:
+The source code for the example service is contained in a git repo (https://git-scm.com) hosted at github (https://github.com/apiman). To download a copy of the example service, navigate to the directory in which you want to build the service and execute this git command:
 
     git clone git@github.com:apiman/apiman-quickstarts.git
 
@@ -184,7 +184,7 @@ And, after the download is complete, you'll see a populated directory tree that 
    └── dist.xml
 {% endhighlight %}
 
-As we mentioned earlier in the post, the example service is very simple. The only action that the service performs is to echo back in responses the meta data in the REST (http://en.wikipedia.org/wiki/Representational_state_transfer) requests that it receives.
+As we mentioned earlier in the post, the example service is very simple. The only action that the service performs is to echo back in responses the meta data in the REST (https://en.wikipedia.org/wiki/Representational_state_transfer) requests that it receives.
 
 Maven is used to build the service. To build the service into a deployable .war file, navigate to the directory into which you downloaded the service example:
 
@@ -447,7 +447,7 @@ And, if you note, in the process of doing all this, the only code that we had to
 
 ## What's Next?
 
-In this post, we've only scratched the surface of API Management with apiman. To learn more about apiman, you can explore its website here: http://www.apiman.io/
+In this post, we've only scratched the surface of API Management with apiman. To learn more about apiman, you can explore its website here: https://www.apiman.io/
 
 Join the project mailing list here: [https://lists.jboss.org/mailman/listinfo/apiman-user](https://lists.jboss.org/mailman/listinfo/apiman-user)
 
@@ -455,16 +455,16 @@ And, better still, get involved! Contribute bug reports or feature requests. Wri
 
 ## Downloads Used in this Article
 
-* REST Client [http://restclient.net/](http://restclient.net/) FireFox Add-On - [https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3](https://addons.mozilla.org/en-US/firefox/addon/restclient/)
+* REST Client [https://restclient.net/](https://restclient.net/) FireFox Add-On - [https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3](https://addons.mozilla.org/en-US/firefox/addon/restclient/)
 * Echo service source code - [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
-* apiman 1.0 - [http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](http://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
-* WildFly 8.2.0 - [http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip)
-* Git - [http://git-scm.com](http://git-scm.com)
-* Maven - [http://maven.apache.org](http://maven.apache.org)
+* apiman 1.0 - [https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip](https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip)
+* WildFly 8.2.0 - [https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip](https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip)
+* Git - [https://git-scm.com](https://git-scm.com)
+* Maven - [https://maven.apache.org](http://maven.apache.org)
 
 ## References
 
-* [http://www.apiman.io/](http://www.apiman.io/)
-* apiman tutorial videos - [http://vimeo.com/user34396826](http://vimeo.com/user34396826)
-* [http://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/](http://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/)
-* [http://keycloak.jboss.org/](http://keycloak.jboss.org/)
+* [https://www.apiman.io/](https://www.apiman.io/)
+* apiman tutorial videos - [https://vimeo.com/user34396826](https://vimeo.com/user34396826)
+* [https://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/](https://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/)
+* [https://keycloak.jboss.org/](https://keycloak.jboss.org/)

@@ -21,10 +21,10 @@ We've updated the website, the guides, and other collateral information to refle
 of the additions and changes in the new version.  For more information about this latest
 release of apiman, here are some useful links:
 
-* [1.2.0.Final Release Notes](http://red.ht/1OK3LG7)
-* [1.2.1.Final Release Notes](http://red.ht/1OC1Tf7)
-* [The apiman project site](http://www.apiman.io/)
-* [Latest User Guide](http://www.apiman.io/latest/user-guide.html)
+* [1.2.0.Final Release Notes](https://red.ht/1OK3LG7)
+* [1.2.1.Final Release Notes](https://red.ht/1OC1Tf7)
+* [The apiman project site](https://www.apiman.io/)
+* [Latest User Guide](https://www.apiman.io/latest/user-guide.html)
 
 ## But I don't like following links!
 

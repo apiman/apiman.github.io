@@ -7,9 +7,9 @@ categories: security plugin policy cors 1.2.x
 oldUrl: 2015-07-02-cors
 ---
 
-If you're looking to define http://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] that should be perfect for the job.
+If you're looking to define https://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] that should be perfect for the job.
 
-For those http://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke an API's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.
+For those https://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke an API's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.
 
 However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let's user agent know what's allowed.
 
@@ -17,7 +17,7 @@ However, if we _want_ our resource to be callable by some (or all) other origins
 
 == Preparation
 
-If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
+If you have the https://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
 ```ShellSession
 cd /tmp
@@ -30,7 +30,7 @@ mvn wildfly:deploy
 
 Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!], navigate to the *manage plugins* page:
 
-image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="http://www.apiman.io/latest/user-guide.html#_plugins"]
+image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
 
 image::/blog/images/2016-01-09/available-plugins.png[alt="Select CORS plugin from the available plugins list"]
 
@@ -64,7 +64,7 @@ Let's configure the settings as follows:
 
 |https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers[Access-Control-Expose-Headers]
 |`Response-Counter`
-|By default CORS will only allow a set of http://www.w3.org/TR/cors/#simple-header[simple headers] to be exposed in a _response_ to the user agent, so we'll set this additional one we want to see.
+|By default CORS will only allow a set of https://www.w3.org/TR/cors/#simple-header[simple headers] to be exposed in a _response_ to the user agent, so we'll set this additional one we want to see.
 
 |https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers[Access-Control-Allow-Headers]
 |`X-APIMAN-EXCELLENT`

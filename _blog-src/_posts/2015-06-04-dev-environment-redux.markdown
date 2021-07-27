@@ -66,7 +66,7 @@ Alright - you've got the apiman code cloned on your local hard drive
 somewhere.  The next step is to download Eclipse (if you don't already
 have it installed).  This can be done here:
 
-[http://www.eclipse.org/downloads/](http://www.eclipse.org/downloads/)
+[https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
 
 I like to download the "Eclipse IDE for Java EE Developers" version
 because it comes with a lot of extra stuff I like to use.  But you should

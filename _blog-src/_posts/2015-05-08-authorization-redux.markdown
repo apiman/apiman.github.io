@@ -41,7 +41,7 @@ That's it in a nutshell!
 
 ## Give me more details!
 
-OK, OK.  If you're reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the [User Guide](http://www.apiman.io/latest/user-guide.html) or the [Tutorials](http://www.apiman.io/latest/tutorials.html).
+OK, OK.  If you're reading this you probably know the apiman basics - how to create Organizations and APIs and whatnot.  If not, I would recommend you check out the [User Guide](https://www.apiman.io/latest/user-guide.html) or the [Tutorials](https://www.apiman.io/latest/tutorials.html).
 
 Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the *BASIC Authentication Policy* and configure it as seen in the following screenshot:
 

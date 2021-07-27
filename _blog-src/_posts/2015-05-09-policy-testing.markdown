@@ -25,7 +25,7 @@ policy, using the new Policy Tester junit framework we've created.
 ## First you need a custom policy!
 
 If you haven't created a custom apiman policy yet, have a look at the
-[Developer Guide](http://www.apiman.io/latest/developer-guide.html#_plugins) to
+[Developer Guide](https://www.apiman.io/latest/developer-guide.html#_plugins) to
 learn how.
 
 So for example, let's say you've created your own simple custom policy class and it
@@ -64,7 +64,7 @@ public class MySimplePolicy implements IPolicy {
 
 Now that you've got your policy, you need a quick and effective way to test it.  I also
 think it's important for your test to run quickly and for you to be able to easily set
-breakpoints to debug the code.  We explored using [Arquillian](http://arquillian.org/)
+breakpoints to debug the code.  We explored using [Arquillian](https://arquillian.org/)
 to configure and publish a service with the custom policy to a running WildFly server.
 It actually works remarkably well, but the overhead of firing up a WildFly server just
 to test a single policy seemed excessive.  That work will likely lead into a separate

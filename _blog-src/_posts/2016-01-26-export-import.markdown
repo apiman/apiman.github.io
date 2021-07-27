@@ -16,7 +16,7 @@ Happily, the 1.2 release of apiman includes a new feature that enables you to ex
 
 <!--more-->
 
-For test data, we'll use the same types of data (organizations, users, plans, policies, APIs and client apps), that we created in the initial post in this series. (  [The Impatient New User Guide to apiman](http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html) )
+For test data, we'll use the same types of data (organizations, users, plans, policies, APIs and client apps), that we created in the initial post in this series. (  [The Impatient New User Guide to apiman](https://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html) )
 
 Note that since that post was written in January 2015, some of the names of the data elements have changed. You can either create the test data referred to in this post yourself, or you can import the data file attached to the post.
 

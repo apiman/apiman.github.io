@@ -8,7 +8,7 @@ categories: apiman release
 :apiman-ig: https://apiman.gitbooks.io/apiman-installation-guide/
 :apiman-ug: https://apiman.gitbooks.io/apiman-user-guide/
 :apiman-dg: https://apiman.gitbooks.io/apiman-deployment-guide/
-:apiman-headless: http://www.apiman.io/latest/download.html#headless
+:apiman-headless: https://www.apiman.io/latest/download.html#headless
 :install-3scale: https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_3scale_immutable
 :reg-3scale: https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/3scale_immutable.html
 

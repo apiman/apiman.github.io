@@ -14,7 +14,7 @@ we'll take the first step toward customizing apiman by creating new plugins to i
 
 <!--more-->
 
-The major new feature added to release 1.0.2 of apiman [http://www.apiman.io/](http://www.apiman.io/) is the ability to extend its features through a custom plugin framework. Since policies perform the most important apiman runtime operations, plugins that enable you to create new policies are the first type of plugins to be supported.
+The major new feature added to release 1.0.2 of apiman [https://www.apiman.io/](https://www.apiman.io/) is the ability to extend its features through a custom plugin framework. Since policies perform the most important apiman runtime operations, plugins that enable you to create new policies are the first type of plugins to be supported.
 
 In this article, we'll examine all the steps that you must perform to create a new policy plugin, and then import it into apiman and configure a service to put it into use.
 
@@ -74,7 +74,7 @@ Since our example is contributing a policy, it must contain a JSON file that def
 * *name* - A user friendly (in other words, a human readable) name for the policy. This policy name is displayed in the API Manager UI
 * *description* - A description of the policy
 * *policyImpl* - This is the fully qualified classname name of the Java class that actually implements the policy. This value must be properly formatted to include information about the plugin, including placeholders for maven properties, for example, project version.
-* *icon* - This is the name of a Font Awesome icon [http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) that is displayed for the Policy in the API Manager UI.
+* *icon* - This is the name of a Font Awesome icon [https://fortawesome.github.io/Font-Awesome/](https://fortawesome.github.io/Font-Awesome/) that is displayed for the Policy in the API Manager UI.
 * *formType* - The type of policy configuration UI form. Our example uses JsonSchema.
 * *form* - This is a relative path to the policy configuration UI form contained in the plugin. Our examples uses the JSON Schema that defines the configuration data format. (More on this file in a minute.
 
@@ -92,7 +92,7 @@ In our example, the config-policyDef.json looks like this:
 }
 {% endhighlight %}
 
-We mentioned that since our example uses the JSON schema [http://json-schema.org/documentation.html](http://json-schema.org/documentation.html), we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy's JSON schema defines two properties: requestHeader and responseHeader.
+We mentioned that since our example uses the JSON schema [https://json-schema.org/documentation.html](https://json-schema.org/documentation.html), we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy's JSON schema defines two properties: requestHeader and responseHeader.
 
 {% highlight json %}
 {  

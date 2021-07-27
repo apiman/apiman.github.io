@@ -186,7 +186,7 @@ And, here's the installed plugin:
 
 Before we can configure the custom policy plugin, we need an API. For this example, we'll use our old friend, "apiman-echo." You can download this API from this git repository: [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
 
-The steps to build, deploy, and configure this API are available in the first article in this series: [The Impatient New User Guide to apiman](http://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html)
+The steps to build, deploy, and configure this API are available in the first article in this series: [The Impatient New User Guide to apiman](https://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html)
 
 We'll use the postman web client to access the API. The first time that we access the API, we'll see this response (note the text highlighted in green):
 
@@ -254,7 +254,7 @@ From its first releases, apiman has provided users with flexibility, including s
 
 ### References
 
-- You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: [http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html)
+- You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: [https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html](https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html)
 
 - The "postman" client is available here: [https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
