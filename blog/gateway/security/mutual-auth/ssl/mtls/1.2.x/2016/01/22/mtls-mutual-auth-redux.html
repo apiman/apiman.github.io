@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -167,30 +163,11 @@
 <div class="paragraph">
 <p>It bears mentioning that any client apps<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.</p>
 </div>
-<div class="listingblock">
-<div class="title">Simple mutual auth setup</div>
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<pre>Failed to generate image: Could not find the 'dot' executable in PATH; add it to the PATH or specify its location using the 'graphvizdot' document attribute
-digraph G {
-    graph [fontname = "arial", rankdir = LR, splines=true, overlap=false];
-    node[shape=record, fontname = "arial"];
-    edge [fontname = "arial"];
-
-    ClientApp[label="Client App", height=1];
-    Gateway[label="Gateway", height=4];
-
-    APIA[label="API A", height=1];
-    APIB[label="API B", height=1];
-    APIC[label="API C", height=1];
-
-    ClientApp -&gt; Gateway [label="Gateway Auth Only", dir="both"];
-    ClientApp -&gt; APIC [label="Not Authenticated Failure", style="dashed", color="red"]
-
-    Gateway -&gt; APIA [label="Mutual Auth", dir="both"];
-    Gateway -&gt; APIB [label="Mutual Auth", dir="both"];
-    Gateway -&gt; APIC [label="Mutual Auth", dir="both"];
-}</pre>
+<img src="/blog/images/generated/gateway-mtls-redux.svg" alt="gateway mtls redux" width="752" height="466" />
 </div>
+<div class="title">Figure 1. Simple mutual auth setup</div>
 </div>
 <div class="paragraph">
 <p>Notice that the APIs trust the gateway (and vice versa), but the APIs <em>do not</em> trust the client app. The client app tries its luck and attempts to bypass the gateway, but it doesn’t hold a trusted certificate, so it fails.</p>

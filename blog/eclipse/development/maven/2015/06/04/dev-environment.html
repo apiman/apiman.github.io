@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -282,7 +278,7 @@ the API Manager.</p>
 Manager backend (RESTful web services) deployed.  You can test this by going
 here:</p>
 
-<p><a href="https://localhost:7070/apiman/system/status">https://localhost:7070/apiman/system/status</a></p>
+<p><a href="http://localhost:7070/apiman/system/status">http://localhost:7070/apiman/system/status</a></p>
 
 <p>Log in using username <em>admin</em> and password <em>admin</em>.  Oh by the way, did I mention
 that it runs on port 7070?  That’s important!</p>
@@ -309,7 +305,7 @@ config.js file, it should look like this:</p>
         </span><span class="s2">"header"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"api"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"endpoint"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://localhost:7070/apiman"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"endpoint"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:7070/apiman"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"basic"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"basic"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -322,7 +318,7 @@ config.js file, it should look like this:</p>
 
 <p>If you get it all set up properly you should be able to point your browser here:</p>
 
-<p><a href="https://localhost:2772/api-manager/dash">https://localhost:2772/api-manager/dash</a></p>
+<p><a href="http://localhost:2772/api-manager/dash">http://localhost:2772/api-manager/dash</a></p>
 
 <p>Now whenever you make changes to any of the apiman angularjs code, the browser
 will automatically refresh and show you the changes!</p>

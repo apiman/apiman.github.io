@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -184,10 +180,10 @@ we’ll take the first step toward customizing apiman by creating new plugins to
 
 <p>The most obvious difference is the addition of the “apiman” directory. This directory is used to contain the configuration files for the plugin. (In other words, the files that make the project a plugin.) The only project-wide configuration change that you have to make is to modify the plugin’s maven pom.xml file to include the apiman directory when the project is built. The following lines are added to the plugin’s pom.xml file:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resource&gt;</span>
-    <span class="nt">&lt;directory&gt;</span>src/main/apiman<span class="nt">&lt;/directory&gt;</span>
-    <span class="nt">&lt;targetPath&gt;</span>META-INF/apiman<span class="nt">&lt;/targetPath&gt;</span>
-    <span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resource&gt;</span>  
+    <span class="nt">&lt;directory&gt;</span>src/main/apiman<span class="nt">&lt;/directory&gt;</span>  
+    <span class="nt">&lt;targetPath&gt;</span>META-INF/apiman<span class="nt">&lt;/targetPath&gt;</span>  
+    <span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>  
 <span class="nt">&lt;/resource&gt;</span></code></pre></figure>
 
 <p>The result of these statements in the pom.xml file is that the contents of the apiman directory are included in the project build’s META-INF directory. (We’ll take a look at this later when we build the plugin project.) Setting filtering to true enables maven property expansion during the creation of the plugin war file.
@@ -219,10 +215,10 @@ Configuration files for the plugin are contained in the apiman directory. The pr
 
 <p>We mentioned that since our example uses the JSON schema <a href="https://json-schema.org/documentation.html" target="_blank" rel="nofollow">https://json-schema.org/documentation.html</a>, we have to also define the configuration data format. This is done in the policyDefs/schemas/config-policyDef.schema file. This file defines the format used in the policy configuration file data and is used by the API Manager UI to generate a form that is used to fill in the values to be used to configure the policy. In our example, the policy’s JSON schema defines two properties: requestHeader and responseHeader.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  
   </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Configure HTTP Headers"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end service."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Set the HTTP request header to populate with the value 'true' when the request is made. Also set the HTTP response header to populate with the value 'true' after the response is received from the back-end service."</span><span class="p">,</span><span class="w">  
+  </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">  
   </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="s2">"requestHeader"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Request Header"</span><span class="p">,</span><span class="w">

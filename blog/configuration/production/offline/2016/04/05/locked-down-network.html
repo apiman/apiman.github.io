@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -167,7 +163,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="properties">apiman.plugins.repositories=https://repo1.example.local/our-internal-repo/,https://repository.example.org/nexus/content/groups/public/ <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="CodeRay highlight"><code data-lang="properties">apiman.plugins.repositories=https://repo1.example.local/our-internal-repo/,http://repository.example.org/nexus/content/groups/public/ <i class="conum" data-value="1"></i><b>(1)</b>
 
 apiman.plugins.repositories=file:///mnt/nfs/my/shared/maven/repo <i class="conum" data-value="2"></i><b>(2)</b>
 
@@ -262,7 +258,7 @@ apiman-manager.api-catalog.type=io.apiman.manager.api.core.catalog.JsonApiCatalo
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Default API catalogue. You can replace it with <code><a href="file:///path/to/my/catalog.json" class="bare">file:///path/to/my/catalog.json</a></code> after downloading it.</td>
+<td>Default API catalogue. You can replace it with <code><a href="file:///path/to/my/catalog.json" class="bare" target="_blank" rel="nofollow">file:///path/to/my/catalog.json</a></code> after downloading it.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>

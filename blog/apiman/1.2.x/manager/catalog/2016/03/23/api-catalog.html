@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -140,14 +136,14 @@ get a lot easier!</p>
 
 <h2 id="why-import-an-api">Why Import an API?</h2>
 <p>By using the new API Manager to import an API rather than manually creating it
-(typically via the “New API” button in the UI) you can more quickly and
+(typically via the “New API” button in the UI) you can more quickly and 
 accurately add an API to apiman.  Importing an API from the API Catalog means
 that it will be created in apiman pre-configured with the endpoint information
-and some other relevant details.  This can obviously save you some time, and
+and some other relevant details.  This can obviously save you some time, and 
 make the process of managing your APIs a bit more streamlined.</p>
 
 <h2 id="browsing-the-api-catalog">Browsing the API Catalog</h2>
-<p>The long-term goal for importing APIs is to be able to import from multiple
+<p>The long-term goal for importing APIs is to be able to import from multiple 
 different sources, including:</p>
 
 <ul>
@@ -210,13 +206,13 @@ multiple APIs all at the same time, all into the same Organization.</p>
 listed in the API Catalog, rather than Flickr and Facebook.  That’s a great
 question, and we actually have two answers to it.  First, you can provide
 a simple JSON file that contains all of the APIs in your enterprise (along
-with optionally any other external APIs you might want to potentially
+with optionally any other external APIs you might want to potentially 
 import).  Second, you can actually provide a fully custom implementation of
 the apiman <em>IApiCatalog</em> java interface and contribute it via an apiman
 plugin!</p>
 
 <h3 id="providing-a-custom-api-catalog-file">Providing a Custom API Catalog File</h3>
-<p>The easiest way to include your own APIs into the catalog is to provide
+<p>The easiest way to include your own APIs into the catalog is to provide 
 your own custom API Catalog JSON file.  The default API Catalog implementation
 simply reads the API information from a JSON file (with a custom format
 specific to apiman).  An example of the format of this file can be found
@@ -255,7 +251,7 @@ about how to create and contribute a plugin:</p>
 <p><a href="https://github.com/apiman/apiman/blob/master/manager/api/core/src/main/java/io/apiman/manager/api/core/IApiCatalog.java" target="_blank" rel="nofollow">IApiCatalog Java Interface</a></p>
 
 <p>Create an implementation of that interface, bundle it up in your custom plugin,
-and then configure apiman to use your implementation by modifying the right
+and then configure apiman to use your implementation by modifying the right 
 properties in the <em>apiman.properties</em> file:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apiman-manager.api-catalog.type=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.catalog.MyCustomApiCatalog
@@ -266,7 +262,7 @@ apiman-manager.api-catalog.my-property=value-1
 <p>The API Catalog is a great way to make it easier for your API Providers to quickly
 and accurately get APIs added to apiman, without using the apiman REST interface to
 do it programmatically.  There is a tremendous opportunity to integrate the API
-Catalog with your API registry, if you have one, or to simply provide a JSON file
+Catalog with your API registry, if you have one, or to simply provide a JSON file 
 with information about all your deployed APIs!</p>
 
 <p>This feature will be introduced as of version <em>1.2.3.Final</em>, which should be released

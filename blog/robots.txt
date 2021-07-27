@@ -1,1 +1,1 @@
-Sitemap: http://apiman.io/blog/sitemap.xml
+Sitemap: https://apiman.io/blog/sitemap.xml

@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -131,11 +127,11 @@
     <p>An early design decision we made in apiman was to not allow APIs to be
 re-published to the Gateway.  The reasoning was that Client Apps may have
 established Contracts with the API, and thus have agreed to specific terms
-and conditions (whether implicit or explicit).  Therefore, we shouldn’t
+and conditions (whether implicit or explicit).  Therefore, we shouldn’t 
 allow the API provider to modify those terms and re-publish the API, as it
 may violate the agreement.</p>
 
-<p>However, we later added the concept of a Public API, which allows any
+<p>However, we later added the concept of a Public API, which allows any 
 client to invoke it without first creating a Contract.  It is clear that
 API providers should be able to re-publish a Public API (presumably after
 changing the API’s configuration).</p>
@@ -152,26 +148,26 @@ met:</p>
   <li>The API has been modified in some way</li>
 </ul>
 
-<p>Additionally, if the Public API has been retired (is currently in the
+<p>Additionally, if the Public API has been retired (is currently in the 
 <em>Retired</em> state) then the user can Re-Publish it regardless of whether
 it has since been modified.</p>
 
 <h2 id="how-do-i-re-publish">How Do I Re-Publish?</h2>
-<p>When an API meets the above criteria, a <strong>Re-Publish</strong> button will be
+<p>When an API meets the above criteria, a <strong>Re-Publish</strong> button will be 
 available in the user interface (right where the “Publish” button is
 typically located).</p>
 
 <p><img src="/blog/images/2016-02-24/re-publish.png" alt="Image: Republish Button" /></p>
 
-<p>As soon as you’re comfortable with the changes you’ve made to your API,
+<p>As soon as you’re comfortable with the changes you’ve made to your API, 
 simply click the button and you should be all set!</p>
 
 <h2 id="why-is-there-still-versioning">Why Is There Still Versioning?</h2>
 <p>This feature does not take the place of API versioning.  Versioning
-is still very important because you may want to publish multiple
-versions of the same API at the same time (for example, if you
-actually need to support multiple versions of a live API).  In
-addition, if an API is not public, then you will still need to
+is still very important because you may want to publish multiple 
+versions of the same API at the same time (for example, if you 
+actually need to support multiple versions of a live API).  In 
+addition, if an API is not public, then you will still need to 
 use versioning if you want to change the policy configuration for
 your API.</p>
 

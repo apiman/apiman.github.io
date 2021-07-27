@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -158,7 +154,7 @@ Installation of JBoss Fuse is very simple, as the only thing you need to do is t
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">JBossFuse:karaf@root&gt; fabric:create</code></pre></figure>
 
-<p>After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at <a href="https://localhost:8181">https://localhost:8181</a>.
+<p>After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at <a href="http://localhost:8181">http://localhost:8181</a>. 
 In Fabric perspective, under Containers tabs click on the <em>Create</em> button to open the <em>Create New Container form</em>.</p>
 
 <p><img src="/blog/images/2015-07-07/fabric.png" alt="List of Fabric containers" /></p>
@@ -167,15 +163,15 @@ In Fabric perspective, under Containers tabs click on the <em>Create</em> button
 
 <p><img src="/blog/images/2015-07-07/container.png" alt="Create Fabric Container" /></p>
 
-<p>The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start.
-You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on <em>APIs</em> section under the <em>Services</em> tab.
+<p>The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start. 
+You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on <em>APIs</em> section under the <em>Services</em> tab. 
 Note the <em>Location</em> field - that’s the <strong>base url</strong> the for endpoint implementation. We will use it later in the apiman manager.</p>
 
 <p><img src="/blog/images/2015-07-07/apis.png" alt="APIs deployed to Fuse Fabric" /></p>
 
-<p>There is a default user preconfigured so you can verify if the application was successfully deployed. It’s available at <code class="highlighter-rouge">&lt;location&gt;/customerservice/customers/123</code> (e.g. <a href="https://localhost:8182/cxf/crm/customerservice/customers/123">https://localhost:8182/cxf/crm/customerservice/customers/123</a>)</p>
+<p>There is a default user preconfigured so you can verify if the application was successfully deployed. It’s available at <code class="highlighter-rouge">&lt;location&gt;/customerservice/customers/123</code> (e.g. <a href="http://localhost:8182/cxf/crm/customerservice/customers/123">http://localhost:8182/cxf/crm/customerservice/customers/123</a>)</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[sbunciak@sbunciak ~]$ http https://localhost:8182/cxf/crm/customerservice/customers/123
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[sbunciak@sbunciak ~]$ http http://localhost:8182/cxf/crm/customerservice/customers/123
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Date: Tue, 07 Jul 2015 22:17:13 GMT
@@ -183,14 +179,14 @@ Server: Jetty(8.1.17.v20150415)
 Transfer-Encoding: chunked
 
 <span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
-<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"https://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"http://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ns0:id&gt;</span>123<span class="nt">&lt;/ns0:id&gt;</span>
     <span class="nt">&lt;ns0:name&gt;</span>John<span class="nt">&lt;/ns0:name&gt;</span>
 <span class="nt">&lt;/ns0:Customer&gt;</span></code></pre></figure>
 
 <h1 id="configure-apiman-to-manage-fuse-endpoint">Configure apiman to manage Fuse endpoint</h1>
 
-<p>To install the latest version of apiman follow this <a href="https://www.apiman.io/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of <a href="https://www.wildfly.org/" target="_blank" rel="nofollow">Wildly 8</a> server.</p>
+<p>To install the latest version of apiman follow this <a href="httpsio/latest/download.html">guide</a>. The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of <a href="https://www.wildfly.org/" target="_blank" rel="nofollow">Wildly 8</a> server.</p>
 
 <p>After completing the installation, start apiman by executing the following command from <code class="highlighter-rouge">&lt;wildfly&gt;/bin</code> folder:</p>
 
@@ -198,22 +194,22 @@ Transfer-Encoding: chunked
 
 <h3 id="quick-public-service-setup">Quick public service setup</h3>
 
-<p>For demonstration purposes I’ll be creating a Public Service, however in real life you might want to configure different plans, various contracts, etc.
+<p>For demonstration purposes I’ll be creating a Public Service, however in real life you might want to configure different plans, various contracts, etc. 
 Please consult the apiman <a href="https://www.apiman.io/latest/user-guide.html">user guide</a> for more details.</p>
 
-<p>In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong.
-You can do that easily in apiman manager, typically available at: <a href="https://localhost:8080/apimanui">https://localhost:8080/apimanui</a>.</p>
+<p>In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
+You can do that easily in apiman manager, typically available at: <a href="http://localhost:8080/apimanui">http://localhost:8080/apimanui</a>.</p>
 
 <p>Once logged into the apiman manager, locate the Organizations sections on the initial page, select <em>Create a New Organization</em> link, provide a name and hit <em>Create Organization</em> button. This will take you to organization details page where you can create a new Service by clicking on <em>New Service</em> button under <em>Services</em> tab:</p>
 
 <p><img src="/blog/images/2015-07-07/service.png" alt="Image: Create Service" /></p>
 
-<p>You will be asked to provide a name and a version for this Service. Once the service is successfully created there are few things remaining before you can publish and start using it.
+<p>You will be asked to provide a name and a version for this Service. Once the service is successfully created there are few things remaining before you can publish and start using it. 
 First, you need to provide an implementation base url on the <em>Implementation</em> tab. Use the base URL of the REST Quickstart and save your changes:</p>
 
 <p><img src="/blog/images/2015-07-07/implementation.png" alt="Image: Provide Endpoint Implementation" /></p>
 
-<p>Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice.
+<p>Second, you may want to apply some policies to this Public Service. To do that, go to the Policies tab and configure a policy of your choice. 
 I used the Rate Limiting policy to limit usage of this service to 5 per minute:</p>
 
 <p><img src="/blog/images/2015-07-07/policy.png" alt="Image: Assign policy" /></p>
@@ -247,7 +243,7 @@ X-RateLimit-Remaining: 4
 X-RateLimit-Reset: 57
 
 <span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span>
-<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"https://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;ns0:Customer</span> <span class="na">xmlns:ns0=</span><span class="s">"http://rest.fabric.quickstarts.fabric8.io/"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ns0:id&gt;</span>123<span class="nt">&lt;/ns0:id&gt;</span>
     <span class="nt">&lt;ns0:name&gt;</span>John<span class="nt">&lt;/ns0:name&gt;</span>
 <span class="nt">&lt;/ns0:Customer&gt;</span></code></pre></figure>
@@ -272,14 +268,14 @@ X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 8
 
 <span class="o">{</span>
-    <span class="s2">"failureCode"</span>: 10005,
+    <span class="s2">"failureCode"</span>: 10005, 
     <span class="s2">"headers"</span>: <span class="o">{</span>
-        <span class="s2">"X-RateLimit-Limit"</span>: <span class="s2">"5"</span>,
-        <span class="s2">"X-RateLimit-Remaining"</span>: <span class="s2">"0"</span>,
+        <span class="s2">"X-RateLimit-Limit"</span>: <span class="s2">"5"</span>, 
+        <span class="s2">"X-RateLimit-Remaining"</span>: <span class="s2">"0"</span>, 
         <span class="s2">"X-RateLimit-Reset"</span>: <span class="s2">"8"</span>
-    <span class="o">}</span>,
-    <span class="s2">"message"</span>: <span class="s2">"Rate limit exceeded."</span>,
-    <span class="s2">"responseCode"</span>: 429,
+    <span class="o">}</span>, 
+    <span class="s2">"message"</span>: <span class="s2">"Rate limit exceeded."</span>, 
+    <span class="s2">"responseCode"</span>: 429, 
     <span class="s2">"type"</span>: <span class="s2">"Other"</span>
 <span class="o">}</span></code></pre></figure>
 

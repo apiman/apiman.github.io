@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -206,15 +202,15 @@ unzip <span class="nt">-o</span> apiman-distro-wildfly8-1.0.0.Final-overlay.zip 
 <p>The server will write logging messages to the screen. When you see some messages that look like this, you’ll know that the server is up and running with apiman installed:</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">13:57:03,229 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS018559: Deployed "apiman-ds.xml" (runtime-name : "apiman-ds.xml")
-13:57:03,261 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on &lt;a href="https://127.0.0.1:9990/management"&gt;https://127.0.0.1:9990/management&lt;/a&gt;
-13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on &lt;a href="https://127.0.0.1:9990"&gt;https://127.0.0.1:9990&lt;/a&gt;
+13:57:03,261 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on &lt;a href="http://127.0.0.1:9990/management"&gt;http://127.0.0.1:9990/management&lt;/a&gt;
+13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on &lt;a href="http://127.0.0.1:9990"&gt;http://127.0.0.1:9990&lt;/a&gt;
 13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 5518ms - Started 754 of 858 services (171 services are lazy, passive or on-demand)</code></pre></figure>
 
 <p>If this were a production server, the first thing that we’d do is to change the OOTB default admin username and/or password. apiman is configured by default to use JBoss KeyCloak <a href="https://keycloak.jboss.org/" target="_blank" rel="nofollow">https://keycloak.jboss.org/</a> for password security. Also, the default database used by apiman to store contract and service information is the H2 database. For a production server, you’d want to reconfigure this to use a production database. Note: apiman includes DDLs for both MySQL and PostgreSQL.</p>
 
 <p>For the purposes of our demo, we’ll keep things simple and use the default configuration.</p>
 
-<p>To access apiman’s API Manager UI, go to: <a href="https://localhost:8080/apiman-manager">https://localhost:8080/apiman-manager</a>, and log in. The admin user account that we’ll use has a username of “admin” and a password of “admin123!”</p>
+<p>To access apiman’s API Manager UI, go to: <a href="http://localhost:8080/apiman-manager">http://localhost:8080/apiman-manager</a>, and log in. The admin user account that we’ll use has a username of “admin” and a password of “admin123!”</p>
 
 <p>You should see a screen that looks like this:</p>
 
@@ -381,7 +377,7 @@ Resolving deltas: 100% (40/40), done.
 
 <p>This output indicates that the URL of the deployed example service is:</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">[a href="https://localhost:8080/apiman-echo" style="text-decoration: none;"]https://localhost:8080/apiman-echo</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[a href="http://localhost:8080/apiman-echo" style="text-decoration: none;"]http://localhost:8080/apiman-echo</code></pre></figure>
 
 <p>Remember, however, that this is the URL of the deployed example service if we access it directly. We’ll refer to this as the “unmanaged service” as we are able to connect to the service directly, without going through the API Gateway.  The URL to access the service through the API Gateway (“the managed service”) at runtime will be different.</p>
 
@@ -389,7 +385,7 @@ Resolving deltas: 100% (40/40), done.
 
 <h2 id="accessing-the-example-service-through-a-client">Accessing the Example Service Through a Client</h2>
 
-<p>There are a lot of options available when it comes to what we can use for a client to access our service. We’ll keep the client simple so that we can keep our focus on apiman and simply install a REST client into the FireFox browser. The REST Client FireFox add-on (https://restclient.net/) is available here: https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3</p>
+<p>There are a lot of options available when it comes to what we can use for a client to access our service. We’ll keep the client simple so that we can keep our focus on apiman and simply install a REST client into the FireFox browser. The REST Client FireFox add-on (http://restclient.net/) is available here: https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3</p>
 
 <p>After you install the client into FireFox, you can access the deployed service using the URL that we just defined. If you execute a GET command, you’ll see output that looks like this:</p>
 
@@ -461,7 +457,7 @@ Resolving deltas: 100% (40/40), done.
 
 <p><img src="/blog/images/2015-01-09/Screenshot-24.png" alt="Screenshot 24" /></p>
 
-<p>After the service is defined, we have to define its implementation. In the context of the API Manager, the API Endpoint is the service’s direct URL. Remember that the API Gateway will act as a proxy for the service, so it must know the service’s actual URL. In the case of our example service, the URL is:  <a href="https://localhost:8080/apiman-echo">https://localhost:8080/apiman-echo</a></p>
+<p>After the service is defined, we have to define its implementation. In the context of the API Manager, the API Endpoint is the service’s direct URL. Remember that the API Gateway will act as a proxy for the service, so it must know the service’s actual URL. In the case of our example service, the URL is:  <a href="http://localhost:8080/apiman-echo">http://localhost:8080/apiman-echo</a></p>
 
 <p><img src="/blog/images/2015-01-09/Screenshot-25.png" alt="Screenshot 25" /></p>
 
@@ -529,13 +525,13 @@ Resolving deltas: 100% (40/40), done.
 
 <p>Copy the URL into the clipboard. We’ll need to enter this into the client in a bit. The combined API Key and HTTP endpoint should look something like this:</p>
 
-<p><a href="https://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d">https://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a></p>
+<p><a href="http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d">http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a></p>
 
 <h2 id="accessing-the-managed-service-through-the-apiman-api-gateway-watching-the-policies-at-runtime">Accessing the Managed Service Through the apiman API Gateway, Watching the Policies at Runtime</h2>
 
 <p>Thanks for hanging in there! The set up is done. Now, we can fire up the client and watch the policies in action as they are applied at runtime by the API Gateway, for example:</p>
 
-<p>Open the client, and enter the URL for the managed service <a href="https://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d">https://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a></p>
+<p>Open the client, and enter the URL for the managed service <a href="http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d">http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a></p>
 
 <p>What happens first is that the authentication policy is applied and a login dialog is then displayed:</p>
 
@@ -583,7 +579,7 @@ Resolving deltas: 100% (40/40), done.
   <li>apiman 1.0 - <a href="https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip" target="_blank" rel="nofollow">https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip</a></li>
   <li>WildFly 8.2.0 - <a href="https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip" target="_blank" rel="nofollow">https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip</a></li>
   <li>Git - <a href="https://git-scm.com" target="_blank" rel="nofollow">https://git-scm.com</a></li>
-  <li>Maven - <a href="https://maven.apache.org" target="_blank" rel="nofollow">https://maven.apache.org</a></li>
+  <li>Maven - <a href="http://maven.apache.org" target="_blank" rel="nofollow">https://maven.apache.org</a></li>
 </ul>
 
 <h2 id="references">References</h2>
