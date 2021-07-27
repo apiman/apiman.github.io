@@ -5,7 +5,7 @@
 
 The apiman blog is just a static set of HTML pages produced by jekyll:
 
-http://jekyllrb.com/
+https://jekyllrb.com/
 
 ## Setup
 

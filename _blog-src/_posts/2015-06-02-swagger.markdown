@@ -33,7 +33,7 @@ about your RESTful API, including (but not limited to):
 * Resource Paths and the Operations/Methods they support
 * Input/Output types
 
-For more information I recommend navigating to the [Swagger Project](http://swagger.io/).
+For more information I recommend navigating to the [Swagger Project](https://swagger.io/).
 
 ## How does this help my consumers?
 Once you've got a Swagger spec created and added to your service, your service

@@ -22,11 +22,11 @@ Importantly, this release has a lot of background work which has prepared the  t
 
 The release notes for this release can be found here:
 
-* http://red.ht/2q31DBP[Release notes for 1.3.0.Final]
+* https://red.ht/2q31DBP[Release notes for 1.3.0.Final]
 
 And of course, all of the standard sources of information have been updated:
 
-* http://www.apiman.io/[The apiman project site]
+* https://www.apiman.io/[The apiman project site]
 * {apiman-ug}[Latest User Guide]
 * {apiman-ig}[Latest Installation Guide]
 
@@ -70,7 +70,7 @@ At the moment it's probably for more advanced users, as some JSON-wrangling is r
 To find out more:
 
 * Look at the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html[Headless Registry documentation], which contains extensive explanation of how to build your JSON.
-* Then try out the Headless ES  https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_elasticsearch[configuration] that ships with http://www.apiman.io/latest/download.html#vertx[the distro].
+* Then try out the Headless ES  https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_elasticsearch[configuration] that ships with https://www.apiman.io/latest/download.html#vertx[the distro].
 
 == New documentation
 

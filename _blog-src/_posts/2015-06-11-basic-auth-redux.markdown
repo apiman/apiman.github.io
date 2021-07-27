@@ -141,15 +141,15 @@ And, then we get the successful return code of 200 in a response:
 
 apiman
 
-* http://www.apiman.io
+* https://www.apiman.io
 
 Previous articles in this series:
 
-* http://java.dzone.com/articles/impatient-new-users
-* http://java.dzone.com/articles/customizing-jboss-apiman
-* http://java.dzone.com/articles/jboss-apiman-api-manager-rest
+* https://java.dzone.com/articles/impatient-new-users
+* https://java.dzone.com/articles/customizing-jboss-apiman
+* https://java.dzone.com/articles/jboss-apiman-api-manager-rest
 
 HTTP Authentication: Basic and Digest Access Authentication
 
-* http://tools.ietf.org/html/rfc2617
+* https://tools.ietf.org/html/rfc2617
 

@@ -26,14 +26,14 @@ NOTE: If you're using the Vert.x Gateway you should use Apiman 1.4.3.Final or la
 
 == Create a plugin skeleton
 
-TIP: Check http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin[out our documentation for creating Apiman Plugins] for more in-depth information.
+TIP: Check https://www.apiman.io/latest/developer-guide.html#_creating_a_plugin[out our documentation for creating Apiman Plugins] for more in-depth information.
 
 One of Apiman's handiest features is its plugin subsystem. This allows you to fully modularise custom code and distribute it through familiar channels like Maven repositories. It's much more convenient than trying to play around with customising the class-path and messing around to make sure files are in the right place.
 
 First, check out this plugin skeleton:
 
 ```
-$ git clone http://github.com/apiman/apiman-plugins.git
+$ git clone https://github.com/apiman/apiman-plugins.git
 $ cd custom-path-parser-demo/
 ```
 

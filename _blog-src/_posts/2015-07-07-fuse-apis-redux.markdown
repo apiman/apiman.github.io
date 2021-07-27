@@ -7,17 +7,17 @@ categories: api management jboss fuse
 oldUrl: 2015-07-07-fuse-apis
 ---
 
-This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on [Apache Camel](http://camel.apache.org), an implementation of many of the most commonly used enterprise integration patterns (EIP).
+This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on [Apache Camel](https://camel.apache.org), an implementation of many of the most commonly used enterprise integration patterns (EIP).
 
 <!--more-->
 
 Creating API provider in JBoss Fuse
 ====================================
 
-The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I'm using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the [developer materials](http://www.jboss.org/products/fuse/developer-materials/#!project=fuse) and other [resources](http://www.jboss.org/products/fuse/resources/) at jboss.org.
+The following few steps should quickly get you started with deploying applications into JBoss Fuse. For demonstration purposes I'm using a sample REST application (quickstart) shipped along with Fuse installation. For more information about developing applications for JBoss Fuse inspect the [developer materials](https://www.jboss.org/products/fuse/developer-materials/#!project=fuse) and other [resources](https://www.jboss.org/products/fuse/resources/) at jboss.org.
 
 ### Installation 
-To obtain a distribution of JBoss Fuse please visit the JBoss Fuse [download page](http://www.jboss.org/products/fuse/download/).
+To obtain a distribution of JBoss Fuse please visit the JBoss Fuse [download page](https://www.jboss.org/products/fuse/download/).
 Installation of JBoss Fuse is very simple, as the only thing you need to do is to unzip the distribution, e.g. 
 
 {% highlight sh %}
@@ -40,7 +40,7 @@ Once JBoss Fuse is loaded proceed by creating a new Fuse Fabric instance. To do 
 JBossFuse:karaf@root> fabric:create
 {% endhighlight %}
 
-After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at [http://localhost:8181](http://localhost:8181). 
+After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at [http://localhost:8181](http://localhost:8181).
 In Fabric perspective, under Containers tabs click on the _Create_ button to open the _Create New Container form_. 
 
 ![List of Fabric containers](/blog/images/2015-07-07/fabric.png)
@@ -75,7 +75,7 @@ Transfer-Encoding: chunked
 Configure apiman to manage Fuse endpoint
 ========================================
 
-To install the latest version of apiman follow this [guide](http://www.apiman.io/latest/download.html). The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of [Wildly 8](http://www.wildfly.org/) server.
+To install the latest version of apiman follow this [guide](https://www.apiman.io/latest/download.html). The installation process is again very simple, all you need to do is to extract the apiman overlay zip on top of [Wildly 8](https://www.wildfly.org/) server.
 
 After completing the installation, start apiman by executing the following command from `<wildfly>/bin` folder:
 
@@ -86,7 +86,7 @@ After completing the installation, start apiman by executing the following comma
 ### Quick public API setup
 
 For demonstration purposes I'll be creating a Public API, however in real life you might want to configure different plans, various contracts, etc. 
-Please consult the apiman [user guide](http://www.apiman.io/latest/user-guide.html) for more details.
+Please consult the apiman [user guide](https://www.apiman.io/latest/user-guide.html) for more details.
 
 In order to manage APIs in apiman you need to create a new Organization to which your APIs will belong. 
 You can do that easily in apiman manager, typically available at: [http://localhost:8080/apimanui](http://localhost:8080/apimanui).

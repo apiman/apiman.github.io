@@ -23,13 +23,13 @@ JBoss apiman follows this second approach with its REST interface.  All the serv
 
 Like a lot of things with JBoss open source software, installing the REST API is easy. In fact, if you have apiman installed, then you already have the REST API installed. (You can’t get much easier than that!)
 
-We covered installing apiman in the first article in this series (see: http://java.dzone.com/articles/impatient-new-users), so we won't repeat that information here. A minimal set of install instructions are always available on the apiman site (http://www.apiman.io/latest/). The current set of instructions as of this writing are:
+We covered installing apiman in the first article in this series (see: https://java.dzone.com/articles/impatient-new-users), so we won't repeat that information here. A minimal set of install instructions are always available on the apiman site (https://www.apiman.io/latest/). The current set of instructions as of this writing are:
 
 {% highlight bash %}
 mkdir ~/apiman-1.1.2.Final  
 cd ~/apiman-1.1.2.Final  
-wget http://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
-wget http://downloads.jboss.org/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
+wget https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip  
+wget https://downloads.jboss.org/apiman/1.1.2.Final/apiman-distro-wildfly8-1.1.2.Final-overlay.zip  
 unzip wildfly-8.2.0.Final.zip  
 unzip -o apiman-distro-wildfly8-1.1.2.Final-overlay.zip -d wildfly-8.2.0.Final  
 cd wildfly-8.2.0.Final  
@@ -40,7 +40,7 @@ Now that our apiman server is up and running, we can start to access the API Man
 
 ## The Organization of the API
 
-The documentation for the apiman REST API is available (for free, of course), here: http://www.apiman.io/latest/api-manager-restdocs.html
+The documentation for the apiman REST API is available (for free, of course), here: https://www.apiman.io/latest/api-manager-restdocs.html
 
 The services and their endpoints represented in the API are divided into these groups:
 

@@ -121,8 +121,8 @@ kubernetes).
 To do this, it's probably best to read up on the existing apiman documentation
 about how to create and contribute a plugin:
 
-* [Developer Guide: Creating a Plugin](http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin)
-* [Developer Guide: Contributing a Core Component](http://www.apiman.io/latest/developer-guide.html#_contributing_a_core_component)
+* [Developer Guide: Creating a Plugin](https://www.apiman.io/latest/developer-guide.html#_creating_a_plugin)
+* [Developer Guide: Contributing a Core Component](https://www.apiman.io/latest/developer-guide.html#_contributing_a_core_component)
 
 The component you will want to customize is *IApiCatalog*, which can be found here:
 

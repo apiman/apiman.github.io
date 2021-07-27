@@ -13,7 +13,7 @@ One great advantage of API Management is centralising auth concerns, thereby avo
 
 == Preparation
 
-For this example, let's assume we're using apiman's http://www.apiman.io/latest/download.html[quickstart] setup and have it running. I suggest using the _'Or simply try this...'_ box.
+For this example, let's assume we're using apiman's https://www.apiman.io/latest/download.html[quickstart] setup and have it running. I suggest using the _'Or simply try this...'_ box.
 
 After you have your apiman quickstart running (replace *apiman-1.1.3.Final* in the path below with whatever version you downloaded), we can live deploy a handy *echo service* into our environment so we have something to test against:
 
@@ -47,19 +47,19 @@ Those amongst you with some experience of apiman may have noticed that the OAuth
 
 When logged into http://localhost:8080/apimanui/[the apiman manager UI] as an administrator (for the quickstart that's u:`admin`, p:`admin123!`), navigate to the *manage plugins* page:
 
-image::/blog/images/2015-06-03/sysadmin-manage-plugins.png[alt="System Administration", link="http://www.apiman.io/latest/user-guide.html#_plugins"]
+image::/blog/images/2015-06-03/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
 
 Select *add plugin*, fill in the details as above, and *add plugin*. That's it!
 
 == Setting Up
 
-There are two essential components to our system. First, is the http://keycloak.jboss.org[Keycloak server], an all-in-one https://en.wikipedia.org/wiki/Single_sign-on[SSO] and https://en.wikipedia.org/wiki/Identity_management[IdM]; we'll configure it to be our identity source and handle the issuance of OAuth2 bearer tokens. Second, is the apiman OAuth2 policy; we'll set it up to validate the tokens precisely to our requirements.
+There are two essential components to our system. First, is the https://keycloak.jboss.org[Keycloak server], an all-in-one https://en.wikipedia.org/wiki/Single_sign-on[SSO] and https://en.wikipedia.org/wiki/Identity_management[IdM]; we'll configure it to be our identity source and handle the issuance of OAuth2 bearer tokens. Second, is the apiman OAuth2 policy; we'll set it up to validate the tokens precisely to our requirements.
 
 Let's assume we're going to protect a very simple *echo service*, which echoes back to the requestor the details of any request made to it. It is located at `http://localhost:8080/apiman-echo`.
 
 === Keycloak Server
 
-IMPORTANT: There are a huge number of configuration permutations with Keycloak, and the most suitable approach will vary according to your requirements. It is highly recommended to consult the http://keycloak.jboss.org/docs.html[Keycloak guides] to determine your optimal setup, as for the sake of brevity we're only going to cover a couple of trivial preconfigured scenarios.
+IMPORTANT: There are a huge number of configuration permutations with Keycloak, and the most suitable approach will vary according to your requirements. It is highly recommended to consult the https://keycloak.jboss.org/docs.html[Keycloak guides] to determine your optimal setup, as for the sake of brevity we're only going to cover a couple of trivial preconfigured scenarios.
 
 First, log into the http://localhost:8080/auth/admin[Keycloak server]. If you're following our walkthrough, the log-in details are identical to those mentioned earlier (`admin`, `admin123!`). You can see that there is already an *apiman* realm defined, but we're going to create a new one, so navigate to *Add Realm* (top right), and import and upload link:/blog/resources/2015-06-04/stottie.json[this demonstration realm definition]; it provides an extremely simple setup where we have:
 

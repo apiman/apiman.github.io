@@ -19,7 +19,7 @@ Most developers are familiar with SSL/TLS; it facilitates authentication via cer
 
 However, in a typical apiman setup the gateway is acting as the client and the servicesfootnote:[We refer to the set of APIs managed by apiman as services] act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our services then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
 
-Luckily, apiman makes this http://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security[extremely easy to set this up], so let's dive in and explore what's possible.
+Luckily, apiman makes this https://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security[extremely easy to set this up], so let's dive in and explore what's possible.
 
 == Architecture
 
@@ -116,7 +116,7 @@ apiman-gateway.connector-factory.tls.keyPassword=password
 apiman-gateway.connector-factory.tls.allowAnyHost=true
 ```
 
-The last option is to make our testing easier by removing hostname checks on the certificates, but you should disable that in production. Have a look at http://www.apiman.io/latest/installation-guide.html#_make_changes_to_apiman_properties_3[our setup guide] for a full list of options.
+The last option is to make our testing easier by removing hostname checks on the certificates, but you should disable that in production. Have a look at https://www.apiman.io/latest/installation-guide.html#_make_changes_to_apiman_properties_3[our setup guide] for a full list of options.
 
 === Service is Everything
 

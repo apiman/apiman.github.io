@@ -27,7 +27,7 @@ with a short term focus on bug fixes and smaller incremental improvements rather
 Read on for more detailed information!
 
 ## Is the apiman project over?
-Short answer:  *We're not dead yet!*  We're not even [pining for the fjords](http://www.urbandictionary.com/define.php?term=pining%20for%20the%20fjords)!
+Short answer:  *We're not dead yet!*  We're not even [pining for the fjords](https://www.urbandictionary.com/define.php?term=pining%20for%20the%20fjords)!
 
 That said, I'm sorry to say that I don't know exactly what the future will bring.  Red Hat will be working
 hard over the next days/weeks/months to accomplish the following goals:

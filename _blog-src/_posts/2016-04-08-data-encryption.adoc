@@ -26,7 +26,7 @@ Apiman was designed with the goal of providing a secure, customizable platform f
 
 *All sensitive data stored by apiman is fully encrypted* so that it is not stored in plain text, then later decrypted again on runtime or when publishing services. By default, the API Manager uses a relational database for storage. One of the many examples of data that gets stored are the credentials that must be provided when the manager wants to publish an API and makes an authenticated REST call to the gateway.
 
-Data for the API gateway and API manager are stored separately to keep components fully decoupled. For a more detailed overview, please see our http://www.apiman.io/latest/production-guide.html#_architecture_summary[API layer architecture].
+Data for the API gateway and API manager are stored separately to keep components fully decoupled. For a more detailed overview, please see our https://www.apiman.io/latest/production-guide.html#_architecture_summary[API layer architecture].
 
 Let's swan dive into some code!
 
@@ -65,7 +65,7 @@ apiman.encrypter.type.secretKey=
 
 == Writing Your Own Encryption Plugin
 
-One of the major benefits of working with an open source API management platform, and open source projects in general, is the ability to read and modify the source code to make it work for your business needs. In apiman, we make it easy for you to write your own implementation of the data encrypter by http://www.apiman.io/latest/developer-guide.html#_creating_a_plugin[creating a plugin that encrypts data].
+One of the major benefits of working with an open source API management platform, and open source projects in general, is the ability to read and modify the source code to make it work for your business needs. In apiman, we make it easy for you to write your own implementation of the data encrypter by https://www.apiman.io/latest/developer-guide.html#_creating_a_plugin[creating a plugin that encrypts data].
 
 Once your basic plugin is set up, you can then begin working on the Java component of your plugin that contains the functionality.
 
@@ -134,4 +134,4 @@ If your memory is as short-lived as mine, it’s probably best that we do a quic
 
 For those of us with a guilty security conscience, we went over how to configure the API gateway to use an encrypted key that you provided in the `apiman.properties` file. Because we’re über ambitious, we also took a look at how to write your very own implementation of said `IDataEncrypter` interface and the methods you are required to implement.
 
-As always, we _love_ hearing from you! So, if you have any questions or comments, feel free to leave them below or http://www.apiman.io/latest/chat.html[reach out to us].
+As always, we _love_ hearing from you! So, if you have any questions or comments, feel free to leave them below or https://www.apiman.io/latest/chat.html[reach out to us].

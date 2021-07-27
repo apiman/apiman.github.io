@@ -53,13 +53,13 @@ If you experience any issues, please report them to us via https://issues.jboss.
 
 == Download 1.5.1.Final
 
-* link:http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-vertx-1.5.1.Final.zip[Vert.x (Gateway Only)]
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-vertx-1.5.1.Final.zip[Vert.x (Gateway Only)]
 
 
-* link:http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly10-1.5.1.Final-overlay.zip[WildFly 10 or EAP 7.1]
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly10-1.5.1.Final-overlay.zip[WildFly 10 or EAP 7.1]
 
-* link:http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly11-1.5.1.Final-overlay.zip[WildFly 11]
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly11-1.5.1.Final-overlay.zip[WildFly 11]
 
-* link:http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-eap7-1.5.1.Final-overlay.zip[EAP 7]
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-eap7-1.5.1.Final-overlay.zip[EAP 7]
 
-* link:http://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-tomcat8-1.5.1.Final-overlay.zip[Tomcat 8+]
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-tomcat8-1.5.1.Final-overlay.zip[Tomcat 8+]

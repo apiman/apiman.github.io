@@ -15,12 +15,12 @@ things.  Read on for the details!
 ## Where can I find more information?
 The release notes for this release can be found here:
 
-* [Release notes for 1.2.4.Final](http://red.ht/23NVU1k)
+* [Release notes for 1.2.4.Final](https://red.ht/23NVU1k)
 
 And of course, all of the standard sources of information have been updated:
 
-* [The apiman project site](http://www.apiman.io/)
-* [Latest User Guide](http://www.apiman.io/latest/user-guide.html)
+* [The apiman project site](https://www.apiman.io/)
+* [Latest User Guide](https://www.apiman.io/latest/user-guide.html)
 
 ## Just give me the highlights!
 Mouse clicky finger too tired?  No worries, read on for some of the highlights
@@ -60,7 +60,7 @@ Apiman now comes with a new Circuit Breaker policy (available as a plugin).
 If you're not familiar with the circuit breaker pattern, I recommend you go
 here:
 
-* [Martin Fowler: Circuit Breaker Pattern](http://martinfowler.com/bliki/CircuitBreaker.html)
+* [Martin Fowler: Circuit Breaker Pattern](https://martinfowler.com/bliki/CircuitBreaker.html)
 
 ### Plugin ClassLoader Improvements
 A number of community members have been building their own custom plugins, and

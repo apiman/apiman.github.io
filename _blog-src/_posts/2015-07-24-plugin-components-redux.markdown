@@ -8,7 +8,7 @@ oldUrl: 2015-07-24-plugin-components
 ---
 
 As you may know, apiman has long supported custom policies provided by users.  If you
-aren't familiar with apiman plugins, you can find more about them by [clicking here](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html).
+aren't familiar with apiman plugins, you can find more about them by [clicking here](https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html).
 
 As of version 1.1.5.Final, plugins are now even more useful.  You can provide custom
 implementations of various core apiman system components via plugins.  This allows users
@@ -22,8 +22,8 @@ In this blog post I'll explain how it works.
 ## Review: What is a plugin?
 First, here are some good resources you can use to learn more about apiman plugins:
 
-* [Customizing JBoss apiman Through Policy Plugins](http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html)
-* [apiman Developer Guide: Plugins](http://www.apiman.io/latest/developer-guide.html#_plugins)
+* [Customizing JBoss apiman Through Policy Plugins](https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html)
+* [apiman Developer Guide: Plugins](https://www.apiman.io/latest/developer-guide.html#_plugins)
 
 No patience to read those links?  That's OK - I'll give you a quick breakdown.
 

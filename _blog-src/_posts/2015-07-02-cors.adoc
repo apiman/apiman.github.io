@@ -7,9 +7,9 @@ categories: security plugin policy cors
 newUrl: 2016-01-22-cors-redux
 ---
 
-If you're looking to define http://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] policy that should be perfect for the job.
+If you're looking to define https://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] policy that should be perfect for the job.
 
-For those http://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke a service's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.
+For those https://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke a service's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks from interacting with the remote resources.
 
 However, if we _want_ our resource to be callable by some other, or all, origins, then we need to define a CORS policy.
 
@@ -17,7 +17,7 @@ However, if we _want_ our resource to be callable by some other, or all, origins
 
 == Installation
 
-Apiman plugins are referenced via their Maven coordinates, and can be installed most easily http://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman[via the apiman Admin UI] (or http://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html[REST interfaces] if you're looking to automate things).
+Apiman plugins are referenced via their Maven coordinates, and can be installed most easily https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies.html#installing-a-plugin-into-apiman[via the apiman Admin UI] (or https://www.apiman.io/blog/rest/api/automation/2015/05/19/rest-api.html[REST interfaces] if you're looking to automate things).
 
 For the https://github.com/apiman/apiman-plugins/tree/master/cors-policy[CORS plugin] footnote:[One of our official plugins, the rest of which can be viewed at https://github.com/apiman/apiman-plugins/. You can build and deploy your plugins publicly or privately in a similar manner], the coordinates are as follows:
 
@@ -42,7 +42,7 @@ For the purposes of this blogpost we'll contrive a scenario that allows us to de
 
 === Preparation
 
-If you have the http://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend service for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
+If you have the https://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend service for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
 ```ShellSession
 cd /tmp
