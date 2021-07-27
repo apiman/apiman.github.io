@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -183,7 +179,7 @@ a little bit ambiguous.  So the new names in apiman <em>1.2.x</em> are:</p>
 </ul>
 
 <p>Functionally everything works the same, it’s just the names that have changed.  It’s worth
-pointing out that the renaming isn’t just superficial (e.g. text in the UI).  Instead, we
+pointing out that the renaming isn’t just superficial (e.g. text in the UI).  Instead, we 
 refactored all of the code and the REST endpoints to reflect these new concepts.</p>
 
 <h3 id="plugin-support">Plugin Support</h3>
@@ -192,7 +188,7 @@ refactored all of the code and the REST endpoints to reflect these new concepts.
 easier to find, install, test, and upgrade apiman plugins.  There’s a new Administration UI
 where you can see a list of available plugins and easily install them.  If you are creating
 your own plugin you can easily reload and/or uninstall plugins to make it easier to test your
-changes.  And finally, if your plugin version ends with <em>-SNAPSHOT</em> then apiman will
+changes.  And finally, if your plugin version ends with <em>-SNAPSHOT</em> then apiman will 
 automatically reload the plugin every time it is used.  This makes it VERY easy to iterate on
 the plugin code and see the results quickly, without doing anything in the UI and without
 restarting apiman!</p>

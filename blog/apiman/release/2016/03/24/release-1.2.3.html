@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -130,7 +126,7 @@
            style="margin-top: 20px; font-size: 14px; line-height: 20px">
     <p>Greetings, earthlings!  Yesterday we released the <em>best</em> version of apiman yet,
 and I’m not just saying that because the version number (1.2.3.Final) is awesome.
-This release has a bunch of bug fixes in it, as well as a few targeted new
+This release has a bunch of bug fixes in it, as well as a few targeted new 
 features.  Read on for more details!</p>
 
 <!--more-->
@@ -162,10 +158,10 @@ Contract per Client App per API. Previously if an API was offered through, for e
 a Gold and a Silver plan, you could actually create a Contract to <em>both</em> of them.
 This is no longer possible.</p>
 
-<p>It is worth noting that this change makes many things easier to do, now and going
+<p>It is worth noting that this change makes many things easier to do, now and going 
 forward.  API Key management is simpler - you just have one key for each Client App
-(version) you manage.  It also opens up the opportunity to allow other types of
-API Keys (such as client certificates or Keycloak client IDs) beyond the default
+(version) you manage.  It also opens up the opportunity to allow other types of 
+API Keys (such as client certificates or Keycloak client IDs) beyond the default 
 Java UUID style keys.</p>
 
 <h3 id="data-migration-when-upgrading-apiman">Data migration when upgrading apiman</h3>
@@ -178,15 +174,15 @@ data model.</p>
 
 <h3 id="initial-metrics-support-for-hawkular-metrics">Initial metrics support for Hawkular Metrics</h3>
 <p>As you all probably know, apiman supports different implementations of various core
-internal components.  One of those components is the Metrics feature, where we
+internal components.  One of those components is the Metrics feature, where we 
 record metrics information for every request made to the Gateway.  In the default
 community edition of apiman we use Elasticsearch to record these metrics.  Version
 1.2.3.Final of apiman now includes an initial (tech preview) implementation that
-uses <a href="https://www.hawkular.org/docs/components/metrics/index.html" target="_blank" rel="nofollow">Hawkular Metrics</a>
+uses <a href="https://www.hawkular.org/docs/components/metrics/index.html" target="_blank" rel="nofollow">Hawkular Metrics</a> 
 instead of Elasticsearch!</p>
 
 <h3 id="improvements-to-the-api-catalog-ui">Improvements to the API Catalog UI</h3>
-<p>A very cool recent feature of apiman is the new
+<p>A very cool recent feature of apiman is the new 
 <a href="https://www.apiman.io/blog/apiman/1.2.x/manager/catalog/2016/03/23/api-catalog.html">API Catalog browser UI</a>.<br />
 The API Catalog feature allows you to quickly filter the list of available APIs from
 the catalog by name.  Now in 1.2.3.Final, every entry in the catalog is also tagged
@@ -196,7 +192,7 @@ is pretty slick!</p>
 <h3 id="configurable-aes-data-encrypter-implementation">Configurable AES data encrypter implementation</h3>
 <p>You may or may not be aware that apiman encrypts any data that might be sensitive prior
 to storing it in the data store (manager) or registry (gateway).  There is a java
-interface called <a href="https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java" target="_blank" rel="nofollow">IDataEncrypter</a>
+interface called <a href="https://github.com/apiman/apiman/blob/apiman-1.2.3.Final/common/util/src/main/java/io/apiman/common/util/crypt/IDataEncrypter.java" target="_blank" rel="nofollow">IDataEncrypter</a> 
 that controls this behavior, and you can provide your own implementation via an apiman
 plugin if you choose.  Previously that was the only option available to you if you
 wanted a more secure implementation (the default implementation uses a well-known/hard-coded

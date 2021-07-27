@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -170,7 +166,7 @@ is a well-known structure, and it’s easy to create (e.g. via maven).</p>
 
 <p>When contributing a custom apiman component via a plugin, all you need is the <code class="highlighter-rouge">plugin.json</code>
 file and the java class file(s) that implement the appropriate component interface.  Of
-course, because a plugin is a WAR, you can also include any library dependencies your
+course, because a plugin is a WAR, you can also include any library dependencies your 
 component might need.</p>
 
 <h2 id="what-are-these-components-are-you-talking-about">What are these components are you talking about?</h2>
@@ -334,13 +330,13 @@ this line first:</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry</code></pre></figure>
 
-<p>The format of the value of <code class="highlighter-rouge">apiman-gateway.registry</code> is very important - when
-using a plugin you must specify the maven information of your plugin so that
+<p>The format of the value of <code class="highlighter-rouge">apiman-gateway.registry</code> is very important - when 
+using a plugin you must specify the maven information of your plugin so that 
 apiman can locate and download it.  See the apiman documentation for additional
 details about how plugins are loaded.</p>
 
 <p>Note that you can also provide configuration parameters to your component.  That
-will obviously be helpful since it will probably need connection details.  So
+will obviously be helpful since it will probably need connection details.  So 
 really your configuration might look something like this:</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.gateway.MongoDbRegistry
@@ -357,7 +353,7 @@ your class has a <code class="highlighter-rouge">Map&lt;String,String&gt;</code>
 <p>This is a powerful new feature for extending and customizing apiman to better suit
 your needs.  Of course we will want to continue offering the most popular component
 implementations as a core part of apiman.  However there will always be many more
-options than we can easily implement and support.  For this reason we wanted to
+options than we can easily implement and support.  For this reason we wanted to 
 provide an easy way for users (and the apiman community at large) to contribute.</p>
 
 <p>/post</p>

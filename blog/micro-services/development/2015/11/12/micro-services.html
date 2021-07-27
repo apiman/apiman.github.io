@@ -50,11 +50,7 @@
   </script>
   <script id="adobe_dtm" src="//www.redhat.com/dtm.js" type="text/javascript"></script>
 </head>
-<body class="blog">
-    <div id="rhbar">
-      <a class="jbdevlogo" href="https://www.jboss.org/projects/about" rel="nofollow" target="_blank"></a>
-      <a class="rhlogo" href="https://www.redhat.com/" rel="nofollow" target="_blank"></a>
-    </div><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
+<body class="blog"><nav id="top-nav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -152,7 +148,7 @@ Some of these include:</p>
 </ul>
 
 <h2 id="what-are-they">What are they?</h2>
-<p>What do we mean by “apiman micro-services”?  Well, by default if you download
+<p>What do we mean by “apiman micro-services”?  Well, by default if you download 
 apiman from the <a href="https://apiman.io/">project site</a>, you’ll get everything delivered
 to you in one convenient package.  This package extracts into an existing WildFly
 installation, and thus everything runs as a web application within the application
@@ -160,7 +156,7 @@ server.  This is very convenient to evaluate the software, but it’s not ideal 
 development or for dockerizing.</p>
 
 <p>In addition to our support for WildFly and EAP, we also now support simply running
-the various components of apiman as standalone Java applications.  You can find
+the various components of apiman as standalone Java applications.  You can find 
 the specific source modules that provide this functionality here:</p>
 
 <ul>
@@ -168,10 +164,10 @@ the specific source modules that provide this functionality here:</p>
   <li><a href="https://github.com/apiman/apiman/tree/master/gateway/platforms/war/micro" target="_blank" rel="nofollow">API Gateway Micro-Service (source)</a></li>
 </ul>
 
-<p>These two modules provide Java classes which use an embedded version of Jetty to
+<p>These two modules provide Java classes which use an embedded version of Jetty to 
 start up the API Manager and API Gateway as simple standalone Java processes.  Each
 micro-service includes a Starter class with a Java main method.  Both micro-services
-are designed to be easily extensible/customizable to fit whatever purpose or
+are designed to be easily extensible/customizable to fit whatever purpose or 
 configuration is desired.</p>
 
 <h2 id="how-do-i-use-them">How do I use them?</h2>
@@ -186,7 +182,7 @@ github repository full of examples:</p>
 
 <p>Each of the modules in there is a very simple pre-baked and configured micro-service
 based on what apiman provides.  So for example, if you want to run an Elasticsearch
-version of the API Gateway along with a Postgres version of the API Manager, you
+version of the API Gateway along with a Postgres version of the API Manager, you 
 could follow these two sets of directions:</p>
 
 <ul>
@@ -203,7 +199,7 @@ it’s built into the API Manager micro-service!  Once you have the Manager micr
 running, you should be able to go here:</p>
 
 <ul>
-  <li><a href="https://localhost:8080/apimanui/">https://localhost:8080/apimanui/</a></li>
+  <li><a href="http://localhost:8080/apimanui/">http://localhost:8080/apimanui/</a></li>
 </ul>
 
 <h3 id="using-gulp-development-only">Using gulp (development only)</h3>
@@ -227,7 +223,7 @@ ewittman@falcon ~/git/apiman/apiman/manager/ui/hawtio
 <span class="o">[</span>14:56:29] Starting <span class="s1">'connect'</span>...
 <span class="o">[</span>14:56:29] Finished <span class="s1">'connect'</span> after 49 ms
 <span class="o">[</span>14:56:29] Finished <span class="s1">'default'</span> after 126 ms
-<span class="o">[</span>14:56:29] Server started https://localhost:2772
+<span class="o">[</span>14:56:29] Server started http://localhost:2772
 <span class="o">[</span>14:56:30] Finished <span class="s1">'css'</span> after 589 ms
 <span class="o">[</span>14:56:37] Finished <span class="s1">'images'</span> after 7.49 s
 <span class="o">[</span>14:56:41] Finished <span class="s1">'fonts'</span> after 12 s
@@ -249,7 +245,7 @@ ewittman@falcon ~/git/apiman/apiman/manager/ui/hawtio
 able to access the UI by going here:</p>
 
 <ul>
-  <li><a href="https://localhost:2772/api-manager">https://localhost:2772/api-manager</a></li>
+  <li><a href="http://localhost:2772/api-manager">http://localhost:2772/api-manager</a></li>
 </ul>
 
 <h2 id="warning-authentication">Warning: Authentication</h2>
