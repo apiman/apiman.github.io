@@ -10,8 +10,8 @@
     <link href="resources/bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/patternfly-1.0.5/css/patternfly.min.css" rel="stylesheet">
     <link href="https://static.jboss.org/css/rhbar.css" media="screen" rel="stylesheet">
-    <link href="resources/css/apiman-web.css?v=2.1.0.Final" rel="stylesheet">
-    <link href="resources/css/apiman-web.responsive.css?v=2.1.0.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.css?v=2.1.1.Final" rel="stylesheet">
+    <link href="resources/css/apiman-web.responsive.css?v=2.1.1.Final" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -78,20 +78,20 @@
                         <a href="tutorials.html">Tutorials &amp; Walkthroughs</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://www.apiman.io/apiman-docs/user-guide/2.1.0.Final/crash-course/Guide.html">Crash Course!</a>
+                        <a href="https://www.apiman.io/apiman-docs/user-guide/2.1.1.Final/crash-course/Guide.html">Crash Course!</a>
                     </li>
                     <li class="divider"></li>
                     <li class="menu-item">
-                        <a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/index.html">Installation Guide</a>
+                        <a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/index.html">Installation Guide</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://www.apiman.io/apiman-docs/user-guide/2.1.0.Final/index.html">User Guide</a>
+                        <a href="https://www.apiman.io/apiman-docs/user-guide/2.1.1.Final/index.html">User Guide</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/development/Guide.html">Developer Guide</a>
+                        <a href="https://www.apiman.io/apiman-docs/core/2.1.1.Final/development/Guide.html">Developer Guide</a>
                     </li>
                     <li class="menu-item">
-                        <a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/production.html">Production Guide</a>
+                        <a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/production.html">Production Guide</a>
                     </li>
                     <li class="divider"></li>
                     <li class="menu-item">
@@ -115,7 +115,7 @@
                 </ul>
                 <div class="alert alert-info" style="margin-top: 10px; background-color: #fdf2e5; border-width: 1px; line-height: 24px">
                     <span class="fa fa-fw fa-info-circle" style="color: #eb7720; font-size: 18px; line-height: 24px"></span>
-                    Migration Note: If you are updating from an older Apiman version, please check out the <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html">Migration Guide</a>
+                    Migration Note: If you are updating from an older Apiman version, please check out the <a href="https://www.apiman.io/apiman-docs/core/2.1.1.Final/migration/migrations.html">Migration Guide</a>
                 </div>
             </div>
 
@@ -131,13 +131,13 @@
                         <h3>Download</h3>
                         <ul>
                           <li><a href="https://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip" rel="nofollow" target="_blank">20.0.1.Final</a></li>
-                          <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip" rel="nofollow" target="_blank">2.1.0.Final</a> overlay for WildFly</li>
+                          <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-wildfly-2.1.1.Final-overlay.zip" rel="nofollow" target="_blank">2.1.1.Final</a> overlay for WildFly</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                           <li>Unpack the WildFly zip</li>
-                          <li>Unpack the Apiman 2.1.0.Final WildFly overlay zip <b>inside the wildfly directory</b></li>
+                          <li>Unpack the Apiman 2.1.1.Final WildFly overlay zip <b>inside the wildfly directory</b></li>
                         </ol>
 
                         <h3>Run</h3>
@@ -162,12 +162,12 @@
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-mkdir ~/apiman-2.1.0.Final
-cd ~/apiman-2.1.0.Final
+mkdir ~/apiman-2.1.1.Final
+cd ~/apiman-2.1.1.Final
 curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
-curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-wildfly-2.1.1.Final-overlay.zip -o apiman-distro-wildfly-2.1.1.Final-overlay.zip
 unzip wildfly-20.0.1.Final.zip
-unzip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip -d wildfly-20.0.1.Final
+unzip -o apiman-distro-wildfly-2.1.1.Final-overlay.zip -d wildfly-20.0.1.Final
 cd wildfly-20.0.1.Final
 ./bin/standalone.sh -c standalone-apiman.xml
                       </pre>
@@ -211,8 +211,8 @@ cd wildfly-20.0.1.Final
                     <div class="col-lg-5" style="">
                       <h3>Or simply try this...</h3>
                       <pre class="code-block">
-docker pull apiman/on-wildfly:2.1.0.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final
+docker pull apiman/on-wildfly:2.1.1.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.1.Final
                       </pre>
                     </div>
                 </div>
@@ -225,13 +225,13 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final
                         <h3>Download</h3>
                         <ul>
                             <li><a href="https://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip" rel="nofollow" target="_blank">9.0.50</a></li>
-                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-tomcat-2.1.0.Final-overlay.zip" rel="nofollow" target="_blank">2.1.0.Final</a> overlay for Tomcat</li>
+                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-tomcat-2.1.1.Final-overlay.zip" rel="nofollow" target="_blank">2.1.1.Final</a> overlay for Tomcat</li>
                         </ul>
 
                         <h3>Install</h3>
                         <ol>
                             <li>Unpack the Apache Tomcat zip</li>
-                            <li>Unpack the Apiman 2.1.0.Final Tomcat overlay zip <b>inside the tomcat directory</b></li>
+                            <li>Unpack the Apiman 2.1.1.Final Tomcat overlay zip <b>inside the tomcat directory</b></li>
                         </ol>
 
                         <h3>Run</h3>
@@ -256,12 +256,12 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final
                     <div class="col-lg-5" style="">
                         <h3>Or simply try this...</h3>
                         <pre class="code-block">
-mkdir ~/apiman-2.1.0.Final
-cd ~/apiman-2.1.0.Final
+mkdir ~/apiman-2.1.1.Final
+cd ~/apiman-2.1.1.Final
 curl -L https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip -o apache-tomcat-9.0.50.zip
-curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-tomcat-2.1.0.Final-overlay.zip -o apiman-distro-tomcat8-2.1.0.Final-overlay.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-tomcat-2.1.1.Final-overlay.zip -o apiman-distro-tomcat8-2.1.1.Final-overlay.zip
 unzip apache-tomcat-9.0.50.zip
-unzip -o apiman-distro-tomcat8-2.1.0.Final-overlay.zip -d apache-tomcat-9.0.50
+unzip -o apiman-distro-tomcat8-2.1.1.Final-overlay.zip -d apache-tomcat-9.0.50
 cd apache-tomcat-9.0.50
 chmod 755 bin/catalina.sh
 ./bin/catalina.sh run
@@ -276,7 +276,7 @@ chmod 755 bin/catalina.sh
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-vertx-2.1.0.Final.zip" rel="nofollow" target="_blank">2.1.0.Final</a> Vert.x Gateway</li>
+                            <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-vertx-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-vertx-2.1.1.Final.zip" rel="nofollow" target="_blank">2.1.1.Final</a> Vert.x Gateway</li>
                         </ul>
 
                         <h3>Install</h3>
@@ -302,7 +302,7 @@ chmod 755 bin/catalina.sh
 
                         <h3>Configure</h3>
                         <ol>
-                            <li><a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/quickstart.html#_vert_x_gateway_and_servlet_based_manager" target="_blank">Check out the installation guide for more info!</a></li>
+                            <li><a href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/quickstart.html#_vert_x_gateway_and_servlet_based_manager" target="_blank">Check out the installation guide for more info!</a></li>
                             <li>The Apiman distribution comes pre-configured with everything you should need to get started.
                                 Please see the User Guide for information about how to change Apiman configuration options
                                 if you require more customization.</li>
@@ -312,19 +312,19 @@ chmod 755 bin/catalina.sh
                         <h3>Or simply try this...</h3>
                         <pre class="code-block">
 // Step 1
-mkdir ~/apiman-2.1.0.Final
-cd ~/apiman-2.1.0.Final
+mkdir ~/apiman-2.1.1.Final
+cd ~/apiman-2.1.1.Final
 curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
-curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip
+curl -L https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-wildfly-2.1.1.Final-overlay.zip -o apiman-distro-wildfly-2.1.1.Final-overlay.zip
 unzip wildfly-20.0.1.Final.zip
-unzip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip -d wildfly-20.0.1.Final
+unzip -o apiman-distro-wildfly-2.1.1.Final-overlay.zip -d wildfly-20.0.1.Final
 cd wildfly-20.0.1.Final
 ./bin/standalone.sh -c standalone-apiman.xml
 
 // Step 2
-cd ~/apiman-2.1.0.Final
-curl -L https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-vertx-2.1.0.Final.zip -o apiman-distro-vertx-2.1.0.Final.zip
-cd apiman-distro-vertx-2.1.0.Final
+cd ~/apiman-2.1.1.Final
+curl -L https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-vertx-2.1.1.Final.zip -o apiman-distro-vertx-2.1.1.Final.zip
+cd apiman-distro-vertx-2.1.1.Final
 ./apiman-gateway.sh --conf=configs/conf-es.json
 
 // Step 3
