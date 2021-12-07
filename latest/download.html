@@ -224,7 +224,7 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.2.Final
                     <div class="col-lg-7">
                         <h3>Download</h3>
                         <ul>
-                            <li><a href="https://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc8', 1)" href="https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip" rel="nofollow" target="_blank">9.0.50</a></li>
+                            <li><a href="https://tomcat.apache.org/" rel="nofollow" target="_blank">Tomcat</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-tc9', 1)" href="https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.zip" rel="nofollow" target="_blank">9.0.55</a></li>
                             <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-tc8-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.1.2.Final/apiman-distro-tomcat-2.1.2.Final-overlay.zip" rel="nofollow" target="_blank">2.1.2.Final</a> overlay for Tomcat</li>
                         </ul>
 
@@ -258,11 +258,11 @@ docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.2.Final
                         <pre class="code-block">
 mkdir ~/apiman-2.1.2.Final
 cd ~/apiman-2.1.2.Final
-curl -L https://artfiles.org/apache.org/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.zip -o apache-tomcat-9.0.50.zip
+curl -L https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.zip -o apache-tomcat-9.0.55.zip
 curl -L https://github.com/apiman/apiman/releases/download/2.1.2.Final/apiman-distro-tomcat-2.1.2.Final-overlay.zip -o apiman-distro-tomcat8-2.1.2.Final-overlay.zip
-unzip apache-tomcat-9.0.50.zip
-unzip -o apiman-distro-tomcat8-2.1.2.Final-overlay.zip -d apache-tomcat-9.0.50
-cd apache-tomcat-9.0.50
+unzip apache-tomcat-9.0.55.zip
+unzip -o apiman-distro-tomcat8-2.1.2.Final-overlay.zip -d apache-tomcat-9.0.55
+cd apache-tomcat-9.0.55
 chmod 755 bin/catalina.sh
 ./bin/catalina.sh run
                           </pre>
