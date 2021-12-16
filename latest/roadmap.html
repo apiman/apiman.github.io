@@ -56,7 +56,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">apiman</a>
+            <a class="navbar-brand" href="index.html">Apiman</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
@@ -123,11 +123,11 @@
             <div class="alert alert-info"
                  style="margin-top: 10px; background-color: #fdf2e5; border-width: 1px; line-height: 24px">
                 <span class="fa fa-fw fa-info-circle" style="color: #eb7720; font-size: 18px; line-height: 24px"></span>
-                Apiman 2.X is here! We need your help to implement new features or to open feature-requests on github.
+                Apiman 2.X is here! We need your help to implement new features or to open feature-requests on GitHub.
             </div>
 
             <p>
-                Here you will find a very high level roadmap for the apiman project. The details are
+                Here you will find a very high level roadmap for the Apiman project. The details are
                 subject to change, but this page can provide a basic sense of the project's priorities
                 and version numbers.
             </p>
@@ -138,28 +138,55 @@
                 releases such as 1.2.1, 1.2.2, 1.2.3, etc...
             </p>
         </div>
-
-        <!-- Version 2.X -->
-        <div class="col-lg-12">
-            <h2 class=""><a aria-expanded="true" class="" data-toggle="collapse" href="#features2_X">2.X (Java Migration, new Angular UI, Custom CSS)</a></h2>
-            <div class="collapse in" id="features2_X">
+        
+        <!-- Version 3.x -->
+    <div class="col-lg-12">
+            <h2 class=""><a aria-expanded="true" class="" data-toggle="collapse" href="#features3_X">3.X</a></h2>
+            <div class="collapse in" id="features3_X">
                 <div class="col-lg-9">
                     <ul class="release">
                         <div class="headers">
                             <span class="header">Feature</span>
-                            <span class="header pull-right">Help needed</span>
+                            <span class="header pull-right">Planned For</span>
                         </div>
 
                         <li>
                             <span>Apiman</span>
                             <ul>
                                 <li>
-                                    A brand new UI for Apiman in Angular
-                                    <span class="in-version">Help needed</span>
+                                    Basic notifications system (in-browser bell and email notifications, with i18n) 
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
                                 </li>
                                 <li>
-                                    Migration of Java 8 to Java 11+
-                                    <span class="completed">2.1.0.Final and later</span>
+                                    Event system (via transactional outbox). Users could use CDC to export these events.
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                </li>
+                                <li>
+                                    <em>Preview:</em> Policy probes, allowing current state of a policy to be queried (optional)  
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                </li>
+                                <li>
+                                    SQL-only for Apiman Manager API database (NB: does NOT affect metrics, gateway storage, etc).
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                </li>
+                                <li>
+                                    Require manual approval for API signup (optional)
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                </li>
+                                <li>
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                    Wide range of devportal enhancements such as: 
+                                    <ul>
+                                        <li>Extended API descriptions in Markdown</li>
+                                        <li>Featured APIs, to give prominence in portal</li>
+                                        <li>Explicit exposure of API and plans in portal</li>
+                                        <li>API icon/logo to be displayed in portal</li>
+                                        <li>New unprotected endpoints to allow browsing of APIs exposed in dev portal</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Locale stored in user profile
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
                                 </li>
                             </ul>
                         </li>
@@ -169,15 +196,40 @@
                             <ul>
                                 <li>
                                     Implementation for JPA (currently only working with Elasticsearch)
-                                    <span class="in-version">Upcoming 3.x</span>
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
                                 </li>
                                 <li>
                                     Allow custom CSS and Logo
-                                    <span class="in-version">Upcoming 3.x</span>
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
                                 </li>
                                 <li>
                                     Show advanced API details (Remaining Rate Limit, Configured Policies, etc.)
-                                    <span class="in-version">Upcoming 3.x</span>
+                                    <span class="in-version">Upcoming 3.0.0.Final</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Version 2.X -->
+        <div class="col-lg-12">
+            <h2 class=""><a aria-expanded="true" class="" data-toggle="collapse" href="#features2_X">2.X (Java Migration, Custom CSS)</a></h2>
+            <div class="collapse in" id="features2_X">
+                <div class="col-lg-9">
+                    <ul class="release">
+                        <div class="headers">
+                            <span class="header">Feature</span>
+                            <span class="header pull-right">Released In</span>
+                        </div>
+
+                        <li>
+                            <span>Apiman</span>
+                            <ul>
+                                <li class="completed">
+                                    Migration of Java 8 to Java 11+ with large number of dependency updates
+                                    <span class="in-version">2.1.0.Final</span>
                                 </li>
                             </ul>
                         </li>
@@ -273,7 +325,7 @@
                     <div class="alert alert-info"
                          style="margin-top: 10px; background-color: #fdf2e5; border-width: 1px; line-height: 24px">
                         <span class="fa fa-fw fa-info-circle" style="color: #eb7720; font-size: 18px; line-height: 24px"></span>
-                        Check the <a href="https://github.com/apiman/apiman/releases">github release notes</a> for more info!
+                        Check the <a href="https://github.com/apiman/apiman/releases">GitHub release notes</a> for more info!
                     </div>
                 </div>
             </div>
@@ -768,7 +820,7 @@
                     <div class="textwidget">
                         <p>
                             Copyright © <script>document.write(new Date().getFullYear())</script> Red Hat, Inc. All rights reserved.<br>
-                            apiman code is open source and released under <a
+                            Apiman code is open source and released under <a
                                 href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="nofollow" target="_blank">Apache
                             License, v2.0</a>.<br>
                             <a href="disclosure.html">Open Source Disclosure</a>
