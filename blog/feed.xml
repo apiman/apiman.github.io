@@ -6,6 +6,20 @@
 </description>
                 <link>https://apiman.io/blog</link>
 		<atom:link href="https://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
+				<title>Apiman 2.1.5.Final has been released - please update if you're on an old version</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;p&gt;Hi, Apiman fans!&lt;/p&gt;
+
+&lt;p&gt;I hope you’re all well, and Season’s Greetings to those of you who celebrate Christmas 🎄.&lt;/p&gt;
+
+&lt;p&gt;I’d like to remind Apiman users to consider updating to Apiman 2.1.5 promptly, as it contains fixes for the now well-known log4j2 bugs. 
+You can download Apiman from all the usual official places: &lt;a href=&quot;https://www.apiman.io/latest/download.html&quot;&gt;Apiman Downloads&lt;/a&gt; or the &lt;a href=&quot;https://github.com/apiman/apiman/releases/tag/2.1.5.Final&quot;&gt;GitHub release&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/discussions/1722&quot;&gt;If you have questions about this release, please join us on GitHub Discussions&lt;/a&gt;&lt;/p&gt;
+
+</description><category term="apiman" /><category term="release" /><pubDate>Mon, 20 Dec 2021 09:00:00 -0500</pubDate>
+				<link>https://apiman.io/blog/apiman/release/2021/12/20/apiman-2.1.5.Final-release.html</link>
+				<guid isPermaLink="true">https://apiman.io/blog/apiman/release/2021/12/20/apiman-2.1.5.Final-release.html</guid>
+			</item><item>
 				<title>Apiman 2.1.0.Final has been released 🚀</title><dc:creator>Marc Savy</dc:creator>
 				        <author>marc@rhymewithgravy.com</author><description>&lt;p&gt;I’m very pleased to say that we’ve released Apiman 2.1.0.Final 👏. We’ve splatted a huge number of bugs and made a lot of improvements to stability, performance, and security.&lt;/p&gt;
 
@@ -9900,6 +9914,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 09:15:00 +0000</pubDate>
 				<link>https://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">https://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Tue, 27 Jul 2021 09:47:00 -0400</lastBuildDate>
+			</item><lastBuildDate>Mon, 20 Dec 2021 09:01:15 -0500</lastBuildDate>
 	</channel>
 </rss>

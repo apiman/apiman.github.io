@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Apiman 2.1.5.Final has been released - please update if you're on an old version"
-date: 2021-12-20 14:00:00 BST
+date: 2021-12-20 14:00:00 GMT
 author: marc_savy
 categories: apiman release
 ---
