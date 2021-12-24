@@ -130,7 +130,7 @@
                         <p>One easy way to get started with <b>Apiman</b> is to simply download WildFly and the Apiman overlay.  Unpack them both into the same location and you're off and running.  You'll obviously also need to have Java installed - we currently require at least version 8.</p>
                         <h3>Download</h3>
                         <ul>
-                          <li><a href="https://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip" rel="nofollow" target="_blank">20.0.1.Final</a></li>
+                          <li><a href="https://wildfly.org/" rel="nofollow" target="_blank">WildFly</a> <a onclick="ga('send', 'event', 'download', 'click', 'download-wf', 1)" href="https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip" rel="nofollow" target="_blank">23.0.2.Final</a></li>
                           <li>Apiman <a onclick="ga('send', 'event', 'download', 'click', 'download-apiman-wf10-overlay', 1)" href="https://github.com/apiman/apiman/releases/download/2.2.0.Final/apiman-distro-wildfly-2.2.0.Final-overlay.zip" rel="nofollow" target="_blank">2.2.0.Final</a> overlay for WildFly</li>
                         </ul>
 
@@ -164,11 +164,11 @@
                       <pre class="code-block">
 mkdir ~/apiman-2.2.0.Final
 cd ~/apiman-2.2.0.Final
-curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
+curl -L https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip -o wildfly-23.0.2.Final.zip
 curl -L https://github.com/apiman/apiman/releases/download/2.2.0.Final/apiman-distro-wildfly-2.2.0.Final-overlay.zip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip
-unzip wildfly-20.0.1.Final.zip
-unzip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip -d wildfly-20.0.1.Final
-cd wildfly-20.0.1.Final
+unzip wildfly-23.0.2.Final.zip
+unzip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip -d wildfly-23.0.2.Final
+cd wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml
                       </pre>
                     </div>
@@ -314,11 +314,11 @@ chmod 755 bin/catalina.sh
 // Step 1
 mkdir ~/apiman-2.2.0.Final
 cd ~/apiman-2.2.0.Final
-curl -L https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
+curl -L https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip -o wildfly-23.0.2.Final.zip
 curl -L https://github.com/apiman/apiman/releases/download/2.2.0.Final/apiman-distro-wildfly-2.2.0.Final-overlay.zip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip
-unzip wildfly-20.0.1.Final.zip
-unzip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip -d wildfly-20.0.1.Final
-cd wildfly-20.0.1.Final
+unzip wildfly-23.0.2.Final.zip
+unzip -o apiman-distro-wildfly-2.2.0.Final-overlay.zip -d wildfly-23.0.2.Final
+cd wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml
 
 // Step 2
