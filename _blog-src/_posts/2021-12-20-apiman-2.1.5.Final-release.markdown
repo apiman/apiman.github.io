@@ -14,4 +14,3 @@ I'd like to remind Apiman users to consider updating to Apiman 2.1.5 promptly, a
 You can download Apiman from all the usual official places: [Apiman Downloads](https://www.apiman.io/latest/download.html) or the [GitHub release](https://github.com/apiman/apiman/releases/tag/2.1.5.Final)
 
 [If you have questions about this release, please join us on GitHub Discussions](https://github.com/apiman/apiman/discussions/1722)
-
