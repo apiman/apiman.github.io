@@ -123,6 +123,31 @@
         <div class="post-list"><div class="container blog-post-item">
               <div class="row">
                 <div class="col-md-12">
+                  <h1><a href="/blog/apiman/release/2021/12/25/apiman-2.2.0.Final-release.html">Apiman 2.2.0.Final has been released (updates Keycloak to 15.1.1 & WildFly to 23.0.2.Final)</a></h1>
+                  <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Dec 25, 2021</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
+                  <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-tags"></i> apiman and release</span>
+                  <div class="excerpt" style="font-size: 14px; margin-top: 8px; line-height: 20px">
+                    <p>Happy Holidays, Apiman fans!</p>
+
+<p>I’ve released Apiman 2.2.0.Final to upgrade Keycloak to 15.1.1 and WildFly to 23.0.2.Final. This is primarily because of another significant security vulnerability that has been disclosed in those platforms.</p>
+
+<p>As we currently bundle an all-in-one Keycloak + Apiman quickstart distribution, we are required to keep our WildFly versions in sync with Keycloak. Hence WildFly has been bumped to 23.0.2.Final to match Keycloak 15.1.1.</p>
+
+<p>If you are using the Apiman WildFly distribution and customised <code class="highlighter-rouge">apiman-standalone.xml</code> you <strong>may</strong> need to update your configuration file. This is because of changes in the WildFly platform rather than Apiman itself.</p>
+
+<p>Please refer to the <a href="https://github.com/apiman/apiman/blob/master/docs/modules/migration/pages/migrations.adoc">Apiman migration guide</a> to understand any changes you may need to make to <code class="highlighter-rouge">apiman-standalone.xml</code> (mostly in relation to SSL/TLS).</p>
+
+
+                  </div>
+                  <div style="margin-bottom: 20px">
+                    <a href="/blog/apiman/release/2021/12/25/apiman-2.2.0.Final-release.html" style="font-size: 15px">(read more)</a>
+                  </div>
+                </div>
+              </div>
+            </div><div class="container blog-post-item">
+              <div class="row">
+                <div class="col-md-12">
                   <h1><a href="/blog/apiman/release/2021/12/20/apiman-2.1.5.Final-release.html">Apiman 2.1.5.Final has been released - please update if you're on an old version</a></h1>
                   <span style="color: #243446; font-size: 13px"><i class="fa fa-calendar"></i> Dec 20, 2021</span>
                   <span style="color: #243446; margin-left: 15px; font-size: 13px"><i class="fa fa-user"></i> Marc Savy</span>
@@ -136,7 +161,6 @@
 You can download Apiman from all the usual official places: <a href="https://www.apiman.io/latest/download.html">Apiman Downloads</a> or the <a href="https://github.com/apiman/apiman/releases/tag/2.1.5.Final">GitHub release</a></p>
 
 <p><a href="https://github.com/apiman/apiman/discussions/1722">If you have questions about this release, please join us on GitHub Discussions</a></p>
-
 
                   </div>
                   <div style="margin-bottom: 20px">

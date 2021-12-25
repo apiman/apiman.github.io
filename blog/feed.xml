@@ -6,6 +6,34 @@
 </description>
                 <link>https://apiman.io/blog</link>
 		<atom:link href="https://apiman.io/feed.xml" rel="self" type="application/rss+xml" /><item>
+				<title>Apiman 2.2.0.Final has been released (updates Keycloak to 15.1.1 &amp; WildFly to 23.0.2.Final)</title><dc:creator>Marc Savy</dc:creator>
+				        <author>marc@rhymewithgravy.com</author><description>&lt;p&gt;Happy Holidays, Apiman fans!&lt;/p&gt;
+
+&lt;p&gt;I’ve released Apiman 2.2.0.Final to upgrade Keycloak to 15.1.1 and WildFly to 23.0.2.Final. This is primarily because of another significant security vulnerability that has been disclosed in those platforms.&lt;/p&gt;
+
+&lt;p&gt;As we currently bundle an all-in-one Keycloak + Apiman quickstart distribution, we are required to keep our WildFly versions in sync with Keycloak. Hence WildFly has been bumped to 23.0.2.Final to match Keycloak 15.1.1.&lt;/p&gt;
+
+&lt;p&gt;If you are using the Apiman WildFly distribution and customised &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman-standalone.xml&lt;/code&gt; you &lt;strong&gt;may&lt;/strong&gt; need to update your configuration file. This is because of changes in the WildFly platform rather than Apiman itself.&lt;/p&gt;
+
+&lt;p&gt;Please refer to the &lt;a href=&quot;https://github.com/apiman/apiman/blob/master/docs/modules/migration/pages/migrations.adoc&quot;&gt;Apiman migration guide&lt;/a&gt; to understand any changes you may need to make to &lt;code class=&quot;highlighter-rouge&quot;&gt;apiman-standalone.xml&lt;/code&gt; (mostly in relation to SSL/TLS).&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Most production deployments should unbundle Keycloak and Apiman (both for security and practical reasons).&lt;/p&gt;
+
+&lt;p&gt;In a release in the near future, we will stop bundling Keycloak and Apiman in the quickstarts, and instead we will provide a Docker Compose definition that is much more representative of a real-world deployment.&lt;/p&gt;
+
+&lt;p&gt;This will also mean Apiman is not forced to stay in sync with Keycloak Server releases. We hope this will be more convenient for Apiman users and the Apiman team.&lt;/p&gt;
+
+&lt;p&gt;You can &lt;a href=&quot;https://www.apiman.io/latest/download.html&quot;&gt;download the latest Apiman at all the usual locations&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All the best for 2022.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/discussions/1734&quot;&gt;If you have questions about this release, please join us on GitHub Discussions&lt;/a&gt;.&lt;/p&gt;
+</description><category term="apiman" /><category term="release" /><pubDate>Sat, 25 Dec 2021 11:40:00 -0500</pubDate>
+				<link>https://apiman.io/blog/apiman/release/2021/12/25/apiman-2.2.0.Final-release.html</link>
+				<guid isPermaLink="true">https://apiman.io/blog/apiman/release/2021/12/25/apiman-2.2.0.Final-release.html</guid>
+			</item><item>
 				<title>Apiman 2.1.5.Final has been released - please update if you're on an old version</title><dc:creator>Marc Savy</dc:creator>
 				        <author>marc@rhymewithgravy.com</author><description>&lt;p&gt;Hi, Apiman fans!&lt;/p&gt;
 
@@ -15,7 +43,6 @@
 You can download Apiman from all the usual official places: &lt;a href=&quot;https://www.apiman.io/latest/download.html&quot;&gt;Apiman Downloads&lt;/a&gt; or the &lt;a href=&quot;https://github.com/apiman/apiman/releases/tag/2.1.5.Final&quot;&gt;GitHub release&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/apiman/apiman/discussions/1722&quot;&gt;If you have questions about this release, please join us on GitHub Discussions&lt;/a&gt;&lt;/p&gt;
-
 </description><category term="apiman" /><category term="release" /><pubDate>Mon, 20 Dec 2021 09:00:00 -0500</pubDate>
 				<link>https://apiman.io/blog/apiman/release/2021/12/20/apiman-2.1.5.Final-release.html</link>
 				<guid isPermaLink="true">https://apiman.io/blog/apiman/release/2021/12/20/apiman-2.1.5.Final-release.html</guid>
@@ -9914,6 +9941,6 @@ Resolving deltas: 100% (40/40), done.
 </description><category term="introduction" /><category term="overview" /><pubDate>Fri, 09 Jan 2015 09:15:00 +0000</pubDate>
 				<link>https://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</link>
 				<guid isPermaLink="true">https://apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html</guid>
-			</item><lastBuildDate>Mon, 20 Dec 2021 09:01:15 -0500</lastBuildDate>
+			</item><lastBuildDate>Sat, 25 Dec 2021 11:47:29 -0500</lastBuildDate>
 	</channel>
 </rss>
