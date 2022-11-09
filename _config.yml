@@ -1,25 +1,5 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Apiman: Open Source API Management
-email: 
+title: 'Apiman: Open Source API Management'
+email:
 description: >- # this means to ignore newlines until "baseurl:"
    The Apiman project brings an open source development methodology to
    API Management, coupling a rich API design & configuration layer with
@@ -32,13 +12,13 @@ github_username:  apiman
 # Build settings
 error_mode: strict
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-archives
 
 sass:
   style: compressed
+#  sass_dir: _sass
 
 asciidoctor:
   base_dir: :docdir
@@ -51,13 +31,13 @@ asciidoctor:
 
     # https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
 jekyll-archives:
-  enabled: 
+  enabled:
     - tags
-  layouts: 
+  layouts:
     tag: tag-archive
   permalinks:
     tag: '/blog/tag/:name/'
-    
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

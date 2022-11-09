@@ -1,0 +1,18 @@
+- title: "Download"
+  url: "/download.html"
+
+#Add back in when GitHub Roadmap feature is released?
+#- title: "Roadmap"
+#  url: "/roadmap.html"
+
+- title: "Blog"
+  url: "/blog.html"
+
+- title: "Documentation"
+  url: "/docs.html"
+
+- title: "Community"
+  url: "/community.html"
+
+- title: "Support"
+  url: "/support.html"
