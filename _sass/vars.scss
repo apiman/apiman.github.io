@@ -4,5 +4,10 @@
   --apiman-red: #cc0000;
 }
 
-// Overriding default Bootstrap colour
+.navbar {
+  --bs-navbar-toggler-border-color: rgba(255,255,255,0.8);
+}
+
+// Could do this in CSS only now, it seems.
+// Overriding default Bootstrap colours
 $nav-link-color: white;

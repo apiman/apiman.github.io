@@ -1,16 +1,22 @@
 @import "vars";
 
 #apiman-navbar {
-  background-color: var(--apiman-bg-blue);
-  border-top: 1px solid red;
+  background: var(--apiman-bg-blue);
+  background: linear-gradient(180deg, rgba(36,52,70,1) 0%, rgba(36,74,102,1) 95%);
+  border-top: var(--apiman-red);
 }
 
-.nav-item a:hover {
-  background-color: var(--apiman-bg-blue-hover);
-  color: white;
-}
+.nav-item {
+  a {
+    color: white;
+  }
 
-.nav-item.active {
-  font-weight: bold;
-}
+  a:hover {
+    background-color: var(--apiman-bg-blue-hover);
+    color: white;
+  }
 
+  &.active {
+    font-weight: bold;
+  }
+}
