@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "Version 1.3.0.Final of apiman is released!"
+date: 2017-05-25 16:00:00 BST
+author: marc_savy
+tags: apiman release
+---
+:apiman-ig: https://apiman.gitbooks.io/apiman-installation-guide/
+:apiman-ug: https://apiman.gitbooks.io/apiman-user-guide/
+:apiman-dg: https://apiman.gitbooks.io/apiman-deployment-guide/
+:hardbreaks: false
+
+Last week we released apiman _1.3.0.Final_. It's been _rather_ a long while coming, but hopefully you'll be pleased with the improvements.
+
+This release has some important new features, a substantial number of bug-fixes, and marks the official release of the Apiman Vert.x Gateway.
+
+Importantly, this release has a lot of background work which has prepared the  the ground for the upcoming initial community integration with 3scale, as outlined in previous blogs.
+
+//<!--more-->
+
+== Where can I find more information?
+
+The release notes for this release can be found here:
+
+* https://red.ht/2q31DBP[Release notes for 1.3.0.Final]
+
+And of course, all of the standard sources of information have been updated:
+
+* https://www.apiman.io/[The apiman project site]
+* {apiman-ug}[Latest User Guide]
+* {apiman-ig}[Latest Installation Guide]
+
+== Highlights
+
+Just want to know about the good stuff? Let's have a brief look at some of the more important changes in this version.
+
+== Bug smashing galore
+
+A substantial number of bugs have been resolved footnote:[As usual, we probably forgot to create tickets for all of the bugs, so include "misc bugs splattered"]. If there was something _bugging_ you, then it's worth trying out 1.3.0.Final to see whether your issue has been fixed.
+
+Otherwise, please do consider filing an issue!
+
+== Vert.x comes to the fore
+
+The Vert.x Apiman Gateway has finally left the _tech preview_ stable and been reworked and polished to the point that it has been officially released. It is now the recommended platform for those who need high performance.
+
+For those that aren't familiar with Vert.x, it's an asynchronous, reactive toolkit that provides a high throughput and low latency; it's a perfect match for the apiman gateway.
+
+Please https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html[try it out] and https://lists.jboss.org/mailman/listinfo/apiman-user[let us know what you think]! We hope you'll be impressed.
+
+Out of the box there are Elasticsearch and <<Headless registry,Headless>> configuration examples. It also uses an asynchronous log4j2 configuration which should provide excellent performance footnote:[Usual caveats with logging apply.].
+
+Here's a really quick way to try it out.
+
+. Download and run the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/servlet/install.html#_installing_in_wildfly_10[WildFly 10 quickstart].
+. Download and run the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html[Vert.x Gateway distro].
+. Add your new gateway through the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/install.html[Apiman UI].
+. Start publishing stuff! 🎉
+
+TIP: This is a gateway only implementation. It is paired with any Servlet-based Apiman Manager. Just add it through the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/install.html[Apiman UI].
+
+== Headless registry
+
+https://youtu.be/5rAOyh7YmEc?t=12s[Feeling headless?] footnote:[Sorry.]. We've introduced an _immutable headless registry_ that loads gateway configuration as JSON from a local or remote location (file, http or https).
+
+It even https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html#_required_parameters[supports authentication], if you need to secure that configuration.
+
+At the moment it's probably for more advanced users, as some JSON-wrangling is required, but it's a really powerful feature that will suit many people's immutable architectures. Some of users don't actually need the apiman UI or Manager; as there is no human interaction aspects to their workflow (e.g. B2B scenarios, monitoring, managed through other systems, etc).
+
+To find out more:
+
+* Look at the https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html[Headless Registry documentation], which contains extensive explanation of how to build your JSON.
+* Then try out the Headless ES  https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_elasticsearch[configuration] that ships with https://www.apiman.io/latest/download.html#vertx[the distro].
+
+== New documentation
+
+Given the new additions, documentation has been reworked (excluding developer guide) and is now using GitBook. We welcome your critique on whether this is an improvement versus the older documentation and you can still figure out what you need.
+
+* {apiman-ig}[Apiman Installation Guide]
+* {apiman-ug}[Apiman User Guide]
+* {apiman-dg}[Apiman Deployment Guide]
+
+== Thank you!
+
+There's lots more _good stuff_ to come and with much greater regularity, so stay tuned (releases, blogs, plugins, etc).
+
+Thanks to the community members who have made contributions to this release via code, filing bugs, and even some in-person meetings.
+
+Finally, it's my pleasure to be doing my first release announcement for apiman, having stepped up to tech lead for the apiman gateway.

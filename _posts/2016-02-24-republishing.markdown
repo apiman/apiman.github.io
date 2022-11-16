@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "Re-Publishing Your API(s)"
+date:   2016-02-24 09:30:00
+author: eric_wittmann
+tags: apiman 1.2.x gateway 
+---
+
+An early design decision we made in apiman was to not allow APIs to be
+re-published to the Gateway.  The reasoning was that Client Apps may have
+established Contracts with the API, and thus have agreed to specific terms
+and conditions (whether implicit or explicit).  Therefore, we shouldn't 
+allow the API provider to modify those terms and re-publish the API, as it
+may violate the agreement.
+
+However, we later added the concept of a Public API, which allows any 
+client to invoke it without first creating a Contract.  It is clear that
+API providers should be able to re-publish a Public API (presumably after
+changing the API's configuration).
+
+<!--more-->
+
+## When Can I Re-Publish?
+An API can be re-published to the Gateway when the following criteria is
+met:
+
+* It is a Public API
+* The API is in the *Published* state
+* The API has been modified in some way
+
+Additionally, if the Public API has been retired (is currently in the 
+*Retired* state) then the user can Re-Publish it regardless of whether
+it has since been modified.
+
+## How Do I Re-Publish?
+When an API meets the above criteria, a **Re-Publish** button will be 
+available in the user interface (right where the "Publish" button is
+typically located).  
+
+![Image: Republish Button](/blog/images/2016-02-24/re-publish.png)
+
+As soon as you're comfortable with the changes you've made to your API, 
+simply click the button and you should be all set!
+
+## Why Is There Still Versioning?
+This feature does not take the place of API versioning.  Versioning
+is still very important because you may want to publish multiple 
+versions of the same API at the same time (for example, if you 
+actually need to support multiple versions of a live API).  In 
+addition, if an API is not public, then you will still need to 
+use versioning if you want to change the policy configuration for
+your API.
+
+## Conclusion
+As always, a goal of apiman is to make the system as easy to use as
+possible, while still being useful and powerful.  We think that this
+approach is a reasonable compromise.  You still can't re-publish an
+API if there are established Contracts with Client Apps, but if you're
+only using Public APIs, then there's no reason to prevent changes from
+being republished!
+
+/post

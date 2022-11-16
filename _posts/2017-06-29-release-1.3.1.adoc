@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "Version 1.3.1.Final of apiman is released!"
+date: 2017-06-29 17:00:00 BST
+author: marc_savy
+tags: apiman release
+---
+:apiman-ig: https://apiman.gitbooks.io/apiman-installation-guide/
+:apiman-ug: https://apiman.gitbooks.io/apiman-user-guide/
+:apiman-dg: https://apiman.gitbooks.io/apiman-deployment-guide/
+:apiman-headless: https://www.apiman.io/latest/download.html#headless
+:install-3scale: https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/vertx/download.html#_3scale_immutable
+:reg-3scale: https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/3scale_immutable.html
+
+
+I'm delighted to announce that Apiman 1.3.1.Final is out, with several notable new features and improvements footnote:[The more eagle-eyed amongst you will no doubt have noticed that most of this was actually released a few days ago.].
+
+// <!--more-->
+
+== 3scale-related functionality
+
+You can now use the Apiman Gateway with the 3scale Manager/UI as an alternative to the Apiman Manager/UI! footnote:[You will need 3scale SaaS or on-prem for this to work.]
+
+Using an overlay file you can augment your 3scale APIs with apiman policies. There will hopefully be an opportunity for a more cohesive and deeper integration with 3scale in the near future. Your feedback and demand will drive this; I hope as many people try it out this functionality as possible!
+
+The new 3scale registry and plugin can perform all of the usual 3scale functions, such as auth, reporting, metrics, and rate-limiting; with the addition breadth of apiman's policies and pluggable functionality. The one exception is that 3scale OAuth is currently not implemented (apiman's OAuth plugins work as normal).
+
+We'll be providing some additional blogposts over the coming days to demonstrate the new features in a more digestible form, but the documentation is available already. Just {apiman-headless}[download the _3scale & Headless_ Vert.x distro] and follow the instructions:
+
+* {reg-3scale}[3scale quickstart configuration]
+* {install-3scale}[3scale Immutable Registry & Components]
+
+Expect some tooling soon to make generating JSON configurations for headless and 3scale registries easier!
+
+== Bug-fixes & Improvements
+
+A good number of bugs were squashed in this release. Please try it out and let us know if your issues persist (if you had any!).
+
+The HTTP codes returned in error cases have been improved, including connection issues (e.g. DNS, timeouts, etc).  You should no longer get HTTP 500 for these, and the error messages should be more meaningful. Let us know if there still seem to be issues in this area.
+
+There were a few issues with TLS on the Vert.x gateway that have been improved (e.g. devmode was not working properly). In the near future we'll look to provide some sort of self-signed certificate generation so that TLS can be configured OOTB. As an added bonus, if you provide ALPN Boot, then HTTP/2 should just work footnote:[More in a blog soon.].
+
+The release notes for this release can be found here:
+
+* https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12334619[Release notes for 1.3.1.Final]
+
+== You can help!
+
+Please try the new functionality and let us know how you find it. Your demand and feedback is extremely important to the future direction of this project.
+
+== Next
+
+Expect another release very soon with more functionality, configurability and tooling.
+
+Some users have reported issues with the new GitBook documentation, so we'll be looking to improve this.

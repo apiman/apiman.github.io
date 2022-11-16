@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Apiman 2.1.5.Final has been released - please update if you're on an old version"
+date: 2021-12-20 14:00:00 GMT
+author: marc_savy
+tags: apiman release
+---
+
+Hi, Apiman fans!
+
+I hope you're all well, and Season's Greetings to those of you who celebrate Christmas 🎄. 
+
+I'd like to remind Apiman users to consider updating to Apiman 2.1.5 promptly, as it contains fixes for the now well-known log4j2 bugs. 
+<!--more-->
+
+You can download Apiman from all the usual official places: [Apiman Downloads](https://www.apiman.io/latest/download.html) or the [GitHub release](https://github.com/apiman/apiman/releases/tag/2.1.5.Final)
+
+[If you have questions about this release, please join us on GitHub Discussions](https://github.com/apiman/apiman/discussions/1722)

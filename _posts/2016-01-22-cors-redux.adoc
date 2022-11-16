@@ -1,0 +1,226 @@
+---
+layout: post
+title:  "CORS? Of Course!"
+date:   2016-01-22 12:00:00
+author: marc_savy
+tags: security plugin policy cors 1.2.x
+oldUrl: 2015-07-02-cors
+---
+
+If you're looking to define https://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] that should be perfect for the job.
+
+For those https://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke an API's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.
+
+However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let's user agent know what's allowed.
+
+//<!--more-->
+
+== Preparation
+
+If you have the https://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
+
+```ShellSession
+cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.2.0.Final
+mvn clean install
+mvn wildfly:deploy
+```
+
+Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!], navigate to the *manage plugins* page:
+
+image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
+
+image::/blog/images/2016-01-09/available-plugins.png[alt="Select CORS plugin from the available plugins list"]
+
+Tab to *Available Plugins*, select *Install* for _CORS Policy Plugin_, confirm the plugin coordinates, and click *Add Plugin*.
+
+== Let's give it a go
+
+For the purposes of this blogpost we'll contrive a scenario that allows us to demonstrate a variety of the plugin's functionality. However, if your precise use-case isn't covered here, you should still investigate the settings page, as a raft of configuration options are available that will likely achieve what you need.
+
+Create an *Organization* called *_Foo_*, then create an *API* called *_Bar_*. Set your API's *Implementation* URL to be `http://127.0.0.1:8080/apiman-echo`, and select *_Rest_* as the type. Move to the *Plans* tab and tick *_Make this API public_*.
+
+Next, move to the *Policies* tab, click *_Add Policy_* and select *_CORS Policy_* from the dropdown list.
+
+=== Plugin settings
+
+Let's configure the settings as follows:
+
+[cols="25h,20a,55a", options="header"]
+|===
+|Option
+|Value(s)
+|Explanation
+
+|Terminate on CORS error
+|`true`
+|We'll not hit the backend if there's a CORS validation error. In some instances, a non-preflighted CORS request would otherwise cause a real invocation of the API whose results would be ignored by the user agent.
+
+|https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Origin[Access-Control-Allow-Origin]
+|`http://newcastle.local`
+|We're going to use cURL to simulate a CORS request from this allowed origin.
+
+|https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Expose-Headers[Access-Control-Expose-Headers]
+|`Response-Counter`
+|By default CORS will only allow a set of https://www.w3.org/TR/cors/#simple-header[simple headers] to be exposed in a _response_ to the user agent, so we'll set this additional one we want to see.
+
+|https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Headers[Access-Control-Allow-Headers]
+|`X-APIMAN-EXCELLENT`
+|By default CORS only allows _requests_ to include a set of basic headers, and we want our API to be able to see the value of our _X-APIMAN-EXCELLENT_ header, so we specify it as allowed here.
+
+|https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Allow-Methods[Access-Control-Allow-Methods]
+|`TRACE`
+|By default, only `GET`, `HEAD`, `POST` are allowed verbs. We want to use `TRACE`, so we add it to the list.
+
+|https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Access-Control-Max-Age[Access-Control-Max-Age]
+|9001
+|How long the browser should cache your CORS policy for (to avoid repeated preflight requests).
+
+|===
+
+After saving you'll see it's description says something along the lines of:
+
+> _Cross-origin requests from  1  origin(s) will be permitted upon satisfying method, header and credential constraints.  Denied requests will be terminated.  Preflight requests will be cached for 9001 delta seconds._
+
+Assuming you've saved everything, hit *Publish* and we'll be ready to test.
+
+=== Access Control to Major Tom
+
+Generally, it's the job of the user agent to set the `Origin` header, such as a browser or mobile client. However, we'll be using cURL to simulate a variety of scenarios so we can test things out without actually needing to set up a load of different domains.
+
+==== Unwelcome guests
+
+===== No ticket to fly
+
+In our first example, we'll set an `Origin` that we didn't permit:
+
+```ShellSession
+curl -k -v -H 'Origin: http://panacalty.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+```
+
+Here's what comes back:
+
+```json
+{
+   "message" : "CORS: Origin not permitted.",
+   "headers" : {
+      "Access-Control-Allow-Origin" : "",
+      "Access-Control-Expose-Headers" : "Response-Counter"
+   },
+   "responseCode" : 400,
+   "type" : "Authorization",
+   "failureCode" : 400
+}
+```
+
+Notice that we were given the thumbs down without the API ever being hit; for most use cases this is a good thing, as it avoids unnecessary load on a API where the user agent is going to throw away the response anyway.
+
+===== Not got the head(er) for it
+
+Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we'll try to make a request with a header that we've not allowed: `X-SECRET`.
+
+```ShellSession
+curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Headers: X-SECRET' 'Access-Control-Request-Method: TRACE' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+```
+
+Correctly, CORS turned the preflight request down:
+
+```json
+{
+    "type": "Authorization",
+    "failureCode": 400,
+    "responseCode": 400,
+    "message": "CORS: Requested header not allowed",
+    "headers": {
+        "Access-Control-Max-Age": "9001"
+    }
+}
+```
+
+The same goes for Request-Method (verb), and of course, whether the CORS request itself is valid.
+
+==== Playing by the rules
+
+TIP: When `Host` and `Origin` are equal, a request will automatically be allowed, as it is a _non-CORS_ request. Some browsers still make the superfluous CORS requests anyway.
+
+===== Keep it simple
+
+Let's set up a request that finally is playing by the parameters we configured earlier:
+
+```ShellSession
+curl -X GET -k -v -H 'Origin: http://newcastle.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+> GET /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
+> User-Agent: curl/7.37.1
+> Host: 127.0.0.1:8443
+> Accept: */*
+> Origin: http://newcastle.local
+>
+< HTTP/1.1 200 OK
+< X-Powered-By: Undertow/1
+< Server: WildFly/8
+< Access-Control-Expose-Headers: Response-Counter
+< Response-Counter: 1
+< Date: Sat, 13 Jun 2015 16:06:32 GMT
+< Connection: keep-alive
+< Access-Control-Allow-Origin: http://newcastle.local
+< Content-Type: application/json
+< Content-Length: 345
+<
+```
+
+It works: excellent! Here's our response body:
+
+```json
+{
+  "method" : "GET",
+  "resource" : "/apiman-echo",
+  "uri" : "/apiman-echo",
+  "headers" : {
+    "Host" : "127.0.0.1:8080",
+    "User-Agent" : "curl/7.37.1",
+    "Accept" : "*/*",
+    "Connection" : "keep-alive",
+    "Cache-Control" : "no-cache",
+    "Pragma" : "no-cache"
+  }
+}
+```
+
+You can see that the `Response-Counter` header is in our list of headers that can be exposed. If we were building a Javascript XHR then the browser would allow you to see the `Response-Counter` but not other non-standard fields such as `X-Powered-By`.
+
+===== Preflight checks
+
+Let's do something a bit more complex that requires a *preflight request*, which is essentially a pre-check to see whether our request is acceptable before attempting it for real. We'll set the headers `Access-Control-Request-Method` to `PATCH` and `Access-Control-Request-Headers` to `X-APIMAN-EXCELLENT`. Again, we're using a permitted origin.
+
+To simulate it using cURL, let's do:
+
+```ShellSession
+curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Method: PATCH' -H 'Access-Control-Request-Headers: X-APIMAN-EXCELLENT' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
+> OPTIONS /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
+> User-Agent: curl/7.37.1
+> Host: 127.0.0.1:8443
+> Accept: */*
+> Origin: http://newcastle.local
+> Access-Control-Request-Method: PATCH
+> Access-Control-Request-Headers: X-APIMAN-EXCELLENT
+>
+< HTTP/1.1 200 OK
+< Access-Control-Allow-Headers: X-APIMAN-EXCELLENT
+< Access-Control-Expose-Headers: Response-Counter
+< Access-Control-Allow-Origin: http://newcastle.local
+< Access-Control-Max-Age: 9001
+< Access-Control-Allow-Methods: PATCH
+<
+```
+
+===== Liftoff
+
+As you can see, the plugin gave us permission to continue on and make our real request with that origin, header and verb. In the real world, the browser would go ahead and do exactly that.
+
+Notice that the preflight requests never go through to the API itself, they are CORS specific and the response is generated on the gateway by the CORS policy.
+
+== In conclusion...
+
+We built up a CORS configuration and tested out its functionality. Thankfully, it was pretty easy!

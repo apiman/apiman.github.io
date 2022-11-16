@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "Version 1.3.4.Final of Apiman is released!"
+date: 2018-04-27 14:10:00 BST
+author: marc_savy
+tags: apiman release
+---
+
+Apiman 1.3.4.Final is out and ready for you all to try.
+
+You may be wondering where 1.3.2.Final and 1.3.3.Final are; early community testing found some regressions, so we skipped formally announcing those.
+
+== Download 1.3.4.Final
+
+* link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-vertx-1.3.4.Final.zip[Vert.x (Gateway Only)]
+
+
+* link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly10-1.3.4.Final-overlay.zip[WildFly 10 or EAP 7.1]
+
+* link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-wildfly11-1.3.4.Final-overlay.zip[WildFly 11]
+
+* link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-eap7-1.3.4.Final-overlay.zip[EAP 7]
+
+* link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-tomcat8-1.3.4.Final-overlay.zip[Tomcat 8+]
+
+*  Or directly from https://github.com/apiman/apiman/releases/tag/apiman-1.3.4.Final[GitHub] or https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.apiman%22%20AND%20v%3A%221.3.4.Final%22[Maven Central] if you prefer (faster in some regions).
+
+== Tonnes of bug-fixes
+
+If you had bugs, please try 1.3.4.Final. There's a reasonable chance we addressed them.
+
+This includes issues such as: same-key headers being handled improperly in the Servlet edition; a variety of config and UI bugs; import-export issues; Vert.x config and connection issues.
+
+If you still have problems, then please let us know on the https://lists.jboss.org/mailman/listinfo/apiman-user[mailing list] or via filing a bug.
+
+== List entities directly on the Gateway API
+
+We extended the Apiman Gateway API to allow you to list entities directly. This is useful for link:https://github.com/apiman/apiman-cli[our CLI] (which will soon be bundled with Apiman releases).
+
+We'll have some more formal documentation shortly, but a short summary:
+
+TIP: The credentials to access the Apiman Gateway API are likely different than the UI. The quickstart demo is `apimanager/apiman123!`.
+
+Example:
+
+```shell
+$ curl -k 'https://apimanager:apiman123!@localhost:8443/apiman-gateway-api/organizations'
+
+["FooOrganization", "OtherOrg"]
+```
+
+List Organizations:: `apiman-gateway-api/organizations`
+
+Returns: Array of Organization IDs.
+
+List all APIs in Organization:: `api-gateway-api/organization/{Organization ID}/apis`
+
+Returns: Array of API IDs.
+
+List all Api Versions in Organization:: `api-gateway-api/organization/{Organization ID}/apis/{API Version}`
+
+Returns: Array of https://github.com/apiman/apiman/blob/master/gateway/engine/beans/src/main/java/io/apiman/gateway/engine/beans/Api.java[API Version] objects.
+
+List all Clients in Organization:: `api-gateway-api/organization/{organizationId}/clients`
+
+Returns: Array of Client IDs.
+
+List all Client Versions in Organization:: `api-gateway-api/organization/{Organization ID}/clients/{Client Version}`
+
+Returns: Array of https://github.com/apiman/apiman/blob/master/gateway/engine/beans/src/main/java/io/apiman/gateway/engine/beans/Api.java[Client Version] objects.
+
+== WildFly 11
+
+We're now officially distributing a WildFly 11 overlay, with a newer version of Keycloak.
+
+There are corresponding Docker quickstart images available.
+
+== Master Docker builds
+
+As a component of our CI, we are now producing Docker builds of all successful builds of Apiman's master branch. So, if you need to test something on the bleeding edge, it should be much easier now.
+
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly11:master
+
+Latest always refers to the latest *release* (e.g 1.3.4.Final), whilst master refers to the latest successful HEAD of master and hence moves frequently.
+
+== CLI work
+
+Working with the community, we've been successfully developing a large amount of https://github.com/apiman/apiman-cli[CLI functionality]. We expect this to be bundled with an Apiman release soon.
+
+One key feature will be the ability to apply YAML declarations against the Apiman Manager or Apiman Gateway, allowing users to set the state of their system in a more static way.
+
+This will be in addition to traditional CLI functions to do one thing at a time.
+
+Separate blog-post on that soon.
+
+== Apiman plans to move to Elasticsearch 5.x. Give your feedback.
+
+The next planned release of Apiman will move Elasticsearch to 5.x. We plan to drop ES 1.x support. If an upgrade/migration would be particularly problematic, please let us know on the mailing list or open a ticket.
+
+The work on this is nearing completion, so feedback now would be valuable.
+
+== Release Notes
+
+Note that some issues resolved may not have been assigned tickets, so this is a partial set.
+
+* https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12335096[Release notes for 1.3.3.Final]
+
+* https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314121&version=12337455[Release notes for 1.3.4.Final]
+
+== Thanks to the Community
+
+Thanks to the community for their valuable contributions to this release. We had a meaningful number of features, bug reports, and bug-fixes.

@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "Performance tuning the Apiman Gateway (WildFly, EAP, Tomcat)"
+date: 2017-05-15 16:00:00 BST
+author: marc_savy
+tags: apiman gateway performance
+---
+
+In this blog, we'll outline a few simple tweaks you can make to improve the performance of the Apiman Gateway when running on servlet platforms (WildFly, EAP, Tomcat, etc).
+
+Most of the focus will be on WildFly and EAP, but others will be more broadly applicable.
+
+Naturally, these are very rough pointers and should merely be hints for areas that could prove fruitful. There's no one-size-fits all approach to tuning, so always profile and keep tweaking to find the best settings for your workloads.
+
+//<!--more-->
+
+== Increase maximum allowed connections
+
+At the time of publishing (1.3.0.Final), the OkHttpClient max connections setting can be increased by setting the `http.maxConnections` system property footnote:[This option is valid as of OkHttpClient 2.4.0, and is changed in later versions. We will endeavour to provide backwards compatibility when apiman upgrades.]:
+
+`-Dhttp.maxConnections=100`
+
+This should increase the number of connections that can be handled between apiman and the backend API.
+
+=== WildFly/EAP
+
+You can also increase the WildFly/EAP connection limit. In your `standalone.xml`, look for the Undertow subsystem, and add a `request-limit` to the `filters` section.
+
+```xml
+<request-limit name="limit-connections" max-concurrent-requests="15000" queue-size="100"/>
+```
+
+Here are some config examples:
+
+* https://github.com/wildfly/wildfly/blob/10.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-3.1.xml#L110[WildFly 10]
+* https://github.com/wildfly/wildfly/blob/9.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-2.0.xml#L104[WildFly 9]
+* https://github.com/wildfly/wildfly/blob/8.x/undertow/src/test/resources/org/wildfly/extension/undertow/undertow-1.2.xml#L101[WildFly 8]
+
+This should improve the number of connections that can be handled between the client (caller) and the apiman gateway.
+
+=== Tomcat
+
+For Tomcat, the equivalent options appear to be `maxConnections` and `maxThreads`. https://tomcat.apache.org/tomcat-9.0-doc/config/http.html#Standard_Implementation[Refer to the documentation for more].
+
+== Some community-contributed IO tweaks
+
+Community member Harry Trinta https://lists.jboss.org/pipermail/apiman-user/2017-January/000758.html[shared some tweaks to IO settings] he found useful for WildFly 10 when running Apiman at high load.
+
+If you're seeing broken pipe errors or dropped connections, it may be worth tweaking these parameters.
+
+== The usual JVM and OS tweaks
+
+This is an entire speciality in of itself and out of scope for t his brief blog, but it's worth mentioning in passing. You should run some profiling on your workloads to see whether various JVM tweaks could improve your performance.
+
+In your list of things to try should be heap size, garbage collector and collector settings footnote:[Anyone want to try Shenandoah GC :-)?]. It is also likely worth evaluating your system as a whole; do you have other processes on the system which may be https://github.com/giltene/jHiccup[causing hiccups]; do you have enough file handles available; have you tweaked your protocol settings?
+
+== Use the Vert.x gateway implementation
+
+To get superior performance, consider using the https://apiman.gitbooks.io/apiman-installation-guide/content/installation-guide/vertx/download.html[Vert.x gateway distribution]. Vert.x is an async platform, optimised for high-throughput scenarios and is ideally suited to the apiman gateway.
+
+// == Logging
+//
+// The one-size-fits-all logging implementation that comes OOTB is quite expensive. Switch to a [non-default logging implementation, such as log4j2, JBoss logging, etc, and consider using an _asynchronous_ logging setup.

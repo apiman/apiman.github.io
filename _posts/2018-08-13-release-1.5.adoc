@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Version 1.5 of Apiman is released!"
+date: 2018-08-13 23:00:00 BST
+author: marc_savy
+tags: apiman release
+---
+
+I'm happy to announce that Apiman 1.5.1.Final is out.
+
+It contains an important new policy feature: the ability to modify policy failures before they are returned to users (even if they are thrown by another policy).
+
+This means that policies such as CORS can add their headers, irrespective of whether the request was successful or not (e.g. due to rate limiting).
+
+//<!--more-->
+
+== Failure Processing
+
+When a policy throws a failure (e.g. rate limit reached), previously this caused an immediate termination that bypassed all other policies. **Failure processing** was requested in the community to allow policies to modify failures emitted by other policies, such that headers can be set.
+
+To implement this, you simply need to override the default method `processFailure` in `IPolicy`:
+
+```java
+default void processFailure(PolicyFailure failure, IPolicyContext context, Object config,  IPolicyFailureChain chain) { ... }
+```
+
+Or, if you're using `AbstractMappedPolicy`, then you should override `doProcessFailure`:
+
+```java
+protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, C config, IPolicyFailureChain chain) { ... }
+```
+
+For example, in the https://github.com/msavy/apiman-plugins/blob/fd2aa46c62a60c7450a3777527f37723908e0865/cors-policy/src/main/java/io/apiman/plugins/cors_policy/CorsPolicy.java#L114-L125[CORS plugin] it simply adds the headers:
+
+```java
+@Override
+ protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, CorsConfigBean config,
+         IPolicyFailureChain chain) {
+
+     CaseInsensitiveStringMultiMap corsHeaders = getResponseHeaders(context);
+
+     if(corsHeaders != EMPTY_MAP) {
+         failure.getHeaders().putAll(corsHeaders.toMap());
+     }
+
+     chain.doFailure(failure);
+ }
+```
+
+Meaning that even if a rate limit is hit, then the headers will still be added.
+
+If you experience any issues, please report them to us via https://issues.jboss.org/browse/APIMAN/[JIRA], https://github.com/apiman/apiman[GitHub], or https://lists.jboss.org/mailman/listinfo/apiman-user[the mailing list].
+
+== Download 1.5.1.Final
+
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-vertx-1.5.1.Final.zip[Vert.x (Gateway Only)]
+
+
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly10-1.5.1.Final-overlay.zip[WildFly 10 or EAP 7.1]
+
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly11-1.5.1.Final-overlay.zip[WildFly 11]
+
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-eap7-1.5.1.Final-overlay.zip[EAP 7]
+
+* link:https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-tomcat8-1.5.1.Final-overlay.zip[Tomcat 8+]
