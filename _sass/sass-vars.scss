@@ -1,14 +1,3 @@
-:root {
-  --apiman-bg-blue: #243446;
-  --apiman-bg-blue-hover: #3d5e81;
-  --apiman-red: #cc0000;
-}
-
-.navbar {
-  --bs-navbar-toggler-border-color: rgba(255,255,255,0.8);
-}
-
-// Could do this in CSS only now, it seems.
-// Overriding default Bootstrap colours
 $nav-link-color: white;
 $font-family-base: "Open Sans";
+$primary: rgb(36, 52, 70);

@@ -1,3 +1,32 @@
+.mw-900 {
+  max-width: 900px;
+}
+
+.mw-950 {
+  max-width: 950px;
+}
+
 .mw-1200 {
   max-width: 1200px;
+}
+
+.mw-1350 {
+  max-width: 1350px;
+}
+
+.skinny-separator {
+  height: 5px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: var(--apiman-title-secondary);
+
+  &:hover {
+    color: var(--apiman-bg-blue-hover);
+    text-decoration: underline;
+    text-decoration-color: lightgrey;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.1rem;
+  }
 }

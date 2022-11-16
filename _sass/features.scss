@@ -1,0 +1,29 @@
+.feat-row {
+    border-top: 1px solid var(--apiman-light-faded);
+    &:last-child {
+        border-bottom: 1px solid var(--apiman-light-faded);
+    }
+}
+
+// Remove margin from last para in feature content block to avoid inconsistent spacing.
+.feature-content {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.section-separator {
+    height: 1.5em;
+    width: 6em;
+    background-repeat: no-repeat;
+    border: 0;
+    background-image: url(/assets/images/bpl-section-divider-stars.svg);
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 60%;
+    // Hide the last one on each page
+    &:last-of-type {
+        display: none;
+    }
+}
+

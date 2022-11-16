@@ -1,0 +1,19 @@
+- title: GitHub
+  icon: 'bi bi-github'
+  url: 'https://www.github.com/apiman/apiman'
+
+- title: Found an Issue?
+  icon: 'bi bi-bug'
+  url: 'https://www.github.com/apiman/apiman/issues'
+
+- title: Discussions
+  icon: 'bi bi-chat-left-text'
+  url: 'https://github.com/orgs/apiman/discussions'
+
+- title: Twitter
+  icon: 'bi bi-twitter'
+  url: 'https://www.twitter.com/apiman_io'
+
+- title: Apiman Plugins
+  icon: 'bi bi-plugin'
+  url: 'https://www.github.com/apiman/apiman-plugins'

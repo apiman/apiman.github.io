@@ -1,4 +1,4 @@
 ---
-layout: index
-title: Open Source API Management
+layout: features
+title: Apiman high-level feature summary
 ---

@@ -1,8 +1,13 @@
 ---
 ---
 
+// Sass vars needs to go before bootstrap import
+@import "sass-vars.scss";
 @import "bootstrap-5.2.2/scss/bootstrap.scss";
-@import "vars.scss";
+// CSS vars should be after
+@import "css-vars.scss";
 @import "base.scss";
 @import "navbar.scss";
 @import "footer.scss";
+@import "index.scss";
+@import "features.scss";

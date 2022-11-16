@@ -1,0 +1,40 @@
+.main-title {
+  font-size: 2.2em;
+  font-weight: 300;
+}
+
+#apiman-hero-container-outer {
+  background: url("/assets/images/bpl-bg-pattern-apiman.png"), linear-gradient(180deg, rgba(238,240,241,1) 0%, rgba(238,240,255,1) 100%);
+  background-size: 2.5%;
+  padding: 1.5em;
+}
+
+#logo-container {
+  justify-content: center;
+}
+
+#apiman-hero-logo-mob {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apiman-hero-logo {
+  height: 200px;
+  @media (min-width: 768px) {
+    height: unset;
+    width: 90%;
+  }
+}
+
+// Remove excess padding from last paragraph in blog item cards
+.blog-item {
+  .card-body  {
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bg-white {
+  background-color: white;
+}

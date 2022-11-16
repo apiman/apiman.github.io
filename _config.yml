@@ -38,6 +38,17 @@ jekyll-archives:
   permalinks:
     tag: '/blog/tag/:name/'
 
+excerpt_separator: '<!--more-->'
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: '/blog/:title/'
+
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -1,6 +1,98 @@
 ---
 layout: base
-title: Open Source API Management
 ---
 
-Hello, everyone!
+<div class="container-fluid pb-2" id="apiman-hero-container-outer">
+    <div class="container mw-1200 mx-auto px-md-2" id="apiman-hero-container-inner">
+        <div class="d-md-inline-flex">
+            <div id="logo-container" class="d-flex mb-2 m-md-0 justify-content-middle">
+                <img class="img-fluid d-md-none" src="/assets/images/inline-apiman-colour.svg" alt="Apiman logo" aria-label="Apiman" id="apiman-hero-logo-mob">
+                <img class="img-fluid d-none d-md-block" src="/assets/images/apiman_logo_final_color-01.svg" alt="Apiman logo" aria-label="Apiman" id="apiman-hero-logo">
+            </div>
+            <div class="ps-md-4">
+                <h1 class="main-title mt-0">Extensible Open Source API Management</h1>
+                <p class="lead fw-semibold">
+                    Apiman makes managing your APIs easy.
+                </p>
+                <p class="d-none d-md-block">
+                    With just a few clicks you can get Apiman running, putting a platform at your
+                    fingertips that covers the whole API Management lifecycle.
+                    Whether you want to offer existing APIs to external consumers in a secure way, or
+                    have a centralised location to discover and govern APIs, Apiman has you covered.
+                </p>
+                <p class="d-none d-md-block">
+                    But that's not all. Apiman is designed to be easy to customise, and you can implement
+                    your own functionality by writing simple Java plugins.
+                </p>
+                <div>
+                    {% assign latestVersion = site.data.releases.stable.version %}
+                    <!-- Jekyll doesn't like filenames with multiple dots in, so file 2.2.3.Final becomes -> 223Final which is ambiguous -->
+                    {% assign latestVersionMunged = latestVersion | replace: '.', '_' %}
+                    {% assign meta = site.data.release-metadata[latestVersionMunged] %}
+                    <a href="/download.html" class="btn btn-primary btn-lg">Get Started</a>
+                    <div class="text-small text-muted mt-2">
+                        The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Announcement/emphasis banner -->
+{% if site.data.indexBanner.display %}
+    {% assign banner = site.data.indexBanner %}
+<section class="bg-light mb-0 pt-3">
+    <div class="container-fluid mw-1200">
+        <div class="alert {{ banner.type }} m-0" role="alert">
+            {{ banner.message }}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Features -->
+
+
+
+<!-- Blogs -->
+{% assign blogs = site.posts %}
+<section class="bg-light pb-5 pt-3 text-secondary" data-pg-name="Apiman blog section" id="apiman-section-blog" title="Latest Apiman Blogs">
+    <div class="container-fluid mw-1200">
+        <h2>The latest from the Apiman Blog</h2>
+        <div class="justify-content-center row">
+            {%- for blog in blogs limit: 3 -%}
+                <div class="col-lg-4 col-md-6 pb-3 pt-3 blog-item">
+                    <div class="card h-100">
+                        <div class="card-body pb-0">
+                            <a href="{{ blog.url }}" class="header-link">
+                                <h3 class="card-title h5">{{ blog.title }}</h3>
+                            </a>
+                            <div class="card-text pt-2">
+                                {{ blog.excerpt | remove: '<p></p>' }}
+                            </div>
+                        </div>
+                        <div class="small text-muted text-end px-2 pb-1">
+                            <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
+                        </div>
+                        {% assign author = site.data.authors[blog.author] %}
+                        <div class="align-items-center card-footer d-flex justify-content-between small">
+                            <a target="_blank" rel="noopener" href="{{ author.github }}" class="align-items-center d-flex text-dark text-decoration-none">
+                                <img src="{{ author.avatar }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}">
+                                <div>
+                                    <h4 class="h6 mb-0">{{ author.name }}</h4>
+                                    <div class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+        <div data-pg-name="Read more centre div" id="read-more-blogs-holder" class="text-center">
+            <a href="/blog" class="btn btn-primary btn-lg">Read More</a>
+        </div>
+    </div>
+</section>
+
+
