@@ -429,12 +429,11 @@
       or denying requests, modify metadata such as headers and destination, and modifying the payload. 
     </p>
     
-    <p>In this section, we list the standard policies and plugins that ship with Apiman.</p> 
+    <p>In this section, we briefly list the standard policies and plugins that ship with Apiman.
+    Refer to the Apiman documentation for full information on functionality and configuration.</p> 
     
     <p>A key feature of Apiman is that you can create your own Apiman policies, and we welcome
-    contributions.</p>
-    
-    <p><a href="https://www.apiman.io/apiman-docs/core/stable/development/Guide.html#_plugins" target="_blank">Refer to our developer's guide for more.</a></p>
+    contributions. <a href="https://www.apiman.io/apiman-docs/core/stable/development/Guide.html#_plugins" target="_blank">Refer to our developer's guide for more.</a></p>
 
   features:
     - title: Authorization
@@ -531,9 +530,17 @@
 
     - title: Keycloak OAuth Policy Plugin
       icon: full
-      description: 'This plugin offers an OAuth2/JWT policy that leverages the Keycloak SSO platform as the identity and access provider.'
+      description: |
+        <p>This plugin offers an OAuth2/JWT authentication policy that leverages the Keycloak SSO platform as the identity and access provider.</p>
+        <p>Much of its functionality can actually be used by a wider range of SSO providers than just Keycloak.</p>
+        <p>Roles can be extracted and used with authorization policies, or injected into headers to pass to backend services</a>
 
-    - title: Log Headers Policy
+    - title: JWT Policy Plugin
+      icon: full
+      description: |
+        A simple generic JWT auth policy (try this is the full-fat Keycloak plugin does not work for you).
+
+    - title: Log Headers Policy Plugin
       icon: full
       description: | 
         A policy that logs the headers to std out. Useful to analyse inbound HTTP traffic  
@@ -550,7 +557,7 @@
       icon: partial
       description: 'This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.'
 
-    - title: Your Custom Policy
+    - title: Your Custom Policy Plugin
       icon: full
       description: |
         <p>You can implement your own custom policy plugin using Java.</p> 
@@ -559,7 +566,29 @@
         
         <p>See the <a href="#extensibility">extensibility</a> section.</p>
 
-#- title: API Discov
+- title: Identity and Access Management
+  id: idm-apiman
+  intro: |
+    For logging into Apiman Manager, Apiman Devportal, and managing access to the Apiman platform.
+    You can also use your IDM solution with some Apiman policies (e.g. OAuth2 policy), but this is not mandatory.
+
+  features:
+    - title: Keycloak
+      icon: full
+      description: | 
+        Apiman is supports <a href="https://www.keycloak.org" target="_blank">Keycloak IDM</a> out of the box. 
+        This allows a multitude of security, federation, SSO, and user management duties to be delegated to a specialist platform.
+
+    - title: Tomcat
+      icon: partial
+      description: |
+        Tomcat's simple auth mechanism is supported, but likely quite basic for real deployments.
+        You can substitute it with Keycloak.
+
+    - title: Your Favourite IDM
+      icon: roadmap
+      ticket: https://github.com/apiman/apiman/issues/2270
+
 #  id: apiman-metrics
 #  features:
 #    - title: Elasticsearch
