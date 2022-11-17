@@ -1,0 +1,6 @@
+// Bit of a hack as this is taken from font awesome free as an SVG instead of font icon.
+// I have manually set size as 1em/1em in the SVG itself.
+.bi-paper-plane::before {
+  content: url("/assets/images/paper-plane.svg");
+  display: inline-block !important;
+}

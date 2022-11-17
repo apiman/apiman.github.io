@@ -17,3 +17,7 @@
 - title: Apiman Plugins
   icon: 'bi bi-plugin'
   url: 'https://www.github.com/apiman/apiman-plugins'
+
+- title: Migration Guide
+  icon: 'bi bi-paper-plane'
+  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'

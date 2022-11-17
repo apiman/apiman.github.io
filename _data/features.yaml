@@ -2,7 +2,6 @@
   id: general-features
   features:
     - title: Standalone API Manager
-      id: standalone-api-manager
       icon: full
       description: |
         Apiman has a fully-featured API Manager that is decoupled from Apiman's API Gateways. 
@@ -17,7 +16,6 @@
         <p>See the <a href="#standard-policies">policies</a> and <a href="#extensibility">extensibility</a> sections.</p>
 
     - title: Policy Chain
-      id: policy-chain
       icon: full
       description: |
         Multiple policies are applied in an ordered chain defined by the user.
@@ -25,34 +23,29 @@
         It is also possible for policies to collaborate by passing messages to each other.
 
     - title: Plans
-      id: api-plans
       icon: full
       description: |
         Apiman supports multiple versioned plans, allowing you to offer the same APIs with multiple different levels of service.
         For example, different rate limits for <code>gold</code> vs <code>silver</code> plan.
 
     - title: Clients
-      id: clients
       icon: full
       description: |
         API consumers (Clients) can subscribe to multiple APIs and get their API keys, plus managing their client's lifecycle (e.g. breaking contracts).
 
     - title: API Documentation
-      id: api-docs
       icon: full
       description: |
         You can attach OpenAPI v2 or v3 schemas (or Swagger), amongst others.
         Rendered into HTML for API consumers in both the main Apiman Manager UI and the Developer Portal.
 
     - title: Multitenancy
-      id: multitenancy
       icon: full
       description: |
         Apiman is based around 'organizations', which are similar conceptually to a GitHub org.
         Users can create and join organizations, and be assigned fine-grained permissions within that org.
 
     - title: Roles & Permissions
-      id: roles-and-perms
       icon: full
       description: |
         <p>Apiman has a hybrid RBAC-ABAC system.</p>
@@ -63,21 +56,18 @@
         <p>Within an organization, Apiman users are assigned roles that grant them the permissions from that role.</p>
 
     - title: Exposing APIs Publicly
-      id: discoverability
       icon: full
       description: |
         APIs and plans can be exposed read-only to consumers who are not members of an organization. 
         Conceptually, this is similar to a GitHub public repo; people can read and clone, but not modify.
 
     - title: Public APIs (Keyless APIs)
-      id: public-APIs
       icon: full
       description: |
         Publish an API without an API key and plan. You can still apply policies directly to the API itself.
         This feature name is confusingly similar to the previous entry, but is functionally completely different.
 
     - title: Monetization
-      id: api-monetization
       icon: roadmap
       ticket: https://github.com/apiman/apiman/issues/2352
       description: |
@@ -85,7 +75,6 @@
         support currently for up-front billing or payment capture.</p>
 
     - title: Notifications
-      id: notifications
       icon: full
       description: |
         <p>In-browser/API notifications for a range of Apiman events, such as when an API signup needs approval, when someone signs up to an API, etc.
@@ -94,7 +83,6 @@
         Can be disabled.</p>
 
     - title: Email Notifications
-      id: email-notifications
       icon: full
       description: |
         A fully templated and i18n-compatible email notification system to send a range of important Apiman notifications (subset of those that appear in-browser).
@@ -102,7 +90,6 @@
         Can be disabled.
 
     - title: Apiman Events
-      id: apiman-events
       icon: full
       description: |
         <p>A new feature in 3.x, Apiman now publishes a range of events into an 
@@ -112,13 +99,11 @@
         <p>You can use Apiman events integrate with external systems, such as business rules engines.</p>
 
     - title: API Search/Discovery
-      id: api-discovery
       icon: partial
       description: |
         List and search for APIs published in Apiman, including by wildcard patterns (globally and per-organization).
 
     - title: API Registry
-      id: api-registry-basic
       icon: full
       ticket: https://github.com/apiman/apiman/issues/2336
       description: |
@@ -130,26 +115,22 @@
   id: api-lifecycle
   features:
     - title: Creation
-      id: api-ls-create
       icon: full
       description: |
         Draft your APIs without publishing them until you are ready.
 
     - title: Versioning
-      id: api-ls-versioning
       icon: full
       description: |
         Create multiple versions of APIs, Plan, and Clients.
         By default, versions are immutable (i.e. can't change policy configuration).
 
     - title: Multiple Envs
-      id: api-multiple-envs
       icon: full
       description: |
         Create and publish APIs to multiple environments, for example testing vs production.
 
     - title: Publication
-      id: api-publication
       icon: full
       description: |
         APIs can be published to one or more gateways/envs.
@@ -157,13 +138,11 @@
         API key.
 
     - title: Retirement
-      id: api-retirement
       icon: full
       description: |
         APIs can be retired by the API provider. Retirement revokes access for existing users, and no new subscriptions can be made.
 
     - title: Monitoring
-      id: api-monitoring
       icon: full
       description: |
         Apiman has simple in-built metrics and visualisations. 
@@ -171,7 +150,6 @@
         These are commonly combined with visualisation tools such as Kibana and Grafana to provide rich data insights.
 
     - title: Force Update Published Entities
-      id: force-update
       icon: roadmap
       ticket: https://github.com/apiman/apiman/issues/2353
       description: |
@@ -182,7 +160,6 @@
         such as updating endpoints or fixing config mistakes.</p>
 
     - title: API Signup Approval
-      id: api-signup-approval
       icon: full
       description: |
         <p>You can set APIs to require manual approval before a subscriber is allowed to use it.
@@ -191,7 +168,6 @@
         <p><a href="#apiman-events">Events are also emitted</a>, if you want to handle this automatically.</p>
 
     - title: API Mocking
-      id: api-mocking
       icon: roadmap
       ticket: https://github.com/apiman/apiman/issues/2337
       description: |
@@ -203,21 +179,18 @@
   id: api-gateway
   features:
     - title: Scalable
-      id: gw-scalable
       icon: full
       description: |
         Apiman gateways scale independently of the Apiman manager. 
         You can have as many gateways as you need in a group to handle your load.
 
     - title: Gateway Independence
-      id: gateway-independence
       icon: full
       description: |
         Apiman's gateways will continue functioning even if the Apiman Manager goes down.
         They can be configured to have different backing datastores, as well.
 
     - title: Multiple Gateway Clusters/Envs
-      id: multiple-gateway-clusters-envs
       icon: full
       description: |
         You can set up multiple logical groupings of gateways, which you can publish
@@ -225,20 +198,17 @@
         production environments or regional segregation.
 
     - title: Asynchronous
-      id: async-gw
       icon: full
       description: |
         The Apiman Gateway uses asynchronous patterns throughout its codebase, including policy and component implementations.
         When you use the Vert.x gateway, then you will get a fully asynchronous experience. 
 
     - title: Multiple Platforms
-      id: multiple-platforms
       icon: full
       description: |
         Apiman currently supports Vert.x, WildFly, and Tomcat. Best performance is achieved using Vert.x.
 
     - title: Embeddable
-      id: apiman-gateway-embeddable
       icon: full
       description: |
         Apiman Gateway can be directly embedded into a Java application by implementing a series of interfaces and components.
@@ -248,56 +218,48 @@
   id: devportal
   features:
     - title: Standalone Devportal
-      id: standalone-devportal
       icon: full
       description: |
         Standalone Angular application that can be deployed separately from the rest of Apiman.
         It just needs to be able to speak to the Apiman Manager API.
 
     - title: Skinning
-      id: css-customisation
       icon: full
       description: |
         A range of easy CSS customisations are available to make the devportal match 
         your organisation's look and feel, including colour palate and images.
 
     - title: Simple Content Customisation
-      id: simple-content-customisation
       icon: full
       description: |
         Simple JSON file-based customisations to change company names, custom links, custom footer,
         various standard text blocks such as legal prose, etc.
 
     - title: Explicit Publication
-      id: publish-to-portal
       icon: full
       description: |
         API providers can explicitly choose which APIs and plans to publish to the devportal, and hence
         can be seen by anonymous users. When a developer is logged in they can see everything their account is entitled to. 
 
     - title: User Segregation
-      id: user-segregation
       icon: full
       description: |
         Devportal users can be segregated from other Apiman users to limit what they are allowed to do in Apiman.
         Simply assign the user the <code>devportal</code> role in Keycloak.
 
     - title: API Marketplace
-      id: api-disc-and-featuring
       icon: full
       description: |
         APIs can be discovered via searching and lists.
         You can 'feature' an API to display it more prominently on the front page.
 
     - title: Markdown API Docs
-      id: api-markdown-docs
       icon: full
       description: |
         API publishers can provide markdown documentation, which will be rendered in the developer portal alongside rendered any API schema.
         This commonly used for code samples, example payloads, etc.
 
     - title: Custom Legal Prose / Terms & Conditions
-      id: custom-legal-prose
       icon: partial
       ticket: https://github.com/apiman/apiman/issues/1705
       description: |
@@ -309,14 +271,12 @@
   id: extensibility
   features:
     - title: Custom Policy Plugins
-      id: custom-policies
       icon: full
       description: |
         <p>Policies govern traffic transiting the Apiman gateway. For example, rate limiting, security, or header and payload manipulation.</p>
         <p>Using simple Java plugins, you can develop your own Apiman policies, enabling almost any kind functionality you can dream of, including schema-based UIs.</p>
 
     - title: Schema-based Policy UI
-      id: schema-ui
       icon: full
       description: |
         Developers can provide a JSON schema with their custom Apiman policies.
@@ -324,13 +284,11 @@
         Apiman will render the schema into a form, and validate the policy inputs as per your rules.
 
     - title: Policy Plugin Testing
-      id: plugin-testing
       icon: full
       description: |
         Apiman has a JUnit-based testing framework to allow robust testing of your custom logic.
 
     - title: Override Default Components
-      id: override-components
       icon: full
       description: |
         All Apiman's components can be replaced dynamically by user-provided plugin implementations simply by referencing your implementation in 
@@ -338,13 +296,11 @@
         For example, you could provide a custom rate-limiting component implementation.
 
     - title: Custom Components
-      id: custom-components
       icon: full
       description: |
         Using Apiman's standard plugin format, you can create new components and use them from your Apiman policies.
 
     - title: Dynamic Plugin Loading
-      id: dynamic-plugin-loading
       icon: full
       description: |
         All Apiman Plugins can be loaded dynamically at runtime, no restart is required.
@@ -352,13 +308,11 @@
         Component plugins are simply referenced directly in config by their URN.
 
     - title: Plugin Upgrades
-      id: plugin-upgrades
       icon: full
       description: |
         Apiman plugin policy versions can be upgraded via the API or Apiman Manager administration console.
 
     - title: Plugin Repository
-      id: plugin-repository
       icon: full
       description: |
         Apiman plugins can be loaded from (either automatically or via configuration):
@@ -371,7 +325,6 @@
         Local resolution can be useful for 'baking' plugins into containers in immutable architectures.
 
     - title: Custom API Registry Plugin
-      id: apiman-registry
       icon: full
       description: |
         <p>By implementing a simple interface, you can allow Apiman to search for and import APIs from external API registries.</p>
@@ -379,7 +332,6 @@
         allowing users to quickly import those APIs into Apiman with its implementation details pre-filled.</p>
 
     - title: Custom Metrics Plugin
-      id: custom-metrics
       icon: full
       description: |
         Apiman captures a rich set of metrics on traffic transiting the Apiman Gateways. 
@@ -389,44 +341,38 @@
   id: protocols
   features:
     - title: HTTP
-      id: proto-http
       icon: full
       description: |
         <p>Apiman is currently primarily an HTTP API gateway. For example, your RESTful Web API will work just fine.</p>    
         <p>Various protocols can run on top of HTTP, these should also work. Please let us know your results.</p>
 
     - title: SOAP over HTTP
-      id: soap-over-http
       icon: full
       description: |
         Set SOAP type in the implementation tab when defining your API in Apiman.
 
     - title: Websockets
-      id: proto-ws
       icon: partial
       description: |
         Apiman does not currently have explicit testing or support for Websockets, but we have been informed
         that certain setups will work (initial negotiation and handoff by HTTP, rest of connection out-of-band).
 
     - title: Raw TCP
-      id: proto-tcp-raw
       icon: unsupported
 
     - title: Raw UDP
-      id: proto-ucp-raw
       icon: unsupported
 
     - title: Messaging protocols
-      id: proto-messaging
       icon: unsupported
 
 - title: Standard Policies
   id: standard-policies
   intro: |
     <p>
-      Policies are the bread and butter of Apiman. Policies govern traffic passing through the 
-      Apiman gateway at runtime. They can perform a wide variety of actions, including permitting
-      or denying requests, modify metadata such as headers and destination, and modifying the payload. 
+      Policies are the bread and butter of Apiman, governing traffic passing through the
+      Apiman gateway at runtime. They perform a wide variety of actions, including permitting
+      or denying requests, modifying metadata (e.g. headers), and mutating the payload.
     </p>
     
     <p>In this section, we briefly list the standard policies and plugins that ship with Apiman.
@@ -437,14 +383,12 @@
 
   features:
     - title: Authorization
-      id: apiman-authorization
       icon: full
       description: |
         This policy enables fine grained authorization to API resources based on authenticated user roles. 
         This policy can be used to control precisely who (authenticated users) are allowed to access the API, at an arbitrarily fine-grained level.
 
     - title: BASIC Auth
-      id: apiman-basic-auth
       icon: full
       description: |
         This policy enables HTTP BASIC Authentication on an API.
@@ -452,49 +396,41 @@
 
 
     - title: Caching Resources
-      id: apiman-basic-auth
       icon: partial
       description: |
         Allows caching of API responses in the Gateway to reduce overall traffic to the back-end API.
         The Resource Caching Policy can cache requests based on their URL path, http method and specific status code.
 
     - title: Ignored Resources
-      id: apiman-basic-auth
       icon: full
       description: |
         The ignored resources policy type enables you to shield some of an API’s resources from being accessed, without blocking access to all the API’s resources.
 
     - title: IP Allowlist
-      id: apiman-basic-auth
       icon: full
       description: Allows access to an API’s resources based on the IP address of the client application.
 
     - title: IP Blocklist
-      id: apiman-basic-auth
       icon: full
       description: Blocks access to an API’s resources based on the IP address of the client application.
 
     - title: Quotas
-      id: apiman-rate-limiting
       icon: full
       description: |
         The Quota Policy type performs the same basic functionality as the Rate Limiting policy type, however, the intended use of this policy
         type is for less fine grained processing (e.g., 10,000 requests per month).
 
     - title: Transfer Quota
-      id: apiman-rate-limiting
       icon: full
       description: |
         Transfer Quota tracks the number of bytes transferred (either uploaded or downloaded) rather than the total number of requests made.
 
     - title: Rate Limiting
-      id: apiman-rate-limiting
       icon: full
       description: |
         The Rate Limiting Policy type governs the number of times requests are made to an API within a specified time period.
 
     - title: Time Restricted Access
-      id: apiman-rate-limiting
       icon: full
       description: |
         This policy is used to only allow access to an API during certain times.
@@ -566,11 +502,11 @@
         
         <p>See the <a href="#extensibility">extensibility</a> section.</p>
 
-- title: Identity and Access Management
-  id: idm-apiman
+- title: Identity & Access Management
+  id: iam
   intro: |
     For logging into Apiman Manager, Apiman Devportal, and managing access to the Apiman platform.
-    You can also use your IDM solution with some Apiman policies (e.g. OAuth2 policy), but this is not mandatory.
+    You can also use your IDM/IAM solution with some Apiman policies (e.g. OAuth2 policy), but this is not mandatory.
 
   features:
     - title: Keycloak
