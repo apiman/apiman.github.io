@@ -57,13 +57,23 @@ layout: base
         <h2 class="apiman-title-secondary">Just a few of Apiman's features</h2>
         <div class="row">
             {% for feature in site.data.index.feats %}
-                <div class="col-sm-6 col-xl-3 pb-3 pt-3">
-                    <div class="card d-block pb-4 pe-3 ps-3 pt-4 text-start border border-1 h-100">
-                        <div class="text-center h2 rounded-2 bg-primary text-white"><i class="{{ feature.icon }}"></i></div>
-                        <h3 class="h5 text-muted-red">
-                            {{ feature.title }}
-                        </h3>
-                        <p>{{ feature.description }}</p>
+                {% assign featId = feature.title | replace: ' ', '-' | replace: '&', '_' %}
+                <div class="col-sm-6 col-xl-4 pb-3 pt-3">
+                    <div class="card d-block text-start border border-1 h-100">
+                        <div class="card-body">
+                            <!-- Feature icon stretched along top of card -->
+                            <div class="text-center h2 rounded-2 bg-primary text-white"><i class="{{ feature.icon }}"></i></div>
+                            <!-- Feature title that can be clicked to expand feature description box -->
+                            <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href="#{{ featId }}">
+                                <h3 class="h5 text-muted-red">
+                                    {{ feature.title }}
+                                    <span class="float-end bi bi-chevron-down"></span>
+                                </h3>
+                            </a>
+                            <div id="{{ featId }}" class="feature-summary-description collapse">
+                                {{ feature.description }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
