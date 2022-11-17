@@ -32,9 +32,14 @@
     p:last-of-type {
       margin-bottom: 0;
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
 .bg-white {
   background-color: white;
 }
+
+

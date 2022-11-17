@@ -1,9 +1,18 @@
 :root {
   --apiman-bg-blue: rgb(36, 52, 70);
   --apiman-bg-blue-hover: rgb(61, 94, 129);
-  --apiman-red: rgb(204, 0, 0);
+  --apiman-bright-red: rgb(204, 0, 0);
+  --apiman-muted-red: rgb(170, 68, 68);
   --apiman-title-secondary: rgb(108, 117, 125);
   --apiman-light-faded: rgb(193, 193, 194);
+}
+
+.apiman-title-secondary {
+  color: var(--apiman-title-secondary);
+}
+
+.text-muted-red {
+  color: var(--apiman-muted-red);
 }
 
 .navbar {

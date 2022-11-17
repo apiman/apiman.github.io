@@ -11,7 +11,7 @@ layout: base
             </div>
             <div class="ps-md-4">
                 <h1 class="main-title mt-0">Extensible Open Source API Management</h1>
-                <p class="lead fw-semibold">
+                <p class="lead fw-semibold text-muted-red">
                     Apiman makes managing your APIs easy.
                 </p>
                 <p class="d-none d-md-block">
@@ -57,14 +57,14 @@ layout: base
 
 <!-- Blogs -->
 {% assign blogs = site.posts %}
-<section class="bg-light pb-5 pt-3 text-secondary" data-pg-name="Apiman blog section" id="apiman-section-blog" title="Latest Apiman Blogs">
+<section class="bg-light pb-5 pt-3" data-pg-name="Apiman blog section" id="apiman-section-blog" title="Latest Apiman Blogs">
     <div class="container-fluid mw-1200">
-        <h2>The latest from the Apiman Blog</h2>
+        <h2 class="apiman-title-secondary">The latest from the Apiman Blog</h2>
         <div class="justify-content-center row">
             {%- for blog in blogs limit: 3 -%}
                 <div class="col-lg-4 col-md-6 pb-3 pt-3 blog-item">
                     <div class="card h-100">
-                        <div class="card-body pb-0">
+                        <div class="card-body pb-0 card-body-hover" onclick="window.location.href='{{ blog.url }}'">
                             <a href="{{ blog.url }}" class="header-link">
                                 <h3 class="card-title h5">{{ blog.title }}</h3>
                             </a>
