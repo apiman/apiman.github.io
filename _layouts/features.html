@@ -9,7 +9,7 @@ title: Open Source API Management
         <div class="sticky-top">
             <!-- Feature group titles -->
             <div class="list-group justify-content-center" id="feature-titles-sidebar">
-                {% for featGroup in site.data.features %}
+                {% for featGroup in site.data.features.feats %}
                     <a href="#{{ featGroup.id }}" class="list-group-item list-group-item-action">{{ featGroup.title }}</a>
                 {% endfor %}
             </div>
@@ -34,7 +34,7 @@ title: Open Source API Management
             </div>
         </section>
 
-        {% for featGroup in site.data.features %}
+        {% for featGroup in site.data.features.feats %}
             <section class="mb-3 feature-section" id="{{ featGroup.id }}">
                 <h2>{{ featGroup.title }}</h2>
                 <!-- Feature group intro, if there is one -->

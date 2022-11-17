@@ -40,9 +40,9 @@ layout: base
 </div>
 
 <!-- Announcement/emphasis banner -->
-{% if site.data.indexBanner.display %}
-    {% assign banner = site.data.indexBanner %}
-<section class="bg-light mb-0 pt-3">
+{% if site.data.index.message.display %}
+{% assign banner = site.data.index.message %}
+<section class="bg-white mb-0 pt-3">
     <div class="container-fluid mw-1200">
         <div class="alert {{ banner.type }} m-0" role="alert">
             {{ banner.message }}
@@ -52,8 +52,27 @@ layout: base
 {% endif %}
 
 <!-- Features -->
-
-
+<section class="bg-white pb-5 pt-3">
+    <div class="container mw-1200">
+        <h2 class="apiman-title-secondary">Just a few of Apiman's features</h2>
+        <div class="row">
+            {% for feature in site.data.index.feats %}
+                <div class="col-sm-6 col-xl-3 pb-3 pt-3">
+                    <div class="card d-block pb-4 pe-3 ps-3 pt-4 text-start border border-1 h-100">
+                        <div class="text-center h2 rounded-2 bg-primary text-white"><i class="{{ feature.icon }}"></i></div>
+                        <h3 class="h5 text-muted-red">
+                            {{ feature.title }}
+                        </h3>
+                        <p>{{ feature.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="read-more-holder text-center">
+            <a href="/features.html" class="btn btn-primary btn-lg">And Many More</a>
+        </div>
+    </div>
+</section>
 
 <!-- Blogs -->
 {% assign blogs = site.posts %}
@@ -64,13 +83,14 @@ layout: base
             {%- for blog in blogs limit: 3 -%}
                 <div class="col-lg-4 col-md-6 pb-3 pt-3 blog-item">
                     <div class="card h-100">
-                        <div class="card-body pb-0 card-body-hover" onclick="window.location.href='{{ blog.url }}'">
+                        <div class="card-body d-flex flex-column pb-0 card-body-hover" onclick="window.location.href='{{ blog.url }}'">
                             <a href="{{ blog.url }}" class="header-link">
                                 <h3 class="card-title h5">{{ blog.title }}</h3>
                             </a>
-                            <div class="card-text pt-2">
+                            <div class="card-text flex-grow-1 pt-2">
                                 {{ blog.excerpt | remove: '<p></p>' }}
                             </div>
+                            {% comment %}<div class="text-muted text-end text-small">Read Full Post <i class="bi bi-chevron-right"></i></div>{% endcomment %}
                         </div>
                         <div class="small text-muted text-end px-2 pb-1">
                             <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
@@ -89,7 +109,7 @@ layout: base
                 </div>
             {%- endfor -%}
         </div>
-        <div data-pg-name="Read more centre div" id="read-more-blogs-holder" class="text-center">
+        <div class="read-more-holder text-center">
             <a href="/blog" class="btn btn-primary btn-lg">Read More</a>
         </div>
     </div>

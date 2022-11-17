@@ -1,5 +1,4 @@
-# Leave empty if you don't want a message
-display: true
+display: false
 # Use the Bootstrap CSS alert class
 type: 'alert-success'
 message: |

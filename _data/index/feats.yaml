@@ -1,0 +1,28 @@
+- title: Govern Your APIs
+  icon: bi bi-binoculars-fill
+  description: |
+    Flexible, policy-based runtime governance for your APIs. Offer the same API through multiple plans, 
+    allowing different levels of service to different API consumers.
+
+- title: Rich Management Layer
+  icon: bi bi-globe
+  description: |
+    With a full REST API, separate UI, and standalone developer portal, Apiman covers all aspects of the 
+    API Management lifecycle — all while offering multi-tenancy, events, notifications, permissions, and so much more.
+
+- title: Extensible & Flexible
+  icon: bi-arrows-angle-expand
+  description: |
+    Apiman has a comprehensive plugin system that allows developers to easily create and test custom policies and components.
+
+- title: Fully Asynchronous
+  icon: bi bi-arrow-repeat
+  description: |
+    The runtime engine's API is fully asynchronous and is designed to run equally well in 
+    both a standard Java EE environment and newer async runtimes like Vert.x.
+
+
+
+
+
+
