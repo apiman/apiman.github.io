@@ -1,0 +1,37 @@
+- title: Discussions
+  icon: 'bi bi-chat-left-text'
+  url: 'https://github.com/orgs/apiman/discussions'
+  description: |
+    <p>A place to discuss all things Apiman.</p> 
+    <p>We'd particularly like to hear your success stories and how you use Apiman in the wild.</p>
+
+- title: Found an Issue?
+  icon: 'bi bi-bug'
+  url: 'https://www.github.com/apiman/apiman/issues'
+  description: |
+    If you find a problem with Apiman, please open an issue on Apiman's GitHub Issues.
+
+- title: Apiman Developer Portal
+  icon: 'bi bi-code-slash'
+  url: 'https://github.com/apiman/apiman-developer-portal'
+  description: |
+    Apiman's standalone developer portal UI, written in modern Angular. 
+    This is an easy place to get started if you want to contribute.
+
+- title: Twitter
+  icon: 'bi bi-twitter'
+  url: 'https://www.twitter.com/apiman_io'
+  description: |
+    Assuming Twitter still exists by the time you read this, you can follow the Apiman team on @apiman_io. 
+
+- title: Apiman Plugins
+  icon: 'bi bi-plugin'
+  url: 'https://www.github.com/apiman/apiman-plugins'
+  description: |
+    Curated repository of policy plugins for Apiman.
+
+- title: Migration Guide
+  icon: 'bi bi-arrow-90deg-up'
+  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
+  description: |
+    If you're moving to a new version of Apiman, please refer out our migration guide before upgrading.
