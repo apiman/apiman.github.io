@@ -1,5 +1,6 @@
-title: 'Apiman: Open Source API Management'
+title: 'Apiman'
 email:
+tagline: 'Apiman | Flexible & Extensible Open Source API Management'
 description: >- # this means to ignore newlines until "baseurl:"
    The Apiman project brings an open source development methodology to
    API Management, coupling a rich API design & configuration layer with
@@ -15,6 +16,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-archives
+  - jekyll-seo-tag
 
 sass:
   style: compressed
@@ -41,13 +43,20 @@ jekyll-archives:
 excerpt_separator: '<!--more-->'
 
 defaults:
-  -
-    scope:
+  - scope:
       type: "posts"
     values:
       permalink: '/blog/:title/'
 
-
+# SEO plugin
+twitter:
+  username: apiman_io
+  card: summary
+social:
+  name: Apiman
+  links:
+    - https://www.twitter.com/apiman_io
+    - https://www.github.com/apiman
 
 # Exclude from processing.
 # The following items will not be processed, by default.

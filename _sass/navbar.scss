@@ -4,19 +4,23 @@
   background: var(--apiman-bg-blue);
   background: linear-gradient(180deg, rgba(36,52,70,1) 0%, rgba(36,74,102,1) 95%);
   border-top: 1px solid var(--apiman-bright-red);
-}
 
-.nav-item {
-  a {
-    color: white;
+  .nav-item {
+    a {
+      color: white;
+    }
+
+    a:hover {
+      background-color: var(--apiman-bg-blue-hover);
+      color: white;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
   }
 
-  a:hover {
-    background-color: var(--apiman-bg-blue-hover);
-    color: white;
-  }
-
-  &.active {
-    font-weight: bold;
+  .navbar {
+    --bs-navbar-toggler-border-color: rgba(255,255,255,0.8);
   }
 }

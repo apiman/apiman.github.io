@@ -9,7 +9,7 @@
   icon: 'bi bi-bug'
   url: 'https://www.github.com/apiman/apiman/issues'
   description: |
-    If you find a problem with Apiman, please open an issue on Apiman's GitHub Issues.
+    If you find a problem with Apiman, please open a ticket on Apiman's GitHub Issues bug tracker.
 
 - title: Apiman Developer Portal
   icon: 'bi bi-code-slash'
@@ -22,16 +22,17 @@
   icon: 'bi bi-twitter'
   url: 'https://www.twitter.com/apiman_io'
   description: |
-    Assuming Twitter still exists by the time you read this, you can follow the Apiman team on @apiman_io. 
+    Assuming Twitter still exists by the time you read this, you can follow the Apiman team at <code>@apiman_io</code>. 
 
 - title: Apiman Plugins
   icon: 'bi bi-plugin'
   url: 'https://www.github.com/apiman/apiman-plugins'
   description: |
     Curated repository of policy plugins for Apiman.
+    Helpful as examples if you want to develop your own. 
 
 - title: Migration Guide
   icon: 'bi bi-arrow-90deg-up'
   url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
   description: |
-    If you're moving to a new version of Apiman, please refer out our migration guide before upgrading.
+    If you're moving to a new version of Apiman, please refer to our migration guide before upgrading.

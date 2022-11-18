@@ -62,7 +62,7 @@ layout: base
                     <!-- Feature icon stretched along top of card -->
                     {% comment %}<i class="text-white {{ feature.icon }}"></i>{% endcomment %}
                     <!-- Feature title that can be clicked to expand feature description box -->
-                    <h3 class="h5 text-muted-red border-bottom border-1"><i class="{{ feature.icon }} pe-2"></i>{{ feature.title }}</h3>
+                    <h3 class="h5 text-muted-red pb-1 border-bottom border-1"><i class="{{ feature.icon }} pe-2"></i>{{ feature.title }}</h3>
                     <div id="{{ featId }}" class="mt-2 feature-summary-description">
                         {{ feature.description }}
                     </div>
@@ -99,7 +99,7 @@ layout: base
                         {% assign author = site.data.authors[blog.author] %}
                         <div class="align-items-center card-footer d-flex justify-content-between small">
                             <a target="_blank" rel="noopener" href="{{ author.github }}" class="align-items-center d-flex text-dark text-decoration-none">
-                                <img src="{{ author.avatar }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}">
+                                <img src="{{ author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}">
                                 <div>
                                     <h4 class="h6 mb-0">{{ author.name }}</h4>
                                     <div class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</div>
@@ -116,6 +116,7 @@ layout: base
     </div>
 </section>
 
+<!-- Mini social block -->
 <section class="bg-white pb-5 pt-3" id="apiman-section-social" title="Interact With Apiman Team">
     <div class="container-fluid mw-1350">
         <h2 class="apiman-title-secondary">Get Involved</h2>
@@ -129,7 +130,7 @@ layout: base
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column card-body-hover">
                                 <a href="{{ social.url }}" target="_blank" class="header-link stretched-link">
-                                    <h3 class="card-title h5"><i class="{{ social.icon }} pe-1"></i>{{ social.title }}</h3>
+                                    <h3 class="card-title h5"><i class="{{ social.icon }} pe-1" role="presentation"></i>{{ social.title }}</h3>
                                 </a>
                                 <div class="card-text flex-grow-1 pt-2">
                                     {{ social.description }}
@@ -148,5 +149,3 @@ layout: base
         </div>
     </div>
 </section>
-
-

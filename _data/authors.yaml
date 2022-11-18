@@ -4,28 +4,38 @@ eric_wittmann:
   email: eric.wittmann@redhat.com
   org: Red Hat
   github: https://www.github.com/ericwittmann
-  avatar: https://avatars.githubusercontent.com/u/1890703
+  url: https://www.github.com/ericwittmann
+  picture: https://avatars.githubusercontent.com/u/1890703
+  twitter: apiman_io
 len_dimaggio:
   name: Len DiMaggio
   email: ldimaggi@redhat.com
   org: Red Hat
-  github: https://github.com/ldimaggi
-  avatar: https://avatars.githubusercontent.com/u/642621
+  github: https://www.github.com/ldimaggi
+  url: https://github.com/ldimaggi
+  picture: https://avatars.githubusercontent.com/u/642621
+  twitter: apiman_io
 marc_savy:
   name: Marc Savy
   email: marc@blackparrotlabs.io
   org: Black Parrot Labs
-  github: https://github.com/msavy
-  avatar: https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63694eec22f762f8c729c99c_SCR-20221107-poy-p-500.jpeg
+  github: https://www.github.com/msavy
+  url: https://www.blackparrotlabs.io
+  picture: https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63694eec22f762f8c729c99c_SCR-20221107-poy-p-500.jpeg
+  twitter: marcsavy
 rachel_yordan:
   name: Rachel Yordán
   email: ryordan@redhat.com
   org: Red Hat
-  github: https://github.com/kahboom
-  avatar: https://avatars.githubusercontent.com/u/3844502
+  github: https://www.github.com/kahboom
+  url: https://www.github.com/kahboom
+  picture: https://avatars.githubusercontent.com/u/3844502
+  twitter: nerdycode
 sbunciak:
   name: Stefan Bunciak
   email: sbunciak@redhat.com
   org: Red Hat
-  github: https://github.com/sbunciak
-  avatar: https://avatars.githubusercontent.com/u/1398742
+  github: https://www.github.com/sbunciak
+  url: https://www.github.com/sbunciak
+  picture: https://avatars.githubusercontent.com/u/1398742
+  twitter: apiman_io

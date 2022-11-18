@@ -10,10 +10,11 @@
         {% comment %}gtag('config', 'G-JDKK326V39');{% endcomment %}
     {% comment %}</script>{% endcomment %}
 
+    {% seo %}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% comment %}{% seo %}{% endcomment %}
-    <title>Apiman: {{ page.title }}</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
     <link
