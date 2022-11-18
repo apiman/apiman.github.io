@@ -1,8 +1,8 @@
 - title: Real Open Source
   icon: bi bi-unlock-fill
   description: |
-    <p>Real open source software released under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, 2.0</a>.</p>
-    <p>No limitations.</p>
+    <p>Permissively licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, 2.0</a>.</p>
+    <p>No artificial limitations or restrictions.</p>
     <p>No features hidden behind paywalls.</p>
     <p>No lock-in.</p>
 
@@ -11,9 +11,10 @@
   description: |
     <p>Flexible, policy-based runtime governance for your APIs.</p> 
     <p>Offer the same API through multiple plans, allowing different levels of service to different API consumers.</p>
+    <p>Insight into your traffic with support for a wide array of metrics stores & analytics.</p>
 
 - title: Rich Management Layer
-  icon: bi bi-globe
+  icon: bi bi-people-fill
   description: |
     <p>With a full REST API, Apiman Manager UI, and standalone Apiman Developer Portal, Apiman covers all aspects of the 
     API Management lifecycle.</p>
@@ -25,14 +26,23 @@
     <p>Apiman has a comprehensive plugin system that allows developers to easily create, test, and deploy custom policies and components.</p>
     <p>That means you can extend Apiman to do almost anything you need with some simple Java code.</p>
 
-- title: Asynchronous Gateway
+#- title: Asynchronous Gateway
+#  icon: bi bi-arrow-repeat
+#  description: |
+#    Apiman's runtime API is fully asynchronous and is designed to run equally well in both a standard Java EE environment
+#    and newer async runtimes like Vert.x.
+
+- title: Covers Key Use Cases
   icon: bi bi-arrow-repeat
   description: |
-    Apiman's runtime API is fully asynchronous and is designed to run equally well in both a standard Java EE environment
-    and newer async runtimes like Vert.x.
+    <ul>
+      <li>Throttling, quotas</li>
+      <li>Centralised security</li>
+      <li>Billing & metrics</li>
+    </ul>
 
 - title: Run Anywhere, At Scale
-  icon: bi bi-arrow-repeat
+  icon: bi bi-globe
   description: |
     <p>There are no limitations on where you can run Apiman.</p> 
     <p>Whether you need to run on airgapped bare metal or in the cloud, Apiman users have 
