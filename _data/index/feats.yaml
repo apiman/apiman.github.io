@@ -1,7 +1,7 @@
 - title: Real Open Source
   icon: bi bi-unlock-fill
   description: |
-    <p>Permissively licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, 2.0</a>.</p>
+    <p>Apiman is permissively licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, 2.0</a>.</p>
     <p>No artificial limitations or restrictions.</p>
     <p>No features hidden behind paywalls.</p>
     <p>No lock-in.</p>
@@ -35,10 +35,10 @@
 - title: Covers Key Use Cases
   icon: bi bi-arrow-repeat
   description: |
-    <ul>
-      <li>Throttling, quotas</li>
-      <li>Centralised security</li>
-      <li>Billing & metrics</li>
+    <ul class="ps-3">
+      <li class="pb-2"><strong>Throttling & Quotas</strong>: Limit the number of requests consumers of your APIs can make within a given time period (per API contract or per end-user).</li>
+      <li class="pb-2"><strong>Centralised Security</strong>: Add authentication and IP filtering capabilities in a central location, freeing your back-end APIs to focus on functionality.</li>
+      <li><strong>Billing & metrics</strong>: Easily get metrics for all your APIs so you can see what's popular or charge your consumers for their usage.</li>
     </ul>
 
 - title: Run Anywhere, At Scale
@@ -47,3 +47,5 @@
     <p>There are no limitations on where you can run Apiman.</p> 
     <p>Whether you need to run on airgapped bare metal or in the cloud, Apiman users have 
     successfully deployed systems running critical API Management workloads.</p> 
+
+- title: 

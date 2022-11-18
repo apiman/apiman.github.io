@@ -111,6 +111,12 @@
         
         <p>By implementing a simple interface, <a href="#apiman-registry">you can interrogate your own registry</a> instead.</p>
 
+    - title: Export/Import
+      icon: full
+      description: |
+        The Apiman Manager's entire configuration can be exported as a JSON file and imported into a fresh Apiman installation.
+        This is useful for backup, upgrades, and migration.
+
 - title: API Lifecycle
   id: api-lifecycle
   features:
