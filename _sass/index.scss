@@ -27,16 +27,16 @@
 }
 
 // Remove excess padding from last paragraph in blog item cards
-.blog-item {
-  .card-body  {
-    p:last-of-type {
-      margin-bottom: 0;
-    }
-    &:hover {
-      cursor: pointer;
-    }
+
+.card-body  {
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
+
 
 .bg-white {
   background-color: white;

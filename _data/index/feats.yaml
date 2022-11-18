@@ -3,8 +3,8 @@
   description: |
     <p>Real open source software released under <a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, 2.0</a>.</p>
     <p>No limitations.</p>
-    <p>No hidden features behind paywalls.</p>
-    <p>No requirement to use SaaS.</p>
+    <p>No features hidden behind paywalls.</p>
+    <p>No lock-in.</p>
 
 - title: Govern Your APIs
   icon: bi bi-binoculars-fill
@@ -15,28 +15,25 @@
 - title: Rich Management Layer
   icon: bi bi-globe
   description: |
-    With a full REST API, separate UI, and standalone developer portal, Apiman covers all aspects of the 
-    API Management lifecycle — all while offering multi-tenancy, events, notifications, permissions, and so much more.
+    <p>With a full REST API, Apiman Manager UI, and standalone Apiman Developer Portal, Apiman covers all aspects of the 
+    API Management lifecycle.</p>
+    <p>Apiman Manager has a breadth and depth of features, including multi-tenancy, events, notifications, permissions, approvals, and so much more.</p>
 
 - title: Extensible & Flexible
   icon: bi-arrows-angle-expand
   description: |
-    Apiman has a comprehensive plugin system that allows developers to easily create and test custom policies and components.
+    <p>Apiman has a comprehensive plugin system that allows developers to easily create, test, and deploy custom policies and components.</p>
+    <p>That means you can extend Apiman to do almost anything you need with some simple Java code.</p>
 
-- title: Fully Asynchronous
+- title: Asynchronous Gateway
   icon: bi bi-arrow-repeat
   description: |
-    The runtime engine's API is fully asynchronous and is designed to run equally well in 
-    both a standard Java EE environment and newer async runtimes like Vert.x.
+    Apiman's runtime API is fully asynchronous and is designed to run equally well in both a standard Java EE environment
+    and newer async runtimes like Vert.x.
 
-- title: Fully Asynchronous
+- title: Run Anywhere, At Scale
   icon: bi bi-arrow-repeat
   description: |
-    The runtime engine's API is fully asynchronous and is designed to run equally well in 
-    both a standard Java EE environment and newer async runtimes like Vert.x.
-
-
-
-
-
-
+    <p>There are no limitations on where you can run Apiman.</p> 
+    <p>Whether you need to run on airgapped bare metal or in the cloud, Apiman users have 
+    successfully deployed systems running critical API Management workloads.</p> 
