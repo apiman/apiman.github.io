@@ -25,6 +25,7 @@
   description: |
     <p>Apiman has a comprehensive plugin system that allows developers to easily create, test, and deploy custom policies and components.</p>
     <p>That means you can extend Apiman to do almost anything you need with some simple Java code.</p>
+    <p>Refer to our developer's guide for more.</p>
 
 #- title: Asynchronous Gateway
 #  icon: bi bi-arrow-repeat
@@ -32,13 +33,13 @@
 #    Apiman's runtime API is fully asynchronous and is designed to run equally well in both a standard Java EE environment
 #    and newer async runtimes like Vert.x.
 
-- title: Covers Key Use Cases
+- title: Key API Management Use Cases
   icon: bi bi-arrow-repeat
   description: |
     <ul class="ps-3">
       <li class="pb-2"><strong>Throttling & Quotas</strong>: Limit the number of requests consumers of your APIs can make within a given time period (per API contract or per end-user).</li>
       <li class="pb-2"><strong>Centralised Security</strong>: Add authentication and IP filtering capabilities in a central location, freeing your back-end APIs to focus on functionality.</li>
-      <li><strong>Billing & metrics</strong>: Easily get metrics for all your APIs so you can see what's popular or charge your consumers for their usage.</li>
+      <li><strong>Billing & Metrics</strong>: Easily get metrics for all your APIs so you can see what's popular or charge your consumers for their usage.</li>
     </ul>
 
 - title: Run Anywhere, At Scale
@@ -46,6 +47,5 @@
   description: |
     <p>There are no limitations on where you can run Apiman.</p> 
     <p>Whether you need to run on airgapped bare metal or in the cloud, Apiman users have 
-    successfully deployed systems running critical API Management workloads.</p> 
-
-- title: 
+    successfully deployed systems running critical API Management workloads.</p>
+    <p>Apiman Gateways are decoupled from the Apiman Manager, so even if a manager goes down, your gateways continue running.</p>

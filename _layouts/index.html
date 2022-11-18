@@ -52,31 +52,19 @@ layout: base
 {% endif %}
 
 <!-- Features -->
-<section class="bg-white pb-5 pt-3">
+<section class="bg-white pb-3 pt-3">
     <div class="container mw-1350">
         <h2 class="apiman-title-secondary">Just a few of Apiman's features</h2>
-        <div class="row">
+        <div class="row mt-3">
             {% for feature in site.data.index.feats %}
                 {% assign featId = feature.title | replace: ' ', '-' | replace: '&', '_' %}
-                <div class="col-sm-6 col-xl-4 pb-3 pt-3">
-                    <div class="card d-block text-start border border-1 h-100">
-                        <div class="card-body">
-                            <!-- Feature icon stretched along top of card -->
-                            <div class="py-1 px-2 text-start rounded-2 bg-primary text-white">
-
-                            <!-- Feature title that can be clicked to expand feature description box -->
-                                <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href=".feature-summary-description">
-                                    <h3 class="h5 text-white mb-0">
-                                        <i class="text-white {{ feature.icon }}"></i>
-                                        <span class="ps-2">{{ feature.title }}</span>
-                                        <span class="float-end bi bi-chevron-down"></span>
-                                    </h3>
-                                </a>
-                            </div>
-                            <div id="{{ featId }}" class="mt-1 feature-summary-description collapse">
-                                {{ feature.description }}
-                            </div>
-                        </div>
+                <div class="col-sm-6 col-xl-4 pb-2 pt-1">
+                    <!-- Feature icon stretched along top of card -->
+                    {% comment %}<i class="text-white {{ feature.icon }}"></i>{% endcomment %}
+                    <!-- Feature title that can be clicked to expand feature description box -->
+                    <h3 class="h5 text-muted-red border-bottom border-1"><i class="{{ feature.icon }} pe-2"></i>{{ feature.title }}</h3>
+                    <div id="{{ featId }}" class="mt-1 feature-summary-description">
+                        {{ feature.description }}
                     </div>
                 </div>
             {% endfor %}
