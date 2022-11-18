@@ -64,7 +64,7 @@ layout: base
                             <!-- Feature icon stretched along top of card -->
                             <div class="text-center h2 rounded-2 bg-primary text-white"><i class="{{ feature.icon }}"></i></div>
                             <!-- Feature title that can be clicked to expand feature description box -->
-                            <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href="#{{ featId }}">
+                            <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href=".feature-summary-description">
                                 <h3 class="h5 text-muted-red">
                                     {{ feature.title }}
                                     <span class="float-end bi bi-chevron-down"></span>
@@ -100,7 +100,7 @@ layout: base
                             <div class="card-text flex-grow-1 pt-2">
                                 {{ blog.excerpt | remove: '<p></p>' }}
                             </div>
-                            {% comment %}<div class="text-muted text-end text-small">Read Full Post <i class="bi bi-chevron-right"></i></div>{% endcomment %}
+                            {% comment %}<div class="text-muted text-end text-small">(read more) <i class="bi bi-chevron-right"></i></div>{% endcomment %}
                         </div>
                         <div class="small text-muted text-end px-2 pb-1">
                             <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
