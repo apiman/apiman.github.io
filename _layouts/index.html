@@ -62,15 +62,18 @@ layout: base
                     <div class="card d-block text-start border border-1 h-100">
                         <div class="card-body">
                             <!-- Feature icon stretched along top of card -->
-                            <div class="text-center h2 rounded-2 bg-primary text-white"><i class="{{ feature.icon }}"></i></div>
+                            <div class="py-1 px-2 text-start rounded-2 bg-primary text-white">
+
                             <!-- Feature title that can be clicked to expand feature description box -->
-                            <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href=".feature-summary-description">
-                                <h3 class="h5 text-muted-red">
-                                    {{ feature.title }}
-                                    <span class="float-end bi bi-chevron-down"></span>
-                                </h3>
-                            </a>
-                            <div id="{{ featId }}" class="feature-summary-description collapse">
+                                <a class="stretched-link text-decoration-none" data-bs-toggle="collapse" href=".feature-summary-description">
+                                    <h3 class="h5 text-white mb-0">
+                                        <i class="text-white {{ feature.icon }}"></i>
+                                        <span class="ps-2">{{ feature.title }}</span>
+                                        <span class="float-end bi bi-chevron-down"></span>
+                                    </h3>
+                                </a>
+                            </div>
+                            <div id="{{ featId }}" class="mt-1 feature-summary-description collapse">
                                 {{ feature.description }}
                             </div>
                         </div>
