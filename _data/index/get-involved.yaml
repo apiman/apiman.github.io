@@ -36,3 +36,17 @@
   url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
   description: |
     If you're moving to a new version of Apiman, please refer to our migration guide before upgrading.
+
+- title: Code of Conduct
+  icon: 'bi bi-hand-thumbs-up'
+  url: 'https://github.com/apiman/apiman/blob/master/CODE_OF_CONDUCT.md'
+  description: |
+    Apiman's code of conduct for contributors. 
+    Basically, be nice.
+    Adhere to the <a href="https://en.wikipedia.org/wiki/Golden_Rule" target="_blank">golden rule</a>, and you won't go far wrong.
+
+- title: Security Reporting Policy
+  icon: 'bi bi-shield-exclamation'
+  url: https://github.com/apiman/apiman/blob/master/SECURITY.md
+  description: |
+    You find a security issue and wish to responsibly report it, you can find who to contact here.
