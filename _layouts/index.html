@@ -58,13 +58,16 @@ layout: base
         <div class="row mt-3">
             {% for feature in site.data.index.feats %}
                 {% assign featId = feature.title | replace: ' ', '-' | replace: '&', '_' %}
-                <div class="col-sm-6 col-xl-4 pb-2 pt-1">
-                    <!-- Feature icon stretched along top of card -->
-                    {% comment %}<i class="text-white {{ feature.icon }}"></i>{% endcomment %}
+                <div class="col-sm-6 col-xl-4 pb-2 pt-1 card border-0">
                     <!-- Feature title that can be clicked to expand feature description box -->
-                    <h3 class="h5 text-muted-red pb-1 border-bottom border-1"><i class="{{ feature.icon }} pe-2"></i>{{ feature.title }}</h3>
-                    <div id="{{ featId }}" class="mt-2 feature-summary-description">
-                        {{ feature.description }}
+                    <a href=".feature-summary-description" data-bs-toggle="collapse" class="header-link stretched-link">
+                        <h3 class="card-title h5 border-bottom border-1">
+                            <i class="{{ feature.icon }} pe-2"></i>{{ feature.title }} <i class="bi bi-chevron-down text-end"></i>
+                        </h3>
+                    </a>
+                    <div class="mt-2">
+                        <p class="feature-summary-intro">{{ feature.intro }}</p>
+                        <div class="feature-summary-description collapse">{{ feature.description }}</div>
                     </div>
                 </div>
             {% endfor %}
