@@ -43,10 +43,10 @@ layout: base
                     <!-- Centre aligned on small, left aligned md and up -->
                     <div class="mx-auto mx-md-0">
                         <a href="/download.html" class="btn btn-primary btn-lg">Get Started</a>
-                    </div>
-                    <!-- Display only on smaller -->
-                    <div class="text-small text-muted mt-2 d-xl-none">
-                        The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
+                        <!-- Display only on smaller -->
+                        <span class="text-small text-muted ps-2 d-xl-none">
+                            The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
+                        </span>
                     </div>
                 </div>
             </div>
