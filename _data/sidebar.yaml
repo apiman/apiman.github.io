@@ -2,6 +2,10 @@
   icon: 'bi bi-github'
   url: 'https://www.github.com/apiman/apiman'
 
+- title: Older Releases
+  icon: 'bi bi-clock'
+  url: 'https://github.com/apiman/apiman/releases'
+
 - title: Found an Issue?
   icon: 'bi bi-bug'
   url: 'https://www.github.com/apiman/apiman/issues'

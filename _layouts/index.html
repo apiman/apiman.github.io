@@ -61,8 +61,10 @@ layout: base
                 <div class="col-sm-6 col-xl-4 pb-2 pt-1 card border-0">
                     <!-- Feature title that can be clicked to expand feature description box -->
                     <a href=".feature-summary-description" data-bs-toggle="collapse" class="header-link stretched-link">
-                        <h3 class="card-title h5 border-bottom border-1">
-                            <i class="{{ feature.icon }} pe-2"></i>{{ feature.title }} <i class="bi bi-chevron-down text-end"></i>
+                        <h3 class="card-title h5 border-bottom border-1 d-flex">
+                            <i class="{{ feature.icon }} pe-2"></i>{{ feature.title }}
+                            <!-- Move to right with margin-left:auto, equivalent of float right in flexbox -->
+                            <i class="bi bi-chevron-down ms-auto"></i>
                         </h3>
                     </a>
                     <div class="mt-2">
