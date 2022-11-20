@@ -52,9 +52,9 @@ layout: base
 {% endif %}
 
 <!-- Features -->
-<section class="bg-white pb-3 pt-3" id="apiman-section-features" title="Apiman Feature Summary">
+<section class="bg-white py-4" id="apiman-section-features" title="Apiman Mini Feature Summary">
     <div class="container mw-1350">
-        <h2 class="apiman-title-secondary">Just a few of Apiman's features</h2>
+        <h2 class="apiman-title-secondary mb-4">Just a few of Apiman's features</h2>
         <div class="row mt-3">
             {% for feature in site.data.index.feats %}
                 {% assign featId = feature.title | replace: ' ', '-' | replace: '&', '_' %}
@@ -82,12 +82,12 @@ layout: base
 
 <!-- Blogs -->
 {% assign blogs = site.posts %}
-<section class="bg-light pb-5 pt-3" id="apiman-section-blog" title="Latest Apiman Blogs">
+<section class="bg-light py-4" id="apiman-section-blog" title="Latest Apiman Blogs">
     <div class="container-fluid mw-1350">
-        <h2 class="apiman-title-secondary">The latest from the Apiman Blog</h2>
+        <h2 class="apiman-title-secondary mb-4">The latest from the Apiman Blog</h2>
         <div class="justify-content-center row">
             {%- for blog in blogs limit: 3 -%}
-                <div class="col-lg-4 col-md-6 pb-3 pt-3 blog-item">
+                <div class="col-lg-4 col-md-6 pb-3 blog-item">
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column pb-0 card-body-hover" onclick="window.location.href='{{ blog.url }}'">
                             <a href="{{ blog.url }}" class="header-link">
@@ -122,10 +122,10 @@ layout: base
 </section>
 
 <!-- Mini social block -->
-<section class="bg-white pb-5 pt-3" id="apiman-section-social" title="Interact With Apiman Team">
+<section class="bg-white py-4" id="apiman-section-social" title="Interact With Apiman Team">
     <div class="container-fluid mw-1350">
-        <h2 class="apiman-title-secondary">Get Involved</h2>
-        <div class="row pt-3">
+        <h2 class="apiman-title-secondary mb-4">Get Involved</h2>
+        <div class="row">
             <!-- Left: Community links -->
             <div class="col-12 col-md-7">
                 <div class="row">
