@@ -1,0 +1,39 @@
+{% assign latestVersion = site.data.releases.stable.version %}
+{% assign latestVersionMunged = latestVersion | replace: '.', '' | downcase %}
+<!-- Idea: Add dev tab to allow latest dev release -->
+<div class="card" style="background-color: rgba(255,255,255, 0.4)">
+  <div class="card-body d-flex flex-column">
+    <a href="/download.html" class="header-link">
+      <h3 class="card-title h6"><i class="bi bi-download pe-1" role="presentation"></i> Apiman {{ latestVersion }}</h3>
+    </a>
+    <span class="text-muted small">Released on {{ meta.published_at | date_to_long_string }}</span>
+    <div class="card-text flex-grow-1 pt-1">
+      <ul class="small ps-0 mb-0 list-unstyled">
+        <li>
+          <i class="bi bi-book"></i>
+          <a class="link-dark" href="https://github.com/apiman/apiman/blob/master/CHANGELOG.adoc#{{ latestVersionMunged }}">
+            Release notes
+          </a>
+        </li>
+        <li>
+          <i class="bi bi-arrow-90deg-up"></i>
+          <a class="link-dark" href="https://www.apiman.io/apiman-docs/welcome/{{ latestVersion }}/index.html">
+            Migration guide
+          </a>
+        </li>
+        <li>
+          <i class="bi bi-globe"></i>
+          <a class="link-dark" href="https://www.github.com/apiman/apiman/releases" target="_blank">
+            Older Apiman releases
+          </a>
+        </li>
+        <li>
+          <i class="bi bi-github"></i>
+          <a class="link-dark" href="https://www.github.com/apiman/apiman" target="_blank">
+            Apiman on GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

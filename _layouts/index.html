@@ -2,35 +2,50 @@
 layout: base
 ---
 
-<div class="container-fluid pb-2" id="apiman-hero-container-outer">
-    <div class="container mw-1200 mx-auto px-md-2" id="apiman-hero-container-inner">
+{% assign latestDevVersion = site.data.releases.dev.version %}
+{% assign latestDevVersionMunged = latestDevVersion | replace: '.', '_' %}
+{% assign devMeta = site.data.release-metadata[latestDevVersionMunged] %}
+<!-- Jekyll doesn't like filenames with multiple dots in, so file 2.2.3.Final becomes -> 223Final which is ambiguous -->
+{% assign latestVersion = site.data.releases.stable.version %}
+{% assign latestVersionMunged = latestVersion | replace: '.', '_' %}
+{% assign meta = site.data.release-metadata[latestVersionMunged] %}
+
+<div class="container-fluid pb-4" id="apiman-hero-container-outer">
+    <div class="container mw-1350 mx-auto px-md-2" id="apiman-hero-container-inner">
         <div class="d-md-inline-flex">
             <div id="logo-container" class="d-flex mb-2 m-md-0 justify-content-middle">
                 <img class="img-fluid d-md-none" src="/assets/images/inline-apiman-colour.svg" alt="Apiman logo" aria-label="Apiman" id="apiman-hero-logo-mob">
                 <img class="img-fluid d-none d-md-block" src="/assets/images/apiman_logo_final_color-01.svg" alt="Apiman logo" aria-label="Apiman" id="apiman-hero-logo">
             </div>
             <div class="ps-md-4">
-                <h1 class="main-title mt-0">Extensible Open Source API Management</h1>
-                <p class="lead fw-semibold text-muted-red">
+                <h1 class="main-title mt-0 text-center text-md-start">Extensible Open Source API Management</h1>
+                <p class="lead fw-semibold text-muted-red text-center text-md-start">
                     Apiman makes managing your APIs easy.
                 </p>
-                <p class="d-none d-md-block">
-                    With just a few clicks you can get Apiman running, putting a platform at your
-                    fingertips that covers the whole API Management lifecycle.
-                    Whether you want to offer existing APIs to external consumers in a secure way, or
-                    have a centralised location to discover and govern APIs, Apiman has you covered.
-                </p>
-                <p class="d-none d-md-block">
-                    But that's not all. Apiman is designed to be easy to customise, and you can implement
-                    your own functionality by writing simple Java plugins.
-                </p>
-                <div>
-                    {% assign latestVersion = site.data.releases.stable.version %}
-                    <!-- Jekyll doesn't like filenames with multiple dots in, so file 2.2.3.Final becomes -> 223Final which is ambiguous -->
-                    {% assign latestVersionMunged = latestVersion | replace: '.', '_' %}
-                    {% assign meta = site.data.release-metadata[latestVersionMunged] %}
-                    <a href="/download.html" class="btn btn-primary btn-lg">Get Started</a>
-                    <div class="text-small text-muted mt-2">
+                <div class="row">
+                    <div class="col-xl-9 d-none d-md-block">
+                        <p>
+                            With just a few clicks you can get Apiman running, putting a platform at your
+                            fingertips that covers the whole API Management lifecycle.
+                            Whether you want to offer existing APIs to external consumers in a secure way, or
+                            have a centralised location to discover and govern APIs, Apiman has you covered.
+                        </p>
+                        <p>
+                            But that's not all. Apiman is designed to be easy to customise, and you can implement
+                            your own functionality by writing simple Java plugins.
+                        </p>
+                    </div>
+                    <div class="d-none d-xl-block col-xl-3">
+                        {% include index/latest-version-card.include.html %}
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <!-- Centre aligned on small, left aligned md and up -->
+                    <div class="mx-auto mx-md-0">
+                        <a href="/download.html" class="btn btn-primary btn-lg">Get Started</a>
+                    </div>
+                    <!-- Display only on smaller -->
+                    <div class="text-small text-muted mt-2 d-xl-none">
                         The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
                     </div>
                 </div>
