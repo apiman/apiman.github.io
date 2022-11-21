@@ -27,7 +27,7 @@
 }
 
 // Remove excess padding from last paragraph in blog item cards
-.card-body  {
+.no-padding-last-para.card-body  {
   p:last-of-type {
     margin-bottom: 0;
   }

@@ -23,7 +23,7 @@ sass:
 #  sass_dir: _sass
 
 asciidoctor:
-  base_dir: :docdir
+  base_dir: .
   safe: unsafe
   attributes:
     source-highlighter: highlightjs

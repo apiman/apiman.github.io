@@ -1,14 +1,22 @@
-- title: GitHub
+- title: Found an Issue?
+  icon: 'bi bi-bug'
+  url: 'https://www.github.com/apiman/apiman/issues'
+
+- title: Source Code
   icon: 'bi bi-github'
   url: 'https://www.github.com/apiman/apiman'
+
+- title: Apiman Plugins
+  icon: 'bi bi-plugin'
+  url: 'https://www.github.com/apiman/apiman-plugins'
+
+- title: Docker Images
+  icon: 'bi bi-docker'
+  url: 'https://www.github.com/apiman/apiman-docker'
 
 - title: Older Releases
   icon: 'bi bi-clock'
   url: 'https://github.com/apiman/apiman/releases'
-
-- title: Found an Issue?
-  icon: 'bi bi-bug'
-  url: 'https://www.github.com/apiman/apiman/issues'
 
 - title: Discussions
   icon: 'bi bi-chat-left-text'
@@ -17,10 +25,6 @@
 - title: Twitter
   icon: 'bi bi-twitter'
   url: 'https://www.twitter.com/apiman_io'
-
-- title: Apiman Plugins
-  icon: 'bi bi-plugin'
-  url: 'https://www.github.com/apiman/apiman-plugins'
 
 - title: Migration Guide
   icon: 'bi bi-paper-plane'

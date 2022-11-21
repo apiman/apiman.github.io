@@ -73,7 +73,7 @@ layout: base
         <div class="row mt-3">
             {% for feature in site.data.index.feats %}
                 {% assign featId = feature.title | replace: ' ', '-' | replace: '&', '_' %}
-                <div class="col-sm-6 col-xl-4 pb-2 pt-1 card border-0">
+                <div class="col-sm-6 col-xl-4 pb-2 pt-1 card border-0" tabindex="0">
                     <!-- Feature title that can be clicked to expand feature description box -->
                     <a href=".feature-summary-description" data-bs-toggle="collapse" class="header-link stretched-link">
                         <h3 class="card-title h5 border-bottom border-1 d-flex">
@@ -104,7 +104,7 @@ layout: base
             {%- for blog in blogs limit: 3 -%}
                 <div class="col-lg-4 col-md-6 pb-3 blog-item">
                     <div class="card h-100">
-                        <div class="card-body d-flex flex-column pb-0 card-body-hover" onclick="window.location.href='{{ blog.url }}'">
+                        <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ blog.url }}'" tabindex=0>
                             <a href="{{ blog.url }}" class="header-link">
                                 <h3 class="card-title h5">{{ blog.title }}</h3>
                             </a>
@@ -147,8 +147,8 @@ layout: base
                     {% for social in site.data.index.get-involved %}
                     <!-- Cards/tiles -->
                     <div class="col-12 col-xl-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body d-flex flex-column card-body-hover">
+                        <div class="card h-100" tabindex=0>
+                            <div class="card-body no-padding-last-para d-flex flex-column">
                                 <a href="{{ social.url }}" target="_blank" class="header-link stretched-link">
                                     <h3 class="card-title h5"><i class="{{ social.icon }} pe-1" role="presentation"></i>{{ social.title }}</h3>
                                 </a>

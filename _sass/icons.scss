@@ -4,3 +4,8 @@
   content: url("/assets/images/paper-plane.svg");
   display: inline-block !important;
 }
+
+.bi-docker::before {
+  content: url("/assets/images/docker.svg");
+  display: inline-block !important;
+}

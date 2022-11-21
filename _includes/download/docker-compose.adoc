@@ -1,0 +1,77 @@
+:release-ver: {{ site.data.releases.stable.version }}
+:download-url: https://www.github.com/apiman/apiman-docker/releases/{release-ver}/apiman-compose-{release-ver}.zip
+
+== Apiman Docker Compose
+
+The Apiman Docker Compose quickstart lets you try Apiman with an architecture that is more representative of a real-world deployment.
+
+It is composed of independent containers for Apiman Manager, Apiman Gateway (Vert.x), Keycloak, databases, and metrics.
+A mock mail server is also included to allow you to test Apiman's email notifications in a safe way.
+
+****
+This distribution type is new in Apiman 3.
+https://www.github.com/apiman/apiman/discussions[We need your feedback!^]
+****
+
+=== Download
+
+* Download {download-url}[Apiman Compose {release-ver}^] and unzip.
+* Refer to `README.adoc` for the latest detailed instructions.
+
+=== Run
+
+. `docker-compose -f docker-compose.setup.yml up`
+. `docker-compose up`
+. http://apiman.local.gd:8080/apimanui
+
+=== Services
+
+We use https://www.local.gd[local.gd^] to make DNS mappings easier when using localhost.
+If you can't use `local.gd`, simply edit `.env` and change `APIMAN_HOSTNAME` to you preferred alternative.
+
+* Apiman Manager UI: http://apiman.local.gd:8080/apimanui[http://apiman.local.gd:8080/apimanui^]
+
+* Apiman Developer Portal: http://apiman.local.gd:8080/portal[http://apiman.local.gd:8080/portal^]
+
+* Apiman Manager API: http://apiman.local.gd:8080/apiman[http://apiman.local.gd:8080/apiman^]
+
+* Apiman Gateway: http://gateway.local.gd:8080[http://gateway.local.gd:8080^]
+
+* Keycloak Admin: http://auth.local.gd:8080/admin[http://auth.local.gd:8080/admin^]
+
+* Keycloak Auth Endpoint: http://auth.local.gd:8080[http://auth.local.gd:8080^]
+
+* Elasticsearch: http://elasticsearch.local.gd:8080[http://elasticsearch.local.gd:8080^]
+** You may want to edit the docker-compose file and bind port 9200.
+
+* link:https://github.com/maildev/maildev[MailDev^] mock mail service: http://mail.local.gd:8080[http://mail.local.gd:8080^]
+** You can view Apiman email notifications here
+** All mail goes to same mailbox with this mock server
+** You can distinguish between recipients by looking at the `to` field.
+
+* Default user and password for Apiman and Keycloak Admin:
+** Username: `admin`
+** Password: `admin123!`
+
+You can edit the values in `.env` if you want to change hostname bindings, passwords, etc.
+
+=== Production notes
+
+==== Apiman
+
+* Assuming you are terminating TLS/SSL on Apiman, the demo self-signed certificates, keystores, truststores, etc., should be replaced with your organisation's versions.
+
+* Components for such as Postgres and Elasticsearch likely should be run in a multi-node setup to provide high levels of resilience and redundancy.
+You should make some considerations for backups, etc.
+
+==== Keycloak
+
+* For a real deployment, please run Keycloak in production mode. For this quickstart Keycloak runs in dev-mode, which is very permissive and tolerant of self-signed certs, etc. -- but it is inappropriate for real-world deployments. https://www.keycloak.org/server/configuration-production[Refer to the Keycloak production guide^].
+
+* You **must** change the default usernames and/or passwords before going to production.
+
+* Keys are generated and stored in `data/keys`, and then copied into the `.env` file.
+Storing keys in plaintext is not usually advised for a production environment; you should consider using a dedicated secrets storage and injection mechanism.
+For example, Hashicorp Vault or K8s secrets.
+
+
