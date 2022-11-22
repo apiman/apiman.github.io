@@ -10,6 +10,12 @@
     <p>Many download & benefit from Apiman, but few give back to open source.</p>
     <p>Help us by giving your feedback, success stories, and working with the team.</p>
 
+- title: Migration Guide
+  icon: 'bi bi-arrow-90deg-up'
+  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
+  description: |
+    If you're moving to a new version of Apiman, please refer to our migration guide before upgrading.
+
 - title: Installation Guide
   icon: bi bi-wrench-adjustable-circle
   url: https://www.apiman.io/apiman-docs/installation-guide/stable/index.html

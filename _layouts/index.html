@@ -40,13 +40,12 @@ layout: base
                     </div>
                 </div>
                 <div class="d-flex flex-column">
-                    <!-- Centre aligned on small, left aligned md and up -->
                     <div class="mx-auto mx-md-0">
                         <a href="/download.html" class="btn btn-primary btn-lg">Get Started</a>
-                        <!-- Display only on smaller -->
-                        <span class="text-small text-muted ps-2 d-xl-none">
-                            The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
-                        </span>
+                    </div>
+                    <!-- Display only on smaller -->
+                    <div class="text-small text-muted pt-2 d-xl-none">
+                        The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
                     </div>
                 </div>
             </div>
@@ -67,7 +66,7 @@ layout: base
 {% endif %}
 
 <!-- Features -->
-<section class="bg-white py-4" id="apiman-section-features" title="Apiman Mini Feature Summary">
+<section class="bg-white py-5" id="apiman-section-features" title="Apiman Mini Feature Summary">
     <div class="container mw-1350">
         <h2 class="apiman-title-secondary mb-4">Just a few of Apiman's features</h2>
         <div class="row mt-3">
@@ -97,7 +96,7 @@ layout: base
 
 <!-- Blogs -->
 {% assign blogs = site.posts %}
-<section class="bg-light py-4" id="apiman-section-blog" title="Latest Apiman Blogs">
+<section class="bg-light py-5" id="apiman-section-blog" title="Latest Apiman Blogs">
     <div class="container-fluid mw-1350">
         <h2 class="apiman-title-secondary mb-4">The latest from the Apiman Blog</h2>
         <div class="justify-content-center row">
@@ -137,7 +136,7 @@ layout: base
 </section>
 
 <!-- Mini social block -->
-<section class="bg-white py-4" id="apiman-section-social" title="Interact With Apiman Team">
+<section class="bg-white py-5" id="apiman-section-social" title="Interact With Apiman Team">
     <div class="container-fluid mw-1350">
         <h2 class="apiman-title-secondary mb-4">Get Involved</h2>
         <div class="row">
