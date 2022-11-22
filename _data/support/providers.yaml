@@ -11,7 +11,7 @@
       Black Parrot Labs provides long-term, enterprise-grade support and professional services 
       to companies using Apiman in production. 
       We ensure that our clients have the confidence to deploy critical Apiman workloads, 
-      knowing they have unparalleled Apiman expertise behind them if something goes wrong.
+      knowing they have our unparalleled Apiman expertise behind them if something goes wrong.
     </p>
     <!-- <p>
       We have successfully undertaken a range of projects for our clients, from integration of 
@@ -29,16 +29,18 @@
     </p>
 
 - title: Red Hat (JBoss)
-  icon: /assets/images/asterisk.svg
+  icon: /assets/images/rht.svg
   url: https://www.redhat.com/middleware
   currentMajorSupporter: false
   description: |
     <p>
       Apiman was started by a small team of engineers at Red Hat's middleware division (then called JBoss).
-      After an acquisition, Red Hat decided they would not continue actively sponsoring in the project. 
+      After an acquisition, Red Hat decided they would not continue actively sponsoring the project. 
     </p>
     <p>
       Without Red Hat, Apiman would not exist! 
+    </p>
+    <p>
       An immense thank you to those who enabled Apiman to thrive 🙌.
     </p>
 
