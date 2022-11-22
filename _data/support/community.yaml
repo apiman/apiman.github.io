@@ -9,8 +9,8 @@
   url: 'https://www.github.com/apiman/apiman/issues'
   description: |
     If you find a problem with Apiman, please open a ticket on Apiman's GitHub Issues bug tracker.
-
-- title: Code of Conduct
-  icon: 'bi bi-hand-thumbs-up'
-  url: 'https://github.com/apiman/apiman/blob/master/CODE_OF_CONDUCT.md'
-  description: Apiman's code of conduct for contributors.
+#
+#- title: Code of Conduct
+#  icon: 'bi bi-hand-thumbs-up'
+#  url: 'https://github.com/apiman/apiman/blob/master/CODE_OF_CONDUCT.md'
+#  description: Apiman's code of conduct for contributors.

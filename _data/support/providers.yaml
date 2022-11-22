@@ -4,15 +4,20 @@
   currentMajorSupporter: true
   description: |
     <p>
-      Black Parrot Labs was founded by Apiman's co-founder and current maintainer 
+      Black Parrot Labs was founded by Apiman's co-founder and maintainer 
       <a href="https://www.github.com/msavy" target="_blank">Marc Savy</a>.
     </p>
     <p>
-      Black Parrot Labs provides long-term, enterprise-grade support to companies using Apiman 
-      in production. 
+      Black Parrot Labs provides long-term, enterprise-grade support and professional services 
+      to companies using Apiman in production. 
       We ensure that our clients have the confidence to deploy critical Apiman workloads, 
-      knowing they have people that created Apiman behind them if something goes wrong.
+      knowing they have unparalleled Apiman expertise behind them if something goes wrong.
     </p>
+    <!-- <p>
+      We have successfully undertaken a range of projects for our clients, from integration of 
+      Apiman into existing platforms to provide API Management capabilities, to expert support
+      for complex issues.
+    </p> -->
     <p>
       One of our <strong>core missions is to ensure the health of the Apiman open source community</strong>; 
       we invest a large proportion of our engineering and financial resources into maintaining Apiman. 
@@ -20,11 +25,11 @@
       and maintainers of the Apiman project for a long time.
     </p>
     <p>
-      Black Parrot Labs even contributed the Apiman website!
+      Nobody knows Apiman better.
     </p>
 
 - title: Red Hat (JBoss)
-  icon: /images/asterisk.svg
+  icon: /assets/images/asterisk.svg
   url: https://www.redhat.com/middleware
   currentMajorSupporter: false
   description: |
@@ -38,7 +43,7 @@
     </p>
 
 - title: Scheer PAS
-  icon: /images/asterisk.svg
+  icon: /assets/images/asterisk.svg
   url: https://www.example.org
   currentMajorSupporter: false
   description: |

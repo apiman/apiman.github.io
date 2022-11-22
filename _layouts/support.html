@@ -5,13 +5,13 @@ layout: base
 <main class="mw-950 mx-auto row my-4">
 
   <!-- Generic left sidebar -->
-  <div class="col-lg-2 d-lg-block d-none">
+  <div class="col-lg-3 d-lg-block d-none">
     <div class="sticky-top mt-3">
         {% include sidebar.include.html %}
     </div>
   </div>
 
-  <div class="col-lg-10 col-sm-12 px-2">
+  <div class="col-lg-9 col-sm-12 px-2">
     <!-- Intro -->
     <section class="mb-3">
         <h1>Apiman Support</h1>
@@ -30,7 +30,7 @@ layout: base
       <div class="row">
         {% for community in site.data.support.community %}
         <!-- Cards/tiles -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-6">
           <div class="card h-100" tabindex=0>
             <div class="card-body no-padding-last-para d-flex flex-column">
               <a href="{{ community.url }}" target="_blank" class="header-link stretched-link">
@@ -61,7 +61,7 @@ layout: base
       <p>
         Their sponsorship of Apiman's developers is essential to the project's continuation.
       </p>
-      <div class="row mx-auto" style="max-width: 800px">
+      <div class="row">
         {% assign activeProviders = site.data.support.providers | where:'currentMajorSupporter', true %}
         {% for provider in activeProviders %}
         <!-- Cards/tiles -->
