@@ -1,0 +1,116 @@
+---
+layout: base
+---
+
+<main class="mw-950 mx-auto row my-4">
+
+  <!-- Generic left sidebar -->
+  <div class="col-lg-2 d-lg-block d-none">
+    <div class="sticky-top mt-3">
+        {% include sidebar.include.html %}
+    </div>
+  </div>
+
+  <div class="col-lg-10 col-sm-12 px-2">
+    <!-- Intro -->
+    <section class="mb-3">
+        <h1>Apiman Support</h1>
+        <p>
+          Do you need help or services relating to Apiman?
+        </p>
+    </section>
+    <!-- Upstream/community support -->
+    <section class="mb-3">
+      <h2 class="apiman-title-secondary">Community Support</h2>
+      <p>
+        Community support is provided by contributors to the upstream, with questions answered in GitHub Issues and Apiman Discussions when people have time.
+        This is strictly on a <strong>voluntary basis</strong>, and there are <strong>no guarantees provided</strong>.
+        Please be respectful of the fact people are providing their time freely.
+      </p>
+      <div class="row">
+        {% for community in site.data.support.community %}
+        <!-- Cards/tiles -->
+        <div class="col-sm-12 col-md-4">
+          <div class="card h-100" tabindex=0>
+            <div class="card-body no-padding-last-para d-flex flex-column">
+              <a href="{{ community.url }}" target="_blank" class="header-link stretched-link">
+                <h3 class="card-title h5"><i class="{{ community.icon }} pe-1" role="presentation"></i>{{ community.title }}</h3>
+              </a>
+              <div class="card-text flex-grow-1 pt-2">
+                {{ community.description }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Active Supporters -->
+    <section class="mb-3">
+      <h2 class="apiman-title-secondary">Commercial Support</h2>
+      <p>
+        If you need commercial-grade Apiman support, consulting, training, or other professional services, then the following companies are major
+        ongoing and long-term contributors to the Apiman project.
+      </p>
+      <p>
+        The reality is, as with many open source projects, the overwhelming majority of contributions are made by a small number of
+        dedicated individuals and companies.
+        They have the deep expertise in Apiman needed to undertake even the most complex projects.
+      </p>
+      <p>
+        Their sponsorship of Apiman's developers is essential to the project's continuation.
+      </p>
+      <div class="row mx-auto" style="max-width: 800px">
+        {% assign activeProviders = site.data.support.providers | where:'currentMajorSupporter', true %}
+        {% for provider in activeProviders %}
+        <!-- Cards/tiles -->
+        <div class="col-sm-12">
+          <div class="card h-100" tabindex=0>
+            <div class="card-body no-padding-last-para d-flex flex-column">
+              <a href="{{ provider.url }}" target="_blank" class="header-link stretched-link">
+                <img src="{{ provider.icon }}" alt="{{ provider.title }}" class="img-thumbnail pe-1" aria-label="Black Parrot Labs">
+                {% comment %}<h3 class="card-title h5">{{ provider.title }}</h3>{% endcomment %}
+              </a>
+              <div class="card-text flex-grow-1 pt-2">
+                {{ provider.description }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Historic Supporters -->
+    <section class="mb-3">
+      <h2 class="apiman-title-secondary">Historic Supporters</h2>
+      <p>
+        Without these companies, Apiman would not be what it is today.
+        We'd like to thank them for their support and participation in Apiman in the past.
+      </p>
+      <div class="row">
+        {% assign historicSupporters = site.data.support.providers | where:'currentMajorSupporter', false %}
+        {% for provider in historicSupporters %}
+        <!-- Cards/tiles -->
+        <div class="col-sm-12 col-md-6">
+          <div class="card h-100" tabindex=0>
+            <div class="card-body no-padding-last-para d-flex flex-column">
+              <a href="{{ provider.url }}" target="_blank" class="header-link stretched-link">
+                <img src="{{ provider.icon }}" class="img-thumbnail pe-1" role="presentation">
+                <h3 class="card-title h5">{{ provider.title }}</h3>
+              </a>
+              <div class="card-text flex-grow-1 pt-2">
+                {{ provider.description }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Historic supporters -->
+  </div>
+
+</main>

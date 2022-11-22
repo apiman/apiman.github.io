@@ -1,0 +1,45 @@
+- title: Black Parrot Labs
+  icon: https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63530d5ddb028e7f8a7ac610_bpl-logo-2.svg
+  url: https://www.blackparrotlabs.io
+  currentMajorSupporter: true
+  description: |
+    <p>
+      Black Parrot Labs was founded by Apiman's co-founder and current maintainer 
+      <a href="https://www.github.com/msavy" target="_blank">Marc Savy</a>.
+    </p>
+    <p>
+      Black Parrot Labs provides long-term, enterprise-grade support to companies using Apiman 
+      in production. 
+      We ensure that our clients have the confidence to deploy critical Apiman workloads, 
+      knowing they have people that created Apiman behind them if something goes wrong.
+    </p>
+    <p>
+      One of our <strong>core missions is to ensure the health of the Apiman open source community</strong>; 
+      we invest a large proportion of our engineering and financial resources into maintaining Apiman. 
+      No other company has this commitment, and we have been the principal contributors 
+      and maintainers of the Apiman project for a long time.
+    </p>
+    <p>
+      Black Parrot Labs even contributed the Apiman website!
+    </p>
+
+- title: Red Hat (JBoss)
+  icon: /images/asterisk.svg
+  url: https://www.redhat.com/middleware
+  currentMajorSupporter: false
+  description: |
+    <p>
+      Apiman was started by a small team of engineers at Red Hat's middleware division (then called JBoss).
+      After an acquisition, Red Hat decided they would not continue actively sponsoring in the project. 
+    </p>
+    <p>
+      Without Red Hat, Apiman would not exist! 
+      An immense thank you to those who enabled Apiman to thrive 🙌.
+    </p>
+
+- title: Scheer PAS
+  icon: /images/asterisk.svg
+  url: https://www.example.org
+  currentMajorSupporter: false
+  description: |
+    adsadssda

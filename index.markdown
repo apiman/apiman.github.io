@@ -1,4 +1,4 @@
 ---
 layout: index
-title: 'Apiman: Open Source API Management'
+title: 'Apiman: Flexible Open Source API Management'
 ---

@@ -1,0 +1,16 @@
+- title: Apiman Discussions
+  icon: 'bi bi-chat-left-text'
+  url: 'https://github.com/orgs/apiman/discussions'
+  description: |
+    Whether debating deployment architectures or showing off your latest plugin project, this is a place to discuss all things Apiman.
+
+- title: Found an Issue?
+  icon: 'bi bi-bug'
+  url: 'https://www.github.com/apiman/apiman/issues'
+  description: |
+    If you find a problem with Apiman, please open a ticket on Apiman's GitHub Issues bug tracker.
+
+- title: Code of Conduct
+  icon: 'bi bi-hand-thumbs-up'
+  url: 'https://github.com/apiman/apiman/blob/master/CODE_OF_CONDUCT.md'
+  description: Apiman's code of conduct for contributors.
