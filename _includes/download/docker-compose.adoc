@@ -12,6 +12,11 @@ This distribution is new in Apiman 3.
 https://www.github.com/apiman/apiman/discussions[We need your feedback!^]
 ****
 
+=== Prerequisites
+
+* OCI-compatible container runtime (such as Docker, containerd, CRI-O, etc).
+* Docker Compose or compatible alternative (such as Podman).
+
 === Download
 
 * Download {download-url}[Apiman Docker Compose distro {release-ver}^] and unzip.

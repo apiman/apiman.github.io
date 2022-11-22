@@ -39,7 +39,7 @@ This contains instructions for how to set up external databases, auth, metrics, 
 [source]
 ----
 $ bin/standalone.sh -c standalone-apiman.xml \
-    -Dapiman.auth.url=http://localhost:8085 #<1>
+    -Dapiman.auth.url=http://localhost:8085 <1>
 ----
 <1> Replace with your Keycloak server auth URL, as appropriate.
 +

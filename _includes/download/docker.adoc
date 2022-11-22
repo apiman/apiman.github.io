@@ -1,13 +1,16 @@
 == Apiman Containers
 :apiman-version: {{ site.data.releases.stable.version }}
 :ghcr: https://github.com/orgs/apiman/packages
+:keycloak-guide: https://www.apiman.io/apiman-docs/installation-guide/{apiman-version}/keycloak.html
 
-Previously we published our images to DockerHub only.
-As of Apiman 3, {ghcr}[our canonical repository^] is GitHub Container Registry (GHCR), but we will continue publishing to DockerHub for now.
+Previously, we published our images to DockerHub only.
+As of Apiman 3, our canonical repository is the {ghcr}[Apiman GitHub Container Registry (GHCR)^], but we will continue publishing to DockerHub for now.
 
 === Prerequisites
 
 * OCI-compatible container runtime (such as Docker, containerd, CRI-O, etc).
+* You will need Keycloak running.
+** Apiman must be {keycloak-guide}[configured to point at Keycloak^].
 
 === Images
 
@@ -15,5 +18,7 @@ As of Apiman 3, {ghcr}[our canonical repository^] is GitHub Container Registry (
 * https://github.com/apiman/apiman-docker/blob/{apiman-version}/README.adoc[Official Apiman container repository (GHCR)^].
 
 === Configuration
+
+* Typically, you will want to map at least port 8080 (HTTP) and 8443 (HTTPS).
 
 Please refer to the Apiman Docs.

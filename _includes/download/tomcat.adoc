@@ -2,6 +2,8 @@
 :tomcat-version: {{ site.data.releases.stable.distros.tomcat }}
 :apiman-version: {{ site.data.releases.stable.version }}
 
+Apiman on Apache Tomcat.
+
 === Prerequisites
 
 * Java 11+
@@ -11,9 +13,8 @@
 :tc-download-url: https://dlcdn.apache.org/tomcat/tomcat-9/v{tomcat-version}/bin/apache-tomcat-{tomcat-version}.zip
 :overlay-download-url: https://github.com/apiman/apiman/releases/download/{apiman-version}/apiman-distro-tomcat-{apiman-version}-overlay.zip
 
-* {tc-download-url}[Download Tomcat {tomcat-version}] — newer micro versions should also work.
+* {tc-download-url}[Download Tomcat {tomcat-version}] — newer micro versions should also work
 * {overlay-download-url}[Download Tomcat Apiman overlay {apiman-version}]
-
 
 === Install
 

@@ -1,3 +1,43 @@
-== Vert.x Quickstart
+== Vert.x Gateway Quickstart
+:apiman-version: {{ site.data.releases.stable.version }}
+:installation-guide: https://www.apiman.io/apiman-docs/installation-guide/{apiman-version}/servlet/wildfly.html
 
+The Apiman Vert.x Gateway is our premier gateway implementation, offering the best performance and smallest footprint.
+If you need better throughput and lower latency, this is likely the choice for you.
 
+This implementation is gateway only; you need to run an Apiman Manager separately.
+
+=== Prerequisites
+
+* Java 11+
+* Refer to https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html[Migration Guide^] if upgrading.
+* Apiman Manager running (any distribution).
+
+=== Download
+:vx-download-url: https://github.com/apiman/apiman/releases/download/{apiman-version}/apiman-distro-vertx-{apiman-version}.zip
+
+* {vx-download-url}[Download Apiman Vert.x Gateway {apiman-version}]
+
+=== Install
+
+* Unpack the Vert.x Gateway zip
+
+=== Configure
+
+* Refer to the {installation-guide}[installation guide] for detailed configuration instructions.
+
+* The Vert.x gateway is configured through a JSON file rather than properties.
+
+* Refer to the `README.adoc` in the distro zip.
+
+=== Run
+:walthrough: https://www.apiman.io/apiman-docs/installation-guide/{apiman-version}/vertx/install.html
+
+. Start the Vert.x Gateway using your chosen configuration (e.g. Elasticsearch):
++
+[source,shell]
+----
+./apiman-gateway.sh --conf configs/conf-es.json
+----
+. Install one gateway to your Apiman Manager via the administration console or REST API. {walthrough}[A walkthrough is available in our installation guide].
+** Generally only one instance from a given cluster needs to be installed into the Apiman Manager (e.g. staging cluster, production cluster, etc).
