@@ -45,8 +45,17 @@
     </p>
 
 - title: Scheer PAS
-  icon: /assets/images/asterisk.svg
-  url: https://www.example.org
+  icon: https://www.scheer-pas.com/wp-content/uploads/2020/09/scheerpas_logo.svg
+  url: https://doc.scheer-pas.com/
   currentMajorSupporter: false
   description: |
-    adsadssda
+    <p>
+      Scheer PAS is the platform for flexible end-to-end support of individual processes. 
+      It stands for digitization and automation, regardless of how many people, systems or companies need to be integrated.
+    </p>
+    <p>
+      Scheer PAS API Management is based on Apiman and offers you also enterprise support.
+    </p>
+    <p>
+      You may visit Scheer PAS documentation for further details.
+    </p>
