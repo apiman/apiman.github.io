@@ -1,4 +1,7 @@
 stable:
   version: 2.2.3.Final
+  distros:
+    wildfly: 23.0.2.Final
+    tomcat: 9.0.69
 dev:
   version: 3.0.0-SNAPSHOT

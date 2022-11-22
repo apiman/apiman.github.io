@@ -12,6 +12,7 @@ layout: base
     </div>
     <div class="col-lg-10 col-sm-12">
         <div class="card">
+            <!-- Header and tabs -->
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs" id="download-tabset" role="tablist">
                     <!-- Tab ID must have a corresponding `include` file in `_includes/download` -->
@@ -35,10 +36,35 @@ layout: base
                     {% endfor %}
                 </ul>
             </div>
+            <!-- Bodies (tab panes) -->
             <div class="tab-content card-body">
-                <!-- See _includes/download -- files are included by name pattern -->
                 {% for tab in site.data.download.tabs %}
-                    {% include download/{{ tab.id }}.include.html %}
+                    {% if forloop.first %}
+                        {% assign defaultActive = 'show active' %}
+                    {% else %}
+                        {% assign defaultActive = '' %}
+                    {% endif %}
+                    <div class="tab-pane fade show {{ defaultActive }}"
+                         id="{{ tab.id }}-pane" role="tabpanel"
+                         aria-labelledby="{{ tab.id }}-tab"
+                         tabindex="0">
+                        <!--
+                            Tab's pane is split into two:
+                            - Left side, instructions (included in via name).
+                            - Right side, "Next Steps" quick links.
+                        -->
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <!-- See _includes/download -- files are included by name pattern -->
+                                {% capture contents %}{% include download/{{ tab.id }}.adoc %}{% endcapture %}
+                                {{ contents | asciidocify }}
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                {% assign ver = site.data.releases.stable.version %}
+                                {% include download/next-steps.include.html %}
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>

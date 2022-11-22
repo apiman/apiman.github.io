@@ -1,0 +1,26 @@
+== Tomcat
+
+=== Download
+
+* [Download Tomcat {tomcat-ver}]
+* [Download Tomcat Apiman overlay {apiman-ver}]
+
+=== Install
+
+. Unpack the Apache Tomcat zip
+. Unpack the Apiman {apiman-ver} Tomcat overlay zip **inside the tomcat directory**
+
+=== Run
+
+. Start Tomcat using the default configuration
+. Point your browser at the Apiman UI  http://localhost:8080/apimanui/[`http://localhost:8080/apimanui`^] and log in with `admin`/`admin123!`
+
+IMPORTANT: We strongly recommend you change the admin password in tomcat-users.xml!
+
+=== Configure
+
+This distribution comes pre-configured with everything you should need to get started.
+
+Please see the https://www.apiman.io/apiman-docs[Installation and User Guide^] for information about how to change Apiman configuration options if you require more customization.
+
+It is possible to use Keycloak instead of Tomcat auth by adding the Keycloak Tomcat valve, but this is an exercise left for the reader (for now).

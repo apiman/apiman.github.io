@@ -40,8 +40,13 @@
             crossorigin="anonymous"
             async
     ></script>
+
+    <!-- Highlight JS -->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" async></script>
 </head>
-<body>
+<body onload="hljs.highlightAll();">
     <div class="content">
         {% include navbar.include.html %}
         {{ content }}

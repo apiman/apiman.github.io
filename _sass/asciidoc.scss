@@ -2,6 +2,7 @@
 span.icon > .fa {
   cursor: default;
 }
+
 .admonitionblock td.icon {
   text-align: center;
   width: 80px;
@@ -21,7 +22,8 @@ span.icon > .fa {
   color: #111;
 }
 .admonitionblock td.icon .icon-warning:before {
-  content: "\f071";
+  font-family: "bootstrap-icons";
+  content: "\F335";
   color: #bf6900;
 }
 .admonitionblock td.icon .icon-caution:before {
@@ -29,7 +31,9 @@ span.icon > .fa {
   color: #bf3400;
 }
 .admonitionblock td.icon .icon-important:before {
-  content: "\f06a";
+  font-style: normal;
+  font-family: "bootstrap-icons";
+  content: "\f335";
   color: #bf0000;
 }
 
@@ -69,11 +73,11 @@ b.conum * {
   display: none;
 }
 
-// Sidebar
+// Sidebarblock (**** block)
 
-.sidebarblock {
-  color: white;
-  background: var(--apiman-bg-blue-hover);
+.sidebarblock, .admonitionblock > table {
+  //color: white;
+  border: 1px solid var(--apiman-muted-red);
   border-radius: .2rem;
   padding: 1rem;
 
@@ -84,6 +88,6 @@ b.conum * {
   margin-bottom: 1em;
 
   a {
-    color: white;
+    //color: white;
   }
 }

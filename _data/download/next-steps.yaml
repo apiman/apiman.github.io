@@ -1,9 +1,14 @@
+- title: Need Help & Support?
+  icon: bi bi-question-diamond
+  url: /support.html
+  description: If you need expert support, advice, or are having problems.
+
 - title: Give Us Feedback
   icon: bi bi-chat-left-text
-  url: https://www.github.com/apiman/apiman/discussion
+  url: https://www.github.com/apiman/discussion
   description: |
-    <p>Many download & benefit from Apiman, but few give back.</p>
-    <p>Please help us by giving your feedback, success stories, and working with the team.</p>
+    <p>Many download & benefit from Apiman, but few give back to open source.</p>
+    <p>Help us by giving your feedback, success stories, and working with the team.</p>
 
 - title: Installation Guide
   icon: bi bi-wrench-adjustable-circle

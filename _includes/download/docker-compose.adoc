@@ -1,21 +1,20 @@
+== Apiman Docker Compose Quickstart
 :release-ver: {{ site.data.releases.stable.version }}
 :download-url: https://www.github.com/apiman/apiman-docker/releases/{release-ver}/apiman-compose-{release-ver}.zip
 
-== Apiman Docker Compose
+This quickstart lets you try Apiman with an architecture that is more representative of a real-world deployment.
 
-The Apiman Docker Compose quickstart lets you try Apiman with an architecture that is more representative of a real-world deployment.
-
-It is composed of independent containers for Apiman Manager, Apiman Gateway (Vert.x), Keycloak, databases, and metrics.
+It is composed of independent containers for Apiman Manager, Apiman Gateway (Vert.x), Keycloak, PostgreSQL, and Elasticsearch.
 A mock mail server is also included to allow you to test Apiman's email notifications in a safe way.
 
 ****
-This distribution type is new in Apiman 3.
+This distribution is new in Apiman 3.
 https://www.github.com/apiman/apiman/discussions[We need your feedback!^]
 ****
 
 === Download
 
-* Download {download-url}[Apiman Compose {release-ver}^] and unzip.
+* Download {download-url}[Apiman Docker Compose distro {release-ver}^] and unzip.
 * Refer to `README.adoc` for the latest detailed instructions.
 
 === Run

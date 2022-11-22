@@ -1,0 +1,48 @@
+== WildFly Quickstart
+:wf-version: {{ site.data.releases.stable.distros.wildfly }}
+:apiman-version: {{ site.data.releases.stable.version }}
+:keycloak-guide: https://www.apiman.io/apiman-docs/installation-guide/{apiman-version}/keycloak.html
+:installation-guide: https://www.apiman.io/apiman-docs/installation-guide/{apiman-version}/servlet/wildfly.html
+
+This quickstart includes a WildFly Apiman Manager and a WildFly Apiman Gateway.
+
+As of Apiman 3, you need to download and run Keycloak separately. footnote:[It is no longer possible to bundle both platforms into the same WildFly instance.]
+
+=== Prerequisites
+
+* Java 11+
+* Keycloak server. Don't worry, it's really easy! {keycloak-guide}[Here's a simple guide to get your Keycloak server running and configured in a few clicks.^]
+
+=== Download
+
+* https://download.jboss.org/wildfly/{wf-version}/wildfly-{wf-version}.zip[WildFly {wf-version}]
+* https://github.com/apiman/apiman/releases/download/{apiman-version}/apiman-distro-wildfly-{apiman-version}-overlay.zip[Apiman WildFly Overlay {apiman-version}]
+
+=== Install
+
+. Unpack WildFly
+. Unpack Apiman zip overlay **inside the `wildfly` directory**
+
+=== Configure
+
+{installation-guide}[Refer to our configuration guide^] to see all the ways you can configure Apiman.
+This contains instructions for how to set up external databases, auth, metrics, email notifications, and much more.
+
+=== Run
+
+. Ensure your Keycloak server is running, and you know its auth endpoint.
+    * If you followed the guide above, it will be `http://localhost:8085`
+
+. Start WildFly using the `standalone-apiman.xml` configuration:
++
+[source]
+----
+$ bin/standalone.sh -c standalone-apiman.xml \
+    -Dapiman.auth.url=http://localhost:8085 #<1>
+----
+<1> Replace with your Keycloak server auth URL, as appropriate.
++
+
+. Point your browser at the Apiman UI  http://localhost:8080/apimanui/[`http://localhost:8080/apimanui`^] and log in with `admin`/`admin123!`
+
+IMPORTANT: Before transitioning to production, you must you change admin passwords and any default keys by logging into Keycloak.
