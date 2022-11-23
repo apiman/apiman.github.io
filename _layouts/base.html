@@ -11,10 +11,18 @@
     {% comment %}</script>{% endcomment %}
 
     {% seo %}
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+
+    <!-- SEO tag doesn't support og:tag as far as I can tell, so DIY implementation -->
+    {% if page and page.tags %}
+        {% for tag in page.tags %}
+            <meta name="article:tag" content="{{ tag }}"/>
+            <meta name="og:article:tag" content="{{ tag }}"/>
+        {% endfor %}
+    {% endif %}
+
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
     <link
