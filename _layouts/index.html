@@ -101,7 +101,7 @@ layout: base
         <h2 class="apiman-title-secondary mb-4">The latest from the Apiman Blog</h2>
         <div class="justify-content-center row">
             {%- for blog in blogs limit: 3 -%}
-                <div class="col-lg-4 col-md-6 pb-3 blog-item">
+                <div class="col-lg-4 col-md-6 pb-3">
                     <div class="card h-100">
                         <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ blog.url }}'" tabindex=0>
                             <a href="{{ blog.url }}" class="header-link">
@@ -121,7 +121,7 @@ layout: base
                                 <img src="{{ author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}">
                                 <div>
                                     <h4 class="h6 mb-0">{{ author.name }}</h4>
-                                    <div class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</div>
+                                    <time class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</time>
                                 </div>
                             </a>
                         </div>

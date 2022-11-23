@@ -32,7 +32,7 @@ asciidoctor:
     icons: font
     outfilesuffix: ''
 
-    # https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
+# Jekyll Archives
 jekyll-archives:
   enabled:
     - tags
@@ -67,23 +67,7 @@ pagination:
   sort_reverse: true
   #paginate_path: "/blog/page:num/"
 
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# RSS/Atom Feed — This is for compatibility with old website
+# Does anyone use RSS anymore?
+feed:
+  path: /blog/feed.xml

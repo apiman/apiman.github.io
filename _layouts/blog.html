@@ -3,15 +3,44 @@ layout: base
 ---
 
 <div>
-    <div class="mx-auto mw-1200">
+    <div class="mx-auto mw-1200 container-fluid my-4">
+        <h1>The latest from the Apiman Blog</h1>
         <div class="row">
             <!-- Paginated blog list -->
             <main class="col-9">
-                <h1>The latest from the Apiman team</h1>
-
-                {% for post in paginator.posts %}
-                    {% assign author = site.data.authors[post.author] %}
-                    {{ post.title }} - {{ author.name }}
+                <div class="p-0 m-0 d-flex justify-content-end">
+                    <!-- Why is the feed always at root 🤔? -->
+                    <a href="{{ '/blog/feed.xml' | prepend: site.baseurl }}">
+                        <i class="bi bi-rss-fill"></i> Subscribe via RSS
+                    </a>
+                </div>
+                <p>Latest news and thoughts from the Apiman development team.</p>
+                {% for blog in paginator.posts %}
+                    {% assign author = site.data.authors[blog.author] %}
+                    <!-- Blog card start -->
+                    <div class="card mb-4">
+                        <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ blog.url }}'" tabindex=0>
+                            <a href="{{ blog.url }}" class="header-link">
+                                <h2 class="card-title h5">{{ blog.title }}</h2>
+                            </a>
+                            <div class="card-text flex-grow-1 pt-2">
+                                {{ blog.excerpt | remove: '<p></p>' }}
+                            </div>
+                        </div>
+                        <div class="small text-muted text-end px-2 pb-1">
+                            <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
+                        </div>
+                        <div class="align-items-center card-footer d-flex justify-content-between small">
+                            <a target="_blank" rel="noopener" href="{{ author.github }}" class="align-items-center d-flex text-dark text-decoration-none">
+                                <img src="{{ author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}"/>
+                                <div>
+                                    <h3 class="h6 mb-0">{{ author.name }}</h3>
+                                    <time class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</time>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Blog card end -->
                 {% endfor %}
 
                 {% if paginator.total_pages > 1 %}
@@ -25,6 +54,20 @@ layout: base
                     </div>
                 {% endif %}
             </main>
+            <!-- Blog tags -->
+            <aside class="col-3">
+                <h2 class="apiman-title-secondary">Tags</h2>
+                <ol class="tag-list">
+                    {% assign sortedTags = site.tags | sort %}
+                    {% for tag in sortedTags %}
+                        <li>
+                            <!-- [0] element is the tag's name, otherwise we'll get a load of other crap as well -->
+                            {% capture tagPath %}{{ site.baseurl }}/blog/tag/{{ tag[0] | downcase | replace: '.', '-' }}{% endcapture %}
+                            <a class="subtle-underline" href="{{ tagPath }}">{{ tag[0] }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </aside>
         </div>
     </div>
 </div>

@@ -34,3 +34,8 @@
     text-underline-offset: 0.1rem;
   }
 }
+
+a.subtle-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--apiman-light-faded);
+}
