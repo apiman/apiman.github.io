@@ -24,6 +24,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
+
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
     <link
             rel="stylesheet"
@@ -52,7 +53,10 @@
     <!-- Highlight JS (syntax highlighting) -->
     <link rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" async></script>
+    <script
+            src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
+            async
+    ></script>
 </head>
 <body onload="hljs.highlightAll();">
     <div class="content">
