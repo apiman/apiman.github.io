@@ -2,9 +2,9 @@
 layout: base
 ---
 
-<main class="mw-1200 mx-auto row my-4">
+<div class="mw-1200 mx-auto row my-4">
 
-    <div class="col-lg-2 d-lg-block d-none">
+    <aside class="col-lg-2 d-lg-block d-none">
         <div class="sticky-top">
             <!-- Feature group titles -->
             <div class="list-group justify-content-center" id="feature-titles-sidebar">
@@ -19,9 +19,9 @@ layout: base
                 {% include sidebar.include.html %}
             </div>
         </div>
-    </div>
+    </aside>
 
-    <div class="col-lg-10 col-sm-12">
+    <main class="col-lg-10 col-sm-12">
         <section class="mb-4">
             <h1>Apiman Features</h1>
             <p>A non-exhaustive list of Apiman's features. Most of Apiman's functionality is customisable, and you can write your own plugins to provide functionality
@@ -71,8 +71,8 @@ layout: base
             <!-- 3 stars separator -->
             <hr class="section-separator mt-4">
         {% endfor %}
-    </div>
-</main>
+    </main>
+</div>
 
 <!-- SVGs for our visuals/checkboxes. Hidden by default and referenced using <use href>. -->
 <svg style="display:none;">

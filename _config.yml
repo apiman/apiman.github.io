@@ -17,6 +17,7 @@ plugins:
   - jekyll-feed
   - jekyll-archives
   - jekyll-seo-tag
+  - jekyll-paginate-v2
 
 sass:
   style: compressed
@@ -57,6 +58,15 @@ social:
   links:
     - https://www.twitter.com/apiman_io
     - https://www.github.com/apiman
+
+pagination:
+  enabled: true
+  debug: true
+  collection: posts
+  per_page: 12
+  sort_reverse: true
+  #paginate_path: "/blog/page:num/"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

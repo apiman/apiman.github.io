@@ -1,0 +1,8 @@
+.tag-list {
+  // Change icon before li to https://icons.getbootstrap.com/icons/tag-fill/
+  li::marker {
+    font-family: "bootstrap-icons";
+    content: "\F5AF"; // bi tag-fill
+    color: var(--apiman-light-faded);
+  }
+}

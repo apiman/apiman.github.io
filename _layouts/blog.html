@@ -1,0 +1,30 @@
+---
+layout: base
+---
+
+<div>
+    <div class="mx-auto mw-1200">
+        <div class="row">
+            <!-- Paginated blog list -->
+            <main class="col-9">
+                <h1>The latest from the Apiman team</h1>
+
+                {% for post in paginator.posts %}
+                    {% assign author = site.data.authors[post.author] %}
+                    {{ post.title }} - {{ author.name }}
+                {% endfor %}
+
+                {% if paginator.total_pages > 1 %}
+                    <div class="paginator-btns">
+                        {% if paginator.next_page %}
+                            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button-cta primary btn-sm">Older Posts</a>
+                        {% endif %}
+                        {% if paginator.previous_page %}
+                            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button-cta primary btn-sm">Newer Posts</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </main>
+        </div>
+    </div>
+</div>

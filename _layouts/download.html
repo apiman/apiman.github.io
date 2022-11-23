@@ -2,14 +2,14 @@
 layout: base
 ---
 
-<main class="mw-1350 mx-auto row my-4">
+<div class="mw-1350 mx-auto row my-4">
 
-    <div class="col-lg-2 d-lg-block d-none">
+    <aside class="col-lg-2 d-lg-block d-none">
         <div class="sticky-top">
             <!-- Generic sidebar with GH, Twitter, etc -->
             {% include sidebar.include.html %}
         </div>
-    </div>
+    </aside>
     <div class="col-lg-10 col-sm-12">
         <div class="card">
             <!-- Header and tabs -->
@@ -54,19 +54,19 @@ layout: base
                             - Right side, "Next Steps" quick links.
                         -->
                         <div class="row">
-                            <div class="col-12 col-lg-8">
+                            <main class="col-12 col-lg-8">
                                 <!-- See _includes/download -- files are included by name pattern -->
                                 {% capture contents %}{% include download/{{ tab.id }}.adoc %}{% endcapture %}
                                 {{ contents | asciidocify }}
-                            </div>
-                            <div class="col-12 col-lg-4">
+                            </main>
+                            <aside class="col-12 col-lg-4">
                                 {% assign ver = site.data.releases.stable.version %}
                                 {% include download/next-steps.include.html %}
-                            </div>
+                            </aside>
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-</main>
+</div>
