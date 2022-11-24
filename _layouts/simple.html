@@ -1,7 +1,18 @@
 ---
 layout: base
+maxWidth: mw-1200
+colCountLeft: 2
+colCountRight: 10
 ---
 
-<div class="mw-900 mx-auto my-5">
-  {{ content }}
+<div class="container-fluid">
+  <div class="{{ layout.maxWidth }} mx-auto my-5 row">
+    <aside class="col-lg-{{ layout.colCountLeft }} d-lg-block d-none">
+      <!-- Generic sidebar with GH, Twitter, etc -->
+      {% include sidebar.include.html %}
+    </aside>
+    <div class="col-lg-{{ layout.colCountRight }} col-sm-12">
+      {{ content }}
+    </div>
+  </div>
 </div>

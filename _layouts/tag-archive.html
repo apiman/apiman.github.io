@@ -1,5 +1,14 @@
 ---
-layout: base
+layout: simple
+maxWidth: mw-1200
+colCountLeft: auto
+colCountRight: 9
 ---
 
-All tags here
+<main>
+  <h1>Posts tagged with <em>{{ page.title }}</em></h1>
+  {% for page in page.posts %}
+    {% assign author = site.data.authors[page.author] %}
+    {% include blog/blog-listing-card.html blog=page author=author %}
+  {% endfor %}
+</main>

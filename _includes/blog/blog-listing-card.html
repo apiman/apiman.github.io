@@ -1,0 +1,24 @@
+<!-- Blog card start -->
+<div class="card mb-4">
+  <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ include.blog.url }}'" tabindex=0>
+    <a href="{{ include.blog.url }}" class="header-link">
+      <h2 class="card-title h5">{{ include.blog.title }}</h2>
+    </a>
+    <div class="card-text flex-grow-1 pt-2">
+      {{ include.blog.excerpt | remove: '<p></p>' }}
+    </div>
+  </div>
+  <div class="small text-muted text-end px-2 pb-1">
+    <i class="bi bi-tags-fill text-secondary"></i> {{ include.blog.tags | join: ', ' }}
+  </div>
+  <div class="align-items-center card-footer d-flex justify-content-between small">
+    <a target="_blank" rel="noopener" href="{{ include.author.url }}" class="align-items-center d-flex text-dark text-decoration-none">
+      <img src="{{ include.author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ include.author.name }}"/>
+      <div>
+        <h3 class="h6 mb-0">{{ include.author.name }}</h3>
+        <time class="mb-0 text-secondary">{{ include.blog.date | date_to_long_string }}</time>
+      </div>
+    </a>
+  </div>
+</div>
+<!-- Blog card end -->
