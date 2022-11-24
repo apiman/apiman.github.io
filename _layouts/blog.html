@@ -7,11 +7,6 @@ layout: base
         <!-- Paginated blog list -->
         <main class="col-12 col-md-9">
             <!-- Does anyone even use RSS/Atom any more? -->
-            <div class="d-flex justify-content-end">
-                <a class="pb-0 mb-0" href="{{ '/blog/feed.xml' | prepend: site.baseurl }}">
-                    <i class="bi bi-rss-fill"></i> Subscribe via RSS
-                </a>
-            </div>
             <h1>The latest from the Apiman Blog</h1>
             <p>
                 The Apiman blog presents the latest Apiman release news and insights.
@@ -66,6 +61,11 @@ layout: base
         </main>
         <!-- Blog tags -->
         <aside class="col-12 col-md-3">
+            <div>
+                <a class="mb-2" href="{{ '/blog/feed.xml' | prepend: site.baseurl }}">
+                    <i class="bi bi-rss-fill text-muted-red"></i> Subscribe via RSS
+                </a>
+            </div>
             <h2 class="apiman-title-secondary">Tags</h2>
             <ol class="tag-list">
                 {% assign sortedTags = site.tags | sort %}
