@@ -10,7 +10,9 @@ Apiman 1.3.5.Final is out and ready for you all to try.
 
 This just contains some UI reversions, as we still have some tough-to-fix gremlins. We'll bring the updates back once we're able to fix the issues.
 
-It contains all of the same fixes and features as 1.3.4.Final.
+It contains all the same fixes and features as 1.3.4.Final.
+
+// more
 
 == Download 1.3.5.Final
 

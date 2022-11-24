@@ -14,9 +14,9 @@ Last week we released apiman _1.3.0.Final_. It's been _rather_ a long while comi
 
 This release has some important new features, a substantial number of bug-fixes, and marks the official release of the Apiman Vert.x Gateway.
 
-Importantly, this release has a lot of background work which has prepared the  the ground for the upcoming initial community integration with 3scale, as outlined in previous blogs.
+Importantly, this release has a lot of background work which has prepared the ground for the upcoming initial community integration with 3scale, as outlined in previous blogs.
 
-//<!--more-->
+// more
 
 == Where can I find more information?
 
@@ -24,7 +24,7 @@ The release notes for this release can be found here:
 
 * https://red.ht/2q31DBP[Release notes for 1.3.0.Final]
 
-And of course, all of the standard sources of information have been updated:
+And of course, all the standard sources of information have been updated:
 
 * https://www.apiman.io/[The apiman project site]
 * {apiman-ug}[Latest User Guide]
@@ -36,7 +36,7 @@ Just want to know about the good stuff? Let's have a brief look at some of the m
 
 == Bug smashing galore
 
-A substantial number of bugs have been resolved footnote:[As usual, we probably forgot to create tickets for all of the bugs, so include "misc bugs splattered"]. If there was something _bugging_ you, then it's worth trying out 1.3.0.Final to see whether your issue has been fixed.
+A substantial number of bugs have been resolved footnote:[As usual, we probably forgot to create tickets for all the bugs, so include "misc bugs splattered"]. If there was something _bugging_ you, then it's worth trying out 1.3.0.Final to see whether your issue has been fixed.
 
 Otherwise, please do consider filing an issue!
 
@@ -65,7 +65,7 @@ https://youtu.be/5rAOyh7YmEc?t=12s[Feeling headless?] footnote:[Sorry.]. We've i
 
 It even https://apiman.gitbooks.io/apiman-installation-guide/installation-guide/registries-and-components/headless.html#_required_parameters[supports authentication], if you need to secure that configuration.
 
-At the moment it's probably for more advanced users, as some JSON-wrangling is required, but it's a really powerful feature that will suit many people's immutable architectures. Some of users don't actually need the apiman UI or Manager; as there is no human interaction aspects to their workflow (e.g. B2B scenarios, monitoring, managed through other systems, etc).
+At the moment it's probably for more advanced users, as some JSON-wrangling is required, but it's a really powerful feature that will suit many people's immutable architectures. Some users don't actually need the apiman UI or Manager; as there is no human interaction aspects to their workflow (e.g. B2B scenarios, monitoring, managed through other systems, etc).
 
 To find out more:
 
@@ -74,7 +74,7 @@ To find out more:
 
 == New documentation
 
-Given the new additions, documentation has been reworked (excluding developer guide) and is now using GitBook. We welcome your critique on whether this is an improvement versus the older documentation and you can still figure out what you need.
+Given the new additions, documentation has been reworked (excluding developer guide) and is now using GitBook. We welcome your critique on whether this is an improvement versus the older documentation, and you can still figure out what you need.
 
 * {apiman-ig}[Apiman Installation Guide]
 * {apiman-ug}[Apiman User Guide]

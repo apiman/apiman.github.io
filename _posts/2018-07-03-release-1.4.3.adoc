@@ -8,7 +8,7 @@ tags: apiman release
 
 Apiman 1.4.3.Final is out. It contains a couple of bug-fixes. Most notably, a bug in the Vert.x Gateway that prevented plugins specified in static config (`conf.json`) from being loaded properly.
 
-//<!--more-->
+// more
 
 If you experience any issues, please report them to us via https://issues.jboss.org/browse/APIMAN/[JIRA], https://github.com/apiman/apiman[GitHub], or https://lists.jboss.org/mailman/listinfo/apiman-user[the mailing list].
 

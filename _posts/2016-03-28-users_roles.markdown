@@ -1,10 +1,4 @@
----
-layout: post
-title:  "Apiman 1.2 - Introduction to User Roles in apiman"
-date:   2016-03-28 07:00:00
-author: len_dimaggio
-tags: apiman introduction overview users roles
----
+
 
 In this post, we’ll examine apiman user roles. In the apiman data model, all data elements exist in the context of the organization. The same holds true for user memberships as users can be members of multiple organizations. Permissions in apiman are role based. The actions that a user is able to perform are dependent on the roles to which the user is assigned when a user is added as a member of an organization.
 

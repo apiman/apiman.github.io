@@ -10,7 +10,7 @@ tags: security gateway
 
 In a world where APIs are quickly becoming the standard, most of us understand the importance of following best practices for API security. We authenticate, authorize and throttle requests. We encrypt the data that we share with other applications (hopefully!). But we often neglect one of the most essential components of the API layer: data storage.
 
-//<!--more-->
+// more
 
 toc::[]
 
@@ -45,22 +45,21 @@ At this point you may be wondering how secret keys are obtained. A factory class
 *We highly recommend that users change the default gateway encryption class* to the more secure `AesDataEncrypter` class. To do so, please follow these steps:
 
 
---
-{empty}1. Locate and open the `apiman.properties` file.
+. Locate and open the `apiman.properties` file.
 
-{empty}2. Uncomment the following lines, located toward the top of the file (around line 10), by removing the hashtag at the beginning of each line:
-
-```properties
+. Uncomment the following lines, located toward the top of the file (around line 10), by removing the hashtag at the beginning of each line:
++
+[source,properties]
+----
 apiman.encrypter.type=io.apiman.common.util.crypt.AesDataEncrypter
 apiman.encrypter.type.secretKey=
-```
+----
 
-{empty}3. Add your encrypted secret key (_the key must be a 16 character string_).
+. Add your encrypted secret key (_the key must be a 16 character string_).
 
-{empty}4. Save and close the file.
+. Save and close the file.
 
-{empty}5. $$$ Profit!
---
+. $$$ Profit!
 
 
 == Writing Your Own Encryption Plugin
@@ -71,7 +70,8 @@ Once your basic plugin is set up, you can then begin working on the Java compone
 
 Every encryption plugin must implement the `IDataEncrypter` interface like this:
 
-```java
+[source,java]
+----
 public class SuperDataEncrypter implements IDataEncrypter {
   /**
   * Constructor.
@@ -84,14 +84,15 @@ public class SuperDataEncrypter implements IDataEncrypter {
     }
   }
 }
-```
+----
 
 
 As you can see, the class is constructed with the configuration Map we discussed above. Once the `SuperDataEncrypter` class is built, the configuration Map is checked for a "thing" key. If it is null, a runtime exception is thrown. Pretty, straightforward so far, right?
 
 Whenever data is stored in a persistent store (either by the API Manager or by the API Gateway), the data encrypter is used to encrypt that data. You can pretty much guess what our next step will be:
 
-```java
+[source,java]
+----
 public class SuperDataEncrypter implements IDataEncrypter {
   /**
   * Constructor.
@@ -121,7 +122,7 @@ public class SuperDataEncrypter implements IDataEncrypter {
       return AesEncrypter.decrypt(secretKey, encryptedText);
   }
 }
-```
+----
 
 From there, you can use your `SuperDataEncrypter` class to write the functionality you need. For an example of an implementation you can take a look at the `AesDataEncrypter` class we discussed earlier. You should be up and running in no time!
 
@@ -130,7 +131,7 @@ NOTE: If you are kind enough to want to share your plugin with the rest of the a
 
 == Key Takeaways
 
-If your memory is as short-lived as mine, it’s probably best that we do a quick recap. In this article we discussed the importance of securing stored data, and why it should be treated as an essential component of your API security strategy. We then discussed how apiman encrypts and decrypts sensitive data, with a detailed review of the IDataEncrypter interface and the classes that implement it.
+If your memory is as short-lived as mine, it’s probably best that we do a quick recap. In this article we discussed the importance of securing stored data, and why it should be treated as an essential component of your API security strategy. We then discussed how apiman encrypts and decrypts sensitive data, with a detailed review of the `IDataEncrypter` interface and the classes that implement it.
 
 For those of us with a guilty security conscience, we went over how to configure the API gateway to use an encrypted key that you provided in the `apiman.properties` file. Because we’re über ambitious, we also took a look at how to write your very own implementation of said `IDataEncrypter` interface and the methods you are required to implement.
 

@@ -10,6 +10,8 @@ Apiman 1.3.4.Final is out and ready for you all to try.
 
 You may be wondering where 1.3.2.Final and 1.3.3.Final are; early community testing found some regressions, so we skipped formally announcing those.
 
+// more
+
 == Download 1.3.4.Final
 
 * link:https://downloads.jboss.org/apiman/1.3.4.Final/apiman-distro-vertx-1.3.4.Final.zip[Vert.x (Gateway Only)]
@@ -39,15 +41,16 @@ We extended the Apiman Gateway API to allow you to list entities directly. This 
 
 We'll have some more formal documentation shortly, but a short summary:
 
-TIP: The credentials to access the Apiman Gateway API are likely different than the UI. The quickstart demo is `apimanager/apiman123!`.
+TIP: The credentials to access the Apiman Gateway API are likely different from the UI. The quickstart demo is `apimanager/apiman123!`.
 
 Example:
 
-```shell
+[source,shell]
+----
 $ curl -k 'https://apimanager:apiman123!@localhost:8443/apiman-gateway-api/organizations'
 
 ["FooOrganization", "OtherOrg"]
-```
+----
 
 List Organizations:: `apiman-gateway-api/organizations`
 

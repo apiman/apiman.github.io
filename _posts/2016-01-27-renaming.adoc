@@ -6,43 +6,64 @@ author: eric_wittmann
 tags: apiman 1.2.x
 ---
 
+= Apiman Names Have Been Changed to Protect the Guilty
+
 Recently we released version 1.2 of apiman and part of that release includes an effort
 to rename some concepts to make them more clear (or to better align them with industry standard
 terminology).  Read on below the fold to find out what changed!
 
-<!--more-->
+// more
 
-## Oh God, Why?
-We've had some feedback that the names of some of the apiman entities are, in some cases,
+[#oh-god-why]
+== Oh God, Why?
+
+We've had some feedback that the names of some apiman entities are, in some cases,
 not as clear as they could be.  There was a fair bit of confusion, and so with the 1.2
 release we decided it was an opportunity to fix the problem.  To that end, here is a
 quick summary of the changes:
 
-| Old Name        | New Name       |
-|-----------------|----------------|
-| Organization    | Organization   |
-| Plan            | Plan           |
-| **Service**     | **API**        |
-| **Application** | **Client App** |
-| Policy          | Policy         |
+|===
+| Old Name | New Name
+
+| Organization
+| Organization
+
+| Plan
+| Plan
+
+| *Service*
+| *API*
+
+| *Application*
+| *Client App*
+
+| Policy
+| Policy
+|===
 
 As you can see, most of the old entity names are unchanged.  But it turns out that
-**Service** and **Application** just weren't great names.
+*Service* and *Application* just weren't great names.
 
-## What Was Wrong With Service?
+[#what-was-wrong-with-service]
+== What Was Wrong With Service?
+
 It turns out that there is no more ambiguous term in software these days that "Service".
-The term can mean many different things to many different people.  Because apiman is an
+The term can mean many things to many people.  Because apiman is an
 API Management system, it just made sense that we rename Service to API.  Now you can
 actually manage an API!
 
-## OK, But What About Application?
-In this case, the term **Application** was confusing to some folks, because it wasn't
+[#ok-but-what-about-application]
+== OK, But What About Application?
+
+In this case, the term *Application* was confusing to some folks, because it wasn't
 clear that the Application was really just the specific Client that was allowed to
-connect to an API.  Instead, many people assumed that "Application" was either an
+connect to an API.  Instead, many people assumed that "Application" was either a
 way to mashup multiple APIs, or some other sort of server-side thing.  Hopefully
 by using the term "Client" makes it more clear what it's used for.
 
-## Conclusion
+[#conclusion]
+== Conclusion
+
 Obviously one of our goals is to make using apiman easier and more intuitive to all
 users.  We certainly hope that these name changes help with that goal.
 

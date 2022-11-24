@@ -26,6 +26,7 @@ sass:
 asciidoctor:
   base_dir: .
   safe: unsafe
+  excerpt_separator: "\n//more\n"
   attributes:
     source-highlighter: highlightjs
     sectanchors: ''

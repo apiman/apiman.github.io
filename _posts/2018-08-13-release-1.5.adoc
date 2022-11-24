@@ -12,7 +12,7 @@ It contains an important new policy feature: the ability to modify policy failur
 
 This means that policies such as CORS can add their headers, irrespective of whether the request was successful or not (e.g. due to rate limiting).
 
-//<!--more-->
+// more
 
 == Failure Processing
 
@@ -20,19 +20,22 @@ When a policy throws a failure (e.g. rate limit reached), previously this caused
 
 To implement this, you simply need to override the default method `processFailure` in `IPolicy`:
 
-```java
+[source,java]
+----
 default void processFailure(PolicyFailure failure, IPolicyContext context, Object config,  IPolicyFailureChain chain) { ... }
-```
+----
 
 Or, if you're using `AbstractMappedPolicy`, then you should override `doProcessFailure`:
 
-```java
+[source,java]
+----
 protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, C config, IPolicyFailureChain chain) { ... }
-```
+----
 
 For example, in the https://github.com/msavy/apiman-plugins/blob/fd2aa46c62a60c7450a3777527f37723908e0865/cors-policy/src/main/java/io/apiman/plugins/cors_policy/CorsPolicy.java#L114-L125[CORS plugin] it simply adds the headers:
 
-```java
+[source,java]
+----
 @Override
  protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, CorsConfigBean config,
          IPolicyFailureChain chain) {
@@ -45,7 +48,7 @@ For example, in the https://github.com/msavy/apiman-plugins/blob/fd2aa46c62a60c7
 
      chain.doFailure(failure);
  }
-```
+----
 
 Meaning that even if a rate limit is hit, then the headers will still be added.
 

@@ -6,152 +6,164 @@ author: len_dimaggio
 tags: apiman introduction overview plugin management
 ---
 
+= Apiman 1.2 - Improvements to Plugin Management
+
 Apiman is not only preconfigured with a rich set of policies that you can use, right out of the box, but, from its earliest releases, apiman has also included a mechanism that you can use to define your own custom policies through plugins. This article describes the improvements introduced in apiman release 1.2.x that enable you to better manage your custom policy plugins.
 
-<!--more-->
+// more
 
-### Policies, the Most Important Part of API Management
+[#policies-the-most-important-part-of-api-management]
+== Policies, the Most Important Part of API Management
 
 In API Management, policies are where the action is. It's through the application of policies that an API Management system such as apiman performs API governance. All the subsystems in apiman, from the Management API UI to the API Gateway, exist for one ultimate goal; to ensure that API governance is achieved by the application of policies to API requests. In apiman, a policy is a rule, or set of rules that controls responses to API requests. There are multiple types of apiman policies. Some policies allow or block access to APIs based on the IP address of the client application, while others allow or restrict access to specific resources provided by an API, while still others enable you to control or "throttle" the rate at which requests made to an API.
 
-### Apiman Plugin Management Improvements - Extending Flexibility
+[#apiman-plugin-management-improvements-extending-flexibility]
+== Apiman Plugin Management Improvements - Extending Flexibility
 
 Apiman release 1.2.x adds these new features that enable you to better manage your custom policy plugins:
 
-- Uninstalling Policies
-- Upgrading Policies
-- Automatically Reloading SNAPSHOT Version Policies
+* Uninstalling Policies
+* Upgrading Policies
+* Automatically Reloading SNAPSHOT Version Policies
 
-The best way to understand how these features work is to see them in action. 
+The best way to understand how these features work is to see them in action.
 
-### Uninstalling a Policy Plugin
+[#uninstalling-a-policy-plugin]
+== Uninstalling a Policy Plugin
 
-Before we can uninstall a policy plugin, we have to install it. 
+Before we can uninstall a policy plugin, we have to install it.
 
 Apiman is preconfigured with a core set of policy types that can handle many common situations:
 
-- Authorization - Access to API resources is controlled by user roles
-- BASIC Authentication - A username/password is required to access an API
-- Caching - Cache responses from a backend API
-- Ignored Resources - Paths to API resources that will not be accessible
-- IP Blacklist - Clients with specific IP address(es) will be blocked from accessing an API
-- IP Whitelist - Clients with specific IP address(es) will not be blocked from accessing an API (all IP addresses not listed will be blocked)
-- Limiting - Access to an API is limited by the number of requests in a defined time period (generally used to create a fine-grained limit)
-- Quota - Access to an API is limited by the number of requests in a defined time period (generally used to create a coarse-grained limit)
-- Transfer Quota - Similar to a Quota policy, but based on the number of bytes transferred, not the number of requests
+* Authorization - Access to API resources is controlled by user roles
+* BASIC Authentication - A username/password is required to access an API
+* Caching - Cache responses from a backend API
+* Ignored Resources - Paths to API resources that will not be accessible
+* IP Blacklist - Clients with specific IP address(es) will be blocked from accessing an API
+* IP Whitelist - Clients with specific IP address(es) will not be blocked from accessing an API (all IP addresses not listed will be blocked)
+* Limiting - Access to an API is limited by the number of requests in a defined time period (generally used to create a fine-grained limit)
+* Quota - Access to an API is limited by the number of requests in a defined time period (generally used to create a coarse-grained limit)
+* Transfer Quota - Similar to a Quota policy, but based on the number of bytes transferred, not the number of requests
 
 These core policy types cannot be uninstalled.
 
 Apiman is also includes second set of policy types which can be optionally installed as plugins:
 
-- CORS - This plugin implements CORS (Cross-origin resource sharing): A method of controlling access to resources outside of an originating domain.
-- HTTP Security - Provides a policy which allows security-related HTTP headers to be set, which can help mitigate a range of common security vulnerabilities.
-- JSONP - A plugin that contributes a policy that turns a standard RESTful endpoint into a JSONP compatible endpoint.
-- Keycloak OAuth - This plugin offers an OAuth2 policy which leverages the Keycloak authentication platform as the identity and access provider.
-- Simple Headers - Offers a simple policy that allows request headers to be added or stripped from the HTTP request (outgoing) or HTTP response (incoming).
-- XML<->JSON Transformation - This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.
-- Log Headers - A policy that logs request and/or response headers to the server console.
+* CORS - This plugin implements CORS (Cross-origin resource sharing): A method of controlling access to resources outside of an originating domain.
+* HTTP Security - Provides a policy which allows security-related HTTP headers to be set, which can help mitigate a range of common security vulnerabilities.
+* JSONP - A plugin that contributes a policy that turns a standard RESTful endpoint into a JSONP compatible endpoint.
+* Keycloak OAuth - This plugin offers an OAuth2 policy which leverages the Keycloak authentication platform as the identity and access provider.
+* Simple Headers - Offers a simple policy that allows request headers to be added or stripped from the HTTP request (outgoing) or HTTP response (incoming).
+* XML\<->JSON Transformation - This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.
+* Log Headers - A policy that logs request and/or response headers to the server console.
 
 The optional plugins are accessed in this administrative page in the apiman Management UI:
 
-![Image: Optional Plugins](/blog/images/2016-02-22/plugin_mgmt_1.png)
+image::/blog/images/2016-02-22/plugin_mgmt_1.png[Image: Optional Plugins]
 
 To install a policy plugin, click on "Install" - for example, to install the Log Headers Policy:
 
-![Image: Log Policy Plugin](/blog/images/2016-02-22/plugin_mgmt_2.png)
+image::/blog/images/2016-02-22/plugin_mgmt_2.png[Image: Log Policy Plugin]
 
 And, it's installed!
 
-![Image: Log Policy Plugin Installed](/blog/images/2016-02-22/plugin_mgmt_3.png)
+image::/blog/images/2016-02-22/plugin_mgmt_3.png[Image: Log Policy Plugin Installed]
 
 OK, we installed the policy plugin. Now, let's uninstall it!
 
 Uninstalling a policy plugin is as simple as installing it. All you do is select the plugin from the "Manage Plugins" page in the Administrative UI:
 
-![Image: Log Policy Plugin Uninstalled ](/blog/images/2016-02-22/plugin_mgmt_4.png)
+image::/blog/images/2016-02-22/plugin_mgmt_4.png[Image: Log Policy Plugin Uninstalled ]
 
 There are a couple of caveats to keep in mind when you uninstall a policy plugin:
 
-- First, uninstalling the plugin removes it from the apiman Management UI, but it still remains in use for all APIs in which it was previously configured.
-- Second, if you want to completely remove the plugin from all APIs in which it was previously configured, you must manually click on each API, Plan, and Client App that uses the policy and remove it. Apiman does not include a single "kill" button to automatically remove all references to a policy.
+* First, uninstalling the plugin removes it from the apiman Management UI, but it still remains in use for all APIs in which it was previously configured.
+* Second, if you want to completely remove the plugin from all APIs in which it was previously configured, you must manually click on each API, Plan, and Client App that uses the policy and remove it. Apiman does not include a single "kill" button to automatically remove all references to a policy.
 
-### Upgrading Policy Plugins
+[#upgrading-policy-plugins]
+== Upgrading Policy Plugins
 
 In addition to enabling you to create and install your own custom policies, apiman also provides a mechanism to upgrade to new versions of those policies. This is an especially useful feature as, over time, a policy may be upgraded to include bug fixes or new features.
 
-The best way to illustrate how to upgrade a policy plugin is to follow the process step-by-step. 
+The best way to illustrate how to upgrade a policy plugin is to follow the process step-by-step.
 
-For this illustration, we'll use one of the policy plugins provided in the official apiman plugins git repository ( [https://github.com/apiman/apiman-plugins](https://github.com/apiman/apiman-plugins) ) as our custom plugin. Many of the plugins provided in this repository are also available set of "available plugins" packaged with apiman. We'll use one of the plugins ("test-policy" - it's a very simple policy that adds a header to the inbound http request) that is not already installed into apiman for this example.
+For this illustration, we'll use one of the policy plugins provided in the official apiman plugins git repository ( https://github.com/apiman/apiman-plugins ) as our custom plugin. Many of the plugins provided in this repository are also available set of "available plugins" packaged with apiman. We'll use one of the plugins ("test-policy" - it's a very simple policy that adds a header to the inbound http request) that is not already installed into apiman for this example.
 
 (Note that in order to follow this example, you will have to have maven and git installed.)
 
 To download the policy plugins, execute these commands:
 
-```shell
+[source,shell]
+----
 git clone https://github.com/apiman/apiman-plugins.git
 cd apiman-plugins
-```
+----
 
 Before we build the plugins, we have to make one small change. The plugins as downloaded are assigned version numbers that include a -"SNAPSHOT" suffix. We will want to remove that suffix for this example. (Sneak peek: We will restore the suffix later in this article as apiman includes a new feature where "SNAPSHOT" version plugins are automatically reloaded.)
 
 To make these changes, edit these files, and change the version from "1.2.2-SNAPSHOT" to "1.2.2":
 
-```shell
+[source,shell]
+----
 ./pom.xml
 test-policy/pom.xml
-```
+----
 
 Then, to build the plugins, and install them into your local maven repo (at runtime, the apiman API Gateway installs plugins from the local maven ".m2" repo directory), execute this command:
 
-```shell
+[source,shell]
+----
 mvn install
-```
+----
 
 OK, our policy plugin is built, let's add it into the management UI.
 
 As an administrative user, navigate to the "Manage Plugins" page in the Management UI and select the "Available Plugins" tab, and then, click on the "Add Custom Plugin" button. The following dialog is displayed:
 
-![Image: Add Custom Plugin ](/blog/images/2016-02-22/plugin_mgmt_5.png)
+image::/blog/images/2016-02-22/plugin_mgmt_5.png[Image: Add Custom Plugin ]
 
 Fill in the details for the "test-policy" plugin. (You can find all this information in the plugin's "pom.xml" file.) apiman will use this information to locate the policy plugin in your local maven repo:
 
-![Image: Add Custom Plugin Details ](/blog/images/2016-02-22/plugin_mgmt_6.png)
+image::/blog/images/2016-02-22/plugin_mgmt_6.png[Image: Add Custom Plugin Details ]
 
 And, after you click on the "Add Plugin" button, the policy plugin is installed:
 
-![Image: Custom Plugin Added ](/blog/images/2016-02-22/plugin_mgmt_7.png)
+image::/blog/images/2016-02-22/plugin_mgmt_7.png[Image: Custom Plugin Added ]
 
 Notice that there are (2) buttons in the "Actions" column of the "Installed Plugins"  table. The button labeled with an "X" enables you to remove the plugin. The button labeled with an up-arrow enables you to upgrade the policy plugin.
 
 In order for apiman to recognize that a plugin policy has been updated, the plugin version number must change. To change the version number of the test-policy plugin, edit these files, and change the version from "1.2.2" to "1.2.3":
 
-```shell
+[source,shell]
+----
 ./pom.xml
 test-policy/pom.xml
-```
+----
 
 Then, to rebuild the plugins, and install them into your local maven repo, execute this command:
 
-```shell
+[source,shell]
+----
 mvn clean install
-```
+----
 
 After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy's upgrade button. Enter the new plugin version number in the dialog that is displayed:
 
-![Image: Set the Updated Version Number ](/blog/images/2016-02-22/plugin_mgmt_8.png)
+image::/blog/images/2016-02-22/plugin_mgmt_8.png[Image: Set the Updated Version Number ]
 
 And, after you perform the upgrade by clicking on the "OK" button, the plugin is upgraded:
 
-![Image: View the Updated Version Number ](/blog/images/2016-02-22/plugin_mgmt_9.png)
+image::/blog/images/2016-02-22/plugin_mgmt_9.png[Image: View the Updated Version Number ]
 
 There are a few important things to keep in mind while upgrading policy plugins:
 
-- The upgraded version of a policy plugin replaces the previous version.
-- Plans, APIs, or Client Apps that had previously been configured with the old version of the plugin policy will continue to use that older version. They will not be automatically updated to use the upgraded version of the policy plugin.
-- New Plans, APIs, or Client Apps that are created after the policy plugin was upgraded will use the new/upgraded version.
-- If you want to upgrade existing Plans, APIs, or Client Apps to use an upgraded policy plugin, then you will have to manually remove the old policy plugin version and then add the new policy plugin version. The apiman project documentation recommends against doing this unless there is a bug fix or new feature added in a policy plugin upgrade.
+* The upgraded version of a policy plugin replaces the previous version.
+* Plans, APIs, or Client Apps that had previously been configured with the old version of the plugin policy will continue to use that older version. They will not be automatically updated to use the upgraded version of the policy plugin.
+* New Plans, APIs, or Client Apps that are created after the policy plugin was upgraded will use the new/upgraded version.
+* If you want to upgrade existing Plans, APIs, or Client Apps to use an upgraded policy plugin, then you will have to manually remove the old policy plugin version and then add the new policy plugin version. The apiman project documentation recommends against doing this unless there is a bug fix or new feature added in a policy plugin upgrade.
 
-### Automatically Reloading SNAPSHOT Version Policies
+[#automatically-reloading-snapshot-version-policies]
+=== Automatically Reloading SNAPSHOT Version Policies
 
 The final new feature added to Plugin Management in apiman 1.2.x is the automatic reloading of SNAPSHOT version policy plugins.
 
@@ -165,32 +177,35 @@ Let's take a look at this in action.
 
 Since we want to take advantage of the automatic reloading, we must restore the "-SNAPSHOT" suffix to the test-policy custom policy plugin. To make these changes, edit these files, and change the version from "1.2.3" to "1.2.2-SNAPSHOT":
 
-```shell
+[source,shell]
+----
 ./pom.xml
 test-policy/pom.xml
-```
+----
 
 Then, to build the plugins, and install them into your local maven repo, execute this command:
 
-```shell
+[source,shell]
+----
 mvn clean install
-```
+----
 
 And then add the custom policy plugin in the Management UI:
 
-![Image: Add SNAPSHOT Plugin ](/blog/images/2016-02-22/plugin_mgmt_10.png)
+image::/blog/images/2016-02-22/plugin_mgmt_10.png[Image: Add SNAPSHOT Plugin ]
 
 And, here's the installed plugin:
 
-![Image: View SNAPSHOT Plugin ](/blog/images/2016-02-22/plugin_mgmt_11.png)
+image::/blog/images/2016-02-22/plugin_mgmt_11.png[Image: View SNAPSHOT Plugin ]
 
-Before we can configure the custom policy plugin, we need an API. For this example, we'll use our old friend, "apiman-echo." You can download this API from this git repository: [https://github.com/apiman/apiman-quickstarts](https://github.com/apiman/apiman-quickstarts)
+Before we can configure the custom policy plugin, we need an API. For this example, we'll use our old friend, "apiman-echo." You can download this API from this git repository: https://github.com/apiman/apiman-quickstarts
 
-The steps to build, deploy, and configure this API are available in the first article in this series: [The Impatient New User Guide to apiman](https://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html)
+The steps to build, deploy, and configure this API are available in the first article in this series: https://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html[The Impatient New User Guide to apiman]
 
 We'll use the postman web client to access the API. The first time that we access the API, we'll see this response (note the text highlighted in green):
 
-```json
+[source,json]
+----
 {
  "method" : "GET",
  "resource" : "/apiman-echo",
@@ -209,7 +224,7 @@ We'll use the postman web client to access the API. The first time that we acces
  "bodyLength" : null,
  "bodySha1" : null
 }
-```
+----
 
 OK, now, let's change the policy plugin. In this file: src/main/java/io/apiman/plugins/test_policy/TestPolicy.java
 
@@ -219,15 +234,17 @@ To this: request.getHeaders().put("Test-Policy", "quite true");
 
 And then, rebuild the plugin with this command:
 
-```shell
+[source,shell]
+----
 mvn clean install -DskipTests
-```
+----
 
 (The "skipTests" directive is a bit of laziness. There is a test included in the plugin that will fail because of the change that we just made. You can either run this command as is, or you can edit the test in the plugin to also look for a string of "quite true.")
 
 Now, when we access the API again, we'll see the change reflected - without our having to manually upgrade or uninstall/install the policy plugin:
 
-```json
+[source,json]
+----
 {
  "method" : "GET",
  "resource" : "/apiman-echo",
@@ -246,16 +263,17 @@ Now, when we access the API again, we'll see the change reflected - without our 
  "bodyLength" : null,
  "bodySha1" : null
 }
-```
+----
 
-### In Conclusion
+[#in-conclusion]
+=== In Conclusion
 
 From its first releases, apiman has provided users with flexibility, including support for adding custom policies through plugins. In the latest release, apiman has expanded on that flexibility by enabling users to uninstall policy plugins, upgrade policy plugins, and automatically reload policy plugins.
 
-### References
+[#references]
+=== References
 
-- You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: [https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html](https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html)
-
-- The "postman" client is available here: [https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+* You can see a more detailed walk-through on how a custom policy plugin is created in this apiman blog post: https://www.apiman.io/blog/plugins/policies/development/maven/2015/03/06/custom-policies-redux.html
+* The "postman" client is available here: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
 
 /post

@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "Red Hat, 3scale, and apiman?"
+date:   2016-06-23 01:30:00
+author: eric_wittmann
+tags: apiman
+---
+
+= Red Hat, 3scale, and apiman?
+
+As some of you have undoubtedly already heard, Red Hat
+https://www.redhat.com/en/about/press-releases/red-hat-acquire-api-management-leader-3scale[recently announced]
+the acquisition of https://www.3scale.net/[3scale], a commercial vendor of API Management software.
+
+Because the apiman project is sponsored primarily by https://www.redhat.com/[Red Hat], you
+may be wondering how this impacts the project and its open source community.  In today's blog post,
+I'll do my best to answer that question as honestly and transparently as I can.
+
+// more
+
+[#summary-tldr]
+== Summary (TL;DR)
+
+On June 22, 2016 Red Hat announced that it was acquiring 3scale, a SaaS vendor of API Management technology
+and, obviously, a competitor of the apiman project.  3scale is a mature company with a very robust API Management
+solution.  Over the next few weeks/months, Red Hat will be working to merge the 3scale and apiman technologies
+to provide as excellent an API Management solution to its customers as possible.  It has not yet been decided
+exactly how this will happen, so for now the apiman project will continue to progress as normal, although perhaps
+with a short term focus on bug fixes and smaller incremental improvements rather than larger feature work.
+
+Read on for more detailed information!
+
+[#is-the-apiman-project-over]
+== Is the apiman project over?
+
+Short answer:  _We're not dead yet!_  We're not even https://www.urbandictionary.com/define.php?term=pining%20for%20the%20fjords[pining for the fjords]!
+
+That said, I'm sorry to say that I don't know exactly what the future will bring.  Red Hat will be working
+hard over the next days/weeks/months to accomplish the following goals:
+
+* Welcome the 3scale team to Red Hat, educating (indoctrinating?) them into our Open Source culture
+* _Fully_ Open Source the 3scale codebase
+* Sensibly merge the apiman project's efforts with the technology built by 3scale
+* Deliver a merged offering both in the upstream community (perhaps even here) and as a Red Hat supported product
+
+We're certainly committed to this wonderful community of API Management enthusiasts (and also those of you who
+grudgingly accept its benefits), so you're _most certainly_ not going to see us disappearing anytime soon!
+
+[#will-the-3scale-technology-become-open-source]
+== Will the 3scale technology become open source?
+
+Absolutely.  This is the Red Hat Way - all product offerings are developed in the upstream open source
+community before they become supported products.  API Management will of course be no different.  The timing
+of this effort is still unclear, and it will depend on a number of factors.  It is, however, inevitable.  (insert
+maniacal laughter here)
+
+[#but-3scale-isnt-on-premise]
+== But 3scale isn't on-premise!
+
+Yes that's true - the 3scale technology has a few components that are exclusively available in the cloud,
+due to the SaaS nature of their offering.  It may even be a strong reason why you are working with or evaluating
+apiman, because our technology is entirely on-premise.  I can understand this to be a valid concern.  What I
+can say is that part of the merge of apiman with 3scale _will_ result in an on-premise version of the
+technology.  Red Hat is aware that this is an absolute requirement for many of its customers, and it will
+definitely happen as soon as possible.
+
+[#were-planning-on-going-to-production-with-apiman-what-should-we-do]
+== We're planning on going to production with apiman, what should we do?
+
+Well obviously I cannot tell you what to do!  This is, unfortunately, an issue that I do not currently know
+how to resolve.  As mentioned above, the project is not going away, but its future has certainly changed and
+will be reshaped over the course of the next few weeks.  Because those decisions have not yet been made,
+and will not be made for a little bit of time yet, I cannot offer any specific advice.
+
+[#we-have-custom-apiman-plugins-will-they-work-in-the-future]
+== We have custom apiman plugins, will they work in the future?
+
+This is another great question, and I could probably just refer you to the answer right above this one.
+One of the primary tasks ahead of us (apiman and 3scale engineering teams) is to work together to sensibly
+merge the two technologies into a single Open Source API Management project.  Until we have had a chance to
+analyze the two, we won't know which pieces will remain and which will not.  Certainly it is the case that
+apiman's extensibility is one of our strongest features, and we will need to make sure that the merged
+technology remains equivalently flexible.  But at this point, we won't know what form that will take, and
+so I cannot say for certain whether any/all existing apiman plugins will make sense in the future.
+
+[#thank-you-to-our-users]
+== Thank you to our users!
+
+Thanks for reading!  We have a great community here in apiman, which something I am very thankful for.  I
+hope that the influx of technology, expertise, and manpower that comes along with Red Hat's acquisition
+of 3scale will only strengthen our Open Ssource API Management community.  Please stick with us and know
+that your feedback (positive or negative) is important!  Always tell us what you think, don't pull any
+punches, and keep being awesome!
+
+/post

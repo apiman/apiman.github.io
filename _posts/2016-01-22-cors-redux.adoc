@@ -10,22 +10,23 @@ If you're looking to define https://www.w3.org/TR/2014/REC-cors-20140116/[CORS p
 
 For those https://enable-cors.org/[unfamiliar with CORS], it's a way of precisely defining who and how a remote origin may invoke an API's resources. Generally, due to the https://en.wikipedia.org/wiki/Same-origin_policy[same-origin policy], a web browser will only allow the invocation of resources that reside on the same origin as the requesting page. This mitigates a range of malicious script attacks by preventing interaction with remote resources.
 
-However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which let's user agent know what's allowed.
+However, if we _want_ our resource to be callable by some (or all) other origins, then we need to define a CORS policy which lets user agent know what's allowed.
 
-//<!--more-->
+// more
 
 == Preparation
 
 If you have the https://www.apiman.io/latest/download.html[apiman quickstart] running footnote:[For simplicity's sake, I suggest using the instructions in the _'Or simply try this...'_ box], you next need to deploy the *_echo-service_* to act as the backend API for our demo. *Substitute the path below* for the appropriate one corresponding to the version you downloaded.
 
-```ShellSession
+[source,bash]
+----
 cd /tmp
 git clone https://github.com/apiman/apiman-quickstarts.git
 cd apiman-quickstarts/echo-service
 git checkout 1.2.0.Final
 mvn clean install
 mvn wildfly:deploy
-```
+----
 
 Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!], navigate to the *manage plugins* page:
 
@@ -95,13 +96,15 @@ Generally, it's the job of the user agent to set the `Origin` header, such as a 
 
 In our first example, we'll set an `Origin` that we didn't permit:
 
-```ShellSession
+[source,bash]
+----
 curl -k -v -H 'Origin: http://panacalty.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
-```
+----
 
 Here's what comes back:
 
-```json
+[source,json]
+----
 {
    "message" : "CORS: Origin not permitted.",
    "headers" : {
@@ -112,7 +115,7 @@ Here's what comes back:
    "type" : "Authorization",
    "failureCode" : 400
 }
-```
+----
 
 Notice that we were given the thumbs down without the API ever being hit; for most use cases this is a good thing, as it avoids unnecessary load on a API where the user agent is going to throw away the response anyway.
 
@@ -120,13 +123,15 @@ Notice that we were given the thumbs down without the API ever being hit; for mo
 
 Even if our origin is correct, we need to pass other checks, such as headers. In this preflighted example, we'll try to make a request with a header that we've not allowed: `X-SECRET`.
 
-```ShellSession
+[source,shell]
+----
 curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Headers: X-SECRET' 'Access-Control-Request-Method: TRACE' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
-```
+----
 
 Correctly, CORS turned the preflight request down:
 
-```json
+[source,json]
+----
 {
     "type": "Authorization",
     "failureCode": 400,
@@ -136,7 +141,7 @@ Correctly, CORS turned the preflight request down:
         "Access-Control-Max-Age": "9001"
     }
 }
-```
+----
 
 The same goes for Request-Method (verb), and of course, whether the CORS request itself is valid.
 
@@ -148,7 +153,8 @@ TIP: When `Host` and `Origin` are equal, a request will automatically be allowed
 
 Let's set up a request that finally is playing by the parameters we configured earlier:
 
-```ShellSession
+[source,shell]
+----
 curl -X GET -k -v -H 'Origin: http://newcastle.local' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
 > GET /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
 > User-Agent: curl/7.37.1
@@ -167,11 +173,12 @@ curl -X GET -k -v -H 'Origin: http://newcastle.local' https://127.0.0.1:8443/api
 < Content-Type: application/json
 < Content-Length: 345
 <
-```
+----
 
 It works: excellent! Here's our response body:
 
-```json
+[source,json]
+----
 {
   "method" : "GET",
   "resource" : "/apiman-echo",
@@ -185,7 +192,7 @@ It works: excellent! Here's our response body:
     "Pragma" : "no-cache"
   }
 }
-```
+----
 
 You can see that the `Response-Counter` header is in our list of headers that can be exposed. If we were building a Javascript XHR then the browser would allow you to see the `Response-Counter` but not other non-standard fields such as `X-Powered-By`.
 
@@ -195,7 +202,8 @@ Let's do something a bit more complex that requires a *preflight request*, which
 
 To simulate it using cURL, let's do:
 
-```ShellSession
+[source,shell]
+----
 curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Request-Method: PATCH' -H 'Access-Control-Request-Headers: X-APIMAN-EXCELLENT' https://127.0.0.1:8443/apiman-gateway/Foo/Bar/1.0
 > OPTIONS /apiman-gateway/Foo/Bar/1.0 HTTP/1.1
 > User-Agent: curl/7.37.1
@@ -212,7 +220,7 @@ curl -X OPTIONS -k -v -H 'Origin: http://newcastle.local' -H 'Access-Control-Req
 < Access-Control-Max-Age: 9001
 < Access-Control-Allow-Methods: PATCH
 <
-```
+----
 
 ===== Liftoff
 

@@ -8,15 +8,15 @@ tags: gateway security mutual-auth ssl mtls 1.2.x
 
 The last thing you want after carefully setting up your system with apiman is for someone to be able to call around the gateway and hit your APIs directly. The typical solution for this is to lock down your network so that the only publicly accessible part is the apiman gateway, whilst APIs are hidden in the private part of the network, which apiman can access, but not someone in the outside world. However, in some situations fine-grained network controls may not be available, such as the cloud; or, you may wish to have an additional layer of security to be reassured that no funny business is going on (such as imposters).
 
-The class of solutions to this problem generally falls under the banner of **mutual authentication**. One such mutual auth offering apiman supports is Mutually Authenticated TLSfootnote:[Also commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!].
+The class of solutions to this problem generally falls under the banner of **mutual authentication**. One such mutual auth offering apiman supports is Mutually Authenticated TLSfootnote:[Also, commonly referred to as MTLS, MSSL, 2WAY, client authenticated TLS/SSL, two-way SSL, amongst other names!].
 
-//<!--more-->
+// more
 
 == What is mutual transport layer security (Mutual TLS)?
 
-Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination as to whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.
+Most developers are familiar with SSL/TLS; it facilitates authentication via certificates followed by the establishment of an encrypted channel between the parties. It is overwhelmingly used in a one-way configuration: the client (often a browser) connects to a server, inspects the certificates it presents, and makes a determination whether the server is trustworthy. The connection is only made if the client is satisfied that the server is who it claims to be. In general, the server makes no determination as to who the client is.
 
-However, in a typical apiman setup the gateway is acting as the client and the APIs act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our APIs then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
+However, in a typical apiman set up the gateway is acting as the client and the APIs act as the servers. Clearly, if we wish to prevent anyone other than approved clients from connecting directly to our APIs then unidirectional authentication is insufficient: we must ascertain the identities of _both_ client and server before establishing a connection. In essence, each party must present certificates that the other party trusts. This a great way to prevent anyone from side-stepping our gateway, and even better, it also stops any interlopers from sneaking into the system.
 
 Luckily, apiman makes this https://www.apiman.io/latest/installation-guide.html#_how_to_enable_mtls_mutual_ssl_support_for_endpoint_security[extremely easy to set this up], so let's dive in and explore what's possible.
 
@@ -28,7 +28,7 @@ There are two main elements we need to work with: *keystores*, which contain a n
 
 Ideally, each node should have its own keystore, whose key material is signed by a *trusted certificate authority*; a trusted party whose signature indicates that the holder of the certificate is trustworthy. In many organisations there is an internal certificate authority which will sign or issue certificates. If we add a CA's certificate to our node's keystores, then _any_ certificate issued by it will be trusted by virtue of the issuer's authority. This approach scales excellently, because we can issue an unlimited number of new certificates without needing to add them to our truststores.
 
-It bears mentioning that any client appsfootnote:[Client Apps are the users of our APIs, like browsers, mobile apps, etc] legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.
+It bears mentioning that any client apps footnote:[Client Apps are the users of our APIs, like browsers, mobile apps, etc] legitimately using our gateway will never be exposed to any mutual auth issues; they will establish a standard one-way authenticating TLS connection that is terminated at the gateway, with the gateway then establishing the two-way TLS connection to the API.
 
 .Simple mutual auth setup
 ["graphviz", "gateway-mtls-redux", "svg", align="center"]
@@ -64,9 +64,10 @@ CAUTION: Remember, this is just a quick blog demonstration; you need to take ext
 
 Let's create a simple shared truststore that we'll use on all of our nodes. We're going to imagine that we have an internal root CA called `apimanCA`, and that whomever controls it has taken https://i.imgur.com/sYeorwQ.png[appropriate security precautions] to ensure no baddies get their certificates signed.
 
-```ShellSession
+[source,shell]
+----
 keytool -import -keystore shared_trust_store.jks -file apimanCA.cer -alias apimanCA
-```
+----
 
 That's the easy bit done, now onto key wrangling.
 
@@ -74,20 +75,22 @@ That's the easy bit done, now onto key wrangling.
 
 Each of our nodes needs its own keystore, which we can create using `keytool`, followed by generating a _certificate signing request_ (CSR), which we can then send to our CA to be signed:
 
-```ShellSession
+[source,shell]
+----
 keytool -keystore gateway_ks.jks -genkey -alias gateway -keyalg rsa
 keytool -keystore gateway_ks.jks -certreq -alias gateway -keyalg rsa -file gateway.csr
 
 keytool -keystore API_a_ks.jks -genkey -alias API_a -keyalg rsa
 keytool -keystore API_a_ks.jks -certreq -alias API_a -keyalg rsa -file API_a.csr
-```
+----
 
 Do the same for _each of your APIs_, and send off the `csr` files to be signed by CA (internal or otherwise). They should come back as certificate replies in one of several formats, import them back into their _corresponding keystores_:
 
-```
+[source,shell]
+----
 keytool -import -keystore gateway_ks.jks -file gateway.cer -alias gateway
 keytool -import -keystore API_a_ks.jks -file API_a.cer -alias API_a
-```
+----
 
 == Hooking it up
 
@@ -97,7 +100,8 @@ Your APIs may not use Java, so you'll need to find the appropriate solution for 
 
 It's easy to set up the gateway, but you should be especially careful about what you twiddle with, as the security implications could be important. Let's edit `apiman.properties` on our gateway(s) with a few simple settings to test things out:
 
-```properties
+[source,properties]
+----
 # ---------------------------------------------------------------------
 # SSL/TLS settings for the gateway connector(s).
 # ---------------------------------------------------------------------
@@ -113,7 +117,7 @@ apiman-gateway.connector-factory.tls.keyPassword=password
 
 # Whether certificate host checks should be bypassed. *Use with great care.*
 apiman-gateway.connector-factory.tls.allowAnyHost=true
-```
+----
 
 The last option is to make our testing easier by removing hostname checks on the certificates, but you should disable that in production. Have a look at https://www.apiman.io/latest/installation-guide.html#_make_changes_to_apiman_properties_3[our setup guide] for a full list of options.
 
@@ -123,7 +127,8 @@ IMPORTANT: You must explicitly enable client authentication for any APIs you wan
 
 Here's a small Java example using Jetty to create a tiny API with mutual authentication enabled. We hook up our _keystore_ and _truststore_ with respective hard-to-guess passwords, and set `setNeedClientAuth(true)`:
 
-```java
+[source,java]
+----
 public static void main(String... args) throws Exception {
       Server server = new Server();
       server.setStopAtShutdown(true);
@@ -161,8 +166,8 @@ public static void main(String... args) throws Exception {
           }
       });
       server.start();
-  }
-```
+}
+----
 
 == Fire it up
 
@@ -176,9 +181,10 @@ If things don't seem to be working quite how you expected, you'll probably notic
 
 For example:
 
-```ShellSession
+[source,bash]
+----
 ./bin/standalone.sh -Djavax.net.debug=all -c standalone-apiman.xml
-```
+----
 
 == In Conclusion
 
