@@ -3,17 +3,20 @@ layout: base
 ---
 
 <div class="mx-auto mw-1200 container-fluid my-4">
-    <h1>The latest from the Apiman Blog</h1>
     <div class="row">
         <!-- Paginated blog list -->
-        <main class="col-9">
-            <div class="p-0 m-0 d-flex justify-content-end">
-                <!-- Does anyone even use RSS/Atom any more? -->
-                <a href="{{ '/blog/feed.xml' | prepend: site.baseurl }}">
+        <main class="col-12 col-md-9">
+            <!-- Does anyone even use RSS/Atom any more? -->
+            <div class="d-flex justify-content-end">
+                <a class="pb-0 mb-0" href="{{ '/blog/feed.xml' | prepend: site.baseurl }}">
                     <i class="bi bi-rss-fill"></i> Subscribe via RSS
                 </a>
             </div>
-            <p>Latest news and thoughts from the Apiman development team.</p>
+            <h1>The latest from the Apiman Blog</h1>
+            <p>
+                The Apiman blog presents the latest Apiman release news and insights.
+                We also share relevant API and software engineering content that we think you will find interesting.
+            </p>
             {% for blog in paginator.posts %}
                 {% assign author = site.data.authors[blog.author] %}
                 <!-- Blog card start -->
@@ -30,7 +33,7 @@ layout: base
                         <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
                     </div>
                     <div class="align-items-center card-footer d-flex justify-content-between small">
-                        <a target="_blank" rel="noopener" href="{{ author.github }}" class="align-items-center d-flex text-dark text-decoration-none">
+                        <a target="_blank" rel="noopener" href="{{ author.url }}" class="align-items-center d-flex text-dark text-decoration-none">
                             <img src="{{ author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}"/>
                             <div>
                                 <h3 class="h6 mb-0">{{ author.name }}</h3>
@@ -43,18 +46,26 @@ layout: base
             {% endfor %}
 
             {% if paginator.total_pages > 1 %}
-                <div class="paginator-btns">
-                    {% if paginator.next_page %}
-                        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button-cta primary btn-sm">Older Posts</a>
-                    {% endif %}
+                <div class="d-flex flex-row justify-content-evenly">
                     {% if paginator.previous_page %}
-                        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button-cta primary btn-sm">Newer Posts</a>
+                        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
+                           class="btn btn-primary"
+                           aria-label="View newer blog posts">
+                            <i class="bi bi-chevron-left" role="presentation"></i>  Newer Posts
+                        </a>
+                    {% endif %}
+                    {% if paginator.next_page %}
+                        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}"
+                           class="btn btn-primary"
+                           aria-label="View older blog posts">
+                            Older Posts <i class="bi bi-chevron-right" role="presentation"></i>
+                        </a>
                     {% endif %}
                 </div>
             {% endif %}
         </main>
         <!-- Blog tags -->
-        <aside class="col-3">
+        <aside class="col-12 col-md-3">
             <h2 class="apiman-title-secondary">Tags</h2>
             <ol class="tag-list">
                 {% assign sortedTags = site.tags | sort %}
