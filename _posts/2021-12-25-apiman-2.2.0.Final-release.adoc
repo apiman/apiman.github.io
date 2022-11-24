@@ -16,7 +16,7 @@ As we currently bundle an all-in-one Keycloak + Apiman quickstart distribution, 
 
 If you are using the Apiman WildFly distribution and customised `apiman-standalone.xml` you *may* need to update your configuration file. This is because of changes in the WildFly platform rather than Apiman itself.
 
-Please refer to the https://github.com/apiman/apiman/blob/master/docs/modules/migration/pages/migrations.adoc[Apiman migration guide] to understand any changes you may need to make to `apiman-standalone.xml` (mostly in relation to SSL/TLS).
+Please refer to the https://github.com/apiman/apiman/blob/master/docs/modules/migration/pages/migrations.adoc[Apiman migration guide^] to understand any changes you may need to make to `apiman-standalone.xml` (mostly in relation to SSL/TLS).
 
 Most production deployments should unbundle Keycloak and Apiman (both for security and practical reasons).
 
@@ -24,8 +24,8 @@ In a release in the near future, we will stop bundling Keycloak and Apiman in th
 
 This will also mean Apiman is not forced to stay in sync with Keycloak Server releases. We hope this will be more convenient for Apiman users and the Apiman team.
 
-You can https://www.apiman.io/latest/download.html[download the latest Apiman at all the usual locations].
+You can https://www.apiman.io/latest/download.html[download the latest Apiman at all the usual locations^].
 
 All the best for 2022.
 
-https://github.com/apiman/apiman/discussions/1734[If you have questions about this release, please join us on GitHub Discussions].
+https://github.com/apiman/apiman/discussions/1734[If you have questions about this release, please join us on GitHub Discussions^].

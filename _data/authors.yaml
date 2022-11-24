@@ -7,6 +7,7 @@ eric_wittmann:
   url: https://www.github.com/ericwittmann
   picture: https://avatars.githubusercontent.com/u/1890703
   twitter: apiman_io
+  whoami: Co-founder of Apiman, founder of Apicurio, owner of very fluffy dog.
 len_dimaggio:
   name: Len DiMaggio
   email: ldimaggi@redhat.com
@@ -15,6 +16,7 @@ len_dimaggio:
   url: https://github.com/ldimaggi
   picture: https://avatars.githubusercontent.com/u/642621
   twitter: apiman_io
+  whoami: Quality engineering legend and prolific technical writer.
 marc_savy:
   name: Marc Savy
   email: marc@blackparrotlabs.io
@@ -23,6 +25,7 @@ marc_savy:
   url: https://www.blackparrotlabs.io
   picture: https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63694eec22f762f8c729c99c_SCR-20221107-poy-p-500.jpeg
   twitter: marcsavy
+  whoami: Co-founder & maintainer of Apiman. Founded Black Parrot Labs to support enterprise Apiman users.
 rachel_yordan:
   name: Rachel Yordán
   email: ryordan@redhat.com
@@ -31,6 +34,7 @@ rachel_yordan:
   url: https://www.github.com/kahboom
   picture: https://avatars.githubusercontent.com/u/3844502
   twitter: nerdycode
+  whoami: Full stack engineer with a sharp eye for all things UI/UX.
 sbunciak:
   name: Stefan Bunciak
   email: sbunciak@redhat.com
@@ -39,3 +43,4 @@ sbunciak:
   url: https://www.github.com/sbunciak
   picture: https://avatars.githubusercontent.com/u/1398742
   twitter: apiman_io
+  whoami: Quality engineering manager and Czech folk music supremo.

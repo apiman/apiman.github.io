@@ -6,6 +6,23 @@ maxWidth: mw-1200
 <main class="mw-900">
   <article>
     <h1>{{ page.title }}</h1>
+    <div class="text-secondary">{{ page.date | date_to_long_string }} · <i class="bi bi-tags-fill text-secondary"></i> {{ page.tags | join: ', ' }}</div>
+    <div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+        {% assign author = site.data.authors[page.author] %}
+        <img class="rounded-3 align-self-center" width="80rem" src="{{ author.picture }}" alt="Avatar for {{ author.name }}"/>
+        <div class="d-flex flex-column ms-2 justify-content-evenly">
+          <div class="text-secondary d-none d-sm-block">{{ author.whoami }}</div>
+          <div class="fs-5">
+            <a rel="author" href="{{ author.url }}" target="_blank">{{ author.name }}</a>
+            <span class="apiman-title-secondary" style="white-space: nowrap;">/ {{ author.org }} / </span>
+            <span style="white-space: nowrap;">
+              <a class="link-secondary" href="{{ author.url }}"><i class="bi bi-globe"></i></a>
+              <a class="link-secondary" href="{{ author.github }}"><i class="bi bi-github"></i></a>
+              <a class="link-secondary" href="{{ author.email }}"><i class="bi bi-envelope-at-fill"></i></a>
+            </span>
+          </div>
+        </div>
+    </div>
     <div class="blog-content">
     {{ content }}
     </div>
