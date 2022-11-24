@@ -4,7 +4,6 @@ title:  "Manage Fuse APIs with apiman"
 date:   2015-07-07 15:15:15
 author: sbunciak
 tags: api management jboss fuse
-oldUrl: 2015-07-07-fuse-apis
 ---
 
 This article aims to provide a short guide on how to get API Management capabilities provided by apiman to work with JBoss Fuse, a lightweight, flexible, integration platform that is based on [Apache Camel](https://camel.apache.org), an implementation of many of the most commonly used enterprise integration patterns (EIP).

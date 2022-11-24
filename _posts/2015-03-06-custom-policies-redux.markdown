@@ -4,7 +4,6 @@ title:  "Customizing JBoss apiman Through Policy Plugins"
 date:   2015-03-06 10:22:00
 author: len_dimaggio
 tags: plugins policies development maven
-oldUrl: 2015-03-06-custom-policies
 ---
 
 This is the second in a series of articles exploring API management with JBoss apiman. The first article

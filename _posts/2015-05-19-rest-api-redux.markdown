@@ -4,7 +4,6 @@ title:  "The JBoss apiman API Manager REST API"
 date:   2015-05-19 11:00:00
 author: len_dimaggio
 tags: rest api automation
-oldUrl: 2015-05-19-rest-api
 ---
 
 In this, the third article in our series on apiman, JBoss' new open source API Management framework, we'll examine apiman’s API Manager REST API. apiman’s Management UI utilizes this API in the implementation for all of its user-visible features, and you can also use the same API to automate tasks with apiman.

@@ -4,7 +4,6 @@ title:  "At long last, Metrics R Us!"
 date:   2015-07-06 15:10:22
 author: eric_wittmann
 tags: api-manager api ui metrics
-oldUrl: 2015-07-06-metrics
 ---
 
 A core feature of any good API Management solution is the recording of and reporting on

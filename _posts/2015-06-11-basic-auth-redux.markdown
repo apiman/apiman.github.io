@@ -4,7 +4,6 @@ title:  "Adding a BASIC Authentication Policy to a Managed API in JBoss apiman"
 date:   2015-06-11 11:00:00
 author: len_dimaggio
 tags: authentication policy
-oldUrl: 2015-06-11-basic-auth
 ---
 
 ![apiman logo](/blog/images/2015-06-11/1-apiman_logo.png)

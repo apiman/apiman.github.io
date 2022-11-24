@@ -4,7 +4,6 @@ title:  "CORS? Of Course!"
 date:   2016-01-22 12:00:00
 author: marc_savy
 tags: security plugin policy cors 1.2.x
-oldUrl: 2015-07-02-cors
 ---
 
 If you're looking to define https://www.w3.org/TR/2014/REC-cors-20140116/[CORS policies] in your API Management layer, then we have an https://github.com/apiman/apiman-plugins[official plugin] that should be perfect for the job.

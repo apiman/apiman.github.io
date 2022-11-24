@@ -4,7 +4,6 @@ title:  "A great way to test your custom apiman policy!"
 date:   2015-05-09 09:07:45
 author: eric_wittmann
 tags: policy junit testing
-newUrl: 2015-05-09-policy-testing
 ---
 
 If you have tried creating your own custom apiman policy, you may have had a little bit of

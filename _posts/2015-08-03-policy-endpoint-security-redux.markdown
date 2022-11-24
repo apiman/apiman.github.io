@@ -4,7 +4,6 @@ title:  "apiman Policy and Endpoint Security"
 date:   2015-08-03 11:00:00
 author: len_dimaggio
 tags: security
-oldUrl: 2015-08-03-policy-endpoint-security
 ---
 
 In this, the fifth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to provide security for your managed APIs at the policy level, and and at the endpoint level for its managed and unmanaged endpoints.

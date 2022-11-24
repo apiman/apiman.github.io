@@ -4,7 +4,6 @@ title:  "apiman Limiting Policies"
 date:   2015-08-17 11:00:00
 author: len_dimaggio
 tags: policies
-oldUrl: 2015-08-17-limiting-policies
 ---
 
 In this, the sixth article in the series on apiman, JBoss’ new API Management framework, we’ll examine how apiman enables you to govern access to managed APIs through the use of rate limiting policies.

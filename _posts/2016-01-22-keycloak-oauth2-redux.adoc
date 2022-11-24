@@ -4,7 +4,6 @@ title:  "Keycloak and dagger: Securing your APIs with OAuth2"
 date:   2016-01-22 12:00:00
 author: marc_savy
 tags: gateway security oauth2 keycloak authentication authorization 1.2.x
-oldUrl: 2015-06-09-keycloak-oauth2
 ---
 
 One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I'll outline in this blogpost.

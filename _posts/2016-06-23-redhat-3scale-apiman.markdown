@@ -3,7 +3,7 @@ layout: post
 title:  "Red Hat, 3scale, and apiman?"
 date:   2016-06-23 01:30:00
 author: eric_wittmann
-tags: apiman 3scale
+tags: apiman
 ---
 
 As some of you have undoubtedly already heard, Red Hat

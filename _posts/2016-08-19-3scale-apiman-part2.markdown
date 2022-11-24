@@ -3,7 +3,7 @@ layout: post
 title:  "3scale and apiman - Part Deux"
 date:   2016-08-19 11:00:00
 author: eric_wittmann
-tags: apiman 3scale
+tags: apiman
 ---
 
 It's been almost two months since Red Hat announced it was acquiring 3scale Technologies and turning 

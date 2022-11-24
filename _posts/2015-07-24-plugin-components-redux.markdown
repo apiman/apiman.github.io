@@ -4,7 +4,6 @@ title:  "Plugins - Not Just For Policies Anymore"
 date:   2015-07-24 14:10:10
 author: eric_wittmann
 tags: api-manager api-gateway plugins development maven
-oldUrl: 2015-07-24-plugin-components
 ---
 
 As you may know, apiman has long supported custom policies provided by users.  If you

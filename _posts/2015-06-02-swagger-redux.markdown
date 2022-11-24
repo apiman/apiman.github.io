@@ -4,7 +4,6 @@ title:  "We got the moves like swagger!"
 date:   2015-06-02 09:04:45
 author: eric_wittmann
 tags: api-manager swagger api ui
-oldUrl: 2015-06-02-swagger
 ---
 
 One of the weaknesses we've had in apiman until now is that API providers didn't have
