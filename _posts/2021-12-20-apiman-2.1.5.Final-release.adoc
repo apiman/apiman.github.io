@@ -1,8 +1,10 @@
+---
+author: marc_savy
+date: 2021-12-20 14:00:00 GMT
+tags: apiman release
+---
+
 = Apiman 2.1.5.Final has been released - please update if you're on an old version
-:author: marc_savy
-:date: 2021-12-20 14:00:00 GMT
-:page-layout: post
-:tags: apiman release
 
 Hi, Apiman fans!
 

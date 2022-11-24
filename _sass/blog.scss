@@ -8,3 +8,13 @@ ol.tag-list, ul.tag-list {
     color: var(--apiman-light-faded);
   }
 }
+
+// Remove excess padding from last paragraph in blog item cards (Asciidoctor output)
+.no-padding-last-para-asciidoctor.card-body  {
+  .paragraph:last-of-type > p {
+    margin-bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

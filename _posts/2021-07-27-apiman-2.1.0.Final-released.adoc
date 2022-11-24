@@ -1,8 +1,10 @@
+---
+author: marc_savy
+date: 2021-07-27 15:00:00 BST
+tags: apiman release
+---
+
 = Apiman 2.1.0.Final has been released 🚀
-:author: marc_savy
-:date: 2021-07-27 15:00:00 BST
-:page-layout: post
-:tags: apiman release
 
 I'm very pleased to say that we've released Apiman 2.1.0.Final 👏. We've splatted a huge number of bugs and made a lot of improvements to stability, performance, and security.
 

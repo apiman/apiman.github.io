@@ -1,8 +1,10 @@
+---
+author: marc_savy
+date: 2021-12-25 16:40:00 GMT
+tags: apiman release
+---
+
 = Apiman 2.2.0.Final has been released (updates Keycloak to 15.1.1 & WildFly to 23.0.2.Final)
-:author: marc_savy
-:date: 2021-12-25 16:40:00 GMT
-:page-layout: post
-:tags: apiman release
 
 Happy Holidays, Apiman fans!
 

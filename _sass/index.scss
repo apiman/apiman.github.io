@@ -27,6 +27,7 @@
 }
 
 // Remove excess padding from last paragraph in blog item cards
+// Don't use with Asciidoctor rendered output as it wraps all <p></p> inside <div></div>, which causes this to mess up.
 .no-padding-last-para.card-body  {
   p:last-of-type {
     margin-bottom: 0;

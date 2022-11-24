@@ -7,27 +7,36 @@ span.icon > .fa {
   text-align: center;
   width: 80px;
 }
+
 .admonitionblock td.icon [class^="fa icon-"] {
-  font-size: 2.5em;
-  text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+  font-family: "bootstrap-icons";
+  font-size: 2em;
+  //text-shadow: 1px 1px 2px rgba(0,0,0,.5);
   cursor: default;
 }
 .admonitionblock td.icon .icon-note:before {
-  content: "\f05a";
+  font-style: normal;
+  font-family: "bootstrap-icons";
+  content: "\F430"; // https://icons.getbootstrap.com/icons/info-circle-fill/
   color: #19407c;
 }
 .admonitionblock td.icon .icon-tip:before {
-  content: "\f0eb";
-  text-shadow: 1px 1px 2px rgba(155,155,0,.8);
+  font-style: normal;
+  font-family: "bootstrap-icons";
+  content: "\F46B"; // https://icons.getbootstrap.com/icons/lightbulb/
+  //text-shadow: 1px 1px 2px rgba(155,155,0,.8);
   color: #111;
 }
 .admonitionblock td.icon .icon-warning:before {
+  font-style: normal;
   font-family: "bootstrap-icons";
   content: "\F335";
   color: #bf6900;
 }
 .admonitionblock td.icon .icon-caution:before {
-  content: "\f06d";
+  font-style: normal;
+  font-family: "bootstrap-icons";
+  content: "\F33B"; // https://icons.getbootstrap.com/icons/exclamation-triangle/
   color: #bf3400;
 }
 .admonitionblock td.icon .icon-important:before {
@@ -75,11 +84,17 @@ b.conum * {
 
 // Sidebarblock (**** block)
 
-.sidebarblock, .admonitionblock > table {
+.sidebarblock, .admonitionblock table {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 1rem;
+  width: 100%;
+
   //color: white;
-  border: 1px solid var(--apiman-muted-red);
-  border-radius: .2rem;
-  padding: 1rem;
+  border-collapse: separate;
+  background-color: #f3f3f3; // Same as hljs
+  filter: drop-shadow(0 0 0.1rem var(--apiman-bg-blue-hover));
+  border-radius: 0.375rem;
 
   p:last-of-type {
     margin-bottom: 0;

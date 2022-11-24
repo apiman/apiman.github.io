@@ -1,6 +1,6 @@
 <!-- Blog card start -->
-<div class="card mb-4">
-  <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ include.blog.url }}'" tabindex=0>
+<div class="card mb-4 {{ include.card-attrs }}">
+  <div class="card-body d-flex flex-column no-padding-last-para-asciidoctor pb-0" onclick="window.location.href='{{ include.blog.url }}'" tabindex=0>
     <a href="{{ include.blog.url }}" class="header-link">
       <h2 class="card-title h5">{{ include.blog.title }}</h2>
     </a>

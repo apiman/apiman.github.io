@@ -101,31 +101,9 @@ layout: base
         <h2 class="apiman-title-secondary mb-4">The latest from the Apiman Blog</h2>
         <div class="justify-content-center row">
             {%- for blog in blogs limit: 3 -%}
+            {% assign author = site.data.authors[blog.author] %}
                 <div class="col-lg-4 col-md-6 pb-3">
-                    <div class="card h-100">
-                        <div class="card-body no-padding-last-para d-flex flex-column pb-0" onclick="window.location.href='{{ blog.url }}'" tabindex=0>
-                            <a href="{{ blog.url }}" class="header-link">
-                                <h3 class="card-title h5">{{ blog.title }}</h3>
-                            </a>
-                            <div class="card-text flex-grow-1 pt-2">
-                                {{ blog.excerpt | remove: '<p></p>' }}
-                            </div>
-                            {% comment %}<div class="text-muted text-end text-small">(read more) <i class="bi bi-chevron-right"></i></div>{% endcomment %}
-                        </div>
-                        <div class="small text-muted text-end px-2 pb-1">
-                            <i class="bi bi-tags-fill text-secondary"></i> {{ blog.tags | join: ', ' }}
-                        </div>
-                        {% assign author = site.data.authors[blog.author] %}
-                        <div class="align-items-center card-footer d-flex justify-content-between small">
-                            <a target="_blank" rel="noopener" href="{{ author.url }}" class="align-items-center d-flex text-dark text-decoration-none">
-                                <img src="{{ author.picture }}" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for {{ author.name }}">
-                                <div>
-                                    <h4 class="h6 mb-0">{{ author.name }}</h4>
-                                    <time class="mb-0 text-secondary">{{ blog.date | date_to_long_string }}</time>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    {% include blog/blog-listing-card.html blog=blog author=author card-attrs='h-100' %}
                 </div>
             {%- endfor -%}
         </div>

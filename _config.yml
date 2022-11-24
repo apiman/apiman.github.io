@@ -23,10 +23,12 @@ sass:
   style: compressed
 #  sass_dir: _sass
 
+asciidoc:
+  excerpt_separator: "\n// more\n"
+
 asciidoctor:
   base_dir: .
   safe: unsafe
-  excerpt_separator: "\n//more\n"
   attributes:
     source-highlighter: highlightjs
     sectanchors: ''
