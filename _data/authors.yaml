@@ -1,7 +1,7 @@
-# Author details.
+# Author details. Alphabetically sorted.
 eric_wittmann:
   name: Eric Wittmann
-  email: eric.wittmann@redhat.com
+  email: mailto:eric.wittmann@redhat.com
   org: Red Hat
   github: https://www.github.com/ericwittmann
   url: https://www.github.com/ericwittmann
@@ -10,7 +10,7 @@ eric_wittmann:
   whoami: Co-founder of Apiman, founder of Apicurio, owner of very fluffy dog.
 len_dimaggio:
   name: Len DiMaggio
-  email: ldimaggi@redhat.com
+  email: mailto:ldimaggi@redhat.com
   org: Red Hat
   github: https://www.github.com/ldimaggi
   url: https://github.com/ldimaggi
@@ -19,7 +19,7 @@ len_dimaggio:
   whoami: Quality engineering legend and prolific technical writer.
 marc_savy:
   name: Marc Savy
-  email: marc@blackparrotlabs.io
+  email: mailto:marc@blackparrotlabs.io
   org: Black Parrot Labs
   github: https://www.github.com/msavy
   url: https://www.blackparrotlabs.io
@@ -28,7 +28,7 @@ marc_savy:
   whoami: Co-founder & maintainer of Apiman. Founded Black Parrot Labs to support enterprise Apiman users.
 rachel_yordan:
   name: Rachel Yordán
-  email: ryordan@redhat.com
+  email: mailto:ryordan@redhat.com
   org: Red Hat
   github: https://www.github.com/kahboom
   url: https://www.github.com/kahboom
@@ -37,7 +37,7 @@ rachel_yordan:
   whoami: Full stack engineer with a sharp eye for all things UI/UX.
 sbunciak:
   name: Stefan Bunciak
-  email: sbunciak@redhat.com
+  email: mailto:sbunciak@redhat.com
   org: Red Hat
   github: https://www.github.com/sbunciak
   url: https://www.github.com/sbunciak

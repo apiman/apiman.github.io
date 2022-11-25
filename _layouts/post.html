@@ -13,12 +13,16 @@ maxWidth: mw-1200
         <div class="d-flex flex-column ms-2 justify-content-evenly">
           <div class="text-secondary d-none d-sm-block">{{ author.whoami }}</div>
           <div class="fs-5">
-            <a rel="author" href="{{ author.url }}" target="_blank">{{ author.name }}</a>
-            <span class="apiman-title-secondary" style="white-space: nowrap;">/ {{ author.org }} / </span>
+            <a class="link-dark" rel="author" href="{{ author.url }}" target="_blank">{{ author.name }}</a>
+            <span class="apiman-title-secondary" style="white-space: nowrap;">
+              <span class="d-none d-sm-inline">/</span>
+                {{ author.org }}
+              <span class="d-none d-sm-inline">/</span>
+            </span>
             <span style="white-space: nowrap;">
-              <a class="link-secondary" href="{{ author.url }}"><i class="bi bi-globe"></i></a>
-              <a class="link-secondary" href="{{ author.github }}"><i class="bi bi-github"></i></a>
-              <a class="link-secondary" href="{{ author.email }}"><i class="bi bi-envelope-at-fill"></i></a>
+              <span><a class="link-secondary ps-1" href="{{ author.url }}"><i class="bi bi-globe"></i></a></span>
+              <span><a class="link-secondary ps-1" href="{{ author.github }}"><i class="bi bi-github"></i></a></span>
+              <span><a class="link-secondary ps-1" href="{{ author.email }}"><i class="bi bi-envelope-at-fill"></i></a></span>
             </span>
           </div>
         </div>
