@@ -13,7 +13,8 @@
 @import "footer.scss";
 @import "index.scss";
 @import "features.scss";
-@import "blog.scss";
+@import "blog.scss"; // blog listing page
+@import "post.scss"; // actual blog post
 
 // Asciidoctor
 @import "asciidoc.scss";
