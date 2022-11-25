@@ -31,7 +31,7 @@ asciidoctor:
   safe: unsafe
   attributes:
     source-highlighter: highlightjs
-    sectanchors: ''
+    sectanchors: true
     icons: font
     outfilesuffix: ''
 

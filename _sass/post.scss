@@ -1,6 +1,61 @@
+//.content {
+//  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+//    margin-bottom: 1.1rem !important;
+//    color: var(--apiman-title-secondary) !important;
+//
+//    .anchor::before {
+//      color: var(--apiman-muted-red);
+//      content: "§";
+//    }
+//
+//    .anchor {
+//      padding-top: 0.2em;
+//      position: absolute;
+//      width: 1.75ex;
+//      margin-left: -1.5ex;
+//      font-size: 0.8em;
+//      visibility: hidden;
+//    }
+//
+//    &:hover > .anchor {
+//      visibility: visible !important;
+//    }
+//
+//
+//  }
+//
+//  .anchor:hover {
+//    visibility: visible !important;
+//  }
+//
+//  .anchor a:hover {
+//    visibility: visible !important;
+//  }
+//
+//
+//}
+
 .blog-content {
-  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-    margin-bottom: 1.1rem !important;
+  h1 .anchor, h2 .anchor, h3 .anchor, h4 .anchor, h5 .anchor, h6 .anchor {
+    position: absolute;
+    text-decoration: none;
+    width: 1.75ex;
+    margin-left: -1.5ex;
+    visibility: hidden;
+    font-size: 0.8em;
+    font-weight: 400;
+    padding-top: 0.2em;
+  }
+
+  h1 .anchor::before, h2 .anchor::before, h3 .anchor::before, h4 .anchor::before, h5 .anchor::before, h6 .anchor::before {
+    content: "\00a7";
+  }
+
+  h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+    //If I add colours here it breaks, I have no idea why
+    //color: #aa4444; // This duplicate is needed it seems
+    //color: var(--apiman-muted-red);
+    visibility: visible;
   }
 
   p {
@@ -10,5 +65,14 @@
   .admonitionblock {
     margin-top: 1.3rem;
     margin-bottom: 1.3rem;
+  }
+
+  a:hover {
+    filter: brightness(400%);
+  }
+
+  a {
+    text-underline-color: var(--apiman-title-secondary);
+    text-underline-offset: 0.2rem;
   }
 }
