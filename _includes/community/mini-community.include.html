@@ -1,0 +1,28 @@
+<h2 class="apiman-title-secondary mb-4">Get Involved</h2>
+<div class="row">
+  <!-- Left: Community links -->
+  <div class="col-12 col-md-7">
+    <div class="row">
+      {% for social in site.data.index.get-involved %}
+      <!-- Cards/tiles -->
+      <div class="col-12 col-xl-6 mb-4">
+        <div class="card h-100" tabindex=0>
+          <div class="card-body no-padding-last-para d-flex flex-column">
+            <a href="{{ social.url }}" target="_blank" class="header-link stretched-link">
+              <h3 class="card-title h5"><i class="{{ social.icon }} pe-1" role="presentation"></i>{{ social.title }}</h3>
+            </a>
+            <div class="card-text flex-grow-1 pt-2">
+              {{ social.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Right: Twitter timeline holder -->
+  <div class="col-12 col-md-5">
+    <a class="twitter-timeline" data-height="700" data-dnt="true" data-theme="light" href="https://twitter.com/apiman_io?ref_src=twsrc%5Etfw">Tweets by apiman_io</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
