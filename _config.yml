@@ -38,6 +38,7 @@ asciidoctor:
     sectanchors: true
     icons: font
     outfilesuffix: ''
+    allow-uri-read: ''
 
 # Jekyll Archives
 jekyll-archives:

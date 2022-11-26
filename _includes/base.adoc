@@ -1,0 +1,3 @@
+:allow-uri-read: true
+include::https://gist.githubusercontent.com/msavy/123767f7c3e7bc0a5a44ebd9b5dbff45/raw/80a85ee7ed084a66e8299a54f076fb981ef9d357/test.adoc[tags=3.0.0.Final]
+
