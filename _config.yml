@@ -14,6 +14,7 @@ github_username:  apiman
 error_mode: strict
 markdown: kramdown
 plugins:
+  - jekyll-asciidoc
   - jekyll-feed
   - jekyll-archives
   - jekyll-seo-tag
