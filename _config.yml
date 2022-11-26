@@ -18,6 +18,7 @@ plugins:
   - jekyll-archives
   - jekyll-seo-tag
   - jekyll-paginate-v2
+  - asciidoctor-diagram
 
 sass:
   style: compressed
@@ -30,6 +31,8 @@ asciidoctor:
   base_dir: .
   safe: unsafe
   attributes:
+    imagesdir: /assets/images/generated
+    imagesoutdir: assets/images/generated
     source-highlighter: highlightjs
     sectanchors: true
     icons: font

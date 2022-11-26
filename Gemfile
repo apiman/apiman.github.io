@@ -37,3 +37,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "jekyll-archives", "~> 2.2"
 
 gem "jekyll-seo-tag", "~> 2.8"
+
+gem "asciidoctor-diagram", "~> 2.2"
