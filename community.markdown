@@ -3,9 +3,9 @@ layout: community
 title: Contribute to the Apiman Project
 ---
 
-Apiman was founded while [Eric Wittmann](https://github.com/EricWittmann) and [Marc Savy](https://www.github.com/msavy) worked at Red Hat in Kevin Connor's team.  
+Apiman was founded by [Eric Wittmann](https://github.com/EricWittmann) and [Marc Savy](https://www.github.com/msavy) whilst working at Red Hat in Kevin Conner's team.
 
-Later we were joined by [Rachel Yordán](https://github.com/kahboom) and eventually our wonderful QE team (Len DiMaggio, Jakub Čecháček, Miroslav Jaros, and Štefan Bunčiak) .
+Later, we were joined by [Rachel Yordán](https://github.com/kahboom), and eventually our wonderful QE team (Len DiMaggio, Jakub Čecháček, Miroslav Jaros, and Štefan Bunčiak).
 
 After Red Hat did an acquisition, Eric and Rachel moved onto [other things](https://www.github.com/apicurio) internally, and Marc left Red Hat.
 

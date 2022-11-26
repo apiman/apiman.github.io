@@ -1,0 +1,52 @@
+---
+author: marc_savy
+date: 2022-11-27 15:00:00 GMT
+tags: apiman release
+---
+
+= Apiman 3, a leap forward
+
+I'm delighted to announce that I have released Apiman 3.
+
+This is one of the most significant releases in Apiman's history, with a considerable number of new features and behind-the-scenes improvements.
+
+Oh, and I've created a completely new Jekyll-based website for Apiman that will help me better automate releases — I hope you like it!
+
+// more
+
+I've updated a vast number of dependencies, and have introduced full support for Java 11+.
+
+There is also a new Docker Compose distribution that makes Apiman easier than ever to try out; https://www.apiman.com/download.html[please give it a go^] and https://www.github.com/apiman/discussions[let us know your thoughts^].
+
+Feedback and community interaction is critical to the future of the project, so please give us a bit of your time in return for the huge effort that has gone into Apiman 3 🙌.
+
+
+== What's new?
+
+What's not new!
+I'm glad that you asked.
+
+As of Apiman 3, we are now maintaining a comprehensive changelog to ensure that it's absolutely clear what we've added in a new release.
+You can see this on https://www.github.com/apiman/apiman/tree/master/CHANGELOG.adoc[our official changelog on GitHub^].
+It's also a good way to see the latest features and changes that we're working on as development is in progress.
+
+Please refer to the changelog as the canonical source, but let's go through the highlights in this blog.
+
+=== Events
+
+Versioned events are emitted within Apiman 3 for a number of important business actions.
+These are consumed internally, but can also be consumed externally by systems that want to drive business processes using Apiman (via a https
+│ ://microservices.io/patterns/data/transactional-outbox.html[transactional outbox^]).
+
+For example, when an API approval request is fired, an event is fired that an external business rules engine could consume to drive a due diligence process.
+
+In future versions of Apiman we will be adding more events and endeavouring to clearly document all events in a formal way.
+
+There are a vast number of integration and composition opportunities, whether auditing, integration, or driving complex business processes.
+This means we no longer need to fully define complex functionality such as billing regimens within Apiman, and this can be kicked out to an external consumer who interacts with Apiman events.
+
+// List all events here?
+
+=== Notifications
+
+Notifications for important events are generated in response to events that individuals or groups of
