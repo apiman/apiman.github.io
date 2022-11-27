@@ -1,5 +1,5 @@
 {% assign latestVersion = site.data.releases.stable.version %}
-{% assign latestVersionMunged = latestVersion | replace: '.', '' | downcase %}
+{% assign latestVersionMunged = latestVersion | replace: '.', '-' | downcase %}
 <!-- Idea: Add dev tab to allow latest dev release -->
 <div class="card" style="background-color: rgba(255,255,255, 0.4)" tabindex="0">
   <div class="card-body no-padding-last-para d-flex flex-column">
@@ -11,7 +11,7 @@
       <ul class="small ps-0 mb-0 list-unstyled">
         <li>
           <i class="bi bi-book"></i>
-          <a class="link-dark" href="https://github.com/apiman/apiman/blob/master/CHANGELOG.adoc#{{ latestVersionMunged }}">
+          <a class="link-dark" href="/changelog.html#{{ latestVersionMunged }}">
             Release notes
           </a>
         </li>

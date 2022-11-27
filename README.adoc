@@ -1,0 +1,23 @@
+== Prerequisites
+
+* Ruby 3.x (best to use rvm).
+* Bundler (usually included now).
+* Graphviz
+
+== Setup
+
+`bundle install`
+
+== Run
+
+`bundle exec jekyll serve -l --future --livereload-ignore assets/images/generated/*`
+
+This will:
+
+* Run Jekyll and serve website.
+* Live reload.
+* Show future-dated content.
+* Ignore generated assets to avoid continually rebuilding (some kind of glitch).
+
+Visit http://localhost:4000
+

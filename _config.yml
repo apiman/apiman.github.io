@@ -69,7 +69,7 @@ social:
 
 pagination:
   enabled: true
-  debug: true
+  debug: false
   collection: posts
   per_page: 12
   sort_reverse: true

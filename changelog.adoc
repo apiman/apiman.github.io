@@ -1,0 +1,8 @@
+---
+layout: changelog
+title: Changelog
+---
+
+:cache-uri: true
+
+include::https://raw.githubusercontent.com/apiman/apiman/master/CHANGELOG.adoc[]
