@@ -84,7 +84,20 @@ b.conum * {
 
 // Sidebarblock (**** block)
 
-.sidebarblock, .admonitionblock table {
+.sidebarblock {
+  width: 100%;
+  background-color: #f3f3f3; // Same as hljs
+  filter: drop-shadow(0 0 0.1rem var(--apiman-bg-blue-hover));
+  border-radius: 0.375rem;
+  padding: 1rem !important;
+  margin-bottom: 1em;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.admonitionblock table {
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 1rem;
