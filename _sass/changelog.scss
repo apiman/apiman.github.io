@@ -1,2 +1,28 @@
-//@import "https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css";
+.toc {
+  a {
+    text-decoration: none;
 
+    &:hover {
+      color: var(--apiman-bg-blue-hover);
+      text-decoration: underline;
+      text-decoration-color: lightgrey;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.1rem;
+    }
+  }
+  .sectlevel1 {
+    font-weight: bolder;
+  }
+  .sectlevel2 {
+    font-weight: normal;
+    padding-left: 0;
+  }
+
+  .sectlevel1 > li::marker {
+    font-family: "bootstrap-icons";
+    content: '\f362  ';
+  }
+  .sectlevel2 > li::marker {
+    content: "";
+  }
+}

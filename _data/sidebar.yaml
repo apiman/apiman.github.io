@@ -2,6 +2,10 @@
   icon: 'bi bi-bug'
   url: 'https://www.github.com/apiman/apiman/issues'
 
+- title: Changelog
+  icon: 'bi bi-book'
+  url: '/changelog.html'
+
 - title: Source Code
   icon: 'bi bi-github'
   url: 'https://www.github.com/apiman/apiman'
