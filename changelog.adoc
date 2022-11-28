@@ -2,7 +2,7 @@
 layout: changelog
 title: Changelog
 ---
-
-:cache-uri: true
+:allow-uri-read: true
+//:cache-uri: true
 
 include::https://raw.githubusercontent.com/apiman/apiman/master/CHANGELOG.adoc[]
