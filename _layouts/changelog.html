@@ -4,30 +4,13 @@ layout: base
 
 <div class="row mw-1200 mx-auto pt-4">
   <aside class="col-2">
-    <div class="js-toc sticky-top"></div>
+    <div class="sticky-top">
+      {{ page.document | tocify_asciidoc }}
+    </div>
   </aside>
   <main class="col-10 changelog">
     <h1>Changelog</h1>
-<!--    <p>-->
-<!--      The official Apiman changelog, <a href="https://github.com/apiman/apiman/tree/master/CHANGELOG.adoc" target="_blank">rendered from Apiman's git <code>CHANGELOG.adoc</code></a>.-->
-<!--    </p>-->
     {{ content }}
   </main>
 </div>
 
-<script>
-    tocbot.init({
-        // Where to render the table of contents.
-        tocSelector: '.js-toc',
-        // Where to grab the headings to build the table of contents.
-        contentSelector: '.changelog',
-        // Which headings to grab inside the contentSelector element.
-        headingSelector: 'h2,h3',
-        // For headings inside relative or absolute positioned containers within content.
-        hasInnerContainers: true,
-        // listItemClass: 'list-group-item',
-        // listClass: 'list-group',
-        // linkClass: 'stretched-link text-decoration-none'
-
-    });
-</script>
