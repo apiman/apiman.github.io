@@ -216,7 +216,7 @@ And - here's the server output that tracks the creation of the new organizations
 
 And finally, here are the organizations as displayed in the apiman Management UI:
 
-image::/blog/images/2015-05-19/new-organizations.png[new organizations]
+image::/assets/images/blog/2015-05-19/new-organizations.png[new organizations]
 
 (It's been a tough year for Boston Bruins`' fans. It's nice to see the team listed first, even if it's just an alphabetic list.  ;-)
 

@@ -99,7 +99,7 @@ To access apiman's API Manager UI, go to: http://localhost:8080/apiman-manager, 
 
 You should see a screen that looks like this:
 
-image::/blog/images/2015-01-09/apiman_1.png[Dashboard]
+image::/assets/images/blog/2015-01-09/apiman_1.png[Dashboard]
 
 Before we start using apiman, let's take a look at how apiman defines how APIs and the metadata on which they depend are organized.
 
@@ -108,7 +108,7 @@ Before we start using apiman, let's take a look at how apiman defines how APIs a
 
 apiman uses a hierarchical data model that consists of these elements: Polices, Plans, and Organizations:
 
-image::/blog/images/2015-01-09/apiman_2.jpg[Diagram_1]
+image::/assets/images/blog/2015-01-09/apiman_2.jpg[Diagram_1]
 
 [#policies]
 == Policies
@@ -125,13 +125,13 @@ The sequence in which incoming API requests have policies applied is:
 
 What happens is that when an API request is received by the API Gateway at runtime, the policy chain is applied in the order of client app, plan, and API. If no failures, such as a rate counter being exceeded, occur, the API Gateway sends the request to the API. As we mentioned earlier in this post, the API Gateway acts as a proxy for the API:
 
-image::/blog/images/2015-01-09/apiman_3-redux.png[Diagram_2]
+image::/assets/images/blog/2015-01-09/apiman_3-redux.png[Diagram_2]
 
 Next, when the API Gateway receives a response from the API's backend implementation, the policy chain is applied again, but this time in the reverse order. The API policies are applied first, then the plan policies, and finally the client app policies. If no failures occur, then the API response is sent back to the consumer of the API.
 
 By applying the policy chain twice, both for the originating incoming request and the resulting response, apiman allows policy implementations two opportunities to provide management functionality during the lifecycle. The following diagram illustrates this two-way approach to applying policies:
 
-image::/blog/images/2015-01-09/apiman_4-redux.png[Diagram_3]
+image::/assets/images/blog/2015-01-09/apiman_4-redux.png[Diagram_3]
 
 [#plans]
 == Plans
@@ -302,7 +302,7 @@ There are a lot of options available when it comes to what we can use for a clie
 
 After you install the client into FireFox, you can access the deployed API using the URL that we just defined. If you execute a GET command, you'll see output that looks like this:
 
-image::/blog/images/2015-01-09/Screenshot-4.png[Screenshot 4]
+image::/assets/images/blog/2015-01-09/Screenshot-4.png[Screenshot 4]
 
 Now that our example API is built, deployed and running, it's time to create the organizations for the API provider and the API consumer. The differences between the requirements of the two organizations will be evident in their apiman configuration properties.
 
@@ -311,15 +311,15 @@ Now that our example API is built, deployed and running, it's time to create the
 
 Before we create the organizations, we have to create a user for each organization. We'll start by creating the API provider user. To do this, logout from the admin account in the API Manager UI. The login dialog will then be displayed.
 
-image::/blog/images/2015-01-09/Screenshot-5.png[Screenshot 5]
+image::/assets/images/blog/2015-01-09/Screenshot-5.png[Screenshot 5]
 
 Select the "New user" Option and register the API provider user:
 
-image::/blog/images/2015-01-09/Screenshot-6.png[Screenshot 6]
+image::/assets/images/blog/2015-01-09/Screenshot-6.png[Screenshot 6]
 
 Then, logout and repeat the process to register a new client app developer user too:
 
-image::/blog/images/2015-01-09/Screenshot-7.png[Screenshot 7]
+image::/assets/images/blog/2015-01-09/Screenshot-7.png[Screenshot 7]
 
 Now that the new users are registered we can create the organizations.
 
@@ -328,15 +328,15 @@ Now that the new users are registered we can create the organizations.
 
 To create the API producer organization, log back into the API Manager UI as the servprov user and select "Create a new Organization":
 
-image::/blog/images/2015-01-09/apiman_2.png[dash-2]
+image::/assets/images/blog/2015-01-09/apiman_2.png[dash-2]
 
 Select a name and description for the organization, and press "Create Organization":
 
-image::/blog/images/2015-01-09/Screenshot-15.png[Screenshot 15]
+image::/assets/images/blog/2015-01-09/Screenshot-15.png[Screenshot 15]
 
 And, here's our organization:
 
-image::/blog/images/2015-01-09/Screenshot-16.png[Screenshot 16]
+image::/assets/images/blog/2015-01-09/Screenshot-16.png[Screenshot 16]
 
 Note that in a production environment, users would request membership in an organization. The approval process for accepting new members into an organization would follow the organization's workflow, but this would be handled outside of the API Manager. For the purposes of our demonstration, we'll keep things simple.
 
@@ -345,53 +345,53 @@ Note that in a production environment, users would request membership in an orga
 
 To configure the API, we'll first create a plan to contain the policies that we want applied by the API Gateway at runtime when requests to the API are made. To create a new plan, select the "Plans" tab. We'll create a "gold" plan:
 
-image::/blog/images/2015-01-09/Screenshot-17.png[Screenshot 17]
+image::/assets/images/blog/2015-01-09/Screenshot-17.png[Screenshot 17]
 
 Once the plan is created, we will add policies to it:
 
-image::/blog/images/2015-01-09/Screenshot-18.png[Screenshot 18]
+image::/assets/images/blog/2015-01-09/Screenshot-18.png[Screenshot 18]
 
 apiman provides several OOTB policies. Since we want to be able to demonstrate a policy being applied, we'll select a Rate Limiting Policy, and set its limit to a very low level. If our API receives more than 10 requests in a day, the policy should block all subsequent requests. So much for a "gold" level of service!
 
-image::/blog/images/2015-01-09/Screenshot-19.png[Screenshot 19]
+image::/assets/images/blog/2015-01-09/Screenshot-19.png[Screenshot 19]
 
 After we create the policy and add it to the plan, we have to lock the plan:
 
-image::/blog/images/2015-01-09/Screenshot-21.png[Screenshot 21]
+image::/assets/images/blog/2015-01-09/Screenshot-21.png[Screenshot 21]
 
 And, here is the finished, and locked plan:
 
-image::/blog/images/2015-01-09/Screenshot-22.png[Screenshot 22]
+image::/assets/images/blog/2015-01-09/Screenshot-22.png[Screenshot 22]
 
 At this point, additional plans can be defined for the API. We'll also create a "silver" plan, that will offer a lower level of service (i.e., a request rate limit lower than 10 per day) than the gold plan. Since the process to create this silver plan is identical to that of the gold plan, we'll skip the screenshots.
 
 Now that the two plans are complete and locked, it's time to define the API.
 
-image::/blog/images/2015-01-09/Screenshot-23.png[Screenshot 23]
+image::/assets/images/blog/2015-01-09/Screenshot-23.png[Screenshot 23]
 
 We'll give the API an appropriate name, so that providers and consumers alike will be able to run a query in the API Manager to find it.
 
-image::/blog/images/2015-01-09/Screenshot-24.png[Screenshot 24]
+image::/assets/images/blog/2015-01-09/Screenshot-24.png[Screenshot 24]
 
 After the API is defined, we have to define its implementation. In the context of the API Manager, the API Endpoint is the API's direct URL. Remember that the API Gateway will act as a proxy for the API, so it must know the API's actual URL. In the case of our example API, the URL is:  http://localhost:8080/apiman-echo
 
-image::/blog/images/2015-01-09/Screenshot-25.png[Screenshot 25]
+image::/assets/images/blog/2015-01-09/Screenshot-25.png[Screenshot 25]
 
 The plans tab shows which plans are available to be applied to the API:
 
-image::/blog/images/2015-01-09/Screenshot-26.png[Screenshot 26]
+image::/assets/images/blog/2015-01-09/Screenshot-26.png[Screenshot 26]
 
 Let's make our API more secure by adding an authentication policy that will require users to login before they can access the API. Select the Policies tab, and then define a simple authentication policy. Remember the username and password that you define here as we'll need them later on when send requests to the API.
 
-image::/blog/images/2015-01-09/Screenshot-27.png[Screenshot 27]
+image::/assets/images/blog/2015-01-09/Screenshot-27.png[Screenshot 27]
 
 After the authentication policy is added, we can publish the API to the API Gateway:
 
-image::/blog/images/2015-01-09/Screenshot-28.png[Screenshot 28]
+image::/assets/images/blog/2015-01-09/Screenshot-28.png[Screenshot 28]
 
 And, here it is, the published API:
 
-image::/blog/images/2015-01-09/Screenshot-29.png[Screenshot 29]
+image::/assets/images/blog/2015-01-09/Screenshot-29.png[Screenshot 29]
 
 OK, that finishes the definition of the API provider organization and the publication of the API.
 
@@ -402,31 +402,31 @@ Next, we'll switch over to the API consumer side and create the API consumer org
 
 We'll repeat the process that we used to create the client app development organization. Log in to the API Manager UI as the "appdev" user and create the organization:
 
-image::/blog/images/2015-01-09/Screenshot-30.png[Screenshot 30]
+image::/assets/images/blog/2015-01-09/Screenshot-30.png[Screenshot 30]
 
 Unlike the process we used when we created the elements used by the API provider, the first step that we'll take is to create a new client app and then search for the API to be used by the client app:
 
-image::/blog/images/2015-01-09/Screenshot-31.png[Screenshot 31]
+image::/assets/images/blog/2015-01-09/Screenshot-31.png[Screenshot 31]
 
 Searching for the API is easy, as we were careful to set the API name to something memorable:
 
-image::/blog/images/2015-01-09/Screenshot-32.png[Screenshot 32]
+image::/assets/images/blog/2015-01-09/Screenshot-32.png[Screenshot 32]
 
 Select the API name, and then specify the plan to be used. We'll splurge and use the gold plan:
 
-image::/blog/images/2015-01-09/Screenshot-33.png[Screenshot 33]
+image::/assets/images/blog/2015-01-09/Screenshot-33.png[Screenshot 33]
 
 Next, select "create contract" for the plan:
 
-image::/blog/images/2015-01-09/Screenshot-34.png[Screenshot 34]
+image::/assets/images/blog/2015-01-09/Screenshot-34.png[Screenshot 34]
 
 Then, agree to the contract terms (which seem to be written in a strange form of Latin in the apiman 1.0 release):
 
-image::/blog/images/2015-01-09/Screenshot-35.png[Screenshot 35]
+image::/assets/images/blog/2015-01-09/Screenshot-35.png[Screenshot 35]
 
 The last step is to register the client app with the API Gateway so that the gateway can act as a proxy for the API:
 
-image::/blog/images/2015-01-09/Screenshot-36.png[Screenshot 36]
+image::/assets/images/blog/2015-01-09/Screenshot-36.png[Screenshot 36]
 
 Congratulations! All the steps necessary to provide and consume the API are complete!
 
@@ -434,11 +434,11 @@ There's just one more step that we have to take in order for client apps to be a
 
 Remember the URL that we used to access the unmanaged API directly? Well, forget it. In order to access the managed API through the API Gateway acting as a proxy for other API we have to obtain the managed API's URL. In the API Manager UI, head on over to the "APIs" tab for the client app, click on the '>' character to the left of the API name. This will expose the API Key and the API's HTTP endpoint in the API Gateway:
 
-image::/blog/images/2015-01-09/Screenshot-37.png[Screenshot 37]
+image::/assets/images/blog/2015-01-09/Screenshot-37.png[Screenshot 37]
 
 In order to be able to access the API through the API Gateway, we have to provide the API Key with each request. The API Key can be provided either through an HTTP Header (X-API-Key) or a URL query parameter. Luckily, the API Manager UI does the latter for us. Select the icon to the right of the HTTP Endpoint and this dialog is displayed:
 
-image::/blog/images/2015-01-09/Screenshot-38.png[Screenshot 38]
+image::/assets/images/blog/2015-01-09/Screenshot-38.png[Screenshot 38]
 
 Copy the URL into the clipboard. We'll need to enter this into the client app in a bit. The combined API Key and HTTP endpoint should look something like this:
 
@@ -453,17 +453,17 @@ Open the client app, and enter the URL for the managed API http://localhost:8080
 
 What happens first is that the authentication policy is applied and a login dialog is then displayed:
 
-image::/blog/images/2015-01-09/Screenshot-41.png[Screenshot 41]
+image::/assets/images/blog/2015-01-09/Screenshot-41.png[Screenshot 41]
 
 Enter the username and password (user1/password) that we defined when we created the authentication policy to access the API. The fact that you are seeing this dialog confirms that you are accessing the managed API and are not accessing the API directly.
 
 When you send a GET request to the API, you should see a successful response:
 
-image::/blog/images/2015-01-09/Screenshot-40.png[Screenshot 40]
+image::/assets/images/blog/2015-01-09/Screenshot-40.png[Screenshot 40]
 
 So far so good. Now, send 10 more requests and you will see a response that looks like this as the gold plan rate limit is exceeded:
 
-image::/blog/images/2015-01-09/Screenshot-39.png[Screenshot 39]
+image::/assets/images/blog/2015-01-09/Screenshot-39.png[Screenshot 39]
 
 And there it is. Your gold plan has been exceeded. Maybe next time you'll spend a little more and get the platinum plan!  ;-)
 

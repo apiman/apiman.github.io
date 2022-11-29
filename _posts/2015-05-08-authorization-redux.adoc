@@ -49,15 +49,15 @@ OK, OK.  If you're reading this you probably know the apiman basics - how to cre
 
 Once you have an API that you want to configure, go ahead and add a new policy.  Choose, for example, the _BASIC Authentication Policy_ and configure it as seen in the following screenshot:
 
-image::/blog/images/2015-05-08/basic-auth-config.png[Example BASIC Authentication configuration]
+image::/assets/images/blog/2015-05-08/basic-auth-config.png[Example BASIC Authentication configuration]
 
 Once you've added that policy, you can add the Authorization Policy - make sure they are in the proper order, since the Authentication policy must execute first.  Configure the Authorization Policy however you like, using roles appropriate for your users.  For example, it might look like this:
 
-image::/blog/images/2015-05-08/authorization-config.png[Example Authorization configuration]
+image::/assets/images/blog/2015-05-08/authorization-config.png[Example Authorization configuration]
 
 Once all is said and done, you should have two (at least) policies configured for your API.  It might look something like this in the UI:
 
-image::/blog/images/2015-05-08/auth-policies.png[Example policy list]
+image::/assets/images/blog/2015-05-08/auth-policies.png[Example policy list]
 
 If you follow those steps, everything should work out alright for you!  The Authorization Policy is capable of being quite fine-grained.  You can configure role based access via custom resource location regular expressions and HTTP verb(s).  If all you want is a globally required role to access your API, that's easy too:
 

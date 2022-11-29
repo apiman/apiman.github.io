@@ -49,7 +49,7 @@ information will be available via a new "View API Definition" link available on
 the consumer's "API Details" page (the same page that consumers are shown when
 they have searched for an API).  Here's an example:
 
-image::/blog/images/2015-06-02/api-details.png[API Details]
+image::/assets/images/blog/2015-06-02/api-details.png[API Details]
 
 An API consumer can see that there is an API definition they can click on, which
 will give them a ton of information about how to use the API.  In the future, we
@@ -59,7 +59,7 @@ We can also allow them to simulate API calls right from the apiman UI - so they 
 see what to expect.  But for right now, we simply show live documentation about the
 API as described by the Swagger spec definition:
 
-image::/blog/images/2015-06-02/api-definition.png[API Definition]
+image::/assets/images/blog/2015-06-02/api-definition.png[API Definition]
 
 As always, thanks for making it to the end of my ramblings!
 

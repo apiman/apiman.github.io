@@ -30,9 +30,9 @@ mvn wildfly:deploy
 
 Return to the http://127.0.0.1:8080/apimanui[apiman UI] and log in footnote:[If you used the quickstart, the defaults are U: admin P: admin123!], navigate to the *manage plugins* page:
 
-image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
+image::/assets/images/blog/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
 
-image::/blog/images/2016-01-09/available-plugins.png[alt="Select CORS plugin from the available plugins list"]
+image::/assets/images/blog/2016-01-09/available-plugins.png[alt="Select CORS plugin from the available plugins list"]
 
 Tab to *Available Plugins*, select *Install* for _CORS Policy Plugin_, confirm the plugin coordinates, and click *Add Plugin*.
 

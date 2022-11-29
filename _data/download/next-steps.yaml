@@ -5,7 +5,7 @@
 
 - title: Give Us Feedback
   icon: bi bi-chat-left-text
-  url: https://www.github.com/apiman/discussion
+  url: 'https://github.com/orgs/apiman/discussions'
   description: |
     <p>Many download & benefit from Apiman, but few give back to open source.</p>
     <p>Help us by giving your feedback, success stories, and working with the team.</p>
@@ -18,15 +18,15 @@
 
 - title: Installation Guide
   icon: bi bi-wrench-adjustable-circle
-  url: https://www.apiman.io/apiman-docs/installation-guide/stable/index.html
+  url: 'https://www.apiman.io/apiman-docs/installation-guide/stable/index.html'
   description: Learn how to install and administer Apiman.
 
 - title: User Guide
   icon: bi bi-person-square
-  url: https://www.apiman.io/apiman-docs/user-guide/stable/index.html
+  url: 'https://www.apiman.io/apiman-docs/user-guide/stable/index.html'
   description: Learn how to use Apiman.
 
 - title: Development Guide
   icon: bi bi-code-square
-  url: https://www.apiman.io/apiman-docs/core/stable/development/Guide.html
+  url: 'https://www.apiman.io/apiman-docs/core/stable/development/Guide.html'
   description: Learn how to create Apiman policy plugins, extensions, and even embed the Apiman Gateway.

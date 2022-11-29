@@ -59,21 +59,21 @@ Apiman is also includes second set of policy types which can be optionally insta
 
 The optional plugins are accessed in this administrative page in the apiman Management UI:
 
-image::/blog/images/2016-02-22/plugin_mgmt_1.png[Image: Optional Plugins]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_1.png[Image: Optional Plugins]
 
 To install a policy plugin, click on "Install" - for example, to install the Log Headers Policy:
 
-image::/blog/images/2016-02-22/plugin_mgmt_2.png[Image: Log Policy Plugin]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_2.png[Image: Log Policy Plugin]
 
 And, it's installed!
 
-image::/blog/images/2016-02-22/plugin_mgmt_3.png[Image: Log Policy Plugin Installed]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_3.png[Image: Log Policy Plugin Installed]
 
 OK, we installed the policy plugin. Now, let's uninstall it!
 
 Uninstalling a policy plugin is as simple as installing it. All you do is select the plugin from the "Manage Plugins" page in the Administrative UI:
 
-image::/blog/images/2016-02-22/plugin_mgmt_4.png[Image: Log Policy Plugin Uninstalled ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_4.png[Image: Log Policy Plugin Uninstalled ]
 
 There are a couple of caveats to keep in mind when you uninstall a policy plugin:
 
@@ -120,15 +120,15 @@ OK, our policy plugin is built, let's add it into the management UI.
 
 As an administrative user, navigate to the "Manage Plugins" page in the Management UI and select the "Available Plugins" tab, and then, click on the "Add Custom Plugin" button. The following dialog is displayed:
 
-image::/blog/images/2016-02-22/plugin_mgmt_5.png[Image: Add Custom Plugin ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_5.png[Image: Add Custom Plugin ]
 
 Fill in the details for the "test-policy" plugin. (You can find all this information in the plugin's "pom.xml" file.) apiman will use this information to locate the policy plugin in your local maven repo:
 
-image::/blog/images/2016-02-22/plugin_mgmt_6.png[Image: Add Custom Plugin Details ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_6.png[Image: Add Custom Plugin Details ]
 
 And, after you click on the "Add Plugin" button, the policy plugin is installed:
 
-image::/blog/images/2016-02-22/plugin_mgmt_7.png[Image: Custom Plugin Added ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_7.png[Image: Custom Plugin Added ]
 
 Notice that there are (2) buttons in the "Actions" column of the "Installed Plugins"  table. The button labeled with an "X" enables you to remove the plugin. The button labeled with an up-arrow enables you to upgrade the policy plugin.
 
@@ -149,11 +149,11 @@ mvn clean install
 
 After rebuilding the plugins, return to the apiman Management UI, and click on the plugin policy's upgrade button. Enter the new plugin version number in the dialog that is displayed:
 
-image::/blog/images/2016-02-22/plugin_mgmt_8.png[Image: Set the Updated Version Number ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_8.png[Image: Set the Updated Version Number ]
 
 And, after you perform the upgrade by clicking on the "OK" button, the plugin is upgraded:
 
-image::/blog/images/2016-02-22/plugin_mgmt_9.png[Image: View the Updated Version Number ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_9.png[Image: View the Updated Version Number ]
 
 There are a few important things to keep in mind while upgrading policy plugins:
 
@@ -192,11 +192,11 @@ mvn clean install
 
 And then add the custom policy plugin in the Management UI:
 
-image::/blog/images/2016-02-22/plugin_mgmt_10.png[Image: Add SNAPSHOT Plugin ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_10.png[Image: Add SNAPSHOT Plugin ]
 
 And, here's the installed plugin:
 
-image::/blog/images/2016-02-22/plugin_mgmt_11.png[Image: View SNAPSHOT Plugin ]
+image::/assets/images/blog/2016-02-22/plugin_mgmt_11.png[Image: View SNAPSHOT Plugin ]
 
 Before we can configure the custom policy plugin, we need an API. For this example, we'll use our old friend, "apiman-echo." You can download this API from this git repository: https://github.com/apiman/apiman-quickstarts
 

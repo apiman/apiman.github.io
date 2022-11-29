@@ -150,15 +150,15 @@ In case you're wondering why, we're installing the plugin into the maven repo. T
 
 In apiman, a policy plugin, once installed, is available on a system-wide basis. Accordingly, plugins can only be installed by an admin user. After you login as admin, you'll see this in the admin UI:
 
-image::/blog/images/2015-03-06/apiman-1.png[System Administration]
+image::/assets/images/blog/2015-03-06/apiman-1.png[System Administration]
 
 After selecting "Manage Plugins," you'll see a screen that looks like this:
 
-image::/blog/images/2015-03-06/apiman-2.png[Plugins]
+image::/assets/images/blog/2015-03-06/apiman-2.png[Plugins]
 
 And, if you then select "Add Plugin," you'll see this screen:
 
-image::/blog/images/2015-03-06/apiman-3.png[Add Plugin]
+image::/assets/images/blog/2015-03-06/apiman-3.png[Add Plugin]
 
 The GroupId, ArtifactId, and Version information is all available in the example plugin's pom.xml file:
 
@@ -168,7 +168,7 @@ The GroupId, ArtifactId, and Version information is all available in the example
 
 After you enter this information for the plugin and click on "Add Plugin," you'll see this displayed in the UI:
 
-image::/blog/images/2015-03-06/apiman-4.png[Plugins]
+image::/assets/images/blog/2015-03-06/apiman-4.png[Plugins]
 
 Congratulations! The plugin is installed and is ready to be used! Let's add it to an API and see it in action.
 
@@ -177,33 +177,33 @@ Congratulations! The plugin is installed and is ready to be used! Let's add it t
 
 First, we have to log out of the admin account in the Admin UI and then log back in as the "serprov" API provider. Then, select our "echo" API, and create a new version of the API, based on the original version of the API:
 
-image::/blog/images/2015-03-06/apiman-6.png[New API Version]
+image::/assets/images/blog/2015-03-06/apiman-6.png[New API Version]
 
 And, when you add a new policy to the API, you'll see the example config API that we just installed:
 
-image::/blog/images/2015-03-06/apiman-5.png[Add Policy]
+image::/assets/images/blog/2015-03-06/apiman-5.png[Add Policy]
 
 When you select the Config Policy, you'll be presented with a dialog where you can specify the values for the two properties defined in the policy:
 
-image::/blog/images/2015-03-06/apiman-7.png[Add Policy]
+image::/assets/images/blog/2015-03-06/apiman-7.png[Add Policy]
 
 Let's fill in some easy to remember values:
 
-image::/blog/images/2015-03-06/apiman-8.png[Add Policy]
+image::/assets/images/blog/2015-03-06/apiman-8.png[Add Policy]
 
 After adding the policy, you'll see it displayed in the policies defined for the API:
 
-image::/blog/images/2015-03-06/apiman-9.png[Add Policy]
+image::/assets/images/blog/2015-03-06/apiman-9.png[Add Policy]
 
 Then publish the API. In order to consume the API, login to the API Manager UI as the client app developer "appdev", and create a new client app that uses the new API. (We covered the creation of new client apps in detail in the first article in this series)
 
 And when the API is invoked, you'll see something like this:
 
-image::/blog/images/2015-03-06/apiman99.png[REST Client]
+image::/assets/images/blog/2015-03-06/apiman99.png[REST Client]
 
 And this:
 
-image::/blog/images/2015-03-06/apiman100.png[REST Client]
+image::/assets/images/blog/2015-03-06/apiman100.png[REST Client]
 
 [#in-conclusion]
 == In Conclusion

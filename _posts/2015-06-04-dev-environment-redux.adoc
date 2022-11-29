@@ -84,7 +84,7 @@ as I write this guide!
 
 Once you've completed the download, just unpack it and run Eclipse.
 
-image::/blog/images/2015-06-04/eclipse-fresh.png[Fresh Eclipse]
+image::/assets/images/blog/2015-06-04/eclipse-fresh.png[Fresh Eclipse]
 
 [#configuring-eclipse-for-apiman-development]
 == Configuring Eclipse for apiman development
@@ -101,7 +101,7 @@ apiman/tools/src/eclipse/apiman-eclipse-formatter.xml
 
 Import that file in the Eclipse Preferences dialog here:
 
-image::/blog/images/2015-06-04/eclipse-formatter.png[Eclipse Preferences]
+image::/assets/images/blog/2015-06-04/eclipse-formatter.png[Eclipse Preferences]
 
 [#importing-the-apiman-source-code-into-eclipse]
 == Importing the apiman source code into Eclipse
@@ -111,9 +111,9 @@ apiman uses maven as its build system, and because Eclipse has maven support
 built-in via m2e, this should be a snap.  Simply go to _File\->Import_ and
 choose _Maven/Existing Maven Projects_:
 
-image::/blog/images/2015-06-04/import-apiman.png[Import apiman]
+image::/assets/images/blog/2015-06-04/import-apiman.png[Import apiman]
 
-image::/blog/images/2015-06-04/import-apiman-2.png[Import apiman Confirm]
+image::/assets/images/blog/2015-06-04/import-apiman-2.png[Import apiman Confirm]
 
 Importing the projects into Eclipse may take some time, and Eclipse may
 yell at you about unresolved m2e plugins and whatnot.  Make sensible choices
@@ -125,7 +125,7 @@ project gets into a build loop.  This can be corrected by disabling the
 maven builder for that one project only.  Do this by right-click on that
 project and choosing properties:
 
-image::/blog/images/2015-06-04/project-properties.png[Project Properties]
+image::/assets/images/blog/2015-06-04/project-properties.png[Project Properties]
 
 Typically, this will leave you with a bunch of annoying warnings in Eclipse,
 most of which will be HTML Problems.  I will leave it as an exercise to the

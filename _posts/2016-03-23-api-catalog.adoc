@@ -46,12 +46,12 @@ The most user-friendly way to use the API Catalog is to browse it!  This can
 easily be done by clicking the "Browse available/importable APIs" link on the
 API Manager's dashboard page.
 
-image::/blog/images/2016-03-23/dash-catalog.png[Image: Dashboard - Browse APIs]
+image::/assets/images/blog/2016-03-23/dash-catalog.png[Image: Dashboard - Browse APIs]
 
 Once you click that link, you'll be taken to the (very nice!) API Catalog
 Browser UI page.  Have a look, it's actually pretty slick:
 
-image::/blog/images/2016-03-23/api-catalog.png[Image: API Catalog Browser]
+image::/assets/images/blog/2016-03-23/api-catalog.png[Image: API Catalog Browser]
 
 From this UI, you can filter the APIs available to be imported, find the
 one you want, and easily Import it into one of your Organizations.  You can
@@ -59,7 +59,7 @@ easily filter by name, type, or tag - the hope is that you can quickly find
 the API you want to import.  Once you are ready, simply click the _Import_
 button on the API card, which will result in the following dialog:
 
-image::/blog/images/2016-03-23/import-api.png[Image: Import API]
+image::/assets/images/blog/2016-03-23/import-api.png[Image: Import API]
 
 After completing the information in the dialog, the API will be imported,
 and you will be redirected to the newly imported API.
@@ -71,20 +71,20 @@ Another way to import APIs from the API Catalog is to use the Import API(s)
 Wizard interface.  You can access the Import API(s) Wizard by clicking on the
 _Import API(s)_ button from within a particular Organization:
 
-image::/blog/images/2016-03-23/import-apis-btn.png[Image: Import APIs]
+image::/assets/images/blog/2016-03-23/import-apis-btn.png[Image: Import APIs]
 
 This wizard will allow you to import multiple APIs into a single Organization.
 Follow the wizard's steps to find the APIs, choose them, configure some
 settings, and then import them.  Here are some screenshots, since pictures
 are more powerful than words (although the pictures do contain some words):
 
-image::/blog/images/2016-03-23/import-api-wizard-1.png[Image: Import APIs]
+image::/assets/images/blog/2016-03-23/import-api-wizard-1.png[Image: Import APIs]
 
-image::/blog/images/2016-03-23/import-api-wizard-2.png[Image: Import APIs]
+image::/assets/images/blog/2016-03-23/import-api-wizard-2.png[Image: Import APIs]
 
-image::/blog/images/2016-03-23/import-api-wizard-3.png[Image: Import APIs]
+image::/assets/images/blog/2016-03-23/import-api-wizard-3.png[Image: Import APIs]
 
-image::/blog/images/2016-03-23/import-api-wizard-4.png[Image: Import APIs]
+image::/assets/images/blog/2016-03-23/import-api-wizard-4.png[Image: Import APIs]
 
 As you can see, the Import APIs Wizard is a nice way to find and import
 multiple APIs all at the same time, all into the same Organization.

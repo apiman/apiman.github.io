@@ -36,11 +36,11 @@ The three main use cases that the export/import feature supports are:
 
 The export/import operations are only available to Administrative users. The export/import feature is accessed through the admin operations menu:
 
-image::/blog/images/2016-01-26/export_import_1.png[Image: Admin Choices]
+image::/assets/images/blog/2016-01-26/export_import_1.png[Image: Admin Choices]
 
 Once you select the *Export/Import* Data feature, this menu is displayed:
 
-image::/blog/images/2016-01-26/export_import_2.png[Image: Export/Import Menu]
+image::/assets/images/blog/2016-01-26/export_import_2.png[Image: Export/Import Menu]
 
 One thing to keep in mind is that while you are importing or exporting data, no changes to data should be made or else the export/import may encounter an error, or may result in incomplete results. To be safe, you should disable user access to the API Manager, both the Management UI and its REST interface, for the duration of the import or export operation.
 
@@ -124,11 +124,11 @@ OK, now that we have this exported data file, what can we do with it?
 
 Well, obviously, if something goes wrong with your installation of apiman, you can start over with a clean installation, and instead of manually recreating your data, you can import the data. (Personal note from the author: I work in software test/QE. Part of our testing is always destructive in nature. As a result, we are always "messing up" test data. The export/import feature enables us to quickly reinstall apiman and recover a clean test environment.) To perform the import after a new installation of apiman, you simply select and upload  the exported data file:
 
-image::/blog/images/2016-01-26/export_import_3.png[Image: Admin Choices]
+image::/assets/images/blog/2016-01-26/export_import_3.png[Image: Admin Choices]
 
 The Management UI displays the status of the import as the data is processed:
 
-image::/blog/images/2016-01-26/export_import_4.png[Image: Admin Choices]
+image::/assets/images/blog/2016-01-26/export_import_4.png[Image: Admin Choices]
 
 How else can we use the exported data file?
 

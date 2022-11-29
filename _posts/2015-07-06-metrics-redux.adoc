@@ -124,11 +124,11 @@ UI.  For any published API, simply navigate to the _Metrics_ tab for that API
 a type of metric you want to see and a pre-configured time period!  Here is what the
 usage metrics might look like for a typical API:
 
-image::/blog/images/2015-07-06/usage-metrics.png[Usage Metrics]
+image::/assets/images/blog/2015-07-06/usage-metrics.png[Usage Metrics]
 
 And here is what you might expect to find for typical response type metrics:
 
-image::/blog/images/2015-07-06/response-type-metrics.png[Response Type Metrics]
+image::/assets/images/blog/2015-07-06/response-type-metrics.png[Response Type Metrics]
 
 [#conclusion]
 == Conclusion

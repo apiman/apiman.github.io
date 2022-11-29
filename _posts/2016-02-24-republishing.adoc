@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title:  "Re-Publishing Your API(s)"
@@ -43,7 +44,7 @@ When an API meets the above criteria, a *Re-Publish* button will be
 available in the user interface (right where the "Publish" button is
 typically located).
 
-image::/blog/images/2016-02-24/re-publish.png[Image: Republish Button]
+image::/assets/images/blog/2016-02-24/re-publish.png[Image: Republish Button]
 
 As soon as you're comfortable with the changes you've made to your API,
 simply click the button, and you should be all set!

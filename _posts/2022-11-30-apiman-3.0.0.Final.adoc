@@ -1,9 +1,9 @@
 ---
 author: marc_savy
-date: 2022-11-29 10:00:00 GMT
+date: 2022-11-30 12:00:00 GMT
 tags: apiman release
 allow-uri-read: true
-image: /assets/images/blog/2022-11-29/apiman-3-out-now.png
+image: /assets/images/blog/2022-11-30/apiman-3-out-now.png
 ---
 
 = Leaping forwards with Apiman 3

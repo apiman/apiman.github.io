@@ -50,17 +50,17 @@ JBossFuse:karaf@root> fabric:create
 After Fuse Fabric is up and running, log into Hawt.io management console, it should be by default available at http://localhost:8181.
 In Fabric perspective, under Containers tabs click on the _Create_ button to open the _Create New Container form_.
 
-image::/blog/images/2015-07-07/fabric.png[List of Fabric containers]
+image::/assets/images/blog/2015-07-07/fabric.png[List of Fabric containers]
 
 On the _Create New Container_ page fill in the name you wish to use for your container (e.g. my-rest-container) and be sure to select the 'rest' profile for it. This will ensure that Fabric pickups the REST Quickstart and deploys it to this container. Finish the operation by hitting the _Create and start container_ button.
 
-image::/blog/images/2015-07-07/container.png[Create Fabric Container]
+image::/assets/images/blog/2015-07-07/container.png[Create Fabric Container]
 
 The container should start automatically right after it has been created and the REST endpoint should become available. If not, select the appropriate container and hit Start.
 You can inspect all the APIs deployed to your Fuse Fabric instance by clicking on _APIs_ section under the _APIs_ tab.
 Note the _Location_ field - that's the *base url* the for endpoint implementation. We will use it later in the apiman manager.
 
-image::/blog/images/2015-07-07/services.png[APIs deployed to Fuse Fabric]
+image::/assets/images/blog/2015-07-07/services.png[APIs deployed to Fuse Fabric]
 
 There is a default user preconfigured so you can verify if the application was successfully deployed. It's available at `<location>/customerservice/customers/123` (e.g. http://localhost:8182/cxf/crm/customerservice/customers/123)
 
@@ -103,25 +103,25 @@ You can do that easily in apiman manager, typically available at: http://localho
 
 Once logged into the apiman manager, locate the Organizations sections on the initial page, select _Create a New Organization_ link, provide a name and hit _Create Organization_ button. This will take you to organization details page where you can create a new API by clicking on _New API_ button under _APIs_ tab:
 
-image::/blog/images/2015-07-07/api.png[Image: Create API]
+image::/assets/images/blog/2015-07-07/api.png[Image: Create API]
 
 You will be asked to provide a name and a version for this API. Once the API is successfully created there are few things remaining before you can publish and start using it.
 First, you need to provide an implementation base url on the _Implementation_ tab. Use the base URL of the REST Quickstart and save your changes:
 
-image::/blog/images/2015-07-07/implementation.png[Image: Provide Endpoint Implementation]
+image::/assets/images/blog/2015-07-07/implementation.png[Image: Provide Endpoint Implementation]
 
 Second, you may want to apply some policies to this Public API. To do that, go to the Policies tab and configure a policy of your choice.
 I used the Rate Limiting policy to limit usage of this API to 5 per minute:
 
-image::/blog/images/2015-07-07/policy.png[Image: Assign policy]
+image::/assets/images/blog/2015-07-07/policy.png[Image: Assign policy]
 
 Now you are all set to make the API public by checking _Make this API public_ under _Plans_ tab, saving the changes and clicking the _Publish_ button (which should be now enabled).
 
-image::/blog/images/2015-07-07/publish.png[Image: Publish API]
+image::/assets/images/blog/2015-07-07/publish.png[Image: Publish API]
 
 After you have published the API, have a look at the _Endpoint_ tab to look up the URL to be used to invoke this public API:
 
-image::/blog/images/2015-07-07/endpoint.png[Image: Managed API Endpoint]
+image::/assets/images/blog/2015-07-07/endpoint.png[Image: Managed API Endpoint]
 
 [#testing-your-setup]
 == Testing your setup

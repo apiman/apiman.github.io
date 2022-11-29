@@ -32,9 +32,9 @@ Those amongst you with some experience of apiman may have noticed that the OAuth
 
 When logged into http://localhost:8080/apimanui/[the apiman manager UI] as an administrator (for the quickstart that's u:`admin`, p:`admin123!`), navigate to the *manage plugins* page:
 
-image::/blog/images/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
+image::/assets/images/blog/2016-01-08/sysadmin-manage-plugins.png[alt="System Administration", link="https://www.apiman.io/latest/user-guide.html#_plugins"]
 
-image::/blog/images/2016-01-08/available-plugins.png[alt="Select Keycloak OAuth Policy Plugin from the available plugins list"]
+image::/assets/images/blog/2016-01-08/available-plugins.png[alt="Select Keycloak OAuth Policy Plugin from the available plugins list"]
 
 Tab to *Available Plugins*, select *Install* for _Keycloak OAuth Policy Plugin_, confirm the plugin coordinates, and click *Add Plugin*. That's it!
 

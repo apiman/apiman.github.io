@@ -8,7 +8,7 @@ tags: authentication policy
 
 = Adding a BASIC Authentication Policy to a Managed API in JBoss apiman
 
-image::/blog/images/2015-06-11/1-apiman_logo.png[apiman logo]
+image::/assets/images/blog/2015-06-11/1-apiman_logo.png[apiman logo]
 
 In this, the fourth article in the series on apiman, JBoss' new API Management framework, we'll examine how apiman enables you to not just manage APIs, but implement a layer of security to the APIs by adding an authentication requirement when client apps access a managed API.
 
@@ -19,7 +19,7 @@ In this, the fourth article in the series on apiman, JBoss' new API Management f
 
 As we've seen in the previous articles in this series, apiman enables you to govern the usage of the APIs that it manages by defining policies in the Managament UI that are then applied at runtime by the API Gateway. The apiman API Gateway applies the policy rules that you define to requests that it proxies to the managed API:
 
-image::/blog/images/2015-06-11/apiman-2.png[apiman logo]
+image::/assets/images/blog/2015-06-11/apiman-2.png[apiman logo]
 
 The OOTB policies that are packaged with apiman enable you to apply a variety of types of controls, including rate limiting (where access to an API is assigned a usage threshold) and black/whitelisting by IP address (where the client app's IP address governs their access to the API).
 
@@ -39,13 +39,13 @@ apiman is packaged with multiple pre-configured policies:
 
 We're interested in the BASIC Authentication Policy. Let's take a closer look. The dialog to add a BASIC authentication policy to an API looks like this:
 
-image::/blog/images/2015-06-11/apiman-3.png[apiman logo]
+image::/assets/images/blog/2015-06-11/apiman-3.png[apiman logo]
 
 In creating the BASIC policy, we define an Authentication Realm (think of this as an area to be protected, within which usernames and passwords exist) and an optional HTTP header. The optional HTTP header is used to optionally pass the user's principal to the back-end API through an HTTP header. This is useful if the back-end system needs to know the username of the user calling it (e.g. to do user-specific operation). The "Transport security required" checkbox, if enabled, will cause the policy to fail if a client app tries to connect to the API over http. The Policy will only accept credentials over https.
 
 We'll keep the Identity Source simple and select "Static Identities" and then define a user. Note that while this static approach is fine for testing purposes, you will want use one of the other Identity Source options (JBDS or LDAP) for a production environment as they can better handle a large number of users.
 
-image::/blog/images/2015-06-11/apiman-4.png[apiman logo]
+image::/assets/images/blog/2015-06-11/apiman-4.png[apiman logo]
 
 It's important to remember that, in BASIC authentication, one of the factors that makes this, well, basic in nature, is that the username/password that you define are encoded (this is unencrypted base64 encoded text) when they are sent to the server. Since the text is not encrypted, it's at risk of being copied and then used in an attack. For this reason, it's safer to select the transport security option to configure SSL encryption.
 
@@ -106,7 +106,7 @@ The response, as we expected, shows that the request has triggered an authentica
 
 The browser then automatically pops up a dialog for us to enter the username and password:
 
-image::/blog/images/2015-06-11/apiman-5.png[apiman logo]
+image::/assets/images/blog/2015-06-11/apiman-5.png[apiman logo]
 
 A request is then sent that includes the username and password encoded into a string. In this request, the encoded (but not encrypted) username and password are included:
 
