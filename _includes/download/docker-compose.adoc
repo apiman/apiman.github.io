@@ -9,7 +9,7 @@ A mock mail server is also included to allow you to test Apiman's email notifica
 
 ****
 This distribution is new in Apiman 3.
-https://www.github.com/apiman/apiman/discussions[We need your feedback!^]
+https://github.com/apiman/apiman/discussions/2274[We need your feedback!^]
 ****
 
 === Prerequisites
