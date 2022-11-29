@@ -53,20 +53,22 @@ layout: base
     </div>
 </div>
 
+{% assign padding = "pt-5" %}
 <!-- Announcement/emphasis banner -->
 {% if site.data.index.message.display %}
-{% assign banner = site.data.index.message %}
-<section class="bg-white mb-0 pt-3">
-    <div class="container-fluid mw-1200">
-        <div class="alert {{ banner.type }} m-0" role="alert">
-            {{ banner.message }}
+    {% assign banner = site.data.index.message %}
+    {% assign padding = "pt-2" %}
+    <section class="mb-0 pt-2">
+        <div class="container-fluid mw-900">
+            <div class="alert {{ banner.type }} m-0" role="alert">
+                {{ banner.message }}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endif %}
 
 <!-- Features -->
-<section class="bg-white py-5" id="apiman-section-features" title="Apiman Mini Feature Summary">
+<section class="bg-white {{ padding }} pb-5" id="apiman-section-features" title="Apiman Mini Feature Summary">
     <div class="container mw-1350">
         <h2 class="apiman-title-secondary mb-4">Just a few of Apiman's features</h2>
         <div class="row mt-3">
