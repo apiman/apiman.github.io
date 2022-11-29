@@ -13,14 +13,14 @@ jobs:
       - name: Install minify
         run: |
           sudo apt update
-          sudo apt install minify
+          sudo apt install minify graphviz
 
       - uses: actions/checkout@v3
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.126.0
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.1.2'
           bundler-cache: true
 
       - name: Build site
@@ -29,13 +29,17 @@ jobs:
 
       - name: Optimise site
         run: |
-          minify --sync --all --recursive --html-keep-default-attrvals --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --xml-keep-whitespace --verbose --output=_out/ _site/
-          mv _out ${{ github.workspace }}/docs
+          # Need to work around bug in version here that is fixed on brew version, so this will probably break later
+          # For whatever reason on this version, it nests the input directory inside of output directory.
+          minify --sync --all --recursive --html-keep-default-attrvals --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --xml-keep-whitespace --verbose --output=tmp _site/
+          mv tmp/_site docs
 
       - name: Commit generated website
         uses: EndBug/add-and-commit@v9.1.1
         with:
           message: "Regenerate apiman.github.io"
+          add: -A
+          push: false
 
       - name: Push to `serve` branch
-        run: git push origin master:serve
+        run: git push origin HEAD:serve -f
