@@ -13,11 +13,11 @@
       We ensure that our clients have the confidence to deploy critical Apiman workloads, 
       knowing they have our unparalleled Apiman expertise behind them if something goes wrong.
     </p>
-    <!-- <p>
-      We have successfully undertaken a range of projects for our clients, from integration of 
-      Apiman into existing platforms to provide API Management capabilities, to expert support
-      for complex issues.
-    </p> -->
+    <p>
+      A key part of our offering is our active CVE monitoring and patching programme; we will actively let you know when
+      vulnerabilities occur, and provide rapid patches and hands-on guidance directly to your team — 
+      ensuring your organisation stays secure.
+    </p>
     <p>
       One of our <strong>core missions is to ensure the health of the Apiman open source community</strong>; 
       we invest a large proportion of our engineering and financial resources into maintaining Apiman. 
