@@ -41,3 +41,6 @@ gem "jekyll-seo-tag", "~> 2.8"
 gem "asciidoctor-diagram", "~> 2.2"
 
 gem "open-uri-cached", "~> 1.0"
+
+
+gem "jekyll-pwa-workbox", "~> 5.1"

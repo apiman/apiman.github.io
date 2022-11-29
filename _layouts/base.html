@@ -13,6 +13,7 @@
     {% seo %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="{{ site.color }}">
     <title>{{ page.title }}</title>
 
     <!-- SEO tag doesn't support og:tag as far as I can tell, so DIY implementation -->
@@ -23,6 +24,7 @@
         {% endfor %}
     {% endif %}
 
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
 
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
@@ -64,5 +66,14 @@
         {{ content }}
         {% include apiman-footer.include.html %}
     </div>
+    <script>
+        window.onload = function () {
+            var script = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            script.async = true;
+            script.src = '{{'sw-register.js'|relative_url}}?v=' + Date.now();
+            firstScript.parentNode.insertBefore(script, firstScript);
+        };
+    </script>
 </body>
 </html>

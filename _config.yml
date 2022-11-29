@@ -1,4 +1,4 @@
-title: 'Apiman'
+title: Apiman
 email:
 tagline: 'Apiman | Flexible & Extensible Open Source API Management'
 description: >- # this means to ignore newlines until "baseurl:"
@@ -10,6 +10,10 @@ url: "https://www.apiman.io" # the base hostname & protocol for your site, e.g. 
 twitter_username: apiman_io
 github_username:  apiman
 
+language: en
+lang_direction: ltr
+color: rgb(61, 94, 129)
+
 # Build settings
 error_mode: strict
 markdown: kramdown
@@ -20,6 +24,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate-v2
   - asciidoctor-diagram
+  - jekyll-pwa-workbox
 
 sass:
   style: compressed
@@ -76,6 +81,17 @@ pagination:
   #paginate_path: "/blog/page:num/"
 
 # RSS/Atom Feed — This is for compatibility with old website
-# Does anyone use RSS anymore?
+# Does anyone use RSS any more?
 feed:
   path: /blog/feed.xml
+
+pwa:
+  enabled: true
+  sw_src_filepath: service-worker.js # Optional
+  sw_dest_filename: service-worker.js # Optional
+  dest_js_directory: assets/js # Required
+  precache_recent_posts_num: 5 # Optional
+  precache_glob_patterns: # Optional
+    - "{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
+  precache_glob_ignores: # Optional
+    - "**/*.html"
