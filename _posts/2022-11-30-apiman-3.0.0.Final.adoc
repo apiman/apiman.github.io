@@ -22,6 +22,8 @@ Oh, and I've created a completely new Jekyll-based website for Apiman that will 
 
 Feedback and community interaction is critical to the future of the project, so [please give us a bit of your time^] in return for the huge effort that has gone into Apiman 3 🙌.
 
+TIP: Need help? Support is available from link:/support.html[Apiman's developers].
+
 == What's new?
 
 image::/assets/images/blog/2022-11-30/apiman-3-out-now.png[]

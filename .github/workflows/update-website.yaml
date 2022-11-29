@@ -1,0 +1,41 @@
+name: Build New Apiman Website
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install minify
+        run: |
+          sudo apt update
+          sudo apt install minify
+
+      - uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.126.0
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Build site
+        run: |
+          bundle exec jekyll build
+
+      - name: Optimise site
+        run: |
+          minify --sync --all --recursive --html-keep-document-tags --html-keep-quotes --html-keep-whitespace --verbose --output=_out/ _site/
+          mv _out ${{ github.workspace }}/docs
+
+      - name: Commit generated website
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          message: "Regenerate apiman.github.io"
+
+      - name: Push to `serve` branch
+        run: git push origin master:serve
