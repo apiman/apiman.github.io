@@ -44,3 +44,6 @@ gem "open-uri-cached", "~> 1.0"
 
 
 gem "jekyll-pwa-workbox", "~> 5.1"
+
+gem "rake", "~> 13.0"
+gem "html-proofer", "~> 5.0"

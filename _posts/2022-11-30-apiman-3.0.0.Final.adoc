@@ -24,7 +24,7 @@ Feedback and community interaction is critical to the future of the project, so 
 
 == What's new?
 
-image::/assets/images/blog/2022-11-29/apiman-3-out-now.png[]
+image::/assets/images/blog/2022-11-30/apiman-3-out-now.png[]
 
 I'm glad that you asked.
 What's not new!

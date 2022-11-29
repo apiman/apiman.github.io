@@ -2,9 +2,10 @@ title: Apiman
 email:
 tagline: 'Apiman | Flexible & Extensible Open Source API Management'
 description: >- # this means to ignore newlines until "baseurl:"
-   The Apiman project brings an open source development methodology to
-   API Management, coupling a rich API design & configuration layer with
-   a blazingly fast runtime.
+   Apiman is a flexible open source API Management platform aimed at enterprise users. 
+   Combining a rich API design and configuration layer with a fast, modular runtime,
+   it's easy to customise Apiman to do whatever you need with simple Java plugins.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.apiman.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: apiman_io
