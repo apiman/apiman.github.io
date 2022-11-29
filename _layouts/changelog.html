@@ -3,12 +3,12 @@ layout: base
 ---
 
 <div class="row mw-1200 mx-auto pt-4">
-  <aside class="col-2 toc">
+  <aside class="col-12 col-md-2 toc">
     <div class="sticky-top">
       {{ page.document | tocify_asciidoc }}
     </div>
   </aside>
-  <main class="col-10 changelog">
+  <main class="col-12 col-md-10 changelog">
     <h1>Changelog</h1>
     {{ content }}
   </main>
