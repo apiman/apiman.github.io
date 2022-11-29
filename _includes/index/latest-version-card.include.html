@@ -6,7 +6,7 @@
     <a href="/download.html" class="header-link">
       <h2 class="card-title h6"><i class="bi bi-download pe-1" role="presentation"></i> Apiman {{ latestVersion }}</h2>
     </a>
-    <span class="text-muted small">Released on {{ meta.published_at | date_to_long_string }}</span>
+    <span class="text-muted small">Released on {{ meta.published_at | date_to_string: 'ordinal' }}</span>
     <div class="card-text flex-grow-1 pt-1">
       <ul class="small ps-0 mb-0 list-unstyled">
         <li>

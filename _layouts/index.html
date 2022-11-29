@@ -45,7 +45,7 @@ layout: base
                     </div>
                     <!-- Display only on smaller -->
                     <div class="text-small text-muted pt-2 d-xl-none">
-                        The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_long_string }}.
+                        The latest stable Apiman version is <a href="{{ meta.html_url }}" target="_blank">{{ latestVersion }}</a>, released on {{ meta.published_at | date_to_string: 'ordinal' }}.
                     </div>
                 </div>
             </div>
