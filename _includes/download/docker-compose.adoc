@@ -1,6 +1,6 @@
 == Apiman Docker Compose Quickstart
 :release-ver: {{ site.data.releases.stable.version }}
-:download-url: https://www.github.com/apiman/apiman-docker/releases/{release-ver}/apiman-compose-{release-ver}.zip
+:download-url: https://www.github.com/apiman/apiman-docker/releases/download/{release-ver}/apiman-docker-compose-{release-ver}.zip
 
 This quickstart lets you try Apiman with an architecture that is more representative of a real-world deployment.
 
