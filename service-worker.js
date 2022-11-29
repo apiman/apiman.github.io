@@ -35,6 +35,6 @@ workbox.routing.registerRoute(
 
 // use `StaleWhileRevalidate` third party files
 workbox.routing.registerRoute(
-    /^https?:\/\/cdn.staticfile.org/,
+    /^https?:\/\/(cdn.jsdelivr.net|code.jquery.com|cdnjs.cloudflare.com)/,
     new workbox.strategies.StaleWhileRevalidate()
 );

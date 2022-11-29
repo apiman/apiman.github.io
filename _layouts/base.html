@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% comment %}<script async src="https://www.googletagmanager.com/gtag/js?id=G-JDKK326V39"></script>{% endcomment %}
-    {% comment %}<script>{% endcomment %}
-        {% comment %}window.dataLayer = window.dataLayer || [];{% endcomment %}
-        {% comment %}function gtag(){dataLayer.push(arguments);}{% endcomment %}
-        {% comment %}gtag('js', new Date());{% endcomment %}
-{% comment %}{% endcomment %}
-        {% comment %}gtag('config', 'G-JDKK326V39');{% endcomment %}
-    {% comment %}</script>{% endcomment %}
-
     {% seo %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ site.color }}">
+
     <title>{{ page.title }}</title>
 
     <!-- SEO tag doesn't support og:tag as far as I can tell, so DIY implementation -->
@@ -24,18 +16,15 @@
         {% endfor %}
     {% endif %}
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+    <link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
 
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
     <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
     />
-    {% comment %}<link{% endcomment %}
-            {% comment %}rel="stylesheet"{% endcomment %}
-            {% comment %}href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"{% endcomment %}
-    {% comment %}/>{% endcomment %}
     <script
             src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
             crossorigin="anonymous"
@@ -59,7 +48,8 @@
             src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
             async
     ></script>
-    <link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
 </head>
 <body onload="hljs.highlightAll();">
     <div class="content">
@@ -75,6 +65,13 @@
             script.src = '{{'sw-register.js'|relative_url}}?v=' + Date.now();
             firstScript.parentNode.insertBefore(script, firstScript);
         };
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JDKK326V39');
     </script>
 </body>
 </html>
