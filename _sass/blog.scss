@@ -18,3 +18,10 @@ ol.tag-list, ul.tag-list {
     cursor: pointer;
   }
 }
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 1em;
+  //padding-top: 1em;
+}
