@@ -7,7 +7,7 @@ Apiman on Apache Tomcat.
 === Prerequisites
 
 * Java 11+
-* Refer to https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html[Migration Guide^] if upgrading.
+* Refer to https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html[Migration Guide^] if upgrading.
 
 === Download
 :tc-download-url: https://dlcdn.apache.org/tomcat/tomcat-9/v{tomcat-version}/bin/apache-tomcat-{tomcat-version}.zip

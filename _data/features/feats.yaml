@@ -385,7 +385,7 @@
     Refer to the Apiman documentation for full information on functionality and configuration.</p> 
     
     <p>A key feature of Apiman is that you can create your own Apiman policies, and we welcome
-    contributions. <a href="https://www.apiman.io/apiman-docs/core/stable/development/Guide.html#_plugins" target="_blank">Refer to our developer's guide for more.</a></p>
+    contributions. <a href="https://www.apiman.io/apiman-docs/development-guide/latest/plugins.html" target="_blank">Refer to our developer's guide for more.</a></p>
 
   features:
     - title: Authorization

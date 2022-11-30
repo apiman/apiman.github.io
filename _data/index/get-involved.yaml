@@ -33,7 +33,7 @@
 
 - title: Migration Guide
   icon: 'bi bi-arrow-90deg-up'
-  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
+  url: 'https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html'
   description: |
     If you're moving to a new version of Apiman, please refer to our migration guide before upgrading.
 

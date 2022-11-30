@@ -12,7 +12,7 @@ As of Apiman 3, you need to download and run Keycloak separately. footnote:[It i
 
 * Java 11+
 * Keycloak server. Don't worry, it's really easy! {keycloak-guide}[Here's a simple guide to get your Keycloak server running and configured in a few clicks.^]
-* Refer to https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html[Migration Guide^] if upgrading.
+* Refer to https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html[Migration Guide^] if upgrading.
 ** If you are using Keycloak 16+ (or equivalent), consider setting `--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true` to ensure logging out works on the developer portal.
 
 === Download

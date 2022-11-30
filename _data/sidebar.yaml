@@ -32,4 +32,5 @@
 
 - title: Migration Guide
   icon: 'bi bi-paper-plane'
-  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
+  url: 'https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html'
+  
