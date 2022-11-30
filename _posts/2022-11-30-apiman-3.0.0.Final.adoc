@@ -7,7 +7,7 @@ image: /assets/images/blog/2022-11-30/apiman-3-out-now.png
 ---
 
 = Leaping forwards with Apiman 3
-:discussion: https://github.com/orgs/apiman/discussions
+:discussion: https://github.com/apiman/apiman/discussions/2365
 :allow-uri-read: true
 
 I'm delighted to announce that I have released Apiman 3.0.0.Final.
@@ -20,9 +20,9 @@ Oh, and I've created a completely new Jekyll-based website for Apiman that will 
 
 // more
 
-Feedback and community interaction is critical to the future of the project, so [please give us a bit of your time^] in return for the huge effort that has gone into Apiman 3 🙌.
+Feedback and community interaction is critical to the future of the project, so {discussion}[please give us a bit of your time^] in return for the huge effort that has gone into Apiman 3 🙌.
 
-TIP: Need help? Support is available from link:/support.html[Apiman's developers].
+TIP: Need help? Support is available from link:/support.html[Apiman's developers], and helps support the project.
 
 == What's new?
 
