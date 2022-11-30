@@ -47,3 +47,5 @@ gem "jekyll-pwa-workbox", "~> 5.1"
 
 gem "rake", "~> 13.0"
 gem "html-proofer", "~> 5.0"
+
+gem "jekyll-sitemap", "~> 1.4"
