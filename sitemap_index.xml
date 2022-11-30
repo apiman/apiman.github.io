@@ -1,7 +1,9 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>{{ site.baseurl }}/sitemap.xml</loc>
+    <loc>{{ '/sitemap.xml' | absolute_url }}</loc>
   </sitemap>
   <!-- Manually pasted in for now as Google does not accept sitemaps linking to other sitemaps; we can automate if needed in future -->
   <sitemap>
