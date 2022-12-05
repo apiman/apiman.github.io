@@ -3,6 +3,8 @@ name: Build New Apiman Website
 on:
   push:
     branches: [ "master" ]
+    
+  workflow_dispatch:
 
 jobs:
   build:
