@@ -1,4 +1,4 @@
 ---
 layout: features
-title: Apiman high-level feature summary
+title: High-level Feature Summary
 ---

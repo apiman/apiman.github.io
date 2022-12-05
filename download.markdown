@@ -1,4 +1,4 @@
 ---
 layout: download
-title: Download Latest Apiman
+title: Download the Latest Version
 ---
