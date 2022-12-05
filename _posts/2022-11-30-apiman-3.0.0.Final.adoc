@@ -14,7 +14,7 @@ I'm delighted to announce that I have released Apiman 3.0.0.Final.
 
 This is one of the most significant releases in Apiman's history, with a considerable number of new features and behind-the-scenes improvements.
 
-There is also a new Docker Compose distribution that makes Apiman easier than ever to try out; https://www.apiman.com/download.html[please give it a go^] and {discussion}[let us know your thoughts^].
+There is also a new Docker Compose distribution that makes Apiman easier than ever to try out; link:/download.html[please give it a go^] and {discussion}[let us know your thoughts^].
 
 Oh, and I've created a completely new Jekyll-based website for Apiman that will help me better automate releases — I hope you like it!
 
