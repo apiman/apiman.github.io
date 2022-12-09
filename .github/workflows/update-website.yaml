@@ -3,7 +3,7 @@ name: Build New Apiman Website
 on:
   push:
     branches: [ "master" ]
-    
+
   workflow_dispatch:
 
 jobs:
@@ -31,8 +31,14 @@ jobs:
           ruby-version: '3.1.2'
           bundler-cache: true
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: 19
+
       - name: Build site
         run: |
+          npm ci
           bundle exec jekyll build
 
       - name: Optimise site
