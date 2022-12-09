@@ -1,0 +1,25 @@
+{
+  "name": "apiman.github.io",
+  "version": "1.0.0",
+  "description": "NPM dependencies for Apiman PostCSS",
+  "main": "purgecss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiman/apiman.github.io.git"
+  },
+  "author": "Marc Savy",
+  "license": "SEE LICENSE IN <filename>",
+  "bugs": {
+    "url": "https://github.com/apiman/apiman.github.io/issues"
+  },
+  "homepage": "https://github.com/apiman/apiman.github.io#readme",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-scss": "^4.0.6"
+  }
+}

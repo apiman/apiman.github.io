@@ -27,6 +27,7 @@ plugins:
   - asciidoctor-diagram
   - jekyll-pwa-workbox
   - jekyll-sitemap
+  - jekyll-postcss-v2
 
 sass:
   style: compressed
