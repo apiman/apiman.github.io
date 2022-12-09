@@ -7,20 +7,14 @@
 
     <title>Apiman - {{ page.title }}</title>
 
-    <!-- SEO tag doesn't support og:tag as far as I can tell, so DIY implementation -->
-    {% if page and page.tags %}
-        {% for tag in page.tags %}
-            <meta name="article:tag" content="{{ tag }}"/>
-            <meta name="og:article:tag" content="{{ tag }}"/>
-        {% endfor %}
-    {% endif %}
-
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
     <link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+    <link rel="preload" as="font">
 
     <!-- Open Sans font family -->
-    <link rel='stylesheet' type='text/css' href='https://tools-static.wmflabs.org/fontcdn/css?family=Open+Sans'>
+    <link rel='stylesheet' type='text/css' href='https://tools-static.wmflabs.org/fontcdn/css?family=Open+Sans&display=swap'>
+    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
 
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
     <link
@@ -40,7 +34,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
             integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
             crossorigin="anonymous"
-            async
+            defer
     ></script>
 
     <!-- Highlight JS (syntax highlighting) -->
@@ -48,12 +42,18 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
     <script
             src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
-            async
+            defer
     ></script>
 
-    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
-
     {% seo %}
+
+    <!-- SEO tag doesn't support og:tag as far as I can tell, so DIY implementation -->
+    {% if page and page.tags %}
+        {% for tag in page.tags %}
+            <meta name="article:tag" content="{{ tag }}"/>
+            <meta name="og:article:tag" content="{{ tag }}"/>
+        {% endfor %}
+    {% endif %}
 </head>
 <body onload="hljs.highlightAll();">
     <div class="content">
