@@ -38,7 +38,6 @@ jobs:
 
       - name: Build site
         run: |
-          npm ci
           bundle exec jekyll build
 
       - name: Optimise site

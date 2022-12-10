@@ -3,7 +3,40 @@
 
 // Sass vars needs to go before bootstrap import
 @import "sass-vars.scss";
-@import "bootstrap-5.2.3/scss/bootstrap.scss";
+// Bootstrap
+@import "bootstrap-5.2.3/scss/mixins/banner";
+@include bsBanner("");
+@import "bootstrap-5.2.3/scss/functions";
+@import "bootstrap-5.2.3/scss/variables";
+@import "bootstrap-5.2.3/scss/maps";
+@import "bootstrap-5.2.3/scss/mixins";
+@import "bootstrap-5.2.3/scss/utilities";
+// BS Layout & components
+@import "bootstrap-5.2.3/scss/root";
+@import "bootstrap-5.2.3/scss/reboot";
+@import "bootstrap-5.2.3/scss/type";
+@import "bootstrap-5.2.3/scss/images";
+@import "bootstrap-5.2.3/scss/containers";
+@import "bootstrap-5.2.3/scss/grid";
+@import "bootstrap-5.2.3/scss/buttons";
+@import "bootstrap-5.2.3/scss/transitions";
+@import "bootstrap-5.2.3/scss/dropdown";
+@import "bootstrap-5.2.3/scss/button-group";
+@import "bootstrap-5.2.3/scss/nav";
+@import "bootstrap-5.2.3/scss/navbar";
+@import "bootstrap-5.2.3/scss/card";
+//@import "bootstrap-5.2.3/scss/accordion";
+//@import "bootstrap-5.2.3/scss/pagination";
+//@import "bootstrap-5.2.3/scss/badge";
+@import "bootstrap-5.2.3/scss/alert";
+@import "bootstrap-5.2.3/scss/list-group";
+// BS Helpers
+@import "bootstrap-5.2.3/scss/helpers";
+// BS Utilities
+@import "bootstrap-5.2.3/scss/utilities/api";
+
+// scss-docs-end import-stack
+
 // CSS vars should be after
 @import "css-vars.scss";
 @import "base.scss";

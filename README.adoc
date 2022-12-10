@@ -6,7 +6,6 @@
 
 == Setup
 
-`npm ci`
 `bundle install`
 
 == Run
