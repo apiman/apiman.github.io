@@ -10,10 +10,11 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
     <link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
-    <link rel="preload" as="font">
 
     <!-- Open Sans font family -->
-    <link rel='stylesheet' type='text/css' href='https://tools-static.wmflabs.org/fontcdn/css?family=Open+Sans&display=swap'>
+    <link rel="preconnect"  href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" as="style">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="{{ '/assets/styles/main.css' | relative_url }}?{{ "now" | date: "%s" }}" />
 
     <!-- Bootstrap CSS is now built and included via SCSS, see main.scss -->
