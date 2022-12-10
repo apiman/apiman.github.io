@@ -21,11 +21,12 @@ layout: base
         </div>
     </aside>
 
-    <main class="col-lg-10 col-sm-12">
+    <main class="col-lg-10 col-sm-12" itemscope itemtype="https://schema.org/WebApplication">
         <section class="mb-4">
-            <h1>Apiman Features</h1>
-            <p>A non-exhaustive list of Apiman's features. Most of Apiman's functionality is customisable, and you can write your own plugins to provide functionality
-                that is not available out of the box. The Apiman team and community have also created a wide range of plugins that you can use.</p>
+            <h1><span itemprop="name">Apiman</span> Features</h1>
+            <p>A non-exhaustive list of Apiman's <span itemprop="applicationCategory">API Management</span> features. Most of Apiman's functionality is customisable, and you can write your own plugins to provide capabilities
+                that are not available out of the box. The Apiman team and community have also created a wide range of plugins that you can use.</p>
+            <p>Apiman should work on <span itemprop="operatingSystem">all</span> operating systems that Java runs on.</p>
 
             <!-- Features legend when below 'large' size is inlined -->
             <div class="d-lg-none">
@@ -45,7 +46,7 @@ layout: base
                     {% for feature in featGroup.features %}
                         <div class="feat-row row py-2">
                             <!-- Feat title -->
-                            <div class="col-sm-3 text-center text-sm-start fw-semibold" id="{{ feature.title | replace: ' ', '-' | downcase }}">{{ feature.title }}</div>
+                            <div class="col-sm-3 text-center text-sm-start fw-semibold" id="{{ feature.title | replace: ' ', '-' | downcase }}" itemprop="featureList">{{ feature.title }}</div>
                             <!-- Feat icon -->
                             <div class="col-sm-1 text-center">
                                 <svg height="20" width="20">
@@ -53,7 +54,7 @@ layout: base
                                 </svg>
                             </div>
                             <!-- Feat description -->
-                            <div class="col-sm-8 feature-content">
+                            <div class="col-sm-8 feature-content" itemprop="description">
                                 {{ feature.description }}
                                 <!-- Ticket reference, if defined -->
                                 {% if feature.ticket %}
