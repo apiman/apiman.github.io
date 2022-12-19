@@ -1,0 +1,44 @@
+---
+author: marc_savy
+date: 2022-12-19 11:00:00 GMT
+tags: cve
+---
+
+= Potential permissions bypass in Apiman 1.5.7 through Apiman 2.2.3.Final (CVE-2022-47551)
+
+A vulnerability in Apiman has been disclosed that you need to be aware of and respond to.
+It has CVE ID https://www.cve.org/CVERecord?id=CVE-2022-47551[CVE-2022-47551^].
+
+// more
+
+== Details
+
+Incorrect default permissions for certain read-only resources in the Apiman 1.5.7.Final through 2.2.3.Final in the Apiman Manager REST API allows a remote authenticated attacker to access information and resources in an Apiman Organizations they are not a member of and/or do not have permissions for.
+
+For example, an attacker may be able to craft an HTTP request to discover APIs that are private to organizations they are not members of, via fuzzing, search, and other similar mechanisms.
+
+If the attacker has sufficient permissions in their own organization, they may also be able to sign up to the private APIs they have discovered by crafting a tailored HTTP request, thereby gaining access to an API Management protected resource that they should have access to.
+
+== Implications
+
+* A malicious account-holder may be able to see information about APIs they do not have permission for.
+* A malicious account-holder may be able to sign up to APIs they do not have permission for.
+* This does *NOT* relate to the Apiman Gateway.
+
+== Actions to take
+
+Broadly, your options are as follows:
+
+. Upgrade to Apiman 3.0.0.Final (or later). The issue is fixed in this version.
+
+. If you are using an older version of Apiman, contact to your link:/support.html[Apiman support provider^] for advice/long-term support.
+
+== How did this happen?
+
+Some read permissions checks from the Apiman Manager REST API were removed as part of a large contribution that Apiman reviewers did not notice.
+
+After making contact with the contributor, the intent of the change was to enable APIs published in an Apiman organization (analogous to a GitHub Organization) to be discovered by an external application — but Apiman did not offer a per-API implicit permissions system to achieve this until Apiman 3.0.0.Final, explicit membership of an organization was required.
+
+The contributor removed certain permissions checks as a workaround for the lack of an implicit permissions system without recognising the security implications.
+
+We have established additional processes to catch errors of this type in future.
