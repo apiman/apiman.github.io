@@ -1094,17 +1094,12 @@
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/NewPolicyBean"
-              }
-            }
-          }
+          "description" : "Details of new policy to create on API",
+          "required" : true
         },
         "responses" : {
           "200" : {
-            "description" : "If the Policy is successfully added."
+            "description" : "Full details about the newly added Policy"
           },
           "404" : {
             "description" : "If the API does not exist."
@@ -1204,6 +1199,7 @@
       "post" : {
         "tags" : [ "Organizations" ],
         "summary" : "Create Client",
+        "description" : "Use this endpoint to create a new Client.It is important to also create an initial version of the Client (e.g. 1.0). This can either be done by including the 'initialVersion' property in the request, or by immediately following up with a call to Create Client Version If the former is done, then a first  Client version will be created automatically by this endpoint.",
         "operationId" : "createClient",
         "parameters" : [ {
           "name" : "organizationId",
@@ -1413,6 +1409,7 @@
       "post" : {
         "tags" : [ "Organizations" ],
         "summary" : "Create an API Contract",
+        "description" : "Create a Contract between the Client and an API. In order to create a Contract, the caller must specify the Organization, ID, and Version of the API.Additionally, the caller must specify the ID of the plan it wants to use for the contract with the API.",
         "operationId" : "createContract",
         "parameters" : [ {
           "name" : "organizationId",
@@ -1488,6 +1485,7 @@
       "post" : {
         "tags" : [ "Organizations" ],
         "summary" : "Create Organization",
+        "description" : "Create a new Organization. This can be considered a type of namespace. APIs, Clients and Plans are defined within an organization. Using other API calls, you can add users to an organization and assign them fine-grained permissions",
         "operationId" : "createOrg",
         "requestBody" : {
           "description" : "Information about the new Organization",
@@ -2100,6 +2098,7 @@
       "get" : {
         "tags" : [ "Organizations" ],
         "summary" : "Get Client By ID",
+        "description" : "Use this endpoint to retrieve information about a single Client by ID. This only returns information about the Client, not any particular version of the client.",
         "operationId" : "getClient",
         "parameters" : [ {
           "name" : "organizationId",
@@ -2283,7 +2282,7 @@
             "description" : "If the Policy was successfully updated."
           },
           "404" : {
-            "description" : "If the Policy does not exist."
+            "description" : "If the Organization, Client, or Policy does not exist."
           }
         }
       },
@@ -2335,6 +2334,7 @@
       "get" : {
         "tags" : [ "Organizations" ],
         "summary" : "Get API Contract",
+        "description" : "Detailed information about a single API Contract for a Client",
         "operationId" : "getContract",
         "parameters" : [ {
           "name" : "organizationId",
@@ -2444,6 +2444,7 @@
       "put" : {
         "tags" : [ "Organizations" ],
         "summary" : "Update Organization By ID",
+        "description" : "Updates meta-information about a single Organization",
         "operationId" : "updateOrg",
         "parameters" : [ {
           "name" : "organizationId",
@@ -3005,10 +3006,10 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "If the audit activity entries are successfully returned."
+            "description" : "Audit activity entries"
           },
           "404" : {
-            "description" : "If the API version does not exist."
+            "description" : "API version does not exist."
           }
         }
       }
@@ -3179,6 +3180,7 @@
       "get" : {
         "tags" : [ "Organizations" ],
         "summary" : "Get Client Activity",
+        "description" : "audit activity information about the Client.",
         "operationId" : "getClientActivity",
         "parameters" : [ {
           "name" : "organizationId",
@@ -3258,6 +3260,7 @@
       "put" : {
         "tags" : [ "Organizations" ],
         "summary" : "Update API Key",
+        "description" : "Update the API Key for the given client. You can either provide your own custom (must be unique) API Key, or you can send an empty request and Apiman will generate a new API key for you. If the client is registered with one or more gateways, this call will fail (API Key can only be modified if the client is not currently registered).",
         "operationId" : "updateClientApiKey",
         "parameters" : [ {
           "name" : "organizationId",
@@ -3441,6 +3444,7 @@
       "get" : {
         "tags" : [ "Organizations" ],
         "summary" : "Get Organization Activity",
+        "description" : "Returns audit activity information for a single Organization. The audit information that is returned represents all the activity associated with the specified Organization.",
         "operationId" : "getOrgActivity",
         "parameters" : [ {
           "name" : "organizationId",
@@ -4041,6 +4045,8 @@
     "/organizations/{organizationId}/apis/{apiId}/versions/{version}/reorderApiPlans" : {
       "put" : {
         "tags" : [ "Organizations" ],
+        "summary" : "Reorder API plans",
+        "description" : "Reorder API plans, which affects the order they are displayed in the API Developer Portal.",
         "operationId" : "reorderApiPlans",
         "parameters" : [ {
           "name" : "organizationId",
@@ -4065,17 +4071,17 @@
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ApiPlanOrderDto"
-              }
-            }
-          }
+          "description" : "Ordered set of API Plans"
         },
         "responses" : {
           "200" : {
             "description" : "Reordering of plans was successful."
+          },
+          "404" : {
+            "description" : "If the Organization, API or Api Version cannot be found"
+          },
+          "401" : {
+            "description" : "If invalid data is provided, such as plans that exist but have not been attached to the API"
           }
         }
       }
@@ -5685,11 +5691,11 @@
               }
             }
           },
-          "bodyAsString" : {
-            "type" : "string"
-          },
           "contentTypeFromMessage" : {
             "type" : "boolean"
+          },
+          "bodyAsString" : {
+            "type" : "string"
           },
           "headers" : {
             "type" : "object",
@@ -5720,14 +5726,14 @@
               }
             }
           },
+          "preamble" : {
+            "type" : "string"
+          },
           "parts" : {
             "type" : "array",
             "items" : {
               "$ref" : "#/components/schemas/InputPart"
             }
-          },
-          "preamble" : {
-            "type" : "string"
           }
         }
       },
@@ -6292,10 +6298,10 @@
           "paging" : {
             "$ref" : "#/components/schemas/PagingBean"
           },
-          "page" : {
+          "pageSize" : {
             "$ref" : "#/components/schemas/SearchCriteriaBean"
           },
-          "pageSize" : {
+          "page" : {
             "$ref" : "#/components/schemas/SearchCriteriaBean"
           }
         }
@@ -8234,6 +8240,9 @@
           "locale" : {
             "type" : "object",
             "properties" : {
+              "displayName" : {
+                "type" : "string"
+              },
               "script" : {
                 "type" : "string"
               },
@@ -8280,9 +8289,6 @@
                 "type" : "string"
               },
               "displayVariant" : {
-                "type" : "string"
-              },
-              "displayName" : {
                 "type" : "string"
               },
               "language" : {
@@ -8314,6 +8320,9 @@
           "locale" : {
             "type" : "object",
             "properties" : {
+              "displayName" : {
+                "type" : "string"
+              },
               "script" : {
                 "type" : "string"
               },
@@ -8360,9 +8369,6 @@
                 "type" : "string"
               },
               "displayVariant" : {
-                "type" : "string"
-              },
-              "displayName" : {
                 "type" : "string"
               },
               "language" : {
@@ -8462,6 +8468,9 @@
           "locale" : {
             "type" : "object",
             "properties" : {
+              "displayName" : {
+                "type" : "string"
+              },
               "script" : {
                 "type" : "string"
               },
@@ -8508,9 +8517,6 @@
                 "type" : "string"
               },
               "displayVariant" : {
-                "type" : "string"
-              },
-              "displayName" : {
                 "type" : "string"
               },
               "language" : {
@@ -8593,10 +8599,10 @@
           "paging" : {
             "$ref" : "#/components/schemas/PagingBean"
           },
-          "page" : {
+          "pageSize" : {
             "$ref" : "#/components/schemas/SearchCriteriaBean"
           },
-          "pageSize" : {
+          "page" : {
             "$ref" : "#/components/schemas/SearchCriteriaBean"
           }
         }
@@ -8648,6 +8654,9 @@
           "locale" : {
             "type" : "object",
             "properties" : {
+              "displayName" : {
+                "type" : "string"
+              },
               "script" : {
                 "type" : "string"
               },
@@ -8694,9 +8703,6 @@
                 "type" : "string"
               },
               "displayVariant" : {
-                "type" : "string"
-              },
-              "displayName" : {
                 "type" : "string"
               },
               "language" : {
