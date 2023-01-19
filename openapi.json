@@ -12,7 +12,8 @@
     "/actions/contracts" : {
       "post" : {
         "tags" : [ "Actions" ],
-        "summary" : " Approve a contract",
+        "summary" : "Approve a contract",
+        "description" : "Approve a contract (assuming it requires approval). If all contracts for a given Client Version have been approved, then it will transition from `AwaitingApproval` to `Ready`, and hence can be published.",
         "operationId" : "approveContract",
         "requestBody" : {
           "content" : {
@@ -34,6 +35,7 @@
       "post" : {
         "tags" : [ "Actions" ],
         "summary" : "Execute an Entity Action",
+        "description" : "Call this endpoint in order to execute actions for apiman entities such as Plans, APIs, or Clients. The type of the action must be included in the request payload.",
         "operationId" : "performAction",
         "requestBody" : {
           "content" : {
@@ -985,6 +987,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1006,20 +1009,14 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/NewApiBean"
-              }
-            }
-          },
-          "required" : true
+          "description" : "Information about the new API."
         },
         "responses" : {
           "200" : {
@@ -1039,6 +1036,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1046,6 +1044,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1053,6 +1052,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1074,6 +1074,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1081,6 +1082,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1088,6 +1090,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1115,6 +1118,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1122,6 +1126,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1140,6 +1145,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1147,6 +1153,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1182,6 +1189,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1204,6 +1212,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1230,6 +1239,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1237,6 +1247,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1244,6 +1255,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1265,6 +1277,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1272,6 +1285,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1279,19 +1293,14 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/NewPolicyBean"
-              }
-            }
-          }
+          "description" : "Information about the new Policy."
         },
         "responses" : {
           "200" : {
@@ -1311,6 +1320,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1318,6 +1328,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1336,6 +1347,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1343,19 +1355,14 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/NewClientVersionBean"
-              }
-            }
-          }
+          "description" : "Initial information about the new Client version."
         },
         "responses" : {
           "200" : {
@@ -1378,6 +1385,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1385,6 +1393,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1392,6 +1401,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1414,6 +1424,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1421,6 +1432,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1428,13 +1440,20 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "description" : "Required information about the new Contract."
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/NewContractBean"
+              }
+            }
+          }
         },
         "responses" : {
           "200" : {
@@ -1452,6 +1471,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1459,6 +1479,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1466,6 +1487,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1506,6 +1528,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1527,6 +1550,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1553,6 +1577,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1560,6 +1585,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1567,6 +1593,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1588,6 +1615,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1595,6 +1623,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1602,6 +1631,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1634,6 +1664,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1641,6 +1672,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1659,6 +1691,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1666,6 +1699,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1695,6 +1729,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1702,6 +1737,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1723,6 +1759,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1730,19 +1767,14 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/UpdateApiBean"
-              }
-            }
-          }
+          "description" : "Updated API information."
         },
         "responses" : {
           "204" : {
@@ -1760,6 +1792,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1767,6 +1800,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1793,6 +1827,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1800,6 +1835,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1807,6 +1843,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1828,6 +1865,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1835,6 +1873,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1842,6 +1881,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1863,6 +1903,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1870,6 +1911,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1877,6 +1919,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1901,6 +1944,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1908,6 +1952,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1915,6 +1960,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1938,6 +1984,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1945,6 +1992,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1968,6 +2016,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1975,6 +2024,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1982,6 +2032,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -1989,6 +2040,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2011,6 +2063,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2018,6 +2071,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2025,6 +2079,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2032,6 +2087,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2057,6 +2113,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2064,6 +2121,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2071,6 +2129,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2078,6 +2137,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2103,6 +2163,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2110,6 +2171,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2131,6 +2193,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2138,19 +2201,14 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/UpdateClientBean"
-              }
-            }
-          }
+          "description" : "Updated Client information."
         },
         "responses" : {
           "204" : {
@@ -2168,6 +2226,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID the client exists within",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2175,6 +2234,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The ClientApp ID to delete",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2198,6 +2258,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2205,6 +2266,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2212,6 +2274,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2219,6 +2282,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2241,6 +2305,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2248,6 +2313,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2255,6 +2321,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2262,6 +2329,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2269,13 +2337,7 @@
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/UpdatePolicyBean"
-              }
-            }
-          }
+          "description" : "New meta-data and/or configuration for the Policy."
         },
         "responses" : {
           "204" : {
@@ -2293,6 +2355,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2300,6 +2363,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2307,6 +2371,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2314,6 +2379,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2339,6 +2405,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2346,6 +2413,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2353,6 +2421,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2360,6 +2429,7 @@
         }, {
           "name" : "contractId",
           "in" : "path",
+          "description" : "The ID of the Contract.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2382,6 +2452,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2389,6 +2460,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2396,6 +2468,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2403,6 +2476,7 @@
         }, {
           "name" : "contractId",
           "in" : "path",
+          "description" : "The Contract ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2427,6 +2501,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization id.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2449,6 +2524,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2473,6 +2549,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID to delete",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2496,6 +2573,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2503,6 +2581,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2524,6 +2603,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2531,6 +2611,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2555,6 +2636,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2562,6 +2644,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2588,6 +2671,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2595,6 +2679,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2602,6 +2687,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2609,6 +2695,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2631,6 +2718,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2638,6 +2726,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2645,6 +2734,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2652,6 +2742,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2677,6 +2768,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2684,6 +2776,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2691,6 +2784,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2698,6 +2792,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The Policy ID.",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -2722,6 +2817,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2729,6 +2825,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2736,6 +2833,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity should be returned.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -2743,6 +2841,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -2766,6 +2865,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2773,6 +2873,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2780,6 +2881,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2787,6 +2889,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2810,6 +2913,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2817,6 +2921,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2824,6 +2929,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2831,6 +2937,7 @@
         }, {
           "name" : "download",
           "in" : "query",
+          "description" : "Query parameter set to true in order to generate a download link.",
           "schema" : {
             "type" : "string"
           }
@@ -2853,6 +2960,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2860,6 +2968,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2867,6 +2976,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2874,6 +2984,7 @@
         }, {
           "name" : "download",
           "in" : "query",
+          "description" : "Query parameter set to true in order to generate a download link.",
           "schema" : {
             "type" : "string"
           }
@@ -2896,6 +3007,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2903,6 +3015,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2910,6 +3023,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2931,6 +3045,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2938,6 +3053,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2945,6 +3061,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2971,6 +3088,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2978,6 +3096,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2985,6 +3104,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -2992,6 +3112,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity data to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -2999,6 +3120,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3022,6 +3144,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3029,6 +3152,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3036,6 +3160,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3043,6 +3168,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of Contracts to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3050,6 +3176,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of Contracts per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3073,6 +3200,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3080,6 +3208,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3087,6 +3216,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3110,6 +3240,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3117,6 +3248,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3124,6 +3256,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3147,6 +3280,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3154,6 +3288,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3161,6 +3296,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3185,6 +3321,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3192,6 +3329,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3199,6 +3337,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity should be returned.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3206,6 +3345,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3229,6 +3369,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3236,6 +3377,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3243,6 +3385,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client Version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3265,6 +3408,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3272,6 +3416,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3279,19 +3424,14 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client Version.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ApiKeyBean"
-              }
-            }
-          }
+          "description" : "The new custom API Key (or empty to auto-generate a new one)."
         },
         "responses" : {
           "200" : {
@@ -3314,6 +3454,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3321,6 +3462,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3328,6 +3470,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3335,12 +3478,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3360,6 +3505,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3367,6 +3513,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3374,6 +3521,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3397,6 +3545,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3404,6 +3553,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3411,6 +3561,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3418,6 +3569,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity data to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3425,6 +3577,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3449,6 +3602,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3456,6 +3610,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity results to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3463,6 +3618,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3486,6 +3642,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3493,6 +3650,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3500,6 +3658,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity should be returned.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3507,6 +3666,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3530,6 +3690,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3537,6 +3698,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3544,6 +3706,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3567,6 +3730,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3574,6 +3738,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3581,6 +3746,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3588,6 +3754,7 @@
         }, {
           "name" : "page",
           "in" : "query",
+          "description" : "Which page of activity data to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3595,6 +3762,7 @@
         }, {
           "name" : "count",
           "in" : "query",
+          "description" : "The number of entries per page to return.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -3618,6 +3786,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3625,6 +3794,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3632,6 +3802,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3639,6 +3810,7 @@
         }, {
           "name" : "interval",
           "in" : "query",
+          "description" : "A valid interval (month, week, day, hour, minute)",
           "schema" : {
             "type" : "string",
             "enum" : [ "month", "week", "day", "hour", "minute" ]
@@ -3646,12 +3818,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3671,6 +3845,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3678,6 +3853,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3685,6 +3861,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3692,12 +3869,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3717,6 +3896,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3724,6 +3904,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3731,6 +3912,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3738,12 +3920,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3763,6 +3947,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3770,6 +3955,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3777,6 +3963,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3784,12 +3971,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3809,6 +3998,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3816,6 +4006,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3823,6 +4014,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3830,6 +4022,7 @@
         }, {
           "name" : "interval",
           "in" : "query",
+          "description" : "A valid interval (month, week, day, hour, minute)",
           "schema" : {
             "type" : "string",
             "enum" : [ "month", "week", "day", "hour", "minute" ]
@@ -3837,12 +4030,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3862,6 +4057,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3869,6 +4065,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3876,6 +4073,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3883,12 +4081,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3908,6 +4108,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3915,6 +4116,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3922,6 +4124,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3929,12 +4132,14 @@
         }, {
           "name" : "from",
           "in" : "query",
+          "description" : "The start of a valid date range.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "to",
           "in" : "query",
+          "description" : "The end of a valid date range.",
           "schema" : {
             "type" : "string"
           }
@@ -3954,6 +4159,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3977,6 +4183,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -3997,6 +4204,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4004,6 +4212,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4011,6 +4220,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4018,6 +4228,7 @@
         }, {
           "name" : "contractId",
           "in" : "path",
+          "description" : "The contract ID",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -4026,6 +4237,7 @@
         }, {
           "name" : "policyId",
           "in" : "path",
+          "description" : "The policy ID (policy you want to probe)",
           "required" : true,
           "schema" : {
             "type" : "integer",
@@ -4051,6 +4263,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4058,6 +4271,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4065,6 +4279,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4094,6 +4309,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4101,6 +4317,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "The API ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4108,19 +4325,14 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The API version.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/PolicyChainBean"
-              }
-            }
-          }
+          "description" : "The Policies in the desired order."
         },
         "responses" : {
           "204" : {
@@ -4140,6 +4352,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4147,6 +4360,7 @@
         }, {
           "name" : "clientId",
           "in" : "path",
+          "description" : "The Client ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4154,19 +4368,14 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Client version.",
           "required" : true,
           "schema" : {
             "type" : "string"
           }
         } ],
         "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/PolicyChainBean"
-              }
-            }
-          }
+          "description" : "The Policies in the desired order."
         },
         "responses" : {
           "204" : {
@@ -4186,6 +4395,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The Organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4193,6 +4403,7 @@
         }, {
           "name" : "planId",
           "in" : "path",
+          "description" : "The Plan ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4200,6 +4411,7 @@
         }, {
           "name" : "version",
           "in" : "path",
+          "description" : "The Plan version.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4232,6 +4444,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4239,6 +4452,7 @@
         }, {
           "name" : "roleId",
           "in" : "path",
+          "description" : "The role ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4246,6 +4460,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
+          "description" : "The user ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4266,6 +4481,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "The organization ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4273,6 +4489,7 @@
         }, {
           "name" : "userId",
           "in" : "path",
+          "description" : "The user ID.",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4296,6 +4513,7 @@
         "parameters" : [ {
           "name" : "organizationId",
           "in" : "path",
+          "description" : "Organization ID",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -4303,6 +4521,7 @@
         }, {
           "name" : "apiId",
           "in" : "path",
+          "description" : "API ID",
           "required" : true,
           "schema" : {
             "type" : "string"
@@ -5691,11 +5910,11 @@
               }
             }
           },
-          "contentTypeFromMessage" : {
-            "type" : "boolean"
-          },
           "bodyAsString" : {
             "type" : "string"
+          },
+          "contentTypeFromMessage" : {
+            "type" : "boolean"
           },
           "headers" : {
             "type" : "object",
@@ -6139,7 +6358,8 @@
           "value" : {
             "type" : "string"
           }
-        }
+        },
+        "description" : "Key value tag pair"
       },
       "SearchResultsBeanApiSummaryBean" : {
         "type" : "object",
@@ -6984,7 +7204,8 @@
           "extendedDescription" : {
             "type" : "string"
           }
-        }
+        },
+        "description" : "Initial information to create a new API version."
       },
       "ClientBean" : {
         "type" : "object",
@@ -7193,7 +7414,8 @@
           "planId" : {
             "type" : "string"
           }
-        }
+        },
+        "description" : "Required information to create a new Contract."
       },
       "NewPlanBean" : {
         "type" : "object",
@@ -7284,7 +7506,7 @@
             }
           }
         },
-        "description" : "Models a list of policies that would be applied if an API were invoked via a particular plan"
+        "description" : "Models an ordered list of policies that would be applied if an API were invoked via a particular plan"
       },
       "ApiPlanSummaryBean" : {
         "type" : "object",
@@ -8240,7 +8462,7 @@
           "locale" : {
             "type" : "object",
             "properties" : {
-              "displayName" : {
+              "language" : {
                 "type" : "string"
               },
               "script" : {
@@ -8291,7 +8513,7 @@
               "displayVariant" : {
                 "type" : "string"
               },
-              "language" : {
+              "displayName" : {
                 "type" : "string"
               }
             }
@@ -8320,7 +8542,7 @@
           "locale" : {
             "type" : "object",
             "properties" : {
-              "displayName" : {
+              "language" : {
                 "type" : "string"
               },
               "script" : {
@@ -8371,7 +8593,7 @@
               "displayVariant" : {
                 "type" : "string"
               },
-              "language" : {
+              "displayName" : {
                 "type" : "string"
               }
             }
@@ -8468,7 +8690,7 @@
           "locale" : {
             "type" : "object",
             "properties" : {
-              "displayName" : {
+              "language" : {
                 "type" : "string"
               },
               "script" : {
@@ -8519,7 +8741,7 @@
               "displayVariant" : {
                 "type" : "string"
               },
-              "language" : {
+              "displayName" : {
                 "type" : "string"
               }
             }
@@ -8654,7 +8876,7 @@
           "locale" : {
             "type" : "object",
             "properties" : {
-              "displayName" : {
+              "language" : {
                 "type" : "string"
               },
               "script" : {
@@ -8705,7 +8927,7 @@
               "displayVariant" : {
                 "type" : "string"
               },
-              "language" : {
+              "displayName" : {
                 "type" : "string"
               }
             }
