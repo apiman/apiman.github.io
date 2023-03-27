@@ -12,21 +12,21 @@
 
 - title: Migration Guide
   icon: 'bi bi-arrow-90deg-up'
-  url: 'https://www.apiman.io/apiman-docs/core/stable/migration/migrations.html'
+  url: 'https://www.apiman.io/apiman-docs/core/latest/migration/migrations.html'
   description: |
     If you're moving to a new version of Apiman, please refer to our migration guide before upgrading.
 
 - title: Installation Guide
   icon: bi bi-wrench-adjustable-circle
-  url: 'https://www.apiman.io/apiman-docs/installation-guide/stable/index.html'
+  url: 'https://www.apiman.io/apiman-docs/installation-guide/latest/index.html'
   description: Learn how to install and administer Apiman.
 
 - title: User Guide
   icon: bi bi-person-square
-  url: 'https://www.apiman.io/apiman-docs/user-guide/stable/index.html'
+  url: 'https://www.apiman.io/apiman-docs/user-guide/latest/index.html'
   description: Learn how to use Apiman.
 
 - title: Development Guide
   icon: bi bi-code-square
-  url: 'https://www.apiman.io/apiman-docs/core/stable/development/Guide.html'
+  url: 'https://www.apiman.io/apiman-docs/core/latest/development/Guide.html'
   description: Learn how to create Apiman policy plugins, extensions, and even embed the Apiman Gateway.
