@@ -13,7 +13,7 @@ I'm delighted to announce that I have released Apiman 3.1.0.Final.
 Aside from numerous bug fixes and a few interesting new features, this includes a security fix for link:/blog/potential-permissions-bypass-disclosure/[CVE-2023-28640^].
 
 
-Due to an issue with the release pipeline, we ended up having to cut a 3.1.1.Final release also, but it's identical to 3.0.0.Final.
+Due to an issue with the release pipeline, we ended up having to cut a 3.1.1.Final release also, but it's identical to 3.1.0.Final.
 
 // more
 
