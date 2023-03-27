@@ -1,0 +1,39 @@
+---
+author: marc_savy
+date: 2023-03-27 20:00:00 BST
+tags: cve
+---
+
+= Potential permissions bypass in Apiman 3.0.0.Final (CVE-2023-28640)
+
+A vulnerability in Apiman has been disclosed that you need to be aware of and respond to.
+It has CVE ID https://www.cve.org/CVERecord?id=CVE-2023-28640[CVE-2023-28640^].
+
+// more
+
+== Details
+
+Due to a missing permissions check, an attacker with an authenticated Apiman Manager account may be able to gain access to API keys they do not have permission for if they correctly guess the URLs for the non-permitted resource. The URL includes Organisation ID, Client ID, and Client Version of the targeted non-permitted resource, and each of these can have arbitrary values.
+
+While not trivial to exploit, it could be achieved by brute-forcing or guessing common names.
+
+Access to the non-permitted API Keys could allow use of other users' resources without their permission.
+Whether this is possible in practice depends on the specifics of configuration, such as whether an API key is the only form of security.
+
+== Implications
+
+* A malicious account-holder may be able to get access to an API key they do not have permission for by guessing/fuzzing private URLs in someone else's organisation.
+
+** If successful, the key could be used to access APIs that the user does not have permissions for, if the API Key is the only form of security.
+
+* This vulnerability is only in the Apiman Manager, it does *NOT* relate directly to the Apiman Gateway.
+
+== Actions to take
+
+* Upgrade to Apiman 3.1.0.Final/3.1.1.Final (or later). The issue is fixed in this version. No special actions should be required when upgrading.
+
+* If you are unable to upgrade your version of Apiman, contact to your link:/support.html[Apiman support provider^] for advice/long-term support.
+
+== Thanks
+
+I would like to thank @volkflo and @bastiangem for responsibly disclosing this vulnerability.
