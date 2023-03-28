@@ -14,7 +14,7 @@ As of Apiman 3, our canonical repository is the {ghcr}[Apiman GitHub Container R
 
 === Images
 
-* List of images and container-specific documentation on https://github.com/apiman/apiman-docker#apiman-docker-images[Apiman Docker @ GitHub^].
+* List of images and container-specific documentation on https://github.com/apiman/apiman/tree/{apiman-version}/containers#apiman-docker-images[Apiman Docker @ GitHub^].
 * https://github.com/apiman/apiman-docker/blob/{apiman-version}/README.adoc[Official Apiman container repository (GHCR)^].
 
 === Configuration
