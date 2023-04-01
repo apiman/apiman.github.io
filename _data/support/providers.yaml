@@ -30,7 +30,7 @@
 
 - title: Red Hat (JBoss)
   icon: /assets/images/rht.svg
-  url: https://www.redhat.com/middleware
+  url: https://www.redhat.com/en/topics/middleware
   currentMajorSupporter: false
   description: |
     <p>
