@@ -10,7 +10,7 @@ allow-uri-read: true
 
 I'm delighted to announce that I have released Apiman 3.1.2.Final.
 
-One particularly useful change I'd like to highlight is that the Vert.x Gateway's API, when secured by Keycloak, now accepts a list of additionally accepted issuers using `allowed-ussers`, which is useful for users with more complex auth setups:
+One particularly useful change I'd like to highlight is that the Vert.x Gateway's API, when secured by Keycloak, now accepts a list of additionally accepted issuers using `allowed-users`, which is useful for users with more complex auth setups:
 
 [source,json5]
 ----
