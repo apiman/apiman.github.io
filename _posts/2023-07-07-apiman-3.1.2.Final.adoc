@@ -1,0 +1,52 @@
+---
+author: marc_savy
+date: 2023-07-07 16:00:00 BST
+tags: apiman release
+allow-uri-read: true
+---
+
+= Apiman 3.1.2 released!
+:allow-uri-read: true
+
+I'm delighted to announce that I have released Apiman 3.1.2.Final.
+
+One particularly useful change I'd like to highlight is that the Vert.x Gateway's API, when secured by Keycloak, now accepts a list of additionally accepted issuers using `allowed-ussers`, which is useful for users with more complex auth setups:
+
+[source,json5]
+----
+{
+  // <rest of your config...>
+
+  // Gateway API Authentication. See documentation for further possibilities.
+  "auth": {
+    "type": "keycloak",
+    "config": {
+      "flowType": "PASSWORD",
+      "requiredRole": "realm:apipublisher",
+      "auth-server-url": "...",
+      // You can add extra issuers here.
+      "allowed-issuers": [ // <1>
+        "http://keycloak:8080",
+        "https://auth.example.com"
+      ],
+      "realm": "${apiman.auth.realm:-apiman}",
+      "resource": "apiman-gateway-api",
+      "credentials": {
+        "secret": "${apiman.auth.gateway.secret:-password}"
+      },
+      "ssl-required": "none",
+      "disable-trust-manager": true,
+      "allow-any-hostname" : true
+    }
+  }
+}
+----
+<1> You can add extra issuers here; this can be very useful if your setup has internal vs external issuers, and you need to support them all simultaneously.
+
+// more
+
+TIP: Need help? Support is available from link:/support.html[Apiman's developers], and helps the project be sustainable. Please be a good open source citizen!
+
+== What's new?
+
+include::https://raw.githubusercontent.com/apiman/apiman/master/CHANGELOG.adoc[tags=3.1.2.Final]
