@@ -1,0 +1,57 @@
+<div class="sect1">
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Ruby 3.x (best to use rvm).
+<li>
+<p>Bundler (usually included now).
+<li>
+<p>Graphviz
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>bundle install</code>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="run"><a class="anchor" href="#run"></a>Run</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>bundle exec jekyll serve -l --future --livereload-ignore assets/images/generated/*</code>
+</div>
+<div class="paragraph">
+<p>This will:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run Jekyll and serve website.
+<li>
+<p>Live reload.
+<li>
+<p>Show future-dated content.
+<li>
+<p>Ignore generated assets to avoid continually rebuilding (some kind of glitch).
+</ul>
+</div>
+<div class="paragraph">
+<p>Visit <a href="http://localhost:4000" class="bare">http://localhost:4000</a>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="license"><a class="anchor" href="#license"></a>License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Website was created by <a href="https://www.github.com/msavy">Marc Savy</a> using mostly Jekyll and Bootstrap 5.x, and is contributed under the CC BY-SA 4.0 license.
+</div>
+</div>
+</div>
