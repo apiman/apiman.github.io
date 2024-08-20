@@ -14,6 +14,15 @@
       knowing they have our unparalleled Apiman expertise behind them if something goes wrong.
     </p>
     <p>
+      API Management is a critical infrastructure component, where problems pose severe business continuity risks, 
+      including to security and data integrity. 
+    </p>
+    <p>  
+      BPL provides long-term enterprise support to ensure your API Management deployment is stable, secure, and available.
+      This means you can remain on an older version of Apiman for much longer, while continuing to receive regular
+      releases to address any security/CVE issues, and fixing any bugs that may emerge.
+    </p>
+    <p>
       Our Apiman CVE monitoring and patching program is a cornerstone of our offering; we actively inform customers when
       a vulnerability is found, and provide rapid assessment, mitigations and patches — all tailored specifically to 
       your unique deployment and available 24/7.
@@ -22,7 +31,7 @@
       One of our core missions is to ensure the health of the Apiman open source community; 
       we invest a large proportion of our engineering and financial resources into maintaining Apiman. 
       No other company has this commitment, and we have been the principal contributors 
-      and maintainers of the Apiman project for a long time.
+      and maintainers of the Apiman project for many years.
     </p>
     <p>
       Nobody knows Apiman better.
