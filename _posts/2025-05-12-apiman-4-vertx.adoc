@@ -1,0 +1,63 @@
+---
+author: marc_savy
+date: 2025-05-12 16:00:00 BST
+tags: apiman, vert.x, apiman4, black parrot labs, dev diary, software architecture
+allow-uri-read: true
+---
+
+== Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications
+
+Let's be honest, whilst async platforms are extremely performant, the programming, debugging, and maintenance of async code is more difficult than imperative programming. The situation has now become yet more nuanced with the arrival of the JVM's virtual threads.
+
+// more
+
+****
+💡 https://www.blackparrotlabs.io[Black Parrot Labs^] offers comprehensive enterprise support for Apiman.
+
+If you depend on Apiman and want open source to be sustainable, consider working with us.
+
+As the developers and maintainers of the platform, nobody knows Apiman better.
+
+https://www.linkedin.com/feed/update/urn:li:activity:7327678940800598016/[This is adapted from Apiman founder Marc's post on LinkedIn^].
+****
+
+A thought occurred to me while working on Apiman 4 at https://www.blackparrotlabs.io[Black Parrot Labs^]: even within the same codebase there are often large proportions of code which do not need high performance, as they are only used occasionally (e.g. only used at startup, cached, very occasional use, etc). Wouldn't it be nice to be able to hybridise your application and have greater architectural flexibility?
+
+With Eclipse Vert.x 4 and 5, in combination with https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html[Java's virtual threads^], you can now have that.
+
+Let me give an example:
+
+.Simplified Architectural Diagram
+image::/assets/images/blog/2025-05-12/arch.png[]
+
+.Code Snippet
+image::/assets/images/blog/2025-05-12/snippet.png[]
+
+Let's say we have a stockbroker service to buy your favourite meme stock.
+It consists of three components:
+
+- "Stock Broker" is a used very frequently and has extremely intensive performance requirements. You don't want to miss out on your opportunity to lose your money very quickly, after all.
+
+- "Users" and "Permissions" are used much less frequently, but have complex logic which can be burdensome to maintain as "pure" traditional async code.
+
+So, how do we mix and match?
+
+With the latest-and-greatest versions of Vert.x, we can run the Users and Permissions components as 'virtual thread verticles'.
+
+This allows us to call `await()` on any asynchronous call/future, and block until the response is ready (or an exception thrown). Standard imperative patterns. In the background, Vert.x dispatches the call onto a virtual thread — but we don't need to worry about that.
+
+Given its performance requirements,
+we implement "Stock Broker" as a standard verticle using our usual asynchronous patterns.
+When we need data from the Users and Permissions components, we interact over Vert.x's lightweight message bus,
+so it is never impacted by the alternative/blocking approach described above for Permissions, Users, etc.
+
+I hope this makes sense; it lets us have the 'best of both worlds' and does not force us to use more challenging techniques on code that does not need it.
+
+You can find more examples on the Vert.x website, and I included an annotated example on the second picture.
+
+So, have any of you created Vert.x applications that are hybrids of virtual thread verticles and standard reactor verticles? I'd love to hear your thoughts!
+
+(Incidentally, the performance of the virtual thread verticles seems excellent, so that probably pushes the needle even higher on which applications justify "real" async).
+
+Thank you to Julien Viet, Julien Ponge, Clement Escoffier, Paulo Lopes, Thomas Segismont et al for your hard work on this. I see your names in the code frequently 😅.
+
