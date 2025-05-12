@@ -1,5 +1,9 @@
-{% assign latestVersion = site.data.releases.stable.version %}
-{% assign latestVersionMunged = latestVersion | replace: '.', '-' | downcase %}
+{% assign latestVersionCommunity = site.data.releases.stable.version %}
+{% assign latestVersionSupported = site.data.supported.latest.version %}
+
+{% assign latestVersionMungedCommunity = latestVersionCommunity | replace: '.', '-' | downcase %}
+{% assign latestVersionMungedSupported = latestVersionMungedSupported | replace: '.', '-' | downcase %}
+
 <!-- Idea: Add dev tab to allow latest dev release -->
 <div class="card" style="background-color: rgba(255,255,255, 0.4)" tabindex="0">
   <div class="card-body no-padding-last-para d-flex flex-column">

@@ -2,7 +2,15 @@ display: true
 # Use the Bootstrap CSS alert class
 type: 'alert-success'
 message: |
-  <a href="/support.html">Comprehensive long-term enterprise support</a> is available directly from Apiman's developers 
-  — this funds the continued development of Apiman.
-  Whether you want long-term support for an older version of Apiman, or to address business continuity risk for
-  this critical infrastructure component — <a href="https://www.blackparrotlabs.io" target="_blank">we have you covered</a>.
+      <p>We're working hard on Apiman 4!</p>
+      <p>
+        <a href="https://www.blackparrotlabs.io">Comprehensive long-term enterprise support</a> is available directly from Apiman's developers 
+      — this funds the continued development of Apiman.
+              
+      Whether you want long-term support for an older version of Apiman, or to address business continuity risk for
+      this critical infrastructure component — <a href="https://www.blackparrotlabs.io">Black Parrot Labs has you covered</a>.
+        </p>
+      <p>
+        <strong>Black Parrot Labs continues providing releases of Apiman 3.x to our enterprise support customers, including 
+          regular security (CVE), stability, and bug fixes.</strong>
+      </p>

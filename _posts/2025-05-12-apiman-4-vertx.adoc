@@ -2,12 +2,13 @@
 author: marc_savy
 date: 2025-05-12 16:00:00 BST
 tags: apiman, vert.x, apiman4, black parrot labs, dev diary, software architecture
-allow-uri-read: true
 ---
 
-== Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications
+= Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications
 
-Let's be honest, whilst async platforms are extremely performant, the programming, debugging, and maintenance of async code is more difficult than imperative programming. The situation has now become yet more nuanced with the arrival of the JVM's virtual threads.
+Let's be honest, whilst async platforms are extremely performant,
+the programming, debugging, and maintenance of async code is more challenging than imperative programming.
+The situation has now become yet more nuanced with the arrival of the JVM's virtual threads.
 
 // more
 

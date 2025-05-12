@@ -10,6 +10,9 @@ layout: base
 {% assign latestVersionMunged = latestVersion | replace: '.', '_' %}
 {% assign meta = site.data.release-metadata[latestVersionMunged] %}
 
+{% assign latestBlogPost = site.posts[0] %}
+{% assign latestBlogPostAuthor = site.data.authors[latestBlogPost.author].name %}
+
 <div class="container-fluid pb-4" id="apiman-hero-container-outer">
     <div class="container mw-1350 mx-auto px-md-2" id="apiman-hero-container-inner">
         <div class="d-md-inline-flex">
@@ -27,12 +30,18 @@ layout: base
                         <p>
                             With just a few clicks you can get Apiman running, putting a platform at your
                             fingertips that covers the whole API Management lifecycle.
-                            Whether you want to offer existing APIs to external consumers in a secure way, or
+                            Whether you want to offer existing APIs to external consumers securely, or
                             have a centralised location to discover and govern APIs, Apiman has you covered.
                         </p>
                         <p>
-                            But that's not all. Apiman is designed to be easy to customise, and you can implement
+                            But that's not all. Apiman is designed to be straightforward to customise, and you can implement
                             your own functionality by writing simple Java plugins.
+                        </p>
+                        <p>
+                            <strong>
+                                Read our latest blog post by {{ latestBlogPostAuthor }} from {{ latestBlogPost.date | date: "%d %b %y" }}:
+                                    <a href="{{ latestBlogPost.url }}">{{ latestBlogPost.title }}</a>.
+                            </strong>
                         </p>
                     </div>
                     <div class="d-none d-xl-block col-xl-3">
@@ -42,7 +51,8 @@ layout: base
                 <div class="d-flex flex-column">
                     <div class="text-center text-md-start">
                         <a href="/download.html" class="mb-1 btn btn-primary btn-lg">Get Started</a>
-                        <a href="#newsletter" class="mb-1 btn btn-outline-primary btn-lg">Apiman Newsletter</a>
+                        <a href="https://www.blackparrotlabs.io" class="mb-1 btn btn-outline-primary btn-lg">Get Support for Apiman</a>
+                        {% comment %}<a href="#newsletter" class="mb-1 btn btn-outline-primary btn-lg">Apiman Newsletter</a>{% endcomment %}
                     </div>
                     <!-- Display only on smaller -->
                     <div class="text-small text-muted pt-2 d-xl-none">
@@ -123,11 +133,11 @@ layout: base
     </div>
 </section>
 
-<!-- Newsletter -->
-<section class="bg-light py-5 container-fluid d-flex justify-content-center align-items-center" id="newsletter" title="Sign up to the Apiman Newsletter">
-    <div class="container-fluid mw-1000">
-        <iframe style="min-height: 550px;" class="mj-w-res-iframe" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/8JRh/OR8" width="100%"></iframe>
-        <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
-    </div>
-</section>
+{% comment %}<!-- Newsletter -->{% endcomment %}
+{% comment %}<section class="bg-light py-5 container-fluid d-flex justify-content-center align-items-center" id="newsletter" title="Sign up to the Apiman Newsletter">{% endcomment %}
+    {% comment %}<div class="container-fluid mw-1000">{% endcomment %}
+        {% comment %}<iframe style="min-height: 550px;" class="mj-w-res-iframe" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/8JRh/OR8" width="100%"></iframe>{% endcomment %}
+        {% comment %}<script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+{% comment %}</section>{% endcomment %}
 
