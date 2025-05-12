@@ -26,9 +26,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.126.0
+        uses: ruby/setup-ruby@v1.238.0
         with:
-          ruby-version: '3.1.2'
+          ruby-version: '3.4.3'
           bundler-cache: true
 
       - name: Setup Node.js environment
@@ -48,7 +48,7 @@ jobs:
           cp -rf _site/api-docs/ docs/
 
       - name: Commit generated website
-        uses: EndBug/add-and-commit@v9.1.1
+        uses: EndBug/add-and-commit@v9.1.4
         with:
           message: "Regenerate apiman.github.io"
           add: -A
