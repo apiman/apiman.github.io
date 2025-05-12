@@ -1,7 +1,7 @@
 ---
 author: marc_savy
 date: 2025-05-12 16:00:00 BST
-tags: apiman, vert.x, apiman4, black parrot labs, dev diary, software architecture
+tags: apiman vert.x apiman-4 black-parrot-labs dev-diary software-architecture
 ---
 
 = Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications
