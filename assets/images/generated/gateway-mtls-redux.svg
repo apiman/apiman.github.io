@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height='351pt' preserveAspectRatio='xMidYMid meet' viewBox='0.00 0.00 555.00 351.00' width='555pt' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>
-<g class='graph' id='graph0' transform='scale(1 1) rotate(0) translate(4 347)'>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg height='350pt' preserveAspectRatio='xMidYMid meet' viewBox='0.00 0.00 555.00 350.00' width='555pt' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'>
+<g class='graph' id='graph0' transform='scale(1 1) rotate(0) translate(4 346)'>
 <title>G</title>
-<polygon fill='white' points='-4,4 -4,-347 551,-347 551,4 -4,4' stroke='none'/>
+<polygon fill='white' points='-4,4 -4,-346 551,-346 551,4 -4,4' stroke='transparent'/>
 
 <g class='node' id='node1'>
 <title>ClientApp</title>
@@ -12,15 +12,15 @@
 
 <g class='node' id='node2'>
 <title>Gateway</title>
-<polygon fill='none' points='272.5,-54.5 272.5,-342.5 343.5,-342.5 343.5,-54.5 272.5,-54.5' stroke='black'/>
-<text font-family='arial' font-size='14.00' text-anchor='middle' x='308' y='-194.8'>Gateway</text>
+<polygon fill='none' points='272.5,-53.5 272.5,-341.5 343.5,-341.5 343.5,-53.5 272.5,-53.5' stroke='black'/>
+<text font-family='arial' font-size='14.00' text-anchor='middle' x='308' y='-193.8'>Gateway</text>
 </g>
 
 <g class='edge' id='edge1'>
 <title>ClientApp&#45;&gt;Gateway</title>
-<path d='M87.51,-65.33C137.22,-95.49 214.62,-142.45 262.99,-171.8' fill='none' stroke='black'/>
-<polygon fill='black' points='89.63,-62.52 79.27,-60.32 86,-68.5 89.63,-62.52' stroke='black'/>
-<polygon fill='black' points='260.89,-174.62 271.26,-176.81 264.52,-168.63 260.89,-174.62' stroke='black'/>
+<path d='M87.12,-64.91C137,-94.99 215.07,-142.07 263.53,-171.28' fill='none' stroke='black'/>
+<polygon fill='black' points='88.63,-61.73 78.25,-59.57 85.01,-67.73 88.63,-61.73' stroke='black'/>
+<polygon fill='black' points='261.84,-174.36 272.21,-176.52 265.46,-168.36 261.84,-174.36' stroke='black'/>
 <text font-family='arial' font-size='14.00' text-anchor='middle' x='155' y='-144.3'>Gateway Auth Only</text>
 </g>
 
@@ -32,44 +32,44 @@
 
 <g class='edge' id='edge2'>
 <title>ClientApp&#45;&gt;APIC</title>
-<path d='M77.85,-32.2C141.4,-25.77 273.44,-15.79 384,-29.5 418,-33.72 455.74,-43.69 482.65,-51.75' fill='none' stroke='red' stroke-dasharray='5,2'/>
-<polygon fill='red' points='481.45,-55.04 492.03,-54.62 483.49,-48.35 481.45,-55.04' stroke='red'/>
+<path d='M78.11,-32.18C141.75,-25.75 273.59,-15.81 384,-29.5 418.24,-33.75 456.28,-43.83 483.22,-51.92' fill='none' stroke='red' stroke-dasharray='5,2'/>
+<polygon fill='red' points='482.39,-55.33 492.98,-54.91 484.44,-48.63 482.39,-55.33' stroke='red'/>
 <text font-family='arial' font-size='14.00' text-anchor='middle' x='308' y='-33.3'>Not Authenticated Failure</text>
 </g>
 
 <g class='node' id='node3'>
 <title>APIA</title>
-<polygon fill='none' points='493,-231.5 493,-303.5 547,-303.5 547,-231.5 493,-231.5' stroke='black'/>
-<text font-family='arial' font-size='14.00' text-anchor='middle' x='520' y='-263.8'>API A</text>
+<polygon fill='none' points='493,-230.5 493,-302.5 547,-302.5 547,-230.5 493,-230.5' stroke='black'/>
+<text font-family='arial' font-size='14.00' text-anchor='middle' x='520' y='-262.8'>API A</text>
 </g>
 
 <g class='edge' id='edge3'>
 <title>Gateway&#45;&gt;APIA</title>
-<path d='M354.07,-213.31C392.32,-225.88 446.52,-243.69 482.21,-255.41' fill='none' stroke='black'/>
-<polygon fill='black' points='355.24,-210.01 344.65,-210.21 353.05,-216.66 355.24,-210.01' stroke='black'/>
-<polygon fill='black' points='481.07,-258.72 491.66,-258.52 483.25,-252.07 481.07,-258.72' stroke='black'/>
-<text font-family='arial' font-size='14.00' text-anchor='middle' x='438.5' y='-256.3'>Mutual Auth</text>
+<path d='M353.18,-212.02C391.88,-224.73 447.39,-242.97 483.32,-254.78' fill='none' stroke='black'/>
+<polygon fill='black' points='354.27,-208.69 343.68,-208.89 352.08,-215.34 354.27,-208.69' stroke='black'/>
+<polygon fill='black' points='482.31,-258.13 492.91,-257.93 484.5,-251.48 482.31,-258.13' stroke='black'/>
+<text font-family='arial' font-size='14.00' text-anchor='middle' x='438.5' y='-255.3'>Mutual Auth</text>
 </g>
 
 <g class='node' id='node4'>
 <title>APIB</title>
-<polygon fill='none' points='493,-140.5 493,-212.5 547,-212.5 547,-140.5 493,-140.5' stroke='black'/>
-<text font-family='arial' font-size='14.00' text-anchor='middle' x='520' y='-172.8'>API B</text>
+<polygon fill='none' points='493,-139.5 493,-211.5 547,-211.5 547,-139.5 493,-139.5' stroke='black'/>
+<text font-family='arial' font-size='14.00' text-anchor='middle' x='520' y='-171.8'>API B</text>
 </g>
 
 <g class='edge' id='edge4'>
 <title>Gateway&#45;&gt;APIB</title>
-<path d='M354.61,-193.72C392.68,-189.73 446.28,-184.12 481.79,-180.4' fill='none' stroke='black'/>
-<polygon fill='black' points='354.29,-190.24 344.71,-194.76 355.02,-197.2 354.29,-190.24' stroke='black'/>
-<polygon fill='black' points='482.01,-183.89 491.59,-179.37 481.28,-176.93 482.01,-183.89' stroke='black'/>
-<text font-family='arial' font-size='14.00' text-anchor='middle' x='438.5' y='-191.3'>Mutual Auth</text>
+<path d='M353.72,-192.82C392.24,-188.78 447.13,-183.03 482.9,-179.28' fill='none' stroke='black'/>
+<polygon fill='black' points='353.26,-189.34 343.68,-193.87 353.99,-196.31 353.26,-189.34' stroke='black'/>
+<polygon fill='black' points='483.33,-182.76 492.91,-178.23 482.6,-175.79 483.33,-182.76' stroke='black'/>
+<text font-family='arial' font-size='14.00' text-anchor='middle' x='438.5' y='-190.3'>Mutual Auth</text>
 </g>
 
 <g class='edge' id='edge5'>
 <title>Gateway&#45;&gt;APIC</title>
-<path d='M352.72,-170.39C391.49,-145.47 447.41,-109.52 483.48,-86.33' fill='none' stroke='black'/>
-<polygon fill='black' points='351,-167.34 344.48,-175.69 354.79,-173.23 351,-167.34' stroke='black'/>
-<polygon fill='black' points='485.3,-89.32 491.82,-80.97 481.52,-83.43 485.3,-89.32' stroke='black'/>
+<path d='M352.12,-169.99C391.15,-145.08 447.93,-108.85 484.16,-85.73' fill='none' stroke='black'/>
+<polygon fill='black' points='350.22,-167.04 343.68,-175.37 353.99,-172.94 350.22,-167.04' stroke='black'/>
+<polygon fill='black' points='486.36,-88.48 492.91,-80.15 482.59,-82.58 486.36,-88.48' stroke='black'/>
 <text font-family='arial' font-size='14.00' text-anchor='middle' x='438.5' y='-138.3'>Mutual Auth</text>
 </g>
 </g>
