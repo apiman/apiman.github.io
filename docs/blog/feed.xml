@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.apiman.io/blog/feed.xml" rel="self" type="application/atom+xml"/><link href="https://www.apiman.io/" rel="alternate" type="text/html"/><updated>2026-02-20T23:40:02+00:00</updated><id>https://www.apiman.io/blog/feed.xml</id><title type="html">Apiman</title><subtitle>Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it's easy to customise Apiman to do whatever you need with simple Java plugins.</subtitle><entry><title type="html">Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications</title><link href="https://www.apiman.io/blog/apiman-4-vertx/" rel="alternate" type="text/html" title="Apiman 4 Dev Diary: Hybrid Vert.x Async-Imperative Applications"/><published>2025-05-12T16:00:00+00:00</published><updated>2025-05-12T16:00:00+00:00</updated><id>https://www.apiman.io/blog/apiman-4-vertx</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-4-vertx/"><![CDATA[<div class="paragraph">
+<p>Let&#8217;s be honest, whilst async platforms are extremely performant,
+the programming, debugging, and maintenance of async code is more challenging than imperative programming.
+The situation has now become yet more nuanced with the arrival of the JVM&#8217;s virtual threads.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>💡 <a href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> offers comprehensive enterprise support for Apiman.</p>
+</div>
+<div class="paragraph">
+<p>If you depend on Apiman and want open source to be sustainable, consider working with us.</p>
+</div>
+<div class="paragraph">
+<p>As the developers and maintainers of the platform, nobody knows Apiman better.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7327678940800598016/" target="_blank" rel="noopener">This is adapted from Apiman founder Marc&#8217;s post on LinkedIn</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A thought occurred to me while working on Apiman 4 at <a href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a>: even within the same codebase there are often large proportions of code which do not need high performance, as they are only used occasionally (e.g. only used at startup, cached, very occasional use, etc). Wouldn&#8217;t it be nice to be able to hybridise your application and have greater architectural flexibility?</p>
+</div>
+<div class="paragraph">
+<p>With Eclipse Vert.x 4 and 5, in combination with <a href="https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html" target="_blank" rel="noopener">Java&#8217;s virtual threads</a>, you can now have that.</p>
+</div>
+<div class="paragraph">
+<p>Let me give an example:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2025-05-12/arch.png" alt="arch">
+</div>
+<div class="title">Figure 1. Simplified Architectural Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2025-05-12/snippet.png" alt="snippet">
+</div>
+<div class="title">Figure 2. Code Snippet</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say we have a stockbroker service to buy your favourite meme stock.
+It consists of three components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Stock Broker" is a used very frequently and has extremely intensive performance requirements. You don&#8217;t want to miss out on your opportunity to lose your money very quickly, after all.</p>
+</li>
+<li>
+<p>"Users" and "Permissions" are used much less frequently, but have complex logic which can be burdensome to maintain as "pure" traditional async code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So, how do we mix and match?</p>
+</div>
+<div class="paragraph">
+<p>With the latest-and-greatest versions of Vert.x, we can run the Users and Permissions components as 'virtual thread verticles'.</p>
+</div>
+<div class="paragraph">
+<p>This allows us to call <code>await()</code> on any asynchronous call/future, and block until the response is ready (or an exception thrown). Standard imperative patterns. In the background, Vert.x dispatches the call onto a virtual thread — but we don&#8217;t need to worry about that.</p>
+</div>
+<div class="paragraph">
+<p>Given its performance requirements,
+we implement "Stock Broker" as a standard verticle using our usual asynchronous patterns.
+When we need data from the Users and Permissions components, we interact over Vert.x&#8217;s lightweight message bus,
+so it is never impacted by the alternative/blocking approach described above for Permissions, Users, etc.</p>
+</div>
+<div class="paragraph">
+<p>I hope this makes sense; it lets us have the 'best of both worlds' and does not force us to use more challenging techniques on code that does not need it.</p>
+</div>
+<div class="paragraph">
+<p>You can find more examples on the Vert.x website, and I included an annotated example on the second picture.</p>
+</div>
+<div class="paragraph">
+<p>So, have any of you created Vert.x applications that are hybrids of virtual thread verticles and standard reactor verticles? I&#8217;d love to hear your thoughts!</p>
+</div>
+<div class="paragraph">
+<p>(Incidentally, the performance of the virtual thread verticles seems excellent, so that probably pushes the needle even higher on which applications justify "real" async).</p>
+</div>
+<div class="paragraph">
+<p>Thank you to Julien Viet, Julien Ponge, Clement Escoffier, Paulo Lopes, Thomas Segismont et al for your hard work on this. I see your names in the code frequently 😅.</p>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="vert.x"/><category term="apiman-4"/><category term="black-parrot-labs"/><category term="dev-diary"/><category term="software-architecture"/><summary type="html">Let&amp;#8217;s be honest, whilst async platforms are extremely performant, the programming, debugging, and maintenance of async code is more challenging than imperative programming. The situation has now become yet more nuanced with the arrival of the JVM&amp;#8217;s virtual threads.</summary></entry><entry><title type="html">Apiman 3.1.2 released!</title><link href="https://www.apiman.io/blog/apiman-3.1.2.Final/" rel="alternate" type="text/html" title="Apiman 3.1.2 released!"/><published>2023-07-07T16:00:00+00:00</published><updated>2023-07-07T16:00:00+00:00</updated><id>https://www.apiman.io/blog/apiman-3.1.2.Final</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-3.1.2.Final/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m delighted to announce that I have released Apiman 3.1.2.Final.</p>
+</div>
+<div class="paragraph">
+<p>One particularly useful change I&#8217;d like to highlight is that the Vert.x Gateway&#8217;s API, when secured by Keycloak, now accepts a list of additionally accepted issuers using <code>allowed-issuers</code>, which is useful for users with more complex auth setups.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  // &lt;rest of your config...&gt;
+
+  // Gateway API Authentication. See documentation for further possibilities.
+  "auth": {
+    "type": "keycloak",
+    "config": {
+      "flowType": "PASSWORD",
+      "requiredRole": "realm:apipublisher",
+      "auth-server-url": "...",
+      // You can add extra issuers here.
+      "allowed-issuers": [ <i class="conum" data-value="1"></i><b>(1)</b>
+        "http://keycloak:8080",
+        "https://auth.example.com"
+      ],
+      "realm": "${apiman.auth.realm:-apiman}",
+      "resource": "apiman-gateway-api",
+      "credentials": {
+        "secret": "${apiman.auth.gateway.secret:-password}"
+      },
+      "ssl-required": "none",
+      "disable-trust-manager": true,
+      "allow-any-hostname" : true
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You can add extra issuers here; this can be very useful if your setup has internal vs external issuers, and you need to support them all simultaneously.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Need help? Support is available from <a href="/support.html">Apiman&#8217;s developers</a>, and helps the project be sustainable. Please be a good open source citizen!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whats-new"><a class="anchor" href="#whats-new"></a>What&#8217;s new?</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-2-final"><a class="anchor" href="#3-1-2-final"></a>3.1.2.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added"><a class="anchor" href="#added"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[gateway-vertx]: you can add a list of additional <code>allowed-issuers</code> in your Gateway API Keycloak Authentication config.
+This better supports situations where your Keycloak server returns multiple different issuers, for example for internal vs external domains, Docker, K8s, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed"><a class="anchor" href="#changed"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A large number of dependencies have been updated across the Apiman codebase to improve security. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[containers/docker-compose]: to support a change in Keycloak&#8217;s behaviour, we now set <code>allowed-issuers</code> in the Vert.x
+Gateway API authentication configuration to allow both internal and external issuers. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed"><a class="anchor" href="#removed"></a>Removed</h3>
+
+</div>
+<div class="sect2">
+<h3 id="fixed"><a class="anchor" href="#fixed"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[gateway-vertx]: allow access to Vert.x Gateway API&#8217;s <code>/system/status</code> endpoint without auth. This allows health checks without needing to pass around auth credentials and/or relying on 4xx errors. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[gateway-vertx]: array values are now always correctly substituted in Vert.x Gateway configuration. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[portal]: show REST API documentation even when user not logged in.
+By <a href="https://github.com/bastiangem" target="_blank" rel="noopener">Bastian Gembalczyk (@BastianGem)</a> and <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>[gateway-vertx]: do not include <code>null</code>/empty path elements in Keycloak discovery URI.
+If your Vert.x Gateway API was unable to speak to Keycloak because it had an unexpected <code>null</code> in the URI, this should fix it. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro-ddl]: Multiple small MSSQL (Microsoft SQL Server) DDL fixes.
+If you are using MSSQL, you should set the Java system property <code>hibernate.auto_quote_keyword=true</code> — in WildFly you can put this into the <code>properties</code> section of <code>standalone-apiman.xml</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api-jpa]: Allow deletion of org with contracts. It should be possible to delete an organization with retired entities. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>[gateway-engine-vertx]: Ensure API is resolved before using it. An old contribution did not respect asynchronous patterns properly. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">I&amp;#8217;m delighted to announce that I have released Apiman 3.1.2.Final. One particularly useful change I&amp;#8217;d like to highlight is that the Vert.x Gateway&amp;#8217;s API, when secured by Keycloak, now accepts a list of additionally accepted issuers using allowed-issuers, which is useful for users with more complex auth setups.</summary></entry><entry><title type="html">Apiman 3.1.0 released!</title><link href="https://www.apiman.io/blog/apiman-3.1.1.Final/" rel="alternate" type="text/html" title="Apiman 3.1.0 released!"/><published>2023-03-27T19:01:00+00:00</published><updated>2023-03-27T19:01:00+00:00</updated><id>https://www.apiman.io/blog/apiman-3.1.1.Final</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-3.1.1.Final/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m delighted to announce that I have released Apiman 3.1.0.Final.</p>
+</div>
+<div class="paragraph">
+<p>Aside from numerous bug fixes and a few interesting new features, this includes a security fix for <a href="/blog/potential-permissions-bypass-disclosure/" target="_blank" rel="noopener">CVE-2023-28640</a>.</p>
+</div>
+<div class="paragraph">
+<p>Due to an issue with the release pipeline, we ended up having to cut a 3.1.1.Final release also, but it&#8217;s identical to 3.1.0.Final.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Need help? Support is available from <a href="/support.html">Apiman&#8217;s developers</a>, and helps the project be sustainable. Please be a good open source citizen!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whats-new"><a class="anchor" href="#whats-new"></a>What&#8217;s new?</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-0-final"><a class="anchor" href="#3-1-0-final"></a>3.1.0.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added"><a class="anchor" href="#added"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[metrics-es]: allow logging metrics to file with <code>write-to</code> option. To facilitate scrape-based metrics patterns, this commit allows Apiman&#8217;s ES metrics to be written to a log file as JSON via whichever logging framework you are using (asynchronously). You can set any combination of <code>remote</code> (ES server) or/and <code>log</code> (local). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed"><a class="anchor" href="#changed"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A variety of dependencies have been updated across the Apiman codebase to keep users secure. If you don&#8217;t want to upgrade, speak to your long-term support provider.</p>
+</li>
+<li>
+<p>[manager-api-rest]: Apiman Manager API now has an OpenAPI v3 schema! You can access this at <code>/openapi.json</code> or <code>/openapi.yml</code>. For example, <a href="http://localhost:8080/apiman/openapi.json" class="bare">http://localhost:8080/apiman/openapi.json</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>Default plugin registry and API catalogue JSON files are now in the GitHub release, rather than directly in the repository. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>Converted Apiman into a monorepo (as far as possible). Apiman plugins, default API catalogue, default plugin registry, developer portal, docker images, amongst others, have been painstakingly merged in. CI pipelines have also been updated to reflect this. Multi-repository releases are difficult with GitHub CI, so this will hopefully make more frequent releases much easier. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed"><a class="anchor" href="#removed"></a>Removed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[manager-api-rest]: Removed obsolete Qmino API documentation generator. I would like to thank the Qmino team for their support over the years. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed"><a class="anchor" href="#fixed"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>fix[gateway-vertx]: in Keycloak discovery code <code>getAllowedIssuers</code> check was mistakenly inverted. By <a href="https://www.github.com/ronimhd">ronimhd</a>.</p>
+</li>
+<li>
+<p>fix[manager-api]: register subtypes for deserializing policy probe response, this step was
+inadvertently removed during refactoring. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>fix[ui]: move validation function for IP list into validate function to ensure list valid when switching between IP policies. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>fix[gateway-engine-es]: throw ClientNotFoundException if client not found when unregistering. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>[manager-api]: Perform unregister only if client is in correct state. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Full Changelog</strong>: <a href="https://github.com/apiman/apiman/compare/3.0.0.Final&#8230;&#8203;3.1.0.Final">3.0.0.Final&#8230;&#8203;3.1.0.Final</a></p>
+</div>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">I&amp;#8217;m delighted to announce that I have released Apiman 3.1.0.Final. Aside from numerous bug fixes and a few interesting new features, this includes a security fix for CVE-2023-28640. Due to an issue with the release pipeline, we ended up having to cut a 3.1.1.Final release also, but it&amp;#8217;s identical to 3.1.0.Final.</summary></entry><entry><title type="html">Potential permissions bypass in Apiman 3.0.0.Final (CVE-2023-28640)</title><link href="https://www.apiman.io/blog/potential-permissions-bypass-disclosure/" rel="alternate" type="text/html" title="Potential permissions bypass in Apiman 3.0.0.Final (CVE-2023-28640)"/><published>2023-03-27T19:00:00+00:00</published><updated>2023-03-27T19:00:00+00:00</updated><id>https://www.apiman.io/blog/potential-permissions-bypass-disclosure</id><content type="html" xml:base="https://www.apiman.io/blog/potential-permissions-bypass-disclosure/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A vulnerability in Apiman has been disclosed that you need to be aware of and respond to.
+It has CVE ID <a href="https://www.cve.org/CVERecord?id=CVE-2023-28640" target="_blank" rel="noopener">CVE-2023-28640</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="details"><a class="anchor" href="#details"></a>Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Due to a missing permissions check, an attacker with an authenticated Apiman Manager account may be able to gain access to API keys they do not have permission for if they correctly guess the URLs for the non-permitted resource. The URL includes Organisation ID, Client ID, and Client Version of the targeted non-permitted resource, and each of these can have arbitrary values.</p>
+</div>
+<div class="paragraph">
+<p>While not trivial to exploit, it could be achieved by brute-forcing or guessing common names.</p>
+</div>
+<div class="paragraph">
+<p>Access to the non-permitted API Keys could allow use of other users' resources without their permission.
+Whether this is possible in practice depends on the specifics of configuration, such as whether an API key is the only form of security.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implications"><a class="anchor" href="#implications"></a>Implications</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A malicious account-holder may be able to get access to an API key they do not have permission for by guessing/fuzzing private URLs in someone else&#8217;s organisation.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If successful, the key could be used to access APIs that the user does not have permissions for, if the API Key is the only form of security.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>This vulnerability is only in the Apiman Manager, it does <strong>NOT</strong> relate directly to the Apiman Gateway.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actions-to-take"><a class="anchor" href="#actions-to-take"></a>Actions to take</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Apiman 3.1.0.Final/3.1.1.Final (or later). The issue is fixed in this version. No special actions should be required when upgrading from 3.0.0.Final.</p>
+</li>
+<li>
+<p>If you are unable to upgrade your version of Apiman, contact to your <a href="/support.html" target="_blank" rel="noopener">Apiman support provider</a> for advice/long-term support.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="thanks"><a class="anchor" href="#thanks"></a>Thanks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I would like to thank @volkflo and @bastiangem for responsibly disclosing this vulnerability.</p>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="cve"/><summary type="html">A vulnerability in Apiman has been disclosed that you need to be aware of and respond to. It has CVE ID CVE-2023-28640.</summary></entry><entry><title type="html">Potential permissions bypass in Apiman 1.5.7 through Apiman 2.2.3.Final (CVE-2022-47551)</title><link href="https://www.apiman.io/blog/permissions-bypass-disclosure/" rel="alternate" type="text/html" title="Potential permissions bypass in Apiman 1.5.7 through Apiman 2.2.3.Final (CVE-2022-47551)"/><published>2022-12-19T11:00:00+00:00</published><updated>2022-12-19T11:00:00+00:00</updated><id>https://www.apiman.io/blog/permissions-bypass-disclosure</id><content type="html" xml:base="https://www.apiman.io/blog/permissions-bypass-disclosure/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A vulnerability in Apiman has been disclosed that you need to be aware of and respond to.
+It has CVE ID <a href="https://www.cve.org/CVERecord?id=CVE-2022-47551" target="_blank" rel="noopener">CVE-2022-47551</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="details"><a class="anchor" href="#details"></a>Details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Incorrect default permissions for certain read-only resources in the Apiman 1.5.7.Final through 2.2.3.Final in the Apiman Manager REST API allows a remote authenticated attacker to access information and resources in an Apiman Organizations they are not a member of and/or do not have permissions for.</p>
+</div>
+<div class="paragraph">
+<p>For example, an attacker may be able to craft an HTTP request to discover APIs that are private to organizations they are not members of, via fuzzing, search, and other similar mechanisms.</p>
+</div>
+<div class="paragraph">
+<p>If the attacker has sufficient permissions in their own organization, they may also be able to sign up to the private APIs they have discovered by crafting a tailored HTTP request, thereby gaining access to an API Management protected resource that they should have access to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implications"><a class="anchor" href="#implications"></a>Implications</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A malicious account-holder may be able to see information about APIs they do not have permission for.</p>
+</li>
+<li>
+<p>A malicious account-holder may be able to sign up to APIs they do not have permission for.</p>
+</li>
+<li>
+<p>This does <strong>NOT</strong> relate to the Apiman Gateway.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actions-to-take"><a class="anchor" href="#actions-to-take"></a>Actions to take</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Broadly, your options are as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Upgrade to Apiman 3.0.0.Final (or later). The issue is fixed in this version.</p>
+</li>
+<li>
+<p>If you are using an older version of Apiman, contact to your <a href="/support.html" target="_blank" rel="noopener">Apiman support provider</a> for advice/long-term support.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-did-this-happen"><a class="anchor" href="#how-did-this-happen"></a>How did this happen?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some read permissions checks from the Apiman Manager REST API were removed as part of a large contribution that Apiman reviewers did not notice.</p>
+</div>
+<div class="paragraph">
+<p>After making contact with the contributor, the intent of the change was to enable APIs published in an Apiman organization (analogous to a GitHub Organization) to be discovered by an external application — but Apiman did not offer a per-API implicit permissions system to achieve this until Apiman 3.0.0.Final, explicit membership of an organization was required.</p>
+</div>
+<div class="paragraph">
+<p>The contributor removed certain permissions checks as a workaround for the lack of an implicit permissions system without recognising the security implications.</p>
+</div>
+<div class="paragraph">
+<p>We have established additional processes to catch errors of this type in future.</p>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="cve"/><summary type="html">A vulnerability in Apiman has been disclosed that you need to be aware of and respond to. It has CVE ID CVE-2022-47551.</summary></entry><entry><title type="html">Leaping forwards with Apiman 3</title><link href="https://www.apiman.io/blog/apiman-3.0.0.Final/" rel="alternate" type="text/html" title="Leaping forwards with Apiman 3"/><published>2022-11-30T12:00:00+00:00</published><updated>2022-11-30T12:00:00+00:00</updated><id>https://www.apiman.io/blog/apiman-3.0.0.Final</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-3.0.0.Final/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m delighted to announce that I have released Apiman 3.0.0.Final.</p>
+</div>
+<div class="paragraph">
+<p>This is one of the most significant releases in Apiman&#8217;s history, with a considerable number of new features and behind-the-scenes improvements.</p>
+</div>
+<div class="paragraph">
+<p>There is also a new Docker Compose distribution that makes Apiman easier than ever to try out; <a href="/download.html" target="_blank" rel="noopener">please give it a go</a> and <a href="https://github.com/apiman/apiman/discussions/2365" target="_blank" rel="noopener">let us know your thoughts</a>.</p>
+</div>
+<div class="paragraph">
+<p>Oh, and I&#8217;ve created a completely new Jekyll-based website for Apiman that will help me better automate releases — I hope you like it!</p>
+</div>
+<div class="paragraph">
+<p>Feedback and community interaction is critical to the future of the project, so <a href="https://github.com/apiman/apiman/discussions/2365" target="_blank" rel="noopener">please give us a bit of your time</a> in return for the huge effort that has gone into Apiman 3 🙌.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Need help? Support is available from <a href="/support.html">Apiman&#8217;s developers</a>, and helps support the project.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whats-new"><a class="anchor" href="#whats-new"></a>What&#8217;s new?</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2022-11-30/apiman-3-out-now.png" alt="apiman 3 out now">
+</div>
+</div>
+<div class="paragraph">
+<p>I&#8217;m glad that you asked.
+What&#8217;s not new!</p>
+</div>
+<div class="paragraph">
+<p>As of Apiman 3, we are now maintaining a comprehensive changelog to ensure that it&#8217;s absolutely clear what we&#8217;ve added in a new release.
+You can see this on <a href="https://www.github.com/apiman/apiman/tree/master/CHANGELOG.adoc" target="_blank" rel="noopener">our official changelog on GitHub</a>.
+It&#8217;s also a good way to see the latest features and changes that we&#8217;re working on as development is in progress.</p>
+</div>
+<div class="paragraph">
+<p>As there have been a number of significant changes, it&#8217;s essential that you to refer to the migration guide.</p>
+</div>
+<div class="paragraph">
+<p>Without further ado, here&#8217;s what&#8217;s in Apiman 3:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-0-0-final"><a class="anchor" href="#3-0-0-final"></a>3.0.0.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="thanks"><a class="anchor" href="#thanks"></a>Thanks</h3>
+<div class="paragraph">
+<p>A huge thanks to every company that has worked with <a href="https://www.github.com/msavy">Apiman&#8217;s main developer</a> via consulting, support, sponsoring features, or other means. Without financial support, Apiman open source will not continue to be developed.</p>
+</div>
+<div class="paragraph">
+<p>Particular thanks go to the team at <a href="https://www.scheer-pas.com" target="_blank" rel="noopener">Scheer PAS</a> who sponsored a considerable amount of the work that is in the 3.0.0.Final release.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="added"><a class="anchor" href="#added"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[manager-api] <strong>Events</strong>: versioned events are now emitted inside Apiman for a number of important business actions. These are consumed internally within Apiman, but are also inserted into a <strong><a href="https://microservices.io/patterns/data/transactional-outbox.html" target="_blank" rel="noopener">transactional outbox</a></strong> inside the database using the <a href="https://cloudevents.io/" target="_blank" rel="noopener">CloudEvents format</a>. You can use CDC software, such as <a href="https://debezium.io/" target="_blank" rel="noopener">Debezium</a> to integrate Apiman&#8217;s events into your messaging platform of choice, such as Apache Kafka. A wide variety of rich business functionality can be enabled via this integration. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>Notifications</strong>: notifications for important events are now generated and sent to the appropriate user(s) and/or group(s). This is driven by the event system. For example, when an API requires approval, all users with the <code>apiEditor</code> permission will receive an in-browser notification and email notification. In-browser notifications can be seen by pressing the bell in the top-right corner of the screen. Notifications can be disabled entirely in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>Email notifications and templates</strong>: a fully templated and i18n-friendly email notification system, which is driven by the events subsystems. This can easily be customised by the user to change the look-and-feel or text. Email notifications are disabled by default in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>API signup approvals</strong>: an API version can be offered via different plans. You can now choose to require that a user receive explicit approval before being allowed access to the API. Appropriate notifications (including emails, if enabled), are sent to all relevant parties for signup, approval, rejection, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro] <strong>Docker compose quickstart distro</strong>: provides an out-of-the-box full platform deployment of Apiman, broken down into its components in a way that is more representative of a real-world deployment. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>User locale</strong>: where possible, the user&#8217;s preferred locale is now stored in their Apiman profile any async events that require it, such as emails. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>Implicit permissions system (discoverability)</strong>: an implicit read permissions system that layers on top of the explicit permissions systems that already exist in Apiman. It allows API providers to expose specific APIs to consumers who are <strong>not</strong> members of their organisation. For example, if you have an API that you want non-members to be able to consume, this feature addresses your needs. For more, see <a href="https://github.com/apiman/apiman/discussions/1952">Apiman Discoverability</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api] <strong>Developer portal API</strong>: designed specifically for our <a href="https://www.github.com/apiman/apiman-developer-portal" target="_blank" rel="noopener">Apiman Developer Portal</a>, this API allows anonymous access to certain Apiman APIs for browsing, with increased access for logged-in users. Various extensions to the data model for newer features.  By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[ui] <strong>Developer portal manager UI</strong>: a new tab called in the Apiman Manager UI which is available when creating an API. This enables the API provider to decide various portal-related settings, plan ordering, which plans are visible to which users, markdown documentation for developers, API logo, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[ui] <strong>Developer portal UI</strong>: an entirely new user interface for Apiman, dedicated to API consumers. The portal provides a focussed, slipstreamed, and customisable/skinnable experience, without all the noise of the main UI&#8217;s advanced features. The <a href="https://github.com/apiman/apiman-developer-portal" target="_blank" rel="noopener">devportal repository is current separate</a>, please refer to their changes independently. This is different from the previous developer portal that you may have seen with Apiman 2.x. A considerable amount of work has gone into this project, and huge credit goes to the sponsors and contributors.</p>
+</li>
+<li>
+<p>[gateway-core] <strong>Policy probes</strong>: allows policies to expose their internal state to the Apiman Manager for interrogation. For example, "what is the current rate limit status for X?". Even custom policies can implement this new functionality. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[metrics-es] Elasticsearch metrics can optionally <strong>collect custom request headers, response headers, and query parameters</strong>, according to regular expressions provided by the user. The Elasticsearch schema will be <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-templates.html" target="_blank" rel="noopener">extended dynamically</a>. This feature required a change to the core of Apiman, but was done in a backwards compatible way. Other metrics implementations should be able to make use of this change (sponsorship welcome). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api-jpa]: <strong>Apiman Manager automatic database migrations (from 3.0.0.Final onwards)</strong>: Liquibase SQL/DDL migrations have been refactored, with the Liquibase CDI Migrator integrated into the project directly. This stores which migrations have been run before, and applies only the latest SQL migrations for the Apiman Manager SQL backend, so a full export-import for every new Apiman version should not be needed any more. It can be disabled, if you prefer. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro]: <strong>Standalone docker images</strong>: standardised and supported standalone images for Apiman that will be useful for users planning to use Apiman in a real-world deployment. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>[ui] <strong>Quick navigation sidebar</strong>: on the left-hand side of the Apiman Manager UI there is now a multi-tiered sidebar to navigate quickly to various areas of the Apiman Manager UI. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> and <a href="https://github.com/bastiangem" target="_blank" rel="noopener">Bastian Gembalczyk (@BastianGem)</a>.</p>
+</li>
+<li>
+<p>[logging]: <strong>Apiman logger</strong> is now used everywhere; it can be accessed statically from anywhere (including Apiman policy plugins), via <code>ApimanLoggerFactory.getLogger(YourClazz.class)</code>. The previous approach tried to be very flexible, but ended up mostly being inconvenient and clumsy. An appropriate logger implementation is selected for each platform Apiman ships on, rather than leaving it for the user. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[build]: introduced the <strong>Apiman Parent BOM</strong> (<code>io.apiman:apiman-parent:&lt;version&gt;</code>). This contains managed versions of all Apiman Maven dependencies, which may be useful for plugin authors. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[config]: <strong>Better config parsing for Apiman&#8217;s components</strong> (e.g. when reading from <code>apiman.properties</code>). Not rolled out everywhere, but provides a more unified experience with much better error messages and type validation. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro-wildfly]: <strong>Developer portal added to the WildFly Quickstart distro</strong>. The portal can be accessed at <code><a href="http://localhost:8080/portal" class="bare">http://localhost:8080/portal</a></code>, and you can customise the portal by editing its various configuration options in <code>standalone/configuration/portal/assets/</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[build]: <code><strong>fastbuild.sh</strong></code> script to build apiman as fast as possible in parallel using <code>mvnd</code> or <code>mvnw</code>. It skips test and javadoc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[policies]: blocklist/allowlist (fka. blacklist/whitelist) add support for IPv6, CIDR, ranges, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2027" class="bare">https://github.com/apiman/apiman/pull/2027</a></p>
+</li>
+<li>
+<p>[manager-api]: support OpenAPI v3 endpoint replacement. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2053" class="bare">https://github.com/apiman/apiman/pull/2053</a></p>
+</li>
+<li>
+<p>[gateway-engine-core]: thread-safe batched non-blocking metrics consumer. This is useful if you are creating a metrics implementation, and you want it to have good performance. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2126" class="bare">https://github.com/apiman/apiman/pull/2126</a></p>
+</li>
+<li>
+<p>[metrics-influxdb]: add support for Influx 1.x, including use of an authorization token. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2127" class="bare">https://github.com/apiman/apiman/pull/2127</a></p>
+</li>
+<li>
+<p>[manager-api]: add column order index for Api Plans so users can explicitly order plans in UI. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2159" class="bare">https://github.com/apiman/apiman/pull/2159</a></p>
+</li>
+<li>
+<p>[manager-api]: add rejection to contract approval workflow. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2175" class="bare">https://github.com/apiman/apiman/pull/2175</a></p>
+</li>
+<li>
+<p>[policies]: performance and memory optimisations for caching policy, blocklist/blacklist policy, and allowlist/whitelisting policy. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed"><a class="anchor" href="#changed"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[ui]: Lazy load API DevPortal page using <code>$ocLazyLoad</code>, this avoids the Apiman Manager UI initial download being larger. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[build]: Java 11+ is the minimum supported version to compile and run Apiman.</p>
+</li>
+<li>
+<p>[distro]: Apiman Docker images now published to both GHCR (GitHub Packages) and DockerHub. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[build]: Apiman Docker images have been refactored to accept `--build-arg`s for most variables, such as Apiman&#8217;s version, JDBC driver versions, etc.  By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[build]: Bumped Keycloak to 16.0.2. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[ui]: Upgraded Apiman Manager UI to latest AngularJS. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[ui]: Refactored Apiman Manager UI build system to use <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 5</a>. Although this was a considerable investment of time and effort, it enabled us to make the build smaller, with a much better developer experience, whilst eliminating some bugs associated with our old approach. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[ui]: Major refactor of Apiman Manager UI to bring most deps up to date: Angular 1.8, Typescript 4.4.x, JQuery, Lodash, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-api]: Where possible, transactions are now controlled via annotations. Currently, this uses a custom CDI interceptor, but we&#8217;ll likely use container-managed TX in the future (likely by reducing to a single Apiman Manager platform). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[metrics-es]: If the Elasticsearch metrics buffer is completely full then metrics records will be dropped. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro]: Bump the Apiman WildFly distro to WildFly 23.0.2.Final. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[policies]: Rename policies: 'blacklist' &#8594; 'blocklist', and 'whitelist' &#8594; 'allowlist'. If you have an existing policy with the old names, it will continue to work without issue. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2040" class="bare">https://github.com/apiman/apiman/pull/2040</a></p>
+</li>
+<li>
+<p>[ui]: Update swagger-ui to v4. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2066" class="bare">https://github.com/apiman/apiman/pull/2066</a></p>
+</li>
+<li>
+<p>[manager-api]: Refactor Apiman Manager code to have service layers, so that business logic is not in presentation layer. This will likely be a multiphase process, and ideally we will move towards DDD-style code over time. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[manager-jpa]: Remove most uses of JPA Criteria API and replace with <a href="https://persistence.blazebit.com/" target="_blank" rel="noopener">Blaze-Persistence</a>. This is a modern reinterpretation of the Criteria API concept that is usable by mere human beings such as Apiman&#8217;s maintainer. <a href="https://github.com/Blazebit/blaze-persistence/issues/1436" target="_blank" rel="noopener">Thanks to Christian Beikov for his assistance</a> in fixing a show-stopper bug that Apiman exposed in Hibernate when using Blaze-Persistence. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro]: bump minimum required version of Postgres from 9 to <strong>11</strong>. PGES 9.x does not support the <code>create or replace procedure</code> syntax we use, and the 9.x lineage is not supported upstream anymore.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed"><a class="anchor" href="#removed"></a>Removed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[distro]: <strong>Apiman is no longer distributed with the Keycloak Server Overlay</strong>, as this has been discontinued by the Keycloak team. You will need to point Apiman to a Keycloak server that is run separately (see the Docker Compose distro for examples). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro]: Apiman Manager API <strong>no longer supports Elasticsearch as a backend store</strong>, this is now RDBMS/SQL only. We still maintain full support for Elasticsearch for metrics/analytics. Consequently, we have removed <code>ESStorage</code> and associated code. See: <a href="https://github.com/apiman/apiman/discussions/1365" target="_blank" rel="noopener">AEP 2: Drop Elasticsearch as Manager API database in Apiman 3 (keep for metrics, gateway, etc)</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.</p>
+</li>
+<li>
+<p>[distro]: Java 8 is no longer supported in the community project.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed"><a class="anchor" href="#fixed"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[ui]: Fixed a wide variety of glitches afflicting the Apiman Manager UI. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>, <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.</p>
+</li>
+<li>
+<p>[manager-api-war]: handle comma-separated lists properly in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2012" class="bare">https://github.com/apiman/apiman/pull/2012</a></p>
+</li>
+<li>
+<p>[common-es]: work around ES index creation race condition. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2037" class="bare">https://github.com/apiman/apiman/pull/2037</a></p>
+</li>
+<li>
+<p>[ui]: browser back button on "all"-pages. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2005" class="bare">https://github.com/apiman/apiman/pull/2005</a></p>
+</li>
+<li>
+<p>[manager-api]: client republish and/or unregister when breaking contracts. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2123" class="bare">https://github.com/apiman/apiman/pull/2123</a></p>
+</li>
+<li>
+<p>[manager-api]: ensures <code>RestExceptionMapper</code> actually prints stack trace. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[gateway-engine-policies]: check for null request path in URLRewritingPolicy. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[ui]: add local time to time-restricted-access-policy. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a></p>
+</li>
+<li>
+<p>[ui]: temporarily disable source maps for production to avoid bloating code. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[ui]: Ensure modals have correct constructor signature to avoid minification/mangling breaking everything. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[manager-api-jpa]: include API version in query fetching API definition. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[manager-api]: PolicyDefinitionTemplate missing <code>#equals</code> and <code>#hashCode</code> By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a></p>
+</li>
+<li>
+<p>[manager-api-jpa]: parse stringified numeric filter value into same data type as target field. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2284" class="bare">https://github.com/apiman/apiman/pull/2284</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Full Changelog</strong>: <a href="https://github.com/apiman/apiman/compare/2.2.3.Final&#8230;&#8203;3.0.0.Final">2.2.3.Final&#8230;&#8203;3.0.0.Final</a></p>
+</div>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">I&amp;#8217;m delighted to announce that I have released Apiman 3.0.0.Final. This is one of the most significant releases in Apiman&amp;#8217;s history, with a considerable number of new features and behind-the-scenes improvements. There is also a new Docker Compose distribution that makes Apiman easier than ever to try out; please give it a go and let us know your thoughts. Oh, and I&amp;#8217;ve created a completely new Jekyll-based website for Apiman that will help me better automate releases — I hope you like it!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.apiman.io/assets/images/blog/2022-11-30/apiman-3-out-now.png"/><media:content medium="image" url="https://www.apiman.io/assets/images/blog/2022-11-30/apiman-3-out-now.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">Apiman 2.2.0.Final has been released (updates Keycloak to 15.1.1 &amp;amp; WildFly to 23.0.2.Final)</title><link href="https://www.apiman.io/blog/apiman-2.2.0.Final-release/" rel="alternate" type="text/html" title="Apiman 2.2.0.Final has been released (updates Keycloak to 15.1.1 &amp;amp; WildFly to 23.0.2.Final)"/><published>2021-12-25T16:40:00+00:00</published><updated>2021-12-25T16:40:00+00:00</updated><id>https://www.apiman.io/blog/apiman-2.2.0.Final-release</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-2.2.0.Final-release/"><![CDATA[<div class="paragraph">
+<p>Happy Holidays, Apiman fans!</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve released Apiman 2.2.0.Final to upgrade Keycloak to 15.1.1 and WildFly to 23.0.2.Final. This is primarily because of another significant security vulnerability that has been disclosed in those platforms.</p>
+</div>
+<div class="paragraph">
+<p>As we currently bundle an all-in-one Keycloak + Apiman quickstart distribution, we are required to keep our WildFly versions in sync with Keycloak. Hence, WildFly has been bumped to 23.0.2.Final to match Keycloak 15.1.1.</p>
+</div>
+<div class="paragraph">
+<p>If you are using the Apiman WildFly distribution and customised <code>apiman-standalone.xml</code> you <strong>may</strong> need to update your configuration file. This is because of changes in the WildFly platform rather than Apiman itself.</p>
+</div>
+<div class="paragraph">
+<p>Please refer to the <a href="https://github.com/apiman/apiman/blob/master/docs/modules/migration/pages/migrations.adoc" target="_blank" rel="noopener">Apiman migration guide</a> to understand any changes you may need to make to <code>apiman-standalone.xml</code> (mostly in relation to SSL/TLS).</p>
+</div>
+<div class="paragraph">
+<p>Most production deployments should unbundle Keycloak and Apiman (both for security and practical reasons).</p>
+</div>
+<div class="paragraph">
+<p>In a release in the near future, we will stop bundling Keycloak and Apiman in the quickstarts, and instead we will provide a Docker Compose definition that is much more representative of a real-world deployment.</p>
+</div>
+<div class="paragraph">
+<p>This will also mean Apiman is not forced to stay in sync with Keycloak Server releases. We hope this will be more convenient for Apiman users and the Apiman team.</p>
+</div>
+<div class="paragraph">
+<p>You can <a href="https://www.apiman.io/latest/download.html" target="_blank" rel="noopener">download the latest Apiman at all the usual locations</a>.</p>
+</div>
+<div class="paragraph">
+<p>All the best for 2022.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman/discussions/1734" target="_blank" rel="noopener">If you have questions about this release, please join us on GitHub Discussions</a>.</p>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">Happy Holidays, Apiman fans! I&amp;#8217;ve released Apiman 2.2.0.Final to upgrade Keycloak to 15.1.1 and WildFly to 23.0.2.Final. This is primarily because of another significant security vulnerability that has been disclosed in those platforms.</summary></entry><entry><title type="html">Apiman 2.1.5.Final has been released - please update if you’re on an old version</title><link href="https://www.apiman.io/blog/apiman-2.1.5.Final-release/" rel="alternate" type="text/html" title="Apiman 2.1.5.Final has been released - please update if you’re on an old version"/><published>2021-12-20T14:00:00+00:00</published><updated>2021-12-20T14:00:00+00:00</updated><id>https://www.apiman.io/blog/apiman-2.1.5.Final-release</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-2.1.5.Final-release/"><![CDATA[<div class="paragraph">
+<p>Hi, Apiman fans!</p>
+</div>
+<div class="paragraph">
+<p>I hope you&#8217;re all well, and Season&#8217;s Greetings to those of you who celebrate Christmas 🎄.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;d like to remind Apiman users to consider updating to Apiman 2.1.5 promptly, as it contains fixes for the now well-known log4j2 bugs.</p>
+</div>
+<div class="paragraph">
+<p>You can download Apiman from all the usual official places: <a href="https://www.apiman.io/latest/download.html">Apiman Downloads</a> or the <a href="https://github.com/apiman/apiman/releases/tag/2.1.5.Final">GitHub release</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman/discussions/1722">If you have questions about this release, please join us on GitHub Discussions</a></p>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">Hi, Apiman fans! I hope you&amp;#8217;re all well, and Season&amp;#8217;s Greetings to those of you who celebrate Christmas 🎄. I&amp;#8217;d like to remind Apiman users to consider updating to Apiman 2.1.5 promptly, as it contains fixes for the now well-known log4j2 bugs.</summary></entry><entry><title type="html">Apiman 2.1.0.Final has been released 🚀</title><link href="https://www.apiman.io/blog/apiman-2.1.0.Final-released/" rel="alternate" type="text/html" title="Apiman 2.1.0.Final has been released 🚀"/><published>2021-07-27T15:00:00+00:00</published><updated>2021-07-27T15:00:00+00:00</updated><id>https://www.apiman.io/blog/apiman-2.1.0.Final-released</id><content type="html" xml:base="https://www.apiman.io/blog/apiman-2.1.0.Final-released/"><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m very pleased to say that we&#8217;ve released Apiman 2.1.0.Final 👏. We&#8217;ve splatted a huge number of bugs and made a lot of improvements to stability, performance, and security.</p>
+</div>
+<div class="paragraph">
+<p>Please <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html">consult the migration guide here</a> if you are planning to upgrade from an earlier version if Apiman (especially if you&#8217;re using Elasticsearch).</p>
+</div>
+<div class="paragraph">
+<p>Apiman now can run on any currently released version of Java (assuming the underlying platform can, of course).</p>
+</div>
+<div class="paragraph">
+<p>You can see everything we&#8217;ve fixed in Apiman 2.1.0.Final, <a href="https://github.com/apiman/apiman/releases/tag/2.1.0.Final">and you can download the latest overlays, etc, over on our GitHub repo</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you prefer the Apiman website, <a href="https://www.apiman.io/latest/download.html">it&#8217;s available right away on the downloads page.</a>.</p>
+</div>
+<div class="paragraph">
+<p>As usual, there are some simple Docker quickstart images available: <code>docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final</code>.</p>
+</div>
+<div class="paragraph">
+<p>A lot of work has gone into this release, and we&#8217;re just getting started 🏃‍♂️.</p>
+</div>
+<div class="paragraph">
+<p>Let us know how you find Apiman 2.1.0!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="notes"><a class="anchor" href="#notes"></a>Notes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="improvements-to-logging"><a class="anchor" href="#improvements-to-logging"></a>Improvements to logging</h3>
+<div class="paragraph">
+<p>If you are a developer writing any kind of code for Apiman (including Apiman plugins or components), you can now instantiate a logger in a more pain-free way than before.</p>
+</div>
+<div class="paragraph">
+<p>Simply do:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">static final IApimanLogger LOGGER = ApimanLoggerFactory.getLogger(klazz.class);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For all distros we ship, we set an appropriate system property to ensure that logging is available and set up as early as possible. But if you implement your own platform or want to override the default logger for a given platform, you can do so by altering the following system property:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.logger-delegate=&lt;name of logging delegate&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Currently the valid values are: <code>log4j2</code>, <code>jboss-logging</code>, <code>slf4j</code>, <code>sout</code>, <code>noop</code>).</p>
+</div>
+<div class="paragraph">
+<p>You can create your own logger factory if you want, but I&#8217;ll save the details of how to do this for a future blog (and update the docs 🖊).</p>
+</div>
+<div class="paragraph">
+<p>Check out the log4j2 config that ships with the Apiman Vert.x Gateway for an example logger config that uses async logging to improve log performance considerably.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="elasticsearch-changes-again"><a class="anchor" href="#elasticsearch-changes-again"></a>Elasticsearch changes (again).</h3>
+<div class="paragraph">
+<p>Apiman 2.0.0.Final had errors in its Manager Elasticsearch schema definition (metrics + gateway was fine). This has been fixed, but there&#8217;s no compatible way to auto-migrate, so you&#8217;ll need to export and import.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re moving from older versions of Apiman (1.x), the Elasticsearch version used has been upgraded&#8201;&#8212;&#8201;and that in turn causes incompatibilities (this time it&#8217;s not our fault!). Some effort from an administrator is required to upgrade the cluster. Unfortunately upgrading ES clusters has become non-trivial over the years and care is required.</p>
+</div>
+<div class="paragraph">
+<p>Check out the <a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html#_migrating_to_2_1_0_final">migration guide for all the details</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="antora-based-docs"><a class="anchor" href="#antora-based-docs"></a>Antora-based docs</h3>
+<div class="paragraph">
+<p>We&#8217;ve worked hard to <a href="https://github.com/apiman/apiman-docs">migrate from GitBook to Antora</a>. GitBook no longer supports Asciidoc. We appreciate their support over the years.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="support-java-11"><a class="anchor" href="#support-java-11"></a>Support Java 11+</h3>
+<div class="paragraph">
+<p>Apiman&#8217;s codebase now works on all currently released versions of Java. Naturally, depending which platform you&#8217;re running on, you may be limited to a particular version (e.g. Wildfly, Tomcat, etc).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apiman-parent-bom"><a class="anchor" href="#apiman-parent-bom"></a>Apiman Parent / BOM</h3>
+<div class="paragraph">
+<p>We now have a new <code>apiman-parent</code> which allows synchronisation of dependency versions between Apiman projects. This is of particular benefit to <code>apiman-plugins</code>. Plugin authors can use this to harmonise versions and reduce the risk of any incompatibilities.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maven-wrapper"><a class="anchor" href="#maven-wrapper"></a>Maven Wrapper</h3>
+<div class="paragraph">
+<p>We&#8217;ve added Maven Wrapper. You can use this to ensure you build using the same version of Maven that the Apiman team uses. Simply run your build with <code>./mvnw</code> instead of <code>mvn</code> in Apiman&#8217;s top-level directory.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tomcat-is-back"><a class="anchor" href="#tomcat-is-back"></a>Tomcat is back</h3>
+<div class="paragraph">
+<p>In the 2.0.0.Final release, Tomcat was cut as a main distro. By popular demand, it&#8217;s back and has been updated with all the latest-and-greatest Apiman features (e.g. logging with log4j2 by default now).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="swaggerwsdl-definitions-now-show-in-apiman-exports"><a class="anchor" href="#swaggerwsdl-definitions-now-show-in-apiman-exports"></a>Swagger/WSDL definitions now show in Apiman exports</h3>
+<div class="paragraph">
+<p>In older Apiman releases we mistakenly did not include API definitions in Apiman export files. This meant that when you exported and imported they would vanish.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ve fixed this in Apiman 2.1.0.Final, but also provided a migration tool to 'enrich' the JSON exported by older versions with the missing data.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/migration/migrations.html#_migrating_to_2_1_0_final">Refer to the migration guide to see how to do this.</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed-some-unused-bits"><a class="anchor" href="#removed-some-unused-bits"></a>Removed some unused bits</h3>
+<div class="paragraph">
+<p>We&#8217;ve removed Hawkular and some other unused components. Nobody was using them, as far as we were able to ascertain.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ui-fixes"><a class="anchor" href="#ui-fixes"></a>UI fixes</h3>
+<div class="paragraph">
+<p>A bunch of UI bugs have been fixed that were causing strange glitches in 2.0.0.Final. Some nice shortcut navigation sidebars have been added.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="regressions"><a class="anchor" href="#regressions"></a>Regressions</h3>
+<div class="paragraph">
+<p>Some contributions in 2.0.0.Final caused some issues that have now been fixed.</p>
+</div>
+<div class="paragraph">
+<p>The most significant one was the Elasticsearch schema causing problems. Unfortunately to fix this you will need to re-import your data. Please refer to the migration guide.</p>
+</div>
+<div class="paragraph">
+<p>Various issues in the UI that have been fixed (see above).</p>
+</div>
+<div class="paragraph">
+<p>It was not possible to use ES Metrics and a non-ES API Manager datastore at the same time. This is no longer the case and now works as expected again (e.g. RDBMS + ES works).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bringing-dependencies-up-to-date"><a class="anchor" href="#bringing-dependencies-up-to-date"></a>Bringing dependencies up to date</h3>
+<div class="paragraph">
+<p>Most dependencies have been brought right up to date (except the UI where this isn&#8217;t currently essential). This is important for security, performance, and stability - and enabling Apiman to run on newer versions of Java.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lots-more"><a class="anchor" href="#lots-more"></a>Lots more</h3>
+<div class="paragraph">
+<p>A large amount of work went into this release. Check out the GitHub release notes and commit log if you&#8217;re curious.</p>
+</div>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html"><![CDATA[I&#8217;m very pleased to say that we&#8217;ve released Apiman 2.1.0.Final 👏. We&#8217;ve splatted a huge number of bugs and made a lot of improvements to stability, performance, and security. Please consult the migration guide here if you are planning to upgrade from an earlier version if Apiman (especially if you&#8217;re using Elasticsearch).]]></summary></entry><entry><title type="html">Version 1.5 of Apiman is released!</title><link href="https://www.apiman.io/blog/release-1.5/" rel="alternate" type="text/html" title="Version 1.5 of Apiman is released!"/><published>2018-08-13T23:00:00+00:00</published><updated>2018-08-13T23:00:00+00:00</updated><id>https://www.apiman.io/blog/release-1.5</id><content type="html" xml:base="https://www.apiman.io/blog/release-1.5/"><![CDATA[<div class="paragraph">
+<p>I&#8217;m happy to announce that Apiman 1.5.1.Final is out.</p>
+</div>
+<div class="paragraph">
+<p>It contains an important new policy feature: the ability to modify policy failures before they are returned to users (even if they are thrown by another policy).</p>
+</div>
+<div class="paragraph">
+<p>This means that policies such as CORS can add their headers, irrespective of whether the request was successful or not (e.g. due to rate limiting).</p>
+</div>
+<div class="sect1">
+<h2 id="failure-processing"><a class="anchor" href="#failure-processing"></a>Failure Processing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a policy throws a failure (e.g. rate limit reached), previously this caused an immediate termination that bypassed all other policies. <strong>Failure processing</strong> was requested in the community to allow policies to modify failures emitted by other policies, such that headers can be set.</p>
+</div>
+<div class="paragraph">
+<p>To implement this, you simply need to override the default method <code>processFailure</code> in <code>IPolicy</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">default void processFailure(PolicyFailure failure, IPolicyContext context, Object config,  IPolicyFailureChain chain) { ... }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or, if you&#8217;re using <code>AbstractMappedPolicy</code>, then you should override <code>doProcessFailure</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, C config, IPolicyFailureChain chain) { ... }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, in the <a href="https://github.com/msavy/apiman-plugins/blob/fd2aa46c62a60c7450a3777527f37723908e0865/cors-policy/src/main/java/io/apiman/plugins/cors_policy/CorsPolicy.java#L114-L125">CORS plugin</a> it simply adds the headers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+ protected void doProcessFailure(PolicyFailure failure, IPolicyContext context, CorsConfigBean config,
+         IPolicyFailureChain chain) {
+
+     CaseInsensitiveStringMultiMap corsHeaders = getResponseHeaders(context);
+
+     if(corsHeaders != EMPTY_MAP) {
+         failure.getHeaders().putAll(corsHeaders.toMap());
+     }
+
+     chain.doFailure(failure);
+ }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Meaning that even if a rate limit is hit, then the headers will still be added.</p>
+</div>
+<div class="paragraph">
+<p>If you experience any issues, please report them to us via <a href="https://issues.jboss.org/browse/APIMAN/">JIRA</a>, <a href="https://github.com/apiman/apiman">GitHub</a>, or <a href="https://lists.jboss.org/mailman/listinfo/apiman-user">the mailing list</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="download-1-5-1-final"><a class="anchor" href="#download-1-5-1-final"></a>Download 1.5.1.Final</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-vertx-1.5.1.Final.zip">Vert.x (Gateway Only)</a></p>
+</li>
+<li>
+<p><a href="https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly10-1.5.1.Final-overlay.zip">WildFly 10 or EAP 7.1</a></p>
+</li>
+<li>
+<p><a href="https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-wildfly11-1.5.1.Final-overlay.zip">WildFly 11</a></p>
+</li>
+<li>
+<p><a href="https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-eap7-1.5.1.Final-overlay.zip">EAP 7</a></p>
+</li>
+<li>
+<p><a href="https://downloads.jboss.org/apiman/1.5.1.Final/apiman-distro-tomcat8-1.5.1.Final-overlay.zip">Tomcat 8+</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>]]></content><author><name>Marc Savy</name><email>mailto:marc@blackparrotlabs.io</email></author><category term="apiman"/><category term="release"/><summary type="html">I&amp;#8217;m happy to announce that Apiman 1.5.1.Final is out. It contains an important new policy feature: the ability to modify policy failures before they are returned to users (even if they are thrown by another policy). This means that policies such as CORS can add their headers, irrespective of whether the request was successful or not (e.g. due to rate limiting).</summary></entry></feed>

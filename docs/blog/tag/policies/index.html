@@ -1,0 +1,171 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - policies</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630803">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>policies | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="policies">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<meta property="og:description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<link rel="canonical" href="https://www.apiman.io/blog/tag/policies/">
+<meta property="og:url" content="https://www.apiman.io/blog/tag/policies/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="policies">
+<meta name="twitter:site" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","description":"Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.","headline":"policies","url":"https://www.apiman.io/blog/tag/policies/"}</script>
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-auto d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-9 col-sm-12">
+<main>
+<h1>Posts tagged with <em>policies</em></h1>
+<div class="card mb-4">
+<div class="card-body d-flex flex-column no-padding-last-para-asciidoctor pb-0" onclick='window.location.href="/blog/limiting-policies-redux/"' tabindex=0>
+<a href="/blog/limiting-policies-redux/" class="header-link">
+<h2 class="card-title h5">Apiman Limiting Policies</h2>
+</a>
+<div class="card-text flex-grow-1 pt-2">
+<div class="paragraph">
+<p>In this, the sixth article in the series on apiman, JBoss' new API Management framework, we&#8217;ll examine how apiman enables you to govern access to managed APIs through the use of rate limiting policies.
+</div>
+<div class="paragraph">
+<p>The runtime core of apiman is the API Gateway and the policies that it applies to incoming requests to APIs. apiman is configured out of the box with a variety of policies that can be used to govern access to APIs managed by the API Gateway based on IP address, user authentication, and usage levels. From its first release, apiman has supported rate limiting policies, where the upper limit for use of an API could be governed by a policy. In its new 1.1.6 release, apiman has expanded this support to include quota based limiting policies.
+</div>
+</div>
+</div>
+<div class="small text-muted text-end px-2 pb-1">
+<i class="bi bi-tags-fill text-secondary"></i> policies
+</div>
+<div class="align-items-center card-footer d-flex justify-content-between small">
+<a target="_blank" rel="noopener" href="https://github.com/ldimaggi" class="align-items-center d-flex text-dark text-decoration-none">
+<img src="https://avatars.githubusercontent.com/u/642621" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for Len DiMaggio">
+<div>
+<h3 class="h6 mb-0">Len DiMaggio</h3>
+<time class="mb-0 text-secondary">17 August 2015</time>
+</div>
+</a>
+</div>
+</div>
+<div class="card mb-4">
+<div class="card-body d-flex flex-column no-padding-last-para-asciidoctor pb-0" onclick='window.location.href="/blog/custom-policies-redux/"' tabindex=0>
+<a href="/blog/custom-policies-redux/" class="header-link">
+<h2 class="card-title h5">Customizing JBoss apiman Through Policy Plugins</h2>
+</a>
+<div class="card-text flex-grow-1 pt-2">
+<div class="paragraph">
+<p>This is the second in a series of articles exploring API management with JBoss apiman. The first article
+was a general introduction to apiman for impatient users where in only 10 minutes we installed apiman,
+created users and organizations, and APIs, policies, contracts, and client apps. In this article,
+we&#8217;ll take the first step toward customizing apiman by creating new plugins to implement API policies.
+</div>
+</div>
+</div>
+<div class="small text-muted text-end px-2 pb-1">
+<i class="bi bi-tags-fill text-secondary"></i> plugins, policies, development, maven
+</div>
+<div class="align-items-center card-footer d-flex justify-content-between small">
+<a target="_blank" rel="noopener" href="https://github.com/ldimaggi" class="align-items-center d-flex text-dark text-decoration-none">
+<img src="https://avatars.githubusercontent.com/u/642621" class="me-2 rounded-circle" width="40" height="40" alt="Avatar for Len DiMaggio">
+<div>
+<h3 class="h6 mb-0">Len DiMaggio</h3>
+<time class="mb-0 text-secondary">06 March 2015</time>
+</div>
+</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - apiman Policy and Endpoint Security</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630802">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>apiman Policy and Endpoint Security | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="apiman Policy and Endpoint Security">
+<meta name="author" content="Len DiMaggio">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="In this, the fifth article in the series on apiman, JBoss&#8217; new API Management framework, we&#8217;ll examine how apiman enables you to provide security for your managed APIs at the policy level, and at the endpoint level for its managed and unmanaged endpoints.">
+<meta property="og:description" content="In this, the fifth article in the series on apiman, JBoss&#8217; new API Management framework, we&#8217;ll examine how apiman enables you to provide security for your managed APIs at the policy level, and at the endpoint level for its managed and unmanaged endpoints.">
+<link rel="canonical" href="https://www.apiman.io/blog/policy-endpoint-security-redux/">
+<meta property="og:url" content="https://www.apiman.io/blog/policy-endpoint-security-redux/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-08-03T11:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="apiman Policy and Endpoint Security">
+<meta name="twitter:site" content="@apiman_io">
+<meta name="twitter:creator" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Len DiMaggio","url":"https://github.com/ldimaggi"},"dateModified":"2015-08-03T11:00:00+00:00","datePublished":"2015-08-03T11:00:00+00:00","description":"In this, the fifth article in the series on apiman, JBoss&#8217; new API Management framework, we&#8217;ll examine how apiman enables you to provide security for your managed APIs at the policy level, and at the endpoint level for its managed and unmanaged endpoints.","headline":"apiman Policy and Endpoint Security","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.apiman.io/blog/policy-endpoint-security-redux/"},"url":"https://www.apiman.io/blog/policy-endpoint-security-redux/"}</script>
+<meta name="article:tag" content="security">
+<meta name="og:article:tag" content="security">
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-10 col-sm-12">
+<main class="mw-900">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline">apiman Policy and Endpoint Security</h1>
+<div class="text-secondary"><span itemprop="datePublished">03 August 2015</span> · <span itemprop="keywords">security</span></div>
+<div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+<img class="rounded-3 align-self-center" width="80rem" src="https://avatars.githubusercontent.com/u/642621" alt="Avatar for Len DiMaggio">
+<div class="d-flex flex-column ms-2 justify-content-evenly">
+<div class="text-secondary d-none d-sm-block">Quality engineering legend and prolific technical writer.</div>
+<div class="fs-5">
+<a class="link-dark" rel="author" href="https://github.com/ldimaggi" target="_blank" itemprop="author">Len DiMaggio</a>
+<span class="apiman-title-secondary" style="white-space:nowrap">
+<span class="d-none d-sm-inline">/</span>
+Red Hat
+<span class="d-none d-sm-inline">/</span>
+</span>
+<span style="white-space:nowrap">
+<span><a class="link-secondary ps-1" href="https://github.com/ldimaggi" target="_blank"><i class="bi bi-globe"></i></a></span>
+<span><a class="link-secondary ps-1" href="https://www.github.com/ldimaggi" target="_blank"><i class="bi bi-github"></i></a></span>
+<span><a class="link-secondary ps-1" href="mailto:ldimaggi@redhat.com" target="_blank"><i class="bi bi-envelope-at-fill"></i></a></span>
+</span>
+</div>
+</div>
+</div>
+<div class="blog-content" itemprop="articleBody">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this, the fifth article in the series on apiman, JBoss&#8217; new API Management framework, we&#8217;ll examine how apiman enables you to provide security for your managed APIs at the policy level, and at the endpoint level for its managed and unmanaged endpoints.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unintentionally-insecure"><a class="anchor" href="#unintentionally-insecure"></a>Unintentionally Insecure?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you read the first article in this series closely (<a href="https://dzone.com/articles/impatient-new-users" class="bare">https://dzone.com/articles/impatient-new-users</a>) you might have noticed that in the course of creating an API whose endpoint was managed by the apiman API Gateway, we also inadvertently left that API in a very insecure state as unauthorized client apps could bypass the gateway and access the API directly. We discussed how to configure authentication in a policy for the managed API endpoint in the most recent post in this series (<a href="https://dzone.com/articles/adding-basic-authentication" class="bare">https://dzone.com/articles/adding-basic-authentication</a>). This authentication policy provides username/password security for clients as they access the managed API through the API Gateway, but it does not protect the API from unauthorized access attempts that bypass the Gateway completely. To make the API secure from unauthorized client apps, endpoint level security should also be configured.
+</div>
+<div class="paragraph">
+<p>In this article, we&#8217;ll examine both apiman policy level and endpoint level security, how they compare, and how they differ.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="complementary-types-of-security-provided-by-apiman"><a class="anchor" href="#complementary-types-of-security-provided-by-apiman"></a>Complementary Types of Security Provided by apiman</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The best way to start our discussion of the different, but complementary types of security that we&#8217;ll examine in this article is with a diagram. The nodes involved are the client apps that will access our APIs, the apiman API Gateway, and the servers that host our APIs:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-08-03/apiman_security-redux.png" alt="apiman logo">
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s work our way through the diagram from left to right and start by taking a look at Policy Level Security.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="policy-level-security"><a class="anchor" href="#policy-level-security"></a>Policy Level Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>apiman includes several pre-defined policies OOTB. The policies provide support for controlling access to APIs based on the rate at which the APIs are invoked, the IP address of the client apps that access the APIs, authorization, and authentication. In the most recent article in this series, we showed how to configure an authentication policy. To keep things simple, we chose BASIC authentication. This BASIC Authentication policy provides security for the communication channel between the client apps and the apiman API Gateway. An incoming request to the API Gateway from a client initiates the policy chain, the policy is applied and the client is requested to supply a username and password. The level of security provided by this policy can be enhanced if the policy is configured with SSL encryption.
+</div>
+<div class="paragraph">
+<p>But, this policy level security only secures the left side of the diagram, that is the communication channel between the client apps and the API Gateway. In this communication channel, the client apps play the role of the client, and the API Gateway plays the role of the server.
+</div>
+<div class="paragraph">
+<p>We also want to secure the right side of the diagram, where the API Gateway plays the role of a client, and the APIs play the role of the servers.
+</div>
+<div class="paragraph">
+<p>(It&#8217;s also worth noting that while policy security protects the managed API, it does nothing to protect the unmanaged API as this API can be reached directly, without going through the API Gateway. This is illustrated by the red line in the diagram. So, while access to the managed API through the apiman API Gateway is secure, policy security does not secure the unmanaged API endpoint.)
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="endpoint-level-security"><a class="anchor" href="#endpoint-level-security"></a>Endpoint Level Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In contrast to policy level security, with endpoint security we are securing the right side of the diagram.
+</div>
+<div class="paragraph">
+<p>A recent post by Marc Savy to the apiman blog <a href="https://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html" class="bare">https://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html</a> described how to configure Mutually Authenticated TLS (Transport Layer Security) between the API Gateway and the managed APIs. With Mutual TLS, bi-direction authentication is configured so that the identities of both the client and server are verified before a connection can be made.
+</div>
+<div class="paragraph">
+<p>In setting up Mutual TLS, keystores, containing a node&#8217;s private key, and truststores, containing public certificates to govern the other nodes that the node should trust, were created. The API Gateway was configured in its apiman.properties file to reference the keystores and truststores. The API was configured with mutual authentication by setting the API Security dropdown in the Implementation tab to MTLS/Two-Way-SSL. Finally, the API was programmed with mutual authentication enabled. With Mutual TLS configured, the communication channel on the right side of the diagram, from the API Gateway to the APIs, was made secure.
+</div>
+<div class="paragraph">
+<p>We should also note that, unlike policy security, endpoint security also secures the APIs from attempts to bypass the API Gateway. With Mutual TLS, a two-way trust pattern is created. The API Gateway trusts the APIs and the APIs trust the API Gateway. The APIs, however, do not trust the client apps. As is shown by the large &#8220;X&#8221; character that indicates that a client app cannot bypass the API Gateway and access the APIs directly.
+</div>
+<div class="paragraph">
+<p>One last point that is important to remember is that the endpoint level of security applies to all requests made to the APIs, regardless of whatever policies are configured.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="compare-and-contrast"><a class="anchor" href="#compare-and-contrast"></a>Compare and Contrast</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To summarize, the differences between policy level security and endpoint level security are:
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<col style="width:50%">
+<col style="width:50%">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Policy Level Security
+<th class="tableblock halign-left valign-top">End Point Level Security
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secures communications between the client apps (clients) and API Gateway (server)
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secures communications between the API Gateway (client) and APIs (servers)
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configured in an API Gateway policy
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configured for the API Gateway as a whole in apiman.properties and with key/certificates infrastructure
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applied by the policy at runtime
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applied for all API requests, regardless of the policies configured for an API
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Does not secure the unmanaged API from access by unauthorized clients
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secures the unmanaged API endpoints from access by unauthorized clients
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="author-acknowledgements"><a class="anchor" href="#author-acknowledgements"></a>Author Acknowledgements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As always, the author would like to acknowledge Marc Savy, Eric Wittmann, and the apiman team for their review comments and suggestions on writing this article!
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="references"><a class="anchor" href="#references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html" class="bare">https://www.apiman.io/blog/gateway/security/mutual-auth/ssl/mtls/2015/06/16/mtls-mutual-auth.html</a> (written by Marc Savy)
+<li>
+<p><a href="https://dzone.com/articles/adding-basic-authentication" class="bare">https://dzone.com/articles/adding-basic-authentication</a>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

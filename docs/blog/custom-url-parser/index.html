@@ -1,0 +1,374 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - Customising path patterns for your Apiman Gateway</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630803">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>Customising path patterns for your Apiman Gateway | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Customising path patterns for your Apiman Gateway">
+<meta name="author" content="Marc Savy">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="One common request we hear is how to create custom URL patterns for the Apiman Gateway. For example, this means allowing changing the (Public API) default: http://gatewayhost:port/{organizationId}/{apiId}/{version}/ To a custom alternative. As a simple example we&#8217;re going to hard-code an organisation in. We&#8217;ll assume that we&#8217;ve established a convention to always publish our APIs to a particular org. That will change the pattern to: http://gatewayhost:port/{apiId}/{version}/ If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or later as a bug prevented plugins from loading from static config.">
+<meta property="og:description" content="One common request we hear is how to create custom URL patterns for the Apiman Gateway. For example, this means allowing changing the (Public API) default: http://gatewayhost:port/{organizationId}/{apiId}/{version}/ To a custom alternative. As a simple example we&#8217;re going to hard-code an organisation in. We&#8217;ll assume that we&#8217;ve established a convention to always publish our APIs to a particular org. That will change the pattern to: http://gatewayhost:port/{apiId}/{version}/ If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or later as a bug prevented plugins from loading from static config.">
+<link rel="canonical" href="https://www.apiman.io/blog/custom-url-parser/">
+<meta property="og:url" content="https://www.apiman.io/blog/custom-url-parser/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-07-03T16:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Customising path patterns for your Apiman Gateway">
+<meta name="twitter:site" content="@apiman_io">
+<meta name="twitter:creator" content="@marcsavy">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Marc Savy","url":"https://www.blackparrotlabs.io"},"dateModified":"2018-07-03T16:00:00+00:00","datePublished":"2018-07-03T16:00:00+00:00","description":"One common request we hear is how to create custom URL patterns for the Apiman Gateway. For example, this means allowing changing the (Public API) default: http://gatewayhost:port/{organizationId}/{apiId}/{version}/ To a custom alternative. As a simple example we&#8217;re going to hard-code an organisation in. We&#8217;ll assume that we&#8217;ve established a convention to always publish our APIs to a particular org. That will change the pattern to: http://gatewayhost:port/{apiId}/{version}/ If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or later as a bug prevented plugins from loading from static config.","headline":"Customising path patterns for your Apiman Gateway","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.apiman.io/blog/custom-url-parser/"},"url":"https://www.apiman.io/blog/custom-url-parser/"}</script>
+<meta name="article:tag" content="apiman">
+<meta name="og:article:tag" content="apiman">
+<meta name="article:tag" content="gateway">
+<meta name="og:article:tag" content="gateway">
+<meta name="article:tag" content="manager">
+<meta name="og:article:tag" content="manager">
+<meta name="article:tag" content="plugin">
+<meta name="og:article:tag" content="plugin">
+<meta name="article:tag" content="extensibility">
+<meta name="og:article:tag" content="extensibility">
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-10 col-sm-12">
+<main class="mw-900">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline">Customising path patterns for your Apiman Gateway</h1>
+<div class="text-secondary"><span itemprop="datePublished">03 July 2018</span> · <span itemprop="keywords">apiman, gateway, manager, plugin, extensibility</span></div>
+<div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+<img class="rounded-3 align-self-center" width="80rem" src="https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63694eec22f762f8c729c99c_SCR-20221107-poy-p-500.jpeg" alt="Avatar for Marc Savy">
+<div class="d-flex flex-column ms-2 justify-content-evenly">
+<div class="text-secondary d-none d-sm-block">Co-founder & maintainer of Apiman. Founded Black Parrot Labs to support enterprise Apiman users.</div>
+<div class="fs-5">
+<a class="link-dark" rel="author" href="https://www.blackparrotlabs.io" target="_blank" itemprop="author">Marc Savy</a>
+<span class="apiman-title-secondary" style="white-space:nowrap">
+<span class="d-none d-sm-inline">/</span>
+Black Parrot Labs
+<span class="d-none d-sm-inline">/</span>
+</span>
+<span style="white-space:nowrap">
+<span><a class="link-secondary ps-1" href="https://www.blackparrotlabs.io" target="_blank"><i class="bi bi-globe"></i></a></span>
+<span><a class="link-secondary ps-1" href="https://www.github.com/msavy" target="_blank"><i class="bi bi-github"></i></a></span>
+<span><a class="link-secondary ps-1" href="mailto:marc@blackparrotlabs.io" target="_blank"><i class="bi bi-envelope-at-fill"></i></a></span>
+</span>
+</div>
+</div>
+</div>
+<div class="blog-content" itemprop="articleBody">
+<div class="paragraph">
+<p>One common request we hear is how to create custom URL patterns for the Apiman Gateway.
+</div>
+<div class="paragraph">
+<p>For example, this means allowing changing the (Public API) default:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http://gatewayhost:port/{organizationId}/{apiId}/{version}/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To a custom alternative. As a simple example we&#8217;re going to hard-code an organisation in. We&#8217;ll assume that we&#8217;ve established a convention to always publish our APIs to a particular org. That will change the pattern to:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http://gatewayhost:port/{apiId}/{version}/</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+<td class="content">
+If you&#8217;re using the Vert.x Gateway you should use Apiman 1.4.3.Final or later as a bug prevented plugins from loading from static config.
+</table>
+</div>
+<div class="sect1">
+<h2 id="create-a-plugin-skeleton"><a class="anchor" href="#create-a-plugin-skeleton"></a>Create a plugin skeleton</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+<td class="content">
+Check <a href="https://www.apiman.io/latest/developer-guide.html#_creating_a_plugin">out our documentation for creating Apiman Plugins</a> for more in-depth information.
+</table>
+</div>
+<div class="paragraph">
+<p>One of Apiman&#8217;s handiest features is its plugin subsystem. This allows you to fully modularise custom code and distribute it through familiar channels like Maven repositories. It&#8217;s much more convenient than trying to play around with customising the class-path and messing around to make sure files are in the right place.
+</div>
+<div class="paragraph">
+<p>First, check out this plugin skeleton:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ git clone https://github.com/apiman/apiman-plugins.git
+$ cd custom-path-parser-demo/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Have a look at <code>CustomPathParserImpl.java</code>. It implements <code>IApiRequestPathParser</code> and takes the incoming path and headers; it returns an <code>ApiRequestPathInfo</code> that instructs Apiman what the <code>orgId</code>, <code>apiId</code>, <code>apiVersion</code>, and <code>resource</code> are, allowing Apiman to map the incoming request correctly.
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class CustomPathParserImpl implements IApiRequestPathParser {
+    @Override
+    public ApiRequestPathInfo parseEndpoint(String path, HeaderMap headers) {
+        // Your custom path logic
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For reference the default implementation is <a href="https://github.com/apiman/apiman/blob/master/gateway/engine/core/src/main/java/io/apiman/gateway/engine/impl/DefaultRequestPathParser.java">io.apiman.gateway.engine.impl.DefaultRequestPathParser</a>.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-our-custom-version"><a class="anchor" href="#creating-our-custom-version"></a>Creating our custom version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In our demonstration <code>CustomPathParserImpl</code> we will use a very simple parser that doesn&#8217;t inspect any headers. I recommend you check the default implementation to find <a href="https://github.com/apiman/apiman/blob/master/common/util/src/main/java/io/apiman/common/util/ApimanPathUtils.java">utilities</a> that handles alternative ways of capturing versioning info, such as accept headers, version headers, etc.
+</div>
+<div class="paragraph">
+<p>First we&#8217;ll add a constructor with a string map. This will allow us to pass in configuration information from our static config file (<code>apiman.properties</code> or <code>conf.json</code>).
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final String defaultOrgName;
+
+public CustomPathParserImpl(Map&lt;String, String&gt; config) {
+   // Pass in the defaultOrgName from static config or just use "DefaultOrg".
+   this.defaultOrgName = config.getOrDefault("defaultOrgName", "DefaultOrg");
+}
+
+public ApiRequestPathInfo parseEndpoint(String path, HeaderMap headers) {
+   String[] split = StringUtils.split(path, "/", 3);
+
+   if (split == null || split.length &lt; 2) {
+      throw new IllegalArgumentException("Invalid path format, expected /apiId/apiVersion/&lt;resource path&gt;");
+   }
+
+   ApiRequestPathInfo parsed = new ApiRequestPathInfo();
+   // Let's set the org name manually as our configured `defaultOrgName`
+   parsed.orgId = defaultOrgName;
+   parsed.apiId = split[0];
+   parsed.apiVersion = split[1];
+   if (split.length &gt; 2) {
+      parsed.resource = "/" + split[2];
+   } else {
+      parsed.resource = "/";
+   }
+   return parsed;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So now, if we have a path like this:
+</div>
+<div class="paragraph">
+<p><code>/FooApi/1.0/some/resource</code>
+</div>
+<div class="paragraph">
+<p>This will become:
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">orgId
+<dd>
+<p>DefaultOrg
+<dt class="hdlist1">apiId
+<dd>
+<p>FooApi
+<dt class="hdlist1">apiVersion
+<dd>
+<p>1.0
+<dt class="hdlist1">resource
+<dd>
+<p>/some/resource
+</dl>
+</div>
+<div class="paragraph">
+<p>Which would be the equivalent of the default style of:
+</div>
+<div class="paragraph">
+<p><code>/DefaultOrg/FooApi/1.0/some/resource</code>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="wiring-it-up"><a class="anchor" href="#wiring-it-up"></a>Wiring it up</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+<td class="content">
+Change the versions as applicable.
+</table>
+</div>
+<div class="paragraph">
+<p>Run <code>mvn clean install</code> at the demo project&#8217;s root. Then open your Apiman configuration file (either apiman.properties or conf.json).
+</div>
+<div class="paragraph">
+<p>For the Vert.x Gateway:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"request-parser": {
+    "class": "plugin:io.apiman.plugins:custom-path-parser-plugin-demo:1.4.3.Final:war/io.apiman.plugins.demo.custompathparser.CustomPathParserImpl",
+    "config": {
+        "defaultOrgName": "Apiman" // Whatever you like
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the Servlet Gateway:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.request-parser=plugin:io.apiman.plugins:custom-path-parser-plugin-demo:1.4.3.Final:war/io.apiman.plugins.demo.custompathparser.CustomPathParserImpl
+apiman-gateway.request-parser.defaultOrgName=Apiman // Whatever you like</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8082/TheApi/2'
+{
+  "method" : "GET",
+  "resource" : "/services/echo/foobar/",
+  "uri" : "/services/echo/foobar/",
+  "headers" : {
+    "Accept" : "*/*",
+    "Host" : "localhost:8080",
+    "transfer-encoding" : "chunked",
+    "User-Agent" : "curl/7.54.0"
+  },
+  "bodyLength" : null,
+  "bodySha1" : null,
+  "counter" : 2
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+<td class="content">
+Double check that your plugin is structured correctly, and you have all the names right in your plugin URL. Otherwise, you will get errors complaining that your classes are not found.
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We created a simple plugin to provide custom URL mappings to the Apiman Gateway and configured our gateways to use our code.
+</div>
+<div class="paragraph">
+<p>A future improvement extending IApiRequestPathParser will allow for the Apiman Gateway to report URLs back to the Apiman Manager (or whomever publishes) in a more granular fashion (rather than just using <code>parseEndpoint</code>).
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

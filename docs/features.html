@@ -1,0 +1,1043 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - High-level Feature Summary</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630803">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>High-level Feature Summary | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="High-level Feature Summary">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<meta property="og:description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<link rel="canonical" href="https://www.apiman.io/features.html">
+<meta property="og:url" content="https://www.apiman.io/features.html">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="High-level Feature Summary">
+<meta name="twitter:site" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","description":"Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.","headline":"High-level Feature Summary","url":"https://www.apiman.io/features.html"}</script>
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="mw-1200 mx-auto row my-4">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="sticky-top">
+<div class="list-group justify-content-center" id="feature-titles-sidebar">
+<a href="#general-features" class="list-group-item list-group-item-action">API Manager</a>
+<a href="#api-lifecycle" class="list-group-item list-group-item-action">API Lifecycle</a>
+<a href="#api-gateway" class="list-group-item list-group-item-action">API Gateway</a>
+<a href="#devportal" class="list-group-item list-group-item-action">Developer Portal</a>
+<a href="#extensibility" class="list-group-item list-group-item-action">Extensibility</a>
+<a href="#protocols" class="list-group-item list-group-item-action">Protocols</a>
+<a href="#standard-policies" class="list-group-item list-group-item-action">Standard Policies</a>
+<a href="#iam" class="list-group-item list-group-item-action">Identity & Access Management</a>
+</div>
+<ul class="mt-3 list-group justify-content-center" id="legend-sidebar">
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#full"/></svg> Full Support
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#partial"/></svg> Partial Support
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#roadmap"/></svg> On Roadmap
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#unsupported"/></svg> Unsupported
+</ul>
+<div class="mt-3">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</div>
+</div>
+</aside>
+<main class="col-lg-10 col-sm-12" itemscope itemtype="https://schema.org/WebApplication">
+<section class="mb-4">
+<h1><span itemprop="name">Apiman</span> Features</h1>
+<p>A non-exhaustive list of Apiman's <span itemprop="applicationCategory">API Management</span> features. Most of Apiman's functionality is customisable, and you can write your own plugins to provide capabilities
+that are not available out of the box. The Apiman team and community have also created a wide range of plugins that you can use.
+<p>Apiman should work on <span itemprop="operatingSystem">all</span> operating systems that Java runs on.</p>
+<div class="d-lg-none">
+<ul class="mt-3 list-group justify-content-center" id="legend-sidebar">
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#full"/></svg> Full Support
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#partial"/></svg> Partial Support
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#roadmap"/></svg> On Roadmap
+<li class="list-group-item">
+<svg height="20" width="20"><use href="#unsupported"/></svg> Unsupported
+</ul>
+</div>
+</section>
+<section class="mb-3 feature-section" id="general-features">
+<h2>API Manager</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="standalone-api-manager" itemprop="featureList">Standalone API Manager</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman has a fully-featured API Manager that is decoupled from Apiman's API Gateways.
+If the Apiman Manager goes down, your gateways can continue running as usual (you can configure your gateways to use a separate data store, too).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="policies" itemprop="featureList">Policies</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman has a rich set of default policies, allowing you to govern and alter traffic transiting the Apiman Gateways in myriad ways.
+You can also create your own Apiman policy plugins, allowing you to create your own functionality.
+<p>See the <a href="#standard-policies">policies</a> and <a href="#extensibility">extensibility</a> sections.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="policy-chain" itemprop="featureList">Policy Chain</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Multiple policies are applied in an ordered chain defined by the user.
+This means you can combine functionality in the way that makes sense for you.
+It is also possible for policies to collaborate by passing messages to each other.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="plans" itemprop="featureList">Plans</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman supports multiple versioned plans, allowing you to offer the same APIs with multiple different levels of service.
+For example, different rate limits for <code>gold</code> vs <code>silver</code> plan.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="clients" itemprop="featureList">Clients</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+API consumers (Clients) can subscribe to multiple APIs and get their API keys, plus managing their client's lifecycle (e.g. breaking contracts).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-documentation" itemprop="featureList">API Documentation</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+You can attach OpenAPI v2 or v3 schemas (or Swagger), amongst others.
+Rendered into HTML for API consumers in both the main Apiman Manager UI and the Developer Portal.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="multitenancy" itemprop="featureList">Multitenancy</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman is based around 'organizations', which are similar conceptually to a GitHub org.
+Users can create and join organizations, and be assigned fine-grained permissions within that org.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="roles-&-permissions" itemprop="featureList">Roles & Permissions</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman has a hybrid RBAC-ABAC system.
+<p>Roles are globally defined personas that are assigned permissions (e.g. 'API Plan Administrator' has a range of
+plan-related permissions such as <code>planAdmin</code>).
+<p>Within an organization, Apiman users are assigned roles that grant them the permissions from that role.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="exposing-apis-publicly" itemprop="featureList">Exposing APIs Publicly</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+APIs and plans can be exposed read-only to consumers who are not members of an organization.
+Conceptually, this is similar to a GitHub public repo; people can read and clone, but not modify.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="public-apis-(keyless-apis)" itemprop="featureList">Public APIs (Keyless APIs)</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Publish an API without an API key and plan. You can still apply policies directly to the API itself.
+This feature name is confusingly similar to the previous entry, but is functionally completely different.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="monetization" itemprop="featureList">Monetization</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#roadmap"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman only supports post-hoc billing/monetization via metrics (e.g. Elasticsearch), but has no explicit
+support currently for up-front billing or payment capture.</p>
+<p><a href="https://github.com/apiman/apiman/issues/2352" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="notifications" itemprop="featureList">Notifications</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>In-browser/API notifications for a range of Apiman events, such as when an API signup needs approval, when someone signs up to an API, etc.
+Many are interactive, allowing the user to click through into the relevant resource.
+<p>We're continuing to add more as we identify useful events to notify users about.
+Can be disabled.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="email-notifications" itemprop="featureList">Email Notifications</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+A fully templated and i18n-compatible email notification system to send a range of important Apiman notifications (subset of those that appear in-browser).
+Apiman selects the language to use based on the user's locale.
+Can be disabled.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="apiman-events" itemprop="featureList">Apiman Events</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>A new feature in 3.x, Apiman now publishes a range of events into an
+<a href="https://debezium.io/blog/2019/02/19/reliable-microservices-data-exchange-with-the-outbox-pattern/" target="_blank">outbox table</a>.
+By using CDC software such as Debezium, you can publish these events into event distribution platforms such as Kafka.
+<p>These events cover a range of topics, such as important entity state changes (e.g. API publication), and when actionable events occur (e.g. approval required).
+<p>You can use Apiman events integrate with external systems, such as business rules engines.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-search/discovery" itemprop="featureList">API Search/Discovery</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+List and search for APIs published in Apiman, including by wildcard patterns (globally and per-organization).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-registry" itemprop="featureList">API Registry</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman has a simple JSON-based API Registry capability out of the box to list external APIs that users can import.
+<p>By implementing a simple interface, <a href="#apiman-registry">you can interrogate your own registry</a> instead.</p>
+<p><a href="https://github.com/apiman/apiman/issues/2336" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="export/import" itemprop="featureList">Export/Import</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+The Apiman Manager's entire configuration can be exported as a JSON file and imported into a fresh Apiman installation.
+This is useful for backup, upgrades, and migration.
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="api-lifecycle">
+<h2>API Lifecycle</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="creation" itemprop="featureList">Creation</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Draft your APIs without publishing them until you are ready.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="versioning" itemprop="featureList">Versioning</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Create multiple versions of APIs, Plan, and Clients.
+By default, versions are immutable (i.e. can't change policy configuration).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="multiple-envs" itemprop="featureList">Multiple Envs</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Create and publish APIs to multiple environments, for example testing vs production.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="publication" itemprop="featureList">Publication</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+APIs can be published to one or more gateways/envs.
+This allows API consumers to find and subscribe to your API via a plan, receiving their
+API key.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="retirement" itemprop="featureList">Retirement</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+APIs can be retired by the API provider. Retirement revokes access for existing users, and no new subscriptions can be made.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="monitoring" itemprop="featureList">Monitoring</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman has simple in-built metrics and visualisations.
+There are also a range of metrics emitters for the Apiman Gateway, including Elasticsearch, Prometheus, InfluxDB, JDBC, etc.
+These are commonly combined with visualisation tools such as Kibana and Grafana to provide rich data insights.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="force-update-published-entities" itemprop="featureList">Force Update Published Entities</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#roadmap"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman imposes immutability on configurations of published APIs and Plans.
+This is to ensure that API publishers cannot silently alter the contract established between the API publisher and
+API consumer (e.g. change rate limits without telling consumer). A new version is usually required.
+<p>However, there are some situations where forcing a configuration update may be more appropriate,
+such as updating endpoints or fixing config mistakes.</p>
+<p><a href="https://github.com/apiman/apiman/issues/2353" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-signup-approval" itemprop="featureList">API Signup Approval</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>You can set APIs to require manual approval before a subscriber is allowed to use it.
+This is typically used for APIs that require a due diligence process.
+<p>Apiman sends notifications to approvers, and the subscriber receives notifications on acceptance or rejection.
+<p><a href="#apiman-events">Events are also emitted</a>, if you want to handle this automatically.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-mocking" itemprop="featureList">API Mocking</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#roadmap"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman does not have any direct support for mocking at present.
+However, we are considering integration with <a href="https://www.microcks.io" target="_blank">Microcks</a>,
+a comprehensive REST mocking platform.
+<p><a href="https://github.com/apiman/apiman/issues/2337" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="api-gateway">
+<h2>API Gateway</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="scalable" itemprop="featureList">Scalable</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman gateways scale independently of the Apiman manager.
+You can have as many gateways as you need in a group to handle your load.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="gateway-independence" itemprop="featureList">Gateway Independence</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman's gateways will continue functioning even if the Apiman Manager goes down.
+They can be configured to have different backing datastores, as well.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="multiple-gateway-clusters/envs" itemprop="featureList">Multiple Gateway Clusters/Envs</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+You can set up multiple logical groupings of gateways, which you can publish
+your APIs to independently. This is commonly used to provide development vs
+production environments or regional segregation.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="asynchronous" itemprop="featureList">Asynchronous</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+The Apiman Gateway uses asynchronous patterns throughout its codebase, including policy and component implementations.
+When you use the Vert.x gateway, then you will get a fully asynchronous experience.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="multiple-platforms" itemprop="featureList">Multiple Platforms</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman currently supports Vert.x, WildFly, and Tomcat. Best performance is achieved using Vert.x.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="embeddable" itemprop="featureList">Embeddable</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman Gateway can be directly embedded into a Java application by implementing a series of interfaces and components.
+This requires considerable effort and understanding of the platform, but has been done a number of times.
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="devportal">
+<h2>Developer Portal</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="standalone-devportal" itemprop="featureList">Standalone Devportal</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Standalone Angular application that can be deployed separately from the rest of Apiman.
+It just needs to be able to speak to the Apiman Manager API.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="skinning" itemprop="featureList">Skinning</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+A range of easy CSS customisations are available to make the devportal match
+your organisation's look and feel, including colour palate and images.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="simple-content-customisation" itemprop="featureList">Simple Content Customisation</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Simple JSON file-based customisations to change company names, custom links, custom footer,
+various standard text blocks such as legal prose, etc.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="explicit-publication" itemprop="featureList">Explicit Publication</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+API providers can explicitly choose which APIs and plans to publish to the devportal, and hence
+can be seen by anonymous users. When a developer is logged in they can see everything their account is entitled to.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="user-segregation" itemprop="featureList">User Segregation</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Devportal users can be segregated from other Apiman users to limit what they are allowed to do in Apiman.
+Simply assign the user the <code>devportal</code> role in Keycloak.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-marketplace" itemprop="featureList">API Marketplace</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+APIs can be discovered via searching and lists.
+You can 'feature' an API to display it more prominently on the front page.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="markdown-api-docs" itemprop="featureList">Markdown API Docs</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+API publishers can provide markdown documentation, which will be rendered in the developer portal alongside rendered any API schema.
+This commonly used for code samples, example payloads, etc.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="custom-legal-prose-/-terms-&-conditions" itemprop="featureList">Custom Legal Prose / Terms & Conditions</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>You can set a global legal prose that all devportal users have to accept before signing up to an API.
+<p>If there is interest, we are considering adding a more fine-grained approach for managing legal prose that is attached to plans or APIs.</p>
+<p><a href="https://github.com/apiman/apiman/issues/1705" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="extensibility">
+<h2>Extensibility</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="custom-policy-plugins" itemprop="featureList">Custom Policy Plugins</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Policies govern traffic transiting the Apiman gateway. For example, rate limiting, security, or header and payload manipulation.
+<p>Using simple Java plugins, you can develop your own Apiman policies, enabling almost any kind functionality you can dream of, including schema-based UIs.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="schema-based-policy-ui" itemprop="featureList">Schema-based Policy UI</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Developers can provide a JSON schema with their custom Apiman policies.
+This allows users to configure your policy in the Apiman Manager UI.
+Apiman will render the schema into a form, and validate the policy inputs as per your rules.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="policy-plugin-testing" itemprop="featureList">Policy Plugin Testing</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman has a JUnit-based testing framework to allow robust testing of your custom logic.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="override-default-components" itemprop="featureList">Override Default Components</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+All Apiman's components can be replaced dynamically by user-provided plugin implementations simply by referencing your implementation in
+<code>apiman.properties</code>/<code>conf.json</code>.
+For example, you could provide a custom rate-limiting component implementation.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="custom-components" itemprop="featureList">Custom Components</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Using Apiman's standard plugin format, you can create new components and use them from your Apiman policies.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="dynamic-plugin-loading" itemprop="featureList">Dynamic Plugin Loading</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+All Apiman Plugins can be loaded dynamically at runtime, no restart is required.
+Policy plugins can be managed via the plugins administration page in the Apiman Manager.
+Component plugins are simply referenced directly in config by their URN.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="plugin-upgrades" itemprop="featureList">Plugin Upgrades</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman plugin policy versions can be upgraded via the API or Apiman Manager administration console.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="plugin-repository" itemprop="featureList">Plugin Repository</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman plugins can be loaded from (either automatically or via configuration):
+<ul>
+<li>Maven Central
+<li>Any Maven-compatible remote repository, such as Sonatype, JFrog, or Archiva.
+<li>Local <code>~/.m2</code>.
+<li>User-defined alternative directory.
+</ul>
+Local resolution can be useful for 'baking' plugins into containers in immutable architectures.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="custom-api-registry-plugin" itemprop="featureList">Custom API Registry Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>By implementing a simple interface, you can allow Apiman to search for and import APIs from external API registries.
+<p>For example, if you have an API registry inside your organization, your custom Apiman registry could interrogate it,
+allowing users to quickly import those APIs into Apiman with its implementation details pre-filled.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="custom-metrics-plugin" itemprop="featureList">Custom Metrics Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman captures a rich set of metrics on traffic transiting the Apiman Gateways.
+A range of metrics implementations are provided out of the box, but you can also implement your own via a plugin.
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="protocols">
+<h2>Protocols</h2>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="http" itemprop="featureList">HTTP</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>Apiman is currently primarily an HTTP API gateway. For example, your RESTful Web API will work just fine.
+<p>Various protocols can run on top of HTTP, these should also work. Please let us know your results.</p>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="soap-over-http" itemprop="featureList">SOAP over HTTP</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Set SOAP type in the implementation tab when defining your API in Apiman.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="websockets" itemprop="featureList">Websockets</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman does not currently have explicit testing or support for Websockets, but we have been informed
+that certain setups will work (initial negotiation and handoff by HTTP, rest of connection out-of-band).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="raw-tcp" itemprop="featureList">Raw TCP</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#unsupported"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>If you would like this feature adding, <a href="https://github.com/apiman/apiman/issues/new?assignees=&labels=T%3A+Feature+Request%2CS%3A+Triage&template=feature_request.yml" target="_blank">please open a feature request ticket</a>.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="raw-udp" itemprop="featureList">Raw UDP</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#unsupported"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>If you would like this feature adding, <a href="https://github.com/apiman/apiman/issues/new?assignees=&labels=T%3A+Feature+Request%2CS%3A+Triage&template=feature_request.yml" target="_blank">please open a feature request ticket</a>.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="messaging-protocols" itemprop="featureList">Messaging protocols</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#unsupported"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>If you would like this feature adding, <a href="https://github.com/apiman/apiman/issues/new?assignees=&labels=T%3A+Feature+Request%2CS%3A+Triage&template=feature_request.yml" target="_blank">please open a feature request ticket</a>.
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="standard-policies">
+<h2>Standard Policies</h2>
+<p><p>
+Policies are the bread and butter of Apiman, governing traffic passing through the
+Apiman gateway at runtime. They perform a wide variety of actions, including permitting
+or denying requests, modifying metadata (e.g. headers), and mutating the payload.
+<p>In this section, we briefly list the standard policies and plugins that ship with Apiman.
+Refer to the Apiman documentation for full information on functionality and configuration.
+<p>A key feature of Apiman is that you can create your own Apiman policies, and we welcome
+contributions. <a href="https://www.apiman.io/apiman-docs/development-guide/latest/plugins.html" target="_blank">Refer to our developer's guide for more.</a>
+</p>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="authorization" itemprop="featureList">Authorization</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This policy enables fine grained authorization to API resources based on authenticated user roles.
+This policy can be used to control precisely who (authenticated users) are allowed to access the API, at an arbitrarily fine-grained level.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="basic-auth" itemprop="featureList">BASIC Auth</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This policy enables HTTP BASIC Authentication on an API.
+In other words, you can use this policy to require clients to provide HTTP BASIC authentication credentials when making requests to the managed API.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="caching-resources" itemprop="featureList">Caching Resources</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Allows caching of API responses in the Gateway to reduce overall traffic to the back-end API.
+The Resource Caching Policy can cache requests based on their URL path, http method and specific status code.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="ignored-resources" itemprop="featureList">Ignored Resources</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+The ignored resources policy type enables you to shield some of an API’s resources from being accessed, without blocking access to all the API’s resources.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="ip-allowlist" itemprop="featureList">IP Allowlist</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Allows access to an API’s resources based on the IP address of the client application.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="ip-blocklist" itemprop="featureList">IP Blocklist</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Blocks access to an API’s resources based on the IP address of the client application.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="quotas" itemprop="featureList">Quotas</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+The Quota Policy type performs the same basic functionality as the Rate Limiting policy type, however, the intended use of this policy
+type is for less fine grained processing (e.g., 10,000 requests per month).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="transfer-quota" itemprop="featureList">Transfer Quota</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Transfer Quota tracks the number of bytes transferred (either uploaded or downloaded) rather than the total number of requests made.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="rate-limiting" itemprop="featureList">Rate Limiting</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+The Rate Limiting Policy type governs the number of times requests are made to an API within a specified time period.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="time-restricted-access" itemprop="featureList">Time Restricted Access</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This policy is used to only allow access to an API during certain times.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="url-rewriting" itemprop="featureList">URL Rewriting</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Re-write URLs in responses from the back-end API according to patterns provided.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="api-key-plugin" itemprop="featureList">API Key Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This plugin provides a policy that can help pass the API Key through to the back-end service.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="circuit-breaker-plugin" itemprop="featureList">Circuit Breaker Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This plugin has policies for performing circuit breaker functionality.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="cors-policy-plugin" itemprop="featureList">CORS Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This plugin implements CORS (Cross-origin resource sharing): A method of controlling access to resources outside of an originating domain.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="header-allow/deny-policy-plugin" itemprop="featureList">Header Allow/Deny Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Provides a policy that permits or denies requests matching certain HTTP headers.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="http-security-policy-plugin" itemprop="featureList">HTTP Security Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Provides a policy which allows security-related HTTP headers to be set, which can help mitigate a range of common security vulnerabilities.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="jsonp-policy-plugin" itemprop="featureList">JSONP Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+A plugin that contributes a policy that turns a standard RESTful endpoint into a JSONP compatible endpoint.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="keycloak-oauth-policy-plugin" itemprop="featureList">Keycloak OAuth Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>This plugin offers an OAuth2/JWT authentication policy that leverages the Keycloak SSO platform as the identity and access provider.
+<p>Much of its functionality can actually be used by a wider range of SSO providers than just Keycloak.
+<p>Roles can be extracted and used with authorization policies, or injected into headers to pass to backend services</a>
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="jwt-policy-plugin" itemprop="featureList">JWT Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+A simple generic JWT auth policy (try this is the full-fat Keycloak plugin does not work for you).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="log-headers-policy-plugin" itemprop="featureList">Log Headers Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+A policy that logs the headers to std out. Useful to analyse inbound HTTP traffic
+to the gateway when added as the first policy in the chain or to analyse
+outbound HTTP traffic from the gateway when added as the last policy in the chain.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="simple-header-policy-plugin" itemprop="featureList">Simple Header Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Offers a simple policy that allows request headers to be added or stripped from the
+HTTP request (outgoing) or HTTP response (incoming).
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="xml<->json-transformation-policy-plugin" itemprop="featureList">XML<->JSON Transformation Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+This plugin provides a very simple policy which can transform the request and/or response payload between XML and JSON.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="your-custom-policy-plugin" itemprop="featureList">Your Custom Policy Plugin</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p>You can implement your own custom policy plugin using Java.
+<p>You can make Apiman do almost anything!
+<p>See the <a href="#extensibility">extensibility</a> section.</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+<section class="mb-3 feature-section" id="iam">
+<h2>Identity & Access Management</h2>
+<p>For logging into Apiman Manager, Apiman Devportal, and managing access to the Apiman platform.
+You can also use your IDM/IAM solution with some Apiman policies (e.g. OAuth2 policy), but this is not mandatory.
+</p>
+<div class="feat-table">
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="keycloak" itemprop="featureList">Keycloak</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#full"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Apiman is supports <a href="https://www.keycloak.org" target="_blank">Keycloak IDM</a> out of the box.
+This allows a multitude of security, federation, SSO, and user management duties to be delegated to a specialist platform.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="tomcat" itemprop="featureList">Tomcat</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#partial"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+Tomcat's simple auth mechanism is supported, but likely quite basic for real deployments.
+You can substitute it with Keycloak.
+</div>
+</div>
+<div class="feat-row row py-2">
+<div class="col-sm-3 text-center text-sm-start fw-semibold" id="your-favourite-idm" itemprop="featureList">Your Favourite IDM</div>
+<div class="col-sm-1 text-center">
+<svg height="20" width="20"><use href="#roadmap"/></svg>
+</div>
+<div class="col-sm-8 feature-content" itemprop="description">
+<p><a href="https://github.com/apiman/apiman/issues/2270" target="_blank">Please provide your ideas and feedback in this feature request.</a></p>
+</div>
+</div>
+</div>
+</section>
+<hr class="section-separator mt-4">
+</main>
+</div>
+<svg style="display:none"><defs><symbol id="full" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><title>Feature supported</title><desc>The feature is fully supported by Apiman.</desc><circle cx="8" cy="8" r="8"/></symbol><symbol id="partial" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-circle-half" viewBox="0 0 16 16"><title>Feature partially supported</title><desc>There is partial support for this feature in Apiman.</desc><path d="M8 15A7 7 0 108 1v14zm0 1A8 8 0 118 0a8 8 0 010 16z"/></symbol><symbol id="roadmap" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-circle" viewBox="0 0 16 16"><title>Feature unsupported</title><desc>There is currently no support for this feature in Apiman.</desc><path d="M16 8A8 8 0 110 8a8 8 0 0116 0zM5.5 4.002V12h1.335V8.924H8.52L9.98 12h1.52L9.856 8.701c.828-.299 1.495-1.101 1.495-2.238.0-1.488-1.03-2.461-2.74-2.461H5.5zm1.335 1.09v2.777h1.549c.995.0 1.573-.463 1.573-1.36.0-.913-.596-1.417-1.537-1.417H6.835z"/></symbol><symbol id="unsupported" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" class="bi bi-circle" viewBox="0 0 16 16"><title>Feature unsupported</title><desc>There is currently no support for this feature in Apiman.</desc><path d="M8 15A7 7 0 118 1a7 7 0 010 14zm0 1A8 8 0 108 0a8 8 0 000 16z"/></symbol></defs></svg>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

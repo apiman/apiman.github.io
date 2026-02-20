@@ -1,0 +1,470 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - Changelog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630803">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>Changelog | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Changelog">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<meta property="og:description" content="Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.">
+<link rel="canonical" href="https://www.apiman.io/changelog.html">
+<meta property="og:url" content="https://www.apiman.io/changelog.html">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Changelog">
+<meta name="twitter:site" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","description":"Apiman is a flexible open source API Management platform aimed at enterprise users. Combining a rich API design and configuration layer with a fast, modular runtime, it’s easy to customise Apiman to do whatever you need with simple Java plugins.","headline":"Changelog","url":"https://www.apiman.io/changelog.html"}</script>
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="row mw-1200 mx-auto pt-4">
+<aside class="col-12 col-md-2 toc">
+<div class="sticky-top">
+<ul class="sectlevel1">
+<li><a href="#3-2-0-snapshot">3.2.0-SNAPSHOT</a>
+<ul class="sectlevel2">
+<li><a href="#added">Added</a>
+<li><a href="#changed">Changed</a>
+<li><a href="#removed">Removed</a>
+<li><a href="#fixed">Fixed</a>
+</ul>
+<li><a href="#3-1-3-final">3.1.3.Final</a>
+<ul class="sectlevel2">
+<li><a href="#added-2">Added</a>
+<li><a href="#changed-2">Changed</a>
+<li><a href="#removed-2">Removed</a>
+<li><a href="#fixed-2">Fixed</a>
+</ul>
+<li><a href="#3-1-2-final">3.1.2.Final</a>
+<ul class="sectlevel2">
+<li><a href="#added-3">Added</a>
+<li><a href="#changed-3">Changed</a>
+<li><a href="#removed-3">Removed</a>
+<li><a href="#fixed-3">Fixed</a>
+</ul>
+<li><a href="#3-1-1-final">3.1.1.Final</a>
+<li><a href="#3-1-0-final">3.1.0.Final</a>
+<ul class="sectlevel2">
+<li><a href="#added-4">Added</a>
+<li><a href="#changed-4">Changed</a>
+<li><a href="#removed-4">Removed</a>
+<li><a href="#fixed-4">Fixed</a>
+</ul>
+<li><a href="#3-0-0-final">3.0.0.Final</a>
+<ul class="sectlevel2">
+<li><a href="#thanks">Thanks</a>
+<li><a href="#added-5">Added</a>
+<li><a href="#changed-5">Changed</a>
+<li><a href="#removed-5">Removed</a>
+<li><a href="#fixed-5">Fixed</a>
+</ul>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-10 changelog">
+<h1>Changelog</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>All notable changes to Apiman will be documented here (as of Apiman 3).
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-2-0-snapshot"><a class="anchor" href="#3-2-0-snapshot"></a>3.2.0-SNAPSHOT</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added"><a class="anchor" href="#added"></a>Added</h3>
+</div>
+<div class="sect2">
+<h3 id="changed"><a class="anchor" href="#changed"></a>Changed</h3>
+</div>
+<div class="sect2">
+<h3 id="removed"><a class="anchor" href="#removed"></a>Removed</h3>
+</div>
+<div class="sect2">
+<h3 id="fixed"><a class="anchor" href="#fixed"></a>Fixed</h3>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-3-final"><a class="anchor" href="#3-1-3-final"></a>3.1.3.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added-2"><a class="anchor" href="#added-2"></a>Added</h3>
+</div>
+<div class="sect2">
+<h3 id="changed-2"><a class="anchor" href="#changed-2"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A large number of dependencies have been updated across the Apiman codebase to improve security. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed-2"><a class="anchor" href="#removed-2"></a>Removed</h3>
+</div>
+<div class="sect2">
+<h3 id="fixed-2"><a class="anchor" href="#fixed-2"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[gateway]: Use UTC for Time Restricted-Access-Policy. The Gateway used the configured local (server) time instead of UTC while applying the rules. This could have lead to a mismatch between configuration (UTC) and execution.
+By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[manager-ui]: Fix CSS issue with metrics popover legend being white/invisible. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[common-config]: Fix an edge case in EnvLookup where <code>List.of</code> might be used with a <code>null</code> element which results in a NPE and metrics not rendering with certain configurations. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-2-final"><a class="anchor" href="#3-1-2-final"></a>3.1.2.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added-3"><a class="anchor" href="#added-3"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[gateway-vertx]: you can add a list of additional <code>allowed-issuers</code> in your Gateway API Keycloak Authentication config.
+This better supports situations where your Keycloak server returns multiple different issuers, for example for internal vs external domains, Docker, K8s, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed-3"><a class="anchor" href="#changed-3"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A large number of dependencies have been updated across the Apiman codebase to improve security. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[containers/docker-compose]: to support a change in Keycloak&#8217;s behaviour, we now set <code>allowed-issuers</code> in the Vert.x
+Gateway API authentication configuration to allow both internal and external issuers. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed-3"><a class="anchor" href="#removed-3"></a>Removed</h3>
+</div>
+<div class="sect2">
+<h3 id="fixed-3"><a class="anchor" href="#fixed-3"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[gateway-vertx]: allow access to Vert.x Gateway API&#8217;s <code>/system/status</code> endpoint without auth. This allows health checks without needing to pass around auth credentials and/or relying on 4xx errors. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[gateway-vertx]: array values are now always correctly substituted in Vert.x Gateway configuration. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[portal]: show REST API documentation even when user not logged in.
+By <a href="https://github.com/bastiangem" target="_blank" rel="noopener">Bastian Gembalczyk (@BastianGem)</a> and <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[gateway-vertx]: do not include <code>null</code>/empty path elements in Keycloak discovery URI.
+If your Vert.x Gateway API was unable to speak to Keycloak because it had an unexpected <code>null</code> in the URI, this should fix it. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro-ddl]: Multiple small MSSQL (Microsoft SQL Server) DDL fixes.
+If you are using MSSQL, you should set the Java system property <code>hibernate.auto_quote_keyword=true</code> — in WildFly you can put this into the <code>properties</code> section of <code>standalone-apiman.xml</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api-jpa]: Allow deletion of org with contracts. It should be possible to delete an organization with retired entities. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[gateway-engine-vertx]: Ensure API is resolved before using it. An old contribution did not respect asynchronous patterns properly. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-1-final"><a class="anchor" href="#3-1-1-final"></a>3.1.1.Final</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>No changes, this additional release was needed due to a problem with Apiman&#8217;s CI/CD pipelines.
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-1-0-final"><a class="anchor" href="#3-1-0-final"></a>3.1.0.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="added-4"><a class="anchor" href="#added-4"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[metrics-es]: allow logging metrics to file with <code>write-to</code> option. To facilitate scrape-based metrics patterns, this commit allows Apiman&#8217;s ES metrics to be written to a log file as JSON via whichever logging framework you are using (asynchronously). You can set any combination of <code>remote</code> (ES server) or/and <code>log</code> (local). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed-4"><a class="anchor" href="#changed-4"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A variety of dependencies have been updated across the Apiman codebase to keep users secure. If you don&#8217;t want to upgrade, speak to your long-term support provider.
+<li>
+<p>[manager-api-rest]: Apiman Manager API now has an OpenAPI v3 schema! You can access this at <code>/openapi.json</code> or <code>/openapi.yml</code>. For example, <a href="http://localhost:8080/apiman/openapi.json" class="bare">http://localhost:8080/apiman/openapi.json</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>Default plugin registry and API catalogue JSON files are now in the GitHub release, rather than directly in the repository. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>Converted Apiman into a monorepo (as far as possible). Apiman plugins, default API catalogue, default plugin registry, developer portal, docker images, amongst others, have been painstakingly merged in. CI pipelines have also been updated to reflect this. Multi-repository releases are difficult with GitHub CI, so this will hopefully make more frequent releases much easier. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed-4"><a class="anchor" href="#removed-4"></a>Removed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[manager-api-rest]: Removed obsolete Qmino API documentation generator. I would like to thank the Qmino team for their support over the years. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-4"><a class="anchor" href="#fixed-4"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>fix[gateway-vertx]: in Keycloak discovery code <code>getAllowedIssuers</code> check was mistakenly inverted. By <a href="https://www.github.com/ronimhd">ronimhd</a>.
+<li>
+<p>fix[manager-api]: register subtypes for deserializing policy probe response, this step was
+inadvertently removed during refactoring. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>fix[ui]: move validation function for IP list into validate function to ensure list valid when switching between IP policies. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>fix[gateway-engine-es]: throw ClientNotFoundException if client not found when unregistering. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[manager-api]: Perform unregister only if client is in correct state. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Full Changelog</strong>: <a href="https://github.com/apiman/apiman/compare/3.0.0.Final&#8230;&#8203;3.1.0.Final">3.0.0.Final&#8230;&#8203;3.1.0.Final</a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3-0-0-final"><a class="anchor" href="#3-0-0-final"></a>3.0.0.Final</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="thanks"><a class="anchor" href="#thanks"></a>Thanks</h3>
+<div class="paragraph">
+<p>A huge thanks to every company that has worked with <a href="https://www.github.com/msavy">Apiman&#8217;s main developer</a> via consulting, support, sponsoring features, or other means. Without financial support, Apiman open source will not continue to be developed.
+</div>
+<div class="paragraph">
+<p>Particular thanks go to the team at <a href="https://www.scheer-pas.com" target="_blank" rel="noopener">Scheer PAS</a> who sponsored a considerable amount of the work that is in the 3.0.0.Final release.
+</div>
+</div>
+<div class="sect2">
+<h3 id="added-5"><a class="anchor" href="#added-5"></a>Added</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[manager-api] <strong>Events</strong>: versioned events are now emitted inside Apiman for a number of important business actions. These are consumed internally within Apiman, but are also inserted into a <strong><a href="https://microservices.io/patterns/data/transactional-outbox.html" target="_blank" rel="noopener">transactional outbox</a></strong> inside the database using the <a href="https://cloudevents.io/" target="_blank" rel="noopener">CloudEvents format</a>. You can use CDC software, such as <a href="https://debezium.io/" target="_blank" rel="noopener">Debezium</a> to integrate Apiman&#8217;s events into your messaging platform of choice, such as Apache Kafka. A wide variety of rich business functionality can be enabled via this integration. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>Notifications</strong>: notifications for important events are now generated and sent to the appropriate user(s) and/or group(s). This is driven by the event system. For example, when an API requires approval, all users with the <code>apiEditor</code> permission will receive an in-browser notification and email notification. In-browser notifications can be seen by pressing the bell in the top-right corner of the screen. Notifications can be disabled entirely in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>Email notifications and templates</strong>: a fully templated and i18n-friendly email notification system, which is driven by the events subsystems. This can easily be customised by the user to change the look-and-feel or text. Email notifications are disabled by default in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>API signup approvals</strong>: an API version can be offered via different plans. You can now choose to require that a user receive explicit approval before being allowed access to the API. Appropriate notifications (including emails, if enabled), are sent to all relevant parties for signup, approval, rejection, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro] <strong>Docker compose quickstart distro</strong>: provides an out-of-the-box full platform deployment of Apiman, broken down into its components in a way that is more representative of a real-world deployment. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>User locale</strong>: where possible, the user&#8217;s preferred locale is now stored in their Apiman profile any async events that require it, such as emails. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>Implicit permissions system (discoverability)</strong>: an implicit read permissions system that layers on top of the explicit permissions systems that already exist in Apiman. It allows API providers to expose specific APIs to consumers who are <strong>not</strong> members of their organisation. For example, if you have an API that you want non-members to be able to consume, this feature addresses your needs. For more, see <a href="https://github.com/apiman/apiman/discussions/1952">Apiman Discoverability</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api] <strong>Developer portal API</strong>: designed specifically for our <a href="https://www.github.com/apiman/apiman-developer-portal" target="_blank" rel="noopener">Apiman Developer Portal</a>, this API allows anonymous access to certain Apiman APIs for browsing, with increased access for logged-in users. Various extensions to the data model for newer features. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[ui] <strong>Developer portal manager UI</strong>: a new tab called in the Apiman Manager UI which is available when creating an API. This enables the API provider to decide various portal-related settings, plan ordering, which plans are visible to which users, markdown documentation for developers, API logo, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[ui] <strong>Developer portal UI</strong>: an entirely new user interface for Apiman, dedicated to API consumers. The portal provides a focussed, slipstreamed, and customisable/skinnable experience, without all the noise of the main UI&#8217;s advanced features. The <a href="https://github.com/apiman/apiman-developer-portal" target="_blank" rel="noopener">devportal repository is current separate</a>, please refer to their changes independently. This is different from the previous developer portal that you may have seen with Apiman 2.x. A considerable amount of work has gone into this project, and huge credit goes to the sponsors and contributors.
+<li>
+<p>[gateway-core] <strong>Policy probes</strong>: allows policies to expose their internal state to the Apiman Manager for interrogation. For example, "what is the current rate limit status for X?". Even custom policies can implement this new functionality. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[metrics-es] Elasticsearch metrics can optionally <strong>collect custom request headers, response headers, and query parameters</strong>, according to regular expressions provided by the user. The Elasticsearch schema will be <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-templates.html" target="_blank" rel="noopener">extended dynamically</a>. This feature required a change to the core of Apiman, but was done in a backwards compatible way. Other metrics implementations should be able to make use of this change (sponsorship welcome). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api-jpa]: <strong>Apiman Manager automatic database migrations (from 3.0.0.Final onwards)</strong>: Liquibase SQL/DDL migrations have been refactored, with the Liquibase CDI Migrator integrated into the project directly. This stores which migrations have been run before, and applies only the latest SQL migrations for the Apiman Manager SQL backend, so a full export-import for every new Apiman version should not be needed any more. It can be disabled, if you prefer. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro]: <strong>Standalone docker images</strong>: standardised and supported standalone images for Apiman that will be useful for users planning to use Apiman in a real-world deployment. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[ui] <strong>Quick navigation sidebar</strong>: on the left-hand side of the Apiman Manager UI there is now a multi-tiered sidebar to navigate quickly to various areas of the Apiman Manager UI. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> and <a href="https://github.com/bastiangem" target="_blank" rel="noopener">Bastian Gembalczyk (@BastianGem)</a>.
+<li>
+<p>[logging]: <strong>Apiman logger</strong> is now used everywhere; it can be accessed statically from anywhere (including Apiman policy plugins), via <code>ApimanLoggerFactory.getLogger(YourClazz.class)</code>. The previous approach tried to be very flexible, but ended up mostly being inconvenient and clumsy. An appropriate logger implementation is selected for each platform Apiman ships on, rather than leaving it for the user. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[build]: introduced the <strong>Apiman Parent BOM</strong> (<code>io.apiman:apiman-parent:&lt;version></code>). This contains managed versions of all Apiman Maven dependencies, which may be useful for plugin authors. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[config]: <strong>Better config parsing for Apiman&#8217;s components</strong> (e.g. when reading from <code>apiman.properties</code>). Not rolled out everywhere, but provides a more unified experience with much better error messages and type validation. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro-wildfly]: <strong>Developer portal added to the WildFly Quickstart distro</strong>. The portal can be accessed at <code><a href="http://localhost:8080/portal" class="bare">http://localhost:8080/portal</a></code>, and you can customise the portal by editing its various configuration options in <code>standalone/configuration/portal/assets/</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[build]: <code><strong>fastbuild.sh</strong></code> script to build apiman as fast as possible in parallel using <code>mvnd</code> or <code>mvnw</code>. It skips test and javadoc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[policies]: blocklist/allowlist (fka. blacklist/whitelist) add support for IPv6, CIDR, ranges, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2027" class="bare">https://github.com/apiman/apiman/pull/2027</a>
+<li>
+<p>[manager-api]: support OpenAPI v3 endpoint replacement. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2053" class="bare">https://github.com/apiman/apiman/pull/2053</a>
+<li>
+<p>[gateway-engine-core]: thread-safe batched non-blocking metrics consumer. This is useful if you are creating a metrics implementation, and you want it to have good performance. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2126" class="bare">https://github.com/apiman/apiman/pull/2126</a>
+<li>
+<p>[metrics-influxdb]: add support for Influx 1.x, including use of an authorization token. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2127" class="bare">https://github.com/apiman/apiman/pull/2127</a>
+<li>
+<p>[manager-api]: add column order index for Api Plans so users can explicitly order plans in UI. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2159" class="bare">https://github.com/apiman/apiman/pull/2159</a>
+<li>
+<p>[manager-api]: add rejection to contract approval workflow. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2175" class="bare">https://github.com/apiman/apiman/pull/2175</a>
+<li>
+<p>[policies]: performance and memory optimisations for caching policy, blocklist/blacklist policy, and allowlist/whitelisting policy. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="changed-5"><a class="anchor" href="#changed-5"></a>Changed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[ui]: Lazy load API DevPortal page using <code>$ocLazyLoad</code>, this avoids the Apiman Manager UI initial download being larger. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[build]: Java 11+ is the minimum supported version to compile and run Apiman.
+<li>
+<p>[distro]: Apiman Docker images now published to both GHCR (GitHub Packages) and DockerHub. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[build]: Apiman Docker images have been refactored to accept `--build-arg`s for most variables, such as Apiman&#8217;s version, JDBC driver versions, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[build]: Bumped Keycloak to 16.0.2. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[ui]: Upgraded Apiman Manager UI to latest AngularJS. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[ui]: Refactored Apiman Manager UI build system to use <a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 5</a>. Although this was a considerable investment of time and effort, it enabled us to make the build smaller, with a much better developer experience, whilst eliminating some bugs associated with our old approach. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[ui]: Major refactor of Apiman Manager UI to bring most deps up to date: Angular 1.8, Typescript 4.4.x, JQuery, Lodash, etc. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-api]: Where possible, transactions are now controlled via annotations. Currently, this uses a custom CDI interceptor, but we&#8217;ll likely use container-managed TX in the future (likely by reducing to a single Apiman Manager platform). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[metrics-es]: If the Elasticsearch metrics buffer is completely full then metrics records will be dropped. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro]: Bump the Apiman WildFly distro to WildFly 23.0.2.Final. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[policies]: Rename policies: 'blacklist' &#8594; 'blocklist', and 'whitelist' &#8594; 'allowlist'. If you have an existing policy with the old names, it will continue to work without issue. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2040" class="bare">https://github.com/apiman/apiman/pull/2040</a>
+<li>
+<p>[ui]: Update swagger-ui to v4. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2066" class="bare">https://github.com/apiman/apiman/pull/2066</a>
+<li>
+<p>[manager-api]: Refactor Apiman Manager code to have service layers, so that business logic is not in presentation layer. This will likely be a multiphase process, and ideally we will move towards DDD-style code over time. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[manager-jpa]: Remove most uses of JPA Criteria API and replace with <a href="https://persistence.blazebit.com/" target="_blank" rel="noopener">Blaze-Persistence</a>. This is a modern reinterpretation of the Criteria API concept that is usable by mere human beings such as Apiman&#8217;s maintainer. <a href="https://github.com/Blazebit/blaze-persistence/issues/1436" target="_blank" rel="noopener">Thanks to Christian Beikov for his assistance</a> in fixing a show-stopper bug that Apiman exposed in Hibernate when using Blaze-Persistence. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro]: bump minimum required version of Postgres from 9 to <strong>11</strong>. PGES 9.x does not support the <code>create or replace procedure</code> syntax we use, and the 9.x lineage is not supported upstream anymore.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removed-5"><a class="anchor" href="#removed-5"></a>Removed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[distro]: <strong>Apiman is no longer distributed with the Keycloak Server Overlay</strong>, as this has been discontinued by the Keycloak team. You will need to point Apiman to a Keycloak server that is run separately (see the Docker Compose distro for examples). By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro]: Apiman Manager API <strong>no longer supports Elasticsearch as a backend store</strong>, this is now RDBMS/SQL only. We still maintain full support for Elasticsearch for metrics/analytics. Consequently, we have removed <code>ESStorage</code> and associated code. See: <a href="https://github.com/apiman/apiman/discussions/1365" target="_blank" rel="noopener">AEP 2: Drop Elasticsearch as Manager API database in Apiman 3 (keep for metrics, gateway, etc)</a>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>.
+<li>
+<p>[distro]: Java 8 is no longer supported in the community project.
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-5"><a class="anchor" href="#fixed-5"></a>Fixed</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>[ui]: Fixed a wide variety of glitches afflicting the Apiman Manager UI. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>, <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>.
+<li>
+<p>[manager-api-war]: handle comma-separated lists properly in <code>apiman.properties</code>. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2012" class="bare">https://github.com/apiman/apiman/pull/2012</a>
+<li>
+<p>[common-es]: work around ES index creation race condition. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2037" class="bare">https://github.com/apiman/apiman/pull/2037</a>
+<li>
+<p>[ui]: browser back button on "all"-pages. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a> in <a href="https://github.com/apiman/apiman/pull/2005" class="bare">https://github.com/apiman/apiman/pull/2005</a>
+<li>
+<p>[manager-api]: client republish and/or unregister when breaking contracts. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2123" class="bare">https://github.com/apiman/apiman/pull/2123</a>
+<li>
+<p>[manager-api]: ensures <code>RestExceptionMapper</code> actually prints stack trace. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[gateway-engine-policies]: check for null request path in URLRewritingPolicy. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[ui]: add local time to time-restricted-access-policy. By <a href="https://github.com/volkflo" target="_blank" rel="noopener">Florian Volk (@volkflo)</a>
+<li>
+<p>[ui]: temporarily disable source maps for production to avoid bloating code. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[ui]: Ensure modals have correct constructor signature to avoid minification/mangling breaking everything. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[manager-api-jpa]: include API version in query fetching API definition. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[manager-api]: PolicyDefinitionTemplate missing <code>#equals</code> and <code>#hashCode</code> By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a>
+<li>
+<p>[manager-api-jpa]: parse stringified numeric filter value into same data type as target field. By <a href="https://github.com/msavy" target="_blank" rel="noopener">Marc Savy (@msavy)</a> in <a href="https://github.com/apiman/apiman/pull/2284" class="bare">https://github.com/apiman/apiman/pull/2284</a>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Full Changelog</strong>: <a href="https://github.com/apiman/apiman/compare/2.2.3.Final&#8230;&#8203;3.0.0.Final">2.2.3.Final&#8230;&#8203;3.0.0.Final</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

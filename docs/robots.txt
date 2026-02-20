@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.apiman.io/sitemap_index.xml

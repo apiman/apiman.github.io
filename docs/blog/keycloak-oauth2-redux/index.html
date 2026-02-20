@@ -1,0 +1,543 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - Keycloak and dagger: Securing your APIs with OAuth2</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630802">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>Keycloak and dagger: Securing your APIs with OAuth2 | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Keycloak and dagger: Securing your APIs with OAuth2">
+<meta name="author" content="Marc Savy">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&#8217;ll outline in this blogpost.">
+<meta property="og:description" content="One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&#8217;ll outline in this blogpost.">
+<link rel="canonical" href="https://www.apiman.io/blog/keycloak-oauth2-redux/">
+<meta property="og:url" content="https://www.apiman.io/blog/keycloak-oauth2-redux/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-01-22T12:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Keycloak and dagger: Securing your APIs with OAuth2">
+<meta name="twitter:site" content="@apiman_io">
+<meta name="twitter:creator" content="@marcsavy">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Marc Savy","url":"https://www.blackparrotlabs.io"},"dateModified":"2016-01-22T12:00:00+00:00","datePublished":"2016-01-22T12:00:00+00:00","description":"One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&#8217;ll outline in this blogpost.","headline":"Keycloak and dagger: Securing your APIs with OAuth2","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.apiman.io/blog/keycloak-oauth2-redux/"},"url":"https://www.apiman.io/blog/keycloak-oauth2-redux/"}</script>
+<meta name="article:tag" content="gateway">
+<meta name="og:article:tag" content="gateway">
+<meta name="article:tag" content="security">
+<meta name="og:article:tag" content="security">
+<meta name="article:tag" content="oauth2">
+<meta name="og:article:tag" content="oauth2">
+<meta name="article:tag" content="keycloak">
+<meta name="og:article:tag" content="keycloak">
+<meta name="article:tag" content="authentication">
+<meta name="og:article:tag" content="authentication">
+<meta name="article:tag" content="authorization">
+<meta name="og:article:tag" content="authorization">
+<meta name="article:tag" content="1.2.x">
+<meta name="og:article:tag" content="1.2.x">
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-10 col-sm-12">
+<main class="mw-900">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline">Keycloak and dagger: Securing your APIs with OAuth2</h1>
+<div class="text-secondary"><span itemprop="datePublished">22 January 2016</span> · <span itemprop="keywords">gateway, security, oauth2, keycloak, authentication, authorization, 1.2.x</span></div>
+<div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+<img class="rounded-3 align-self-center" width="80rem" src="https://uploads-ssl.webflow.com/6312041fe2519f3a3b9fa7e6/63694eec22f762f8c729c99c_SCR-20221107-poy-p-500.jpeg" alt="Avatar for Marc Savy">
+<div class="d-flex flex-column ms-2 justify-content-evenly">
+<div class="text-secondary d-none d-sm-block">Co-founder & maintainer of Apiman. Founded Black Parrot Labs to support enterprise Apiman users.</div>
+<div class="fs-5">
+<a class="link-dark" rel="author" href="https://www.blackparrotlabs.io" target="_blank" itemprop="author">Marc Savy</a>
+<span class="apiman-title-secondary" style="white-space:nowrap">
+<span class="d-none d-sm-inline">/</span>
+Black Parrot Labs
+<span class="d-none d-sm-inline">/</span>
+</span>
+<span style="white-space:nowrap">
+<span><a class="link-secondary ps-1" href="https://www.blackparrotlabs.io" target="_blank"><i class="bi bi-globe"></i></a></span>
+<span><a class="link-secondary ps-1" href="https://www.github.com/msavy" target="_blank"><i class="bi bi-github"></i></a></span>
+<span><a class="link-secondary ps-1" href="mailto:marc@blackparrotlabs.io" target="_blank"><i class="bi bi-envelope-at-fill"></i></a></span>
+</span>
+</div>
+</div>
+</div>
+<div class="blog-content" itemprop="articleBody">
+<div class="paragraph">
+<p>One great advantage of API Management is centralising auth concerns, thereby avoiding burdensome reimplementation issues and streamlining your security processes. The good news is that you can easily configure apiman to handle many common auth use-cases, such as OAuth2 with our popular Keycloak OAuth2 policy which I&#8217;ll outline in this blogpost.
+</div>
+<div class="sect1">
+<h2 id="preparation"><a class="anchor" href="#preparation"></a>Preparation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this example, let&#8217;s assume we&#8217;re using apiman&#8217;s <a href="https://www.apiman.io/latest/download.html">quickstart</a> setup and have it running. I suggest using the <em>'Or simply try this&#8230;&#8203;'</em> box.
+</div>
+<div class="paragraph">
+<p>After you have your apiman quickstart running (replace <strong>apiman-1.2.0.Final</strong> in the path below with whatever version you downloaded), we can live deploy a handy <strong>echo service</strong> into our environment, so we have an API to test against:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cd /tmp
+git clone https://github.com/apiman/apiman-quickstarts.git
+cd apiman-quickstarts/echo-service
+git checkout 1.2.0.Final
+mvn clean install
+mvn wildfly:deploy</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-the-plugin"><a class="anchor" href="#installing-the-plugin"></a>Installing the Plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Those amongst you with some experience of apiman may have noticed that the OAuth2 policy doesn&#8217;t appear in the standard list of policies in the manager UI; that&#8217;s because the OAuth2 policy is an example of an <strong>apiman plugin</strong>, all of which are shipped separately from apiman, but are trivially easy to install.
+</div>
+<div class="paragraph">
+<p>When logged into <a href="http://localhost:8080/apimanui/">the apiman manager UI</a> as an administrator (for the quickstart that&#8217;s u:`admin`, p:`admin123!`), navigate to the <strong>manage plugins</strong> page:
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.apiman.io/latest/user-guide.html#_plugins"><img src="/assets/images/blog/2016-01-08/sysadmin-manage-plugins.png" alt="System Administration"></a>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2016-01-08/available-plugins.png" alt="Select Keycloak OAuth Policy Plugin from the available plugins list">
+</div>
+</div>
+<div class="paragraph">
+<p>Tab to <strong>Available Plugins</strong>, select <strong>Install</strong> for <em>Keycloak OAuth Policy Plugin</em>, confirm the plugin coordinates, and click <strong>Add Plugin</strong>. That&#8217;s it!
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="anchor" href="#setting-up"></a>Setting Up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two essential components to our system. First, is the <a href="https://keycloak.jboss.org">Keycloak server</a>, an all-in-one <a href="https://en.wikipedia.org/wiki/Single_sign-on">SSO</a> and <a href="https://en.wikipedia.org/wiki/Identity_management">IdM</a> platform; we&#8217;ll configure it to be our identity source and handle the issuance of OAuth2 bearer tokens. Second, is the apiman OAuth2 policy; we&#8217;ll set it up to validate the tokens precisely to our requirements.
+</div>
+<div class="paragraph">
+<p>Let&#8217;s assume we&#8217;re going to protect a very simple <strong>echo service</strong>, which echoes back to the requestor the details of any request made to it. It is located at <code><a href="http://localhost:8080/apiman-echo" class="bare">http://localhost:8080/apiman-echo</a></code>.
+</div>
+<div class="sect2">
+<h3 id="keycloak-server"><a class="anchor" href="#keycloak-server"></a>Keycloak Server</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+<td class="content">
+There are a huge number of configuration permutations with Keycloak, and the most suitable approach will vary according to your requirements. It is highly recommended to consult the <a href="https://keycloak.jboss.org/docs.html">Keycloak guides</a> to determine your optimal setup, as for the sake of brevity we&#8217;re only going to cover a couple of trivial preconfigured scenarios.
+</table>
+</div>
+<div class="paragraph">
+<p>First, log into the <a href="http://localhost:8080/auth/admin">Keycloak server</a>. If you&#8217;re following our walkthrough, the log-in details are identical to those mentioned earlier (<code>admin</code>, <code>admin123!</code>). You can see that there is already an <strong>apiman</strong> realm defined, but we&#8217;re going to create a new one, so navigate to <strong>Add Realm</strong> (top right), and import and upload <a href="/blog/resources/2015-06-04/stottie.json">this demonstration realm definition</a>; it provides an extremely simple setup where we have:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A realm: <code>stottie</code>
+<li>
+<p>A single user: <code>rincewind</code>, with password: <code>apiman</code> and a realm role: <code>echomeister</code>
+<li>
+<p>And, a client: <code>apiman</code>, which is allowed direct grants via Keycloak&#8217;s <a href="https://keycloak.github.io/docs/userguide/keycloak-server/html/direct-access-grants.html">RESTful Direct Access Grants API</a>.
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s quickly test requesting ourselves an OpenID Connect OAuth2 token:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H "Content-Type: application/x-www-form-urlencoded" -d "username=rincewind" -d 'password=apiman' -d 'grant_type=password' -d 'client_id=apiman'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This should return some JSON similar to the following:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "access_token": "eyJhbGciOiJSUzI1NiJ9...&lt;SNIP&gt;",
+    "expires_in": 300,
+    "refresh_expires_in": 1800,
+    "refresh_token": "eyJhbGcg...&lt;SNIP&gt;",
+    "not-before-policy": 0,
+    "session-state": "69974623-be8b-49d7-840a-0330c6bdde21"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that the OAuth2 token we&#8217;re interested in is contained within the <code>access_token</code> field, with useful ancillary information about token validity and refreshing.
+</div>
+<div class="paragraph">
+<p>In this instance, the access token is a signed OpenID Connect JSON Web Token (JWT). Using the handy decoder available at <a href="https://jwt.io">jwt.io</a>, we can see a lot interesting information, including the <code>echomiester</code> realm role defined on <code>rincewind</code>:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "jti": "c89b8cf7-84ef-4f02-9954-f8d3d4321473",
+    "exp": 1433414538,
+    "nbf": 0,
+    "iat": 1433414238,
+    "iss": "http://127.0.0.1:8080/auth/realms/stottie",
+    "aud": "apiman",
+    "sub": "de4af322-85b2-4dbe-8d53-6a2ee29e4080",
+    "azp": "apiman",
+    "session_state": "69974623-be8b-49d7-840a-0330c6bdde21",
+    "client_session": "b5bd36a0-d576-4593-be7b-4648612c25b8",
+    "allowed-origins": [],
+    "realm_access": {
+        "roles": [
+            "echomeister"
+        ]
+    },
+    "resource_access": {
+        "account": {
+            "roles": [
+                "view-profile",
+                "manage-account"
+            ]
+        }
+    },
+    "name": "",
+    "preferred_username": "rincewind"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This demonstrates one OpenID Connect&#8217;s most useful attributes: all the information required to validate a request is contained within the token itself.
+</div>
+</div>
+<div class="sect2">
+<h3 id="apiman-oauth2-policy"><a class="anchor" href="#apiman-oauth2-policy"></a>Apiman OAuth2 Policy</h3>
+<div class="paragraph">
+<p>First, log into apiman, and <strong>Create a New Organization</strong>; let&#8217;s call it <strong><em>Newcastle</em></strong>. Select the <strong>APIs</strong> tab, and add a <strong>New API</strong>; we&#8217;ll name this one <strong><em>EchoAPI</em></strong> and then <strong>Create API</strong>.
+</div>
+<div class="paragraph">
+<p>Select the <strong>Implementation</strong> tab, and set the endpoint to our echo service, <code><a href="http://localhost:8080/apiman-echo" class="bare">http://localhost:8080/apiman-echo</a></code>. Save and move onto the <strong>Plans</strong> tab, where you should opt to <strong>Make this API public</strong>. After saving, we can move onto the <strong>Policies</strong> tab, where the interesting stuff starts.
+</div>
+<div class="paragraph">
+<p>Navigate to <strong>Add Policy</strong>, and select <strong>Keycloak OAuth Policy</strong> from the drop-down list. A substantial set of options are available for your perusal, but for the purposes of this blog demo we&#8217;ll set the following:
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<col style="width:33.3333%">
+<col style="width:33.3333%">
+<col style="width:33.3334%">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option
+<th class="tableblock halign-left valign-top">Value
+<th class="tableblock halign-left valign-top">Details
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realm
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://127.0.0.1:8080/auth/realms/stottie" class="bare">http://127.0.0.1:8080/auth/realms/stottie</a>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The path to our realm <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>. Note that in older versions of Keycloak (pre <code>1.2.0</code>), the realm will just be the <strong>stottie</strong> (no path).
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keycloak Realm Certificate
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base64 encoded cert
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paste your <a href="http://localhost:8080/auth/admin/master/console/#/realms/stottie/keys-settings">Keycloak realm certificate</a>.
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forward Authorization Roles
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forward Realm Roles, and set <em>Forward Realm Roles?</em> to <strong>true</strong>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If we decide to use the authorization policy later, we&#8217;ll forward the realm roles contained within the token (i.e. <code>echomeister</code>). If we don&#8217;t need the granularity of roles, you can still just validate the token.
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forward Keycloak Token Information
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header: <code>X-AZP</code> &#8658; Field: <code>azp</code>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set header <code>X-AZP</code> to be value of token&#8217;s <code>azp</code> field. We would expect this to be <code>apiman</code> for this case, but you can set any field.
+</table>
+<div class="paragraph">
+<p>Select <strong>Add Policy</strong>, and then <strong>Publish</strong> the API. You can see its endpoint information in the <strong>Endpoint</strong> tab, it should be similar to:
+</div>
+<div class="paragraph">
+<p><a href="https://localhost:8443/apiman-gateway/Newcastle/EchoAPI/1.0" class="bare">https://localhost:8443/apiman-gateway/Newcastle/EchoAPI/1.0</a>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing-authentication"><a class="anchor" href="#testing-authentication"></a>Testing Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s test our setup with cURL to see whether our request is <em>denied</em> if we don&#8217;t use a token:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[msavy@mmbp tmp]$ curl -k  https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoAPI/1.0
+{
+    "type": "Authentication",
+    "failureCode": 11005,
+    "responseCode": 401,
+    "message": "OAuth2 'Authorization' header or 'access_token' query parameter must be provided.",
+    "headers": {}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Excellent, it all seems to be working! Notice that we&#8217;re using self-signed certificates for this demo, so the <code>-k</code> flag will skip certificate validation.
+</div>
+<div class="paragraph">
+<p>Next, let&#8217;s do a request with a token. There are two ways to attach your bearer token to a request. Either:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Authorization</code> header, as <code>Authorization: Bearer &lt;token></code>
+<li>
+<p><code>access_token</code> query parameter, as <code><a href="http://example.org/the/path/?access_token=">token</a></code>
+</ul>
+</div>
+<div class="paragraph">
+<p>First, let&#8217;s retrieve a fresh token from Keycloak, and extract the <code>access_token</code> field from the json using <code>jq</code> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -X POST http://127.0.0.1:8080/auth/realms/stottie/protocol/openid-connect/token  -H "Content-Type: application/x-www-form-urlencoded" -d 'username=rincewind' -d 'password=apiman' -d 'grant_type=password' -d 'client_id=apiman' | jq -r '.access_token'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Second, we&#8217;ll take the token and attach it to our request to the API
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[msavy@mmbp tmp]$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YW..." https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoAPI/1.0
+{
+  "method" : "GET",
+  "resource" : "/apiman-echo",
+  "uri" : "/apiman-echo",
+  "headers" : {
+    "Authorization" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJiNDY1YWMzNi1hMTczLTRjOWMtYWJjZS00MzE2MJ...",
+    "Host" : "127.0.0.1:8080",
+    "User-Agent" : "curl/7.37.1",
+    "Accept" : "*/*",
+    "Connection" : "keep-alive",
+    "Cache-Control" : "no-cache",
+    "Pragma" : "no-cache",
+    "X-AZP": "apiman"
+  },
+  "bodyLength" : null,
+  "bodySha1" : null,
+  "counter" : 1
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Great, it worked! We can see EchoAPI has now been reached, meaning our OAuth2 token was validated successfully, and it sent us back a response which includes the bearer token we used (you can strip this out in the options).
+</div>
+<div class="paragraph">
+<p>Furthermore, you can see our <code>X-AZP</code> header has been set to the expected value of <code>apiman</code>, which was pulled from the token.
+</div>
+<div class="paragraph">
+<p>If you&#8217;re feeling lazy, here&#8217;s <a href="https://gist.github.com/msavy/eaa1841e0c7a50e6ea8c">an all-in-one script</a> to do it for you.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="adding-authorization"><a class="anchor" href="#adding-authorization"></a>Adding Authorization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;re going to develop our example a little bit further. At present, we simply have a binary approach where we either allow or disallow based upon which realm the token was issued from. If we want a more granular approach where we can discriminate upon roles, then we need to add another element: <strong>Authorization</strong>.
+</div>
+<div class="paragraph">
+<p>The more observant readers will note that we have already added two of the required elements when we imported the realm into Keycloak; namely, a user <code>rincewind</code> and a realm role <code>echomeister</code>.
+</div>
+<div class="paragraph">
+<p>If we navigate back to the <strong>EchoAPI</strong> API in the apiman UI, we can create a <strong>New Version</strong>. We&#8217;ll call it <strong><em>2.0</em></strong> and clone the previous configuration. Moving over to the <strong>Policies</strong> tab again, we <strong>Add Policy</strong> and select <strong>Authorization Policy</strong> from the drop-down.
+</div>
+<div class="paragraph">
+<p>We&#8217;re going to add two rules:
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<col style="width:33.3333%">
+<col style="width:33.3333%">
+<col style="width:33.3334%">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To access resource
+<th class="tableblock halign-left valign-top">using verb/action
+<th class="tableblock halign-left valign-top">the user must have role
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>/rincewind/.*</code>
+</div></div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>*</code>
+</div></div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>echomeister
+</div></div>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>/secret/.*</code>
+</div></div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>*</code>
+</div></div>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>overlord
+</div></div>
+</table>
+<div class="paragraph">
+<p>Our example user has the first role, but not the second. <strong>Add</strong> the policy and <strong>Publish</strong> the API again. Our endpoint will now reflect the changed version.
+</div>
+<div class="paragraph">
+<p>You will probably need to issue a new bearer token, which you can achieve by repeating the previous shell command.
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[msavy@mmbp tmp]$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmODAyZjFmMy1kN2JmLTQ0YjQtODA2N..." \
+ https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoAPI/2.0/rincewind/wizard
+{
+  "method" : "GET",
+  "resource" : "/apiman-echo/rincewind/wizard",
+  "uri" : "/apiman-echo/rincewind/wizard",
+  "headers" : {
+    "Authorization" : "Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmODAyZjFmMy1kN2JmLTQ0YjQtODA2N...",
+    "Host" : "127.0.0.1:8080",
+    "User-Agent" : "curl/7.37.1",
+    "Accept" : "*/*",
+    "Connection" : "keep-alive",
+    "Cache-Control" : "no-cache",
+    "Pragma" : "no-cache",
+    "X-AZP": "apiman"
+  },
+  "bodyLength" : null,
+  "bodySha1" : null,
+  "counter" : 19
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As our user <code>rincewind</code> has the role <code>echomeister</code>, his request went through successfully.
+</div>
+<div class="paragraph">
+<p>However, if we try to access a resource for which he doesn&#8217;t hold the appropriate role, we see an error message:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[msavy@mmbp tmp]$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmODAyZjFmMy1kN2JmLTQ0YjQtODA2N..." \
+ https://127.0.0.1:8443/apiman-gateway/Newcastle/EchoAPI/2.0/secret/not/allowed
+
+{
+    "type": "Authorization",
+    "failureCode": 10009,
+    "responseCode": 0,
+    "message": "The user is not authorized to make this request (a required role is missing).",
+    "headers": {}
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="in-conclusion"><a class="anchor" href="#in-conclusion"></a>In Conclusion&#8230;&#8203;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We protected an API with apiman using OAuth2; with examples of both simple authentication and role-based authorization. It should be easy to design your own role-based auth setups in combination with Keycloak.
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Ensure you use whatever the valid ISS value is for your Keycloak realm. One quick way to find this is by decoding an access_token looking at what Keycloak has set for the <code>iss</code> field
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. We&#8217;re going to use <code>jq</code> to select the <code>access_token</code> field in our JSON, so if you don&#8217;t have <code>jq</code> installed you can use your package manager to get it: OS X Brew <code>brew install jq</code>; On Fedora <code>sudo yum install jq</code>; On Debian <code>sudo apt-get install jq</code>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

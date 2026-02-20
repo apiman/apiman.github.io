@@ -1,0 +1,379 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - Apiman 1.2.1 Export and Import</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630803">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>Apiman 1.2.1 Export and Import | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Apiman 1.2.1 Export and Import">
+<meta name="author" content="Len DiMaggio">
+<meta property="og:locale" content="en_US">
+<meta name="description" content='The Question you Dread If you use a computer at home or at work, you&#8217;ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying: "Did you make a backup?" Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups. In this post, we&#8217;ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.'>
+<meta property="og:description" content='The Question you Dread If you use a computer at home or at work, you&#8217;ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying: "Did you make a backup?" Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups. In this post, we&#8217;ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.'>
+<link rel="canonical" href="https://www.apiman.io/blog/export-import/">
+<meta property="og:url" content="https://www.apiman.io/blog/export-import/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-01-27T11:30:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Apiman 1.2.1 Export and Import">
+<meta name="twitter:site" content="@apiman_io">
+<meta name="twitter:creator" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Len DiMaggio","url":"https://github.com/ldimaggi"},"dateModified":"2016-01-27T11:30:00+00:00","datePublished":"2016-01-27T11:30:00+00:00","description":"The Question you Dread If you use a computer at home or at work, you&#8217;ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying: &quot;Did you make a backup?&quot; Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups. In this post, we&#8217;ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.","headline":"Apiman 1.2.1 Export and Import","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.apiman.io/blog/export-import/"},"url":"https://www.apiman.io/blog/export-import/"}</script>
+<meta name="article:tag" content="apiman">
+<meta name="og:article:tag" content="apiman">
+<meta name="article:tag" content="introduction">
+<meta name="og:article:tag" content="introduction">
+<meta name="article:tag" content="overview">
+<meta name="og:article:tag" content="overview">
+<meta name="article:tag" content="backup">
+<meta name="og:article:tag" content="backup">
+<meta name="article:tag" content="export">
+<meta name="og:article:tag" content="export">
+<meta name="article:tag" content="import">
+<meta name="og:article:tag" content="import">
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-10 col-sm-12">
+<main class="mw-900">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline">Apiman 1.2.1 Export and Import</h1>
+<div class="text-secondary"><span itemprop="datePublished">27 January 2016</span> · <span itemprop="keywords">apiman, introduction, overview, backup, export, import</span></div>
+<div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+<img class="rounded-3 align-self-center" width="80rem" src="https://avatars.githubusercontent.com/u/642621" alt="Avatar for Len DiMaggio">
+<div class="d-flex flex-column ms-2 justify-content-evenly">
+<div class="text-secondary d-none d-sm-block">Quality engineering legend and prolific technical writer.</div>
+<div class="fs-5">
+<a class="link-dark" rel="author" href="https://github.com/ldimaggi" target="_blank" itemprop="author">Len DiMaggio</a>
+<span class="apiman-title-secondary" style="white-space:nowrap">
+<span class="d-none d-sm-inline">/</span>
+Red Hat
+<span class="d-none d-sm-inline">/</span>
+</span>
+<span style="white-space:nowrap">
+<span><a class="link-secondary ps-1" href="https://github.com/ldimaggi" target="_blank"><i class="bi bi-globe"></i></a></span>
+<span><a class="link-secondary ps-1" href="https://www.github.com/ldimaggi" target="_blank"><i class="bi bi-github"></i></a></span>
+<span><a class="link-secondary ps-1" href="mailto:ldimaggi@redhat.com" target="_blank"><i class="bi bi-envelope-at-fill"></i></a></span>
+</span>
+</div>
+</div>
+</div>
+<div class="blog-content" itemprop="articleBody">
+<div class="sect1">
+<h2 id="the-question-you-dread"><a class="anchor" href="#the-question-you-dread"></a>The Question you Dread</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you use a computer at home or at work, you&#8217;ll eventually find yourself in a situation where you lose some important data and, while you are trying to recover it, someone asks you a question that is simultaneously annoying and terrifying:
+</div>
+<div class="paragraph">
+<p><em>"Did you make a backup?"</em>
+</div>
+<div class="paragraph">
+<p>Happily, the 1.2 release of apiman includes a new feature that enables you to export and import your apiman data and provides you with an easy means to create apiman data backups. In this post, we&#8217;ll take a look at the new export/import feature, and how you can use it for a variety of tasks to protect your data, make your life easier, and enable you to avoid annoying and terrifying questions.
+</div>
+<div class="paragraph">
+<p>For test data, we&#8217;ll use the same types of data (organizations, users, plans, policies, APIs and client apps), that we created in the initial post in this series. ( <a href="https://www.apiman.io/blog/introduction/overview/2015/01/09/impatient-new-user-redux.html">The Impatient New User Guide to apiman</a> )
+</div>
+<div class="paragraph">
+<p>Note that since that post was written in January 2015, some of the names of the data elements have changed. You can either create the test data referred to in this post yourself, or you can import the data file attached to the post.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="exportimport-in-apiman-1-2-1"><a class="anchor" href="#exportimport-in-apiman-1-2-1"></a>Export/Import in apiman 1.2.1</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The new export/import feature in apiman 1.2.1 enables you to export your apiman configuration data to a file, which can later be imported into an apiman system. Note that this feature follows an all-or-nothing approach in that is does not support incremental backup and restore of selected apiman data.
+</div>
+<div class="paragraph">
+<p>The three main use cases that the export/import feature supports are:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Backing up all your apiman data
+<li>
+<p>Upgrading to a newer version of apiman
+<li>
+<p>Migrating apiman data from a Test environment to a Production environment
+</ul>
+</div>
+<div class="paragraph">
+<p>The export/import operations are only available to Administrative users. The export/import feature is accessed through the admin operations menu:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2016-01-26/export_import_1.png" alt="Image: Admin Choices">
+</div>
+</div>
+<div class="paragraph">
+<p>Once you select the <strong>Export/Import</strong> Data feature, this menu is displayed:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2016-01-26/export_import_2.png" alt="Image: Export/Import Menu">
+</div>
+</div>
+<div class="paragraph">
+<p>One thing to keep in mind is that while you are importing or exporting data, no changes to data should be made or else the export/import may encounter an error, or may result in incomplete results. To be safe, you should disable user access to the API Manager, both the Management UI and its REST interface, for the duration of the import or export operation.
+</div>
+<div class="paragraph">
+<p>We&#8217;ll look at exporting data first.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backing-up-apiman-data"><a class="anchor" href="#backing-up-apiman-data"></a>Backing up apiman Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make a backup of all your apiman data, simply select the "Export All" button. The apiman data will be written to a file and downloaded by your browser. Your browser&#8217;s settings will determine where the file is saved.
+</div>
+<div class="paragraph">
+<p>The apiman data is written to a file named: api-manager-export.json
+</div>
+<div class="paragraph">
+<p>As its name indicates, the apiman data is written in JSON form. This format provides us with several advantages. First of all, it&#8217;s the format in which apiman is able to import data. (We&#8217;ll perform an import later in this post.) Secondly, it&#8217;s a text file where the contents of the file are human-readable. The content of the file is ALL the apiman data, both the data elements that you have created and the data elements with which apiman is preconfigured.
+</div>
+<div class="paragraph">
+<p>Reading this file can greatly increase your understanding of the elements that are defined in apiman. Let&#8217;s take a look at the elements in the file:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Users</strong> - The preconfigured "admin" user is defined here, as are the new users we create.
+<li>
+<p><strong>Gateways</strong> - The preconfigured apiman Gateway is defined here.
+<li>
+<p><strong>Roles</strong> - The preconfigured, permission-based roles, and new roles that we create, are defined here. For example, the "OrganizationOwner" role is shown to have these permissions: [ "apiAdmin", "orgAdmin", "apiView", "orgEdit", "clientEdit", "clientAdmin", "planView", "orgView", "planAdmin", "clientView", "planEdit", "apiEdit" ]
+<li>
+<p><strong>Policy Definitions</strong> - Next, the preconfigured policies, and new policies that we create, are defined here. For example: the "RateLimitingPolicy" is described as "Enforces rate configurable request rate limits on an API. This ensures that consumers can&#8217;t overload an API with too many requests."
+<li>
+<p>The remainder of the file includes the elements that we create: <strong>Organizations, Plans, APIs, and Client Apps</strong>. For example, here is the definition of the "echo" API that we created:
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"Apis" : [ {
+  "ApiBean" : {
+  "id" : "echo",
+  "name" : "echo",
+  "description" : "The echo API",
+  "createdBy" : "serprov",
+  "createdOn" : 1453773184836,
+  "numPublished" : 1
+ },
+ "Versions" : [ {
+  "ApiVersionBean" : {
+    "id" : 10,
+    "status" : "Published",
+    "endpoint" : "http://localhost:8080/apiman-echo",
+    "endpointType" : "rest",
+    "endpointContentType" : "json",
+    "endpointProperties" : { },
+    "gateways" : [ {
+      "gatewayId" : "TheGateway"
+    } ],
+    "publicAPI" : false,
+    "plans" : [ {
+      "planId" : "gold",
+      "version" : "1.0"
+    } ],
+    "version" : "1.0",
+    "createdBy" : "serprov",
+    "createdOn" : 1453773184845,
+    "modifiedBy" : "serprov",
+    "modifiedOn" : 1453773312563,
+    "publishedOn" : 1453773327835
+  },
+  "Policies" : [ {
+    "id" : 14,
+    "type" : "Api",
+    "organizationId" : "ACMEServices",
+    "entityId" : "echo",
+    "entityVersion" : "1.0",
+    "name" : "BASIC Authentication Policy",
+    "configuration" : "{\"realm\":\"Echo\",\"requireBasicAuth\":false,\"staticIdentity\":{\"identities\":[{\"username\":\"user1\",\"password\":\"admin123!\"}]}}",
+    "createdBy" : "serprov",
+    "createdOn" : 1453773312553,
+     "modifiedBy" : "serprov",
+     "modifiedOn" : 1453773312553,
+     "definition" : {
+      "id" : "BASICAuthenticationPolicy",
+      "templates" : [ ],
+      "deleted" : false
+    },
+    "orderIndex" : 1
+  } ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One thing to remember is that the exported data file represents ALL apiman data. It&#8217;s not yet possible to perform incremental data backups in apiman. If you attempt to import the data from this file into the same apiman installation from which it was generated, you will see unique primary key violations as the import operation will attempt to create duplicate data elements.
+</div>
+<div class="paragraph">
+<p>OK, now that we have this exported data file, what can we do with it?
+</div>
+<div class="paragraph">
+<p>Well, obviously, if something goes wrong with your installation of apiman, you can start over with a clean installation, and instead of manually recreating your data, you can import the data. (Personal note from the author: I work in software test/QE. Part of our testing is always destructive in nature. As a result, we are always "messing up" test data. The export/import feature enables us to quickly reinstall apiman and recover a clean test environment.) To perform the import after a new installation of apiman, you simply select and upload the exported data file:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2016-01-26/export_import_3.png" alt="Image: Admin Choices">
+</div>
+</div>
+<div class="paragraph">
+<p>The Management UI displays the status of the import as the data is processed:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2016-01-26/export_import_4.png" alt="Image: Admin Choices">
+</div>
+</div>
+<div class="paragraph">
+<p>How else can we use the exported data file?
+</div>
+<div class="sect2">
+<h3 id="upgrading-to-a-newer-version-of-apiman"><a class="anchor" href="#upgrading-to-a-newer-version-of-apiman"></a>Upgrading to a Newer Version of apiman</h3>
+<div class="paragraph">
+<p>One of the best aspects of open source projects is the rapid rate at which new features are implemented and new versions are released. It&#8217;s exciting to watch projects quickly mature as features are added and bugs are fixed, and since the projects are open source, you can even make your own contributions. This has been the case with apiman over the past several months. New features have been added such as metrics and support for creating custom policies.
+</div>
+<div class="paragraph">
+<p>One downside to all the rapid change is that as new versions of apiman have been released, we&#8217;ve had to recreate all our apiman data as there was no way to migrate apiman data from one release to the next. The export/import feature now gives us a way to export apiman data from one apiman release and import it into a new apiman release.
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+<td class="content">
+In cases where the apiman data model changes between versions, apiman will introduce tools to transform the JSON export file from an older format to the latest. It has not yet been decided whether those tools will be built into the Import process, or released as a standalone utility.
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="migrating-apiman-data-from-a-test-environment-to-a-production-environment"><a class="anchor" href="#migrating-apiman-data-from-a-test-environment-to-a-production-environment"></a>Migrating apiman Data from a <em>Test</em> Environment to a <em>Production</em> Environment</h3>
+<div class="paragraph">
+<p>It&#8217;s a common practice for organizations to maintain two separate installations of software releases:
+</div>
+<div class="paragraph">
+<p>A test environment, where the goal is to experiment with new features. This is typically an internal environment that gives up some measure of stability in exchange for the ability to "try out" new features as they become available. The rate of change for this environment is high as any disruption in service in this environment do not affect customers.
+A production environment, where the goal is stability. This is the environment that supports your customers. Changes happen slowly in this environment and new features are only installed after they are carefully tested as disruptions in service in this environment do affect customers.
+</div>
+<div class="paragraph">
+<p>The new export/import feature in apiman 1.2 makes it possible for you to experiment with changes in your test environment, and, after the changes have been found to be stable, to easily migrate your test data from the test environment into your production environment. (You will, of course, create a backup of your production environment data before making any changes. ;-)
+</div>
+</div>
+<div class="sect2">
+<h3 id="migrating-apiman-from-one-storage-solution-to-another"><a class="anchor" href="#migrating-apiman-from-one-storage-solution-to-another"></a>Migrating apiman from one storage solution to another</h3>
+<div class="paragraph">
+<p>Finally, when apiman is first installed, you must make various decisions about its configuration. One of these decisions is where to store configuration and data. When you first install apiman, you might decide that MySQL is the right choice. However, somewhere along the line you might change your mind - perhaps you want to switch to postgresql, or even more drastically you might switch to Elasticsearch! The Export/Import process described here solves the problem of how to migrate all your data from one storage location to another.
+</div>
+<div class="paragraph">
+<p>The process is basically the same as upgrading to a newer version of apiman. But instead you will be upgrading to the same version of apiman, but with a different configuration. Because the exported data is in a neutral (JSON) format, we can easily import into the new configuration. This will result in all your data being migrated from MySQL to Elasticsearch (for example).
+</div>
+</div>
+<div class="sect2">
+<h3 id="in-conclusion"><a class="anchor" href="#in-conclusion"></a>In Conclusion</h3>
+<div class="paragraph">
+<p>The new export/import feature in apiman 1.2 provides an easy way to safeguard your apiman data and to make it possible to migrate your data between apiman releases and installations. In addition, since the exported data is human-readable, it is a great resource for better understanding apiman data structures. And, it&#8217;s easy to use too!
+</div>
+<div class="paragraph">
+<p>/post
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>

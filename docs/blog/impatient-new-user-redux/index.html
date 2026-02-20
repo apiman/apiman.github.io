@@ -1,0 +1,923 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="rgb(61, 94, 129)">
+<title>Apiman - An Impatient New User&#8217;s Introduction to API Management with JBoss apiman 1.0</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/manifest/icon-192x192.png">
+<link rel="icon" type="image/png" href="/assets/manifest/icon-192x192.png">
+<link rel="prefetch" href="/assets/styles/OpenSans.css" as="style">
+<link rel="stylesheet" href="/assets/styles/OpenSans.css">
+<link rel="stylesheet" href="/assets/styles/main.css?1771630802">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+<title>An Impatient New User’s Introduction to API Management with JBoss apiman 1.0 | Apiman</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="An Impatient New User’s Introduction to API Management with JBoss apiman 1.0">
+<meta name="author" content="Len DiMaggio">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Software application development models are evolutionary things. New technologies are always being created and require new approaches. It&#8217;s frequently the case today, that a service oriented architecture (SOA) model is used and that the end product is a software service that can be used by applications. The explosion in growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform onto which applications are deployed. These applications are often built from services provided from multiple sources. The applications often consume these services through their APIs. OK, that&#8217;s all interesting, but why does this matter?">
+<meta property="og:description" content="Software application development models are evolutionary things. New technologies are always being created and require new approaches. It&#8217;s frequently the case today, that a service oriented architecture (SOA) model is used and that the end product is a software service that can be used by applications. The explosion in growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform onto which applications are deployed. These applications are often built from services provided from multiple sources. The applications often consume these services through their APIs. OK, that&#8217;s all interesting, but why does this matter?">
+<link rel="canonical" href="https://www.apiman.io/blog/impatient-new-user-redux/">
+<meta property="og:url" content="https://www.apiman.io/blog/impatient-new-user-redux/">
+<meta property="og:site_name" content="Apiman">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-01-09T09:15:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="An Impatient New User’s Introduction to API Management with JBoss apiman 1.0">
+<meta name="twitter:site" content="@apiman_io">
+<meta name="twitter:creator" content="@apiman_io">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Len DiMaggio","url":"https://github.com/ldimaggi"},"dateModified":"2015-01-09T09:15:00+00:00","datePublished":"2015-01-09T09:15:00+00:00","description":"Software application development models are evolutionary things. New technologies are always being created and require new approaches. It&#8217;s frequently the case today, that a service oriented architecture (SOA) model is used and that the end product is a software service that can be used by applications. The explosion in growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform onto which applications are deployed. These applications are often built from services provided from multiple sources. The applications often consume these services through their APIs. OK, that&#8217;s all interesting, but why does this matter?","headline":"An Impatient New User’s Introduction to API Management with JBoss apiman 1.0","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.apiman.io/blog/impatient-new-user-redux/"},"url":"https://www.apiman.io/blog/impatient-new-user-redux/"}</script>
+<meta name="article:tag" content="introduction">
+<meta name="og:article:tag" content="introduction">
+<meta name="article:tag" content="overview">
+<meta name="og:article:tag" content="overview">
+<meta name="google-site-verification" content="_ILllw-J_4eyz0StWadyFz0021teANtSNJsDeN9waPE">
+</head>
+<body onload=hljs.highlightAll()>
+<div class="content">
+<div class="container-fluid" id="apiman-navbar">
+<nav class="mx-auto d-flex flex-wrap py-3 navbar navbar-dark navbar-expand-lg justify-content-between mw-1200">
+<a href="/" title="Return To Home" class="d-flex align-items-center text-decoration-none">
+<svg id="apiman-logo-mono" height="40" viewBox="0 0 3007 607" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><title>Apiman Logo</title><path d="M950.593 49.784C912.432 18.245 856.743 2.48 783.472 2.48H590.53V606.5H718.611V391.678H773.556c74.918.0 132.695-17.211 173.312-51.657C987.505 305.6 1007.82 255.881 1007.82 190.874 1007.82 128.352 988.74 81.324 950.593 49.784zM849.172 263.381c-19.561 15.574-49.032 23.331-88.408 23.331H718.611V107.421h58.254C811.833 107.421 837.519 114.58 853.911 128.894c16.393 14.329 24.586 36.5 24.586 66.523C878.497 225.169 868.722 247.828 849.172 263.381z" style="fill:#fff;fill-rule:nonzero"/><rect x="1067.88" y="2.48" width="128.086" height="604.02" style="fill:#fff;fill-rule:nonzero"/><path d="M2891.35 288.379C2891.35 320.877 2894.64 454.873 2894.64 454.873L2632.3 2.485H2470.76V606.5H2585.2V322.263C2585.2 287.827 2581.08 149.569 2581.08 149.569L2843.82 606.5h162.79V2.48H2891.35V288.379z" style="fill:#fff;fill-rule:nonzero"/><path d="M2197.23.0l-272.6 522.385V2.48H1750.3L1598.67 464.367H1596.19L1453.25 2.48H1278.89V606.5h114.46V325.557C1393.35 293.339 1389.2 132.62 1389.2 132.62L1534.63 606.5h117.34l155.75-473.047S1806.28 256.287 1805.86 273.91C1805.45 291.552 1805.24 307.116 1805.24 320.611V606.5h220.51l71.04-143.78h175.83L2272.57 606.5h122.71V0H2197.23zM2272.63 355.314H2148.44s110.6-230.938 122.7-263.999L2272.62 91.114v264.2H2272.63z" style="fill:#fff;fill-rule:nonzero"/><g><path d="M232.295 605.909H231.954C235.79 599.873 243 588.017 243 588.017S239.187 511.071 251.92 486.886C258.215 474.935 278.992 465.334 286.143 453.883c21.335-34.166 55.394-100.06 55.849-135.831C342.271 296.622 315.216 236.601 315.216 236.601l-30.12 53.562S293.18 299.686 292.899 303.55C291.517 322.433 275.65 366.584 275.65 366.584L290.239 372.824 296.233 391.7S290.319 392.348 289.529 393.93C288.346 396.285 292.848 403.94 292.848 403.94s-24.53 12.222-31.302 7.839C253.397 406.503 255.467 388.988 252.699 370.732 248.078 340.298 242.052 305.47 242.194 304.662 242.94 300.475 250.919 290.124 250.919 290.124V277.89S258.861 162.927 272.622 156.259C280.207 152.583 323.184 153.171 367.242 159.971 367.242 159.971 370.882 153.309 370.067 151.138 368.683 147.455 356.599 143.007 356.599 143.007S350.341 109.116 365.717 95.974c14.541-12.433 47.494-1.095 48.087 9.67C415.299 132.837 415.77 164.829 425.529 173.442c16.408 14.483 36.629 17.223 44.936 27.432 18.545 22.797 17.006 75.628 15.843 116.481C486.199 321.226 494.259 326.459 494.838 330.288 496.722 342.747 495.393 369.033 491.632 390.896 488.61 408.472 484.019 423.188 478.267 425.563 471.651 428.295 450.493 418.587 450.493 418.587S454.521 411.782 453.47 409.681C452.771 408.279 447.523 407.696 447.523 407.696L451.621 391.815 462.415 385.867l-8.178-38.835c-11.407 55.937-20.948 79.243-23.681 106.342C430.101 457.913 431.879 467.104 431.255 471.638c-3.721 27.091-26.722 110.905-26.724 110.902L453.427 605.908H452.482L453.429 606.022H530.714v-604H315.762L0 606.022H231.956L232.295 605.909zm37.855.0L270.453 606.022h97.835L368.772 605.908H368.286C369.049 597.795 381.047 581.375 381.047 581.375S371.94 503.682 373.669 495.93C375.749 486.607 390.409 472.115 392.798 462.875 396.744 447.618 391.63 399.847 391.63 399.847s-47.929 55.921-65.256 73.299C323.367 476.164 316.245 481.132 313.67 484.525c-18.087 23.74-51.163 99.044-51.163 99.044L270.451 605.909H270.15z" style="fill:#fff;fill-rule:nonzero"/><path d="M389.514 302.191S397.258 254.837 397.748 238.79C398.112 226.915 393.05 191.501 393.05 191.501L384.498 173.894S391.428 173.076 396.75 173.894C401.69 174.654 406.131 177.412 406.131 177.412L396.071 190.997s13.886 36.203 16.649 48.792C416.356 256.348 421.715 307.227 421.715 307.227S416.894 314.501 415.065 316.758C412.451 319.981 403.705 328.862 403.705 328.862S399.126 317.753 397.232 314.23C395.539 311.08 389.514 302.191 389.514 302.191z" style="fill:#fff;fill-rule:nonzero"/></g></svg>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse flex-grow-0" id="navbarToggler">
+<ul class="nav nav-pills flex-column flex-lg-row">
+<li class="nav-item">
+<a href="/download.html" class="nav-link" aria-current="page">Download</a>
+<li class="nav-item">
+<a href="/features.html" class="nav-link" aria-current="page">Features</a>
+<li class="nav-item">
+<a href="/blog" class="nav-link" aria-current="page">Blog</a>
+<li class="nav-item">
+<a href="https://www.apiman.io/apiman-docs/" class="nav-link" aria-current="page">Documentation</a>
+<li class="nav-item">
+<a href="/community.html" class="nav-link" aria-current="page">Community</a>
+<li class="nav-item">
+<a href="/support.html" class="nav-link" aria-current="page">Support</a>
+</ul>
+</div>
+</nav>
+</div>
+<div class="container-fluid">
+<div class="mw-1200 mx-auto my-5 row">
+<aside class="col-lg-2 d-lg-block d-none">
+<div class="list-group justify-content-center sticky-top ps-0" id="generic-sidebar">
+<a href="https://www.github.com/apiman/apiman/issues" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-bug"></i> Found an Issue?
+</a>
+<a href="/changelog.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-book"></i> Changelog
+</a>
+<a href="https://www.github.com/apiman/apiman" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-github"></i> Source Code
+</a>
+<a href="https://www.github.com/apiman/apiman-plugins" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-plugin"></i> Apiman Plugins
+</a>
+<a href="https://www.github.com/apiman/apiman-docker" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-docker"></i> Docker Images
+</a>
+<a href="https://github.com/apiman/apiman/releases" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-clock"></i> Older Releases
+</a>
+<a href="https://github.com/orgs/apiman/discussions" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-chat-left-text"></i> Discussions
+</a>
+<a href="https://www.twitter.com/apiman_io" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-twitter"></i> Twitter
+</a>
+<a href="https://www.apiman.io/apiman-docs/migration-guide/latest/migrations.html" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+<i class="bi bi-paper-plane"></i> Migration Guide
+</a>
+</div>
+</aside>
+<div class="col-lg-10 col-sm-12">
+<main class="mw-900">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 itemprop="headline">An Impatient New User&#8217;s Introduction to API Management with JBoss apiman 1.0</h1>
+<div class="text-secondary"><span itemprop="datePublished">09 January 2015</span> · <span itemprop="keywords">introduction, overview</span></div>
+<div class="d-flex py-2 mb-4 mt-3 border-top border-bottom mb-2" id="author-holder">
+<img class="rounded-3 align-self-center" width="80rem" src="https://avatars.githubusercontent.com/u/642621" alt="Avatar for Len DiMaggio">
+<div class="d-flex flex-column ms-2 justify-content-evenly">
+<div class="text-secondary d-none d-sm-block">Quality engineering legend and prolific technical writer.</div>
+<div class="fs-5">
+<a class="link-dark" rel="author" href="https://github.com/ldimaggi" target="_blank" itemprop="author">Len DiMaggio</a>
+<span class="apiman-title-secondary" style="white-space:nowrap">
+<span class="d-none d-sm-inline">/</span>
+Red Hat
+<span class="d-none d-sm-inline">/</span>
+</span>
+<span style="white-space:nowrap">
+<span><a class="link-secondary ps-1" href="https://github.com/ldimaggi" target="_blank"><i class="bi bi-globe"></i></a></span>
+<span><a class="link-secondary ps-1" href="https://www.github.com/ldimaggi" target="_blank"><i class="bi bi-github"></i></a></span>
+<span><a class="link-secondary ps-1" href="mailto:ldimaggi@redhat.com" target="_blank"><i class="bi bi-envelope-at-fill"></i></a></span>
+</span>
+</div>
+</div>
+</div>
+<div class="blog-content" itemprop="articleBody">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Software application development models are evolutionary things. New technologies are always being created
+and require new approaches. It&#8217;s frequently the case today, that a service oriented architecture (SOA) model
+is used and that the end product is a software service that can be used by applications. The explosion in
+growth of mobile devices has only accelerated this trend. Every new mobile phone sold is another platform
+onto which applications are deployed. These applications are often built from services provided from multiple
+sources. The applications often consume these services through their APIs.
+</div>
+<div class="paragraph">
+<p>OK, that&#8217;s all interesting, but why does this matter?
+</div>
+<div class="paragraph">
+<p>Here&#8217;s why:
+</div>
+<div class="paragraph">
+<p>If you are providing an API, you&#8217;d probably like to receive payment when it&#8217;s used by an client app. For
+example, let&#8217;s say that you&#8217;ve spent months creating a new API that provides incredibly accurate and
+timely driving directions. You can imagine every mobile phone GPS app making use of your API someday.
+That is, however, assuming that you can find a way to enforce a contract on consumers of the API and provide
+them with a service level agreement (SLA). Also, you have to find a way to actually track consumers' use of
+the API so that you can actually enforce that SLA. Finally, you have to have the means to update an API
+and publish new versions of APIs.
+</div>
+<div class="paragraph">
+<p>Likewise, if you are consuming an API, for example, if you want to build the killer app that will use that
+cool new mapping API, you have to have the means to find the API, identify the API&#8217;s endpoint, and
+register your usage of the API with its provider.
+</div>
+<div class="paragraph">
+<p>The approach that is followed to fulfill both API providers' and consumers' needs is&#8230;&#8203;API Management.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jboss-apiman-1-0"><a class="anchor" href="#jboss-apiman-1-0"></a>JBoss apiman 1.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>apiman is JBoss' open source API Management system. apiman fulfills API providers' and consumers'
+needs by implementing:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>API Manager</em> - The API Manager provides an easy way for API providers to use a web UI to define API contracts for their APIs, apply these contracts across multiple APIs, and control role-based user access and API versioning. These contracts can govern access to APIs and limits on the rate at which consumers can access APIs. The same UI enables API consumers to easily locate and access APIs.
+<li>
+<p><em>API Gateway</em> - The gateway applies the API contract policies of API Management by enforcing at runtime the rules defined in the contracts and tracking the API consumers' use of the APIs for every request made to the APIs. The way that the API Gateway works is that the consumer of the API accesses the API through a URL that designates the API Gateway as a proxy for the API. If the policies defined to govern access to the API (see a later section in this post for a discussion of apiman polices), the API Gateway then proxies requests to the API&#8217;s backend API implementation.
+</ul>
+</div>
+<div class="paragraph">
+<p>The best way to understand API Management with apiman is to see it in action. In this post, we&#8217;ll install
+apiman 1.0, configure an API with contracts through the API Manager, and watch the API Gateway control access
+to the API and track its use.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We don&#8217;t need very much to run apiman out of the box. Before we install apiman, you&#8217;ll have to have Java (version 1.7 or newer) installed on your system. You&#8217;ll also need to git and maven installed to be able to build the example API that we&#8217;ll use.
+</div>
+<div class="paragraph">
+<p>A note on software versions: In this post we&#8217;ll use the latest available version of apiman as of December 2014. As if this writing, version 1.0 of apiman was just released (December 2014). Depending on the versions of software that you use, some screen displays may look a bit different.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-apiman"><a class="anchor" href="#getting-apiman"></a>Getting apiman</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like all JBoss software, installation of apiman is simple. First, you will need a client app server on which to install and run apiman. We&#8217;ll use the open source JBoss WildFly server release 8.2 <a href="https://www.wildfly.org/" class="bare">https://www.wildfly.org/</a>. To make things easier, apiman includes a pointer to JBoss WildFly on its download page here: <a href="https://www.apiman.io/latest/download.html" class="bare">https://www.apiman.io/latest/download.html</a>
+</div>
+<div class="paragraph">
+<p>To install WildFly, simply download <a href="https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip" class="bare">https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip</a> and unzip the file into the directory in which you want to run the sever.
+</div>
+<div class="paragraph">
+<p>Then, download the apiman 1.0 WildFly overlay zip file inside the directory that was created when you un-zipped the WildFly download. The apiman 1.0 WildFly overlay zip file is available here: <a href="https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip" class="bare">https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip</a>
+</div>
+<div class="paragraph">
+<p>The commands that you will execute will look something like this:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir apiman
+cd apiman
+unzip wildfly-8.2.0.Final.zip
+unzip -o apiman-distro-wildfly8-1.0.0.Final-overlay.zip -d wildfly-8.2.0.Final</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, to start the server, execute these commands:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-8.2.0.Final
+./bin/standalone.sh -c standalone-apiman.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The server will write logging messages to the screen. When you see some messages that look like this, you&#8217;ll know that the server is up and running with apiman installed:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">13:57:03,229 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 29) JBAS018559: Deployed "apiman-ds.xml" (runtime-name : "apiman-ds.xml")
+13:57:03,261 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+13:57:03,262 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.2.0.Final "Tweek" started in 5518ms - Started 754 of 858 services (171 services are lazy, passive or on-demand)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If this were a production server, the first thing that we&#8217;d do is to change the OOTB default admin username and/or password. apiman is configured by default to use JBoss KeyCloak <a href="https://keycloak.jboss.org/" class="bare">https://keycloak.jboss.org/</a> for password security. Also, the default database used by apiman to store contract and API information is the H2 database. For a production server, you&#8217;d want to reconfigure this to use a production database. Note: apiman includes DDLs for both MySQL and PostgreSQL.
+</div>
+<div class="paragraph">
+<p>For the purposes of our demo, we&#8217;ll keep things simple and use the default configuration.
+</div>
+<div class="paragraph">
+<p>To access apiman&#8217;s API Manager UI, go to: <a href="http://localhost:8080/apiman-manager" class="bare">http://localhost:8080/apiman-manager</a>, and log in. The admin user account that we&#8217;ll use has a username of "admin" and a password of "admin123!"
+</div>
+<div class="paragraph">
+<p>You should see a screen that looks like this:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/apiman_1.png" alt="Dashboard">
+</div>
+</div>
+<div class="paragraph">
+<p>Before we start using apiman, let&#8217;s take a look at how apiman defines how APIs and the metadata on which they depend are organized.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="policies-plans-and-organizations"><a class="anchor" href="#policies-plans-and-organizations"></a>Policies, Plans, and Organizations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>apiman uses a hierarchical data model that consists of these elements: Polices, Plans, and Organizations:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/apiman_2.jpg" alt="Diagram_1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="policies"><a class="anchor" href="#policies"></a>Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Policies are at the lowest level of the data model, and they are the basis on which the higher level elements of the data model are built. A policy defines an action that is performed by the API Gateway at runtime. Everything defined in the API Manager UI is there to enable apiman to apply policies to requests made to APIs.
+</div>
+<div class="paragraph">
+<p>When a request to an API is made, apiman creates a chain of policies to be applied to that request. apiman policy chains define a specific sequence order in which the policies defined in the API Manager UI are applied to API requests.
+</div>
+<div class="paragraph">
+<p>The sequence in which incoming API requests have policies applied is:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First, at the client app level. In apiman, a client app is contracted to use one or more APIs.
+<li>
+<p>Second, at the plan level. In apiman, policies are organized into groups called plans. (We&#8217;ll discuss plans in the next section of this post.)
+<li>
+<p>Third, at the individual API level.
+</ul>
+</div>
+<div class="paragraph">
+<p>What happens is that when an API request is received by the API Gateway at runtime, the policy chain is applied in the order of client app, plan, and API. If no failures, such as a rate counter being exceeded, occur, the API Gateway sends the request to the API. As we mentioned earlier in this post, the API Gateway acts as a proxy for the API:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/apiman_3-redux.png" alt="Diagram_2">
+</div>
+</div>
+<div class="paragraph">
+<p>Next, when the API Gateway receives a response from the API&#8217;s backend implementation, the policy chain is applied again, but this time in the reverse order. The API policies are applied first, then the plan policies, and finally the client app policies. If no failures occur, then the API response is sent back to the consumer of the API.
+</div>
+<div class="paragraph">
+<p>By applying the policy chain twice, both for the originating incoming request and the resulting response, apiman allows policy implementations two opportunities to provide management functionality during the lifecycle. The following diagram illustrates this two-way approach to applying policies:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/apiman_4-redux.png" alt="Diagram_3">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plans"><a class="anchor" href="#plans"></a>Plans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In apiman, a "plan" is a set policies that together define the level of service that apiman provides for API. Plans enable apiman users to define multiple different levels of service for their APIs, based on policies. It&#8217;s common to define different plans for the same API, where the differences depend on configuration options. For example, a group or company may offer both a "gold" and "silver" plan for the same API. The gold plan may be more expensive than the silver plan, but it may offer a higher level of API requests in a given (and configurable) time period.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="organizations"><a class="anchor" href="#organizations"></a>Organizations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The "organization" is at top level of the apiman data model.
+</div>
+<div class="paragraph">
+<p>An organization contains and manages all elements used by a company, university, group inside a company, etc. for API management with apiman. All plans, APIs, client apps, and users for a group are defined in an apiman organization. In this way, an organization acts as a container of other elements. Users must be associated with an organization before they can use apiman to create or consume APIs. apiman implements role-based access controls for users. The role assigned to a user defines the actions that a user can perform and the elements that a user can manage.
+</div>
+<div class="paragraph">
+<p>Before we can define an API, the policies that govern how it is accessed, the users who will be able to access, and the organizations that will create and consume it, we need an API and a client app to access that API. Luckily, creating the API and deploying it to our WildFly server, and accessing it through a client app are easy.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-and-building-and-deploying-the-example-api"><a class="anchor" href="#getting-and-building-and-deploying-the-example-api"></a>Getting and Building and Deploying the Example API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The source code for the example API is contained in a git repo (<a href="https://git-scm.com" class="bare">https://git-scm.com</a>) hosted at github (<a href="https://github.com/apiman" class="bare">https://github.com/apiman</a>). To download a copy of the example API, navigate to the directory in which you want to build the API and execute this git command:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> git clone git@github.com:apiman/apiman-quickstarts.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the source code is downloading, you&#8217;ll see output that looks like this:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> git clone git@github.com:apiman/apiman-quickstarts.git
+ Initialized empty Git repository in /tmp/tmp/apiman-quickstarts/.git/
+ remote: Counting objects: 104, done.
+ remote: Total 104 (delta 0), reused 0 (delta 0)
+ Receiving objects: 100% (104/104), 18.16 KiB, done.
+ Resolving deltas: 100% (40/40), done.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And, after the download is complete, you&#8217;ll see a populated directory tree that looks like this:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">└── apiman-quickstarts
+  ├── echo-api
+  │  ├── pom.xml
+  │  ├── README.md
+  │  └── src
+  │    └── main
+  │    ├── java
+  │    │  └── io
+  │    │    └── apiman
+  │    │    └── quickstarts
+  │    │    └── echo
+  │    │    ├── EchoResponse.java
+  │    │    └── EchoServlet.java
+  │    └── webapp
+  │    └── WEB-INF
+  │    ├── jboss-web.xml
+  │    └── web.xml
+  ├── LICENSE
+  ├── pom.xml
+  ├── README.md
+  ├── release.sh
+  └── src
+   └── main
+   └── assembly
+   └── dist.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we mentioned earlier in the post, the example API is very simple. The only action that the API performs is to echo back in responses the metadata in the REST (<a href="https://en.wikipedia.org/wiki/Representational_state_transfer" class="bare">https://en.wikipedia.org/wiki/Representational_state_transfer</a>) requests that it receives.
+</div>
+<div class="paragraph">
+<p>Maven is used to build the API. To build the API into a deployable .war file, navigate to the directory into which you downloaded the API example:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-quickstarts/echo-api</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then execute this maven command:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the API is being built into a .war file, you&#8217;ll see output that looks like this:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] Scanning for projects...
+[INFO]
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]
+[INFO] ------------------------------------------------
+[INFO] Building apiman-quickstarts-echo-api 1.0.1-SNAPSHOT
+[INFO] ------------------------------------------------
+[INFO]
+[INFO] -- maven-resources-plugin:2.6:resources (default-resources) @ apiman-quickstarts-echo-api --
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /jboss/local/redhat_git/apiman-quickstarts/echo-api/src/main/resources
+[INFO]
+[INFO] -- maven-compiler-plugin:2.5.1:compile (default-compile) @ apiman-quickstarts-echo-api --
+[INFO] Compiling 2 source files to /jboss/local/redhat_git/apiman-quickstarts/echo-api/target/classes
+[INFO]
+[INFO] -- maven-resources-plugin:2.6:testResources (default-testResources) @ apiman-quickstarts-echo-api --
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /jboss/local/redhat_git/apiman-quickstarts/echo-api/src/test/resources
+[INFO]
+[INFO] -- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ apiman-quickstarts-echo-api --
+[INFO] No sources to compile
+[INFO]
+[INFO] -- maven-surefire-plugin:2.12.4:test (default-test) @ apiman-quickstarts-echo-api --
+[INFO] No tests to run.
+[INFO]
+[INFO] -- maven-war-plugin:2.2:war (default-war) @ apiman-quickstarts-echo-api --
+[INFO] Packaging webapp
+[INFO] Assembling webapp in [/jboss/local/redhat_git/apiman-quickstarts/echo-api/target/apiman-quickstarts-echo-api-1.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/jboss/local/redhat_git/apiman-quickstarts/echo-api/src/main/webapp]
+[INFO] Webapp assembled in [23 msecs]
+[INFO] Building war: /jboss/local/redhat_git/apiman-quickstarts/echo-api/target/apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------
+[INFO] Total time: 1.184 s
+[INFO] Finished at: 2014-12-26T16:11:19-05:00
+[INFO] Final Memory: 14M/295M
+[INFO] ------------------------------------------------</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you look closely, near the end of the output, you&#8217;ll see the location of the .war file:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">/jboss/local/redhat_git/apiman-quickstarts/echo-api/target/apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To deploy the API, we can copy the .war file to our WildFly server&#8217;s "deployments" directory. After you copy the API&#8217;s .war file to the deployments directory, you&#8217;ll see output like this generated by the WildFly server:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">16:54:44,313 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015876: Starting deployment of "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name: "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")
+16:54:44,397 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /apiman-echo
+16:54:44,455 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war" (runtime-name : "apiman-quickstarts-echo-api-1.0.1-SNAPSHOT.war")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make special note of this line of output:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">16:54:44,397 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-16) JBAS017534: Registered web context: /apiman-echo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This output indicates that the URL of the deployed example API is:
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[a href="http://localhost:8080/apiman-echo" style="text-decoration: none;"]https://localhost:8080/apiman-echo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember, however, that this is the URL of the deployed example API if we access it directly. We&#8217;ll refer to this as the "unmanaged API" as we are able to connect to the API directly, without going through the API Gateway. The URL to access the API through the API Gateway ("the managed API") at runtime will be different.
+</div>
+<div class="paragraph">
+<p>Now that our example API is installed, it&#8217;s time to install and configure our client app to access the server.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accessing-the-example-api-through-a-client-app"><a class="anchor" href="#accessing-the-example-api-through-a-client-app"></a>Accessing the Example API Through a Client App</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are a lot of options available when it comes to what we can use for a client app to access our API. We&#8217;ll keep the client app simple so that we can keep our focus on apiman and simply install a REST client into the FireFox browser. The REST Client FireFox add-on (<a href="https://restclient.net/" class="bare">https://restclient.net/</a>) is available here: <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3" class="bare">https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3</a>
+</div>
+<div class="paragraph">
+<p>After you install the client into FireFox, you can access the deployed API using the URL that we just defined. If you execute a GET command, you&#8217;ll see output that looks like this:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-4.png" alt="Screenshot 4">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that our example API is built, deployed and running, it&#8217;s time to create the organizations for the API provider and the API consumer. The differences between the requirements of the two organizations will be evident in their apiman configuration properties.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-users-for-the-api-provider-and-consumer"><a class="anchor" href="#creating-users-for-the-api-provider-and-consumer"></a>Creating Users for the API Provider and Consumer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before we create the organizations, we have to create a user for each organization. We&#8217;ll start by creating the API provider user. To do this, logout from the admin account in the API Manager UI. The login dialog will then be displayed.
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-5.png" alt="Screenshot 5">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the "New user" Option and register the API provider user:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-6.png" alt="Screenshot 6">
+</div>
+</div>
+<div class="paragraph">
+<p>Then, logout and repeat the process to register a new client app developer user too:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-7.png" alt="Screenshot 7">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that the new users are registered we can create the organizations.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-the-api-producer-organization"><a class="anchor" href="#creating-the-api-producer-organization"></a>Creating the API Producer Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To create the API producer organization, log back into the API Manager UI as the servprov user and select "Create a new Organization":
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/apiman_2.png" alt="dash-2">
+</div>
+</div>
+<div class="paragraph">
+<p>Select a name and description for the organization, and press "Create Organization":
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-15.png" alt="Screenshot 15">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here&#8217;s our organization:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-16.png" alt="Screenshot 16">
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in a production environment, users would request membership in an organization. The approval process for accepting new members into an organization would follow the organization&#8217;s workflow, but this would be handled outside of the API Manager. For the purposes of our demonstration, we&#8217;ll keep things simple.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-the-api-its-policies-and-plans"><a class="anchor" href="#configuring-the-api-its-policies-and-plans"></a>Configuring the API, its Policies, and Plans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To configure the API, we&#8217;ll first create a plan to contain the policies that we want applied by the API Gateway at runtime when requests to the API are made. To create a new plan, select the "Plans" tab. We&#8217;ll create a "gold" plan:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-17.png" alt="Screenshot 17">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the plan is created, we will add policies to it:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-18.png" alt="Screenshot 18">
+</div>
+</div>
+<div class="paragraph">
+<p>apiman provides several OOTB policies. Since we want to be able to demonstrate a policy being applied, we&#8217;ll select a Rate Limiting Policy, and set its limit to a very low level. If our API receives more than 10 requests in a day, the policy should block all subsequent requests. So much for a "gold" level of service!
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-19.png" alt="Screenshot 19">
+</div>
+</div>
+<div class="paragraph">
+<p>After we create the policy and add it to the plan, we have to lock the plan:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-21.png" alt="Screenshot 21">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here is the finished, and locked plan:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-22.png" alt="Screenshot 22">
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, additional plans can be defined for the API. We&#8217;ll also create a "silver" plan, that will offer a lower level of service (i.e., a request rate limit lower than 10 per day) than the gold plan. Since the process to create this silver plan is identical to that of the gold plan, we&#8217;ll skip the screenshots.
+</div>
+<div class="paragraph">
+<p>Now that the two plans are complete and locked, it&#8217;s time to define the API.
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-23.png" alt="Screenshot 23">
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll give the API an appropriate name, so that providers and consumers alike will be able to run a query in the API Manager to find it.
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-24.png" alt="Screenshot 24">
+</div>
+</div>
+<div class="paragraph">
+<p>After the API is defined, we have to define its implementation. In the context of the API Manager, the API Endpoint is the API&#8217;s direct URL. Remember that the API Gateway will act as a proxy for the API, so it must know the API&#8217;s actual URL. In the case of our example API, the URL is: <a href="http://localhost:8080/apiman-echo" class="bare">http://localhost:8080/apiman-echo</a>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-25.png" alt="Screenshot 25">
+</div>
+</div>
+<div class="paragraph">
+<p>The plans tab shows which plans are available to be applied to the API:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-26.png" alt="Screenshot 26">
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s make our API more secure by adding an authentication policy that will require users to login before they can access the API. Select the Policies tab, and then define a simple authentication policy. Remember the username and password that you define here as we&#8217;ll need them later on when send requests to the API.
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-27.png" alt="Screenshot 27">
+</div>
+</div>
+<div class="paragraph">
+<p>After the authentication policy is added, we can publish the API to the API Gateway:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-28.png" alt="Screenshot 28">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here it is, the published API:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-29.png" alt="Screenshot 29">
+</div>
+</div>
+<div class="paragraph">
+<p>OK, that finishes the definition of the API provider organization and the publication of the API.
+</div>
+<div class="paragraph">
+<p>Next, we&#8217;ll switch over to the API consumer side and create the API consumer organization and register a client app to connect to the managed API through the proxy of the API Gateway.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-api-consumer-organization"><a class="anchor" href="#the-api-consumer-organization"></a>The API Consumer Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;ll repeat the process that we used to create the client app development organization. Log in to the API Manager UI as the "appdev" user and create the organization:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-30.png" alt="Screenshot 30">
+</div>
+</div>
+<div class="paragraph">
+<p>Unlike the process we used when we created the elements used by the API provider, the first step that we&#8217;ll take is to create a new client app and then search for the API to be used by the client app:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-31.png" alt="Screenshot 31">
+</div>
+</div>
+<div class="paragraph">
+<p>Searching for the API is easy, as we were careful to set the API name to something memorable:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-32.png" alt="Screenshot 32">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the API name, and then specify the plan to be used. We&#8217;ll splurge and use the gold plan:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-33.png" alt="Screenshot 33">
+</div>
+</div>
+<div class="paragraph">
+<p>Next, select "create contract" for the plan:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-34.png" alt="Screenshot 34">
+</div>
+</div>
+<div class="paragraph">
+<p>Then, agree to the contract terms (which seem to be written in a strange form of Latin in the apiman 1.0 release):
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-35.png" alt="Screenshot 35">
+</div>
+</div>
+<div class="paragraph">
+<p>The last step is to register the client app with the API Gateway so that the gateway can act as a proxy for the API:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-36.png" alt="Screenshot 36">
+</div>
+</div>
+<div class="paragraph">
+<p>Congratulations! All the steps necessary to provide and consume the API are complete!
+</div>
+<div class="paragraph">
+<p>There&#8217;s just one more step that we have to take in order for client apps to be able to access the API through the API Gateway.
+</div>
+<div class="paragraph">
+<p>Remember the URL that we used to access the unmanaged API directly? Well, forget it. In order to access the managed API through the API Gateway acting as a proxy for other API we have to obtain the managed API&#8217;s URL. In the API Manager UI, head on over to the "APIs" tab for the client app, click on the '>' character to the left of the API name. This will expose the API Key and the API&#8217;s HTTP endpoint in the API Gateway:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-37.png" alt="Screenshot 37">
+</div>
+</div>
+<div class="paragraph">
+<p>In order to be able to access the API through the API Gateway, we have to provide the API Key with each request. The API Key can be provided either through an HTTP Header (X-API-Key) or a URL query parameter. Luckily, the API Manager UI does the latter for us. Select the icon to the right of the HTTP Endpoint and this dialog is displayed:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-38.png" alt="Screenshot 38">
+</div>
+</div>
+<div class="paragraph">
+<p>Copy the URL into the clipboard. We&#8217;ll need to enter this into the client app in a bit. The combined API Key and HTTP endpoint should look something like this:
+</div>
+<div class="paragraph">
+<p><a href="http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d" class="bare">http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accessing-the-managed-api-through-the-apiman-api-gateway-watching-the-policies-at-runtime"><a class="anchor" href="#accessing-the-managed-api-through-the-apiman-api-gateway-watching-the-policies-at-runtime"></a>Accessing the Managed API Through the apiman API Gateway, Watching the Policies at Runtime</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks for hanging in there! The set up is done. Now, we can fire up the client app and watch the policies in action as they are applied at runtime by the API Gateway, for example:
+</div>
+<div class="paragraph">
+<p>Open the client app, and enter the URL for the managed API <a href="http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d" class="bare">http://localhost:8080/apiman-gateway/ACMEServices/echo/1.0?apikey=c374c202-d4b3-4442-b9e4-c6654f406e3d</a>
+</div>
+<div class="paragraph">
+<p>What happens first is that the authentication policy is applied and a login dialog is then displayed:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-41.png" alt="Screenshot 41">
+</div>
+</div>
+<div class="paragraph">
+<p>Enter the username and password (user1/password) that we defined when we created the authentication policy to access the API. The fact that you are seeing this dialog confirms that you are accessing the managed API and are not accessing the API directly.
+</div>
+<div class="paragraph">
+<p>When you send a GET request to the API, you should see a successful response:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-40.png" alt="Screenshot 40">
+</div>
+</div>
+<div class="paragraph">
+<p>So far so good. Now, send 10 more requests and you will see a response that looks like this as the gold plan rate limit is exceeded:
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/blog/2015-01-09/Screenshot-39.png" alt="Screenshot 39">
+</div>
+</div>
+<div class="paragraph">
+<p>And there it is. Your gold plan has been exceeded. Maybe next time you&#8217;ll spend a little more and get the platinum plan! ;-)
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="wrap-up"><a class="anchor" href="#wrap-up"></a>Wrap-up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s recap what we just accomplished in this demo:
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We installed apiman 1.0 onto a WildFly server instance.
+<li>
+<p>We used git to download and maven to build a sample REST client.
+<li>
+<p>As an API provider, we created an organization, defined policies based on API use limit rates and user authentication, and a plan, and assigned them to an API.
+<li>
+<p>As an API consumer, we searched for and found that API, and assigned it to a client app.
+<li>
+<p>As a client app, we accessed the API and observed how the API Gateway managed the API.
+</ul>
+</div>
+<div class="paragraph">
+<p>And, if you note, in the process of doing all this, the only code that we had to write or build was for the client app. We were able to fully configure the API, policies, plans, and the client app in the API Manager UI.
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whats-next"><a class="anchor" href="#whats-next"></a>What&#8217;s Next?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this post, we&#8217;ve only scratched the surface of API Management with apiman. To learn more about apiman, you can explore its website here: <a href="https://www.apiman.io/" class="bare">https://www.apiman.io/</a>
+</div>
+<div class="paragraph">
+<p>Join the project mailing list here: <a href="https://lists.jboss.org/mailman/listinfo/apiman-user" class="bare">https://lists.jboss.org/mailman/listinfo/apiman-user</a>
+</div>
+<div class="paragraph">
+<p>And, better still, get involved! Contribute bug reports or feature requests. Write about your own experiences with apiman. Download the apiman source code, take a look around, and contribute your own additions. apiman 1.0 was just released, there&#8217;s no better time to join in and contribute!
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="downloads-used-in-this-article"><a class="anchor" href="#downloads-used-in-this-article"></a>Downloads Used in this Article</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>REST Client <a href="https://restclient.net/" class="bare">https://restclient.net/</a> FireFox Add-On - <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">https://addons.mozilla.org/en-US/firefox/addon/restclient/versions/2.0.3</a>
+<li>
+<p>Echo API source code - <a href="https://github.com/apiman/apiman-quickstarts" class="bare">https://github.com/apiman/apiman-quickstarts</a>
+<li>
+<p>apiman 1.0 - <a href="https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip" class="bare">https://downloads.jboss.org/apiman/1.0.0.Final/apiman-distro-wildfly8-1.0.0.Final-overlay.zip</a>
+<li>
+<p>WildFly 8.2.0 - <a href="https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip" class="bare">https://download.jboss.org/wildfly/8.2.0.Final/wildfly-8.2.0.Final.zip</a>
+<li>
+<p>Git - <a href="https://git-scm.com" class="bare">https://git-scm.com</a>
+<li>
+<p>Maven - <a href="https://maven.apache.org" class="bare">https://maven.apache.org</a>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="references"><a class="anchor" href="#references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.apiman.io/" class="bare">https://www.apiman.io/</a>
+<li>
+<p>apiman tutorial videos - <a href="https://vimeo.com/user34396826" class="bare">https://vimeo.com/user34396826</a>
+<li>
+<p><a href="https://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/" class="bare">https://www.softwareag.com/blog/reality_check/index.php/soa-what/what-is-api-management/</a>
+<li>
+<p><a href="https://keycloak.jboss.org/" class="bare">https://keycloak.jboss.org/</a>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+</div>
+</div>
+<footer id="apiman-footer" class="p-2 mt-2 mx-auto mw-1350">
+<p>
+Apiman code is open source and licensed under the <a class="link-dark" href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="noopener">Apache License, v2.0</a>.
+<p>The Apiman project was started by Red Hat, although they are no longer directly involved in the project. The project is actively maintained by the community.
+<p>Copyright © 2022 Apiman Community & <a class="link-dark" href="https://www.redhat.com/en/about/terms-use" target="_blank" rel="noopener">Red Hat</a>.
+<p>
+Website was created with 🖤 by Marc Savy of <a class="footer-href" href="https://www.blackparrotlabs.io" target="_blank" rel="noopener">Black Parrot Labs</a> using <a class="footer-href" href="https://www.jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> and <a class="footer-href" href="https://www.getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a>,
+and contributed to the Apiman community under the <a class="link-dark" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> license.
+</footer>
+</div>
+<script>window.onload=function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=!0,e.src="/sw-register.js?v="+Date.now(),t.parentNode.insertBefore(e,t)}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TRD82LC9Y2")</script>
+</body>
+</html>
