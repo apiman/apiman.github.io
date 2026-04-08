@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.1)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
     asciidoctor (2.0.18)
     asciidoctor-diagram (2.2.3)
       asciidoctor (>= 1.5.7, < 3.x)
@@ -114,7 +114,7 @@ GEM
     open-uri-cached (1.0.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (5.0.0)
+    public_suffix (7.0.5)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.0.6)
